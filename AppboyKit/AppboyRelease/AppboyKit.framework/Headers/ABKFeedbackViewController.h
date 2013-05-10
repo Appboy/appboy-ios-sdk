@@ -1,0 +1,13 @@
+//
+//  ABKFeedbackViewController.h
+//
+// This class is used internally; you don't need to include it.
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@interface ABKFeedbackViewController : UIViewController
+
+@property (assign, nonatomic) id delegate;
+
+@end
