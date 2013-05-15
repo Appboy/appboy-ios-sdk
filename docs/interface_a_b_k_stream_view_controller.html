@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: &lt;ABKSlideupControllerDelegate&gt; Protocol Reference</title>
+<title>Appboy iOS SDK: ABKStreamViewController Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,82 +81,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Instance Methods</a> &#124;
-<a href="protocol_a_b_k_slideup_controller_delegate-p-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">&lt;ABKSlideupControllerDelegate&gt; Protocol Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">ABKStreamViewController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#import &lt;<a class="el" href="_appboy_8h_source.html">Appboy.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Instance Methods</h2></td></tr>
-<tr class="memitem:ad9dd00c145a9f9f3b634695ea5b53a12"><td class="memItemLeft" align="right" valign="top">(ABKSlideupShouldDisplaySlideupReturnType)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#ad9dd00c145a9f9f3b634695ea5b53a12">shouldDisplaySlideup:</a></td></tr>
-<tr class="separator:ad9dd00c145a9f9f3b634695ea5b53a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6237f8420ccc9919ead2085181f468b"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#ab6237f8420ccc9919ead2085181f468b">slideupWasTapped</a></td></tr>
-<tr class="separator:ab6237f8420ccc9919ead2085181f468b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The slideupDelegate has two uses:</p>
-<p>First, when a slideup has been received from the server, shouldDisplaySlideup is called. The host can decide if the slideup should be shown immediately, queued, or ignored (see above).</p>
-<p>Second, when a slideup is tapped, the default action is to open an <a class="el" href="interface_a_b_k_stream_view_controller_modal_context.html">ABKStreamViewControllerModalContext</a>. If slideupDelegate is set, however, the <a class="el" href="interface_a_b_k_stream_view_controller_modal_context.html">ABKStreamViewControllerModalContext</a> is not opened; instead, a message is sent to the slideupDelegate which can be used to trigger some other action. </p>
-</div><h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="ad9dd00c145a9f9f3b634695ea5b53a12"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup: </td>
-          <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
-          <td class="paramname"><em>message</em></td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>The text of the slideup's message.  Sent when a slideup has arrived from the server. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab6237f8420ccc9919ead2085181f468b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) slideupWasTapped </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Called when the <a class="el" href="interface_appboy.html">Appboy</a> Slideup is tapped by the user. </p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
