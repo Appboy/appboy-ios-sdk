@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lastname',['lastName',['../interface_appboy_user.html#a375c3d74a8bd788f819bd1edbda2729a',1,'AppboyUser']]]
+  ['lastname',['lastName',['../interface_a_b_k_user.html#ad4004972ba0597ab2945406c0a4b3336',1,'ABKUser']]]
 ];

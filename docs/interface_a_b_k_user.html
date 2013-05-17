@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: AppboyUser Class Reference</title>
+<title>Appboy iOS SDK: ABKUser Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,54 +82,94 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Instance Methods</a> &#124;
 <a href="#properties">Properties</a> &#124;
-<a href="class_appboy_user-members.html">List of all members</a>  </div>
+<a href="class_a_b_k_user-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">AppboyUser Class Reference</div>  </div>
+<div class="title">ABKUser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ac6115b2e21531a81d3eddecdda55a09c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a> { <b>ABKUserGenderMale</b> = 1 &lt;&lt; 0, 
+<b>ABKUserGenderFemale</b> = 1 &lt;&lt; 1
+ }</td></tr>
+<tr class="separator:ac6115b2e21531a81d3eddecdda55a09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:ac9e634e20c8e4b2fe168a45c600d28a8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy_user.html#ac9e634e20c8e4b2fe168a45c600d28a8">setIsSubscribedToEmails:</a></td></tr>
-<tr class="separator:ac9e634e20c8e4b2fe168a45c600d28a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f80bb7e62ec764b07b1871a2403daff"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy_user.html#a9f80bb7e62ec764b07b1871a2403daff">setCustomAttributeWithKey:andBOOLValue:</a></td></tr>
-<tr class="separator:a9f80bb7e62ec764b07b1871a2403daff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae430d1443cdb5d767d9c011f2be2bf25"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy_user.html#ae430d1443cdb5d767d9c011f2be2bf25">setCustomAttributeWithKey:andIntegerValue:</a></td></tr>
-<tr class="separator:ae430d1443cdb5d767d9c011f2be2bf25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84fef6650d95935eaa1b38f9f9ee225e"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy_user.html#a84fef6650d95935eaa1b38f9f9ee225e">setCustomAttributeWithKey:andDoubleValue:</a></td></tr>
-<tr class="separator:a84fef6650d95935eaa1b38f9f9ee225e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1fdd298a26f7f84ef13715bdcd4f8d2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy_user.html#ad1fdd298a26f7f84ef13715bdcd4f8d2">setCustomAttributeWithKey:andStringValue:</a></td></tr>
-<tr class="separator:ad1fdd298a26f7f84ef13715bdcd4f8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd0e3fc747488e4a735f11718b5673cf"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy_user.html#abd0e3fc747488e4a735f11718b5673cf">setCustomAttributeWithKey:andDateValue:</a></td></tr>
-<tr class="separator:abd0e3fc747488e4a735f11718b5673cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f9ca0016452f7790d4ebbe1687dd04b"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy_user.html#a4f9ca0016452f7790d4ebbe1687dd04b">unsetCustomAttributeWithKey:</a></td></tr>
-<tr class="separator:a4f9ca0016452f7790d4ebbe1687dd04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14eb5e9665710cbe3376127d3216991"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#ab14eb5e9665710cbe3376127d3216991">getUserId</a></td></tr>
+<tr class="separator:ab14eb5e9665710cbe3376127d3216991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c5fb104b31d681b35a80e3daeec4d2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a94c5fb104b31d681b35a80e3daeec4d2">setGender:</a></td></tr>
+<tr class="separator:a94c5fb104b31d681b35a80e3daeec4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9aebfd649b7740d99ef603f13a11d56"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#aa9aebfd649b7740d99ef603f13a11d56">setIsSubscribedToEmails:</a></td></tr>
+<tr class="separator:aa9aebfd649b7740d99ef603f13a11d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ce42cb6938a9fb2d67799009258cfe"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a24ce42cb6938a9fb2d67799009258cfe">setCustomAttributeWithKey:andBOOLValue:</a></td></tr>
+<tr class="separator:a24ce42cb6938a9fb2d67799009258cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e667d24441d11e4a3e7116e4ec8b53f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a4e667d24441d11e4a3e7116e4ec8b53f">setCustomAttributeWithKey:andIntegerValue:</a></td></tr>
+<tr class="separator:a4e667d24441d11e4a3e7116e4ec8b53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e74980659f3055d1e976cba5895eb6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a77e74980659f3055d1e976cba5895eb6">setCustomAttributeWithKey:andDoubleValue:</a></td></tr>
+<tr class="separator:a77e74980659f3055d1e976cba5895eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0cf727fe6bf8c1215b88a24002e13b8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#ad0cf727fe6bf8c1215b88a24002e13b8">setCustomAttributeWithKey:andStringValue:</a></td></tr>
+<tr class="separator:ad0cf727fe6bf8c1215b88a24002e13b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4839292d712020f74b4d0f0750e9fcdc"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a4839292d712020f74b4d0f0750e9fcdc">setCustomAttributeWithKey:andDateValue:</a></td></tr>
+<tr class="separator:a4839292d712020f74b4d0f0750e9fcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd4a7e81d41315458fa3f18ba452b20"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a4cd4a7e81d41315458fa3f18ba452b20">unsetCustomAttributeWithKey:</a></td></tr>
+<tr class="separator:a4cd4a7e81d41315458fa3f18ba452b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a380646daaf971e6df20fbda2f0fdd07a"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a380646daaf971e6df20fbda2f0fdd07a">firstName</a></td></tr>
-<tr class="separator:a380646daaf971e6df20fbda2f0fdd07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a375c3d74a8bd788f819bd1edbda2729a"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a375c3d74a8bd788f819bd1edbda2729a">lastName</a></td></tr>
-<tr class="separator:a375c3d74a8bd788f819bd1edbda2729a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacc15717e4fc23b26ebc07392ac31266"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#aacc15717e4fc23b26ebc07392ac31266">email</a></td></tr>
-<tr class="separator:aacc15717e4fc23b26ebc07392ac31266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83fe3182399c8e97ceda680ce78930c6"><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a83fe3182399c8e97ceda680ce78930c6">dateOfBirth</a></td></tr>
-<tr class="separator:a83fe3182399c8e97ceda680ce78930c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38af24f32cb1651734dcf8ea1dd0c60e"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a38af24f32cb1651734dcf8ea1dd0c60e">country</a></td></tr>
-<tr class="separator:a38af24f32cb1651734dcf8ea1dd0c60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6505ca8e5451d5acc8b59ed51511a8d1"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a6505ca8e5451d5acc8b59ed51511a8d1">homeCity</a></td></tr>
-<tr class="separator:a6505ca8e5451d5acc8b59ed51511a8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a474d622a00c86ec161d4813a34979678"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a474d622a00c86ec161d4813a34979678">bio</a></td></tr>
-<tr class="separator:a474d622a00c86ec161d4813a34979678"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dc54f3e99f7485a0fdd4630f3211112"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a6dc54f3e99f7485a0fdd4630f3211112">gender</a></td></tr>
-<tr class="separator:a6dc54f3e99f7485a0fdd4630f3211112"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a9b05e2606d435e28299f22d0ea956d"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy_user.html#a2a9b05e2606d435e28299f22d0ea956d">phone</a></td></tr>
-<tr class="separator:a2a9b05e2606d435e28299f22d0ea956d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751d4cca44b7bcd9033bd177a9e33e32"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a751d4cca44b7bcd9033bd177a9e33e32">firstName</a></td></tr>
+<tr class="separator:a751d4cca44b7bcd9033bd177a9e33e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4004972ba0597ab2945406c0a4b3336"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#ad4004972ba0597ab2945406c0a4b3336">lastName</a></td></tr>
+<tr class="separator:ad4004972ba0597ab2945406c0a4b3336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a0334351e2365f9078015444e5ffb5c"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a5a0334351e2365f9078015444e5ffb5c">email</a></td></tr>
+<tr class="separator:a5a0334351e2365f9078015444e5ffb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271442b2725658da79fd2d0de580c2e5"><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a271442b2725658da79fd2d0de580c2e5">dateOfBirth</a></td></tr>
+<tr class="separator:a271442b2725658da79fd2d0de580c2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d3fb8c80f0f4a38346b9f3b279cf48a"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a3d3fb8c80f0f4a38346b9f3b279cf48a">country</a></td></tr>
+<tr class="separator:a3d3fb8c80f0f4a38346b9f3b279cf48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0539aac0fa07d5ec9877e033761907a1"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a0539aac0fa07d5ec9877e033761907a1">homeCity</a></td></tr>
+<tr class="separator:a0539aac0fa07d5ec9877e033761907a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be5b4a3bda1ec7b1aac31985b4e7ff8"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a7be5b4a3bda1ec7b1aac31985b4e7ff8">bio</a></td></tr>
+<tr class="separator:a7be5b4a3bda1ec7b1aac31985b4e7ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf23b4e4c96cd44ae13ce3cffeee99b"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#abdf23b4e4c96cd44ae13ce3cffeee99b">phone</a></td></tr>
+<tr class="separator:abdf23b4e4c96cd44ae13ce3cffeee99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="ac6115b2e21531a81d3eddecdda55a09c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (enum) <a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Values representing the gender recognized by the SDK. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="a9f80bb7e62ec764b07b1871a2403daff"></a>
+<a class="anchor" id="ab14eb5e9665710cbe3376127d3216991"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) getUserId </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the currently tracked user id. </p>
+
+</div>
+</div>
+<a class="anchor" id="a24ce42cb6938a9fb2d67799009258cfe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -162,7 +202,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abd0e3fc747488e4a735f11718b5673cf"></a>
+<a class="anchor" id="a4839292d712020f74b4d0f0750e9fcdc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -195,7 +235,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a84fef6650d95935eaa1b38f9f9ee225e"></a>
+<a class="anchor" id="a77e74980659f3055d1e976cba5895eb6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -228,7 +268,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae430d1443cdb5d767d9c011f2be2bf25"></a>
+<a class="anchor" id="a4e667d24441d11e4a3e7116e4ec8b53f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -261,7 +301,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad1fdd298a26f7f84ef13715bdcd4f8d2"></a>
+<a class="anchor" id="ad0cf727fe6bf8c1215b88a24002e13b8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -294,7 +334,29 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac9e634e20c8e4b2fe168a45c600d28a8"></a>
+<a class="anchor" id="a94c5fb104b31d681b35a80e3daeec4d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setGender: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a>)&#160;</td>
+          <td class="paramname"><em>gender</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gender</td><td>ABKUserGender enum representing the user's gender. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa9aebfd649b7740d99ef603f13a11d56"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -316,7 +378,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4f9ca0016452f7790d4ebbe1687dd04b"></a>
+<a class="anchor" id="a4cd4a7e81d41315458fa3f18ba452b20"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -339,7 +401,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a474d622a00c86ec161d4813a34979678"></a>
+<a class="anchor" id="a7be5b4a3bda1ec7b1aac31985b4e7ff8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -360,7 +422,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a38af24f32cb1651734dcf8ea1dd0c60e"></a>
+<a class="anchor" id="a3d3fb8c80f0f4a38346b9f3b279cf48a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -381,7 +443,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a83fe3182399c8e97ceda680ce78930c6"></a>
+<a class="anchor" id="a271442b2725658da79fd2d0de580c2e5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -402,7 +464,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aacc15717e4fc23b26ebc07392ac31266"></a>
+<a class="anchor" id="a5a0334351e2365f9078015444e5ffb5c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -423,7 +485,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a380646daaf971e6df20fbda2f0fdd07a"></a>
+<a class="anchor" id="a751d4cca44b7bcd9033bd177a9e33e32"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -444,28 +506,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6dc54f3e99f7485a0fdd4630f3211112"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSString*) gender</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">copy</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The User's gender (String) </p>
-
-</div>
-</div>
-<a class="anchor" id="a6505ca8e5451d5acc8b59ed51511a8d1"></a>
+<a class="anchor" id="a0539aac0fa07d5ec9877e033761907a1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -486,7 +527,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a375c3d74a8bd788f819bd1edbda2729a"></a>
+<a class="anchor" id="ad4004972ba0597ab2945406c0a4b3336"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -507,7 +548,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2a9b05e2606d435e28299f22d0ea956d"></a>
+<a class="anchor" id="abdf23b4e4c96cd44ae13ce3cffeee99b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -531,7 +572,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 16 2013 17:12:09 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 16 2013 20:09:22 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

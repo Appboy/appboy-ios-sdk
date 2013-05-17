@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bio',['bio',['../interface_appboy_user.html#a474d622a00c86ec161d4813a34979678',1,'AppboyUser']]]
+  ['bio',['bio',['../interface_a_b_k_user.html#a7be5b4a3bda1ec7b1aac31985b4e7ff8',1,'ABKUser']]]
 ];

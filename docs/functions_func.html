@@ -69,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_prop.html"><span>Properties</span></a></li>
     </ul>
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,26 +91,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="contents">
 &#160;<ul>
-<li>AppboyDelegateStatusChange
-: <a class="el" href="protocol_appboy_delegate-p.html#ace0542a2564ec3585f6dc9eb5d672922">&lt;AppboyDelegate&gt;</a>
-</li>
 <li>changeUser:
 : <a class="el" href="interface_appboy.html#ac8b369b40e15860b0ec18c0f4b46ac69">Appboy</a>
 </li>
 <li>displayNextAvailableSlideup
 : <a class="el" href="interface_appboy.html#a6a472aaf15e2512d6a74dae63e2b2222">Appboy</a>
 </li>
-<li>logAppEvent:
-: <a class="el" href="interface_appboy.html#ac6f4ba9cb98e4eb8f26af20f77c36f07">Appboy</a>
+<li>getUserId
+: <a class="el" href="interface_a_b_k_user.html#ab14eb5e9665710cbe3376127d3216991">ABKUser</a>
 </li>
-<li>logAppPurchase:priceCents:
-: <a class="el" href="interface_appboy.html#a60b73f75c8565ad20ba63cce37dc556c">Appboy</a>
+<li>logCustomEvent:
+: <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">Appboy</a>
+</li>
+<li>logPurchase:priceInCents:
+: <a class="el" href="interface_appboy.html#ad2c6b67b2fce5207efaaad6a721e4d82">Appboy</a>
 </li>
 <li>logSocialShare:
-: <a class="el" href="interface_appboy.html#a811e0eb226c644cf805f56af58d106f7">Appboy</a>
+: <a class="el" href="interface_appboy.html#ae16a3ae4f33d7ae23da740d67e4cd277">Appboy</a>
 </li>
 <li>promptUserForAccessToSocialNetwork:
-: <a class="el" href="interface_appboy.html#a651b2b121b096ba7ae1fb37d4f7230c1">Appboy</a>
+: <a class="el" href="interface_appboy.html#a6c503d30600c60d2fdc0152bc8e92fb8">Appboy</a>
 </li>
 <li>pushNotificationWasSentFromAppboy:
 : <a class="el" href="interface_appboy.html#a0fa827b56c9afc9f5d7aba9a02b9e9fb">Appboy</a>
@@ -121,22 +122,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interface_appboy.html#a85e336e3dec8aa7fb30376e19ce1678e">Appboy</a>
 </li>
 <li>setCustomAttributeWithKey:andBOOLValue:
-: <a class="el" href="interface_appboy_user.html#a9f80bb7e62ec764b07b1871a2403daff">AppboyUser</a>
+: <a class="el" href="interface_a_b_k_user.html#a24ce42cb6938a9fb2d67799009258cfe">ABKUser</a>
 </li>
 <li>setCustomAttributeWithKey:andDateValue:
-: <a class="el" href="interface_appboy_user.html#abd0e3fc747488e4a735f11718b5673cf">AppboyUser</a>
+: <a class="el" href="interface_a_b_k_user.html#a4839292d712020f74b4d0f0750e9fcdc">ABKUser</a>
 </li>
 <li>setCustomAttributeWithKey:andDoubleValue:
-: <a class="el" href="interface_appboy_user.html#a84fef6650d95935eaa1b38f9f9ee225e">AppboyUser</a>
+: <a class="el" href="interface_a_b_k_user.html#a77e74980659f3055d1e976cba5895eb6">ABKUser</a>
 </li>
 <li>setCustomAttributeWithKey:andIntegerValue:
-: <a class="el" href="interface_appboy_user.html#ae430d1443cdb5d767d9c011f2be2bf25">AppboyUser</a>
+: <a class="el" href="interface_a_b_k_user.html#a4e667d24441d11e4a3e7116e4ec8b53f">ABKUser</a>
 </li>
 <li>setCustomAttributeWithKey:andStringValue:
-: <a class="el" href="interface_appboy_user.html#ad1fdd298a26f7f84ef13715bdcd4f8d2">AppboyUser</a>
+: <a class="el" href="interface_a_b_k_user.html#ad0cf727fe6bf8c1215b88a24002e13b8">ABKUser</a>
+</li>
+<li>setGender:
+: <a class="el" href="interface_a_b_k_user.html#a94c5fb104b31d681b35a80e3daeec4d2">ABKUser</a>
 </li>
 <li>setIsSubscribedToEmails:
-: <a class="el" href="interface_appboy_user.html#ac9e634e20c8e4b2fe168a45c600d28a8">AppboyUser</a>
+: <a class="el" href="interface_a_b_k_user.html#aa9aebfd649b7740d99ef603f13a11d56">ABKUser</a>
 </li>
 <li>sharedInstance
 : <a class="el" href="interface_appboy.html#a998b424210ebceb1957f5547e45dfb12">Appboy</a>
@@ -147,17 +151,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>slideupWasTapped
 : <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#ab6237f8420ccc9919ead2085181f468b">&lt;ABKSlideupControllerDelegate&gt;</a>
 </li>
-<li>startWithApiKey:usingDelegate:inApplication:withLaunchOptions:
-: <a class="el" href="interface_appboy.html#acc858234f7bbb749214416e545beac5c">Appboy</a>
+<li>startWithApiKey:inApplication:withLaunchOptions:
+: <a class="el" href="interface_appboy.html#a9a027766f3b350a09f44e0db4d6e22df">Appboy</a>
 </li>
 <li>unsetCustomAttributeWithKey:
-: <a class="el" href="interface_appboy_user.html#a4f9ca0016452f7790d4ebbe1687dd04b">AppboyUser</a>
+: <a class="el" href="interface_a_b_k_user.html#a4cd4a7e81d41315458fa3f18ba452b20">ABKUser</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 16 2013 17:12:09 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 16 2013 20:09:22 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

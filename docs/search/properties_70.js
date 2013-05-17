@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['phone',['phone',['../interface_appboy_user.html#a2a9b05e2606d435e28299f22d0ea956d',1,'AppboyUser']]]
+  ['phone',['phone',['../interface_a_b_k_user.html#abdf23b4e4c96cd44ae13ce3cffeee99b',1,'ABKUser']]]
 ];

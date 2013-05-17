@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Instance Methods</a> &#124;
 <a href="#pub-static-methods">Class Methods</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_appboy-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -94,10 +95,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a73b17aa0d5379e21c41dc7d19477f0a2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a73b17aa0d5379e21c41dc7d19477f0a2">AppboySocialNetwork</a> { <b>AppboySocialNetworkFacebook</b> = 1 &lt;&lt; 0, 
-<b>AppboySocialNetworkTwitter</b> = 1 &lt;&lt; 1
+<tr class="memitem:a8b77302b2297608a8d9ddf821a0f1be4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a> { <b>ABKSocialNetworkFacebook</b> = 1 &lt;&lt; 0, 
+<b>ABKSocialNetworkTwitter</b> = 1 &lt;&lt; 1
  }</td></tr>
-<tr class="separator:a73b17aa0d5379e21c41dc7d19477f0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a8b77302b2297608a8d9ddf821a0f1be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
@@ -105,18 +106,18 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a0fa827b56c9afc9f5d7aba9a02b9e9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e336e3dec8aa7fb30376e19ce1678e"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a85e336e3dec8aa7fb30376e19ce1678e">registerPushToken:</a></td></tr>
 <tr class="separator:a85e336e3dec8aa7fb30376e19ce1678e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8b369b40e15860b0ec18c0f4b46ac69"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ac8b369b40e15860b0ec18c0f4b46ac69">changeUser:</a></td></tr>
-<tr class="separator:ac8b369b40e15860b0ec18c0f4b46ac69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a953f95703dfabac613d466bc52f690ab"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a953f95703dfabac613d466bc52f690ab">registerApplication:didReceiveRemoteNotification:</a></td></tr>
 <tr class="separator:a953f95703dfabac613d466bc52f690ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6f4ba9cb98e4eb8f26af20f77c36f07"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ac6f4ba9cb98e4eb8f26af20f77c36f07">logAppEvent:</a></td></tr>
-<tr class="separator:ac6f4ba9cb98e4eb8f26af20f77c36f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60b73f75c8565ad20ba63cce37dc556c"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a60b73f75c8565ad20ba63cce37dc556c">logAppPurchase:priceCents:</a></td></tr>
-<tr class="separator:a60b73f75c8565ad20ba63cce37dc556c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a651b2b121b096ba7ae1fb37d4f7230c1"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a651b2b121b096ba7ae1fb37d4f7230c1">promptUserForAccessToSocialNetwork:</a></td></tr>
-<tr class="separator:a651b2b121b096ba7ae1fb37d4f7230c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a811e0eb226c644cf805f56af58d106f7"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a811e0eb226c644cf805f56af58d106f7">logSocialShare:</a></td></tr>
-<tr class="separator:a811e0eb226c644cf805f56af58d106f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b369b40e15860b0ec18c0f4b46ac69"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ac8b369b40e15860b0ec18c0f4b46ac69">changeUser:</a></td></tr>
+<tr class="separator:ac8b369b40e15860b0ec18c0f4b46ac69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">logCustomEvent:</a></td></tr>
+<tr class="separator:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c6b67b2fce5207efaaad6a721e4d82"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad2c6b67b2fce5207efaaad6a721e4d82">logPurchase:priceInCents:</a></td></tr>
+<tr class="separator:ad2c6b67b2fce5207efaaad6a721e4d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ae16a3ae4f33d7ae23da740d67e4cd277">logSocialShare:</a></td></tr>
+<tr class="separator:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c503d30600c60d2fdc0152bc8e92fb8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a6c503d30600c60d2fdc0152bc8e92fb8">promptUserForAccessToSocialNetwork:</a></td></tr>
+<tr class="separator:a6c503d30600c60d2fdc0152bc8e92fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a472aaf15e2512d6a74dae63e2b2222"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a6a472aaf15e2512d6a74dae63e2b2222">displayNextAvailableSlideup</a></td></tr>
 <tr class="separator:a6a472aaf15e2512d6a74dae63e2b2222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -124,17 +125,20 @@ Instance Methods</h2></td></tr>
 Class Methods</h2></td></tr>
 <tr class="memitem:a998b424210ebceb1957f5547e45dfb12"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_appboy.html">Appboy</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_appboy.html#a998b424210ebceb1957f5547e45dfb12">sharedInstance</a></td></tr>
 <tr class="separator:a998b424210ebceb1957f5547e45dfb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc858234f7bbb749214416e545beac5c"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_appboy.html#acc858234f7bbb749214416e545beac5c">startWithApiKey:usingDelegate:inApplication:withLaunchOptions:</a></td></tr>
-<tr class="separator:acc858234f7bbb749214416e545beac5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a027766f3b350a09f44e0db4d6e22df"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_appboy.html#a9a027766f3b350a09f44e0db4d6e22df">startWithApiKey:inApplication:withLaunchOptions:</a></td></tr>
+<tr class="separator:a9a027766f3b350a09f44e0db4d6e22df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a8f32e3042c02caae26f5b732b6683490"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a8f32e3042c02caae26f5b732b6683490">ABKFeedUpdatedNotification</a></td></tr>
+<tr class="separator:a8f32e3042c02caae26f5b732b6683490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a1406ddb2288c6cc79aa9bdbc216a7c1b"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a1406ddb2288c6cc79aa9bdbc216a7c1b">enabled</a></td></tr>
 <tr class="separator:a1406ddb2288c6cc79aa9bdbc216a7c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa34b03110179ad8685d5449f4d26c9db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_appboy_user.html">AppboyUser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#aa34b03110179ad8685d5449f4d26c9db">user</a></td></tr>
-<tr class="separator:aa34b03110179ad8685d5449f4d26c9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33c266f23cf89a88f92dad089be4784e"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_appboy_delegate-p.html">AppboyDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a33c266f23cf89a88f92dad089be4784e">delegate</a></td></tr>
-<tr class="separator:a33c266f23cf89a88f92dad089be4784e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf722b9aba835565b96e5cf1bdd67b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_user.html">ABKUser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">user</a></td></tr>
+<tr class="separator:a7cf722b9aba835565b96e5cf1bdd67b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2559b9e425866a5c34ad23ab2274d410"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">useNUITheming</a></td></tr>
 <tr class="separator:a2559b9e425866a5c34ad23ab2274d410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54dda136bc89dd3100126f814056dec"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html">ABKSlideupControllerDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#aa54dda136bc89dd3100126f814056dec">slideupDelegate</a></td></tr>
@@ -145,12 +149,12 @@ Properties</h2></td></tr>
 <tr class="separator:a9f44e13e8a1bd5884fd81d176d1ec853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="a73b17aa0d5379e21c41dc7d19477f0a2"></a>
+<a class="anchor" id="a8b77302b2297608a8d9ddf821a0f1be4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (enum) <a class="el" href="interface_appboy.html#a73b17aa0d5379e21c41dc7d19477f0a2">AppboySocialNetwork</a></td>
+          <td class="memname">- (enum) <a class="el" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -174,7 +178,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">userId</td><td>The new user's ID (from the host application).  This method changes the user's id.</td></tr>
+    <tr><td class="paramname">userId</td><td>The new user's ID (from the host application).  This method changes the user's ID.</td></tr>
   </table>
   </dd>
 </dl>
@@ -214,12 +218,12 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac6f4ba9cb98e4eb8f26af20f77c36f07"></a>
+<a class="anchor" id="ad80c39e8c96482a77562a5b1a1d387aa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) logAppEvent: </td>
+          <td class="memname">- (void) logCustomEvent: </td>
           <td></td>
           <td class="paramtype">(NSString *)&#160;</td>
           <td class="paramname"><em>eventName</em></td>
@@ -235,22 +239,22 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <pre>
-[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logAppEvent:"clicked_button"];
+[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logCustomEvent:"clicked_button"];
 </pre> 
 </div>
 </div>
-<a class="anchor" id="a60b73f75c8565ad20ba63cce37dc556c"></a>
+<a class="anchor" id="ad2c6b67b2fce5207efaaad6a721e4d82"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) logAppPurchase: </td>
+          <td class="memname">- (void) logPurchase: </td>
           <td></td>
           <td class="paramtype">(NSString *)&#160;</td>
           <td class="paramname"><em>productId</em></td>
         </tr>
         <tr>
-          <td class="paramkey">priceCents:</td>
+          <td class="paramkey">priceInCents:</td>
           <td></td>
           <td class="paramtype">(NSUInteger)&#160;</td>
           <td class="paramname"><em>price</em>&#160;</td>
@@ -270,18 +274,18 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <pre>
-[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logAppPurchase:"powerups" priceCents:99];
+[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logPurchase:"powerups" priceInCents:99];
 </pre> 
 </div>
 </div>
-<a class="anchor" id="a811e0eb226c644cf805f56af58d106f7"></a>
+<a class="anchor" id="ae16a3ae4f33d7ae23da740d67e4cd277"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">- (void) logSocialShare: </td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="interface_appboy.html#a73b17aa0d5379e21c41dc7d19477f0a2">AppboySocialNetwork</a>)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)&#160;</td>
           <td class="paramname"><em>socialNetwork</em></td>
           <td></td>
         </tr>
@@ -289,21 +293,21 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">socialNetwork</td><td>An AppboySocialNetwork indicating the network that you wish to access.  Records that the current user shared something to social network. This is added to the event tracking log that's lazily pushed up to the server. </td></tr>
+    <tr><td class="paramname">socialNetwork</td><td>An ABKSocialNetwork indicating the network that you wish to access.  Records that the current user shared something to social network. This is added to the event tracking log that's lazily pushed up to the server. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a651b2b121b096ba7ae1fb37d4f7230c1"></a>
+<a class="anchor" id="a6c503d30600c60d2fdc0152bc8e92fb8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">- (void) promptUserForAccessToSocialNetwork: </td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="interface_appboy.html#a73b17aa0d5379e21c41dc7d19477f0a2">AppboySocialNetwork</a>)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)&#160;</td>
           <td class="paramname"><em>socialNetwork</em></td>
           <td></td>
         </tr>
@@ -311,14 +315,14 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">socialNetworks</td><td>An AppboySocialNetwork indicating the network that you wish to access.  Use this method to prompt the user for permission to use social network data (you don't need to use it if permission has has been given at another point in your app &ndash; <a class="el" href="interface_appboy.html">Appboy</a> is already collecting data).</td></tr>
+    <tr><td class="paramname">socialNetworks</td><td>An ABKSocialNetwork indicating the network that you wish to access.  Use this method to prompt the user for permission to use social network data (you don't need to use it if permission has has been given at another point in your app &ndash; <a class="el" href="interface_appboy.html">Appboy</a> is already collecting data).</td></tr>
   </table>
   </dd>
 </dl>
 <p>After permission is given, <a class="el" href="interface_appboy.html">Appboy</a> starts collecting any social network data available on the device (e.g. name, e-mail, etc.) and reporting it to the server.</p>
 <p>We generally advise that you don't call this method on startup, as it will immediately prompt your users for Twitter access.</p>
-<p>Notes: For AppboySocialNetworkTwitter: This only works for iOS5 and higher. In older versions, this method is a no-op.</p>
-<p>For AppboySocialNetworkFacebook: This requires your Facebook App ID, which you enter in your app's plist under the key "FacebookAppID". Also, you must have configured a Facebook app with your bundle ID. For more help, see "Create a Facebook App" at <a href="https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/3.1/">https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/3.1/</a> Calls to this method without a defined FacebookAppID will NSLog an error and do nothing.</p>
+<p>Notes: For ABKSocialNetworkTwitter: This only works for iOS5 and higher. In older versions, this method is a no-op.</p>
+<p>For ABKSocialNetworkFacebook: This requires your Facebook App ID, which you enter in your app's plist under the key "FacebookAppID". Also, you must have configured a Facebook app with your bundle ID. For more help, see "Create a Facebook App" at <a href="https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/">https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/</a> Calls to this method without a defined FacebookAppID will NSLog an error and do nothing.</p>
 <p>It is highly recommended that you also install the Facebook iOS SDK in your app. If you include the Facebook SDK in your app, this method will work for all iOS versions and provide a high-quality integration experience for the end user. If you do not include the Facebook SDK, this method call will only work on iOS6 or higher. </p>
 
 </div>
@@ -416,7 +420,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="acc858234f7bbb749214416e545beac5c"></a>
+<a class="anchor" id="a9a027766f3b350a09f44e0db4d6e22df"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -425,12 +429,6 @@ Properties</h2></td></tr>
           <td></td>
           <td class="paramtype">(NSString *)&#160;</td>
           <td class="paramname"><em>apiKey</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">usingDelegate:</td>
-          <td></td>
-          <td class="paramtype">(id)&#160;</td>
-          <td class="paramname"><em>delegate</em></td>
         </tr>
         <tr>
           <td class="paramkey">inApplication:</td>
@@ -454,12 +452,33 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">apiKey</td><td>The app's API key </td></tr>
-    <tr><td class="paramname">delegate</td><td>The App Delegate </td></tr>
     <tr><td class="paramname">inApplication</td><td>The current app </td></tr>
     <tr><td class="paramname">withLaunchOptions</td><td>The options NSDictionary that you get from application:didFinishLaunchingWithOptions  Starts up <a class="el" href="interface_appboy.html">Appboy</a> and tells it that your app is done launching; you should call this method in your App Delegate application:didFinishLaunchingWithOptions method. Your apiKey comes from the appboy.com dashboard where you registered your app. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a8f32e3042c02caae26f5b732b6683490"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString* const) ABKFeedUpdatedNotification</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Posted when the news feed is updated from server. The notification object is nil. This notification does not contain a userInfo dictionary. </p>
 
 </div>
 </div>
@@ -481,28 +500,7 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The total number of currently active cards displayed in any stream view. Cards are counted only once even if they appear in multiple stream views. </p>
-
-</div>
-</div>
-<a class="anchor" id="a33c266f23cf89a88f92dad089be4784e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id&lt;<a class="el" href="protocol_appboy_delegate-p.html">AppboyDelegate</a>&gt;) delegate</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This delegate is sent a AppboyDelegateStatusChange message after <a class="el" href="interface_appboy.html">Appboy</a> has initialized and successfully communicated with the server. </p>
+<p>The total number of currently active cards displayed in any feed view. Cards are counted only once even if they appear in multiple feed views. </p>
 
 </div>
 </div>
@@ -523,7 +521,7 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Disable <a class="el" href="interface_appboy.html">Appboy</a> for future sessions. Note: This does not affect the current session; the current session will finish. </p>
+<p>Disable <a class="el" href="interface_appboy.html">Appboy</a> for future sessions and prevent any network activity on the current session. </p>
 
 </div>
 </div>
@@ -565,9 +563,9 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>unreadCardCount is the number of currently active cards which have not been viewed. A "view" happens when a card becomes visible in the stream view. This differentiates between cards which are off-screen in the scrolling view, and those which are on-screen; when a card scrolls onto the screen, it's counted as viewed.</p>
+<p>unreadCardCount is the number of currently active cards which have not been viewed. A "view" happens when a card becomes visible in the feed view. This differentiates between cards which are off-screen in the scrolling view, and those which are on-screen; when a card scrolls onto the screen, it's counted as viewed.</p>
 <p>Cards are counted as viewed only once &ndash; if a card scrolls off the screen and back on, it's not re-counted.</p>
-<p>Cards are counted only once even if they appear in multiple stream views or across multiple devices. </p>
+<p>Cards are counted only once even if they appear in multiple feed views or across multiple devices. </p>
 
 </div>
 </div>
@@ -590,19 +588,20 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="interface_appboy.html">Appboy</a> UI elements can be themed using the NUI framework. See <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a> and the <a class="el" href="interface_appboy.html">Appboy</a> docs. To enable NUI, take the following steps:</p>
 <ul>
-<li>Put the NUI initialization code in your App Delegate and main.m.</li>
+<li>Get NUI from <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a>. Follow the NUI Installation instructions from <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a>.</li>
 </ul>
 <ul>
 <li>Create a style sheet called NUIStyle.nss.</li>
 </ul>
 <ul>
-<li>set the property below to TRUE.</li>
+<li>set the property below to YES.</li>
 </ul>
-<p>If useNUITheming is FALSE, NUI is ignored completely whether or not it's integrated into your app. Note that you can theme your app and <a class="el" href="interface_appboy.html">Appboy</a> differently &ndash; <a class="el" href="interface_appboy.html">Appboy</a> uses NUI independently of your app's use of NUI. </p>
+<p>If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app. Note that you can theme your app and <a class="el" href="interface_appboy.html">Appboy</a> differently &ndash; <a class="el" href="interface_appboy.html">Appboy</a> uses NUI independently of your app's use of NUI.</p>
+<p>NUI requires automatic referencing counting. Therefore, if you theme your app using NUI, you will leak memory unless you have ARC enabled. <a class="el" href="interface_appboy.html">Appboy</a> will soon be releasing a fork of NUI that has the proper release/retain. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa34b03110179ad8685d5449f4d26c9db"></a>
+<a class="anchor" id="a7cf722b9aba835565b96e5cf1bdd67b1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -610,7 +609,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (<a class="el" href="interface_appboy_user.html">AppboyUser</a>*) user</td>
+          <td class="memname">- (<a class="el" href="interface_a_b_k_user.html">ABKUser</a>*) user</td>
         </tr>
       </table>
   </td>
@@ -619,14 +618,14 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The current app user. See <a class="el" href="_appboy_user_8h_source.html">AppboyUser.h</a> and changeUser:userId below. </p>
+<p>The current app user. See <a class="el" href="_a_b_k_user_8h_source.html">ABKUser.h</a> and changeUser:userId below. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 16 2013 17:12:09 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 16 2013 20:09:22 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

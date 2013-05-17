@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: tmp/docs/ABKFeedbackViewControllerModalContext.h Source File</title>
+<title>Appboy iOS SDK: tmp/docs/ABKFeedViewControllerModalContext.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,51 +78,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ABKFeedbackViewControllerModalContext.h</div>  </div>
+<div class="title">ABKFeedViewControllerModalContext.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  ABKFeedbackViewControllerModalContext.h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  ABKFeedViewControllerModalContext.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  AppboySDK</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Copyright (c) 2013 Appboy. All rights reserved.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//  The FeedbackViewController classes implement the form you present to your users to collect feedback.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//  To integrate, simply create a FeedbackViewController -- either programmatically or in a storyboard -- like</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//  The FeedViewController classes implement the scrolling view of cards you display for users of your app.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//  To integrate, simply create a FeedViewController -- either programmatically or in a storyboard -- like</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//  you&#39;d create any view controller, and present it.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//  There are three different versions of the FeedbackViewController: Modal, Popover, and Navigation.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//  Pick the one which matches the context in which you&#39;re using the FeedbackViewController; for example,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//  if you present the FeedbackViewController in a modal view, use FeedbackViewControllerModalContext. If you</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//  present it in a popover, use FeedbackViewControllerPopoverContext.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//  There are four different versions of the FeedViewController: Generic, Modal, Popover, and Navigation.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//  Pick the one which matches the context in which you&#39;re using the FeedViewController; for example,</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//  if you present the FeedViewController in a modal view, use FeedViewControllerModalContext. If you</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//  present it in a popover, use FeedViewControllerPopoverContext.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//  Use this class to present a feedback view controller as a modal view.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//  Use this class to present a feed view controller as a modal view.</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//  This controller has &quot;send&quot; and &quot;cancel&quot; buttons on its navigation bar. If the delegate is set, it sends</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//  feedbackViewControllerModalContextCancelTapped:sender when the cancel button is tapped, or</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//  feedbackViewControllerModalContextFeedbackSent:sender after feedback has been sent successfully.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//  If the delegate is *not* set, the controller dismisses itself after cancel or send completes.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//  This controller provides a &quot;close&quot; button on the right side of its navigation bar which,</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//  when tapped, sends the ABKFeedViewControllerModalContextCloseTapped:sender message to the closeButtonDelegate.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//  If the delegate is *not* set, the controller dismisses itself;  if it is set, it&#39;s the responsibility of</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//  the delegate to dismiss the controller.  The delegate should adopt the</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//  ABKFeedViewControllerModalContextDelegate protocol.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#import &quot;ABKFeedbackViewController.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_feedback_view_controller_modal_context.html">ABKFeedbackViewControllerModalContext</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="protocol_a_b_k_feedback_view_controller_modal_context_delegate-p.html">   30</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_feedback_view_controller_modal_context_delegate-p.html">ABKFeedbackViewControllerModalContextDelegate</a> &lt;NSObject&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;- (void) feedbackViewControllerModalContextCancelTapped:(<a class="code" href="interface_a_b_k_feedback_view_controller_modal_context.html">ABKFeedbackViewControllerModalContext</a> *)sender;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;- (void) feedbackViewControllerModalContextFeedbackSent:(<a class="code" href="interface_a_b_k_feedback_view_controller_modal_context.html">ABKFeedbackViewControllerModalContext</a> *)sender;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#import &quot;ABKFeedViewControllerContext.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">   31</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> : <a class="code" href="interface_a_b_k_feed_view_controller_context.html">ABKFeedViewControllerContext</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Title displayed in the top bar</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@property</span> (retain, nonatomic) NSString *navigationBarTitle;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="interface_a_b_k_feedback_view_controller_modal_context.html">   38</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feedback_view_controller_modal_context.html">ABKFeedbackViewControllerModalContext</a> : <a class="code" href="interface_a_b_k_feedback_view_controller.html">ABKFeedbackViewController</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">@property</span> (assign, nonatomic) id &lt;ABKFeedbackViewControllerModalContextDelegate&gt; delegate;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Delegate</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">@property</span> (assign, nonatomic) <span class="keywordtype">id</span> closeButtonDelegate;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">   42</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a> &lt;NSObject&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;- (void) feedViewControllerModalContextCloseTapped:(<a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> *)sender;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

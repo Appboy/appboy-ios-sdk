@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,7 +101,7 @@ Instance Methods</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The slideupDelegate has two uses:</p>
 <p>First, when a slideup has been received from the server, shouldDisplaySlideup is called. The host can decide if the slideup should be shown immediately, queued, or ignored (see above).</p>
-<p>Second, when a slideup is tapped, the default action is to open an <a class="el" href="interface_a_b_k_stream_view_controller_modal_context.html">ABKStreamViewControllerModalContext</a>. If slideupDelegate is set, however, the <a class="el" href="interface_a_b_k_stream_view_controller_modal_context.html">ABKStreamViewControllerModalContext</a> is not opened; instead, a message is sent to the slideupDelegate which can be used to trigger some other action. </p>
+<p>Second, when a slideup is tapped, the default action is to open an <a class="el" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a>. If slideupDelegate is set, however, the <a class="el" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> is not opened; instead, a message is sent to the slideupDelegate which can be used to trigger some other action. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="ad9dd00c145a9f9f3b634695ea5b53a12"></a>
 <div class="memitem">
@@ -160,7 +160,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 16 2013 17:12:09 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 16 2013 20:09:22 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
