@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DC2A75F0A36C90E48AB6BEE /* README in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2A6689C1D8B16DAAD621D /* README */; };
 		4E94D7381743EDE100604EA0 /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D6DC1743EDE100604EA0 /* NUIAppearance.m */; };
 		4E94D7391743EDE100604EA0 /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D6DE1743EDE100604EA0 /* NUIConverter.m */; };
 		4E94D73A1743EDE100604EA0 /* NUIFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D6E01743EDE100604EA0 /* NUIFileMonitor.m */; };
@@ -56,15 +55,11 @@
 		4E94D7651743EDE100604EA0 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7371743EDE100604EA0 /* UIWindow+NUI.m */; };
 		4E94D76E1743EE7100604EA0 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D76D1743EE7100604EA0 /* Clock.m */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
-		4E94D7741743EEA300604EA0 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7731743EEA300604EA0 /* InfoViewController.m */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
-		953574AC1743F862003A64B3 /* UserAttributesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953574AA1743F862003A64B3 /* UserAttributesViewController.xib */; };
-		953574F31744397C003A64B3 /* UserAttributesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953574F21744397C003A64B3 /* UserAttributesViewController_iPad.xib */; };
+		9542A6711746B3F0002935AD /* AppboyKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 9542A66D1746B3F0002935AD /* AppboyKit.framework */; };
+		9542A6721746B3F0002935AD /* libAppboyKitLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9542A66F1746B3F0002935AD /* libAppboyKitLibrary.a */; };
 		955DE89017419DB000C07A57 /* TestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE88F17419DB000C07A57 /* TestingViewController.m */; };
 		955DE8961741A70700C07A57 /* SlideupControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* SlideupControlsViewController.m */; };
-		957D956F1744709F00C866C3 /* AppboyKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 957D956B1744709F00C866C3 /* AppboyKit.framework */; };
-		957D95701744709F00C866C3 /* libAppboyKitLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 957D956D1744709F00C866C3 /* libAppboyKitLibrary.a */; };
-		957D95711744709F00C866C3 /* NUI_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 957D956E1744709F00C866C3 /* NUI_LICENSE.txt */; };
 		9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */; };
 		9580719F173D723400129B89 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514F173D6A6800C0D780 /* AssetsLibrary.framework */; };
 		958071A0173D723400129B89 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5153173D6A7700C0D780 /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -97,7 +92,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DC2A6689C1D8B16DAAD621D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		4E94D6DB1743EDE100604EA0 /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
 		4E94D6DC1743EDE100604EA0 /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
 		4E94D6DD1743EDE100604EA0 /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
@@ -193,32 +187,28 @@
 		4E94D76D1743EE7100604EA0 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clock.m; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E94D7701743EE8900604EA0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E94D7721743EEA300604EA0 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		4E94D7731743EEA300604EA0 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		953574A81743F862003A64B3 /* UserAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesViewController.m; sourceTree = "<group>"; };
 		953574A91743F862003A64B3 /* UserAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesViewController.h; sourceTree = "<group>"; };
-		953574AA1743F862003A64B3 /* UserAttributesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAttributesViewController.xib; sourceTree = "<group>"; };
-		953574F21744397C003A64B3 /* UserAttributesViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAttributesViewController_iPad.xib; sourceTree = "<group>"; };
+		9542A6611746B3F0002935AD /* ABKFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewController.h; sourceTree = "<group>"; };
+		9542A6621746B3F0002935AD /* ABKFeedbackViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerModalContext.h; sourceTree = "<group>"; };
+		9542A6631746B3F0002935AD /* ABKFeedbackViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerNavigationContext.h; sourceTree = "<group>"; };
+		9542A6641746B3F0002935AD /* ABKFeedbackViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerPopoverContext.h; sourceTree = "<group>"; };
+		9542A6651746B3F0002935AD /* ABKFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewController.h; sourceTree = "<group>"; };
+		9542A6661746B3F0002935AD /* ABKFeedViewControllerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerContext.h; sourceTree = "<group>"; };
+		9542A6671746B3F0002935AD /* ABKFeedViewControllerGenericContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerGenericContext.h; sourceTree = "<group>"; };
+		9542A6681746B3F0002935AD /* ABKFeedViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerModalContext.h; sourceTree = "<group>"; };
+		9542A6691746B3F0002935AD /* ABKFeedViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerNavigationContext.h; sourceTree = "<group>"; };
+		9542A66A1746B3F0002935AD /* ABKFeedViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerPopoverContext.h; sourceTree = "<group>"; };
+		9542A66B1746B3F0002935AD /* ABKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKUser.h; sourceTree = "<group>"; };
+		9542A66C1746B3F0002935AD /* Appboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appboy.h; sourceTree = "<group>"; };
+		9542A66D1746B3F0002935AD /* AppboyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppboyKit.framework; sourceTree = "<group>"; };
+		9542A66E1746B3F0002935AD /* AppboyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyKit.h; sourceTree = "<group>"; };
+		9542A66F1746B3F0002935AD /* libAppboyKitLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppboyKitLibrary.a; sourceTree = "<group>"; };
+		9542A6701746B3F0002935AD /* NUI_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUI_LICENSE.txt; sourceTree = "<group>"; };
 		955DE88E17419DB000C07A57 /* TestingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingViewController.h; sourceTree = "<group>"; };
 		955DE88F17419DB000C07A57 /* TestingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingViewController.m; sourceTree = "<group>"; };
 		955DE8931741A70700C07A57 /* SlideupControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideupControlsViewController.h; sourceTree = "<group>"; };
 		955DE8941741A70700C07A57 /* SlideupControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideupControlsViewController.m; sourceTree = "<group>"; };
-		957D955F1744709F00C866C3 /* ABKFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewController.h; sourceTree = "<group>"; };
-		957D95601744709F00C866C3 /* ABKFeedbackViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerModalContext.h; sourceTree = "<group>"; };
-		957D95611744709F00C866C3 /* ABKFeedbackViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerNavigationContext.h; sourceTree = "<group>"; };
-		957D95621744709F00C866C3 /* ABKFeedbackViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerPopoverContext.h; sourceTree = "<group>"; };
-		957D95631744709F00C866C3 /* ABKFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewController.h; sourceTree = "<group>"; };
-		957D95641744709F00C866C3 /* ABKFeedViewControllerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerContext.h; sourceTree = "<group>"; };
-		957D95651744709F00C866C3 /* ABKFeedViewControllerGenericContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerGenericContext.h; sourceTree = "<group>"; };
-		957D95661744709F00C866C3 /* ABKFeedViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerModalContext.h; sourceTree = "<group>"; };
-		957D95671744709F00C866C3 /* ABKFeedViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerNavigationContext.h; sourceTree = "<group>"; };
-		957D95681744709F00C866C3 /* ABKFeedViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerPopoverContext.h; sourceTree = "<group>"; };
-		957D95691744709F00C866C3 /* ABKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKUser.h; sourceTree = "<group>"; };
-		957D956A1744709F00C866C3 /* Appboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appboy.h; sourceTree = "<group>"; };
-		957D956B1744709F00C866C3 /* AppboyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppboyKit.framework; sourceTree = "<group>"; };
-		957D956C1744709F00C866C3 /* AppboyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyKit.h; sourceTree = "<group>"; };
-		957D956D1744709F00C866C3 /* libAppboyKitLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppboyKitLibrary.a; sourceTree = "<group>"; };
-		957D956E1744709F00C866C3 /* NUI_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUI_LICENSE.txt; sourceTree = "<group>"; };
 		958071A7173D727000129B89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		959D34FC174461D6006AF9CE /* stopwatch-icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch-icon-iPad.png"; sourceTree = "<group>"; };
 		959D34FD174461D6006AF9CE /* stopwatch-icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch-icon-iPad@2x.png"; sourceTree = "<group>"; };
@@ -273,7 +263,7 @@
 				95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */,
 				95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */,
 				95EF5112173D5FD600C0D780 /* CoreGraphics.framework in Frameworks */,
-				957D95701744709F00C866C3 /* libAppboyKitLibrary.a in Frameworks */,
+				9542A6721746B3F0002935AD /* libAppboyKitLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,25 +392,25 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		957D955E1744709F00C866C3 /* AppboyKit */ = {
+		9542A6601746B3F0002935AD /* AppboyKit */ = {
 			isa = PBXGroup;
 			children = (
-				957D955F1744709F00C866C3 /* ABKFeedbackViewController.h */,
-				957D95601744709F00C866C3 /* ABKFeedbackViewControllerModalContext.h */,
-				957D95611744709F00C866C3 /* ABKFeedbackViewControllerNavigationContext.h */,
-				957D95621744709F00C866C3 /* ABKFeedbackViewControllerPopoverContext.h */,
-				957D95631744709F00C866C3 /* ABKFeedViewController.h */,
-				957D95641744709F00C866C3 /* ABKFeedViewControllerContext.h */,
-				957D95651744709F00C866C3 /* ABKFeedViewControllerGenericContext.h */,
-				957D95661744709F00C866C3 /* ABKFeedViewControllerModalContext.h */,
-				957D95671744709F00C866C3 /* ABKFeedViewControllerNavigationContext.h */,
-				957D95681744709F00C866C3 /* ABKFeedViewControllerPopoverContext.h */,
-				957D95691744709F00C866C3 /* ABKUser.h */,
-				957D956A1744709F00C866C3 /* Appboy.h */,
-				957D956B1744709F00C866C3 /* AppboyKit.framework */,
-				957D956C1744709F00C866C3 /* AppboyKit.h */,
-				957D956D1744709F00C866C3 /* libAppboyKitLibrary.a */,
-				957D956E1744709F00C866C3 /* NUI_LICENSE.txt */,
+				9542A6611746B3F0002935AD /* ABKFeedbackViewController.h */,
+				9542A6621746B3F0002935AD /* ABKFeedbackViewControllerModalContext.h */,
+				9542A6631746B3F0002935AD /* ABKFeedbackViewControllerNavigationContext.h */,
+				9542A6641746B3F0002935AD /* ABKFeedbackViewControllerPopoverContext.h */,
+				9542A6651746B3F0002935AD /* ABKFeedViewController.h */,
+				9542A6661746B3F0002935AD /* ABKFeedViewControllerContext.h */,
+				9542A6671746B3F0002935AD /* ABKFeedViewControllerGenericContext.h */,
+				9542A6681746B3F0002935AD /* ABKFeedViewControllerModalContext.h */,
+				9542A6691746B3F0002935AD /* ABKFeedViewControllerNavigationContext.h */,
+				9542A66A1746B3F0002935AD /* ABKFeedViewControllerPopoverContext.h */,
+				9542A66B1746B3F0002935AD /* ABKUser.h */,
+				9542A66C1746B3F0002935AD /* Appboy.h */,
+				9542A66D1746B3F0002935AD /* AppboyKit.framework */,
+				9542A66E1746B3F0002935AD /* AppboyKit.h */,
+				9542A66F1746B3F0002935AD /* libAppboyKitLibrary.a */,
+				9542A6701746B3F0002935AD /* NUI_LICENSE.txt */,
 			);
 			name = AppboyKit;
 			path = Stopwatch/AppboyKit;
@@ -444,13 +434,12 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
-				957D955E1744709F00C866C3 /* AppboyKit */,
+				9542A6601746B3F0002935AD /* AppboyKit */,
 				4E94D6D91743EDE100604EA0 /* NUI */,
 				95AD66B1173D759F00C51CF8 /* Images */,
 				95EF5113173D5FD600C0D780 /* Stopwatch */,
 				95EF510C173D5FD600C0D780 /* Frameworks */,
 				95EF510B173D5FD600C0D780 /* Products */,
-				2DC2A6689C1D8B16DAAD621D /* README */,
 			);
 			sourceTree = "<group>";
 		};
@@ -494,16 +483,12 @@
 				95EF512C173D5FD600C0D780 /* InitialViewController.m */,
 				4E94D76C1743EE7100604EA0 /* Clock.h */,
 				4E94D76D1743EE7100604EA0 /* Clock.m */,
-				4E94D7721743EEA300604EA0 /* InfoViewController.h */,
-				4E94D7731743EEA300604EA0 /* InfoViewController.m */,
 				955DE88E17419DB000C07A57 /* TestingViewController.h */,
 				955DE88F17419DB000C07A57 /* TestingViewController.m */,
 				955DE8931741A70700C07A57 /* SlideupControlsViewController.h */,
 				955DE8941741A70700C07A57 /* SlideupControlsViewController.m */,
 				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
 				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
-				953574AA1743F862003A64B3 /* UserAttributesViewController.xib */,
-				953574F21744397C003A64B3 /* UserAttributesViewController_iPad.xib */,
 				95EF5114173D5FD600C0D780 /* Supporting Files */,
 			);
 			path = Stopwatch;
@@ -574,7 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				957D956F1744709F00C866C3 /* AppboyKit.framework in Resources */,
+				9542A6711746B3F0002935AD /* AppboyKit.framework in Resources */,
 				95EF5118173D5FD600C0D780 /* InfoPlist.strings in Resources */,
 				95EF5120173D5FD600C0D780 /* Default.png in Resources */,
 				95EF5122173D5FD600C0D780 /* Default@2x.png in Resources */,
@@ -585,14 +570,10 @@
 				95AD66BD173DB67F00C51CF8 /* twitter-icon.png in Resources */,
 				95AD66C0173DB8F200C51CF8 /* facebook-icon.png in Resources */,
 				4E94D7531743EDE100604EA0 /* NUIStyle.nss in Resources */,
-				953574AC1743F862003A64B3 /* UserAttributesViewController.xib in Resources */,
-				953574F31744397C003A64B3 /* UserAttributesViewController_iPad.xib in Resources */,
 				959D3500174461D6006AF9CE /* stopwatch-icon-iPad.png in Resources */,
 				959D3501174461D6006AF9CE /* stopwatch-icon-iPad@2x.png in Resources */,
 				959D3502174461D6006AF9CE /* stopwatch-icon.png in Resources */,
 				959D3503174461D6006AF9CE /* stopwatch-icon@2x.png in Resources */,
-				957D95711744709F00C866C3 /* NUI_LICENSE.txt in Resources */,
-				2DC2A75F0A36C90E48AB6BEE /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +635,6 @@
 				4E94D7651743EDE100604EA0 /* UIWindow+NUI.m in Sources */,
 				4E94D76E1743EE7100604EA0 /* Clock.m in Sources */,
 				4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */,
-				4E94D7741743EEA300604EA0 /* InfoViewController.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

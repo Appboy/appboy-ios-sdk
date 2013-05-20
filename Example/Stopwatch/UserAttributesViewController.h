@@ -11,9 +11,9 @@
 @property (retain, nonatomic) IBOutlet UITextField *userIDTextField;
 @property (retain, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (retain, nonatomic) IBOutlet UITextField *lastNameTextField;
-@property (retain, nonatomic) IBOutlet UITextField *homeCityTextField;
-@property (retain, nonatomic) IBOutlet UITextField *countryTextField;
 @property (retain, nonatomic) IBOutlet UITextField *emailTextField;
+@property (retain, nonatomic) IBOutlet UITextField *countryTextField;
+@property (retain, nonatomic) IBOutlet UITextField *homeCityTextField;
 @property (retain, nonatomic) IBOutlet UITextField *bioTextField;
 @property (retain, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (retain, nonatomic) IBOutlet UITextField *monthTextField;

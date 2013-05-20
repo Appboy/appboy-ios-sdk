@@ -9,30 +9,21 @@
 
 @implementation UserAttributesViewController
 
-- (void) loadView {
-  NSArray *nibArray;
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-    (nibArray = [[NSBundle mainBundle] loadNibNamed:@"UserAttributesViewController_iPad" owner:self options:nil]);
-  }
-  else {
-    (nibArray = [[NSBundle mainBundle] loadNibNamed:@"UserAttributesViewController" owner:self options:nil]);
-
-    // Shrink the gender segmented control down a little...
-    CGRect aFrame = self.genderButton.frame;
-    aFrame.size.height = 30;
-    self.genderButton.frame = aFrame;
-    UIFont *font = [UIFont boldSystemFontOfSize:15.0f];
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
-                                                           forKey:UITextAttributeFont];
-    [self.genderButton setTitleTextAttributes:attributes
-                                     forState:UIControlStateNormal];
-  }
-  if (nibArray) {
-    self.view = [nibArray objectAtIndex:0];
-  }
-  else {
-    NSLog(@"Could not load nib");
-  }
+- (void) viewDidLoad {
+  [super viewDidLoad];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+  
+  // Shrink the gender segmented control down a little...
+  CGRect aFrame = self.genderButton.frame;
+  aFrame.size.height = 30;
+  self.genderButton.frame = aFrame;
+  UIFont *font = [UIFont boldSystemFontOfSize:15.0f];
+  NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
+                                                         forKey:UITextAttributeFont];
+  [self.genderButton setTitleTextAttributes:attributes
+                                   forState:UIControlStateNormal];
+  
 }
 
 // Set user attributes and/or change the current userID.  See Appboy.h for a discussion about changing the userID.
@@ -75,12 +66,6 @@
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
   return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
-}
-
-- (void) viewDidLoad {
-  [super viewDidLoad];
-
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 }
 
 - (void) keyboardDidShow:(NSNotification *)notification {

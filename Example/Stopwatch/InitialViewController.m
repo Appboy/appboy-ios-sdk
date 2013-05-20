@@ -29,7 +29,7 @@
   self.contactUsPopoverDisplayed = NO;
   self.latestNewsPopoverDisplayed = NO;
 
-  // On iPad, add some buttons to the navigation bar
+  // On iPad, programmatically add some buttons to the navigation bar (on iPhone, these are already in the storyboard)
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 
     // Make a button for sharing to Facebook
@@ -89,7 +89,9 @@
   [alertView release];
 }
 
-// iPad only.  Examples of how to use the feed and feedback view controllers in a popover context.
+// iPad Section
+//
+// Examples of how to use the feed and feedback view controllers in a popover context.
 
 // Present a feedbackViewController in a popover
 - (IBAction) contactUsButtonTapped:(id)sender {
@@ -166,18 +168,58 @@
   }
 }
 
-- (void) viewDidUnload {
-  [self setStartButton:nil];
-  [self setTimeLabel:nil];
-  [self setContactUsButton:nil];
-  [self setContactUsButton:nil];
-  [self setLatestNewsButton:nil];
-  [super viewDidUnload];
+// iPhone Section
+//
+// An example of how to use a modal feedback view controller
+
+// Open up a modal feedbackViewController when the button is tapped.
+- (IBAction)contactUsButtonTappediPhone:(id)sender {
+  ABKFeedbackViewControllerModalContext *feedbackViewController =
+      [[[ABKFeedbackViewControllerModalContext alloc] init] autorelease];
+
+  // We want to be notified when either "Cancel" or "Send" is tapped.
+  feedbackViewController.delegate = self;
+  [self presentViewController:feedbackViewController animated:YES completion:nil];
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  return YES;
+
+// User hit "Cancel." No feedback has been sent.  Note that if we had not set the ABKFeedbackViewControllerModalContext's
+// delegate, we wouldn't need this method -- it would close itself.  In this case, however, we want to know
+// that the feedback has been sent;  so, we must implement both delegate methods.
+- (void) feedbackViewControllerModalContextCancelTapped:(ABKFeedbackViewControllerModalContext *)sender {
+  [self dismissModalViewControllerAnimated:YES];
 }
+
+// Feedback was sent successfully
+- (void) feedbackViewControllerModalContextFeedbackSent:(ABKFeedbackViewControllerModalContext *)sender {
+
+  // Alert the user; it's good to know for sure that the feedback was sent!
+  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
+      message:@"Thanks for sharing your thoughts on Stopwatch."
+      delegate:self
+      cancelButtonTitle:@"OK"
+      otherButtonTitles:nil] autorelease];
+
+  [alertView show];
+}
+
+// Handle the storyboard buttons by forwarding to the programmatic methods above.
+- (IBAction)puchaseButtonTappediPhone:(id)sender {
+  [self purchaseButtonTapped];
+}
+
+- (IBAction)twitterButtonTappediPhone:(id)sender {
+  NSLog(@"Twitter tap");
+  [self twitterButtonTapped];
+}
+
+- (IBAction)facebookButtonTappediPhone:(id)sender {
+  NSLog(@"Facebook tap");
+  [self facebookButtonTapped];
+}
+
+
+// The stopwatch
 
 - (IBAction) resetButtonTapped:(id)sender {
   [self.clock reset];
@@ -199,13 +241,28 @@
   }
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+  return YES;
+}
+
 - (void) timeStringUpdated:(NSString *)timeString {
   self.timeLabel.text = timeString;
 }
 
+- (void) viewDidUnload {
+  [self setStartButton:nil];
+  [self setTimeLabel:nil];
+  [self setContactUsButton:nil];
+  [self setLatestNewsButton:nil];
+  [super viewDidUnload];
+}
+
 - (void) dealloc {
+  [_startButton release];
+  [_timeLabel release];
   [_contactUsButton release];
   [_latestNewsButton release];
   [super dealloc];
 }
+
 @end

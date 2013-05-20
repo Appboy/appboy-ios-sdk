@@ -11,6 +11,7 @@
 @interface InitialViewController : UIViewController
     <ABKFeedbackViewControllerPopoverContextDelegate,
     ABKFeedViewControllerPopoverContextDelegate,
+    ABKFeedbackViewControllerModalContextDelegate,
     UIPopoverControllerDelegate,
     UIAlertViewDelegate,
     ClockDelegate>
@@ -21,10 +22,16 @@
 @property (retain, nonatomic) IBOutlet UIButton *startButton;
 @property (retain, nonatomic) IBOutlet UILabel *timeLabel;
 
-// iPad only
+// iPad
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *contactUsButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *latestNewsButton;
 - (IBAction) contactUsButtonTapped:(id)sender;
 - (IBAction) latestNewsButtonTapped:(id)sender;
+
+// iPhone
+- (IBAction)contactUsButtonTappediPhone:(id)sender;
+- (IBAction)puchaseButtonTappediPhone:(id)sender;
+- (IBAction)facebookButtonTappediPhone:(id)sender;
+- (IBAction)twitterButtonTappediPhone:(id)sender;
 
 @end

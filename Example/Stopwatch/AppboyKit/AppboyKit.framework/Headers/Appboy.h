@@ -17,15 +17,33 @@
 @interface Appboy : NSObject
 
 /* ------------------------------------------------------------------------------------------------------
- * Notification
+ * Notifications
  */
 
 /*!
- * Posted when the news feed is updated from server.
- * The notification object is nil. This notification does not contain a userInfo dictionary.
+ * When the news feed is updated, Appboy will post a notification through the NSNotificationCenter.
+ * The name of the notification is the string constant referred to by ABKFeedUpdatedNotification. There
+ * is no userInfo associated with the notification.
+ *
+ * To listen for this notification, you would register an object as an observer of the notification
+ * using something like:
+ *
+ * <pre>
+ *   [[NSNotificationCenter defaultCenter] addObserver:self
+ *                                            selector:@selector(feedUpdatedNotificationReceived:)
+ *                                                name:ABKFeedUpdatedNotification
+ *                                              object:nil];
+ * </pre>
+ *
+ * where "feedUpdatedNotificationReceived:" is your callback method for handling the notification:
+ *
+ * <pre>
+ *   - (void) feedUpdatedNotificationReceived:(NSNotification *)notification {
+ *     < Do something in response to the notification >
+ *   }
+ * <pre>
  */
 extern NSString *const ABKFeedUpdatedNotification;
-
 
 /* ------------------------------------------------------------------------------------------------------
  * Properties

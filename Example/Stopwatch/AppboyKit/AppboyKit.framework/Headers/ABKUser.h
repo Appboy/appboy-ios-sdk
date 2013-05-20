@@ -60,6 +60,7 @@ typedef enum {
   ABKUserGenderMale = 1 << 0,
   ABKUserGenderFemale = 1 << 1
 }ABKUserGenderType;
+
 /*!
  * @param gender ABKUserGender enum representing the user's gender.
  */
