@@ -478,8 +478,22 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Posted when the news feed is updated from server. The notification object is nil. This notification does not contain a userInfo dictionary. </p>
-
+<p>When the news feed is updated, <a class="el" href="interface_appboy.html">Appboy</a> will post a notification through the NSNotificationCenter. The name of the notification is the string constant referred to by ABKFeedUpdatedNotification. There is no userInfo associated with the notification.</p>
+<p>To listen for this notification, you would register an object as an observer of the notification using something like:</p>
+<pre>
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:(feedUpdatedNotificationReceived:)
+                                               name:ABKFeedUpdatedNotification
+                                             object:nil];
+</pre><p>where "feedUpdatedNotificationReceived:" is your callback method for handling the notification:</p>
+<pre><ul>
+<li>(void) feedUpdatedNotificationReceived:(NSNotification *)notification {
+    &lt; Do something in response to the notification &gt;
+  }
+<pre>
+</pre></li>
+</ul>
+</pre>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -625,7 +639,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 17 2013 11:04:31 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 13:07:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

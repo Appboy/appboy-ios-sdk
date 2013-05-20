@@ -86,32 +86,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  AppboySDK</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Copyright (c) 2013 Appboy. All rights reserved.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//  The FeedViewController classes implement the scrolling view of cards you display for users of your app.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//  To integrate, simply create a FeedViewController -- either programmatically or in a storyboard -- like</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//  you&#39;d create any view controller, and present it.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//  There are four different versions of the FeedViewController: Generic, Modal, Popover, and Navigation.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//  Pick the one which matches the context in which you&#39;re using the FeedViewController; for example,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//  if you present the FeedViewController in a modal view, use FeedViewControllerModalContext. If you</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//  present it in a popover, use FeedViewControllerPopoverContext.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Use the FeedViewControllerGenericContext class to present a feed view with no navigation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// controls or close buttons.  You could use this class, for example, when the feed view is in a</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// tab bar controller, or when it&#39;s in a split view controller.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#import &quot;ABKFeedViewControllerContext.h&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_generic_context.html">   25</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_view_controller_generic_context.html">ABKFeedViewControllerGenericContext</a> : <a class="code" href="interface_a_b_k_feed_view_controller_context.html">ABKFeedViewControllerContext</a> &lt;UINavigationControllerDelegate&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#import &quot;ABKFeedViewControllerContext.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * ABKFeedViewController</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * ABKFeedViewControllerGenericContext</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_generic_context.html">   34</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_view_controller_generic_context.html">ABKFeedViewControllerGenericContext</a> : <a class="code" href="interface_a_b_k_feed_view_controller_context.html">ABKFeedViewControllerContext</a> &lt;UINavigationControllerDelegate&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 17 2013 11:04:31 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 13:07:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
