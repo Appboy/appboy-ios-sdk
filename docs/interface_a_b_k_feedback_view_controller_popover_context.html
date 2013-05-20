@@ -88,6 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ABKFeedbackViewControllerPopoverContext Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#import &lt;<a class="el" href="_a_b_k_feedback_view_controller_popover_context_8h_source.html">ABKFeedbackViewControllerPopoverContext.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -100,10 +102,15 @@ id<br class="typebreak"/>
 id&#160;</td><td class="memItemRight" valign="bottom"><b>delegate</b></td></tr>
 <tr class="separator:a591bfe33b8920d5abf5c6b006726eeb5 inherit properties_interface_a_b_k_feedback_view_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The FeedbackViewController classes implement the form you present to your users to collect feedback. To integrate, simply create a FeedbackViewController &ndash; either programmatically or in a storyboard &ndash; like you'd create any view controller, and present it.</p>
+<p>There are three different versions of the FeedbackViewController: Modal, Popover, and Navigation. Pick the one which matches the context in which you're using the FeedbackViewController; for example, if you present the FeedbackViewController in a modal view, use FeedbackViewControllerModalContext. If you present it in a popover, use FeedbackViewControllerPopoverContext.</p>
+<p>Use the FeedbackViewControllerPopoverContext to present a feedback view controller in a popover.</p>
+<p>This controller has "send" and "cancel" buttons on its navigation bar. When the cancel button is tapped, the controller sends the feedbackViewControllerPopoverContextCancelTapped:sender to the delegate. When feedback has been sent successfully, the controller sends feedbackViewControllerPopoverContextFeedbackSent:sender. Use these messages to trigger dismissing the popover. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 13:07:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 17:44:21 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

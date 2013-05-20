@@ -88,15 +88,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ABKFeedViewControllerModalContext Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#import &lt;<a class="el" href="_a_b_k_feed_view_controller_modal_context_8h_source.html">ABKFeedViewControllerModalContext.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a224e393a3d4f0cd540fdbc15b30317a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a224e393a3d4f0cd540fdbc15b30317a8"></a>
 NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>navigationBarTitle</b></td></tr>
 <tr class="separator:a224e393a3d4f0cd540fdbc15b30317a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f126f384f13847bacb9c2ddc02d1882"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f126f384f13847bacb9c2ddc02d1882"></a>
-id&#160;</td><td class="memItemRight" valign="bottom"><b>closeButtonDelegate</b></td></tr>
-<tr class="separator:a7f126f384f13847bacb9c2ddc02d1882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fce9e9b602651d664711704c824dd09"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fce9e9b602651d664711704c824dd09"></a>
+id<br class="typebreak"/>
+&lt; <a class="el" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>closeButtonDelegate</b></td></tr>
+<tr class="separator:a3fce9e9b602651d664711704c824dd09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -105,10 +108,15 @@ Additional Inherited Members</h2></td></tr>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <b>closeButtonPressed:</b></td></tr>
 <tr class="separator:a5d69542ffa38989102d6723c60e1280e inherit pub_methods_interface_a_b_k_feed_view_controller_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The FeedViewController classes implement the scrolling view of cards you display for users of your app. To integrate, simply create a FeedViewController &ndash; either programmatically or in a storyboard &ndash; like you'd create any view controller, and present it.</p>
+<p>There are four different versions of the FeedViewController: Generic, Modal, Popover, and Navigation. Pick the one which matches the context in which you're using the FeedViewController; for example, if you present the FeedViewController in a modal view, use FeedViewControllerModalContext. If you present it in a popover, use FeedViewControllerPopoverContext.</p>
+<p>Use this class to present a feed view controller as a modal view.</p>
+<p>This controller provides a "close" button on the right side of its navigation bar which, when tapped, sends the ABKFeedViewControllerModalContextCloseTapped:sender message to the closeButtonDelegate. If the delegate is <em>not</em> set, the controller dismisses itself; if it is set, it's the responsibility of the delegate to dismiss the controller. The delegate should adopt the <a class="el" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a> protocol. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 13:07:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 20 2013 17:44:21 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
