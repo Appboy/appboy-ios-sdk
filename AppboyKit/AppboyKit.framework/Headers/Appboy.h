@@ -4,6 +4,12 @@
 //
 //  Copyright (c) 2013 Appboy. All rights reserved.
 
+/*!
+  \mainpage
+  This site contains technical documentation for the %Appboy iOS SDK. Click on the "Classes" link above to
+  view the %Appboy public interface classes and start integrating the SDK into your app!
+*/
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ABKUser.h"

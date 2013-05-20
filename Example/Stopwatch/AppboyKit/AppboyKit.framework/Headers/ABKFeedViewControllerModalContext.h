@@ -10,6 +10,8 @@
  * ABKFeedViewController
  */
 
+@protocol ABKFeedViewControllerModalContextDelegate;
+
 /*!
  * The FeedViewController classes implement the scrolling view of cards you display for users of your app.
  * To integrate, simply create a FeedViewController -- either programmatically or in a storyboard -- like
@@ -34,23 +36,24 @@
  * the delegate to dismiss the controller.  The delegate should adopt the
  * ABKFeedViewControllerModalContextDelegate protocol.
  */
-
-@protocol ABKFeedViewControllerModalContextDelegate;
-
 @interface ABKFeedViewControllerModalContext : ABKFeedViewControllerContext
 
 // Title displayed in the top bar
 @property (retain, nonatomic) NSString *navigationBarTitle;
 
 // Delegate
-@property (assign, nonatomic) id closeButtonDelegate;
+@property (assign, nonatomic) id<ABKFeedViewControllerModalContextDelegate> closeButtonDelegate;
 
 @end
 
 
 @protocol ABKFeedViewControllerModalContextDelegate <NSObject>
 
+/*!
+  @param sender The calling context
+
+  Called when the feed modal is closed.
+*/
 - (void) feedViewControllerModalContextCloseTapped:(ABKFeedViewControllerModalContext *)sender;
 
 @end
-

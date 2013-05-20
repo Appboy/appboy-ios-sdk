@@ -9,6 +9,19 @@
  * ABKFeedbackViewController
  */
 
+@class ABKFeedbackViewControllerNavigationContext;
+
+@protocol ABKFeedbackViewControllerNavigationContextDelegate <NSObject>
+
+/*!
+  @param sender The calling context
+
+  Called when feedback is sent.
+*/
+- (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender;
+
+@end
+
 /*!
  * The FeedbackViewController classes implement the form you present to your users to collect feedback.
  * To integrate, simply create a FeedbackViewController -- either programmatically or in a storyboard -- like
@@ -25,20 +38,11 @@
  */
 
 /*!
- * Use this controller to present the feedback view controller as a child of a UINavigationController.
+ * Use the ABKFeedbackViewControllerNavigationContext to present the feedback view controller as a child of a UINavigationController.
  *
  * If a delegate is set, the controller will send feedbackViewControllerNavigationContextFeedbackSent:sender after
  * feedback has been sent successfully.
  */
-
-@class ABKFeedbackViewControllerNavigationContext;
-
-@protocol ABKFeedbackViewControllerNavigationContextDelegate <NSObject>
-
-- (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender;
-
-@end
-
 @interface ABKFeedbackViewControllerNavigationContext : ABKFeedbackViewController
 
 @property (assign, nonatomic) id <ABKFeedbackViewControllerNavigationContextDelegate> delegate;

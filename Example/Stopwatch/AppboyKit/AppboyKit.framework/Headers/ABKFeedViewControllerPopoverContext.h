@@ -10,6 +10,8 @@
  * ABKFeedViewController
  */
 
+@protocol ABKFeedViewControllerPopoverContextDelegate;
+
 /*!
  * The FeedViewController classes implement the scrolling view of cards you display for users of your app.
  * To integrate, simply create a FeedViewController -- either programmatically or in a storyboard -- like
@@ -33,23 +35,23 @@
  * closeButtonDelegate.  You can use this message to trigger closing the popover.
  * The delegate should adopt the ABKFeedViewControllerPopoverContextDelegate protocol.
  */
-
-@protocol ABKFeedViewControllerPopoverContextDelegate;
-
 @interface ABKFeedViewControllerPopoverContext : ABKFeedViewControllerContext
 
-// Title displayed in the top bar
+/*! Title displayed in the top bar */
 @property (retain, nonatomic) NSString *navigationBarTitle;
 
 // Delegate
-@property (assign, nonatomic) id closeButtonDelegate;
+@property (assign, nonatomic) id<ABKFeedViewControllerPopoverContextDelegate> closeButtonDelegate;
 
 @end
-
 
 @protocol ABKFeedViewControllerPopoverContextDelegate <NSObject>
 
+/*!
+  @param sender The calling context
+
+  Called when the Popover context's close button is tapped
+*/
 - (void) feedViewControllerPopoverContextCloseTapped:(ABKFeedViewControllerPopoverContext *)sender;
 
 @end
-

@@ -9,6 +9,28 @@
  * ABKFeedbackViewController
  */
 
+@class ABKFeedbackViewControllerPopoverContext;
+
+@protocol ABKFeedbackViewControllerPopoverContextDelegate <NSObject>
+
+@required
+
+/*!
+  @param sender The calling context
+
+  Called when the popover is cancelled.
+*/
+- (void) feedbackViewControllerPopoverContextCancelTapped:(ABKFeedbackViewControllerPopoverContext *)sender;
+
+/*!
+  @param sender The calling context
+
+  Called when feedback is sent by the popover.
+*/
+- (void) feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender;
+
+@end
+
 /*!
  * The FeedbackViewController classes implement the form you present to your users to collect feedback.
  * To integrate, simply create a FeedbackViewController -- either programmatically or in a storyboard -- like
@@ -32,21 +54,8 @@
  * When feedback has been sent successfully, the controller sends feedbackViewControllerPopoverContextFeedbackSent:sender.
  * Use these messages to trigger dismissing the popover.
  */
-
-@class ABKFeedbackViewControllerPopoverContext;
-
-@protocol ABKFeedbackViewControllerPopoverContextDelegate <NSObject>
-
-@required
-- (void) feedbackViewControllerPopoverContextCancelTapped:(ABKFeedbackViewControllerPopoverContext *)sender;
-
-- (void) feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender;
-
-@end
-
 @interface ABKFeedbackViewControllerPopoverContext : ABKFeedbackViewController
 
 @property (assign, nonatomic) id <ABKFeedbackViewControllerPopoverContextDelegate> delegate;
 
 @end
-
