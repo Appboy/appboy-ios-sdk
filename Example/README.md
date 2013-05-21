@@ -9,6 +9,8 @@ Stopwatch is a simple timer application that shows Appboy in action. Below are s
 * Theme Appboy programmatically
 * Miscellaneous features
 
+![](https://appboy.zendesk.com/attachments/token/mlosrjmdc5k5s8g/?name=iPhone+initial+screen.png)
+
 ## Getting started
 Start by taking a look at `AppDelegate.m` to see how Appboy starts up.  You can copy the sample code right into your project, though be sure to change the API key.
 
