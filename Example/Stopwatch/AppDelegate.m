@@ -8,7 +8,7 @@
 #import "AppboyKit.h"
 #import "NUIAppearance.h"
 
-static NSString *const AppboyApiKey = @"1fc95ec5-2036-4016-8174-d69c7924ccbf";
+static NSString *const AppboyApiKey = @"appboy-ios-sample";
 
 @implementation AppDelegate
 
