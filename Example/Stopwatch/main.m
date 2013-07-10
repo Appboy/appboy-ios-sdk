@@ -1,11 +1,3 @@
-//
-//  main.m
-//  Stopwatch
-//
-//  Created by Anna Dickinson on 5/10/13.
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "NUISettings.h"
 

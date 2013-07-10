@@ -44,7 +44,8 @@ If your app collects user information such as name or email address, you can rep
 ## Theming Appboy
 You can enable and disable Appboy to use [NUI theming](https://github.com/tombenner/nui) in the `AppDelegate.m` file. Try turning it on and off to see the changes in the feedback form and news feed from standard iOS controls to something different.
 
-[![](https://raw.github.com/Appboy/appboy-ios-sdk/master/Example/Screenshots/theme-off.png)](https://raw.github.com/Appboy/appboy-ios-sdk/master/Example/Screenshots/theme-on.png)
+![](https://raw.github.com/Appboy/appboy-ios-sdk/master/Example/Screenshots/theme-off.png)
+![](https://raw.github.com/Appboy/appboy-ios-sdk/master/Example/Screenshots/theme-on.png)
 
 ## Miscellaneous features
 `TestingViewController.h` enables

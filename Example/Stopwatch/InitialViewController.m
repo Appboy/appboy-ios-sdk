@@ -9,10 +9,9 @@
 @interface InitialViewController ()
 
 @property (retain, nonatomic) Clock *clock;
-@property (assign, nonatomic) BOOL contactUsPopoverDisplayed;
 @property (retain, nonatomic) UIPopoverController *contactUsPopoverController;
-@property (assign, nonatomic) BOOL latestNewsPopoverDisplayed;
 @property (retain, nonatomic) UIPopoverController *latestNewsPopoverController;
+@property (retain, nonatomic) UIPopoverController *newsAndFeedbackPopoverController;
 @end
 
 @implementation InitialViewController
@@ -20,73 +19,70 @@
 - (void) viewDidLoad {
   [super viewDidLoad];
 
-  [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
-
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeUpdated:) name:TimeUpdatedNotification object:nil];
   self.clock = [[[Clock alloc] init] autorelease];
-  self.clock.delegate = self;
   [self.clock reset];
 
-  self.contactUsPopoverDisplayed = NO;
-  self.latestNewsPopoverDisplayed = NO;
-
-  // On iPad, programmatically add some buttons to the navigation bar (on iPhone, these are already in the storyboard)
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    self.splitViewController.delegate = self;
+    
+    // As Apple docs say 'you do not add subviews to a navigation bar directly', we have to programmatically
+    // add the button items
+    self.navigationItem.rightBarButtonItems = @[self.UpgradeButton, self.facebookButton, self.twitterButton, self.contactUsButton];
+    self.navigationItem.leftBarButtonItems = @[self.latestNewsButton, self.newsAndFeedbackButton];
+  }
 
-    // Make a button for sharing to Facebook
-    UIImage *facebookImage = [UIImage imageNamed:@"facebook-icon.png"];
-    UIButton *facebookButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    facebookButton.bounds = CGRectMake(0, 0, 30, 30);
-    [facebookButton addTarget:self action:@selector(facebookButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [facebookButton setImage:facebookImage forState:UIControlStateNormal];
-    UIBarButtonItem *facebookBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:facebookButton];
+  // prepare the newsAndFeedback bar button item and related properties and functions
+  ABKFeedViewControllerNavigationContext *streamModal = [[[ABKFeedViewControllerNavigationContext alloc] init]
+      autorelease];
+  self.newsAndFeedbackNavigationController = [[[UINavigationController alloc] initWithRootViewController:streamModal] autorelease];
+  UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Feedback"
+                                                                              style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromModalFeed:)] autorelease];
+  streamModal.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
+}
 
-    // Make a button for sharing to Twitter
-    UIImage *twitterImage = [UIImage imageNamed:@"twitter-icon.png"];
-    UIButton *twitterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    twitterButton.bounds = CGRectMake(0, 0, 30, 30);
-    [twitterButton addTarget:self action:@selector(twitterButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [twitterButton setImage:twitterImage forState:UIControlStateNormal];
-    UIBarButtonItem *twitterBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:twitterButton];
+// newsAndFeedback Section
+//
+// Examples of how to put Appboy in one action: a button that open feed page, on which there is a feedback button
 
-    // App purchase button
-    UIBarButtonItem *purchaseBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Upgrade" style:UIBarButtonItemStyleBordered target:self action:@selector(purchaseButtonTapped)];
+// funtion of the feedback button in the newsAndFeedback bar button item
+- (void) openFeedbackFromModalFeed:(id)sender {
+  ABKFeedbackViewControllerNavigationContext *navFeedback = [[[ABKFeedbackViewControllerNavigationContext alloc] init] autorelease];
+  // we want to dismiss the popover after user send a feedback successfully
+  navFeedback.delegate = self;
+  [self.newsAndFeedbackNavigationController pushViewController:navFeedback animated:YES];
+}
 
-    // Add to navigation bar
-    self.navigationItem.rightBarButtonItems = @[self.contactUsButton, facebookBarButtonItem, twitterBarButtonItem, purchaseBarButtonItem];
-
-    [facebookBarButtonItem release];
-    [twitterBarButtonItem release];
-    [purchaseBarButtonItem release];
+- (IBAction) newsAndFeedbackButtonTapped:(id)sender {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (self.newsAndFeedbackPopoverController == nil) {
+      self.newsAndFeedbackPopoverController =
+          [[[UIPopoverController alloc] initWithContentViewController:self.newsAndFeedbackNavigationController] autorelease];
+    }
+    // we don't want to have two popover opened at the same time, both displaying news feed page
+    if (self.latestNewsPopoverController) {
+      [self.latestNewsPopoverController dismissPopoverAnimated:YES];
+      self.latestNewsPopoverController = nil;
+    }
+    [self.newsAndFeedbackPopoverController presentPopoverFromBarButtonItem:self.newsAndFeedbackButton
+                                            permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                            animated:YES];
+  }
+  else {
+    // add a cancel button on feed page for modal view
+    UIViewController *rootViewController = [[self.newsAndFeedbackNavigationController viewControllers] objectAtIndex:0];
+    rootViewController.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel"
+                                                                                           style:UIBarButtonItemStyleBordered
+                                                                                          target:self
+                                                                                           action:@selector(dismissNewsAndFeedbackModalView:)] autorelease];
+    [self presentViewController:self.newsAndFeedbackNavigationController animated:YES completion:nil];
   }
 }
 
-// Record simulated share to Facebook or Twitter
-- (void) facebookButtonTapped {
-  [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkFacebook];
-  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Thanks for sharing Stopwatch to Facebook!"
-                                                       delegate:nil cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-  [uiAlertView show];
-  [uiAlertView release];
-}
-
-- (void) twitterButtonTapped {
-  [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkTwitter];
-  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Thanks for sharing Stopwatch to Twitter!"
-                                                       delegate:nil cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-  [uiAlertView show];
-  [uiAlertView release];
-}
-
-// Record simulated in-app purchase
-- (void) purchaseButtonTapped {
-  [[Appboy sharedInstance] logPurchase:@"stopwatch_pro" priceInCents:99];
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thanks for buying Stopwatch Pro!"
-                                                      message:nil delegate:nil cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil];
-  [alertView show];
-  [alertView release];
+- (void) dismissNewsAndFeedbackModalView:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
+  UIViewController *rootViewController = [[self.newsAndFeedbackNavigationController viewControllers] objectAtIndex:0];
+  rootViewController.navigationItem.leftBarButtonItem = nil;
 }
 
 // iPad Section
@@ -94,78 +90,46 @@
 // Examples of how to use the feed and feedback view controllers in a popover context.
 
 // Present a feedbackViewController in a popover
-- (IBAction) contactUsButtonTapped:(id)sender {
+- (IBAction) contactUsButtonTappediPad:(id)sender {
 
-  // Need to prevent the popover from opening more than once in response to multiple taps --
-  // if the popover is already displayed, ignore subsequent taps on the contactUsButton.
-  if (!self.contactUsPopoverDisplayed) {
+  if (self.contactUsPopoverController == nil) {
     ABKFeedbackViewControllerPopoverContext *feedbackViewControllerPopoverContext =
         [[[ABKFeedbackViewControllerPopoverContext alloc] init] autorelease];
     feedbackViewControllerPopoverContext.delegate = self;
-
+    
+    // To make the feedback form look nicer, we recommend setting the popover content size manually
+    // instead of using default popover size, which is too long for a feedback form
+    feedbackViewControllerPopoverContext.contentSizeForViewInPopover = CGSizeMake(320, 300);
     self.contactUsPopoverController =
         [[[UIPopoverController alloc] initWithContentViewController:feedbackViewControllerPopoverContext] autorelease];
-    [self.contactUsPopoverController presentPopoverFromBarButtonItem:self.contactUsButton
-                                            permittedArrowDirections:UIPopoverArrowDirectionAny
-                                                            animated:YES];
-    self.contactUsPopoverDisplayed = YES;
+
   }
-}
-
-// These two methods are required -- this is how we know when to close the popover.  Note that tapping outside
-// the feedback popover will *not* close it.  This is by design:  we don't want the user to accidentally tap outside
-// and close the popover if there's text in the feedback form.
-- (void) feedbackViewControllerPopoverContextCancelTapped:(ABKFeedbackViewControllerPopoverContext *)sender {
-  [self.contactUsPopoverController dismissPopoverAnimated:YES];
-  self.contactUsPopoverDisplayed = NO;
-}
-
-// Let the user know the feedback was sent successfully, and then close the feedback form.
-- (void) feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender {
-  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
-                                                       message:@"Thanks for sharing your thoughts on Stopwatch."
-                                                      delegate:self
-                                             cancelButtonTitle:@"OK"
-                                             otherButtonTitles:nil] autorelease];
-  [alertView show];
-
-  [self.contactUsPopoverController dismissPopoverAnimated:YES];
-  self.contactUsPopoverDisplayed = NO;
+  [self.contactUsPopoverController presentPopoverFromBarButtonItem:self.contactUsButton
+                                          permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                          animated:YES];
 }
 
 // Present a feedViewController in a popover
-- (IBAction) latestNewsButtonTapped:(id)sender {
+- (IBAction) latestNewsButtonTappediPad:(id)sender {
 
   // Prevent the popover from opening more than once in response to multiple taps.
-  if (!self.latestNewsPopoverDisplayed) {
+  if (self.latestNewsPopoverController == nil) {
     ABKFeedViewControllerPopoverContext *feedViewControllerPopoverContext =
         [[[ABKFeedViewControllerPopoverContext alloc] init] autorelease];
     feedViewControllerPopoverContext.closeButtonDelegate = self;
-
     self.latestNewsPopoverController =
         [[[UIPopoverController alloc] initWithContentViewController:feedViewControllerPopoverContext] autorelease];
-    [self.latestNewsPopoverController presentPopoverFromBarButtonItem:self.latestNewsButton
-                                             permittedArrowDirections:UIPopoverArrowDirectionAny
-                                                             animated:YES];
-
-    // Need to use this delegate to handle the case where a tap outside the popover closes it.
-    self.latestNewsPopoverController.delegate = self;
-    self.latestNewsPopoverDisplayed = YES;
   }
-}
-
-// This delegate is called when "close" is tapped on the popover.  Close it.
-- (void) feedViewControllerPopoverContextCloseTapped:(ABKFeedViewControllerPopoverContext *)sender {
-  [self.latestNewsPopoverController dismissPopoverAnimated:YES];
-  self.latestNewsPopoverDisplayed = NO;
-}
-
-// Unlike the feedback popover, tapping outside the feed popover will close it.  We need
-// to know about this to set self.latestPopoverDisplayed correctly
-- (void) popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
-  if ([popoverController isEqual:self.latestNewsPopoverController]) {
-    self.latestNewsPopoverDisplayed = NO;
+  
+  // avoid displaying two news feed popovers on the screen at the same time
+  if (self.newsAndFeedbackPopoverController) {
+    [self.newsAndFeedbackPopoverController dismissPopoverAnimated:YES];
+    self.newsAndFeedbackPopoverController = nil;
   }
+  
+  [self.latestNewsPopoverController presentPopoverFromBarButtonItem:self.latestNewsButton
+                                           permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                           animated:YES];
 }
 
 // iPhone Section
@@ -182,42 +146,107 @@
   [self presentViewController:feedbackViewController animated:YES completion:nil];
 }
 
-
-// User hit "Cancel." No feedback has been sent.  Note that if we had not set the ABKFeedbackViewControllerModalContext's
-// delegate, we wouldn't need this method -- it would close itself.  In this case, however, we want to know
-// that the feedback has been sent;  so, we must implement both delegate methods.
-- (void) feedbackViewControllerModalContextCancelTapped:(ABKFeedbackViewControllerModalContext *)sender {
-  [self dismissModalViewControllerAnimated:YES];
+// Handle the storyboard buttons by forwarding to the programmatic methods above.
+- (IBAction) puchaseButtonTapped:(id)sender {
+  [Crittercism leaveBreadcrumb:@"Appboy: logPurchase"];
+  [[Appboy sharedInstance] logPurchase:@"stopwatch_pro" priceInCents:99];
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thanks for buying Stopwatch Pro!"
+                                                      message:nil delegate:nil cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+  [alertView show];
+  [alertView release];
 }
 
+- (IBAction) twitterButtonTapped:(id)sender {
+  [Crittercism leaveBreadcrumb:@"Appboy: logSocialShare:ABKSocialNetworkTwitter"];
+  [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkTwitter];
+  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Thanks for sharing Stopwatch to Twitter!"
+                                                       delegate:nil cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+  [uiAlertView show];
+  [uiAlertView release];
+}
+
+- (IBAction) facebookButtonTapped:(id)sender {
+  [Crittercism leaveBreadcrumb:@"Appboy: logSocialShare:ABKSocialNetworkFacebook"];
+  [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkFacebook];
+  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Thanks for sharing Stopwatch to Facebook!"
+                                                       delegate:nil cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+  [uiAlertView show];
+  [uiAlertView release];
+}
+
+#pragma mark
+#pragma Appboy feedback popover delegate methods
+
+// These two methods are required -- this is how we know when to close the popover.  Note that tapping outside
+// the feedback popover will *not* close it.  This is by design:  we don't want the user to accidentally tap outside
+// and close the popover if there's text in the feedback form.
+- (void) feedbackViewControllerPopoverContextCancelTapped:(ABKFeedbackViewControllerPopoverContext *)sender {
+  [Crittercism leaveBreadcrumb:@"Appboy: feedback popover canceled"];
+  [self.contactUsPopoverController dismissPopoverAnimated:YES];
+}
+
+// Let the user know the feedback was sent successfully, and then close the feedback form.
+- (void) feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender {
+  [Crittercism leaveBreadcrumb:@"Appboy: popover feedback sent"];
+  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
+                                                       message:@"Thanks for sharing your thoughts on Stopwatch."
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil] autorelease];
+  [alertView show];
+
+  [self.contactUsPopoverController dismissPopoverAnimated:YES];
+}
+
+#pragma mark
+#pragma Appboy feed popover delegate method
+// This delegate is called when "close" is tapped on the popover.  Close it.
+- (void) feedViewControllerPopoverContextCloseTapped:(ABKFeedViewControllerPopoverContext *)sender {
+  [Crittercism leaveBreadcrumb:@"Appboy: feed view gets closed"];
+  [self.latestNewsPopoverController dismissPopoverAnimated:YES];
+}
+
+#pragma mark
+#pragma Appboy feedback modal delegate method
 // Feedback was sent successfully
 - (void) feedbackViewControllerModalContextFeedbackSent:(ABKFeedbackViewControllerModalContext *)sender {
-
+  [Crittercism leaveBreadcrumb:@"Appboy: modal feedback sent"];
+  
   // Alert the user; it's good to know for sure that the feedback was sent!
   UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
-      message:@"Thanks for sharing your thoughts on Stopwatch."
-      delegate:self
-      cancelButtonTitle:@"OK"
-      otherButtonTitles:nil] autorelease];
+                                                       message:@"Thanks for sharing your thoughts on Stopwatch."
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil] autorelease];
 
   [alertView show];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-// Handle the storyboard buttons by forwarding to the programmatic methods above.
-- (IBAction)puchaseButtonTappediPhone:(id)sender {
-  [self purchaseButtonTapped];
+#pragma mark
+#pragma Appboy feedback navigation delegate method
+// Feedback was sent successfully in the newsAndFeedback popover
+- (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender {
+  [self.newsAndFeedbackPopoverController dismissPopoverAnimated:YES];
 }
 
-- (IBAction)twitterButtonTappediPhone:(id)sender {
-  NSLog(@"Twitter tap");
-  [self twitterButtonTapped];
+#pragma mark
+#pragma split view controller delegate methods
+- (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
+  [self.navigationItem setLeftBarButtonItems:@[self.latestNewsButton, self.newsAndFeedbackButton] animated:YES];
 }
 
-- (IBAction)facebookButtonTappediPhone:(id)sender {
-  NSLog(@"Facebook tap");
-  [self facebookButtonTapped];
-}
 
+// Called when the view is shown again in the split view, invalidating the button and popover controller.
+- (void)splitViewController: (UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+  [self.navigationItem setLeftBarButtonItems:@[self.newsAndFeedbackButton] animated:YES];
+  if ([self.latestNewsPopoverController isPopoverVisible]) {
+    [self.latestNewsPopoverController dismissPopoverAnimated:YES];
+  }
+}
 
 // The stopwatch
 
@@ -230,6 +259,7 @@
 
     // Let's keep track of how many times the user has started the stopwatch;  let's send this data to Appboy.
     // This will give us an idea of how much or little someone is using this app.
+    [Crittercism leaveBreadcrumb:@"Appboy: logCustomEvent"];
     [[Appboy sharedInstance] logCustomEvent:@"stopwatch_started"];
 
     [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
@@ -241,12 +271,18 @@
   }
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  return YES;
+- (void) timeUpdated:(NSNotification *)notification {
+  self.timeLabel.text = [self.clock timeString];
 }
 
-- (void) timeStringUpdated:(NSString *)timeString {
-  self.timeLabel.text = timeString;
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    UIBarButtonItem *leftNavigationButtonItem = UIInterfaceOrientationIsLandscape(toInterfaceOrientation) ? nil : self.latestNewsButton;
+    self.navigationItem.leftBarButtonItem = leftNavigationButtonItem;
+    return YES;
+  }
+  return NO;
 }
 
 - (void) viewDidUnload {
@@ -254,6 +290,11 @@
   [self setTimeLabel:nil];
   [self setContactUsButton:nil];
   [self setLatestNewsButton:nil];
+  [self setUpgradeButton:nil];
+  [self setFacebookButton:nil];
+  [self setTwitterButton:nil];
+  [self setNewsAndFeedbackButton:nil];
+  [self setNewsAndFeedbackNavigationController:nil];
   [super viewDidUnload];
 }
 
@@ -262,6 +303,11 @@
   [_timeLabel release];
   [_contactUsButton release];
   [_latestNewsButton release];
+  [_UpgradeButton release];
+  [_facebookButton release];
+  [_twitterButton release];
+  [_newsAndFeedbackButton release];
+  [_newsAndFeedbackNavigationController release];
   [super dealloc];
 }
 

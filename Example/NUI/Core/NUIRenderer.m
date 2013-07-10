@@ -305,7 +305,7 @@ static NUIRenderer *instance = nil;
 {
     // Classes like UIView and UIButton that have subclasses within UIKit should be
     // given lower priority.
-    NSDictionary *renderedClasses = [[NSDictionary alloc] initWithObjectsAndKeys:
+    NSDictionary *renderedClasses = [[[NSDictionary alloc] initWithObjectsAndKeys:
                                    [UIBarButtonItem class], @"renderBarButtonItem",
                                    [UINavigationBar class], @"renderNavigationBar",
                                    [UINavigationItem class], @"renderNavigationItem",
@@ -321,7 +321,7 @@ static NUIRenderer *instance = nil;
                                    [UIButton class], @"renderButton",
                                    [UILabel class], @"renderLabel",
                                    [UIView class], @"renderView",
-                                   nil];
+                                   nil] autorelease];
     for (NSString *renderMethod in renderedClasses) {
         Class renderClass = [renderedClasses valueForKey:renderMethod];
         if ([object isKindOfClass:renderClass]) {
@@ -358,8 +358,8 @@ static NUIRenderer *instance = nil;
                         [NUIRenderer rerender];
                     });
                 }];
-                instance.renderedObjects = [[NSMutableArray alloc] init];
-                instance.renderedObjectIdentifiers = [[NSMutableArray alloc] init];
+                instance.renderedObjects = [NSMutableArray array];
+                instance.renderedObjectIdentifiers = [NSMutableArray array];
             }
         }
     }

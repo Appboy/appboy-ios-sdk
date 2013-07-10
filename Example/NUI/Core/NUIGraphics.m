@@ -66,8 +66,9 @@
     } else {
         image = [image resizableImageWithCapInsets:insets];
     }
-
-    
+  
+  
+    CGPathRelease(path);
     return image;
 }
 

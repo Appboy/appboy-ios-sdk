@@ -1,11 +1,3 @@
-//
-//  SlideupControlsViewController.h
-//  BuildApp
-//
-//  Created by Anna Dickinson on 5/2/13.
-//  Copyright (c) 2013 appboy. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "AppboyKit.h"
 

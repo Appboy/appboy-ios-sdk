@@ -24,6 +24,7 @@ static NUISettings *instance = nil;
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     instance.styles = [parser getStylesFromFile:name];
+    [parser release];
 }
 
 + (void)loadStylesheetByPath:(NSString*)path
@@ -31,6 +32,7 @@ static NUISettings *instance = nil;
     instance = [self getInstance];
     NUIStyleParser *parser = [[NUIStyleParser alloc] init];
     instance.styles = [parser getStylesFromPath:path];
+    [parser release];
 }
 
 + (BOOL)autoUpdateIsEnabled
@@ -172,8 +174,10 @@ static NUISettings *instance = nil;
 {
     @synchronized(self) {    
         if(instance == nil) {
-            [[NUISwizzler new] swizzleAll];
-            instance = [NUISettings new];
+            NUISwizzler *swizzler = [[NUISwizzler alloc] init];
+            [swizzler swizzleAll];
+            instance = [[NUISettings alloc] init];
+            [swizzler release];
         }
     }
     

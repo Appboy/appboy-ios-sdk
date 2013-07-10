@@ -12,7 +12,7 @@
 @class ABKFeedbackViewControllerModalContext;
 
 @protocol ABKFeedbackViewControllerModalContextDelegate <NSObject>
-
+@optional
 /*!
   @param sender The calling context
 

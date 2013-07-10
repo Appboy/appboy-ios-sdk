@@ -53,9 +53,11 @@
 
     NSDictionary *selectedSegmentAttributeOverrides = [NUIUtilities titleTextAttributesForClass:className withSuffix:@"selected"];
     if ([[selectedSegmentAttributeOverrides allKeys] count] > 0) {
-        NSMutableDictionary *selectedTitleTextAttributes = [titleTextAttributes mutableCopy];
+        NSMutableDictionary *selectedTitleTextAttributes = [[titleTextAttributes mutableCopy] autorelease];
         [selectedTitleTextAttributes addEntriesFromDictionary:selectedSegmentAttributeOverrides];
-        [control setTitleTextAttributes:[selectedTitleTextAttributes copy] forState:UIControlStateSelected];
+        NSMutableDictionary *attr = [selectedTitleTextAttributes copy];
+        [control setTitleTextAttributes:attr forState:UIControlStateSelected];
+        [attr release];
     }
 }
 

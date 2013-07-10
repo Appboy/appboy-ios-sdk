@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E9315EE17779566005D994B /* libCrittercism_v4_0_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9315ED17779566005D994B /* libCrittercism_v4_0_0.a */; };
 		4E94D7381743EDE100604EA0 /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D6DC1743EDE100604EA0 /* NUIAppearance.m */; };
 		4E94D7391743EDE100604EA0 /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D6DE1743EDE100604EA0 /* NUIConverter.m */; };
 		4E94D73A1743EDE100604EA0 /* NUIFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D6E01743EDE100604EA0 /* NUIFileMonitor.m */; };
@@ -55,9 +56,8 @@
 		4E94D7651743EDE100604EA0 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7371743EDE100604EA0 /* UIWindow+NUI.m */; };
 		4E94D76E1743EE7100604EA0 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D76D1743EE7100604EA0 /* Clock.m */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
+		4EA3EE241745B9A2000E403C /* UserAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserAttributeCell.m */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
-		9542A6711746B3F0002935AD /* AppboyKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 9542A66D1746B3F0002935AD /* AppboyKit.framework */; };
-		9542A6721746B3F0002935AD /* libAppboyKitLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9542A66F1746B3F0002935AD /* libAppboyKitLibrary.a */; };
 		955DE89017419DB000C07A57 /* TestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE88F17419DB000C07A57 /* TestingViewController.m */; };
 		955DE8961741A70700C07A57 /* SlideupControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* SlideupControlsViewController.m */; };
 		9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */; };
@@ -89,9 +89,13 @@
 		95EF512A173D5FD600C0D780 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5128173D5FD600C0D780 /* MainStoryboard_iPad.storyboard */; };
 		95EF512D173D5FD600C0D780 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF512C173D5FD600C0D780 /* InitialViewController.m */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
+		C5A0080317696634007CCECF /* AppboyKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = C5A007FF17696634007CCECF /* AppboyKit.framework */; };
+		C5A0080417696634007CCECF /* libAppboyKitLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A0080117696634007CCECF /* libAppboyKitLibrary.a */; };
+		C5A0080517696634007CCECF /* NUI_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5A0080217696634007CCECF /* NUI_LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E9315ED17779566005D994B /* libCrittercism_v4_0_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_0.a; sourceTree = "<group>"; };
 		4E94D6DB1743EDE100604EA0 /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
 		4E94D6DC1743EDE100604EA0 /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
 		4E94D6DD1743EDE100604EA0 /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
@@ -187,24 +191,10 @@
 		4E94D76D1743EE7100604EA0 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clock.m; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E94D7701743EE8900604EA0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4EA3EE221745B9A2000E403C /* UserAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributeCell.h; sourceTree = "<group>"; };
+		4EA3EE231745B9A2000E403C /* UserAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributeCell.m; sourceTree = "<group>"; };
 		953574A81743F862003A64B3 /* UserAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesViewController.m; sourceTree = "<group>"; };
 		953574A91743F862003A64B3 /* UserAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesViewController.h; sourceTree = "<group>"; };
-		9542A6611746B3F0002935AD /* ABKFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewController.h; sourceTree = "<group>"; };
-		9542A6621746B3F0002935AD /* ABKFeedbackViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerModalContext.h; sourceTree = "<group>"; };
-		9542A6631746B3F0002935AD /* ABKFeedbackViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerNavigationContext.h; sourceTree = "<group>"; };
-		9542A6641746B3F0002935AD /* ABKFeedbackViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerPopoverContext.h; sourceTree = "<group>"; };
-		9542A6651746B3F0002935AD /* ABKFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewController.h; sourceTree = "<group>"; };
-		9542A6661746B3F0002935AD /* ABKFeedViewControllerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerContext.h; sourceTree = "<group>"; };
-		9542A6671746B3F0002935AD /* ABKFeedViewControllerGenericContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerGenericContext.h; sourceTree = "<group>"; };
-		9542A6681746B3F0002935AD /* ABKFeedViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerModalContext.h; sourceTree = "<group>"; };
-		9542A6691746B3F0002935AD /* ABKFeedViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerNavigationContext.h; sourceTree = "<group>"; };
-		9542A66A1746B3F0002935AD /* ABKFeedViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerPopoverContext.h; sourceTree = "<group>"; };
-		9542A66B1746B3F0002935AD /* ABKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKUser.h; sourceTree = "<group>"; };
-		9542A66C1746B3F0002935AD /* Appboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appboy.h; sourceTree = "<group>"; };
-		9542A66D1746B3F0002935AD /* AppboyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppboyKit.framework; sourceTree = "<group>"; };
-		9542A66E1746B3F0002935AD /* AppboyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyKit.h; sourceTree = "<group>"; };
-		9542A66F1746B3F0002935AD /* libAppboyKitLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppboyKitLibrary.a; sourceTree = "<group>"; };
-		9542A6701746B3F0002935AD /* NUI_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUI_LICENSE.txt; sourceTree = "<group>"; };
 		955DE88E17419DB000C07A57 /* TestingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingViewController.h; sourceTree = "<group>"; };
 		955DE88F17419DB000C07A57 /* TestingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingViewController.m; sourceTree = "<group>"; };
 		955DE8931741A70700C07A57 /* SlideupControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideupControlsViewController.h; sourceTree = "<group>"; };
@@ -242,6 +232,24 @@
 		95EF515B173D6A9800C0D780 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		95EF515D173D6AAA00C0D780 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		95EF515F173D6AB100C0D780 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C5A007F317696634007CCECF /* ABKFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewController.h; sourceTree = "<group>"; };
+		C5A007F417696634007CCECF /* ABKFeedbackViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerModalContext.h; sourceTree = "<group>"; };
+		C5A007F517696634007CCECF /* ABKFeedbackViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerNavigationContext.h; sourceTree = "<group>"; };
+		C5A007F617696634007CCECF /* ABKFeedbackViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerPopoverContext.h; sourceTree = "<group>"; };
+		C5A007F717696634007CCECF /* ABKFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewController.h; sourceTree = "<group>"; };
+		C5A007F817696634007CCECF /* ABKFeedViewControllerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerContext.h; sourceTree = "<group>"; };
+		C5A007F917696634007CCECF /* ABKFeedViewControllerGenericContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerGenericContext.h; sourceTree = "<group>"; };
+		C5A007FA17696634007CCECF /* ABKFeedViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerModalContext.h; sourceTree = "<group>"; };
+		C5A007FB17696634007CCECF /* ABKFeedViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerNavigationContext.h; sourceTree = "<group>"; };
+		C5A007FC17696634007CCECF /* ABKFeedViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerPopoverContext.h; sourceTree = "<group>"; };
+		C5A007FD17696634007CCECF /* ABKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKUser.h; sourceTree = "<group>"; };
+		C5A007FE17696634007CCECF /* Appboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appboy.h; sourceTree = "<group>"; };
+		C5A007FF17696634007CCECF /* AppboyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppboyKit.framework; sourceTree = "<group>"; };
+		C5A0080017696634007CCECF /* AppboyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyKit.h; sourceTree = "<group>"; };
+		C5A0080117696634007CCECF /* libAppboyKitLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppboyKitLibrary.a; sourceTree = "<group>"; };
+		C5A0080217696634007CCECF /* NUI_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUI_LICENSE.txt; sourceTree = "<group>"; };
+		C5CC74A11766B955005DAD08 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,7 +271,8 @@
 				95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */,
 				95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */,
 				95EF5112173D5FD600C0D780 /* CoreGraphics.framework in Frameworks */,
-				9542A6721746B3F0002935AD /* libAppboyKitLibrary.a in Frameworks */,
+				C5A0080417696634007CCECF /* libAppboyKitLibrary.a in Frameworks */,
+				4E9315EE17779566005D994B /* libCrittercism_v4_0_0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,30 +401,6 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		9542A6601746B3F0002935AD /* AppboyKit */ = {
-			isa = PBXGroup;
-			children = (
-				9542A6611746B3F0002935AD /* ABKFeedbackViewController.h */,
-				9542A6621746B3F0002935AD /* ABKFeedbackViewControllerModalContext.h */,
-				9542A6631746B3F0002935AD /* ABKFeedbackViewControllerNavigationContext.h */,
-				9542A6641746B3F0002935AD /* ABKFeedbackViewControllerPopoverContext.h */,
-				9542A6651746B3F0002935AD /* ABKFeedViewController.h */,
-				9542A6661746B3F0002935AD /* ABKFeedViewControllerContext.h */,
-				9542A6671746B3F0002935AD /* ABKFeedViewControllerGenericContext.h */,
-				9542A6681746B3F0002935AD /* ABKFeedViewControllerModalContext.h */,
-				9542A6691746B3F0002935AD /* ABKFeedViewControllerNavigationContext.h */,
-				9542A66A1746B3F0002935AD /* ABKFeedViewControllerPopoverContext.h */,
-				9542A66B1746B3F0002935AD /* ABKUser.h */,
-				9542A66C1746B3F0002935AD /* Appboy.h */,
-				9542A66D1746B3F0002935AD /* AppboyKit.framework */,
-				9542A66E1746B3F0002935AD /* AppboyKit.h */,
-				9542A66F1746B3F0002935AD /* libAppboyKitLibrary.a */,
-				9542A6701746B3F0002935AD /* NUI_LICENSE.txt */,
-			);
-			name = AppboyKit;
-			path = Stopwatch/AppboyKit;
-			sourceTree = "<group>";
-		};
 		95AD66B1173D759F00C51CF8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +419,8 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
-				9542A6601746B3F0002935AD /* AppboyKit */,
+				C5A007F217696634007CCECF /* AppboyKit */,
+				C5CC74A01766B955005DAD08 /* CrittercismSDK */,
 				4E94D6D91743EDE100604EA0 /* NUI */,
 				95AD66B1173D759F00C51CF8 /* Images */,
 				95EF5113173D5FD600C0D780 /* Stopwatch */,
@@ -490,6 +476,8 @@
 				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
 				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
 				95EF5114173D5FD600C0D780 /* Supporting Files */,
+				4EA3EE221745B9A2000E403C /* UserAttributeCell.h */,
+				4EA3EE231745B9A2000E403C /* UserAttributeCell.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -508,6 +496,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C5A007F217696634007CCECF /* AppboyKit */ = {
+			isa = PBXGroup;
+			children = (
+				C5A007F317696634007CCECF /* ABKFeedbackViewController.h */,
+				C5A007F417696634007CCECF /* ABKFeedbackViewControllerModalContext.h */,
+				C5A007F517696634007CCECF /* ABKFeedbackViewControllerNavigationContext.h */,
+				C5A007F617696634007CCECF /* ABKFeedbackViewControllerPopoverContext.h */,
+				C5A007F717696634007CCECF /* ABKFeedViewController.h */,
+				C5A007F817696634007CCECF /* ABKFeedViewControllerContext.h */,
+				C5A007F917696634007CCECF /* ABKFeedViewControllerGenericContext.h */,
+				C5A007FA17696634007CCECF /* ABKFeedViewControllerModalContext.h */,
+				C5A007FB17696634007CCECF /* ABKFeedViewControllerNavigationContext.h */,
+				C5A007FC17696634007CCECF /* ABKFeedViewControllerPopoverContext.h */,
+				C5A007FD17696634007CCECF /* ABKUser.h */,
+				C5A007FE17696634007CCECF /* Appboy.h */,
+				C5A007FF17696634007CCECF /* AppboyKit.framework */,
+				C5A0080017696634007CCECF /* AppboyKit.h */,
+				C5A0080117696634007CCECF /* libAppboyKitLibrary.a */,
+				C5A0080217696634007CCECF /* NUI_LICENSE.txt */,
+			);
+			name = AppboyKit;
+			path = ../build/AppboyKit;
+			sourceTree = "<group>";
+		};
+		C5CC74A01766B955005DAD08 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4E9315ED17779566005D994B /* libCrittercism_v4_0_0.a */,
+				C5CC74A11766B955005DAD08 /* Crittercism.h */,
+				C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */,
+			);
+			path = CrittercismSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -518,6 +540,7 @@
 				95EF5106173D5FD600C0D780 /* Sources */,
 				95EF5107173D5FD600C0D780 /* Frameworks */,
 				95EF5108173D5FD600C0D780 /* Resources */,
+				C5CC74A51766BC6B005DAD08 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -559,12 +582,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9542A6711746B3F0002935AD /* AppboyKit.framework in Resources */,
 				95EF5118173D5FD600C0D780 /* InfoPlist.strings in Resources */,
 				95EF5120173D5FD600C0D780 /* Default.png in Resources */,
 				95EF5122173D5FD600C0D780 /* Default@2x.png in Resources */,
 				95EF5124173D5FD600C0D780 /* Default-568h@2x.png in Resources */,
 				95EF5127173D5FD600C0D780 /* MainStoryboard_iPhone.storyboard in Resources */,
+				C5A0080317696634007CCECF /* AppboyKit.framework in Resources */,
 				95EF512A173D5FD600C0D780 /* MainStoryboard_iPad.storyboard in Resources */,
 				95AD66B3173D75CB00C51CF8 /* btn-backarrow.png in Resources */,
 				95AD66BD173DB67F00C51CF8 /* twitter-icon.png in Resources */,
@@ -574,10 +597,27 @@
 				959D3501174461D6006AF9CE /* stopwatch-icon-iPad@2x.png in Resources */,
 				959D3502174461D6006AF9CE /* stopwatch-icon.png in Resources */,
 				959D3503174461D6006AF9CE /* stopwatch-icon@2x.png in Resources */,
+				C5A0080517696634007CCECF /* NUI_LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C5CC74A51766BC6B005DAD08 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "CRITTERCISM_APP_ID=\"51b67d141386207417000002\"\nAPI_KEY=\"n9vujab6u83in5zd2wggxhxqeiatsj4f\"\nSIMULATOR=1\n\n# Default location for dSYMs\nDSYM_SRC=${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\n\n# Grab dSYM from the simulator location\nif [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\nif [ $SIMULATOR -eq 0 ]; then\necho \"Skipping simulator builds\"\nexit 0;\nfi\nfi\n\n# Give an option if they want to capture debug builds or not.\nif [ \"$BUILD_STYLE\" == \"Debug\" ]; then\nSKIP_DEBUG=`osascript -e \"tell application \\\"Xcode\\\"\" -e \"set noButton to \\\"Let em starve.\\\"\" -e \"set yesButton to \\\"Feed the Critter!\\\"\" -e \"set upload_dialog to display dialog \\\"Skip Debug build?\\\" buttons {noButton, yesButton} default button yesButton with icon 1\" -e \"set button to button returned of upload_dialog\" -e \"if button is equal to yesButton then\" -e \"return 1\" -e \"else\" -e \"return 0\" -e \"end if\" -e \"end tell\"`\nif [ $SKIP_DEBUG -eq 1 ]; then\nechoLog \"Skipping debug\"\nexit 0;\nfi\nfi\n\nDSYM_ZIP_FPATH=\"/tmp/$DWARF_DSYM_FILE_NAME.zip\"\n\n# create dSYM .zip file\necho \"Compressing .dSYM to ${DSYM_ZIP_FPATH} ...\"\necho \"${DSYM_SRC},  ${DSYM_ZIP_FPATH},  \"\ntest -e \"${DSYM_SRC}\" && (echo \"Creating zip of dSYM file\" && /usr/bin/zip -r \"${DSYM_ZIP_FPATH}\" \"${DSYM_SRC}\" -dc)\n\necho \"now setting the dsym upload url\"\nCRITTERCISM_DSYM_UPLOAD_URL=\"https://api.crittercism.com/api_beta/dsym/${CRITTERCISM_APP_ID}\"\n\n# Upload dSYM to Crittercism\necho \"Uploading dSYM to Crittercism...\"\n\ncurl \"${CRITTERCISM_DSYM_UPLOAD_URL}\" \\\n-F dsym=@\"${DSYM_ZIP_FPATH}\" \\\n-F key=\"${API_KEY}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		95EF5106173D5FD600C0D780 /* Sources */ = {
@@ -636,6 +676,7 @@
 				4E94D76E1743EE7100604EA0 /* Clock.m in Sources */,
 				4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
+				4EA3EE241745B9A2000E403C /* UserAttributeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,8 +721,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Anna Dickinson (4YVE4F8VUY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Anna Dickinson (4YVE4F8VUY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -696,8 +737,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "C20A1266-9B0A-42BD-B973-0B45CB2F3E50";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C20A1266-9B0A-42BD-B973-0B45CB2F3E50";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -723,8 +762,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "A8E08156-8D55-4D72-AFE4-C42E11B7E326";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A8E08156-8D55-4D72-AFE4-C42E11B7E326";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -739,17 +776,22 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Stopwatch/AppboyKit\"",
+					"\"$(SRCROOT)/AppboyKit\"",
+					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\\\"$(SRCROOT)/Stopwatch/AppboyKit\\\"",
+					"$(SRCROOT)/CrittercismSDK",
 					"\"$(SRCROOT)/Stopwatch/AppboyKit\"",
+					"\"$(SRCROOT)/AppboyKit\"",
+					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "AE4F0B37-1A86-4B85-95FC-1470A311EA42";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AE4F0B37-1A86-4B85-95FC-1470A311EA42";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -762,13 +804,19 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Stopwatch/AppboyKit\"",
+					"\"$(SRCROOT)/AppboyKit\"",
+					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\\\"$(SRCROOT)/Stopwatch/AppboyKit\\\"",
+					"$(SRCROOT)/CrittercismSDK",
 					"\"$(SRCROOT)/Stopwatch/AppboyKit\"",
+					"\"$(SRCROOT)/AppboyKit\"",
+					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				PRODUCT_NAME = "Appboy Sample";
 				PROVISIONING_PROFILE = "CC540250-0282-40E6-B862-6D0FA0AA5A07";

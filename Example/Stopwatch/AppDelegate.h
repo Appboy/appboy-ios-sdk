@@ -5,6 +5,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Crittercism.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

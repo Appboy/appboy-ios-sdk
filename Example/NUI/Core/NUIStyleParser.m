@@ -38,7 +38,7 @@
     NSString *pattern = @"(\\w[\\w\\s,]+)\\s*\\{([^\\}]+)\\}";
     NSArray *matches = [self getMatches:content withPattern:pattern];
     
-    NSMutableArray *ruleSets = [[NSMutableArray alloc] init];
+    NSMutableArray *ruleSets = [NSMutableArray array];
     for (NSTextCheckingResult *match in matches) {
         NSRange range1 = [match rangeAtIndex:1];
         NSRange range2 = [match rangeAtIndex:2];
@@ -62,7 +62,7 @@
     NSString *pattern = [NSString stringWithFormat:@"%@%@%@", startOrClose, rules, endOrOpen];
     NSArray *matches = [self getMatches:content withPattern:pattern];
     
-    NSMutableArray *lineGroups = [[NSMutableArray alloc] init];
+    NSMutableArray *lineGroups = [NSMutableArray array];
     for (NSTextCheckingResult *match in matches) {
         NSRange range = [match rangeAtIndex:1];
         [lineGroups addObject:[content substringWithRange:range]];
@@ -75,7 +75,7 @@
     NSString *pattern = @"([^\\s]+):[\\s]*([^;]+);";
     NSArray *matches = [self getMatches:content withPattern:pattern];
     
-    NSMutableDictionary *declarations = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *declarations = [NSMutableDictionary dictionary];
     for (NSTextCheckingResult *match in matches) {
         NSRange range1 = [match rangeAtIndex:1];
         NSRange range2 = [match rangeAtIndex:2];
@@ -88,13 +88,13 @@
 
 - (NSMutableDictionary*)consolidateRuleSets:(NSMutableArray*)ruleSets withTopLevelDeclarations:(NSMutableDictionary*)topLevelDeclarations
 {
-    NSMutableDictionary *consolidatedRuleSets = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *consolidatedRuleSets = [NSMutableDictionary dictionary];
     for (NSMutableDictionary *ruleSet in ruleSets) {
         NSString *classExpression = [ruleSet objectForKey:@"classExpression"];
         NSArray *classes = [self getClassesFromClassExpression:classExpression];
         for (NSString *class in classes) {
             if ([consolidatedRuleSets objectForKey:class] == nil) {
-                [consolidatedRuleSets setValue:[[NSMutableDictionary alloc] init] forKey:class];
+                [consolidatedRuleSets setValue:[NSMutableDictionary dictionary] forKey:class];
             }
             [self mergeRuleSetIntoConsolidatedRuleSet:ruleSet consolidatedRuleSet:[consolidatedRuleSets objectForKey:class] topLevelDeclarations:topLevelDeclarations];
         }
@@ -120,7 +120,7 @@
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@",[\\s]*" options:0 error:nil];
     NSString *modifiedClassExpression = [regex stringByReplacingMatchesInString:classExpression options:0 range:NSMakeRange(0, [classExpression length]) withTemplate:@", "];
     NSArray *separatedClasses = [modifiedClassExpression componentsSeparatedByString:@", "];
-    NSMutableArray *classes = [[NSMutableArray alloc] init];
+    NSMutableArray *classes = [NSMutableArray array];
     for (NSString *class in separatedClasses) {
         [classes addObject:[class stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     }

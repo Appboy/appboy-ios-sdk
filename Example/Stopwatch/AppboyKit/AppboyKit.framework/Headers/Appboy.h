@@ -15,7 +15,7 @@
 #import "ABKUser.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.0"
+#define APPBOY_SDK_VERSION @"2.0.1"
 #endif
 
 @protocol ABKSlideupControllerDelegate;
@@ -56,12 +56,6 @@ extern NSString *const ABKFeedUpdatedNotification;
  */
 
 /*!
- * Disable Appboy for future sessions and prevent any network activity on the current session.
- */
-@property (nonatomic, assign) BOOL enabled;
-
-
-/*!
  * The current app user. 
  * See ABKUser.h and changeUser:userId below.
  */
@@ -71,18 +65,19 @@ extern NSString *const ABKFeedUpdatedNotification;
  * Appboy UI elements can be themed using the NUI framework. See https://github.com/tombenner/nui and the Appboy docs.
  * To enable NUI, take the following steps:
  *
- * - Get NUI from https://github.com/tombenner/nui. Follow the NUI Installation instructions from
- *   https://github.com/tombenner/nui.
+ * - If your app uses ARC: Get NUI from https://github.com/tombenner/nui
  *
- * - Create a style sheet called NUIStyle.nss.
+ * - If your app does not use ARC: Get NUI from https://github.com/Appboy/nui which is our fork of NUI that manages its
+ *   own memory
+ *
+ * - Follow the instructions in either repo above to integrate NUI
+ *
+ * - Create a style sheet called NUIStyle.nss
  * 
- * - set the property below to YES.
+ * - Set the property below to YES
  *
  * If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app.  Note that
  * you can theme your app and Appboy differently -- Appboy uses NUI independently of your app's use of NUI.
- *
- * NUI requires automatic referencing counting. Therefore, if you theme your app using NUI, you will leak memory
- * unless you have ARC enabled. Appboy will soon be releasing a fork of NUI that has the proper release/retain.
  */
 @property (nonatomic, assign) BOOL useNUITheming;
 

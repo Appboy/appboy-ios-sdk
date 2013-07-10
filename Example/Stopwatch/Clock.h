@@ -6,9 +6,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Clock : NSObject
+static NSString *const TimeUpdatedNotification = @"timeUpdated";
 
-@property (nonatomic, assign) id delegate;
+@interface Clock : NSObject
 
 - (void) stop;
 - (void) start;
@@ -18,7 +18,3 @@
 @property (assign, nonatomic) BOOL clockRunning;
 @end
 
-@protocol ClockDelegate <NSObject>
-
-- (void) timeStringUpdated:(NSString *)timeString;
-@end

@@ -6,20 +6,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserAttributesViewController : UIViewController
+@interface UserAttributesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property (retain, nonatomic) IBOutlet UITextField *userIDTextField;
-@property (retain, nonatomic) IBOutlet UITextField *firstNameTextField;
-@property (retain, nonatomic) IBOutlet UITextField *lastNameTextField;
-@property (retain, nonatomic) IBOutlet UITextField *emailTextField;
-@property (retain, nonatomic) IBOutlet UITextField *countryTextField;
-@property (retain, nonatomic) IBOutlet UITextField *homeCityTextField;
-@property (retain, nonatomic) IBOutlet UITextField *bioTextField;
-@property (retain, nonatomic) IBOutlet UITextField *phoneTextField;
-@property (retain, nonatomic) IBOutlet UITextField *monthTextField;
-@property (retain, nonatomic) IBOutlet UITextField *dayTextField;
-@property (retain, nonatomic) IBOutlet UITextField *yearTextField;
-@property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (retain, nonatomic) IBOutlet UISegmentedControl *genderButton;
+@property (retain, nonatomic)NSArray *attributesLabelsArray;
+@property (retain, nonatomic)NSMutableArray *attributesValuesArray;
+@property (retain, nonatomic) IBOutlet UINavigationBar *modalNavBar;
+
+@property (retain, nonatomic) IBOutlet UITableView *attributesTableView;
+
 - (IBAction) doneButtonTapped:(id)sender;
+- (IBAction) setGender:(UISegmentedControl *)sender;
+
+
 @end

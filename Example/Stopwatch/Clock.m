@@ -34,19 +34,19 @@ static double const ClockTimeIncrement = 0.01;
                                               selector:@selector(updateElapsedTime)
                                               userInfo:nil repeats:YES];
   self.clockRunning = YES;
-  [self updateDelegate];
+  [self timeUpdated];
 }
 
 - (void) stop {
   [self.timer invalidate];
   self.timer = nil;
   self.clockRunning = NO;
-  [self updateDelegate];
+  [self timeUpdated];
 }
 
 - (void) reset {
   self.elapsedTime = 0.0;
-  [self updateDelegate];
+  [self timeUpdated];
 }
 
 - (NSString *) timeString {
@@ -56,13 +56,11 @@ static double const ClockTimeIncrement = 0.01;
 
 - (void) updateElapsedTime {
   self.elapsedTime = self.elapsedTime + ClockTimeIncrement;
-  [self updateDelegate];
+  [self timeUpdated];
 }
 
-- (void) updateDelegate {
-  if ([self.delegate respondsToSelector:@selector(timeStringUpdated:)]) {
-    [self.delegate timeStringUpdated:[self timeString]];
-  }
+- (void) timeUpdated {
+  [[NSNotificationCenter defaultCenter] postNotificationName:TimeUpdatedNotification object:nil];
 }
 
 - (void) dealloc {

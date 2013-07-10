@@ -1,11 +1,3 @@
-//
-//  AppboyKit.h
-//  AppboyKit
-//
-//  Created by Wenzhi Lin on 3/4/13.
-//  Copyright (c) 2013 appboy. All rights reserved.
-//
-
 #import "Appboy.h"
 #import "ABKUser.h"
 #import "ABKFeedbackViewController.h"
