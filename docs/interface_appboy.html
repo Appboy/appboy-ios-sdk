@@ -135,8 +135,6 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a1406ddb2288c6cc79aa9bdbc216a7c1b"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a1406ddb2288c6cc79aa9bdbc216a7c1b">enabled</a></td></tr>
-<tr class="separator:a1406ddb2288c6cc79aa9bdbc216a7c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cf722b9aba835565b96e5cf1bdd67b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_user.html">ABKUser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">user</a></td></tr>
 <tr class="separator:a7cf722b9aba835565b96e5cf1bdd67b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2559b9e425866a5c34ad23ab2274d410"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">useNUITheming</a></td></tr>
@@ -518,27 +516,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1406ddb2288c6cc79aa9bdbc216a7c1b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) enabled</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Disable <a class="el" href="interface_appboy.html">Appboy</a> for future sessions and prevent any network activity on the current session. </p>
-
-</div>
-</div>
 <a class="anchor" id="aa54dda136bc89dd3100126f814056dec"></a>
 <div class="memitem">
 <div class="memproto">
@@ -602,16 +579,21 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="interface_appboy.html">Appboy</a> UI elements can be themed using the NUI framework. See <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a> and the <a class="el" href="interface_appboy.html">Appboy</a> docs. To enable NUI, take the following steps:</p>
 <ul>
-<li>Get NUI from <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a>. Follow the NUI Installation instructions from <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a>.</li>
+<li>If your app uses ARC: Get NUI from <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a></li>
 </ul>
 <ul>
-<li>Create a style sheet called NUIStyle.nss.</li>
+<li>If your app does not use ARC: Get NUI from <a href="https://github.com/Appboy/nui">https://github.com/Appboy/nui</a> which is our fork of NUI that manages its own memory</li>
 </ul>
 <ul>
-<li>set the property below to YES.</li>
+<li>Follow the instructions in either repo above to integrate NUI</li>
 </ul>
-<p>If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app. Note that you can theme your app and <a class="el" href="interface_appboy.html">Appboy</a> differently &ndash; <a class="el" href="interface_appboy.html">Appboy</a> uses NUI independently of your app's use of NUI.</p>
-<p>NUI requires automatic referencing counting. Therefore, if you theme your app using NUI, you will leak memory unless you have ARC enabled. <a class="el" href="interface_appboy.html">Appboy</a> will soon be releasing a fork of NUI that has the proper release/retain. </p>
+<ul>
+<li>Create a style sheet called NUIStyle.nss</li>
+</ul>
+<ul>
+<li>Set the property below to YES</li>
+</ul>
+<p>If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app. Note that you can theme your app and <a class="el" href="interface_appboy.html">Appboy</a> differently &ndash; <a class="el" href="interface_appboy.html">Appboy</a> uses NUI independently of your app's use of NUI. </p>
 
 </div>
 </div>
@@ -639,7 +621,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 23:57:22 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 10 2013 14:23:04 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
