@@ -1,4 +1,4 @@
-== 2.0.1 ==
+## 2.0.1
 * UI Improvements
   * Fixed a bug when using the nav context feedback in a popover window that would cause the email bar to disappear
   * Updated news feed's close button when opened from a slide up
@@ -12,5 +12,6 @@
   * Added support for device push tokens as NSData when registering the token to Appboy
   * More detailed error messages logged in console
   * Removed the enable/disable Appboy methods from Appboy.h
-== 2.0 ==
+
+## 2.0
 * Initial release
