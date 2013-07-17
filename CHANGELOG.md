@@ -1,3 +1,6 @@
+## 2.0.2
+* Fixes a bug where Appboy might reopen a Facebook read session when a publish session already exists
+
 ## 2.0.1
 * UI Improvements
   * Fixed a bug when using the nav context feedback in a popover window that would cause the email bar to disappear
