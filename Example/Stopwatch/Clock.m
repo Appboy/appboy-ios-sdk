@@ -1,9 +1,3 @@
-//
-//  Clock.m
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import "Clock.h"
 
 static double const ClockTimeIncrement = 0.01;

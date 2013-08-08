@@ -1,9 +1,3 @@
-//
-//  InitialViewController.m
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import "InitialViewController.h"
 
 @interface InitialViewController ()
@@ -36,6 +30,8 @@
   ABKFeedViewControllerNavigationContext *streamModal = [[[ABKFeedViewControllerNavigationContext alloc] init]
       autorelease];
   self.newsAndFeedbackNavigationController = [[[UINavigationController alloc] initWithRootViewController:streamModal] autorelease];
+  self.newsAndFeedbackNavigationController.delegate = self;
+  self.newsAndFeedbackNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.16 green:0.5 blue:0.73 alpha:1.0];
   UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Feedback"
                                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromModalFeed:)] autorelease];
   streamModal.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
@@ -282,7 +278,18 @@
     self.navigationItem.leftBarButtonItem = leftNavigationButtonItem;
     return YES;
   }
-  return NO;
+  return (toInterfaceOrientation == UIInterfaceOrientationMaskPortrait);;
+}
+
+#pragma mark
+#pragma navigation controller delegate method
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(
+    UIViewController *)viewController animated:(BOOL)animated {
+  if ([viewController isKindOfClass:[ABKFeedbackViewControllerNavigationContext class]]) {
+    [UIView animateWithDuration:0.5 animations:^{
+      viewController.contentSizeForViewInPopover = CGSizeMake(320, 300);
+    }];
+  }
 }
 
 - (void) viewDidUnload {
@@ -309,6 +316,14 @@
   [_newsAndFeedbackButton release];
   [_newsAndFeedbackNavigationController release];
   [super dealloc];
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+  return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate {
+  return NO;
 }
 
 @end

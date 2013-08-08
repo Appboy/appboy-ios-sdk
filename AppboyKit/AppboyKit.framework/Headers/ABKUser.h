@@ -24,6 +24,7 @@
  *      gender
  *      phone
  *      email_subscribe
+ *      foursquare_access_token
  *
  * 2. The maximum key length is 255 characters; longer keys are truncated.
  *
@@ -31,6 +32,8 @@
  */
 
 @interface ABKUser : NSObject
+
+// TODO(billmag) - This object should probably track its own user id..
 
 /*!
  * The User's first name (String)
@@ -73,9 +76,9 @@
 @property (nonatomic, copy) NSString *phone;
 
 /*!
- * Returns the currently tracked user id.
+ * The User's foursquare access token (String)
  */
-- (NSString *)getUserId;
+@property (nonatomic, copy) NSString *foursquareAccessToken;
 
 /*!
  * Values representing the gender recognized by the SDK.

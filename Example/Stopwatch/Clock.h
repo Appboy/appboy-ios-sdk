@@ -1,9 +1,3 @@
-//
-//  Clock.h
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 static NSString *const TimeUpdatedNotification = @"timeUpdated";

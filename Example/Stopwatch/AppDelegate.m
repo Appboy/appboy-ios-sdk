@@ -1,9 +1,3 @@
-//
-//  AppDelegate.m
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "AppboyKit.h"
 #import "NUIAppearance.h"
@@ -23,11 +17,12 @@ static NSString *const AppboyApiKey = @"appboy-ios-sample";
 //    NSLog(@"App crashed the last time it was loaded");
 //  }
   
-  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"start Appboy with API key: %@",AppboyApiKey]];
+  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"start Appboy with API key: %@", AppboyApiKey]];
   // This starts up Appboy
-  [Appboy startWithApiKey: AppboyApiKey
+  [Appboy startWithApiKey:AppboyApiKey
             inApplication:application
-        withLaunchOptions:launchOptions];
+        withLaunchOptions:launchOptions
+        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: [NSNumber numberWithInteger:ABKAutomaticRequestProcessing]}];
 
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
@@ -62,5 +57,13 @@ static NSString *const AppboyApiKey = @"appboy-ios-sample";
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+  /*
+   Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+   */
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 @end

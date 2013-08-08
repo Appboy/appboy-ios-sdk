@@ -1,17 +1,10 @@
-//
-//  UserAttributesViewController.h
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 @interface UserAttributesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property (retain, nonatomic)NSArray *attributesLabelsArray;
-@property (retain, nonatomic)NSMutableArray *attributesValuesArray;
+@property (retain, nonatomic) NSArray *attributesLabelsArray;
+@property (retain, nonatomic) NSMutableArray *attributesValuesArray;
 @property (retain, nonatomic) IBOutlet UINavigationBar *modalNavBar;
-
 @property (retain, nonatomic) IBOutlet UITableView *attributesTableView;
 
 - (IBAction) doneButtonTapped:(id)sender;

@@ -1,10 +1,3 @@
-
-//
-//  UserAttributesViewController.m
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import <CoreGraphics/CoreGraphics.h>
 #import "UserAttributesViewController.h"
 #import "AppboyKit.h"
@@ -32,13 +25,6 @@ static NSInteger const IndexOfBirthday = 9;
 
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-
-  // Highlight the first text field
-  [[self.view viewWithTag:TextFieldTagNumber] becomeFirstResponder];
 }
 
 #pragma mark
@@ -113,9 +99,30 @@ static NSInteger const IndexOfBirthday = 9;
     [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     datePicker.backgroundColor = [UIColor clearColor];
     textField.inputView = datePicker;
+    if (textField.text) {
+      datePicker.date = [self getDateFromBirthdayString:textField.text];
+    } else {
+      textField.text = [self getBirthdayStringFromDate:datePicker.date];
+    }
   }
 
   return YES;
+}
+
+- (NSString *) getBirthdayStringFromDate:(NSDate *)date {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateFormat = @"MM/dd/yyyy";
+  NSString *dateString = [dateFormatter stringFromDate:date];
+  [dateFormatter release];
+  return dateString;
+}
+
+- (NSDate *) getDateFromBirthdayString:(NSString *)birthdayString {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateFormat = @"MM/dd/yyyy";
+  NSDate *date = [dateFormatter dateFromString:birthdayString];
+  [dateFormatter release];
+  return date;
 }
 
 - (void) textFieldDidEndEditing:(UITextField *)textField {
@@ -133,10 +140,7 @@ static NSInteger const IndexOfBirthday = 9;
   [self.attributesValuesArray replaceObjectAtIndex:IndexOfBirthday withObject:sender.date];
 
   // Display the date value in the text field while user changing the date picker
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  dateFormatter.dateFormat = @"MM/dd/yyyy";
-  ((UITextField *)[self.view viewWithTag:IndexOfBirthday + TextFieldTagNumber]).text = [dateFormatter stringFromDate:sender.date];
-  [dateFormatter release];
+  ((UITextField *)[self.view viewWithTag:IndexOfBirthday + TextFieldTagNumber]).text = [self getBirthdayStringFromDate:sender.date];
 }
 
 - (IBAction) setGender:(UISegmentedControl *)sender {
@@ -147,6 +151,13 @@ static NSInteger const IndexOfBirthday = 9;
 // Set user attributes and/or change the current userID.  See Appboy.h for a discussion about changing the userID.
 - (IBAction) doneButtonTapped:(id)sender {
   [Crittercism leaveBreadcrumb:@"update appboy user's attributes"];
+
+  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:nil
+                                                      message:@"Profile updates sent."
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil] autorelease];
+  [alertView show];
   
   [self dismissModalViewControllerAnimated:YES];
 
@@ -208,16 +219,12 @@ static NSInteger const IndexOfBirthday = 9;
 
 - (void) keyboardDidShow:(NSNotification *)notification {
 
-  // Only shrink the table view's size in iphone
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-    NSDictionary* info = [notification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  NSDictionary* info = [notification userInfo];
+  CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 
-    CGRect aRect = self.attributesTableView.frame;
-    aRect.size.height = self.view.frame.size.height - kbSize.height - 44; // 44 is the height of the navigation bar
-    self.attributesTableView.frame = aRect;
-
-  }
+  CGRect aRect = self.attributesTableView.frame;
+  aRect.size.height = self.view.frame.size.height - kbSize.height - 44; // 44 is the height of the navigation bar
+  self.attributesTableView.frame = aRect;
 
 }
 

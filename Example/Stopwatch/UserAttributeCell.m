@@ -1,9 +1,3 @@
-//
-//  UserAttributeCell.m
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import "UserAttributeCell.h"
 
 @implementation UserAttributeCell

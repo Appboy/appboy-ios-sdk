@@ -1,9 +1,3 @@
-//
-//  TestingViewController.m
-//
-//  Copyright (c) 2013 Appboy. All rights reserved.
-//
-
 #import "TestingViewController.h"
 #import "SlideupControlsViewController.h"
 #import "AppboyKit.h"
@@ -13,6 +7,27 @@
 - (void) viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+  
+  NSString *flushMode = nil;
+  ABKRequestProcessingPolicy requestPolicy = [Appboy sharedInstance].requestProcessingPolicy;
+  switch (requestPolicy) {
+    case ABKAutomaticRequestProcessing:
+      flushMode = @"ABKAutomaticRequestProcessing";
+      break;
+      
+    case ABKAutomaticRequestProcessingExceptForDataFlush:
+      flushMode = @"ABKAutomaticRequestProcessingExceptForDataFlush";
+      break;
+      
+    case ABKManualRequestProcessing:
+      flushMode = @"ABKManualRequestProcessing";
+      break;
+      
+    default:
+      break;
+  }
+  self.flushModeButton.titleLabel.text = flushMode;
+  [self.flushModeButton setNeedsDisplay];
 
   self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Cards: %d", [Appboy sharedInstance].unreadCardCount];
   self.totalCardsLabel.text = [NSString stringWithFormat:@"Total Cards: %d", [Appboy sharedInstance].cardCount];
@@ -57,12 +72,47 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self];
   [_enableAppboySwitch release];
   [_ratedScoreLabel release];
+  [_flushModeButton release];
   [super dealloc];
 }
 
 - (void) viewDidUnload {
   [self setEnableAppboySwitch:nil];
   [self setRatedScoreLabel:nil];
+  [self setFlushModeButton:nil];
   [super viewDidUnload];
+}
+- (IBAction) FlushAppboyData:(id)sender {
+  NSLog(@"FlushAppboyData:");
+  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+}
+
+- (IBAction) changeAppboyFlushMode:(id)sender {
+  NSLog(@"changeAppboyFlushMode:");
+  switch ([Appboy sharedInstance].requestProcessingPolicy) {
+    case ABKAutomaticRequestProcessing:
+      [Appboy sharedInstance].requestProcessingPolicy = ABKAutomaticRequestProcessingExceptForDataFlush;
+      self.flushModeButton.titleLabel.text = @"ABKAutomaticRequestProcessingExceptForDataFlush";
+      break;
+      
+    case ABKAutomaticRequestProcessingExceptForDataFlush:
+      [Appboy sharedInstance].requestProcessingPolicy = ABKManualRequestProcessing;
+      self.flushModeButton.titleLabel.text = @"ABKManualRequestProcessing";
+      break;
+      
+    case ABKManualRequestProcessing:
+      [Appboy sharedInstance].requestProcessingPolicy = ABKAutomaticRequestProcessing;
+      self.flushModeButton.titleLabel.text = @"ABKAutomaticRequestProcessing";
+      break;
+      
+    default:
+      break;
+  }
+  [self.flushModeButton setNeedsDisplay];
+}
+
+- (IBAction) flushAndShutDownAppboy:(id)sender {
+  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+  [[Appboy sharedInstance] shutdownServerCommunication];
 }
 @end

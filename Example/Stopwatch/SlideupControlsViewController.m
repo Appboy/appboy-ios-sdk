@@ -1,9 +1,3 @@
-//
-//  SlideupControlsViewController.m
-//
-//  Copyright (c) 2013 appboy. All rights reserved.
-//
-
 #import "SlideupControlsViewController.h"
 #import "Crittercism.h"
 
