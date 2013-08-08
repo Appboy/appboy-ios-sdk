@@ -6,5 +6,6 @@ var searchData=
   ['feedbackviewcontrollerpopovercontextcanceltapped_3a',['feedbackViewControllerPopoverContextCancelTapped:',['../protocol_a_b_k_feedback_view_controller_popover_context_delegate-p.html#a018552880f03ede83c90ca675154c018',1,'ABKFeedbackViewControllerPopoverContextDelegate-p']]],
   ['feedbackviewcontrollerpopovercontextfeedbacksent_3a',['feedbackViewControllerPopoverContextFeedbackSent:',['../protocol_a_b_k_feedback_view_controller_popover_context_delegate-p.html#a4a8196551936d22bff8de37e20f97132',1,'ABKFeedbackViewControllerPopoverContextDelegate-p']]],
   ['feedviewcontrollermodalcontextclosetapped_3a',['feedViewControllerModalContextCloseTapped:',['../protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html#abec98cc1d45c10f59dc06d1d22539559',1,'ABKFeedViewControllerModalContextDelegate-p']]],
-  ['feedviewcontrollerpopovercontextclosetapped_3a',['feedViewControllerPopoverContextCloseTapped:',['../protocol_a_b_k_feed_view_controller_popover_context_delegate-p.html#a32bdff25b175ecc87cf721f488580fe6',1,'ABKFeedViewControllerPopoverContextDelegate-p']]]
+  ['feedviewcontrollerpopovercontextclosetapped_3a',['feedViewControllerPopoverContextCloseTapped:',['../protocol_a_b_k_feed_view_controller_popover_context_delegate-p.html#a32bdff25b175ecc87cf721f488580fe6',1,'ABKFeedViewControllerPopoverContextDelegate-p']]],
+  ['flushdataandprocessrequestqueue',['flushDataAndProcessRequestQueue',['../interface_appboy.html#a746fa87363a1530ba655498b4c36a0dd',1,'Appboy']]]
 ];

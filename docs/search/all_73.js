@@ -9,7 +9,9 @@ var searchData=
   ['setissubscribedtoemails_3a',['setIsSubscribedToEmails:',['../interface_a_b_k_user.html#aa8979a0bf939fa9a27dc382c4de79998',1,'ABKUser']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#a998b424210ebceb1957f5547e45dfb12',1,'Appboy']]],
   ['shoulddisplayslideup_3a',['shouldDisplaySlideup:',['../protocol_a_b_k_slideup_controller_delegate-p.html#ad9dd00c145a9f9f3b634695ea5b53a12',1,'ABKSlideupControllerDelegate-p']]],
+  ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
   ['slideupdelegate',['slideupDelegate',['../interface_appboy.html#aa54dda136bc89dd3100126f814056dec',1,'Appboy']]],
   ['slideupwastapped',['slideupWasTapped',['../protocol_a_b_k_slideup_controller_delegate-p.html#ab6237f8420ccc9919ead2085181f468b',1,'ABKSlideupControllerDelegate-p']]],
-  ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#a9a027766f3b350a09f44e0db4d6e22df',1,'Appboy']]]
+  ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#a9a027766f3b350a09f44e0db4d6e22df',1,'Appboy']]],
+  ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#addd2d10f15efe49a8ee1dfa72a43043d',1,'Appboy']]]
 ];

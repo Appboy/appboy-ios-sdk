@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#import &quot;ABKUser.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef APPBOY_SDK_VERSION</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.0.2&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.0.3&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html">ABKSlideupControllerDelegate</a>;</div>
@@ -100,83 +100,117 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="interface_appboy.html">   23</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_appboy.html">Appboy</a> : NSObject</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Notifications</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Initialization</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="interface_appboy.html#a8f32e3042c02caae26f5b732b6683490">   52</a></span>&#160;extern NSString *const <a class="code" href="interface_appboy.html#a8f32e3042c02caae26f5b732b6683490">ABKFeedUpdatedNotification</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * Properties</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">   62</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) <a class="code" href="interface_a_b_k_user.html">ABKUser</a> *<a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">user</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">   82</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) BOOL <a class="code" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">useNUITheming</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="interface_appboy.html#aa54dda136bc89dd3100126f814056dec">   88</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) id &lt;ABKSlideupControllerDelegate&gt; <a class="code" href="interface_appboy.html#aa54dda136bc89dd3100126f814056dec">slideupDelegate</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="interface_appboy.html#ae2b5fbe6d83991133f1e8c9a17598a3d">   94</a></span>&#160;<span class="keyword">@property</span> (readonly, nonatomic, assign) <span class="keywordtype">int</span> <a class="code" href="interface_appboy.html#ae2b5fbe6d83991133f1e8c9a17598a3d">cardCount</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="interface_appboy.html#a9f44e13e8a1bd5884fd81d176d1ec853">  107</a></span>&#160;<span class="keyword">@property</span> (readonly, nonatomic, assign) <span class="keywordtype">int</span> <a class="code" href="interface_appboy.html#a9f44e13e8a1bd5884fd81d176d1ec853">unreadCardCount</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> * Methods</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;+ (<a class="code" href="interface_appboy.html">Appboy</a> *) <a class="code" href="interface_appboy.html#a998b424210ebceb1957f5547e45dfb12">sharedInstance</a>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;+ (void) startWithApiKey:(NSString *)apiKey</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;           inApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;       withLaunchOptions:(NSDictionary *)launchOptions;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;- (BOOL) pushNotificationWasSentFromAppboy:(NSDictionary *)options;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;- (void) registerPushToken:(NSString *)token;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;- (void) changeUser:(NSString *)userId;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;+ (<a class="code" href="interface_appboy.html">Appboy</a> *) <a class="code" href="interface_appboy.html#a998b424210ebceb1957f5547e45dfb12">sharedInstance</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;+ (void) startWithApiKey:(NSString *)apiKey</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;           inApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;       withLaunchOptions:(NSDictionary *)launchOptions;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;+ (void) startWithApiKey:(NSString *)apiKey</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;           inApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;       withLaunchOptions:(NSDictionary *)launchOptions</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;       withAppboyOptions:(NSDictionary *)appboyOptions;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> * Keys for Appboy startup options</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="interface_appboy.html#ae5f99fc09d44d7db0cfe65680547edda">   73</a></span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> <a class="code" href="interface_appboy.html#ae5f99fc09d44d7db0cfe65680547edda">ABKRequestProcessingPolicyOptionKey</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="interface_appboy.html#a9819dbd73ada69b599411209f5c6d92a">   80</a></span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> <a class="code" href="interface_appboy.html#a9819dbd73ada69b599411209f5c6d92a">ABKFlushIntervalOptionKey</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * Enums</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="interface_appboy.html#a3824c355e9558f33a391f1f8f5e499ce">  112</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  ABKAutomaticRequestProcessing,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  ABKAutomaticRequestProcessingExceptForDataFlush,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  ABKManualRequestProcessing</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;} <a class="code" href="interface_appboy.html#a3824c355e9558f33a391f1f8f5e499ce">ABKRequestProcessingPolicy</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">  121</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  ABKSocialNetworkFacebook = 1 &lt;&lt; 0,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  ABKSocialNetworkTwitter = 1 &lt;&lt; 1</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;} <a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="code" href="interface_appboy.html#aa430da7074e4d51d8d2f9faa4fee2dbc">  152</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  ABKSlideupShouldShowImmediately,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  ABKSlideupShouldIgnore,</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  ABKSlideupShouldQueue</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;} <a class="code" href="interface_appboy.html#aa430da7074e4d51d8d2f9faa4fee2dbc">ABKSlideupShouldDisplaySlideupReturnType</a>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"> * Properties</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">  167</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) <a class="code" href="interface_a_b_k_user.html">ABKUser</a> *<a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">user</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="code" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">  187</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) BOOL <a class="code" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">useNUITheming</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="code" href="interface_appboy.html#aa54dda136bc89dd3100126f814056dec">  193</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) id &lt;ABKSlideupControllerDelegate&gt; <a class="code" href="interface_appboy.html#aa54dda136bc89dd3100126f814056dec">slideupDelegate</a>;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;- (void) logCustomEvent:(NSString *)eventName;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;- (void) logPurchase:(NSString *)productId priceInCents:(NSUInteger)price;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
-<div class="line"><a name="l00222"></a><span class="lineno"><a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">  222</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  ABKSocialNetworkFacebook = 1 &lt;&lt; 0,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  ABKSocialNetworkTwitter = 1 &lt;&lt; 1</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;} <a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;- (void) logSocialShare:(<a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)socialNetwork;</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="code" href="interface_appboy.html#ae2b5fbe6d83991133f1e8c9a17598a3d">  199</a></span>&#160;<span class="keyword">@property</span> (readonly, nonatomic, assign) <span class="keywordtype">int</span> <a class="code" href="interface_appboy.html#ae2b5fbe6d83991133f1e8c9a17598a3d">cardCount</a>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="code" href="interface_appboy.html#a9f44e13e8a1bd5884fd81d176d1ec853">  212</a></span>&#160;<span class="keyword">@property</span> (readonly, nonatomic, assign) <span class="keywordtype">int</span> <a class="code" href="interface_appboy.html#a9f44e13e8a1bd5884fd81d176d1ec853">unreadCardCount</a>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="code" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">  226</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) <a class="code" href="interface_appboy.html#a3824c355e9558f33a391f1f8f5e499ce">ABKRequestProcessingPolicy</a> <a class="code" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">requestProcessingPolicy</a>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"> * Methods</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;- (void) promptUserForAccessToSocialNetwork:(<a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)socialNetwork;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;- (void) <a class="code" href="interface_appboy.html#a6a472aaf15e2512d6a74dae63e2b2222">displayNextAvailableSlideup</a>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;- (void) <a class="code" href="interface_appboy.html#a746fa87363a1530ba655498b4c36a0dd">flushDataAndProcessRequestQueue</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;- (void) <a class="code" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;- (BOOL) pushNotificationWasSentFromAppboy:(NSDictionary *)options;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"> * Protocols</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  ABKSlideupShouldShowImmediately,</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  ABKSlideupShouldIgnore,</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  ABKSlideupShouldQueue</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;} ABKSlideupShouldDisplaySlideupReturnType;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
-<div class="line"><a name="l00317"></a><span class="lineno"><a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html">  317</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html">ABKSlideupControllerDelegate</a> &lt;NSObject&gt;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;- (void) registerPushToken:(NSString *)token;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;- (void) changeUser:(NSString *)userId;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;- (void) <a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html#ab6237f8420ccc9919ead2085181f468b">slideupWasTapped</a>;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;- (void) logCustomEvent:(NSString *)eventName;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;- (void) logPurchase:(NSString *)productId priceInCents:(NSUInteger)price;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;- (void) logSocialShare:(<a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)socialNetwork;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;- (void) promptUserForAccessToSocialNetwork:(<a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)socialNetwork;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;- (void) <a class="code" href="interface_appboy.html#a6a472aaf15e2512d6a74dae63e2b2222">displayNextAvailableSlideup</a>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment"> * Notifications</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;</div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="code" href="interface_appboy.html#a8f32e3042c02caae26f5b732b6683490">  412</a></span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> <a class="code" href="interface_appboy.html#a8f32e3042c02caae26f5b732b6683490">ABKFeedUpdatedNotification</a>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="comment"> * Protocols</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;</div>
+<div class="line"><a name="l00430"></a><span class="lineno"><a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html">  430</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html">ABKSlideupControllerDelegate</a> &lt;NSObject&gt;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;- (void) <a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html#ab6237f8420ccc9919ead2085181f468b">slideupWasTapped</a>;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 17 2013 19:14:29 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 7 2013 21:47:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
