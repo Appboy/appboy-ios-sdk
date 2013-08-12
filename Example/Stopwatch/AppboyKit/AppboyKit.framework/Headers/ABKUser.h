@@ -33,8 +33,6 @@
 
 @interface ABKUser : NSObject
 
-// TODO(billmag) - This object should probably track its own user id..
-
 /*!
  * The User's first name (String)
  */

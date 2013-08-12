@@ -1,3 +1,7 @@
+## 2.0.3
+* Adds the ability to assign a Foursquare access token for each user. Doing so will cause the Appboy backend to make Foursquare data available in user profiles on the dasbhard.
+* Adds more fine grained control options for Appboy's network activity. See Appboy.h for more information.
+
 ## 2.0.2
 * Fixes a bug where Appboy might reopen a Facebook read session when a publish session already exists
 

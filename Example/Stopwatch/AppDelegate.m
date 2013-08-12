@@ -3,22 +3,17 @@
 #import "NUIAppearance.h"
 
 static NSString *const AppboyApiKey = @"appboy-ios-sample";
+static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
 @implementation AppDelegate
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-  [Crittercism enableWithAppID: @"51b67d141386207417000002"];
-  
-  // here looks like a Crittercism bug. In the new version they get rid of the sharedInstance method
-  // and give the following code(commented) as sample in documentation, but didCrashOnLastLoad is
-  // an instance method, not a class method, and it crash the app.
-//  if ([Crittercism didCrashOnLastLoad]) {
-//    NSLog(@"App crashed the last time it was loaded");
-//  }
-  
-  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"start Appboy with API key: %@", AppboyApiKey]];
-  // This starts up Appboy
+  // Sets up Crittercism for crash and error tracking.
+  [Crittercism enableWithAppID: CrittercismAppId];
+  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
+
+  // Starts up Appboy, opening a new session and causing an updated slideup/feed to be requested.
   [Appboy startWithApiKey:AppboyApiKey
             inApplication:application
         withLaunchOptions:launchOptions
@@ -27,7 +22,7 @@ static NSString *const AppboyApiKey = @"appboy-ios-sample";
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
   }
-  
+
   // This lets us use NUI, the theming/customization package. There is also some initialization code in main.m
   // Look at NUI/NUIStyle.nss to see what's being customized.
   [NUIAppearance init];
@@ -42,7 +37,7 @@ static NSString *const AppboyApiKey = @"appboy-ios-sample";
           UIRemoteNotificationTypeBadge |
           UIRemoteNotificationTypeSound)];
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-  
+
   return YES;
 }
 
