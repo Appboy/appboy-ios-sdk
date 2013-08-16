@@ -126,8 +126,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ac8b369b40e15860b0ec18c0f4b46ac69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">logCustomEvent:</a></td></tr>
 <tr class="separator:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2c6b67b2fce5207efaaad6a721e4d82"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad2c6b67b2fce5207efaaad6a721e4d82">logPurchase:priceInCents:</a></td></tr>
-<tr class="separator:ad2c6b67b2fce5207efaaad6a721e4d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a688b21f1a74bb2d943c93b875f4b4986"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a688b21f1a74bb2d943c93b875f4b4986">logPurchase:priceInCents:</a></td></tr>
+<tr class="separator:a688b21f1a74bb2d943c93b875f4b4986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d8c390bff05f87c7f8f86f2fc0deb6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a63d8c390bff05f87c7f8f86f2fc0deb6">logPurchase:inCurrency:atPrice:</a></td></tr>
+<tr class="separator:a63d8c390bff05f87c7f8f86f2fc0deb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ae16a3ae4f33d7ae23da740d67e4cd277">logSocialShare:</a></td></tr>
 <tr class="separator:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c503d30600c60d2fdc0152bc8e92fb8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a6c503d30600c60d2fdc0152bc8e92fb8">promptUserForAccessToSocialNetwork:</a></td></tr>
@@ -331,7 +333,48 @@ Properties</h2></td></tr>
 </pre> 
 </div>
 </div>
-<a class="anchor" id="ad2c6b67b2fce5207efaaad6a721e4d82"></a>
+<a class="anchor" id="a63d8c390bff05f87c7f8f86f2fc0deb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) logPurchase: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>productIdentifier</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inCurrency:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>currencyCode</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">atPrice:</td>
+          <td></td>
+          <td class="paramtype">(NSDecimalNumber *)&#160;</td>
+          <td class="paramname"><em>price</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">@param</td><td>currencyCode Currencies should be represented as an ISO 4217 currency code. Prices should be sent in decimal format, with the same base units as are provided by the SKProduct class. Callers of this method who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings provided by StoreKit) can obtain the currency code by invoking: <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre> Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS, SAR, ZAR, AED. Any other provided currency symbol will result in a logged warning and no other action taken by the SDK. </td></tr>
+    <tr><td class="paramname">price</td><td>Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied such that a maximum of two digits exist after their decimal point.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Logs a purchase made in the application.</p>
+<p>Note: As of this writing, the <a class="el" href="interface_appboy.html">Appboy</a> Dashboard's analytics and segmentation features do not fully leverage purchase data in multiple currencies and only purchases reported in USD will be available on the user profile and in revenue graphs. However, support is coming soon and will be automatically enabled in your dashboard provided that you are reporting proper currencies and prices from your app. It is not recommended that you report converted amounts or overload the USD currency type as it will cause data problems for you later. </p>
+
+</div>
+</div>
+<a class="anchor" id="a688b21f1a74bb2d943c93b875f4b4986"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -345,7 +388,7 @@ Properties</h2></td></tr>
           <td class="paramkey">priceInCents:</td>
           <td></td>
           <td class="paramtype">(NSUInteger)&#160;</td>
-          <td class="paramname"><em>price</em>&#160;</td>
+          <td class="paramname"><em>__deprecated</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -356,12 +399,15 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">productId</td><td>A String indicating the product that was purchased. </td></tr>
+    <tr><td class="paramname">productIdentifier</td><td>A String indicating the product that was purchased. </td></tr>
     <tr><td class="paramname">price</td><td>The price of the purchased item in cents.  Adds an in-app purchase to event tracking log that's lazily pushed up to the server.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Note: This method is now deprecated and will be removed in the future. Please use logPurchase:inCurrency:atPrice instead. For USD amounts, the call should look like: </p>
 <pre>
+[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logPurchase:"powerups" inCurrency:@"USD" atPrice:[[[NSDecimalNumber alloc] initWithFloat:.99f] autorelease]];
+</pre><pre>
 [[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logPurchase:"powerups" priceInCents:99];
 </pre> 
 </div>
@@ -817,7 +863,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 7 2013 21:47:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 16 2013 19:35:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
