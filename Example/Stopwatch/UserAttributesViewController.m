@@ -243,4 +243,10 @@ static NSInteger const IndexOfBirthday = 9;
   [super dealloc];
 }
 
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+  }
+  return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+}
 @end

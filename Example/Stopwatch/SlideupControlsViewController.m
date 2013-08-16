@@ -97,10 +97,6 @@
   _slideupMode = sender.selectedSegmentIndex;
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
-}
-
 - (void) dealloc {
   [_modeButton release];
 
@@ -123,5 +119,12 @@
   [self setDelegateButton:nil];
     [self setDisplayNextAvailableSlideupButton:nil];
   [super viewDidUnload];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+  }
+  return toInterfaceOrientation == UIInterfaceOrientationPortrait;
 }
 @end

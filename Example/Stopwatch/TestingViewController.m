@@ -64,10 +64,6 @@
   self.ratedScoreLabel.text = [NSString stringWithFormat:@"%d", (int)sender.value];
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
-}
-
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
   [_enableAppboySwitch release];
@@ -114,5 +110,12 @@
 - (IBAction) flushAndShutDownAppboy:(id)sender {
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
   [[Appboy sharedInstance] shutdownServerCommunication];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+  }
+  return toInterfaceOrientation == UIInterfaceOrientationPortrait;
 }
 @end

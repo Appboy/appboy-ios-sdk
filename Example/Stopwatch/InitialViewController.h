@@ -8,7 +8,8 @@
     ABKFeedViewControllerPopoverContextDelegate,
     ABKFeedbackViewControllerModalContextDelegate,
     UISplitViewControllerDelegate, CrittercismDelegate,
-    ABKFeedbackViewControllerNavigationContextDelegate>
+    ABKFeedbackViewControllerNavigationContextDelegate,
+    UINavigationControllerDelegate>
 
 - (IBAction) resetButtonTapped:(id)sender;
 - (IBAction) startButtonTapped:(id)sender;

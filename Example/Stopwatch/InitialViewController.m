@@ -40,7 +40,6 @@
 // newsAndFeedback Section
 //
 // Examples of how to put Appboy in one action: a button that open feed page, on which there is a feedback button
-
 // funtion of the feedback button in the newsAndFeedback bar button item
 - (void) openFeedbackFromModalFeed:(id)sender {
   ABKFeedbackViewControllerNavigationContext *navFeedback = [[[ABKFeedbackViewControllerNavigationContext alloc] init] autorelease];
@@ -84,7 +83,6 @@
 // iPad Section
 //
 // Examples of how to use the feed and feedback view controllers in a popover context.
-
 // Present a feedbackViewController in a popover
 - (IBAction) contactUsButtonTappediPad:(id)sender {
 
@@ -145,7 +143,7 @@
 // Handle the storyboard buttons by forwarding to the programmatic methods above.
 - (IBAction) puchaseButtonTapped:(id)sender {
   [Crittercism leaveBreadcrumb:@"Appboy: logPurchase"];
-  [[Appboy sharedInstance] logPurchase:@"stopwatch_pro" priceInCents:99];
+  [[Appboy sharedInstance] logPurchase:@"stopwatch_pro" inCurrency:@"USD" atPrice:[[[NSDecimalNumber alloc] initWithString:@"0.99"] autorelease]];
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thanks for buying Stopwatch Pro!"
                                                       message:nil delegate:nil cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];
@@ -231,6 +229,8 @@
 
 #pragma mark
 #pragma split view controller delegate methods
+// Use the split view controller delegate methods to hide/display the news button on navigation bar
+// when the app is in landscape/portrait orientation. 
 - (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
   [self.navigationItem setLeftBarButtonItems:@[self.latestNewsButton, self.newsAndFeedbackButton] animated:YES];
 }
@@ -245,7 +245,6 @@
 }
 
 // The stopwatch
-
 - (IBAction) resetButtonTapped:(id)sender {
   [self.clock reset];
 }
@@ -271,18 +270,10 @@
   self.timeLabel.text = [self.clock timeString];
 }
 
-
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-    UIBarButtonItem *leftNavigationButtonItem = UIInterfaceOrientationIsLandscape(toInterfaceOrientation) ? nil : self.latestNewsButton;
-    self.navigationItem.leftBarButtonItem = leftNavigationButtonItem;
-    return YES;
-  }
-  return (toInterfaceOrientation == UIInterfaceOrientationMaskPortrait);;
-}
-
 #pragma mark
 #pragma navigation controller delegate method
+// use navigation controller delegate method to control the frame size of popover when feedback view
+// controller is displayed
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(
     UIViewController *)viewController animated:(BOOL)animated {
   if ([viewController isKindOfClass:[ABKFeedbackViewControllerNavigationContext class]]) {
@@ -318,12 +309,12 @@
   [super dealloc];
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
-  return UIInterfaceOrientationMaskPortrait;
-}
-
-- (BOOL)shouldAutorotate {
-  return NO;
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+  } else {
+    return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+  }
 }
 
 @end

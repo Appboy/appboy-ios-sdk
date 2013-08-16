@@ -10,7 +10,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
   // Sets up Crittercism for crash and error tracking.
-  [Crittercism enableWithAppID: CrittercismAppId];
+  [Crittercism enableWithAppID:CrittercismAppId];
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
 
   // Starts up Appboy, opening a new session and causing an updated slideup/feed to be requested.

@@ -15,7 +15,7 @@
 #import "ABKUser.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.0.3"
+#define APPBOY_SDK_VERSION @"2.0.4"
 #endif
 
 @protocol ABKSlideupControllerDelegate;
@@ -331,15 +331,48 @@ typedef enum {
 - (void) logCustomEvent:(NSString *)eventName;
 
 /*!
- * @param productId A String indicating the product that was purchased.
+
+ *
+ * @param productIdentifier A String indicating the product that was purchased.
  * @param price The price of the purchased item in cents.
  * @discussion Adds an in-app purchase to event tracking log that's lazily pushed up to the server.
+ *
+ * Note: This method is now deprecated and will be removed in the future. Please use logPurchase:inCurrency:atPrice
+ * instead. For USD amounts, the call should look like:
+ * <pre>
+ * [[Appboy sharedInstance] logPurchase:@"powerups" inCurrency:@"USD" atPrice:[[[NSDecimalNumber alloc] initWithFloat:.99f] autorelease]];
+ * </pre>
  *
  * <pre>
  * [[Appboy sharedInstance] logPurchase:@"powerups" priceInCents:99];
  * </pre>
  */
-- (void) logPurchase:(NSString *)productId priceInCents:(NSUInteger)price;
+- (void) logPurchase:(NSString *)productId priceInCents:(NSUInteger)price __deprecated;
+
+/*!
+ * @param
+ * @param currencyCode Currencies should be represented as an ISO 4217 currency code. Prices should
+ * be sent in decimal format, with the same base units as are provided by the SKProduct class. Callers of this method
+ * who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings
+ * provided by StoreKit) can obtain the currency code by invoking:
+ * <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre>
+ * Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS,
+ * SAR, ZAR, AED. Any other provided currency symbol will result in a logged warning and no other action taken by the
+ * SDK.
+ * @param price Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct
+ * from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should
+ * be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied
+ * such that a maximum of two digits exist after their decimal point.
+ *
+ * @discussion Logs a purchase made in the application.
+ *
+ * Note: As of this writing, the Appboy Dashboard's analytics and segmentation features do not fully leverage purchase
+ * data in multiple currencies and only purchases reported in USD will be available on the user profile and in revenue
+ * graphs. However, support is coming soon and will be automatically enabled in your dashboard provided that you are
+ * reporting proper currencies and prices from your app. It is not recommended that you report converted amounts or
+ * overload the USD currency type as it will cause data problems for you later.
+ */
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
 
 /*!
 * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
