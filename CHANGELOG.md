@@ -1,3 +1,8 @@
+## 2.0.4
+* Adds support for reporting purchases in multiple currencies. Also, changes the price reporting object type to NSDecimalNumber for consistency with StoreKit.
+* Adds additional space savings optimizations to image assets.
+* Minor fix to orientation change handling in the example app code.
+
 ## 2.0.3
 * Adds the ability to assign a Foursquare access token for each user. Doing so will cause the Appboy backend to make Foursquare data available in user profiles on the dasbhard.
 * Adds more fine grained control options for Appboy's network activity. See Appboy.h for more information.
