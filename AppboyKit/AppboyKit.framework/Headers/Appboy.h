@@ -350,15 +350,16 @@ typedef enum {
 - (void) logPurchase:(NSString *)productId priceInCents:(NSUInteger)price __deprecated;
 
 /*!
- * @param
+ * @param productIdentifier A String indicating the product that was purchased. Usually the product identifier in the
+ * iTunes store.
  * @param currencyCode Currencies should be represented as an ISO 4217 currency code. Prices should
  * be sent in decimal format, with the same base units as are provided by the SKProduct class. Callers of this method
  * who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings
  * provided by StoreKit) can obtain the currency code by invoking:
  * <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre>
  * Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS,
- * SAR, ZAR, AED. Any other provided currency symbol will result in a logged warning and no other action taken by the
- * SDK.
+ * SAR, ZAR, AED, SEK, HKD, SPD, DKK, and TWD. Any other provided currency symbol will result in a logged warning and
+ * no other action taken by the SDK.
  * @param price Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct
  * from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should
  * be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied
