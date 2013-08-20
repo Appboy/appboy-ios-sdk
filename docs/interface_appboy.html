@@ -364,7 +364,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">@param</td><td>currencyCode Currencies should be represented as an ISO 4217 currency code. Prices should be sent in decimal format, with the same base units as are provided by the SKProduct class. Callers of this method who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings provided by StoreKit) can obtain the currency code by invoking: <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre> Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS, SAR, ZAR, AED. Any other provided currency symbol will result in a logged warning and no other action taken by the SDK. </td></tr>
+    <tr><td class="paramname">productIdentifier</td><td>A String indicating the product that was purchased. Usually the product identifier in the iTunes store. </td></tr>
+    <tr><td class="paramname">currencyCode</td><td>Currencies should be represented as an ISO 4217 currency code. Prices should be sent in decimal format, with the same base units as are provided by the SKProduct class. Callers of this method who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings provided by StoreKit) can obtain the currency code by invoking: <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre> Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS, SAR, ZAR, AED, SEK, HKD, SPD, DKK, and TWD. Any other provided currency symbol will result in a logged warning and no other action taken by the SDK. </td></tr>
     <tr><td class="paramname">price</td><td>Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied such that a maximum of two digits exist after their decimal point.</td></tr>
   </table>
   </dd>
@@ -863,7 +864,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 16 2013 19:35:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 19 2013 22:06:34 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
