@@ -10,6 +10,6 @@ In under 15 minutes, you'll have Appboy in your app!
 
 1. Go to https://dashboard.appboy.com and create an account
 2. Add a new App Group by clicking the + sign in the left column
-3. [Read our iOS Getting Started documentation](https://appboy.zendesk.com/forums/22065493-iOS-Documentation) to integrate Appboy into your app
+3. [Read our iOS Getting Started documentation](https://appboy.zendesk.com/forums/22065493-iOS-Documentation) to integrate Appboy into your app. Ensure you're using Xcode 5.
 
 If you have questions, please contact [support@appboy.com](mailto:support@appboy.com).
