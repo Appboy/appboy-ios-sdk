@@ -56,6 +56,8 @@
 		4E94D7651743EDE100604EA0 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7371743EDE100604EA0 /* UIWindow+NUI.m */; };
 		4E94D76E1743EE7100604EA0 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D76D1743EE7100604EA0 /* Clock.m */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
+		4E9B3F0A17C3D0550070B447 /* NUITableViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9B3F0817C3D0550070B447 /* NUITableViewRenderer.m */; };
+		4E9B3F0D17C3D0760070B447 /* UITableView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9B3F0C17C3D0760070B447 /* UITableView+NUI.m */; };
 		4EA3EE241745B9A2000E403C /* UserAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserAttributeCell.m */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
 		955DE89017419DB000C07A57 /* TestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE88F17419DB000C07A57 /* TestingViewController.m */; };
@@ -191,6 +193,10 @@
 		4E94D76D1743EE7100604EA0 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clock.m; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E94D7701743EE8900604EA0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4E9B3F0817C3D0550070B447 /* NUITableViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewRenderer.m; sourceTree = "<group>"; };
+		4E9B3F0917C3D0550070B447 /* NUITableViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITableViewRenderer.h; sourceTree = "<group>"; };
+		4E9B3F0B17C3D0760070B447 /* UITableView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+NUI.h"; sourceTree = "<group>"; };
+		4E9B3F0C17C3D0760070B447 /* UITableView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+NUI.m"; sourceTree = "<group>"; };
 		4EA3EE221745B9A2000E403C /* UserAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributeCell.h; sourceTree = "<group>"; };
 		4EA3EE231745B9A2000E403C /* UserAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributeCell.m; sourceTree = "<group>"; };
 		953574A81743F862003A64B3 /* UserAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesViewController.m; sourceTree = "<group>"; };
@@ -318,6 +324,8 @@
 		4E94D6ED1743EDE100604EA0 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
+				4E9B3F0817C3D0550070B447 /* NUITableViewRenderer.m */,
+				4E9B3F0917C3D0550070B447 /* NUITableViewRenderer.h */,
 				4E94D6EE1743EDE100604EA0 /* NUIBarButtonItemRenderer.h */,
 				4E94D6EF1743EDE100604EA0 /* NUIBarButtonItemRenderer.m */,
 				4E94D6F01743EDE100604EA0 /* NUIButtonRenderer.h */,
@@ -361,6 +369,8 @@
 		4E94D7131743EDE100604EA0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4E9B3F0B17C3D0760070B447 /* UITableView+NUI.h */,
+				4E9B3F0C17C3D0760070B447 /* UITableView+NUI.m */,
 				4E94D7141743EDE100604EA0 /* UIBarButtonItem+NUI.h */,
 				4E94D7151743EDE100604EA0 /* UIBarButtonItem+NUI.m */,
 				4E94D7161743EDE100604EA0 /* UIButton+NUI.h */,
@@ -540,7 +550,7 @@
 				95EF5106173D5FD600C0D780 /* Sources */,
 				95EF5107173D5FD600C0D780 /* Frameworks */,
 				95EF5108173D5FD600C0D780 /* Resources */,
-				C5CC74A51766BC6B005DAD08 /* ShellScript */,
+				C5CC74A51766BC6B005DAD08 /* Upload DYSM to Crittercism */,
 			);
 			buildRules = (
 			);
@@ -559,6 +569,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Appboy;
+				TargetAttributes = {
+					95EF5109173D5FD600C0D780 = {
+						DevelopmentTeam = 5GLZKGNWQ3;
+					};
+				};
 			};
 			buildConfigurationList = 95EF5105173D5FD600C0D780 /* Build configuration list for PBXProject "Stopwatch" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -604,18 +619,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C5CC74A51766BC6B005DAD08 /* ShellScript */ = {
+		C5CC74A51766BC6B005DAD08 /* Upload DYSM to Crittercism */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Upload DYSM to Crittercism";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "CRITTERCISM_APP_ID=\"51b67d141386207417000002\"\nAPI_KEY=\"n9vujab6u83in5zd2wggxhxqeiatsj4f\"\nSIMULATOR=1\n\n# Default location for dSYMs\nDSYM_SRC=${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\n\n# Grab dSYM from the simulator location\nif [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\nif [ $SIMULATOR -eq 0 ]; then\necho \"Skipping simulator builds\"\nexit 0;\nfi\nfi\n\n# Give an option if they want to capture debug builds or not.\nif [ \"$BUILD_STYLE\" == \"Debug\" ]; then\nSKIP_DEBUG=`osascript -e \"tell application \\\"Xcode\\\"\" -e \"set noButton to \\\"Let em starve.\\\"\" -e \"set yesButton to \\\"Feed the Critter!\\\"\" -e \"set upload_dialog to display dialog \\\"Skip Debug build?\\\" buttons {noButton, yesButton} default button yesButton with icon 1\" -e \"set button to button returned of upload_dialog\" -e \"if button is equal to yesButton then\" -e \"return 1\" -e \"else\" -e \"return 0\" -e \"end if\" -e \"end tell\"`\nif [ $SKIP_DEBUG -eq 1 ]; then\nechoLog \"Skipping debug\"\nexit 0;\nfi\nfi\n\nDSYM_ZIP_FPATH=\"/tmp/$DWARF_DSYM_FILE_NAME.zip\"\n\n# create dSYM .zip file\necho \"Compressing .dSYM to ${DSYM_ZIP_FPATH} ...\"\necho \"${DSYM_SRC},  ${DSYM_ZIP_FPATH},  \"\ntest -e \"${DSYM_SRC}\" && (echo \"Creating zip of dSYM file\" && /usr/bin/zip -r \"${DSYM_ZIP_FPATH}\" \"${DSYM_SRC}\" -dc)\n\necho \"now setting the dsym upload url\"\nCRITTERCISM_DSYM_UPLOAD_URL=\"https://api.crittercism.com/api_beta/dsym/${CRITTERCISM_APP_ID}\"\n\n# Upload dSYM to Crittercism\necho \"Uploading dSYM to Crittercism...\"\n\ncurl \"${CRITTERCISM_DSYM_UPLOAD_URL}\" \\\n-F dsym=@\"${DSYM_ZIP_FPATH}\" \\\n-F key=\"${API_KEY}\"\n";
+			shellScript = "CRITTERCISM_APP_ID=\"51b67d141386207417000002\"\nAPI_KEY=\"n9vujab6u83in5zd2wggxhxqeiatsj4f\"\nSKIP_SIMULATOR=1\nSKIP_DEBUG=1\n\n# Default location for dSYMs\nDSYM_SRC=${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\n\n# Grab dSYM from the simulator location\nif [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\nif [ $SKIP_SIMULATOR -eq 0 ]; then\necho \"Skipping Crittercism upload for simulator build.\"\nexit 0;\nfi\nfi\n\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nif [ $SKIP_DEBUG -eq 1 ]; then\necho \"Skipping Crittercism upload for Debug configuration.\"\nexit 0;\nfi\nfi\n\nDSYM_ZIP_FPATH=\"/tmp/$DWARF_DSYM_FILE_NAME.zip\"\n\n# create dSYM .zip file\necho \"Compressing .dSYM to ${DSYM_ZIP_FPATH} ...\"\necho \"${DSYM_SRC},  ${DSYM_ZIP_FPATH},  \"\ntest -e \"${DSYM_SRC}\" && (echo \"Creating zip of dSYM file\" && /usr/bin/zip -r \"${DSYM_ZIP_FPATH}\" \"${DSYM_SRC}\" -dc)\n\necho \"now setting the dsym upload url\"\nCRITTERCISM_DSYM_UPLOAD_URL=\"https://api.crittercism.com/api_beta/dsym/${CRITTERCISM_APP_ID}\"\n\n# Upload dSYM to Crittercism\necho \"Uploading dSYM to Crittercism...\"\n\ncurl \"${CRITTERCISM_DSYM_UPLOAD_URL}\" \\\n-F dsym=@\"${DSYM_ZIP_FPATH}\" \\\n-F key=\"${API_KEY}\" &\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -643,6 +660,8 @@
 				4E94D7441743EDE100604EA0 /* NUILabelRenderer.m in Sources */,
 				4E94D7451743EDE100604EA0 /* NUINavigationBarRenderer.m in Sources */,
 				4E94D7461743EDE100604EA0 /* NUINavigationItemRenderer.m in Sources */,
+				4E9B3F0D17C3D0760070B447 /* UITableView+NUI.m in Sources */,
+				4E9B3F0A17C3D0550070B447 /* NUITableViewRenderer.m in Sources */,
 				4E94D7471743EDE100604EA0 /* NUIProgressViewRenderer.m in Sources */,
 				4E94D7481743EDE100604EA0 /* NUISearchBarRenderer.m in Sources */,
 				4E94D7491743EDE100604EA0 /* NUISegmentedControlRenderer.m in Sources */,
@@ -721,8 +740,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -753,8 +772,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -771,8 +790,8 @@
 		95EF5131173D5FD600C0D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Stopwatch/AppboyKit\"",
@@ -791,8 +810,8 @@
 					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AE4F0B37-1A86-4B85-95FC-1470A311EA42";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AE4F0B37-1A86-4B85-95FC-1470A311EA42";
+				PROVISIONING_PROFILE = "3AB09492-D94A-4CEE-986B-B51EE37BEC43";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3AB09492-D94A-4CEE-986B-B51EE37BEC43";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -800,7 +819,7 @@
 		95EF5132173D5FD600C0D780 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -820,8 +839,8 @@
 					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				PRODUCT_NAME = "Appboy Sample";
-				PROVISIONING_PROFILE = "CC540250-0282-40E6-B862-6D0FA0AA5A07";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CC540250-0282-40E6-B862-6D0FA0AA5A07";
+				PROVISIONING_PROFILE = "EF84C464-4424-4904-85ED-B8CEBC8EEA1E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF84C464-4424-4904-85ED-B8CEBC8EEA1E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

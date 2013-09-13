@@ -27,20 +27,20 @@
   }
 
   // prepare the newsAndFeedback bar button item and related properties and functions
-  ABKFeedViewControllerNavigationContext *streamModal = [[[ABKFeedViewControllerNavigationContext alloc] init]
+  ABKFeedViewControllerNavigationContext *feedViewController = [[[ABKFeedViewControllerNavigationContext alloc] init]
       autorelease];
-  self.newsAndFeedbackNavigationController = [[[UINavigationController alloc] initWithRootViewController:streamModal] autorelease];
+  self.newsAndFeedbackNavigationController = [[[UINavigationController alloc] initWithRootViewController:feedViewController] autorelease];
   self.newsAndFeedbackNavigationController.delegate = self;
   self.newsAndFeedbackNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.16 green:0.5 blue:0.73 alpha:1.0];
   UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Feedback"
                                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromModalFeed:)] autorelease];
-  streamModal.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
+  feedViewController.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
 }
 
 // newsAndFeedback Section
 //
 // Examples of how to put Appboy in one action: a button that open feed page, on which there is a feedback button
-// funtion of the feedback button in the newsAndFeedback bar button item
+// function of the feedback button in the newsAndFeedback bar button item
 - (void) openFeedbackFromModalFeed:(id)sender {
   ABKFeedbackViewControllerNavigationContext *navFeedback = [[[ABKFeedbackViewControllerNavigationContext alloc] init] autorelease];
   // we want to dismiss the popover after user send a feedback successfully
@@ -136,12 +136,12 @@
       [[[ABKFeedbackViewControllerModalContext alloc] init] autorelease];
 
   // We want to be notified when either "Cancel" or "Send" is tapped.
-  feedbackViewController.delegate = self;
+  feedbackViewController.feedbackDelegate = self;
   [self presentViewController:feedbackViewController animated:YES completion:nil];
 }
 
 // Handle the storyboard buttons by forwarding to the programmatic methods above.
-- (IBAction) puchaseButtonTapped:(id)sender {
+- (IBAction) purchaseButtonTapped:(id)sender {
   [Crittercism leaveBreadcrumb:@"Appboy: logPurchase"];
   [[Appboy sharedInstance] logPurchase:@"stopwatch_pro" inCurrency:@"USD" atPrice:[[[NSDecimalNumber alloc] initWithString:@"0.99"] autorelease]];
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thanks for buying Stopwatch Pro!"
@@ -224,7 +224,15 @@
 #pragma Appboy feedback navigation delegate method
 // Feedback was sent successfully in the newsAndFeedback popover
 - (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender {
-  [self.newsAndFeedbackPopoverController dismissPopoverAnimated:YES];
+  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
+                                                       message:@"Thanks for sharing your thoughts on Stopwatch."
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil] autorelease];
+
+  [alertView show];
+
+  [self.newsAndFeedbackNavigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark

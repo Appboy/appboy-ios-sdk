@@ -28,7 +28,7 @@
 - (IBAction) contactUsButtonTappediPhone:(id)sender;
 - (IBAction) newsAndFeedbackButtonTapped:(id)sender;
 
-- (IBAction) puchaseButtonTapped:(id)sender;
+- (IBAction) purchaseButtonTapped:(id)sender;
 - (IBAction) facebookButtonTapped:(id)sender;
 - (IBAction) twitterButtonTapped:(id)sender;
 

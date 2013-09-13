@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KkE-wg-28K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4488.2" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KkE-wg-28K">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <scenes>
         <!--Initial View Controller - Stopwatch-->
@@ -9,11 +10,11 @@
             <objects>
                 <viewController id="2" customClass="InitialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Time" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="wPu-qa-Dx6">
-                                <rect key="frame" x="0.0" y="114" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -21,7 +22,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6eq-Oq-G7l">
-                                <rect key="frame" x="71" y="202" width="85" height="40"/>
+                                <rect key="frame" x="71" y="229" width="84.999999999999986" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                 <state key="normal" title="Start">
@@ -36,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bkT-hH-NTV">
-                                <rect key="frame" x="164" y="202" width="85" height="40"/>
+                                <rect key="frame" x="164" y="229" width="84.999999999999986" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                 <state key="normal" title="Reset">
@@ -50,7 +51,7 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MVL-Bg-9xV">
-                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="News+Feedback" id="z8C-mR-fco">
@@ -68,7 +69,7 @@
                                 <color key="tintColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pjd-6L-5Ng">
-                                <rect key="frame" x="70" y="325" width="70" height="35"/>
+                                <rect key="frame" x="69.999999999999986" y="369" width="69.999999999999986" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                 <state key="normal" title="Upgrade">
@@ -79,11 +80,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="puchaseButtonTapped:" destination="2" eventType="touchUpInside" id="VtY-yh-cAg"/>
+                                    <action selector="purchaseButtonTapped:" destination="2" eventType="touchUpInside" id="H6W-2Y-CnR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O9E-05-J6o">
-                                <rect key="frame" x="170" y="325" width="35" height="35"/>
+                                <rect key="frame" x="170" y="369" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="facebook-icon.png">
@@ -98,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1A0-sK-cXh">
-                                <rect key="frame" x="216" y="325" width="35" height="35"/>
+                                <rect key="frame" x="216" y="369" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="twitter-icon.png">
@@ -143,7 +144,7 @@
             <objects>
                 <viewController title="News Feed" id="5R2-WL-VFk" customClass="ABKFeedViewControllerNavigationContext" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AjG-eY-mgZ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -158,7 +159,7 @@
             <objects>
                 <viewController id="Lii-7i-Mid" customClass="TestingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qst-xo-ut8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9TG-Vl-cAJ">
@@ -213,7 +214,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="10" id="wpS-pt-KgI">
-                                <rect key="frame" x="206" y="267" width="94" height="27"/>
+                                <rect key="frame" x="206" y="267" width="94" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="ratingStepperChanged:" destination="Lii-7i-Mid" eventType="valueChanged" id="jw3-eI-JLj"/>
@@ -298,19 +299,19 @@
             <objects>
                 <viewController id="MCx-rX-d2z" customClass="UserAttributesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3R3-FX-bKd">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="tnF-3C-Pfo">
-                                <rect key="frame" x="0.0" y="44" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="text field cell" id="3ou-J4-do1" customClass="UserAttributeCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ou-J4-do1" id="sup-AH-Wbd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hRy-dV-8oi">
@@ -331,18 +332,17 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <connections>
                                             <outlet property="attributeNameLabel" destination="hRy-dV-8oi" id="ycB-mh-p1T"/>
                                             <outlet property="attributeTextField" destination="arf-rI-1IH" id="bqW-cV-5bc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="gender cell" id="fj5-4L-WOH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="gender cell" id="fj5-4L-WOH" customClass="UserAttributeCell">
                                         <rect key="frame" x="0.0" y="72" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fj5-4L-WOH" id="UwX-7L-VZ3">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gender" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jHN-Qg-Ubg">
@@ -364,8 +364,10 @@
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="attributeSegmentedControl" destination="QLK-7y-iQI" id="Vfb-yJ-kmO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -378,7 +380,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem id="3AZ-Yy-oNK">
+                                    <navigationItem title="User Attributes" id="3AZ-Yy-oNK">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="qs1-Qf-nqG">
                                             <connections>
                                                 <action selector="doneButtonTapped:" destination="MCx-rX-d2z" id="AK6-6F-Gbl"/>
@@ -387,24 +389,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User Attributes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qp9-ia-4Hf">
-                                <rect key="frame" x="81" y="9" width="159" height="25"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                <color key="textColor" white="0.97482988910000001" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wwX-b8-tUj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vf8-mP-EIC">
-                            <connections>
-                                <action selector="doneButtonTapped:" destination="MCx-rX-d2z" id="Ghd-2e-esw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="attributesTableView" destination="tnF-3C-Pfo" id="Xot-dF-u9G"/>
                         <outlet property="modalNavBar" destination="s3k-lW-Gec" id="BTI-re-w3Y"/>
@@ -419,7 +407,7 @@
             <objects>
                 <viewController id="xc2-Om-yCX" customClass="SlideupControlsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rWE-RI-3Zh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="ve6-vb-qDW">
@@ -454,7 +442,7 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="ufU-60-Y36">
-                                <rect key="frame" x="212" y="109" width="79" height="27"/>
+                                <rect key="frame" x="212" y="109" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="delegateButtonSwitched:" destination="xc2-Om-yCX" eventType="valueChanged" id="fb7-qZ-RJv"/>
@@ -488,11 +476,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrA-y3-hum" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="IGE-zR-PgF">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="dON-Ki-DNJ">
-                            <rect key="frame" x="2" y="176" width="318" height="44"/>
+                            <rect key="frame" x="2" y="176" width="318" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Immediate"/>
@@ -520,7 +508,7 @@
                             </state>
                         </button>
                         <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="tYm-za-QJk">
-                            <rect key="frame" x="197" y="107" width="79" height="27"/>
+                            <rect key="frame" x="197" y="107" width="51" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </switch>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Delegate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LjU-aQ-tpO">
@@ -549,6 +537,7 @@
         <scene sceneID="FOJ-c3-7MY">
             <objects>
                 <navigationController definesPresentationContext="YES" id="KkE-wg-28K" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="nSS-ay-Mdx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gFH-f9-mXU">
                         <autoresizingMask key="autoresizingMask"/>
@@ -565,81 +554,8 @@
     </scenes>
     <resources>
         <image name="facebook-icon.png" width="62" height="62"/>
-        <image name="twitter-icon.png" width="62" height="62"/>
+        <image name="twitter-icon.png" width="14.880496025085449" height="14.880496025085449"/>
     </resources>
-    <classes>
-        <class className="ABKFeedViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ABKFeedViewController.h"/>
-        </class>
-        <class className="ABKFeedViewControllerNavigationContext" superclassName="ABKFeedViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ABKFeedViewControllerNavigationContext.h"/>
-        </class>
-        <class className="InitialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="contactUsButtonTappediPad:"/>
-                <relationship kind="action" name="contactUsButtonTappediPhone:"/>
-                <relationship kind="action" name="facebookButtonTapped:"/>
-                <relationship kind="action" name="latestNewsButtonTappediPad:"/>
-                <relationship kind="action" name="newsAndFeedbackButtonTapped:"/>
-                <relationship kind="action" name="puchaseButtonTapped:"/>
-                <relationship kind="action" name="resetButtonTapped:"/>
-                <relationship kind="action" name="startButtonTapped:"/>
-                <relationship kind="action" name="twitterButtonTapped:"/>
-                <relationship kind="outlet" name="UpgradeButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="contactUsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="facebookButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="latestNewsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="newsAndFeedbackButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="newsAndFeedbackNavigationController" candidateClass="UINavigationController"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="twitterButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="SlideupControlsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideupControlsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="delegateButtonSwitched:"/>
-                <relationship kind="action" name="displayNextAvailableSlideupPressed:"/>
-                <relationship kind="action" name="modeButtonChanged:"/>
-                <relationship kind="outlet" name="delegateButton" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="displayNextAvailableSlideupButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="modeButton" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="TestingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="FlushAppboyData:"/>
-                <relationship kind="action" name="changeAppboyFlushMode:"/>
-                <relationship kind="action" name="flushAndShutDownAppboy:"/>
-                <relationship kind="action" name="ratingStepperChanged:" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="enableAppboySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="flushModeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ratedScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalCardsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="unreadCardLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="UserAttributeCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserAttributeCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="attributeNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="attributeSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="attributeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="UserAttributesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserAttributesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonTapped:"/>
-                <relationship kind="action" name="setGender:" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="attributesTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="modalNavBar" candidateClass="UINavigationBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

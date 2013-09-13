@@ -53,7 +53,7 @@
     NSArray *values = [value componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     values = [values filteredArrayUsingPredicate: [NSPredicate predicateWithFormat:@"SELF != ''"]];
     // edges will contain a CSS-like ordering of edges (top, right, bottom, left)
-    NSMutableArray *edges;
+    NSArray *edges = nil;
     switch ([values count]) {
         case 1:
             edges = [NSArray arrayWithObjects:values[0], values[0], values[0], values[0], nil];
@@ -96,6 +96,18 @@
         return UITextBorderStyleRoundedRect;
     }
     return UITextBorderStyleNone;
+}
+
++ (UITableViewCellSeparatorStyle)toSeparatorStyle:(NSString*)value
+{
+    if([value isEqualToString:@"none"]) {
+        return UITableViewCellSeparatorStyleNone;
+    } else if([value isEqualToString:@"single-line"]) {
+        return UITableViewCellSeparatorStyleSingleLine;
+    } else if([value isEqualToString:@"single-line-etched"]){
+        return UITableViewCellSeparatorStyleSingleLineEtched;
+    }
+    return UITableViewCellSeparatorStyleNone;
 }
 
 + (UIColor*)toColor:(NSString*)value

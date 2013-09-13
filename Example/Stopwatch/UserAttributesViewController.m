@@ -8,6 +8,7 @@ static NSInteger const TextFieldTagNumber = 1000;
 static NSInteger const TotalNumberOfAttributes = 10;
 static NSInteger const IndexOfGender = 7;
 static NSInteger const IndexOfBirthday = 9;
+static NSMutableArray *attributesValuesArray = nil;
 
 @implementation UserAttributesViewController
 
@@ -18,13 +19,20 @@ static NSInteger const IndexOfBirthday = 9;
   self.attributesLabelsArray = [NSArray arrayWithObjects:@"User ID", @"First Name", @"Last Name", @"Email",
                                                          @"Country", @"Home City", @"Bio", @"Gender", @"Phone", @"Date Of Birth", nil];
 
-  self.attributesValuesArray = [NSMutableArray arrayWithCapacity:TotalNumberOfAttributes];
-  for (int i = 0; i < TotalNumberOfAttributes; i ++) {
-    [self.attributesValuesArray addObject:[NSNull null]];
+  if (attributesValuesArray == nil || [attributesValuesArray count] <= 0) {
+    attributesValuesArray = [[NSMutableArray arrayWithCapacity:TotalNumberOfAttributes] retain];
+    for (int i = 0; i < TotalNumberOfAttributes; i ++) {
+      [attributesValuesArray addObject:[NSNull null]];
+    }
   }
 
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-
+  
+  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+    // in iOS 7, views are automatically extended to full screen mode, under the navigation bar etc. For our feedback,
+    // we don't want the view to under any other UI in all cases, so we need to turn it off in iOS 7
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+  }
 }
 
 #pragma mark
@@ -36,10 +44,19 @@ static NSInteger const IndexOfBirthday = 9;
   if (indexPath.row == IndexOfGender) {
     static NSString *CellIdentifier = @"gender cell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     if (cell == nil) {
       cell = [[[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    id object = [attributesValuesArray objectAtIndex:indexPath.row];
+    if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
+      if ([(NSString *)object isEqualToString:@"m"]) {
+        cell.attributeSegmentedControl.selectedSegmentIndex = 0;
+      } else if ([(NSString *)object isEqualToString:@"f"]) {
+        cell.attributeSegmentedControl.selectedSegmentIndex = 1;
+      }
     }
     return cell;
 
@@ -55,11 +72,13 @@ static NSInteger const IndexOfBirthday = 9;
     cell.attributeNameLabel.text = [self.attributesLabelsArray objectAtIndex:indexPath.row];
 
     cell.attributeTextField.tag = TextFieldTagNumber + indexPath.row; // The text field's tag is 1000 plus the row number
-    id object = [self.attributesValuesArray objectAtIndex:indexPath.row];
-    if (object && object != [NSNull null]) {
+    id object = [attributesValuesArray objectAtIndex:indexPath.row];
+    if ([object isKindOfClass:[NSString class]]) {
       cell.attributeTextField.text = (NSString *)object;
     }
-    else {
+    else if ([object isKindOfClass:[NSDate class]]) {
+      cell.attributeTextField.text = [self getBirthdayStringFromDate:(NSDate *)object];
+    } else {
       cell.attributeTextField.text = nil;
     }
 
@@ -88,6 +107,10 @@ static NSInteger const IndexOfBirthday = 9;
 }
 
 - (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+  // keep track of the current editing text field, so we can save the value of the last text field
+  // user edited right before he/she click the "Done" button
+  self.currentEditingTextField = textField;
+
   // Scroll the table view to make the text field visible
   NSIndexPath *index = [NSIndexPath indexPathForRow:textField.tag - TextFieldTagNumber inSection:0];
   [self.attributesTableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionTop animated:YES];
@@ -99,7 +122,7 @@ static NSInteger const IndexOfBirthday = 9;
     [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     datePicker.backgroundColor = [UIColor clearColor];
     textField.inputView = datePicker;
-    if (textField.text) {
+    if (textField.text && textField.text.length > 0) {
       datePicker.date = [self getDateFromBirthdayString:textField.text];
     } else {
       textField.text = [self getBirthdayStringFromDate:datePicker.date];
@@ -125,19 +148,20 @@ static NSInteger const IndexOfBirthday = 9;
   return date;
 }
 
-- (void) textFieldDidEndEditing:(UITextField *)textField {
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
   // Save the input of text field, including the cases of valid text and empty input
   if (textField.text.length > 0) {
-    [self.attributesValuesArray replaceObjectAtIndex:textField.tag - TextFieldTagNumber withObject:textField.text];
+    [attributesValuesArray replaceObjectAtIndex:textField.tag - TextFieldTagNumber withObject:textField.text];
   }
   else {
-    [self.attributesValuesArray replaceObjectAtIndex:textField.tag - TextFieldTagNumber withObject:[NSNull null]];
+    [attributesValuesArray replaceObjectAtIndex:textField.tag - TextFieldTagNumber withObject:[NSNull null]];
   }
+  return YES;
 }
 
 - (void) datePickerValueChanged:(UIDatePicker *)sender {
   // Save the date value
-  [self.attributesValuesArray replaceObjectAtIndex:IndexOfBirthday withObject:sender.date];
+  [attributesValuesArray replaceObjectAtIndex:IndexOfBirthday withObject:sender.date];
 
   // Display the date value in the text field while user changing the date picker
   ((UITextField *)[self.view viewWithTag:IndexOfBirthday + TextFieldTagNumber]).text = [self getBirthdayStringFromDate:sender.date];
@@ -145,11 +169,22 @@ static NSInteger const IndexOfBirthday = 9;
 
 - (IBAction) setGender:(UISegmentedControl *)sender {
   NSString *gender = sender.selectedSegmentIndex == 0 ? @"m" : @"f";
-  [self.attributesValuesArray replaceObjectAtIndex:IndexOfGender withObject:gender];
+  [attributesValuesArray replaceObjectAtIndex:IndexOfGender withObject:gender];
 }
 
 // Set user attributes and/or change the current userID.  See Appboy.h for a discussion about changing the userID.
 - (IBAction) doneButtonTapped:(id)sender {
+  if (self.currentEditingTextField) {
+    if (self.currentEditingTextField.text.length > 0) {
+      [attributesValuesArray replaceObjectAtIndex:self.currentEditingTextField.tag - TextFieldTagNumber
+                                       withObject:self.currentEditingTextField.text];
+    }
+    else {
+      [attributesValuesArray replaceObjectAtIndex:self.currentEditingTextField.tag - TextFieldTagNumber
+                                       withObject:[NSNull null]];
+    }
+  }
+
   [Crittercism leaveBreadcrumb:@"update appboy user's attributes"];
 
   UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:nil
@@ -162,7 +197,7 @@ static NSInteger const IndexOfBirthday = 9;
   [self dismissModalViewControllerAnimated:YES];
 
   for (int i = 0; i < TotalNumberOfAttributes; i ++) {
-    id object = [self.attributesValuesArray objectAtIndex:i];
+    id object = [attributesValuesArray objectAtIndex:i];
     if (object && object != [NSNull null]) {
       switch (i) {
         case 0:
@@ -238,9 +273,12 @@ static NSInteger const IndexOfBirthday = 9;
   [[NSNotificationCenter defaultCenter] removeObserver:self.modalNavBar];
   [_attributesLabelsArray release];
   [_attributesTableView release];
-  [_attributesValuesArray release];
   [_modalNavBar release];
   [super dealloc];
+}
+
+- (BOOL)prefersStatusBarHidden {
+  return YES;
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

@@ -18,6 +18,13 @@
   self.delegateButton.on = NO;
   self.modeButton.enabled = NO;
   self.displayNextAvailableSlideupButton.enabled = NO;
+  
+  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+    // In iOS 7, views are automatically extended to fit the size of the screen. Therefore, views may end up under
+    // the navigation bar, which makes some buttons invisible or unclickable. In order to prevent this behaviour, we set
+    // the Extended Layout mode to UIRectEdgeNone.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+  }
 }
 
 // Use the slideupDelegate to control when slideups will appear, be queued, or be ignored.  If the delegate

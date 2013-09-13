@@ -31,6 +31,13 @@
 
     // didMoveToWindow isn't called on UITabBarItems, so we need to use awakeFromNib instead.
     [self swizzleAwakeFromNib:[UITabBarItem class]];
+    // didMoveToWindow isn't called on UIBarButtonItem when loaded from a pushed storyboard, use awakeFromNib instead
+    [self swizzleAwakeFromNib:[UIBarButtonItem class]];
+
+    // to remove the observer from notification, we need to call dealloc
+    [self swizzleDealloc:[UITabBar class]];
+    [self swizzleDealloc:[UINavigationBar class]];
+    [self swizzleDealloc:[UITableViewCell class]];
     
     [self swizzle:[UITextField class] methodName:@"textRectForBounds:"];
     [self swizzle:[UITextField class] methodName:@"editingRectForBounds:"];
@@ -47,6 +54,10 @@
     [self swizzle:class methodName:@"didMoveToWindow"];
 }
 
+- (void)swizzleDealloc:(Class)class {
+    [self swizzle:class methodName:@"dealloc"];
+}
+
 - (void)swizzle:(Class)class methodName:(NSString*)methodName
 {
     SEL originalMethod = NSSelectorFromString(methodName);
@@ -58,7 +69,7 @@
 {
     Method originalMethod = class_getInstanceMethod(class, original);
     Method newMethod = class_getInstanceMethod(class, new);
-    if(class_addMethod(class, original, method_getImplementation(newMethod), method_getTypeEncoding(newMethod))) {
+    if (class_addMethod(class, original, method_getImplementation(newMethod), method_getTypeEncoding(newMethod))) {
         class_replaceMethod(class, new, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     } else {
         method_exchangeImplementations(originalMethod, newMethod);

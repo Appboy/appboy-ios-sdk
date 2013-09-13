@@ -123,6 +123,11 @@ static NUISettings *instance = nil;
     return [NUIConverter toBorderStyle:[self get:property withClass:className]];
 }
 
++ (UITableViewCellSeparatorStyle)getSeparatorStyle:(NSString*)property withClass:(NSString*)className
+{
+    return [NUIConverter toSeparatorStyle:[self get:property withClass:className]];
+}
+
 + (UIColor*)getColor:(NSString*)property withClass:(NSString*)className
 {   
     return [NUIConverter toColor:[self get:property withClass:className]];
@@ -180,8 +185,19 @@ static NUISettings *instance = nil;
             [swizzler release];
         }
     }
-    
     return instance;
+}
+
++ (void)setGlobalExclusions:(NSArray *)array
+{
+    instance = [self getInstance];
+    instance.globalExclusions = [[array mutableCopy] autorelease];
+}
+
++ (NSMutableArray*)getGlobalExclusions
+{
+    instance = [self getInstance];
+    return instance.globalExclusions;
 }
 
 @end

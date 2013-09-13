@@ -51,6 +51,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 // Pass the deviceToken to Appboy as well
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
+  NSLog(@"In application:didRegisterForRemoteNotificationWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
 }
 

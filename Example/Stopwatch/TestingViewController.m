@@ -40,6 +40,15 @@
                                              object:nil];
 
   [[Appboy sharedInstance].user setCustomAttributeWithKey:@"rating score" andIntegerValue:10];
+
+  
+  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+    // In iOS 7, views are automatically extended to fit the size of the screen. Therefore, views may end up under
+    // the navigation bar, which makes some buttons invisible or unclickable. In order to prevent this behaviour, we set
+    // the Extended Layout mode to UIRectEdgeNone.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+  }
+
 }
 
 - (void) feedUpdated:(NSNotification *)notification {
@@ -66,14 +75,12 @@
 
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-  [_enableAppboySwitch release];
   [_ratedScoreLabel release];
   [_flushModeButton release];
   [super dealloc];
 }
 
 - (void) viewDidUnload {
-  [self setEnableAppboySwitch:nil];
   [self setRatedScoreLabel:nil];
   [self setFlushModeButton:nil];
   [super viewDidUnload];
