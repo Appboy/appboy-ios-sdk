@@ -126,8 +126,6 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ac8b369b40e15860b0ec18c0f4b46ac69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">logCustomEvent:</a></td></tr>
 <tr class="separator:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a688b21f1a74bb2d943c93b875f4b4986"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a688b21f1a74bb2d943c93b875f4b4986">logPurchase:priceInCents:</a></td></tr>
-<tr class="separator:a688b21f1a74bb2d943c93b875f4b4986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63d8c390bff05f87c7f8f86f2fc0deb6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a63d8c390bff05f87c7f8f86f2fc0deb6">logPurchase:inCurrency:atPrice:</a></td></tr>
 <tr class="separator:a63d8c390bff05f87c7f8f86f2fc0deb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ae16a3ae4f33d7ae23da740d67e4cd277">logSocialShare:</a></td></tr>
@@ -373,44 +371,6 @@ Properties</h2></td></tr>
 <p>Logs a purchase made in the application.</p>
 <p>Note: As of this writing, the <a class="el" href="interface_appboy.html">Appboy</a> Dashboard's analytics and segmentation features do not fully leverage purchase data in multiple currencies and only purchases reported in USD will be available on the user profile and in revenue graphs. However, support is coming soon and will be automatically enabled in your dashboard provided that you are reporting proper currencies and prices from your app. It is not recommended that you report converted amounts or overload the USD currency type as it will cause data problems for you later. </p>
 
-</div>
-</div>
-<a class="anchor" id="a688b21f1a74bb2d943c93b875f4b4986"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) logPurchase: </td>
-          <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
-          <td class="paramname"><em>productId</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">priceInCents:</td>
-          <td></td>
-          <td class="paramtype">(NSUInteger)&#160;</td>
-          <td class="paramname"><em>__deprecated</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">productIdentifier</td><td>A String indicating the product that was purchased. </td></tr>
-    <tr><td class="paramname">price</td><td>The price of the purchased item in cents.  Adds an in-app purchase to event tracking log that's lazily pushed up to the server.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Note: This method is now deprecated and will be removed in the future. Please use logPurchase:inCurrency:atPrice instead. For USD amounts, the call should look like: </p>
-<pre>
-[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logPurchase:"powerups" inCurrency:@"USD" atPrice:[[[NSDecimalNumber alloc] initWithFloat:.99f] autorelease]];
-</pre><pre>
-[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logPurchase:"powerups" priceInCents:99];
-</pre> 
 </div>
 </div>
 <a class="anchor" id="ae16a3ae4f33d7ae23da740d67e4cd277"></a>
@@ -864,7 +824,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 19 2013 22:28:38 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 13 2013 18:31:14 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
