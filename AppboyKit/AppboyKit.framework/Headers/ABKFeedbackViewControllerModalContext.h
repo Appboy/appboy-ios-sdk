@@ -53,8 +53,8 @@
  *
  * If the delegate is *not* set, the controller dismisses itself after cancel or send completes.
  */
-@interface ABKFeedbackViewControllerModalContext : UINavigationController
+@interface ABKFeedbackViewControllerModalContext : ABKFeedbackViewController
 
-@property (assign, nonatomic) id <ABKFeedbackViewControllerModalContextDelegate> feedbackDelegate;
+@property (assign, nonatomic) id <ABKFeedbackViewControllerModalContextDelegate> delegate;
 
 @end

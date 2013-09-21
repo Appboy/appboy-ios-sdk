@@ -15,7 +15,7 @@
 #import "ABKUser.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.1.1"
+#define APPBOY_SDK_VERSION @"2.0.4"
 #endif
 
 @protocol ABKSlideupControllerDelegate;
@@ -329,6 +329,25 @@ typedef enum {
  * </pre>
  */
 - (void) logCustomEvent:(NSString *)eventName;
+
+/*!
+
+ *
+ * @param productIdentifier A String indicating the product that was purchased.
+ * @param price The price of the purchased item in cents.
+ * @discussion Adds an in-app purchase to event tracking log that's lazily pushed up to the server.
+ *
+ * Note: This method is now deprecated and will be removed in the future. Please use logPurchase:inCurrency:atPrice
+ * instead. For USD amounts, the call should look like:
+ * <pre>
+ * [[Appboy sharedInstance] logPurchase:@"powerups" inCurrency:@"USD" atPrice:[[[NSDecimalNumber alloc] initWithFloat:.99f] autorelease]];
+ * </pre>
+ *
+ * <pre>
+ * [[Appboy sharedInstance] logPurchase:@"powerups" priceInCents:99];
+ * </pre>
+ */
+- (void) logPurchase:(NSString *)productId priceInCents:(NSUInteger)price __deprecated;
 
 /*!
  * @param productIdentifier A String indicating the product that was purchased. Usually the product identifier in the

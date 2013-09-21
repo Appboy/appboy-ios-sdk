@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
 
-@interface ABKFeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,
-    SKStoreProductViewControllerDelegate>
+@interface ABKFeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SKStoreProductViewControllerDelegate>
+
 @end
 
