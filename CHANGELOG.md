@@ -1,3 +1,6 @@
+## 2.1.1
+* URGENT BUGFIX: This fixes an issue which exists in all previous versions of the v2 SDK which is causing crashes on the just release iPhone 5c and iPhone 5s. All users of v2 are recommended to upgrade the Appboy SDK to 2.1.1 immediately and re-submit to the app store.
+
 ## 2.1.0
 * Adds support for iOS 7. You will need to use Xcode 5 to use this and future versions of the Appboy iOS SDK.
 * Updates internal usage of NUI. If you're using NUI, please ensure that you are at least using version 0.3.3 (the most up to date as of this writing is 0.3.4).
