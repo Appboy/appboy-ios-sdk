@@ -15,7 +15,7 @@
 #import "ABKUser.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.0.4"
+#define APPBOY_SDK_VERSION @"2.0.5"
 #endif
 
 @protocol ABKSlideupControllerDelegate;
