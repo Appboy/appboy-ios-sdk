@@ -597,12 +597,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A0080317696634007CCECF /* AppboyKit.framework in Resources */,
 				95EF5118173D5FD600C0D780 /* InfoPlist.strings in Resources */,
 				95EF5120173D5FD600C0D780 /* Default.png in Resources */,
 				95EF5122173D5FD600C0D780 /* Default@2x.png in Resources */,
 				95EF5124173D5FD600C0D780 /* Default-568h@2x.png in Resources */,
 				95EF5127173D5FD600C0D780 /* MainStoryboard_iPhone.storyboard in Resources */,
-				C5A0080317696634007CCECF /* AppboyKit.framework in Resources */,
 				95EF512A173D5FD600C0D780 /* MainStoryboard_iPad.storyboard in Resources */,
 				95AD66B3173D75CB00C51CF8 /* btn-backarrow.png in Resources */,
 				95AD66BD173DB67F00C51CF8 /* twitter-icon.png in Resources */,
@@ -790,8 +790,8 @@
 		95EF5131173D5FD600C0D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Stopwatch/AppboyKit\"",
@@ -810,8 +810,8 @@
 					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3AB09492-D94A-4CEE-986B-B51EE37BEC43";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3AB09492-D94A-4CEE-986B-B51EE37BEC43";
+				PROVISIONING_PROFILE = "9A3D9E59-F14F-4D12-81A3-178EB74E66A6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9A3D9E59-F14F-4D12-81A3-178EB74E66A6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -839,8 +839,8 @@
 					"\"$(SRCROOT)/../build/AppboyKit\"",
 				);
 				PRODUCT_NAME = "Appboy Sample";
-				PROVISIONING_PROFILE = "EF84C464-4424-4904-85ED-B8CEBC8EEA1E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF84C464-4424-4904-85ED-B8CEBC8EEA1E";
+				PROVISIONING_PROFILE = "3F1AF0F5-7169-4816-82D1-39A5D7A1C0F1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3F1AF0F5-7169-4816-82D1-39A5D7A1C0F1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

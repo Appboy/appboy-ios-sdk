@@ -1,3 +1,10 @@
+## 2.2
+* Adds support for submitting feedback programmatically through an Appboy.h method without using Appboy feedback form. This allows you to create your own feedback form.
+* Fixes an issue where the the news feed's web view would display "Connection Error" when a user came back into the app after a card had directed him or her to a protocol URL. Now when users come back from a redirected protocol URL, the feed is properly displayed.
+* Fixes an issue where the SDK might have incorrectly sent both read and write Facebook permissions at the same time, instead preferring to request only those read permissions that Appboy is interested in and have already been requested by the incorporating app.
+* Caught and fixed a corner case where card impressions could be miscounted when the feed view controller is the master view controller of a split view.
+* Makes cards truncate properly at two lines.
+
 ## 2.1.1
 * URGENT BUGFIX: This fixes an issue which exists in all previous versions of the v2 SDK which is causing crashes on the just release iPhone 5c and iPhone 5s. All users of v2 are recommended to upgrade the Appboy SDK to 2.1.1 immediately and re-submit to the app store.
 

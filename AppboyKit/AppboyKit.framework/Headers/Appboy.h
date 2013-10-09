@@ -15,7 +15,7 @@
 #import "ABKUser.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.1.1"
+#define APPBOY_SDK_VERSION @"2.2"
 #endif
 
 @protocol ABKSlideupControllerDelegate;
@@ -389,6 +389,18 @@ typedef enum {
 *   end user. If you do not include the Facebook SDK, this method call will only work on iOS6 or higher.
 */
 - (void) promptUserForAccessToSocialNetwork:(ABKSocialNetwork)socialNetwork;
+
+/*!
+ * @param replyToEmail The email address to send feedback replies to.
+ * @param message The message input by the user. Must be non-null and non-empty.
+ * @param isReportingABug Flag indicating whether or not the feedback describes a bug, or is merely a suggestion/question.
+ * @return a boolean indicating whether or not the feedback item was successfully queued for delivery.
+ * @discussion Submits a piece of feedback to the Appboy feedback center so that it can be handled in the Appboy dashboard.
+ * The request to submit feedback is made immediately, however, this method does not block and will return as soon as the
+ * feedback request is placed on the network queue.
+ *
+ */
+- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 
 /*!
  * If there are slideups available in the slideup queue, attempt to display one.  This would normally be called sometime
