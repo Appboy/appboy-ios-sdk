@@ -1,4 +1,27 @@
+## 2.3.1
+* The Appboy SDK for iOS now has two versions, one for use with apps which incorporate the official Facebook SDK and one for those which do not. In November of 2013, the App Store Validation Process started generating warnings about the usage of isOpen and setActiveSession in the Appboy SDK. These selectors were being sent to instances of classes in the Facebook SDK and are generally able to be used without generating warnings. However because of the way that the classes were initialized in Appboy (a result of building a single Appboy binary to fully support apps with and without the Facebook SDK), the App Store Validation Process started generating warnings the Facebook SDK methods share a name with private selectors elsewhere in iOS. Although none of our customers have been denied App Store approvaly, to protect against potential validation policy changes by Apple, Appboy now provides two versions of its SDK, neither of which generate warnings. Going forward, the appboy-ios-sdk repository will provide both versions of the SDK in the folders 'AppboySDK' (as before) and 'AppboySDKWithoutFacebookSupport'. The 'AppboySDKWithoutFacebookSupport' does not require the host app to include the Facebook SDK, but as a result does not include all of the Appboy features for Facebook data fetching. More information is available in the social tracking area of the [Appboy documentation](http://documentation.appboy.com/social-tracking.html#ios).
+* Fixed a bug that repeatedly updated the push token of some users unnecessarily.
+* The "Reporting an Issue?" box within the UI layout of the Feedback Page has been moved to the left side of the label away from the "Send" button. This change was made to reduce the number of misclicks of the "Send" button. The "Reporting an Issue?" label is now clickable as well.
+* Cross Promotion Cards for apps with long titles will now render appropriately in iOS5. Before the title would render abnormally large on these devices.
+* Fixed a bug where view recycling would cause incorrect card images to appear for newly rendered cards (until the image for that card finished downloading). Card images for newly rendered cards will now remain empty until the correct image is downloaded.
+* Internal changes to enable future support for a 64 bit library release.
+* Improvements to the Appboy Sample App.
+* Internal code structure and performance improvements including the move of more offline caching to background tasks.
+
+## 2.3
+* BREAKING CHANGE: The ABKSlideupControllerDelegate interface has been changed to work with ABKSlideup objects instead of simply the slideup message. This provides you with more control over the click actions and display of slideups and is also being made in anticipation of the augmentation of the ABKSlideup object with more data properties in future releases. To access the message previously sent to shouldDisplaySlideup, simply access the message property on the provided ABKSlideup argument.
+* displayNextAvailableSlideup has been deprecated and will be removed in the next minor release, it has been replaced by provideSlideupToDelegate, see Appboy.h documentation for more information.
+* provideSlideupToDelegate has been added to Appboy to allow for more fine grained control over slideup display.
+* Fixes a bug where the slideupDelegate property getter on Appboy would always return nil.
+* Changes the slideupDelegate property on Appboy to be retained, instead of assigned.
+
+## 2.2.1
+* Adds a startup option to appboyOptions to control the automatic capture of social network data. See the documentation on ABKSocialAccountAcquisitionPolicy in Appboy.h for more information.
+* Changes a table cell's default background color to clear, from the white value that became default in iOS7.
+* Adds support for developer to send up image_url for user avatars, allowing for custom images to be included in user profiles on the dashboard.
+
 ## 2.2
+* Adds support for new banner and captioned image card types.
 * Adds support for submitting feedback programmatically through an Appboy.h method without using Appboy feedback form. This allows you to create your own feedback form.
 * Fixes an issue where the the news feed's web view would display "Connection Error" when a user came back into the app after a card had directed him or her to a protocol URL. Now when users come back from a redirected protocol URL, the feed is properly displayed.
 * Fixes an issue where the SDK might have incorrectly sent both read and write Facebook permissions at the same time, instead preferring to request only those read permissions that Appboy is interested in and have already been requested by the incorporating app.

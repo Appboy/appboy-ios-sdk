@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8635165EE59A005B5756 /* UIKit.framework */; };
+		4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8637165EE59A005B5756 /* Foundation.framework */; };
+		4A0B863A165EE59A005B5756 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8639165EE59A005B5756 /* CoreGraphics.framework */; };
+		4A0B8640165EE59A005B5756 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A0B863E165EE59A005B5756 /* InfoPlist.strings */; };
+		4A0B8642165EE59A005B5756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8641165EE59A005B5756 /* main.m */; };
+		4A0B8646165EE59A005B5756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8645165EE59A005B5756 /* AppDelegate.m */; };
+		4A0B864C165EE59A005B5756 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B864B165EE59A005B5756 /* ViewController.m */; };
+		4A0B8681165EE917005B5756 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0B8680165EE917005B5756 /* QuartzCore.framework */; };
+		4A0B8687165F1383005B5756 /* NUIDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */; };
+		4A38831116C7268000DB99C2 /* NUIWindowRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38831016C7268000DB99C2 /* NUIWindowRenderer.m */; };
+		4A38831516C7269F00DB99C2 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38831416C7269F00DB99C2 /* UIWindow+NUI.m */; };
+		4A4FC6341663141D0058031B /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4FC62016629C4D0058031B /* CoreImage.framework */; };
+		4A55F078167570C10056753C /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F077167570C10056753C /* UIView+NUI.m */; };
+		4A55F07C1675718F0056753C /* UILabel+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F07B1675718F0056753C /* UILabel+NUI.m */; };
+		4A55F07F167573D10056753C /* UINavigationBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F07E167573D10056753C /* UINavigationBar+NUI.m */; };
+		4A55F08216758E4E0056753C /* UINavigationItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08116758E4D0056753C /* UINavigationItem+NUI.m */; };
+		4A55F08516758E9D0056753C /* UISegmentedControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08416758E9D0056753C /* UISegmentedControl+NUI.m */; };
+		4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */; };
+		4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F08A16758F360056753C /* UITextField+NUI.m */; };
+		4A5B5B2916F6471400CF8D16 /* NUIProgressViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B5B2816F6471400CF8D16 /* NUIProgressViewRenderer.m */; };
+		4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */; };
+		4A744B19169904520068F3CF /* NUIFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A744B18169904500068F3CF /* NUIFileMonitor.m */; };
+		4A779342167560FF00B5EE81 /* UIButton+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A779340167560FF00B5EE81 /* UIButton+NUI.m */; };
+		4A7793451675619500B5EE81 /* UITabBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793441675619500B5EE81 /* UITabBar+NUI.m */; };
+		4A7793481675625800B5EE81 /* NUITabBarItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793471675625800B5EE81 /* NUITabBarItemRenderer.m */; };
+		4A77934B1675635100B5EE81 /* UITabBarItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A77934A1675635100B5EE81 /* UITabBarItem+NUI.m */; };
+		4A77934E1675647A00B5EE81 /* NUISwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A77934D1675647A00B5EE81 /* NUISwizzler.m */; };
+		4A7793511675687C00B5EE81 /* UIBarButtonItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7793501675687C00B5EE81 /* UIBarButtonItem+NUI.m */; };
+		4A9965E5169FB56800DAA38A /* Blue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965DE169FB56800DAA38A /* Blue.NUI.nss */; };
+		4A9965E6169FB56800DAA38A /* Default.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965DF169FB56800DAA38A /* Default.NUI.nss */; };
+		4A9965E7169FB56800DAA38A /* Googolplex.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E0169FB56800DAA38A /* Googolplex.NUI.nss */; };
+		4A9965E8169FB56800DAA38A /* Round.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E1169FB56800DAA38A /* Round.NUI.nss */; };
+		4A9965E9169FB56800DAA38A /* Route.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E2169FB56800DAA38A /* Route.NUI.nss */; };
+		4A9965EA169FB56800DAA38A /* SkyBlue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E3169FB56800DAA38A /* SkyBlue.NUI.nss */; };
+		4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4A9965E4169FB56800DAA38A /* Switchboard.NUI.nss */; };
+		4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */; };
+		4ADA71C616A0F15C00BDCF81 /* UISearchBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */; };
+		4ADA71CA16A103CD00BDCF81 /* NUISearchBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */; };
+		832B9C1B176AEADA0054F06E /* iPad Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832B9C19176AEADA0054F06E /* iPad Storyboard.storyboard */; };
+		832B9C1E176AEAED0054F06E /* iPhone Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832B9C1C176AEAED0054F06E /* iPhone Storyboard.storyboard */; };
+		89B940701671418200850A9A /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940241671418100850A9A /* NUIAppearance.m */; };
+		89B940711671418200850A9A /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940261671418100850A9A /* NUIConverter.m */; };
+		89B940721671418200850A9A /* NUIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940281671418100850A9A /* NUIGraphics.m */; };
+		89B940731671418200850A9A /* NUIRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B9402A1671418100850A9A /* NUIRenderer.m */; };
+		89B940741671418200850A9A /* NUISettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B9402C1671418100850A9A /* NUISettings.m */; };
+		89B940751671418200850A9A /* NUIStyleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B9402E1671418100850A9A /* NUIStyleParser.m */; };
+		89B940761671418200850A9A /* NUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940301671418100850A9A /* NUIUtilities.m */; };
+		89B940771671418200850A9A /* NUIBarButtonItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940331671418100850A9A /* NUIBarButtonItemRenderer.m */; };
+		89B940781671418200850A9A /* NUIButtonRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940351671418100850A9A /* NUIButtonRenderer.m */; };
+		89B940791671418200850A9A /* NUILabelRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940371671418100850A9A /* NUILabelRenderer.m */; };
+		89B9407A1671418200850A9A /* NUINavigationBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940391671418100850A9A /* NUINavigationBarRenderer.m */; };
+		89B9407B1671418200850A9A /* NUINavigationItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B9403B1671418100850A9A /* NUINavigationItemRenderer.m */; };
+		89B9407C1671418200850A9A /* NUISegmentedControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B9403D1671418100850A9A /* NUISegmentedControlRenderer.m */; };
+		89B9407D1671418200850A9A /* NUITabBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B9403F1671418100850A9A /* NUITabBarRenderer.m */; };
+		89B9407E1671418200850A9A /* NUITableViewCellRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940411671418100850A9A /* NUITableViewCellRenderer.m */; };
+		89B9407F1671418200850A9A /* NUITextFieldRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940431671418100850A9A /* NUITextFieldRenderer.m */; };
+		89B940801671418200850A9A /* NUIViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B940451671418100850A9A /* NUIViewRenderer.m */; };
+		89B940811671418200850A9A /* NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 89B940461671418100850A9A /* NUIStyle.nss */; };
+		89B940841671418200850A9A /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B9404A1671418100850A9A /* NUIViewBackground.png */; };
+		B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC289169724A3004A38F8 /* UISwitch+NUI.m */; };
+		B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */; };
+		D8E7168116B8AF4400686854 /* NUIControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168016B8AF4300686854 /* NUIControlRenderer.m */; };
+		D8E7168516B9980300686854 /* UIControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E7168416B9980300686854 /* UIControl+NUI.m */; };
+		D983DEE5169DBCCD00A3A180 /* NUIToolbarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */; };
+		D983DEE8169DC05300A3A180 /* UIToolbar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */; };
+		D983DF1C169DC84600A3A180 /* UISlider+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1B169DC84500A3A180 /* UISlider+NUI.m */; };
+		D983DF1F169DC87800A3A180 /* NUISliderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */; };
+		E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */; };
+		E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E291BBD9179C89710016BC1D /* UITableView+NUI.m */; };
+		FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A0B8631165EE59A005B5756 /* NUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0B8635165EE59A005B5756 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4A0B8637165EE59A005B5756 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4A0B8639165EE59A005B5756 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4A0B863D165EE59A005B5756 /* NUIDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NUIDemo-Info.plist"; sourceTree = "<group>"; };
+		4A0B863F165EE59A005B5756 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4A0B8641165EE59A005B5756 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4A0B8643165EE59A005B5756 /* NUIDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NUIDemo-Prefix.pch"; sourceTree = "<group>"; };
+		4A0B8644165EE59A005B5756 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4A0B8645165EE59A005B5756 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4A0B864A165EE59A005B5756 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4A0B864B165EE59A005B5756 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4A0B8680165EE917005B5756 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4A0B8685165F1382005B5756 /* NUIDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIDemoTableViewController.h; sourceTree = "<group>"; };
+		4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIDemoTableViewController.m; sourceTree = "<group>"; };
+		4A38830F16C7268000DB99C2 /* NUIWindowRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIWindowRenderer.h; sourceTree = "<group>"; };
+		4A38831016C7268000DB99C2 /* NUIWindowRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIWindowRenderer.m; sourceTree = "<group>"; };
+		4A38831316C7269F00DB99C2 /* UIWindow+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+NUI.h"; sourceTree = "<group>"; };
+		4A38831416C7269F00DB99C2 /* UIWindow+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+NUI.m"; sourceTree = "<group>"; };
+		4A4FC62016629C4D0058031B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		4A55F076167570C10056753C /* UIView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NUI.h"; sourceTree = "<group>"; };
+		4A55F077167570C10056753C /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
+		4A55F07A1675718F0056753C /* UILabel+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+NUI.h"; sourceTree = "<group>"; };
+		4A55F07B1675718F0056753C /* UILabel+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+NUI.m"; sourceTree = "<group>"; };
+		4A55F07D167573D10056753C /* UINavigationBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NUI.h"; sourceTree = "<group>"; };
+		4A55F07E167573D10056753C /* UINavigationBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NUI.m"; sourceTree = "<group>"; };
+		4A55F08016758E4D0056753C /* UINavigationItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NUI.h"; sourceTree = "<group>"; };
+		4A55F08116758E4D0056753C /* UINavigationItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NUI.m"; sourceTree = "<group>"; };
+		4A55F08316758E9D0056753C /* UISegmentedControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+NUI.h"; sourceTree = "<group>"; };
+		4A55F08416758E9D0056753C /* UISegmentedControl+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+NUI.m"; sourceTree = "<group>"; };
+		4A55F08616758ED90056753C /* UITableViewCell+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+NUI.h"; sourceTree = "<group>"; };
+		4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NUI.m"; sourceTree = "<group>"; };
+		4A55F08916758F360056753C /* UITextField+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NUI.h"; sourceTree = "<group>"; };
+		4A55F08A16758F360056753C /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
+		4A5B5B2716F6471400CF8D16 /* NUIProgressViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIProgressViewRenderer.h; sourceTree = "<group>"; };
+		4A5B5B2816F6471400CF8D16 /* NUIProgressViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIProgressViewRenderer.m; sourceTree = "<group>"; };
+		4A744B09169105890068F3CF /* ProgrammaticallyCreatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammaticallyCreatedViewController.h; sourceTree = "<group>"; };
+		4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammaticallyCreatedViewController.m; sourceTree = "<group>"; };
+		4A744B171699044F0068F3CF /* NUIFileMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIFileMonitor.h; sourceTree = "<group>"; };
+		4A744B18169904500068F3CF /* NUIFileMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIFileMonitor.m; sourceTree = "<group>"; };
+		4A779340167560FF00B5EE81 /* UIButton+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NUI.m"; sourceTree = "<group>"; };
+		4A779341167560FF00B5EE81 /* UIButton+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NUI.h"; sourceTree = "<group>"; };
+		4A7793431675619500B5EE81 /* UITabBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+NUI.h"; sourceTree = "<group>"; };
+		4A7793441675619500B5EE81 /* UITabBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+NUI.m"; sourceTree = "<group>"; };
+		4A7793461675625800B5EE81 /* NUITabBarItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITabBarItemRenderer.h; sourceTree = "<group>"; };
+		4A7793471675625800B5EE81 /* NUITabBarItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarItemRenderer.m; sourceTree = "<group>"; };
+		4A7793491675635100B5EE81 /* UITabBarItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+NUI.h"; sourceTree = "<group>"; };
+		4A77934A1675635100B5EE81 /* UITabBarItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+NUI.m"; sourceTree = "<group>"; };
+		4A77934C1675647900B5EE81 /* NUISwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwizzler.h; sourceTree = "<group>"; };
+		4A77934D1675647A00B5EE81 /* NUISwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwizzler.m; sourceTree = "<group>"; };
+		4A77934F1675687C00B5EE81 /* UIBarButtonItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+NUI.h"; sourceTree = "<group>"; };
+		4A7793501675687C00B5EE81 /* UIBarButtonItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+NUI.m"; sourceTree = "<group>"; };
+		4A9965DE169FB56800DAA38A /* Blue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blue.NUI.nss; sourceTree = "<group>"; };
+		4A9965DF169FB56800DAA38A /* Default.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Default.NUI.nss; sourceTree = "<group>"; };
+		4A9965E0169FB56800DAA38A /* Googolplex.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Googolplex.NUI.nss; sourceTree = "<group>"; };
+		4A9965E1169FB56800DAA38A /* Round.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Round.NUI.nss; sourceTree = "<group>"; };
+		4A9965E2169FB56800DAA38A /* Route.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Route.NUI.nss; sourceTree = "<group>"; };
+		4A9965E3169FB56800DAA38A /* SkyBlue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBlue.NUI.nss; sourceTree = "<group>"; };
+		4A9965E4169FB56800DAA38A /* Switchboard.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Switchboard.NUI.nss; sourceTree = "<group>"; };
+		4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4ADA71C416A0F15C00BDCF81 /* UISearchBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+NUI.h"; sourceTree = "<group>"; };
+		4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+NUI.m"; sourceTree = "<group>"; };
+		4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISearchBarRenderer.h; sourceTree = "<group>"; };
+		4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISearchBarRenderer.m; sourceTree = "<group>"; };
+		832B9C1A176AEADA0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPad Storyboard.storyboard"; sourceTree = "<group>"; };
+		832B9C1D176AEAED0054F06E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/iPhone Storyboard.storyboard"; sourceTree = "<group>"; };
+		89B940231671418100850A9A /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
+		89B940241671418100850A9A /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
+		89B940251671418100850A9A /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
+		89B940261671418100850A9A /* NUIConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIConverter.m; sourceTree = "<group>"; };
+		89B940271671418100850A9A /* NUIGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIGraphics.h; sourceTree = "<group>"; };
+		89B940281671418100850A9A /* NUIGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIGraphics.m; sourceTree = "<group>"; };
+		89B940291671418100850A9A /* NUIRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIRenderer.h; sourceTree = "<group>"; };
+		89B9402A1671418100850A9A /* NUIRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIRenderer.m; sourceTree = "<group>"; };
+		89B9402B1671418100850A9A /* NUISettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISettings.h; sourceTree = "<group>"; };
+		89B9402C1671418100850A9A /* NUISettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISettings.m; sourceTree = "<group>"; };
+		89B9402D1671418100850A9A /* NUIStyleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIStyleParser.h; sourceTree = "<group>"; };
+		89B9402E1671418100850A9A /* NUIStyleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIStyleParser.m; sourceTree = "<group>"; };
+		89B9402F1671418100850A9A /* NUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIUtilities.h; sourceTree = "<group>"; };
+		89B940301671418100850A9A /* NUIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIUtilities.m; sourceTree = "<group>"; };
+		89B940321671418100850A9A /* NUIBarButtonItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIBarButtonItemRenderer.h; sourceTree = "<group>"; };
+		89B940331671418100850A9A /* NUIBarButtonItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIBarButtonItemRenderer.m; sourceTree = "<group>"; };
+		89B940341671418100850A9A /* NUIButtonRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIButtonRenderer.h; sourceTree = "<group>"; };
+		89B940351671418100850A9A /* NUIButtonRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRenderer.m; sourceTree = "<group>"; };
+		89B940361671418100850A9A /* NUILabelRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUILabelRenderer.h; sourceTree = "<group>"; };
+		89B940371671418100850A9A /* NUILabelRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUILabelRenderer.m; sourceTree = "<group>"; };
+		89B940381671418100850A9A /* NUINavigationBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUINavigationBarRenderer.h; sourceTree = "<group>"; };
+		89B940391671418100850A9A /* NUINavigationBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationBarRenderer.m; sourceTree = "<group>"; };
+		89B9403A1671418100850A9A /* NUINavigationItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUINavigationItemRenderer.h; sourceTree = "<group>"; };
+		89B9403B1671418100850A9A /* NUINavigationItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationItemRenderer.m; sourceTree = "<group>"; };
+		89B9403C1671418100850A9A /* NUISegmentedControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISegmentedControlRenderer.h; sourceTree = "<group>"; };
+		89B9403D1671418100850A9A /* NUISegmentedControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlRenderer.m; sourceTree = "<group>"; };
+		89B9403E1671418100850A9A /* NUITabBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITabBarRenderer.h; sourceTree = "<group>"; };
+		89B9403F1671418100850A9A /* NUITabBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarRenderer.m; sourceTree = "<group>"; };
+		89B940401671418100850A9A /* NUITableViewCellRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITableViewCellRenderer.h; sourceTree = "<group>"; };
+		89B940411671418100850A9A /* NUITableViewCellRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewCellRenderer.m; sourceTree = "<group>"; };
+		89B940421671418100850A9A /* NUITextFieldRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITextFieldRenderer.h; sourceTree = "<group>"; };
+		89B940431671418100850A9A /* NUITextFieldRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextFieldRenderer.m; sourceTree = "<group>"; };
+		89B940441671418100850A9A /* NUIViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIViewRenderer.h; sourceTree = "<group>"; };
+		89B940451671418100850A9A /* NUIViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewRenderer.m; sourceTree = "<group>"; };
+		89B940461671418100850A9A /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
+		89B9404A1671418100850A9A /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
+		B51BC288169724A3004A38F8 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };
+		B51BC289169724A3004A38F8 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
+		B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
+		B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
+		D8E7167F16B8AF4300686854 /* NUIControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIControlRenderer.h; sourceTree = "<group>"; };
+		D8E7168016B8AF4300686854 /* NUIControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRenderer.m; sourceTree = "<group>"; };
+		D8E7168316B9980300686854 /* UIControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+NUI.h"; sourceTree = "<group>"; };
+		D8E7168416B9980300686854 /* UIControl+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+NUI.m"; sourceTree = "<group>"; };
+		D983DEE3169DBCCB00A3A180 /* NUIToolbarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIToolbarRenderer.h; sourceTree = "<group>"; };
+		D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIToolbarRenderer.m; sourceTree = "<group>"; };
+		D983DEE6169DC05300A3A180 /* UIToolbar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+NUI.h"; sourceTree = "<group>"; };
+		D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+NUI.m"; sourceTree = "<group>"; };
+		D983DF1A169DC84500A3A180 /* UISlider+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+NUI.h"; sourceTree = "<group>"; };
+		D983DF1B169DC84500A3A180 /* UISlider+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+NUI.m"; sourceTree = "<group>"; };
+		D983DF1D169DC87200A3A180 /* NUISliderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISliderRenderer.h; sourceTree = "<group>"; };
+		D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISliderRenderer.m; sourceTree = "<group>"; };
+		E291BBD5179C89470016BC1D /* NUITableViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITableViewRenderer.h; sourceTree = "<group>"; };
+		E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewRenderer.m; sourceTree = "<group>"; };
+		E291BBD8179C89710016BC1D /* UITableView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+NUI.h"; sourceTree = "<group>"; };
+		E291BBD9179C89710016BC1D /* UITableView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+NUI.m"; sourceTree = "<group>"; };
+		FC280DB716F127DE00B01664 /* UIProgressView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+NUI.h"; sourceTree = "<group>"; };
+		FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+NUI.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A0B862E165EE59A005B5756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A4FC6341663141D0058031B /* CoreImage.framework in Frameworks */,
+				4A0B8681165EE917005B5756 /* QuartzCore.framework in Frameworks */,
+				4A0B8636165EE59A005B5756 /* UIKit.framework in Frameworks */,
+				4A0B8638165EE59A005B5756 /* Foundation.framework in Frameworks */,
+				4A0B863A165EE59A005B5756 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A0B8626165EE59A005B5756 = {
+			isa = PBXGroup;
+			children = (
+				4A4FC62016629C4D0058031B /* CoreImage.framework */,
+				4A0B8680165EE917005B5756 /* QuartzCore.framework */,
+				4A0B863B165EE59A005B5756 /* NUIDemo */,
+				4A0B8634165EE59A005B5756 /* Frameworks */,
+				4A0B8632165EE59A005B5756 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A0B8632165EE59A005B5756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A0B8631165EE59A005B5756 /* NUIDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A0B8634165EE59A005B5756 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A0B8635165EE59A005B5756 /* UIKit.framework */,
+				4A0B8637165EE59A005B5756 /* Foundation.framework */,
+				4A0B8639165EE59A005B5756 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A0B863B165EE59A005B5756 /* NUIDemo */ = {
+			isa = PBXGroup;
+			children = (
+				89B940211671418100850A9A /* NUI */,
+				4A0B8685165F1382005B5756 /* NUIDemoTableViewController.h */,
+				4A0B8686165F1383005B5756 /* NUIDemoTableViewController.m */,
+				4A744B09169105890068F3CF /* ProgrammaticallyCreatedViewController.h */,
+				4A744B0A1691058B0068F3CF /* ProgrammaticallyCreatedViewController.m */,
+				4A0B864A165EE59A005B5756 /* ViewController.h */,
+				4A0B864B165EE59A005B5756 /* ViewController.m */,
+				832B9C19176AEADA0054F06E /* iPad Storyboard.storyboard */,
+				832B9C1C176AEAED0054F06E /* iPhone Storyboard.storyboard */,
+				4A0B8644165EE59A005B5756 /* AppDelegate.h */,
+				4A0B8645165EE59A005B5756 /* AppDelegate.m */,
+				4AAAFE7A166FD2EC00A0D34D /* Resources */,
+				4A0B863C165EE59A005B5756 /* Supporting Files */,
+			);
+			path = NUIDemo;
+			sourceTree = "<group>";
+		};
+		4A0B863C165EE59A005B5756 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A0B863D165EE59A005B5756 /* NUIDemo-Info.plist */,
+				4A0B863E165EE59A005B5756 /* InfoPlist.strings */,
+				4A0B8641165EE59A005B5756 /* main.m */,
+				4A0B8643165EE59A005B5756 /* NUIDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A9965DD169FB54400DAA38A /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				4A9965DE169FB56800DAA38A /* Blue.NUI.nss */,
+				4A9965DF169FB56800DAA38A /* Default.NUI.nss */,
+				4A9965E0169FB56800DAA38A /* Googolplex.NUI.nss */,
+				4A9965E1169FB56800DAA38A /* Round.NUI.nss */,
+				4A9965E2169FB56800DAA38A /* Route.NUI.nss */,
+				4A9965E3169FB56800DAA38A /* SkyBlue.NUI.nss */,
+				4A9965E4169FB56800DAA38A /* Switchboard.NUI.nss */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		4AAAFE7A166FD2EC00A0D34D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4AAAFE7B166FD32600A0D34D /* Default-568h@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		89B940211671418100850A9A /* NUI */ = {
+			isa = PBXGroup;
+			children = (
+				89B940221671418100850A9A /* Core */,
+				89B940461671418100850A9A /* NUIStyle.nss */,
+				89B940471671418100850A9A /* Resources */,
+				4A9965DD169FB54400DAA38A /* Themes */,
+				89B9404F1671418100850A9A /* UI */,
+			);
+			name = NUI;
+			path = ../../NUI;
+			sourceTree = "<group>";
+		};
+		89B940221671418100850A9A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				89B940231671418100850A9A /* NUIAppearance.h */,
+				89B940241671418100850A9A /* NUIAppearance.m */,
+				89B940251671418100850A9A /* NUIConverter.h */,
+				89B940261671418100850A9A /* NUIConverter.m */,
+				4A744B171699044F0068F3CF /* NUIFileMonitor.h */,
+				4A744B18169904500068F3CF /* NUIFileMonitor.m */,
+				89B940271671418100850A9A /* NUIGraphics.h */,
+				89B940281671418100850A9A /* NUIGraphics.m */,
+				89B940291671418100850A9A /* NUIRenderer.h */,
+				89B9402A1671418100850A9A /* NUIRenderer.m */,
+				89B9402B1671418100850A9A /* NUISettings.h */,
+				89B9402C1671418100850A9A /* NUISettings.m */,
+				89B9402D1671418100850A9A /* NUIStyleParser.h */,
+				89B9402E1671418100850A9A /* NUIStyleParser.m */,
+				4A77934C1675647900B5EE81 /* NUISwizzler.h */,
+				4A77934D1675647A00B5EE81 /* NUISwizzler.m */,
+				89B9402F1671418100850A9A /* NUIUtilities.h */,
+				89B940301671418100850A9A /* NUIUtilities.m */,
+				89B940311671418100850A9A /* Renderers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		89B940311671418100850A9A /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				89B940321671418100850A9A /* NUIBarButtonItemRenderer.h */,
+				89B940331671418100850A9A /* NUIBarButtonItemRenderer.m */,
+				89B940341671418100850A9A /* NUIButtonRenderer.h */,
+				89B940351671418100850A9A /* NUIButtonRenderer.m */,
+				D8E7167F16B8AF4300686854 /* NUIControlRenderer.h */,
+				D8E7168016B8AF4300686854 /* NUIControlRenderer.m */,
+				89B940361671418100850A9A /* NUILabelRenderer.h */,
+				89B940371671418100850A9A /* NUILabelRenderer.m */,
+				89B940381671418100850A9A /* NUINavigationBarRenderer.h */,
+				89B940391671418100850A9A /* NUINavigationBarRenderer.m */,
+				89B9403A1671418100850A9A /* NUINavigationItemRenderer.h */,
+				89B9403B1671418100850A9A /* NUINavigationItemRenderer.m */,
+				4A5B5B2716F6471400CF8D16 /* NUIProgressViewRenderer.h */,
+				4A5B5B2816F6471400CF8D16 /* NUIProgressViewRenderer.m */,
+				4ADA71C816A103CD00BDCF81 /* NUISearchBarRenderer.h */,
+				4ADA71C916A103CD00BDCF81 /* NUISearchBarRenderer.m */,
+				89B9403C1671418100850A9A /* NUISegmentedControlRenderer.h */,
+				89B9403D1671418100850A9A /* NUISegmentedControlRenderer.m */,
+				D983DF1D169DC87200A3A180 /* NUISliderRenderer.h */,
+				D983DF1E169DC87500A3A180 /* NUISliderRenderer.m */,
+				B51BC28C16972527004A38F8 /* NUISwitchRenderer.h */,
+				B51BC28D16972527004A38F8 /* NUISwitchRenderer.m */,
+				4A7793461675625800B5EE81 /* NUITabBarItemRenderer.h */,
+				4A7793471675625800B5EE81 /* NUITabBarItemRenderer.m */,
+				89B9403E1671418100850A9A /* NUITabBarRenderer.h */,
+				89B9403F1671418100850A9A /* NUITabBarRenderer.m */,
+				E291BBD5179C89470016BC1D /* NUITableViewRenderer.h */,
+				E291BBD6179C89470016BC1D /* NUITableViewRenderer.m */,
+				89B940401671418100850A9A /* NUITableViewCellRenderer.h */,
+				89B940411671418100850A9A /* NUITableViewCellRenderer.m */,
+				89B940421671418100850A9A /* NUITextFieldRenderer.h */,
+				89B940431671418100850A9A /* NUITextFieldRenderer.m */,
+				D983DEE3169DBCCB00A3A180 /* NUIToolbarRenderer.h */,
+				D983DEE4169DBCCC00A3A180 /* NUIToolbarRenderer.m */,
+				89B940441671418100850A9A /* NUIViewRenderer.h */,
+				89B940451671418100850A9A /* NUIViewRenderer.m */,
+				4A38830F16C7268000DB99C2 /* NUIWindowRenderer.h */,
+				4A38831016C7268000DB99C2 /* NUIWindowRenderer.m */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		89B940471671418100850A9A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89B9404A1671418100850A9A /* NUIViewBackground.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		89B9404F1671418100850A9A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4A77934F1675687C00B5EE81 /* UIBarButtonItem+NUI.h */,
+				4A7793501675687C00B5EE81 /* UIBarButtonItem+NUI.m */,
+				4A779341167560FF00B5EE81 /* UIButton+NUI.h */,
+				4A779340167560FF00B5EE81 /* UIButton+NUI.m */,
+				D8E7168316B9980300686854 /* UIControl+NUI.h */,
+				D8E7168416B9980300686854 /* UIControl+NUI.m */,
+				4A55F07A1675718F0056753C /* UILabel+NUI.h */,
+				4A55F07B1675718F0056753C /* UILabel+NUI.m */,
+				4A55F07D167573D10056753C /* UINavigationBar+NUI.h */,
+				4A55F07E167573D10056753C /* UINavigationBar+NUI.m */,
+				4A55F08016758E4D0056753C /* UINavigationItem+NUI.h */,
+				4A55F08116758E4D0056753C /* UINavigationItem+NUI.m */,
+				FC280DB716F127DE00B01664 /* UIProgressView+NUI.h */,
+				FC280DB816F127DE00B01664 /* UIProgressView+NUI.m */,
+				4ADA71C416A0F15C00BDCF81 /* UISearchBar+NUI.h */,
+				4ADA71C516A0F15C00BDCF81 /* UISearchBar+NUI.m */,
+				4A55F08316758E9D0056753C /* UISegmentedControl+NUI.h */,
+				4A55F08416758E9D0056753C /* UISegmentedControl+NUI.m */,
+				D983DF1A169DC84500A3A180 /* UISlider+NUI.h */,
+				D983DF1B169DC84500A3A180 /* UISlider+NUI.m */,
+				B51BC288169724A3004A38F8 /* UISwitch+NUI.h */,
+				B51BC289169724A3004A38F8 /* UISwitch+NUI.m */,
+				4A7793431675619500B5EE81 /* UITabBar+NUI.h */,
+				4A7793441675619500B5EE81 /* UITabBar+NUI.m */,
+				4A7793491675635100B5EE81 /* UITabBarItem+NUI.h */,
+				4A77934A1675635100B5EE81 /* UITabBarItem+NUI.m */,
+				E291BBD8179C89710016BC1D /* UITableView+NUI.h */,
+				E291BBD9179C89710016BC1D /* UITableView+NUI.m */,
+				4A55F08616758ED90056753C /* UITableViewCell+NUI.h */,
+				4A55F08716758EDA0056753C /* UITableViewCell+NUI.m */,
+				4A55F08916758F360056753C /* UITextField+NUI.h */,
+				4A55F08A16758F360056753C /* UITextField+NUI.m */,
+				D983DEE6169DC05300A3A180 /* UIToolbar+NUI.h */,
+				D983DEE7169DC05300A3A180 /* UIToolbar+NUI.m */,
+				4A55F076167570C10056753C /* UIView+NUI.h */,
+				4A55F077167570C10056753C /* UIView+NUI.m */,
+				4A38831316C7269F00DB99C2 /* UIWindow+NUI.h */,
+				4A38831416C7269F00DB99C2 /* UIWindow+NUI.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A0B8630165EE59A005B5756 /* NUIDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A0B864F165EE59A005B5756 /* Build configuration list for PBXNativeTarget "NUIDemo" */;
+			buildPhases = (
+				4A0B862D165EE59A005B5756 /* Sources */,
+				4A0B862E165EE59A005B5756 /* Frameworks */,
+				4A0B862F165EE59A005B5756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NUIDemo;
+			productName = NUIDemo;
+			productReference = 4A0B8631165EE59A005B5756 /* NUIDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A0B8628165EE59A005B5756 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Tom Benner";
+			};
+			buildConfigurationList = 4A0B862B165EE59A005B5756 /* Build configuration list for PBXProject "NUIDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4A0B8626165EE59A005B5756;
+			productRefGroup = 4A0B8632165EE59A005B5756 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A0B8630165EE59A005B5756 /* NUIDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A0B862F165EE59A005B5756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A0B8640165EE59A005B5756 /* InfoPlist.strings in Resources */,
+				4AAAFE7C166FD32600A0D34D /* Default-568h@2x.png in Resources */,
+				89B940811671418200850A9A /* NUIStyle.nss in Resources */,
+				89B940841671418200850A9A /* NUIViewBackground.png in Resources */,
+				4A9965E5169FB56800DAA38A /* Blue.NUI.nss in Resources */,
+				4A9965E6169FB56800DAA38A /* Default.NUI.nss in Resources */,
+				4A9965E7169FB56800DAA38A /* Googolplex.NUI.nss in Resources */,
+				4A9965E8169FB56800DAA38A /* Round.NUI.nss in Resources */,
+				4A9965E9169FB56800DAA38A /* Route.NUI.nss in Resources */,
+				4A9965EA169FB56800DAA38A /* SkyBlue.NUI.nss in Resources */,
+				4A9965EB169FB56800DAA38A /* Switchboard.NUI.nss in Resources */,
+				832B9C1B176AEADA0054F06E /* iPad Storyboard.storyboard in Resources */,
+				832B9C1E176AEAED0054F06E /* iPhone Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A0B862D165EE59A005B5756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A0B8642165EE59A005B5756 /* main.m in Sources */,
+				4A0B8646165EE59A005B5756 /* AppDelegate.m in Sources */,
+				4A0B864C165EE59A005B5756 /* ViewController.m in Sources */,
+				4A0B8687165F1383005B5756 /* NUIDemoTableViewController.m in Sources */,
+				89B940701671418200850A9A /* NUIAppearance.m in Sources */,
+				89B940711671418200850A9A /* NUIConverter.m in Sources */,
+				89B940721671418200850A9A /* NUIGraphics.m in Sources */,
+				89B940731671418200850A9A /* NUIRenderer.m in Sources */,
+				89B940741671418200850A9A /* NUISettings.m in Sources */,
+				89B940751671418200850A9A /* NUIStyleParser.m in Sources */,
+				89B940761671418200850A9A /* NUIUtilities.m in Sources */,
+				89B940771671418200850A9A /* NUIBarButtonItemRenderer.m in Sources */,
+				89B940781671418200850A9A /* NUIButtonRenderer.m in Sources */,
+				89B940791671418200850A9A /* NUILabelRenderer.m in Sources */,
+				89B9407A1671418200850A9A /* NUINavigationBarRenderer.m in Sources */,
+				89B9407B1671418200850A9A /* NUINavigationItemRenderer.m in Sources */,
+				89B9407C1671418200850A9A /* NUISegmentedControlRenderer.m in Sources */,
+				89B9407D1671418200850A9A /* NUITabBarRenderer.m in Sources */,
+				89B9407E1671418200850A9A /* NUITableViewCellRenderer.m in Sources */,
+				89B9407F1671418200850A9A /* NUITextFieldRenderer.m in Sources */,
+				89B940801671418200850A9A /* NUIViewRenderer.m in Sources */,
+				4A779342167560FF00B5EE81 /* UIButton+NUI.m in Sources */,
+				4A7793451675619500B5EE81 /* UITabBar+NUI.m in Sources */,
+				4A7793481675625800B5EE81 /* NUITabBarItemRenderer.m in Sources */,
+				4A77934B1675635100B5EE81 /* UITabBarItem+NUI.m in Sources */,
+				4A77934E1675647A00B5EE81 /* NUISwizzler.m in Sources */,
+				4A7793511675687C00B5EE81 /* UIBarButtonItem+NUI.m in Sources */,
+				4A55F078167570C10056753C /* UIView+NUI.m in Sources */,
+				4A55F07C1675718F0056753C /* UILabel+NUI.m in Sources */,
+				4A55F07F167573D10056753C /* UINavigationBar+NUI.m in Sources */,
+				4A55F08216758E4E0056753C /* UINavigationItem+NUI.m in Sources */,
+				4A55F08516758E9D0056753C /* UISegmentedControl+NUI.m in Sources */,
+				4A55F08816758EDA0056753C /* UITableViewCell+NUI.m in Sources */,
+				4A55F08B16758F360056753C /* UITextField+NUI.m in Sources */,
+				4A744B0B1691058C0068F3CF /* ProgrammaticallyCreatedViewController.m in Sources */,
+				B51BC28A169724A3004A38F8 /* UISwitch+NUI.m in Sources */,
+				B51BC28E16972527004A38F8 /* NUISwitchRenderer.m in Sources */,
+				4A744B19169904520068F3CF /* NUIFileMonitor.m in Sources */,
+				D983DEE5169DBCCD00A3A180 /* NUIToolbarRenderer.m in Sources */,
+				D983DEE8169DC05300A3A180 /* UIToolbar+NUI.m in Sources */,
+				D983DF1C169DC84600A3A180 /* UISlider+NUI.m in Sources */,
+				D983DF1F169DC87800A3A180 /* NUISliderRenderer.m in Sources */,
+				4ADA71C616A0F15C00BDCF81 /* UISearchBar+NUI.m in Sources */,
+				4ADA71CA16A103CD00BDCF81 /* NUISearchBarRenderer.m in Sources */,
+				D8E7168116B8AF4400686854 /* NUIControlRenderer.m in Sources */,
+				D8E7168516B9980300686854 /* UIControl+NUI.m in Sources */,
+				4A38831116C7268000DB99C2 /* NUIWindowRenderer.m in Sources */,
+				4A38831516C7269F00DB99C2 /* UIWindow+NUI.m in Sources */,
+				FC280DB916F127DE00B01664 /* UIProgressView+NUI.m in Sources */,
+				4A5B5B2916F6471400CF8D16 /* NUIProgressViewRenderer.m in Sources */,
+				E291BBD7179C89470016BC1D /* NUITableViewRenderer.m in Sources */,
+				E291BBDA179C89710016BC1D /* UITableView+NUI.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A0B863E165EE59A005B5756 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A0B863F165EE59A005B5756 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		832B9C19176AEADA0054F06E /* iPad Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				832B9C1A176AEADA0054F06E /* en */,
+			);
+			name = "iPad Storyboard.storyboard";
+			sourceTree = "<group>";
+		};
+		832B9C1C176AEAED0054F06E /* iPhone Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				832B9C1D176AEAED0054F06E /* en */,
+			);
+			name = "iPhone Storyboard.storyboard";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A0B864D165EE59A005B5756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4A0B864E165EE59A005B5756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A0B8650165EE59A005B5756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
+				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4A0B8651165EE59A005B5756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NUIDemo/NUIDemo-Prefix.pch";
+				INFOPLIST_FILE = "NUIDemo/NUIDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A0B862B165EE59A005B5756 /* Build configuration list for PBXProject "NUIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A0B864D165EE59A005B5756 /* Debug */,
+				4A0B864E165EE59A005B5756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A0B864F165EE59A005B5756 /* Build configuration list for PBXNativeTarget "NUIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A0B8650165EE59A005B5756 /* Debug */,
+				4A0B8651165EE59A005B5756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A0B8628165EE59A005B5756 /* Project object */;
+}

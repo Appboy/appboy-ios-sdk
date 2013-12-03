@@ -35,9 +35,7 @@ static NSMutableArray *attributesValuesArray = nil;
   }
 }
 
-#pragma mark
 #pragma Table View Data Source Delegate Methods
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   // Cell with gender segmented control
@@ -90,10 +88,7 @@ static NSMutableArray *attributesValuesArray = nil;
   return TotalNumberOfAttributes;
 }
 
-
-#pragma mark
 #pragma Text Field Delegate Methods
-
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
 
   NSInteger nextTag = textField.tag + 1;

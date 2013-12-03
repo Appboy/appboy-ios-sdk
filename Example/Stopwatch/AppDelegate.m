@@ -8,7 +8,6 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 @implementation AppDelegate
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
   // Sets up Crittercism for crash and error tracking.
   [Crittercism enableWithAppID:CrittercismAppId];
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
@@ -17,7 +16,8 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [Appboy startWithApiKey:AppboyApiKey
             inApplication:application
         withLaunchOptions:launchOptions
-        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: [NSNumber numberWithInteger:ABKAutomaticRequestProcessing]}];
+        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: [NSNumber numberWithInteger:ABKAutomaticRequestProcessing],
+                            ABKSocialAccountAcquisitionPolicyOptionKey:[NSNumber numberWithInteger:ABKAutomaticSocialAccountAcquisition]}];
 
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];

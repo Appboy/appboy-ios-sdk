@@ -1,46 +1,17 @@
 #import "SlideupControlsViewController.h"
 #import "Crittercism.h"
 
-@interface SlideupControlsViewController () {
-  int _slideupMode;
-}
-@end
-
 @implementation SlideupControlsViewController
 
 - (void) viewDidLoad {
   [super viewDidLoad];
-
-  _slideupMode = self.modeButton.selectedSegmentIndex;
-  [self delegateButtonSwitched:self];
-
-  // Delegate will be off by default
-  self.delegateButton.on = NO;
-  self.modeButton.enabled = NO;
-  self.displayNextAvailableSlideupButton.enabled = NO;
+  [Appboy sharedInstance].slideupDelegate = self;
   
   if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
     // In iOS 7, views are automatically extended to fit the size of the screen. Therefore, views may end up under
     // the navigation bar, which makes some buttons invisible or unclickable. In order to prevent this behaviour, we set
     // the Extended Layout mode to UIRectEdgeNone.
     self.edgesForExtendedLayout = UIRectEdgeNone;
-  }
-}
-
-// Use the slideupDelegate to control when slideups will appear, be queued, or be ignored.  If the delegate
-// is not set, slideups will appear as they arrive.
-- (IBAction) delegateButtonSwitched:(id)sender {
-  if (self.delegateButton.on) {
-    [Crittercism leaveBreadcrumb:@"slideup delegate is slideup controls view controller"];
-    [Appboy sharedInstance].slideupDelegate = self;
-    self.modeButton.enabled = YES;
-    self.displayNextAvailableSlideupButton.enabled = YES;
-  }
-  else {
-    self.modeButton.enabled = NO;
-    self.displayNextAvailableSlideupButton.enabled = NO;
-    [Crittercism leaveBreadcrumb:@"slideup delegate is nil now"];
-    [Appboy sharedInstance].slideupDelegate = nil;
   }
 }
 
@@ -73,17 +44,27 @@
  * Note that if you unset the slideupDelegate after some slideups have been queued, the accumulated queued slideups
  * will be displayed according to the above scheme.
  */
-- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message {
-  if (_slideupMode == 0) {
-    return ABKSlideupShouldShowImmediately;
+- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(ABKSlideup *)slideup {
+  NSLog(@"Received slideup with message: %@", slideup.message);
+  slideup.hideChevron = YES;
+  
+  switch (self.segmentedControlForSlideupMode.selectedSegmentIndex) {
+    case 0:
+      return ABKSlideupShouldShowImmediately;
+      break;
+      
+    case 1:
+      return ABKSlideupShouldQueue;
+      break;
+      
+    case 2:
+      return ABKSlideupShouldIgnore;
+      break;
+      
+    default:
+      return ABKSlideupShouldShowImmediately;
+      break;
   }
-  else if (_slideupMode == 1) {
-    return ABKSlideupShouldQueue;
-  }
-  else if (_slideupMode == 2) {
-    return ABKSlideupShouldIgnore;
-  }
-  return ABKSlideupShouldShowImmediately;
 }
 
 // If we've been returning ABKSlideupShouldQueue and slideups have arrived, they'll be queued.  Here, take
@@ -96,35 +77,21 @@
 // This delegate method is notified if the slideup is tapped.  You can use this to initiate an action
 // in response to the tap.  Note that when the delegate is *not* set, a tap on a slideup brings up
 // a news feed;  when the delegate is set, the response to the tap is up to you.
-- (void) slideupWasTapped {
+- (void) slideupWasTapped:(ABKSlideup *)slideup {
   NSLog(@"Slideup tapped!");
 }
 
-- (IBAction) modeButtonChanged:(UISegmentedControl *)sender {
-  _slideupMode = sender.selectedSegmentIndex;
-}
-
 - (void) dealloc {
-  [_modeButton release];
-
-  [_delegateButton release];
-    [_displayNextAvailableSlideupButton release];
+  [_segmentedControlForSlideupMode release];
+  [_displayNextAvailableSlideupButton release];
   [super dealloc];
-}
-
-- (void) viewDidDisappear:(BOOL)animated {
-  [Crittercism leaveBreadcrumb:@"slideup delegate is nil now"];
-  [Appboy sharedInstance].slideupDelegate = nil;
-  [super viewDidDisappear:animated];
 }
 
 - (void) viewDidUnload {
   [Crittercism leaveBreadcrumb:@"slideup delegate is nil now"];
   [Appboy sharedInstance].slideupDelegate = nil;
-  [self setModeButton:nil];
-
-  [self setDelegateButton:nil];
-    [self setDisplayNextAvailableSlideupButton:nil];
+  [self setSegmentedControlForSlideupMode:nil];
+  [self setDisplayNextAvailableSlideupButton:nil];
   [super viewDidUnload];
 }
 

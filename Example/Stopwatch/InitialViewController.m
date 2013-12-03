@@ -6,6 +6,8 @@
 @property (retain, nonatomic) UIPopoverController *contactUsPopoverController;
 @property (retain, nonatomic) UIPopoverController *latestNewsPopoverController;
 @property (retain, nonatomic) UIPopoverController *newsAndFeedbackPopoverController;
+
+@property (retain, nonatomic) CLLocationManager *locationManager;
 @end
 
 @implementation InitialViewController
@@ -35,6 +37,11 @@
   UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Feedback"
                                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromModalFeed:)] autorelease];
   feedViewController.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(startLocationUpdates)
+                                               name:UIApplicationWillEnterForegroundNotification
+                                             object:nil];
 }
 
 // newsAndFeedback Section
@@ -171,7 +178,6 @@
   [uiAlertView release];
 }
 
-#pragma mark
 #pragma Appboy feedback popover delegate methods
 
 // These two methods are required -- this is how we know when to close the popover.  Note that tapping outside
@@ -195,7 +201,6 @@
   [self.contactUsPopoverController dismissPopoverAnimated:YES];
 }
 
-#pragma mark
 #pragma Appboy feed popover delegate method
 // This delegate is called when "close" is tapped on the popover.  Close it.
 - (void) feedViewControllerPopoverContextCloseTapped:(ABKFeedViewControllerPopoverContext *)sender {
@@ -203,7 +208,6 @@
   [self.latestNewsPopoverController dismissPopoverAnimated:YES];
 }
 
-#pragma mark
 #pragma Appboy feedback modal delegate method
 // Feedback was sent successfully
 - (void) feedbackViewControllerModalContextFeedbackSent:(ABKFeedbackViewControllerModalContext *)sender {
@@ -220,7 +224,6 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark
 #pragma Appboy feedback navigation delegate method
 // Feedback was sent successfully in the newsAndFeedback popover
 - (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender {
@@ -235,7 +238,6 @@
   [self.newsAndFeedbackNavigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark
 #pragma split view controller delegate methods
 // Use the split view controller delegate methods to hide/display the news button on navigation bar
 // when the app is in landscape/portrait orientation. 
@@ -278,7 +280,6 @@
   self.timeLabel.text = [self.clock timeString];
 }
 
-#pragma mark
 #pragma navigation controller delegate method
 // use navigation controller delegate method to control the frame size of popover when feedback view
 // controller is displayed
@@ -305,6 +306,7 @@
 }
 
 - (void) dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
   [_startButton release];
   [_timeLabel release];
   [_contactUsButton release];
@@ -325,4 +327,45 @@
   }
 }
 
+// check user location
+
+- (void)startLocationUpdates {
+  // Create the location manager if this object does not
+  // already have one.
+  if (self.locationManager == nil) {
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    self.locationManager = locationManager;
+    [locationManager release];
+  }
+  
+  self.locationManager.delegate = self;
+  self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+  
+  // Set a movement threshold for new events.
+  self.locationManager.distanceFilter = 500; // meters
+  
+  [self.locationManager startUpdatingLocation];
+}
+
+#pragma location manager delegate method
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+  // test that the horizontal accuracy does not indicate an invalid measurement
+  if (newLocation.horizontalAccuracy < 0) return;
+  // test the age of the location measurement to determine if the measurement is cached
+  // in most cases you will not want to rely on cached measurements
+  NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
+  if (locationAge > 5.0) return;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+  // The location "unknown" error simply means the manager is currently unable to get the location.
+  if ([error code] != kCLErrorLocationUnknown) {
+    [self stopUpdatingLocation:@"Location Error"];
+  }
+}
+
+- (void)stopUpdatingLocation:(NSString *)state {
+  [self.locationManager stopUpdatingLocation];
+  self.locationManager.delegate = nil;
+}
 @end

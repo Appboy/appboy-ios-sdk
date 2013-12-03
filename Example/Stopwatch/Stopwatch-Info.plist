@@ -20,6 +20,9 @@
 				<string>stopwatch-icon.png</string>
 				<string>stopwatch-icon-iPad@2x.png</string>
 				<string>stopwatch-icon-iPad.png</string>
+				<string>stopwatch-icon-76.png</string>
+				<string>stopwatch-icon-120.png</string>
+				<string>stopwatch-icon-152.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -31,12 +34,10 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>2.3.1</string>
 	<key>FacebookAppID</key>
 	<string>631617900200059</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -48,6 +49,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>gamekit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

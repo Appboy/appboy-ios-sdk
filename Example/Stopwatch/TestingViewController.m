@@ -38,9 +38,6 @@
                                            selector:@selector(feedUpdated:)
                                                name:ABKFeedUpdatedNotification
                                              object:nil];
-
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"rating score" andIntegerValue:10];
-
   
   if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
     // In iOS 7, views are automatically extended to fit the size of the screen. Therefore, views may end up under
@@ -63,25 +60,13 @@
   // Refresh these every time we come to the testing screen
 }
 
-
-- (IBAction)ratingStepperChanged:(UIStepper *)sender {
-  if ([self.ratedScoreLabel.text integerValue] > sender.value) {
-    [[Appboy sharedInstance].user incrementCustomUserAttribute:@"rating score" by:-1];
-  } else if ([self.ratedScoreLabel.text integerValue] < sender.value) {
-    [[Appboy sharedInstance].user incrementCustomUserAttribute:@"rating score"];
-  }
-  self.ratedScoreLabel.text = [NSString stringWithFormat:@"%d", (int)sender.value];
-}
-
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-  [_ratedScoreLabel release];
   [_flushModeButton release];
   [super dealloc];
 }
 
 - (void) viewDidUnload {
-  [self setRatedScoreLabel:nil];
   [self setFlushModeButton:nil];
   [super viewDidUnload];
 }
@@ -117,6 +102,10 @@
 - (IBAction) flushAndShutDownAppboy:(id)sender {
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
   [[Appboy sharedInstance] shutdownServerCommunication];
+}
+
+- (IBAction) increaseCouponClaimed:(id)sender {
+  [[Appboy sharedInstance].user incrementCustomUserAttribute:@"the number of claimed coupon"];
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

@@ -2,6 +2,7 @@
 #import "Clock.h"
 #import "AppboyKit.h"
 #import "Crittercism.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface InitialViewController : UIViewController
     <ABKFeedbackViewControllerPopoverContextDelegate,
@@ -9,10 +10,7 @@
     ABKFeedbackViewControllerModalContextDelegate,
     UISplitViewControllerDelegate, CrittercismDelegate,
     ABKFeedbackViewControllerNavigationContextDelegate,
-    UINavigationControllerDelegate>
-
-- (IBAction) resetButtonTapped:(id)sender;
-- (IBAction) startButtonTapped:(id)sender;
+UINavigationControllerDelegate, CLLocationManagerDelegate>
 
 @property (retain, nonatomic) IBOutlet UIButton *startButton;
 @property (retain, nonatomic) IBOutlet UILabel *timeLabel;
@@ -23,6 +21,11 @@
 @property (retain, nonatomic) IBOutlet UINavigationController *newsAndFeedbackNavigationController;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *contactUsButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *latestNewsButton;
+
+
+- (IBAction) resetButtonTapped:(id)sender;
+- (IBAction) startButtonTapped:(id)sender;
+
 - (IBAction) latestNewsButtonTappediPad:(id)sender;
 - (IBAction) contactUsButtonTappediPad:(id)sender;
 - (IBAction) contactUsButtonTappediPhone:(id)sender;

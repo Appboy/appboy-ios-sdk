@@ -6,6 +6,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "CrittercismDelegate.h"
+#import "CRFilter.h"
 
 // Operating System Support
 //
@@ -28,6 +29,8 @@
 //
 // [Crittercism enableWithAppID:@"YOURAPPIDGOESHERE"];
 
+@class CLLocation;
+
 @interface Crittercism : NSObject
 
 // Enabling Crittercism
@@ -45,7 +48,9 @@
 //
 // The filters parameter can be used to prevent sensitive URLs from being
 // captured by the network instrumentation. To use this, pass in an
-// NSArray of strings that will be matched against URLs captured by the library.
+// NSArray of CRFilter objects that will be matched against URLs captured by the
+// library.
+//
 // (Note - the filtering will take place off of your application's main thread.)
 
 + (void)enableWithAppID:(NSString *)appId;
@@ -67,8 +72,8 @@
  disableInstrumentation:(BOOL)disableInstrumentation;
 
 // Adds an additional filter for network instrumentation.
-
-+ (void)addFilter:(NSString *)filter;
+// See CRFilter.h for additional details.
++ (void)addFilter:(CRFilter *)filter;
 
 // Breadcrumbs provide the ability to track activity within your app.
 //
@@ -94,6 +99,14 @@
 // instruct the library to perform all breadcrumb writes on a background thread.
 
 + (void)setAsyncBreadcrumbMode:(BOOL)writeAsync;
+
+// Inform Crittercism of the device's most recent location for use with
+// OPTMZ network instrumentation. 
+// Note: Currently, only customers that are participating in the OPTMZ
+//   geo-location beta program will be able to see location data in the
+//   Crittercism portal. If you would like to participate in the beta
+//   program, please contact beta@crittercism.com.
++ (void)updateLocation:(CLLocation *)location;
 
 // Handled exceptions are a way of reporting exceptions your app intentionally
 // caught. If the passed in NSException object was @thrown, the stack trace
