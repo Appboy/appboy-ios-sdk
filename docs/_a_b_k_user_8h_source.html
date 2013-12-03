@@ -89,56 +89,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html">   34</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_user.html">ABKUser</a> : NSObject</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a751d4cca44b7bcd9033bd177a9e33e32">   39</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a751d4cca44b7bcd9033bd177a9e33e32">firstName</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#ad4004972ba0597ab2945406c0a4b3336">   44</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#ad4004972ba0597ab2945406c0a4b3336">lastName</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a5a0334351e2365f9078015444e5ffb5c">   49</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a5a0334351e2365f9078015444e5ffb5c">email</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a271442b2725658da79fd2d0de580c2e5">   54</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSDate *<a class="code" href="interface_a_b_k_user.html#a271442b2725658da79fd2d0de580c2e5">dateOfBirth</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a3d3fb8c80f0f4a38346b9f3b279cf48a">   59</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a3d3fb8c80f0f4a38346b9f3b279cf48a">country</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a0539aac0fa07d5ec9877e033761907a1">   64</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a0539aac0fa07d5ec9877e033761907a1">homeCity</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a7be5b4a3bda1ec7b1aac31985b4e7ff8">   69</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a7be5b4a3bda1ec7b1aac31985b4e7ff8">bio</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#abdf23b4e4c96cd44ae13ce3cffeee99b">   74</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#abdf23b4e4c96cd44ae13ce3cffeee99b">phone</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a4dca2a523d824d2c25a6c5384268322e">   79</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a4dca2a523d824d2c25a6c5384268322e">foursquareAccessToken</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">   84</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  ABKUserGenderMale = 1 &lt;&lt; 0,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  ABKUserGenderFemale = 1 &lt;&lt; 1</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}<a class="code" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;- (BOOL) setGender:(<a class="code" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a>)gender;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;- (BOOL) setIsSubscribedToEmails:(BOOL)subscribed;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html">   35</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_user.html">ABKUser</a> : NSObject</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a751d4cca44b7bcd9033bd177a9e33e32">   40</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a751d4cca44b7bcd9033bd177a9e33e32">firstName</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#ad4004972ba0597ab2945406c0a4b3336">   45</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#ad4004972ba0597ab2945406c0a4b3336">lastName</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a5a0334351e2365f9078015444e5ffb5c">   50</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a5a0334351e2365f9078015444e5ffb5c">email</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a271442b2725658da79fd2d0de580c2e5">   55</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSDate *<a class="code" href="interface_a_b_k_user.html#a271442b2725658da79fd2d0de580c2e5">dateOfBirth</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a3d3fb8c80f0f4a38346b9f3b279cf48a">   60</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a3d3fb8c80f0f4a38346b9f3b279cf48a">country</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a0539aac0fa07d5ec9877e033761907a1">   65</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a0539aac0fa07d5ec9877e033761907a1">homeCity</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a7be5b4a3bda1ec7b1aac31985b4e7ff8">   70</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a7be5b4a3bda1ec7b1aac31985b4e7ff8">bio</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#abdf23b4e4c96cd44ae13ce3cffeee99b">   75</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#abdf23b4e4c96cd44ae13ce3cffeee99b">phone</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a4dca2a523d824d2c25a6c5384268322e">   80</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a4dca2a523d824d2c25a6c5384268322e">foursquareAccessToken</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">@property</span> (nonatomic, copy, readonly) NSString *userID;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b">   88</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b">avatarImageURL</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a8e29efa565369bce73c6b727ccd41ec4">   95</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a8e29efa565369bce73c6b727ccd41ec4">twitterAccountIdentifier</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;+ (NSDictionary *) diffUserDictionary:(NSDictionary *)userAsDictionary againstOtherUserDictionary:(NSDictionary *)otherUserAsDictionary;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">  102</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  ABKUserGenderMale = 1 &lt;&lt; 0,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  ABKUserGenderFemale = 1 &lt;&lt; 1</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}<a class="code" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;- (BOOL) setGender:(<a class="code" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a>)gender;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;- (BOOL) setIsSubscribedToEmails:(BOOL)subscribed;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andDoubleValue:(<span class="keywordtype">double</span>)value;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andDateValue:(NSDate *)value;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andDoubleValue:(<span class="keywordtype">double</span>)value;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;- (BOOL) unsetCustomAttributeWithKey:(NSString *)key;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;- (BOOL) incrementCustomUserAttribute:(NSString *)key;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;- (BOOL) incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andDateValue:(NSDate *)value;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;- (BOOL) unsetCustomAttributeWithKey:(NSString *)key;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;- (BOOL) incrementCustomUserAttribute:(NSString *)key;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;- (BOOL) incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 18 2013 18:35:24 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 3 2013 17:17:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -82,8 +82,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Instance Methods</a> &#124;
-<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pub-static-methods">Class Methods</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_a_b_k_user-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -93,6 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#import &lt;<a class="el" href="_a_b_k_user_8h_source.html">ABKUser.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ac6115b2e21531a81d3eddecdda55a09c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a> { <b>ABKUserGenderMale</b> = 1 &lt;&lt; 0, 
+<b>ABKUserGenderFemale</b> = 1 &lt;&lt; 1
+ }</td></tr>
+<tr class="separator:ac6115b2e21531a81d3eddecdda55a09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a3e261882c7e095c6e0381ab62ceebe40"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40">setGender:</a></td></tr>
@@ -116,12 +124,11 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a3311dadde4e172539dce54d82a6d9447"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3311dadde4e172539dce54d82a6d9447">incrementCustomUserAttribute:by:</a></td></tr>
 <tr class="separator:a3311dadde4e172539dce54d82a6d9447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
-Protected Types</h2></td></tr>
-<tr class="memitem:ac6115b2e21531a81d3eddecdda55a09c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a> { <b>ABKUserGenderMale</b> = 1 &lt;&lt; 0, 
-<b>ABKUserGenderFemale</b> = 1 &lt;&lt; 1
- }</td></tr>
-<tr class="separator:ac6115b2e21531a81d3eddecdda55a09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Class Methods</h2></td></tr>
+<tr class="memitem:a17d672e4bc550fcb8339127a4367c2ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17d672e4bc550fcb8339127a4367c2ef"></a>
+(NSDictionary *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>diffUserDictionary:againstOtherUserDictionary:</b></td></tr>
+<tr class="separator:a17d672e4bc550fcb8339127a4367c2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -143,11 +150,18 @@ Properties</h2></td></tr>
 <tr class="separator:abdf23b4e4c96cd44ae13ce3cffeee99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dca2a523d824d2c25a6c5384268322e"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a4dca2a523d824d2c25a6c5384268322e">foursquareAccessToken</a></td></tr>
 <tr class="separator:a4dca2a523d824d2c25a6c5384268322e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f35a2edcc748a5a0a8b816b383085f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13f35a2edcc748a5a0a8b816b383085f"></a>
+NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td></tr>
+<tr class="separator:a13f35a2edcc748a5a0a8b816b383085f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b80c46f2ed8eb2e95e5ff956c1fe08b"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b">avatarImageURL</a></td></tr>
+<tr class="separator:a0b80c46f2ed8eb2e95e5ff956c1fe08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e29efa565369bce73c6b727ccd41ec4"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a8e29efa565369bce73c6b727ccd41ec4">twitterAccountIdentifier</a></td></tr>
+<tr class="separator:a8e29efa565369bce73c6b727ccd41ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>When setting the custom attributes with custom keys:</p>
 <ol type="1">
-<li>Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values for reserved keys, please find and set the corresponding property in this class. The reserved key list is:: email facebook twitter first_name last_name dob external_id country home_city bio gender phone email_subscribe foursquare_access_token</li>
+<li>Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values for reserved keys, please find and set the corresponding property in this class. The reserved key list is:: email facebook twitter first_name last_name dob external_id country home_city bio gender phone email_subscribe foursquare_access_token image_url</li>
 </ol>
 <ol type="1">
 <li>The maximum key length is 255 characters; longer keys are truncated.</li>
@@ -159,19 +173,11 @@ Properties</h2></td></tr>
 <a class="anchor" id="ac6115b2e21531a81d3eddecdda55a09c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">- (enum) <a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Values representing the gender recognized by the SDK. </p>
 
@@ -477,6 +483,27 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a0b80c46f2ed8eb2e95e5ff956c1fe08b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) avatarImageURL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">copy</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The User's avatar image URL. This URL will be processed by the server and used in their user profile on the dashboard. (String) </p>
+
+</div>
+</div>
 <a class="anchor" id="a7be5b4a3bda1ec7b1aac31985b4e7ff8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -666,10 +693,31 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8e29efa565369bce73c6b727ccd41ec4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) twitterAccountIdentifier</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">copy</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The Twitter account identifier for this user. If set, <a class="el" href="interface_appboy.html">Appboy</a> will only attempt to obtain Twitter data from the Accounts framework if the account with the specified identifier is available. See the ABKSocialAccountAcquisitionPolicy documentation in <a class="el" href="_appboy_8h_source.html">Appboy.h</a> for more information. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 18 2013 18:35:24 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 3 2013 17:17:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

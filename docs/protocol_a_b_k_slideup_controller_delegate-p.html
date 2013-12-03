@@ -93,17 +93,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:ad9dd00c145a9f9f3b634695ea5b53a12"><td class="memItemLeft" align="right" valign="top">(ABKSlideupShouldDisplaySlideupReturnType)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#ad9dd00c145a9f9f3b634695ea5b53a12">shouldDisplaySlideup:</a></td></tr>
-<tr class="separator:ad9dd00c145a9f9f3b634695ea5b53a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6237f8420ccc9919ead2085181f468b"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#ab6237f8420ccc9919ead2085181f468b">slideupWasTapped</a></td></tr>
-<tr class="separator:ab6237f8420ccc9919ead2085181f468b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a408df3a1ef860fefebe1c7b7a321a274"><td class="memItemLeft" align="right" valign="top">(ABKSlideupShouldDisplaySlideupReturnType)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#a408df3a1ef860fefebe1c7b7a321a274">shouldDisplaySlideup:</a></td></tr>
+<tr class="separator:a408df3a1ef860fefebe1c7b7a321a274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a150227db7719a04fb84cdca92b879423"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#a150227db7719a04fb84cdca92b879423">slideupWasTapped:</a></td></tr>
+<tr class="separator:a150227db7719a04fb84cdca92b879423"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The slideupDelegate has two uses:</p>
-<p>First, when a slideup has been received from the server, shouldDisplaySlideup is called. The host can decide if the slideup should be shown immediately, queued, or ignored (see above).</p>
-<p>Second, when a slideup is tapped, the default action is to open an <a class="el" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a>. If slideupDelegate is set, however, the <a class="el" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> is not opened; instead, a message is sent to the slideupDelegate which can be used to trigger some other action. </p>
+<div class="textblock"><p>The slideup delegate allows you to flexibly control the display and behavior of the <a class="el" href="interface_appboy.html">Appboy</a> slideup. For more detailed information on slideup behavior, including when and how the delegate is used, see the documentation for the ABKSlideupShouldDisplaySlideupReturnType enum above for more detailed information. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="ad9dd00c145a9f9f3b634695ea5b53a12"></a>
+<a class="anchor" id="a408df3a1ef860fefebe1c7b7a321a274"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -113,8 +111,8 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="memname">- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup: </td>
           <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
-          <td class="paramname"><em>message</em></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_slideup.html">ABKSlideup</a> *)&#160;</td>
+          <td class="paramname"><em>slideup</em></td>
           <td></td>
         </tr>
       </table>
@@ -126,14 +124,15 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>The text of the slideup's message.  Sent when a slideup has arrived from the server. </td></tr>
+    <tr><td class="paramname">slideup</td><td>The slideup object being offered to teh delegate.</td></tr>
   </table>
   </dd>
 </dl>
+<p>See the documentation for the ABKSlideupShouldDisplaySlideupReturnType enum above for more detailed information. </p>
 
 </div>
 </div>
-<a class="anchor" id="ab6237f8420ccc9919ead2085181f468b"></a>
+<a class="anchor" id="a150227db7719a04fb84cdca92b879423"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -141,9 +140,10 @@ Instance Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) slideupWasTapped </td>
+          <td class="memname">- (void) slideupWasTapped: </td>
           <td></td>
-          <td class="paramname"></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_slideup.html">ABKSlideup</a> *)&#160;</td>
+          <td class="paramname"><em>slideup</em></td>
           <td></td>
         </tr>
       </table>
@@ -153,14 +153,14 @@ Instance Methods</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called when the <a class="el" href="interface_appboy.html">Appboy</a> Slideup is tapped by the user. </p>
+<p>After a slideup is successfully displayed, if it is clicked on, the <a class="el" href="interface_appboy.html">Appboy</a> SDK will display a modal news feed view by default. However, if the delegate which was offered that slideup with shouldDisplaySlideup defines slideupWasTapped, no action will be taken directly. Instead, slideupWasTapped will be called with the same slideup object as was offered with shouldDisplaySlideup. This allows you to perform custom actions in response to slideups taps. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 18 2013 18:35:24 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 3 2013 17:17:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
