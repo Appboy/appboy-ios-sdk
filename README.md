@@ -3,7 +3,7 @@
 This is the public repo for the Appboy iOS SDK. This repo contains two folders:
 
 * AppboyKit - This is the Appboy SDK
-* AppboyKitWithoutFacebook - This is the Appboy SDK without support for the Facebook SDK
+* AppboyKitWithoutFacebookSupport - This is the Appboy SDK without support for the Facebook SDK
 * Example - A sample application which demonstrates how to properly integrate Appboy
 
 ## Getting Started
