@@ -15,6 +15,7 @@ var searchData=
   ['abkfeedviewcontrollernavigationcontext',['ABKFeedViewControllerNavigationContext',['../interface_a_b_k_feed_view_controller_navigation_context.html',1,'']]],
   ['abkfeedviewcontrollerpopovercontext',['ABKFeedViewControllerPopoverContext',['../interface_a_b_k_feed_view_controller_popover_context.html',1,'']]],
   ['abkfeedviewcontrollerpopovercontextdelegate_2dp',['ABKFeedViewControllerPopoverContextDelegate-p',['../protocol_a_b_k_feed_view_controller_popover_context_delegate-p.html',1,'']]],
+  ['abkidentifierforadvertisingprovider',['ABKIdentifierForAdvertisingProvider',['../interface_a_b_k_identifier_for_advertising_provider.html',1,'']]],
   ['abkslideup',['ABKSlideup',['../interface_a_b_k_slideup.html',1,'']]],
   ['abkslideupcontrollerdelegate_2dp',['ABKSlideupControllerDelegate-p',['../protocol_a_b_k_slideup_controller_delegate-p.html',1,'']]],
   ['abkuser',['ABKUser',['../interface_a_b_k_user.html',1,'']]],

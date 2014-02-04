@@ -17,6 +17,7 @@ var searchData=
   ['abkfeedviewcontrollerpopovercontext',['ABKFeedViewControllerPopoverContext',['../interface_a_b_k_feed_view_controller_popover_context.html',1,'']]],
   ['abkfeedviewcontrollerpopovercontextdelegate_2dp',['ABKFeedViewControllerPopoverContextDelegate-p',['../protocol_a_b_k_feed_view_controller_popover_context_delegate-p.html',1,'']]],
   ['abkflushintervaloptionkey',['ABKFlushIntervalOptionKey',['../interface_appboy.html#a9819dbd73ada69b599411209f5c6d92a',1,'Appboy']]],
+  ['abkidentifierforadvertisingprovider',['ABKIdentifierForAdvertisingProvider',['../interface_a_b_k_identifier_for_advertising_provider.html',1,'']]],
   ['abkrequestprocessingpolicyoptionkey',['ABKRequestProcessingPolicyOptionKey',['../interface_appboy.html#ae5f99fc09d44d7db0cfe65680547edda',1,'Appboy']]],
   ['abkslideup',['ABKSlideup',['../interface_a_b_k_slideup.html',1,'']]],
   ['abkslideupcontrollerdelegate_2dp',['ABKSlideupControllerDelegate-p',['../protocol_a_b_k_slideup_controller_delegate-p.html',1,'']]],
