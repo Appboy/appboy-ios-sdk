@@ -14,9 +14,9 @@
 		4E9837451834072C007FB92E /* stopwatch-icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9837421834072C007FB92E /* stopwatch-icon-76.png */; };
 		4E9837461834072C007FB92E /* stopwatch-icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9837431834072C007FB92E /* stopwatch-icon-120.png */; };
 		4E9837471834072C007FB92E /* stopwatch-icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9837441834072C007FB92E /* stopwatch-icon-152.png */; };
-		4E9CD553184E84BF001E1285 /* AppboyKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD54F184E84BF001E1285 /* AppboyKit.framework */; };
-		4E9CD554184E84BF001E1285 /* libAppboyKitLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9CD551184E84BF001E1285 /* libAppboyKitLibrary.a */; };
-		4E9CD555184E84BF001E1285 /* NUI_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E9CD552184E84BF001E1285 /* NUI_LICENSE.txt */; };
+		4E989F88183FB9DF009B9619 /* AppboyKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = 4E989F84183FB9DF009B9619 /* AppboyKit.framework */; };
+		4E989F89183FB9DF009B9619 /* libAppboyKitLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E989F86183FB9DF009B9619 /* libAppboyKitLibrary.a */; };
+		4E989F8A183FB9DF009B9619 /* NUI_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E989F87183FB9DF009B9619 /* NUI_LICENSE.txt */; };
 		4E9EF60017FE3163004B8898 /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF59617FE3163004B8898 /* NUIAppearance.m */; };
 		4E9EF60117FE3163004B8898 /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF59817FE3163004B8898 /* NUIConverter.m */; };
 		4E9EF60217FE3163004B8898 /* NUIFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF59A17FE3163004B8898 /* NUIFileMonitor.m */; };
@@ -74,6 +74,7 @@
 		4E9EF63717FE3163004B8898 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF5FF17FE3163004B8898 /* UIWindow+NUI.m */; };
 		4EA2196D17FF3867008F9A4D /* NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4EA2196C17FF3867008F9A4D /* NUIStyle.nss */; };
 		4EA3EE241745B9A2000E403C /* UserAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserAttributeCell.m */; };
+		4EA6891F18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA6891E18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
 		955DE89017419DB000C07A57 /* TestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE88F17419DB000C07A57 /* TestingViewController.m */; };
 		955DE8961741A70700C07A57 /* SlideupControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* SlideupControlsViewController.m */; };
@@ -120,23 +121,23 @@
 		4E9837421834072C007FB92E /* stopwatch-icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch-icon-76.png"; sourceTree = "<group>"; };
 		4E9837431834072C007FB92E /* stopwatch-icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch-icon-120.png"; sourceTree = "<group>"; };
 		4E9837441834072C007FB92E /* stopwatch-icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch-icon-152.png"; sourceTree = "<group>"; };
-		4E9CD542184E84BF001E1285 /* ABKFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewController.h; sourceTree = "<group>"; };
-		4E9CD543184E84BF001E1285 /* ABKFeedbackViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerModalContext.h; sourceTree = "<group>"; };
-		4E9CD544184E84BF001E1285 /* ABKFeedbackViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerNavigationContext.h; sourceTree = "<group>"; };
-		4E9CD545184E84BF001E1285 /* ABKFeedbackViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerPopoverContext.h; sourceTree = "<group>"; };
-		4E9CD546184E84BF001E1285 /* ABKFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewController.h; sourceTree = "<group>"; };
-		4E9CD547184E84BF001E1285 /* ABKFeedViewControllerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerContext.h; sourceTree = "<group>"; };
-		4E9CD548184E84BF001E1285 /* ABKFeedViewControllerGenericContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerGenericContext.h; sourceTree = "<group>"; };
-		4E9CD549184E84BF001E1285 /* ABKFeedViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerModalContext.h; sourceTree = "<group>"; };
-		4E9CD54A184E84BF001E1285 /* ABKFeedViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerNavigationContext.h; sourceTree = "<group>"; };
-		4E9CD54B184E84BF001E1285 /* ABKFeedViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerPopoverContext.h; sourceTree = "<group>"; };
-		4E9CD54C184E84BF001E1285 /* ABKSlideup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKSlideup.h; sourceTree = "<group>"; };
-		4E9CD54D184E84BF001E1285 /* ABKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKUser.h; sourceTree = "<group>"; };
-		4E9CD54E184E84BF001E1285 /* Appboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appboy.h; sourceTree = "<group>"; };
-		4E9CD54F184E84BF001E1285 /* AppboyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppboyKit.framework; sourceTree = "<group>"; };
-		4E9CD550184E84BF001E1285 /* AppboyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyKit.h; sourceTree = "<group>"; };
-		4E9CD551184E84BF001E1285 /* libAppboyKitLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppboyKitLibrary.a; sourceTree = "<group>"; };
-		4E9CD552184E84BF001E1285 /* NUI_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUI_LICENSE.txt; sourceTree = "<group>"; };
+		4E989F77183FB9DF009B9619 /* ABKFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewController.h; sourceTree = "<group>"; };
+		4E989F78183FB9DF009B9619 /* ABKFeedbackViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerModalContext.h; sourceTree = "<group>"; };
+		4E989F79183FB9DF009B9619 /* ABKFeedbackViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerNavigationContext.h; sourceTree = "<group>"; };
+		4E989F7A183FB9DF009B9619 /* ABKFeedbackViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedbackViewControllerPopoverContext.h; sourceTree = "<group>"; };
+		4E989F7B183FB9DF009B9619 /* ABKFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewController.h; sourceTree = "<group>"; };
+		4E989F7C183FB9DF009B9619 /* ABKFeedViewControllerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerContext.h; sourceTree = "<group>"; };
+		4E989F7D183FB9DF009B9619 /* ABKFeedViewControllerGenericContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerGenericContext.h; sourceTree = "<group>"; };
+		4E989F7E183FB9DF009B9619 /* ABKFeedViewControllerModalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerModalContext.h; sourceTree = "<group>"; };
+		4E989F7F183FB9DF009B9619 /* ABKFeedViewControllerNavigationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerNavigationContext.h; sourceTree = "<group>"; };
+		4E989F80183FB9DF009B9619 /* ABKFeedViewControllerPopoverContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKFeedViewControllerPopoverContext.h; sourceTree = "<group>"; };
+		4E989F81183FB9DF009B9619 /* ABKSlideup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKSlideup.h; sourceTree = "<group>"; };
+		4E989F82183FB9DF009B9619 /* ABKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABKUser.h; sourceTree = "<group>"; };
+		4E989F83183FB9DF009B9619 /* Appboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appboy.h; sourceTree = "<group>"; };
+		4E989F84183FB9DF009B9619 /* AppboyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppboyKit.framework; sourceTree = "<group>"; };
+		4E989F85183FB9DF009B9619 /* AppboyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyKit.h; sourceTree = "<group>"; };
+		4E989F86183FB9DF009B9619 /* libAppboyKitLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppboyKitLibrary.a; sourceTree = "<group>"; };
+		4E989F87183FB9DF009B9619 /* NUI_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUI_LICENSE.txt; sourceTree = "<group>"; };
 		4E9EF59517FE3163004B8898 /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
 		4E9EF59617FE3163004B8898 /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
 		4E9EF59717FE3163004B8898 /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
@@ -242,6 +243,7 @@
 		4EA2196C17FF3867008F9A4D /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
 		4EA3EE221745B9A2000E403C /* UserAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributeCell.h; sourceTree = "<group>"; };
 		4EA3EE231745B9A2000E403C /* UserAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributeCell.m; sourceTree = "<group>"; };
+		4EA6891E18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKIdentifierForAdvertisingProvider.m; sourceTree = "<group>"; };
 		953574A81743F862003A64B3 /* UserAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesViewController.m; sourceTree = "<group>"; };
 		953574A91743F862003A64B3 /* UserAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesViewController.h; sourceTree = "<group>"; };
 		955DE88E17419DB000C07A57 /* TestingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingViewController.h; sourceTree = "<group>"; };
@@ -299,7 +301,7 @@
 				958071A1173D723400129B89 /* Social.framework in Frameworks */,
 				4E76BAA2183546CF001872E3 /* libCrittercism_v4_1_2.a in Frameworks */,
 				958071A2173D723400129B89 /* Twitter.framework in Frameworks */,
-				4E9CD554184E84BF001E1285 /* libAppboyKitLibrary.a in Frameworks */,
+				4E989F89183FB9DF009B9619 /* libAppboyKitLibrary.a in Frameworks */,
 				958071A3173D723400129B89 /* Accounts.framework in Frameworks */,
 				958071A4173D723400129B89 /* AdSupport.framework in Frameworks */,
 				958071A5173D723400129B89 /* StoreKit.framework in Frameworks */,
@@ -314,26 +316,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E9CD541184E84BF001E1285 /* AppboyKitWithoutFacebookSupport */ = {
+		4E989F76183FB9DF009B9619 /* AppboyKitWithoutFacebookSupport */ = {
 			isa = PBXGroup;
 			children = (
-				4E9CD542184E84BF001E1285 /* ABKFeedbackViewController.h */,
-				4E9CD543184E84BF001E1285 /* ABKFeedbackViewControllerModalContext.h */,
-				4E9CD544184E84BF001E1285 /* ABKFeedbackViewControllerNavigationContext.h */,
-				4E9CD545184E84BF001E1285 /* ABKFeedbackViewControllerPopoverContext.h */,
-				4E9CD546184E84BF001E1285 /* ABKFeedViewController.h */,
-				4E9CD547184E84BF001E1285 /* ABKFeedViewControllerContext.h */,
-				4E9CD548184E84BF001E1285 /* ABKFeedViewControllerGenericContext.h */,
-				4E9CD549184E84BF001E1285 /* ABKFeedViewControllerModalContext.h */,
-				4E9CD54A184E84BF001E1285 /* ABKFeedViewControllerNavigationContext.h */,
-				4E9CD54B184E84BF001E1285 /* ABKFeedViewControllerPopoverContext.h */,
-				4E9CD54C184E84BF001E1285 /* ABKSlideup.h */,
-				4E9CD54D184E84BF001E1285 /* ABKUser.h */,
-				4E9CD54E184E84BF001E1285 /* Appboy.h */,
-				4E9CD54F184E84BF001E1285 /* AppboyKit.framework */,
-				4E9CD550184E84BF001E1285 /* AppboyKit.h */,
-				4E9CD551184E84BF001E1285 /* libAppboyKitLibrary.a */,
-				4E9CD552184E84BF001E1285 /* NUI_LICENSE.txt */,
+				4EA6891E18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m */,
+				4E989F77183FB9DF009B9619 /* ABKFeedbackViewController.h */,
+				4E989F78183FB9DF009B9619 /* ABKFeedbackViewControllerModalContext.h */,
+				4E989F79183FB9DF009B9619 /* ABKFeedbackViewControllerNavigationContext.h */,
+				4E989F7A183FB9DF009B9619 /* ABKFeedbackViewControllerPopoverContext.h */,
+				4E989F7B183FB9DF009B9619 /* ABKFeedViewController.h */,
+				4E989F7C183FB9DF009B9619 /* ABKFeedViewControllerContext.h */,
+				4E989F7D183FB9DF009B9619 /* ABKFeedViewControllerGenericContext.h */,
+				4E989F7E183FB9DF009B9619 /* ABKFeedViewControllerModalContext.h */,
+				4E989F7F183FB9DF009B9619 /* ABKFeedViewControllerNavigationContext.h */,
+				4E989F80183FB9DF009B9619 /* ABKFeedViewControllerPopoverContext.h */,
+				4E989F81183FB9DF009B9619 /* ABKSlideup.h */,
+				4E989F82183FB9DF009B9619 /* ABKUser.h */,
+				4E989F83183FB9DF009B9619 /* Appboy.h */,
+				4E989F84183FB9DF009B9619 /* AppboyKit.framework */,
+				4E989F85183FB9DF009B9619 /* AppboyKit.h */,
+				4E989F86183FB9DF009B9619 /* libAppboyKitLibrary.a */,
+				4E989F87183FB9DF009B9619 /* NUI_LICENSE.txt */,
 			);
 			name = AppboyKitWithoutFacebookSupport;
 			path = Stopwatch/AppboyKitWithoutFacebookSupport;
@@ -510,7 +513,7 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
-				4E9CD541184E84BF001E1285 /* AppboyKitWithoutFacebookSupport */,
+				4E989F76183FB9DF009B9619 /* AppboyKitWithoutFacebookSupport */,
 				4EA2196C17FF3867008F9A4D /* NUIStyle.nss */,
 				4E9EF59317FE3163004B8898 /* NUI */,
 				C5CC74A01766B955005DAD08 /* CrittercismSDK */,
@@ -663,9 +666,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E989F88183FB9DF009B9619 /* AppboyKit.framework in Resources */,
 				95EF5118173D5FD600C0D780 /* InfoPlist.strings in Resources */,
 				4E9837461834072C007FB92E /* stopwatch-icon-120.png in Resources */,
-				4E9CD553184E84BF001E1285 /* AppboyKit.framework in Resources */,
 				4E9EF62017FE3163004B8898 /* Googolplex.NUI.nss in Resources */,
 				4EA2196D17FF3867008F9A4D /* NUIStyle.nss in Resources */,
 				95EF5120173D5FD600C0D780 /* Default.png in Resources */,
@@ -674,7 +677,7 @@
 				4E9EF61D17FE3163004B8898 /* NUIViewBackground.png in Resources */,
 				95EF5122173D5FD600C0D780 /* Default@2x.png in Resources */,
 				4E9EF61F17FE3163004B8898 /* Default.NUI.nss in Resources */,
-				4E9CD555184E84BF001E1285 /* NUI_LICENSE.txt in Resources */,
+				4E989F8A183FB9DF009B9619 /* NUI_LICENSE.txt in Resources */,
 				95EF5124173D5FD600C0D780 /* Default-568h@2x.png in Resources */,
 				4E9EF62117FE3163004B8898 /* Round.NUI.nss in Resources */,
 				95EF5127173D5FD600C0D780 /* MainStoryboard_iPhone.storyboard in Resources */,
@@ -737,6 +740,7 @@
 				4E9EF61B17FE3163004B8898 /* NUIWindowRenderer.m in Sources */,
 				4E9EF60A17FE3163004B8898 /* NUIButtonRenderer.m in Sources */,
 				955DE89017419DB000C07A57 /* TestingViewController.m in Sources */,
+				4EA6891F18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m in Sources */,
 				4E9EF60417FE3163004B8898 /* NUIRenderer.m in Sources */,
 				4E9EF61317FE3163004B8898 /* NUISwitchRenderer.m in Sources */,
 				955DE8961741A70700C07A57 /* SlideupControlsViewController.m in Sources */,
@@ -884,7 +888,7 @@
 					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B79229F7-1E4F-4FB5-8501-9EB7DC4EA6D4";
+				PROVISIONING_PROFILE = "1A9FE39A-A308-43CE-AB9B-B5B1E8798CF5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
