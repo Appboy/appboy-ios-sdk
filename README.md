@@ -13,6 +13,7 @@ Successful marketing automation is essential to the future of your mobile app. A
 
 - `AppboyKit` - Contains the variant of our SDK which assumes you have the FacebookSDK integrated into your app.
 - `AppboyKitWithoutFacebookSupport` - Contains the variant of our SDK which assumes you have the FacebookSDK integrated into your app.
+- `Example` - Contains the Stopwatch Sample App which contains integration examples for the iOS SDK.
 
 ## Version Support
 
