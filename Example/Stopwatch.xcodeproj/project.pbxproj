@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3E94DE18BD52370008C815 /* LocalizedAppboyUIString.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E94DC18BD52370008C815 /* LocalizedAppboyUIString.strings */; };
+		4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E94E118BD52C60008C815 /* Localizable.strings */; };
 		4E76BAA2183546CF001872E3 /* libCrittercism_v4_1_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E76BAA1183546CF001872E3 /* libCrittercism_v4_1_2.a */; };
 		4E76BAA5183546E3001872E3 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4E76BAA4183546E3001872E3 /* dsym_upload.sh */; };
 		4E94D76E1743EE7100604EA0 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D76D1743EE7100604EA0 /* Clock.m */; };
@@ -72,12 +74,19 @@
 		4E9EF63517FE3163004B8898 /* UIToolbar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF5FB17FE3163004B8898 /* UIToolbar+NUI.m */; };
 		4E9EF63617FE3163004B8898 /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF5FD17FE3163004B8898 /* UIView+NUI.m */; };
 		4E9EF63717FE3163004B8898 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9EF5FF17FE3163004B8898 /* UIWindow+NUI.m */; };
+		4EA0515C18998472007217BD /* CustomSlideupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0515A18998472007217BD /* CustomSlideupViewController.m */; };
+		4EA0515D18998472007217BD /* CustomSlideupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0515B18998472007217BD /* CustomSlideupViewController.xib */; };
+		4EA05160189986F9007217BD /* btn-close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0515E189986F9007217BD /* btn-close.png */; };
+		4EA05161189986F9007217BD /* btn-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0515F189986F9007217BD /* btn-close@2x.png */; };
+		4EA0516618998E11007217BD /* stopwatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0516418998E11007217BD /* stopwatch@2x.png */; };
+		4EA0516718998E11007217BD /* stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0516518998E11007217BD /* stopwatch.png */; };
 		4EA2196D17FF3867008F9A4D /* NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4EA2196C17FF3867008F9A4D /* NUIStyle.nss */; };
 		4EA3EE241745B9A2000E403C /* UserAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserAttributeCell.m */; };
 		4EA6891F18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA6891E18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m */; };
+		4EA7AA8E185626EC00D2B651 /* FlushModeTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7AA8D185626EC00D2B651 /* FlushModeTestViewController.m */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
 		955DE89017419DB000C07A57 /* TestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE88F17419DB000C07A57 /* TestingViewController.m */; };
-		955DE8961741A70700C07A57 /* SlideupControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* SlideupControlsViewController.m */; };
+		955DE8961741A70700C07A57 /* SlideupTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* SlideupTestViewController.m */; };
 		9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */; };
 		9580719F173D723400129B89 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514F173D6A6800C0D780 /* AssetsLibrary.framework */; };
 		958071A0173D723400129B89 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5153173D6A7700C0D780 /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -111,6 +120,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E3E94DD18BD52370008C815 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LocalizedAppboyUIString.strings; sourceTree = "<group>"; };
+		4E3E94DF18BD52530008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LocalizedAppboyUIString.strings"; sourceTree = "<group>"; };
+		4E3E94E018BD529C0008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<group>"; };
+		4E3E94E218BD52C60008C815 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E3E94E418BD52CE0008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4E3E94E518BD52DF0008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<group>"; };
 		4E76BAA1183546CF001872E3 /* libCrittercism_v4_1_2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_1_2.a; sourceTree = "<group>"; };
 		4E76BAA3183546E3001872E3 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
 		4E76BAA4183546E3001872E3 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
@@ -240,16 +255,28 @@
 		4E9EF5FD17FE3163004B8898 /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
 		4E9EF5FE17FE3163004B8898 /* UIWindow+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+NUI.h"; sourceTree = "<group>"; };
 		4E9EF5FF17FE3163004B8898 /* UIWindow+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+NUI.m"; sourceTree = "<group>"; };
+		4EA0515918998472007217BD /* CustomSlideupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideupViewController.h; sourceTree = "<group>"; };
+		4EA0515A18998472007217BD /* CustomSlideupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideupViewController.m; sourceTree = "<group>"; };
+		4EA0515B18998472007217BD /* CustomSlideupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSlideupViewController.xib; sourceTree = "<group>"; };
+		4EA0515E189986F9007217BD /* btn-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-close.png"; sourceTree = "<group>"; };
+		4EA0515F189986F9007217BD /* btn-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-close@2x.png"; sourceTree = "<group>"; };
+		4EA0516218998897007217BD /* ABKSlideupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABKSlideupView.h; path = AppboyKit.framework/Headers/ABKSlideupView.h; sourceTree = "<group>"; };
+		4EA0516318998897007217BD /* ABKSlideupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABKSlideupViewController.h; path = AppboyKit.framework/Headers/ABKSlideupViewController.h; sourceTree = "<group>"; };
+		4EA0516418998E11007217BD /* stopwatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch@2x.png"; sourceTree = "<group>"; };
+		4EA0516518998E11007217BD /* stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopwatch.png; sourceTree = "<group>"; };
+		4EA156FD18A4339200CB63F4 /* ABKSlideupControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABKSlideupControllerDelegate.h; path = AppboyKit.framework/Headers/ABKSlideupControllerDelegate.h; sourceTree = "<group>"; };
 		4EA2196C17FF3867008F9A4D /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
 		4EA3EE221745B9A2000E403C /* UserAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributeCell.h; sourceTree = "<group>"; };
 		4EA3EE231745B9A2000E403C /* UserAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributeCell.m; sourceTree = "<group>"; };
 		4EA6891E18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABKIdentifierForAdvertisingProvider.m; sourceTree = "<group>"; };
+		4EA7AA8C185626EC00D2B651 /* FlushModeTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlushModeTestViewController.h; sourceTree = "<group>"; };
+		4EA7AA8D185626EC00D2B651 /* FlushModeTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlushModeTestViewController.m; sourceTree = "<group>"; };
 		953574A81743F862003A64B3 /* UserAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesViewController.m; sourceTree = "<group>"; };
 		953574A91743F862003A64B3 /* UserAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesViewController.h; sourceTree = "<group>"; };
 		955DE88E17419DB000C07A57 /* TestingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingViewController.h; sourceTree = "<group>"; };
 		955DE88F17419DB000C07A57 /* TestingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingViewController.m; sourceTree = "<group>"; };
-		955DE8931741A70700C07A57 /* SlideupControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideupControlsViewController.h; sourceTree = "<group>"; };
-		955DE8941741A70700C07A57 /* SlideupControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideupControlsViewController.m; sourceTree = "<group>"; };
+		955DE8931741A70700C07A57 /* SlideupTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideupTestViewController.h; sourceTree = "<group>"; };
+		955DE8941741A70700C07A57 /* SlideupTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideupTestViewController.m; sourceTree = "<group>"; };
 		958071A7173D727000129B89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		959D34FC174461D6006AF9CE /* stopwatch-icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch-icon-iPad.png"; sourceTree = "<group>"; };
 		959D34FD174461D6006AF9CE /* stopwatch-icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch-icon-iPad@2x.png"; sourceTree = "<group>"; };
@@ -319,6 +346,10 @@
 		4E989F76183FB9DF009B9619 /* AppboyKitWithoutFacebookSupport */ = {
 			isa = PBXGroup;
 			children = (
+				4E3E94DC18BD52370008C815 /* LocalizedAppboyUIString.strings */,
+				4EA156FD18A4339200CB63F4 /* ABKSlideupControllerDelegate.h */,
+				4EA0516218998897007217BD /* ABKSlideupView.h */,
+				4EA0516318998897007217BD /* ABKSlideupViewController.h */,
 				4EA6891E18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m */,
 				4E989F77183FB9DF009B9619 /* ABKFeedbackViewController.h */,
 				4E989F78183FB9DF009B9619 /* ABKFeedbackViewControllerModalContext.h */,
@@ -495,6 +526,10 @@
 		95AD66B1173D759F00C51CF8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4EA0516418998E11007217BD /* stopwatch@2x.png */,
+				4EA0516518998E11007217BD /* stopwatch.png */,
+				4EA0515E189986F9007217BD /* btn-close.png */,
+				4EA0515F189986F9007217BD /* btn-close@2x.png */,
 				4E9837421834072C007FB92E /* stopwatch-icon-76.png */,
 				4E9837431834072C007FB92E /* stopwatch-icon-120.png */,
 				4E9837441834072C007FB92E /* stopwatch-icon-152.png */,
@@ -513,6 +548,7 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
+				4E3E94E118BD52C60008C815 /* Localizable.strings */,
 				4E989F76183FB9DF009B9619 /* AppboyKitWithoutFacebookSupport */,
 				4EA2196C17FF3867008F9A4D /* NUIStyle.nss */,
 				4E9EF59317FE3163004B8898 /* NUI */,
@@ -567,13 +603,18 @@
 				4E94D76D1743EE7100604EA0 /* Clock.m */,
 				955DE88E17419DB000C07A57 /* TestingViewController.h */,
 				955DE88F17419DB000C07A57 /* TestingViewController.m */,
-				955DE8931741A70700C07A57 /* SlideupControlsViewController.h */,
-				955DE8941741A70700C07A57 /* SlideupControlsViewController.m */,
+				955DE8931741A70700C07A57 /* SlideupTestViewController.h */,
+				955DE8941741A70700C07A57 /* SlideupTestViewController.m */,
 				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
 				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
 				95EF5114173D5FD600C0D780 /* Supporting Files */,
 				4EA3EE221745B9A2000E403C /* UserAttributeCell.h */,
 				4EA3EE231745B9A2000E403C /* UserAttributeCell.m */,
+				4EA7AA8C185626EC00D2B651 /* FlushModeTestViewController.h */,
+				4EA7AA8D185626EC00D2B651 /* FlushModeTestViewController.m */,
+				4EA0515918998472007217BD /* CustomSlideupViewController.h */,
+				4EA0515A18998472007217BD /* CustomSlideupViewController.m */,
+				4EA0515B18998472007217BD /* CustomSlideupViewController.xib */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -650,6 +691,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 95EF5101173D5FD600C0D780;
 			productRefGroup = 95EF510B173D5FD600C0D780 /* Products */;
@@ -667,6 +709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E989F88183FB9DF009B9619 /* AppboyKit.framework in Resources */,
+				4EA05161189986F9007217BD /* btn-close@2x.png in Resources */,
 				95EF5118173D5FD600C0D780 /* InfoPlist.strings in Resources */,
 				4E9837461834072C007FB92E /* stopwatch-icon-120.png in Resources */,
 				4E9EF62017FE3163004B8898 /* Googolplex.NUI.nss in Resources */,
@@ -675,6 +718,8 @@
 				4E9EF62317FE3163004B8898 /* SkyBlue.NUI.nss in Resources */,
 				4E76BAA5183546E3001872E3 /* dsym_upload.sh in Resources */,
 				4E9EF61D17FE3163004B8898 /* NUIViewBackground.png in Resources */,
+				4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */,
+				4EA0516618998E11007217BD /* stopwatch@2x.png in Resources */,
 				95EF5122173D5FD600C0D780 /* Default@2x.png in Resources */,
 				4E9EF61F17FE3163004B8898 /* Default.NUI.nss in Resources */,
 				4E989F8A183FB9DF009B9619 /* NUI_LICENSE.txt in Resources */,
@@ -682,9 +727,11 @@
 				4E9EF62117FE3163004B8898 /* Round.NUI.nss in Resources */,
 				95EF5127173D5FD600C0D780 /* MainStoryboard_iPhone.storyboard in Resources */,
 				95EF512A173D5FD600C0D780 /* MainStoryboard_iPad.storyboard in Resources */,
+				4E3E94DE18BD52370008C815 /* LocalizedAppboyUIString.strings in Resources */,
 				95AD66B3173D75CB00C51CF8 /* btn-backarrow.png in Resources */,
 				95AD66BD173DB67F00C51CF8 /* twitter-icon.png in Resources */,
 				95AD66C0173DB8F200C51CF8 /* facebook-icon.png in Resources */,
+				4EA05160189986F9007217BD /* btn-close.png in Resources */,
 				959D3500174461D6006AF9CE /* stopwatch-icon-iPad.png in Resources */,
 				4E9EF62417FE3163004B8898 /* Switchboard.NUI.nss in Resources */,
 				4E9EF62217FE3163004B8898 /* Route.NUI.nss in Resources */,
@@ -692,6 +739,8 @@
 				4E9EF61E17FE3163004B8898 /* Blue.NUI.nss in Resources */,
 				4E9837471834072C007FB92E /* stopwatch-icon-152.png in Resources */,
 				959D3502174461D6006AF9CE /* stopwatch-icon.png in Resources */,
+				4EA0516718998E11007217BD /* stopwatch.png in Resources */,
+				4EA0515D18998472007217BD /* CustomSlideupViewController.xib in Resources */,
 				959D3503174461D6006AF9CE /* stopwatch-icon@2x.png in Resources */,
 				4E9837451834072C007FB92E /* stopwatch-icon-76.png in Resources */,
 			);
@@ -736,6 +785,7 @@
 				4E9EF60D17FE3163004B8898 /* NUINavigationBarRenderer.m in Sources */,
 				4E9EF60E17FE3163004B8898 /* NUINavigationItemRenderer.m in Sources */,
 				95EF512D173D5FD600C0D780 /* InitialViewController.m in Sources */,
+				4EA7AA8E185626EC00D2B651 /* FlushModeTestViewController.m in Sources */,
 				4E9EF60017FE3163004B8898 /* NUIAppearance.m in Sources */,
 				4E9EF61B17FE3163004B8898 /* NUIWindowRenderer.m in Sources */,
 				4E9EF60A17FE3163004B8898 /* NUIButtonRenderer.m in Sources */,
@@ -743,7 +793,7 @@
 				4EA6891F18A09C0E00F6BEB3 /* ABKIdentifierForAdvertisingProvider.m in Sources */,
 				4E9EF60417FE3163004B8898 /* NUIRenderer.m in Sources */,
 				4E9EF61317FE3163004B8898 /* NUISwitchRenderer.m in Sources */,
-				955DE8961741A70700C07A57 /* SlideupControlsViewController.m in Sources */,
+				955DE8961741A70700C07A57 /* SlideupTestViewController.m in Sources */,
 				4E9EF60C17FE3163004B8898 /* NUILabelRenderer.m in Sources */,
 				4E9EF63717FE3163004B8898 /* UIWindow+NUI.m in Sources */,
 				4E9EF61517FE3163004B8898 /* NUITabBarRenderer.m in Sources */,
@@ -768,6 +818,7 @@
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
 				4E9EF61817FE3163004B8898 /* NUITextFieldRenderer.m in Sources */,
 				4E9EF60717FE3163004B8898 /* NUISwizzler.m in Sources */,
+				4EA0515C18998472007217BD /* CustomSlideupViewController.m in Sources */,
 				4E9EF61917FE3163004B8898 /* NUIToolbarRenderer.m in Sources */,
 				4E9EF62817FE3163004B8898 /* UILabel+NUI.m in Sources */,
 				4E9EF63017FE3163004B8898 /* UITabBar+NUI.m in Sources */,
@@ -784,6 +835,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4E3E94DC18BD52370008C815 /* LocalizedAppboyUIString.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E3E94DD18BD52370008C815 /* en */,
+				4E3E94DF18BD52530008C815 /* zh-Hans */,
+			);
+			name = LocalizedAppboyUIString.strings;
+			sourceTree = "<group>";
+		};
+		4E3E94E118BD52C60008C815 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E3E94E218BD52C60008C815 /* en */,
+				4E3E94E418BD52CE0008C815 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		95EF5116173D5FD600C0D780 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -796,6 +865,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				95EF5126173D5FD600C0D780 /* en */,
+				4E3E94E018BD529C0008C815 /* zh-Hans */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -804,6 +874,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				95EF5129173D5FD600C0D780 /* en */,
+				4E3E94E518BD52DF0008C815 /* zh-Hans */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -876,7 +947,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
-					"$(SRCROOT)/../build/AppboyKitWithoutFacebookSupport",
+					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
@@ -884,11 +955,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
-					"$(SRCROOT)/../build/AppboyKitWithoutFacebookSupport",
+					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
 					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1A9FE39A-A308-43CE-AB9B-B5B1E8798CF5";
+				PROVISIONING_PROFILE = "F321D01B-D8C8-464D-82ED-233DA62B757D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -900,7 +971,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
-					"$(SRCROOT)/../build/AppboyKitWithoutFacebookSupport",
+					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
@@ -908,11 +979,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
-					"$(SRCROOT)/../build/AppboyKitWithoutFacebookSupport",
+					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
 					"$(SRCROOT)/Stopwatch/AppboyKitWithoutFacebookSupport",
 				);
 				PRODUCT_NAME = "Appboy Sample";
-				PROVISIONING_PROFILE = "41A6C304-2605-48E2-8B97-51140311DB9C";
+				PROVISIONING_PROFILE = "960966F9-6356-4E1C-8A9E-94E88BD29D94";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -927,7 +998,7 @@
 				95EF512F173D5FD600C0D780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		95EF5130173D5FD600C0D780 /* Build configuration list for PBXNativeTarget "Stopwatch" */ = {
 			isa = XCConfigurationList;
@@ -936,7 +1007,7 @@
 				95EF5132173D5FD600C0D780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

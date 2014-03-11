@@ -3,6 +3,8 @@
 #import "AppboyKit.h"
 #import "Crittercism.h"
 #import <CoreLocation/CoreLocation.h>
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
 
 @interface InitialViewController : UIViewController
     <ABKFeedbackViewControllerPopoverContextDelegate,
