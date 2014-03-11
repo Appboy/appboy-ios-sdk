@@ -1,36 +1,14 @@
 #import "TestingViewController.h"
-#import "SlideupControlsViewController.h"
+#import "SlideupTestViewController.h"
 #import "AppboyKit.h"
 
 @implementation TestingViewController
 
 - (void) viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view.
-  
-  NSString *flushMode = nil;
-  ABKRequestProcessingPolicy requestPolicy = [Appboy sharedInstance].requestProcessingPolicy;
-  switch (requestPolicy) {
-    case ABKAutomaticRequestProcessing:
-      flushMode = @"ABKAutomaticRequestProcessing";
-      break;
-      
-    case ABKAutomaticRequestProcessingExceptForDataFlush:
-      flushMode = @"ABKAutomaticRequestProcessingExceptForDataFlush";
-      break;
-      
-    case ABKManualRequestProcessing:
-      flushMode = @"ABKManualRequestProcessing";
-      break;
-      
-    default:
-      break;
-  }
-  self.flushModeButton.titleLabel.text = flushMode;
-  [self.flushModeButton setNeedsDisplay];
-
-  self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Cards: %d", [Appboy sharedInstance].unreadCardCount];
-  self.totalCardsLabel.text = [NSString stringWithFormat:@"Total Cards: %d", [Appboy sharedInstance].cardCount];
+  self.unreadCardLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.unread-card.message", nil), [Appboy sharedInstance].unreadCardCount];
+  self.totalCardsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.total-card.message", nil), [Appboy sharedInstance].cardCount];
+  self.versionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.appboy-version.message", nil), APPBOY_SDK_VERSION];
 
   // The ABKFeedUpdatedNotification is posted whenever the news feed changes.  We'll listen to it
   // so we know when to update the card count display.
@@ -49,59 +27,20 @@
 }
 
 - (void) feedUpdated:(NSNotification *)notification {
-  self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Cards: %d", [Appboy sharedInstance].unreadCardCount];
-  self.totalCardsLabel.text = [NSString stringWithFormat:@"Total Cards: %d", [Appboy sharedInstance].cardCount];
+  self.unreadCardLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.unread-card.message", nil), [Appboy sharedInstance].unreadCardCount];
+  self.totalCardsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.total-card.message", nil), [Appboy sharedInstance].cardCount];
   [self.view setNeedsDisplay];
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-
-  // Refresh these every time we come to the testing screen
 }
 
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-  [_flushModeButton release];
+  [_versionLabel release];
   [super dealloc];
 }
 
 - (void) viewDidUnload {
-  [self setFlushModeButton:nil];
+  [self setVersionLabel:nil];
   [super viewDidUnload];
-}
-- (IBAction) FlushAppboyData:(id)sender {
-  NSLog(@"FlushAppboyData:");
-  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
-}
-
-- (IBAction) changeAppboyFlushMode:(id)sender {
-  NSLog(@"changeAppboyFlushMode:");
-  switch ([Appboy sharedInstance].requestProcessingPolicy) {
-    case ABKAutomaticRequestProcessing:
-      [Appboy sharedInstance].requestProcessingPolicy = ABKAutomaticRequestProcessingExceptForDataFlush;
-      self.flushModeButton.titleLabel.text = @"ABKAutomaticRequestProcessingExceptForDataFlush";
-      break;
-      
-    case ABKAutomaticRequestProcessingExceptForDataFlush:
-      [Appboy sharedInstance].requestProcessingPolicy = ABKManualRequestProcessing;
-      self.flushModeButton.titleLabel.text = @"ABKManualRequestProcessing";
-      break;
-      
-    case ABKManualRequestProcessing:
-      [Appboy sharedInstance].requestProcessingPolicy = ABKAutomaticRequestProcessing;
-      self.flushModeButton.titleLabel.text = @"ABKAutomaticRequestProcessing";
-      break;
-      
-    default:
-      break;
-  }
-  [self.flushModeButton setNeedsDisplay];
-}
-
-- (IBAction) flushAndShutDownAppboy:(id)sender {
-  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
-  [[Appboy sharedInstance] shutdownServerCommunication];
 }
 
 - (IBAction) increaseCouponClaimed:(id)sender {
