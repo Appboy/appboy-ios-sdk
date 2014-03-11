@@ -1,3 +1,74 @@
+## 2.5
+### Localization
+
+Localization is now supported in version 2.5 of the Appboy SDK. We have provided .string files for English, Simplified Chinese and Traditional Chinese. You can also optionally create your own .string file and import it into your project or customize any of the existing strings that are utilized by the SDK within this file. 
+
+For your convenience our CocoaPod integrates the LocalizedAppboyUIString.strings files for the three aforementioned languages. If you do not wish to use one or more of these languages, you can feel free to delete these files from your project. Optionally, you may also create and integrate a similar .strings file with a key for any language.
+
+###  Slideup Upgrade
+
+Appboy version 2.5 provides a substantial upgrade to the slideup code and reorganization for better flexibility moving forward, but at the expense of a number of breaking changes. We've detailed the changes in this changelog and hope that you'll love the added power, increased flexibility, and improved UI that the new Appboy slideup provides. If you have any trouble with these changes, feel free to reach out to success@appboy.com for help, but most migrations to the new code structure should be relatively painless.
+
+#### New Slideup Controller
+- The property `slideupController` has been added to the Appboy object. Please see [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for details.
+  - The `delegate` property allows you to specify a delegate for the slideup. 
+    - This replaces `slideupDelegate` which has been removed. 
+  - The `displayNextSlideupWithDelegate:` method displays the next available slideup with the specified delegate. 
+    - This replaces `provideSlideupToDelegate:` which has been removed from Appboy.
+  - The `slideupsRemainingOnStack` method returns the number of slideups that are waiting locally to be displayed.
+  - The `addSlideup:` method allows you to display a slideup object with custom content. This is useful in testing or if you want to use the Appboy slideup's UI/UX with another notification system that you are using. 
+    - Clicks and impressions of slideups added by this method will not be collected by Appboy.
+  - `hideCurrentSlideup:` method will remove any slideup currently on screen, with or without animation.
+
+#### New Slideup Properties and Methods in `ABKSlideup.h`
+The following properties and methods all belong to the `ABKSlideup` object. Please see [`ABKSlideup.h`](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideup.h) for more information.
+
+##### New Properties
+
+- The `extras` property carries additional data within key value pairs that have been defined on the dashboard, just like a push notification. Appboy does nothing with the extras property, any additional behavior is at your discretion.
+- The `slideupAnchor` property defines whether the slideup originates from the top or the bottom of the screen.
+- The `slideupDismissType` property controls whether the slideup will dismiss automatically after a period of time has lapsed, or if it will wait for interaction with the user before disappearing.
+  - The slideup will be dismissed automatically after the number of seconds defined by the newly added `duration` property if the slideup's `slideupDismissType` is `ABKSlideupDismissAutomatically`. 
+- The `slideupClickActionType` property defines the action behavior after the slideup is clicked: displaying a news feed, redirect to a uri, or nothing but dismissing the slideup. This property is read only. If you want to change the slideup's click behavior, you can call one of the following method: `setSlideupClickActionToNewsFeed`, `setSlideupClickActionToUri:` or `setSlideupClickActionToNone`.
+- The `uri` property defines the uri string that the slide up will open when the slideupClickActionType is ABKSlideupRedirectToURI. This is a read only property, you can call `setSlideupClickActionToUri:` to change it's value.
+
+##### New Methods
+- `logSlideupImpression` and `logSlideupClicked` have been added to allow you to report user interactions with the slideup in the case that you've fully customized the slideup experience and Appboy is not handling the interactions.
+- `setSlideupClickActionToNewsFeed`, `setSlideupClickActionToUri:` and `setSlideupClickActionToNone` have been added to allow you to change the slideup's click action behavior. `setSlideupClickActionToUri:` accepts a uri string as parameter and required the given uri string is valid.
+
+#### Delegate Method Changes
+
+All former Appboy slideup delegate methods have been depreciated and removed. In their place Appboy has added new slideup delegate methods within [`ABKSlideupControllerDelegate.h`](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupControllerDelegate.h).
+
+- `onSlideupReceived:` is called when slideup objects are received from the Appboy server. 
+- `beforeSlideupDisplayed:withKeyboardIsUp:` is called before slideup objects are displayed, the return value determines whether the slideup will be displayed, queued or discarded.
+- `slideupViewControllerWithSlideup:` This delegate method allows you to specify custom view controllers in which your slideups will be displayed.
+  - The custom view controller should be a subclass of `ABKSlideupViewController`. 
+    - Alternatively, it can also be an instance of `ABKSlideupViewController`.
+  - The view of the returned view controller should be an instance of `ABKSlideupView` or its subclass. 
+  - For integration examples of a custom slideup view controller, see the `CustomSlideupViewController` class in Appboy's sample app Stopwatch.
+- `onSlideupClicked:` is called when a user clicks on a slideup. We recommend that you specify behavior on click via the dashboard, but you can additionally specify behavior on click by defining this delegate method. 
+- `onSlideupDismissed:` is called whenever the slideup is dismissed regardless of whether the dismissal occurs automatically or via swipe. This method is not called if the user clicks on the slideup. If the user clicks or taps on the slideup, `onSlideupClicked` is called instead. 
+
+#### New Options on the Dashboard
+- Slideup behavior on click can now be set within the dashboard to open a modal news feed, open a URI within a modal, or do nothing. 
+- The following properties can be set remotely from the Appboy Dashboard:
+  - `extras`
+  - `slideupAnchor`
+  - `slideupDismissType`
+  - `slideupClickActionType`
+  - `uri`
+
+### News Feed Changes
+- News feed items are now cached in offline storage, allowing the news feed to render even when no internet connectivity is available. Appboy will still automatically try to pull down a new news feed when a session opens, even if an offline feed is available.
+- Each card now has a maximum height of no more than 2009 points to avoid any performance issues as recommended by iOS developer guidelines. 
+- The entirety of captioned image cards are now clickable. Formerly, only the link itself was clickable.
+- When the news feed is brought to the foreground, it will now automatically check for new content if the cached version of the feed was received more than 60 seconds ago.
+— The width of news feed cards as well as the minimum margin between any card and the left & right edges of the view controller can now be customized. These values can be set separately for both iPad and iPhone. This allows for a larger news feed to render on larger screen sizes. All card images will scale proportionally. Please see `ABKFeedViewControllerContext.h` and `ABKFeedViewController.h` for more information.
+
+### Other Changes
+- Various internal and news feed display optimizations.
+
 ## 2.4
 * IDFA Collection is now optional.
   * By default, IDFA collection is now disabled by the Appboy SDK.
@@ -11,7 +82,7 @@
       * `ABK_ENABLE_IDFA_COLLECTION`
 
 ## 2.3.1
-* The Appboy SDK for iOS now has two versions, one for use with apps which incorporate the official Facebook SDK and one for those which do not. In November of 2013, the App Store Validation Process started generating warnings about the usage of isOpen and setActiveSession in the Appboy SDK. These selectors were being sent to instances of classes in the Facebook SDK and are generally able to be used without generating warnings. However because of the way that the classes were initialized in Appboy (a result of building a single Appboy binary to fully support apps with and without the Facebook SDK), the App Store Validation Process started generating warnings the Facebook SDK methods share a name with private selectors elsewhere in iOS. Although none of our customers have been denied App Store approvaly, to protect against potential validation policy changes by Apple, Appboy now provides two versions of its SDK, neither of which generate warnings. Going forward, the appboy-ios-sdk repository will provide both versions of the SDK in the folders 'AppboySDK' (as before) and 'AppboySDKWithoutFacebookSupport'. The 'AppboySDKWithoutFacebookSupport' does not require the host app to include the Facebook SDK, but as a result does not include all of the Appboy features for Facebook data fetching. More information is available here within the [Appboy documentation](http://documentation.appboy.com/sdk-integration-ios.html#ios-basic-sdk-integration).
+* The Appboy SDK for iOS now has two versions, one for use with apps which incorporate the official Facebook SDK and one for those which do not. In November of 2013, the App Store Validation Process started generating warnings about the usage of isOpen and setActiveSession in the Appboy SDK. These selectors were being sent to instances of classes in the Facebook SDK and are generally able to be used without generating warnings. However because of the way that the classes were initialized in Appboy (a result of building a single Appboy binary to fully support apps with and without the Facebook SDK), the App Store Validation Process started generating warnings the Facebook SDK methods share a name with private selectors elsewhere in iOS. Although none of our customers have been denied App Store approval yet, to protect against potential validation policy changes by Apple, Appboy now provides two versions of its SDK, neither of which generate warnings. Going forward, the appboy-ios-sdk repository will provide both versions of the SDK in the folders 'AppboySDK' (as before) and 'AppboySDKWithoutFacebookSupport'. The 'AppboySDKWithoutFacebookSupport' does not require the host app to include the Facebook SDK, but as a result does not include all of the Appboy features for Facebook data fetching. More information is available here within the [Appboy documentation](http://documentation.appboy.com/sdk-integration-ios.html#ios-basic-sdk-integration).
 * Fixed a bug that repeatedly updated the push token of some users unnecessarily.
 * The "Reporting an Issue?" box within the UI layout of the Feedback Page has been moved to the left side of the label away from the "Send" button. This change was made to reduce the number of misclicks of the "Send" button. The "Reporting an Issue?" label is now clickable as well.
 * Cross Promotion Cards for apps with long titles will now render appropriately in iOS5. Before the title would render abnormally large on these devices.

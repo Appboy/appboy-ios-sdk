@@ -10,3 +10,8 @@
 #import "ABKFeedViewControllerNavigationContext.h"
 #import "ABKFeedViewControllerPopoverContext.h"
 #import "ABKSlideup.h"
+#import "ABKSlideupView.h"
+#import "ABKSlideupViewController.h"
+#import "ABKSlideupControllerDelegate.h"
+#import "ABKIdentifierForAdvertisingProvider.h"
+#import "ABKSlideupController.h"

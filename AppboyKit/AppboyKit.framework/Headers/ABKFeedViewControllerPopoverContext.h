@@ -5,7 +5,7 @@
 //  Copyright (c) 2013 Appboy. All rights reserved.
 
 #import <UIKit/UIKit.h>
-#import "ABKFeedViewControllerContext.h"
+#import "ABKFeedViewControllerGenericContext.h"
 /* ------------------------------------------------------------------------------------------------------
  * ABKFeedViewController
  */
@@ -35,7 +35,7 @@
  * closeButtonDelegate.  You can use this message to trigger closing the popover.
  * The delegate should adopt the ABKFeedViewControllerPopoverContextDelegate protocol.
  */
-@interface ABKFeedViewControllerPopoverContext : ABKFeedViewControllerContext
+@interface ABKFeedViewControllerPopoverContext : ABKFeedViewControllerGenericContext
 
 /*! Title displayed in the top bar */
 @property (retain, nonatomic) NSString *navigationBarTitle;
