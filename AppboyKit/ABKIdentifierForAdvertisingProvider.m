@@ -1,11 +1,25 @@
 #import <AdSupport/AdSupport.h>
 #import "ABKIdentifierForAdvertisingProvider.h"
 
+// Do not call these methods within your code. They are meant for Appboy internal use only.
+
+// ABKIdentifierForAdvertisingProvider.m and ABKIdentifierForAdvertisingProvider.h must be added to your project
+// regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod.
+
 @implementation ABKIdentifierForAdvertisingProvider
 
 /*!
  * @discussion Returns the identifier for advertising if AdSupport framework is available (i.e., iOS >= 6.0) and
  *   the identifier for advertising is enabled.
+ *
+ *  If you’re using advertising elsewhere in the app or through our in-app News Feed, we recommend continuing to collect
+ * the IDFA through Appboy. You should be able to do so safely without fear of rejection from the iOS App Store.
+ * The future availability of IDFAs will enable functionality like integrating with other third-party systems,
+ * including your own servers, and enabling re-targeting of existing users outside of Appboy.
+ * If you continue to record them we will store IDFAs free of charge so you can take advantage of these options
+ * immediately when they are released without additional development work.
+ *
+ * To enable IDFA collection add a PreProcessor Macro to your build settings called ABK_ENABLE_IDFA_COLLECTION=1
  */
 + (NSString *) getIdentifierForAdvertiser {
 #ifdef ABK_ENABLE_IDFA_COLLECTION

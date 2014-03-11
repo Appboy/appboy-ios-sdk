@@ -5,7 +5,7 @@
 //  Copyright (c) 2013 Appboy. All rights reserved.
 
 #import <UIKit/UIKit.h>
-#import "ABKFeedViewControllerContext.h"
+#import "ABKFeedViewControllerGenericContext.h"
 /* ------------------------------------------------------------------------------------------------------
  * ABKFeedViewController
  */
@@ -36,7 +36,7 @@
  * the delegate to dismiss the controller.  The delegate should adopt the
  * ABKFeedViewControllerModalContextDelegate protocol.
  */
-@interface ABKFeedViewControllerModalContext : ABKFeedViewControllerContext
+@interface ABKFeedViewControllerModalContext : ABKFeedViewControllerGenericContext
 
 // Title displayed in the top bar
 @property (retain, nonatomic) NSString *navigationBarTitle;

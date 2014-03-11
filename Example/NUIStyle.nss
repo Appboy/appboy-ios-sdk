@@ -17,10 +17,7 @@ ABKFeedbackCancelBarButtonItem {
 }
 
 ABKFeedbackNavigationBar {
-  background-tint-color: #2980b9;
-  font-color: #FFFFFF;
-  font-name: HelveticaNeue-Bold;
-  font-size: 20.0;
+  font-color: #000000;
 }
 
 ABKFeedItemTitleLabel {
@@ -88,7 +85,7 @@ ABKFeedBarButtonBack {
   corner-radius: 5.0;
   border-color: #FFFFF;
   border-width: 2.0;
-  font-color: #FFFFFF;
+  font-color: ##2980b9;
 }
 
 ABKFeedCloseBarButton {
