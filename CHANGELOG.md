@@ -1,9 +1,9 @@
 ## 2.5
 ### Localization
 
-Localization is now supported in version 2.5 of the Appboy SDK. We have provided .string files for English, Simplified Chinese and Traditional Chinese. You can also optionally create your own .string file and import it into your project or customize any of the existing strings that are utilized by the SDK within this file. 
+Localization is now supported in version 2.5 of the Appboy SDK. We have provided `.string` files for English, Simplified Chinese and Traditional Chinese. You can also optionally override our Appboy's default `LocalizedAppboyUIString.strings` right within your app's `Localizable.Strings` file in much the same way you would do an override in CSS. To do so, copy the key and string pair into your `Localizable.Strings` file and edit the string as you so desire.
 
-For your convenience our CocoaPod integrates the LocalizedAppboyUIString.strings files for the three aforementioned languages. If you do not wish to use one or more of these languages, you can feel free to delete these files from your project. Optionally, you may also create and integrate a similar .strings file with a key for any language.
+For your convenience our CocoaPod integrates the `LocalizedAppboyUIString.strings` files for the three aforementioned languages. If you do not wish to use one or more of these languages, you can feel free to delete these files from your project. 
 
 ###  Slideup Upgrade
 

@@ -94,7 +94,6 @@
 // view controller should be a subclass of ABKSlideupViewController. Alternatively, it can also be an instance of
 // ABKSlideupViewController. Also, the view of the returned view controller should be an instance of ABKSlideupView or
 // its subclass.
-// Note: Please don
 - (ABKSlideupViewController *) slideupViewControllerWithSlideup:(ABKSlideup *)slideup {
   CustomSlideupViewController *customSlideup = [[[CustomSlideupViewController alloc] initWithSlideup:slideup] autorelease];
   return customSlideup;
@@ -130,6 +129,7 @@
 
 - (void) viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
+  // Here we set self as the slideup controller delegate to enable slideup customization on this page.
   [Appboy sharedInstance].slideupController.delegate = self;
 }
 
