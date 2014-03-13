@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 #import "AppboyKit.h"
-#import "NUIAppearance.h"
+#import "NUISettings.h"
 
 static NSString *const AppboyApiKey = @"appboy-ios-sample";
 static NSString *const CrittercismAppId = @"51b67d141386207417000002";
@@ -25,7 +25,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
   // This lets us use NUI, the theming/customization package. There is also some initialization code in main.m
   // Look at NUI/NUIStyle.nss to see what's being customized.
-  [NUIAppearance init];
+  [NUISettings initWithStylesheet:@"StopwatchNUIStyle"];
 
   // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
   // feedback form and news feed).

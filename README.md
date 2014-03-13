@@ -13,6 +13,10 @@ Successful marketing automation is essential to the future of your mobile app. A
 - `AppboyKit` - Contains the variant of our SDK which assumes you have the FacebookSDK integrated into your app.
 - `AppboyKitWithoutFacebookSupport` - Contains the variant of our SDK which assumes you have the FacebookSDK integrated into your app.
 - `Example` - Contains the Stopwatch Sample App which contains integration examples for the iOS SDK.
+	- The Stopwatch Sample App uses [CocoaPods](http://guides.cocoapods.org/), so you must :
+	  1. [Install CocoaPods](http://guides.cocoapods.org/using/getting-started.html)
+	  2. Run `pod install` in the `Example` directory
+	  3. Open the `Stopwatch.xcworkspace` to open the project.
 
 ## Version Support
 
