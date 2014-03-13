@@ -34,7 +34,7 @@
   self.newsAndFeedbackNavigationController = [[[UINavigationController alloc] initWithRootViewController:feedViewController] autorelease];
   self.newsAndFeedbackNavigationController.delegate = self;
   self.newsAndFeedbackNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.16 green:0.5 blue:0.73 alpha:1.0];
-  UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Feedback"
+  UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback", nil)
                                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromModalFeed:)] autorelease];
   feedViewController.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
   
@@ -73,7 +73,7 @@
   else {
     // add a cancel button on feed page for modal view
     UIViewController *rootViewController = [[self.newsAndFeedbackNavigationController viewControllers] objectAtIndex:0];
-    rootViewController.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel"
+    rootViewController.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.cancel", nil)
                                                                                            style:UIBarButtonItemStyleBordered
                                                                                           target:self
                                                                                            action:@selector(dismissNewsAndFeedbackModalView:)] autorelease];
@@ -151,18 +151,65 @@
 - (IBAction) purchaseButtonTapped:(id)sender {
   [Crittercism leaveBreadcrumb:@"Appboy: logPurchase"];
   [[Appboy sharedInstance] logPurchase:@"stopwatch_pro" inCurrency:@"USD" atPrice:[[[NSDecimalNumber alloc] initWithString:@"0.99"] autorelease]];
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thanks for buying Stopwatch Pro!"
-                                                      message:nil delegate:nil cancelButtonTitle:@"OK"
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.upgrade.thank-message", nil)
+                                                      message:nil delegate:nil cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                             otherButtonTitles:nil];
   [alertView show];
   [alertView release];
 }
 
 - (IBAction) twitterButtonTapped:(id)sender {
+  // Request twitter account data
+  ACAccountStore *store = [[ACAccountStore alloc] init];
+  ACAccountType *twitterAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+  if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:options:completion:)]) {
+    [store requestAccessToAccountsWithType:twitterAccountType options:nil completion:^(BOOL granted, NSError *error){
+      NSArray *twitterAccounts = [store accountsWithAccountType:twitterAccountType];
+      if ([twitterAccounts count] > 0) {
+        // Use the first account for simplicity
+        ACAccount *account = [twitterAccounts objectAtIndex:0];
+      }
+      [store release];
+    }];
+    
+    // Display the iOS Twitter share panel on iOS 6 and later
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+      SLComposeViewController *tweetSheet = [SLComposeViewController
+                                             composeViewControllerForServiceType:SLServiceTypeTwitter];
+      [tweetSheet setInitialText:NSLocalizedString(@"Appboy.Stopwatch.initial-view.twitter-share.message", nil)];
+      [self presentViewController:tweetSheet animated:YES completion:nil];
+      
+      tweetSheet.completionHandler = ^(SLComposeViewControllerResult res) {
+        if (res == SLComposeViewControllerResultDone) {
+          [self userDidShareOnTwitter];
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+      };
+    }
+  } else if ([store respondsToSelector:@selector(requestAccessToAccountsWithType:withCompletionHandler:)]) {
+    [store requestAccessToAccountsWithType:twitterAccountType withCompletionHandler:nil];
+    
+    // Display the iOS Twitter share panel on iOS 5
+    TWTweetComposeViewController *twitter = [[TWTweetComposeViewController alloc] init];
+    [twitter setInitialText:NSLocalizedString(@"Appboy.Stopwatch.initial-view.twitter-share.message", nil)];
+    [self presentViewController:twitter animated:YES completion:nil];
+    
+    twitter.completionHandler = ^(TWTweetComposeViewControllerResult res) {
+      if(res == TWTweetComposeViewControllerResultDone) {
+        [self userDidShareOnTwitter];
+      }
+      [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    [twitter release];
+  }
+  
+}
+
+- (void) userDidShareOnTwitter {
   [Crittercism leaveBreadcrumb:@"Appboy: logSocialShare:ABKSocialNetworkTwitter"];
   [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkTwitter];
-  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Thanks for sharing Stopwatch to Twitter!"
-                                                       delegate:nil cancelButtonTitle:@"OK"
+  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.twitter-share.thank-message", nil)
+                                                       delegate:nil cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                               otherButtonTitles:nil];
   [uiAlertView show];
   [uiAlertView release];
@@ -171,8 +218,8 @@
 - (IBAction) facebookButtonTapped:(id)sender {
   [Crittercism leaveBreadcrumb:@"Appboy: logSocialShare:ABKSocialNetworkFacebook"];
   [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkFacebook];
-  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Thanks for sharing Stopwatch to Facebook!"
-                                                       delegate:nil cancelButtonTitle:@"OK"
+  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.facebook-share.thank-message", nil)
+                                                       delegate:nil cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                               otherButtonTitles:nil];
   [uiAlertView show];
   [uiAlertView release];
@@ -191,10 +238,10 @@
 // Let the user know the feedback was sent successfully, and then close the feedback form.
 - (void) feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender {
   [Crittercism leaveBreadcrumb:@"Appboy: popover feedback sent"];
-  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
-                                                       message:@"Thanks for sharing your thoughts on Stopwatch."
+  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-title", nil)
+                                                       message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-message", nil)
                                                       delegate:nil
-                                             cancelButtonTitle:@"OK"
+                                             cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                              otherButtonTitles:nil] autorelease];
   [alertView show];
 
@@ -214,10 +261,10 @@
   [Crittercism leaveBreadcrumb:@"Appboy: modal feedback sent"];
   
   // Alert the user; it's good to know for sure that the feedback was sent!
-  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
-                                                       message:@"Thanks for sharing your thoughts on Stopwatch."
+  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-title", nil)
+                                                       message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-message", nil)
                                                       delegate:nil
-                                             cancelButtonTitle:@"OK"
+                                             cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                              otherButtonTitles:nil] autorelease];
 
   [alertView show];
@@ -227,10 +274,10 @@
 #pragma Appboy feedback navigation delegate method
 // Feedback was sent successfully in the newsAndFeedback popover
 - (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender {
-  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:@"Thanks!"
-                                                       message:@"Thanks for sharing your thoughts on Stopwatch."
+  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-title", nil)
+                                                       message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-message", nil)
                                                       delegate:nil
-                                             cancelButtonTitle:@"OK"
+                                             cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                              otherButtonTitles:nil] autorelease];
 
   [alertView show];
@@ -267,11 +314,11 @@
     [Crittercism leaveBreadcrumb:@"Appboy: logCustomEvent"];
     [[Appboy sharedInstance] logCustomEvent:@"stopwatch_started"];
 
-    [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
+    [self.startButton setTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.start-button.stop", nil) forState:UIControlStateNormal];
     [self.clock start];
   }
   else {
-    [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startButton setTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.start-button.start", nil) forState:UIControlStateNormal];
     [self.clock stop];
   }
 }
@@ -360,11 +407,11 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
   // The location "unknown" error simply means the manager is currently unable to get the location.
   if ([error code] != kCLErrorLocationUnknown) {
-    [self stopUpdatingLocation:@"Location Error"];
+    [self stopUpdatingLocation];
   }
 }
 
-- (void)stopUpdatingLocation:(NSString *)state {
+- (void)stopUpdatingLocation {
   [self.locationManager stopUpdatingLocation];
   self.locationManager.delegate = nil;
 }

@@ -3,10 +3,8 @@
 @interface TestingViewController : UIViewController
 
 @property (retain, nonatomic) IBOutlet UILabel *unreadCardLabel;
-@property (retain, nonatomic) IBOutlet UIButton *flushModeButton;
 @property (retain, nonatomic) IBOutlet UILabel *totalCardsLabel;
-- (IBAction) FlushAppboyData:(id)sender;
-- (IBAction) changeAppboyFlushMode:(id)sender;
-- (IBAction) flushAndShutDownAppboy:(id)sender;
+@property (retain, nonatomic) IBOutlet UILabel *versionLabel;
+
 - (IBAction) increaseCouponClaimed:(id)sender;
 @end

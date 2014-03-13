@@ -1,4 +1,3 @@
-
 ![Appboy Logo](http://www.appboy.com/assets/logo-cee4c217ff207f321cc7250f86a1037d.gif)
 
 # iOS SDK
