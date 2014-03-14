@@ -1,0 +1,20 @@
+PODS:
+  - Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport (2.4)
+  - CoreParse (1.1)
+  - NUI (0.5.3):
+    - CoreParse
+
+DEPENDENCIES:
+  - Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport (from `~/Desktop/Appboy-iOS-SDK.podspec`)
+  - NUI
+
+EXTERNAL SOURCES:
+  Appboy-iOS-SDK:
+    :podspec: ~/Desktop/Appboy-iOS-SDK.podspec
+
+SPEC CHECKSUMS:
+  Appboy-iOS-SDK: f581e38c76ab52ea5a0bc723152591e75cf554bf
+  CoreParse: 11f0ec66ac10a637fc16995b13ca372e2eeb61dc
+  NUI: 91d13f56956df391917c2a91224efafdc10deb41
+
+COCOAPODS: 0.29.0
