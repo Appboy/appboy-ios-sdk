@@ -1,3 +1,6 @@
+## 2.5.1
+- Fixes a minor display problem that affected news items with no image or link.
+
 ## 2.5
 ### Localization
 
