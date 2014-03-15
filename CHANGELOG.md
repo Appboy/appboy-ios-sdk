@@ -1,9 +1,15 @@
+## 2.6.1
+- Fixes a minor display problem that affected news items with no image or link for version 2.6.
+
 ## 2.6
 Appboy iOS SDK now supports 64 bit as well. The minimum deployment targets that Appboy iOS SDK supports is iOS 5.1.1.
 
 The Appboy iOS SDK will now allow function with 64-bit apps. This version of the SDK only supports iOS 5.1.1+. Legacy iOS apps should continue to use version 2.5 of the SDK.
 
 You can install legacy versions of our SDK via [CocoaPods](http://guides.cocoapods.org/) by following changing the [podfile](http://guides.cocoapods.org/syntax/podfile.html) to include something like the following example `pod 'Appboy-iOS-SDK/AppboyKit', '~> 2.5'`.
+
+## 2.5.1
+- Fixes a minor display problem that affected news items with no image or link for version 2.5.
 
 ## 2.5
 ### Localization
