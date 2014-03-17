@@ -8,9 +8,9 @@ var searchData=
   ['setgender_3a',['setGender:',['../interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40',1,'ABKUser']]],
   ['setissubscribedtoemails_3a',['setIsSubscribedToEmails:',['../interface_a_b_k_user.html#aa8979a0bf939fa9a27dc382c4de79998',1,'ABKUser']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#a998b424210ebceb1957f5547e45dfb12',1,'Appboy']]],
-  ['shoulddisplayslideup_3a',['shouldDisplaySlideup:',['../protocol_a_b_k_slideup_controller_delegate-p.html#a408df3a1ef860fefebe1c7b7a321a274',1,'ABKSlideupControllerDelegate-p']]],
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
-  ['slideupwastapped_3a',['slideupWasTapped:',['../protocol_a_b_k_slideup_controller_delegate-p.html#a150227db7719a04fb84cdca92b879423',1,'ABKSlideupControllerDelegate-p']]],
+  ['slideupsremainingonstack',['slideupsRemainingOnStack',['../interface_a_b_k_slideup_controller.html#a5bb0a6b0ecb097e06a148e53a56fb839',1,'ABKSlideupController']]],
+  ['slideupviewcontrollerwithslideup_3a',['slideupViewControllerWithSlideup:',['../protocol_a_b_k_slideup_controller_delegate-p.html#afe1067db947ce0f5a75fb42930cb9d95',1,'ABKSlideupControllerDelegate-p']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#a9a027766f3b350a09f44e0db4d6e22df',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#addd2d10f15efe49a8ee1dfa72a43043d',1,'Appboy']]],
   ['submitfeedback_3amessage_3aisreportingabug_3a',['submitFeedback:message:isReportingABug:',['../interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0',1,'Appboy']]]

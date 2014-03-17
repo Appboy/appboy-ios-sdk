@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['slideupdelegate',['slideupDelegate',['../interface_appboy.html#aa54dda136bc89dd3100126f814056dec',1,'Appboy']]]
+  ['slideupcontroller',['slideupController',['../interface_appboy.html#adc48570573712dbd1796cbbff0b9c9f5',1,'Appboy']]]
 ];

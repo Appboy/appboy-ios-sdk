@@ -9,7 +9,6 @@ var searchData=
   ['abkfeedbackviewcontrollerpopovercontextdelegate_2dp',['ABKFeedbackViewControllerPopoverContextDelegate-p',['../protocol_a_b_k_feedback_view_controller_popover_context_delegate-p.html',1,'']]],
   ['abkfeedupdatednotification',['ABKFeedUpdatedNotification',['../interface_appboy.html#a8f32e3042c02caae26f5b732b6683490',1,'Appboy']]],
   ['abkfeedviewcontroller',['ABKFeedViewController',['../interface_a_b_k_feed_view_controller.html',1,'']]],
-  ['abkfeedviewcontrollercontext',['ABKFeedViewControllerContext',['../interface_a_b_k_feed_view_controller_context.html',1,'']]],
   ['abkfeedviewcontrollergenericcontext',['ABKFeedViewControllerGenericContext',['../interface_a_b_k_feed_view_controller_generic_context.html',1,'']]],
   ['abkfeedviewcontrollermodalcontext',['ABKFeedViewControllerModalContext',['../interface_a_b_k_feed_view_controller_modal_context.html',1,'']]],
   ['abkfeedviewcontrollermodalcontextdelegate_2dp',['ABKFeedViewControllerModalContextDelegate-p',['../protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html',1,'']]],
@@ -20,11 +19,14 @@ var searchData=
   ['abkidentifierforadvertisingprovider',['ABKIdentifierForAdvertisingProvider',['../interface_a_b_k_identifier_for_advertising_provider.html',1,'']]],
   ['abkrequestprocessingpolicyoptionkey',['ABKRequestProcessingPolicyOptionKey',['../interface_appboy.html#ae5f99fc09d44d7db0cfe65680547edda',1,'Appboy']]],
   ['abkslideup',['ABKSlideup',['../interface_a_b_k_slideup.html',1,'']]],
+  ['abkslideupcontroller',['ABKSlideupController',['../interface_a_b_k_slideup_controller.html',1,'']]],
   ['abkslideupcontrollerdelegate_2dp',['ABKSlideupControllerDelegate-p',['../protocol_a_b_k_slideup_controller_delegate-p.html',1,'']]],
-  ['abkslideupshoulddisplayslideupreturntype',['ABKSlideupShouldDisplaySlideupReturnType',['../interface_appboy.html#aa430da7074e4d51d8d2f9faa4fee2dbc',1,'Appboy']]],
+  ['abkslideupview',['ABKSlideupView',['../interface_a_b_k_slideup_view.html',1,'']]],
+  ['abkslideupviewcontroller',['ABKSlideupViewController',['../interface_a_b_k_slideup_view_controller.html',1,'']]],
   ['abksocialaccountacquisitionpolicyoptionkey',['ABKSocialAccountAcquisitionPolicyOptionKey',['../interface_appboy.html#a4b6f31b7867dc45e2cf94789703904ec',1,'Appboy']]],
   ['abkuser',['ABKUser',['../interface_a_b_k_user.html',1,'']]],
   ['abkusergendertype',['ABKUserGenderType',['../interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c',1,'ABKUser']]],
+  ['addslideup_3a',['addSlideup:',['../interface_a_b_k_slideup_controller.html#a3f8657b14a11ddccb3a3430daf66415e',1,'ABKSlideupController']]],
   ['appboy',['Appboy',['../interface_appboy.html',1,'']]],
   ['avatarimageurl',['avatarImageURL',['../interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b',1,'ABKUser']]]
 ];
