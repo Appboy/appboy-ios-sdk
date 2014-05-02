@@ -1,3 +1,7 @@
+## 2.5.2
+- Fixes a news feed card click tracking issue.
+- Update data flush time interval.
+
 ## 2.5.1
 - Fixes a minor display problem that affected news items with no image or link.
 
