@@ -1,3 +1,6 @@
+## 2.6.3
+- Updates the SDK to authenticate with the Twitter API using SSL.
+
 ## 2.6.2
 - Fixes a news feed card click tracking issue.
 - Update data flush time interval.
