@@ -2,7 +2,7 @@
 #import "AppboyKit.h"
 #import "NUISettings.h"
 
-static NSString *const AppboyApiKey = @"appboy-ios-sample";
+static NSString *const AppboyApiKey = @"appboy-sample-ios";
 static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
 @implementation AppDelegate
