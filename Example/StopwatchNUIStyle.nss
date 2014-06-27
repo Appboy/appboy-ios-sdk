@@ -106,4 +106,5 @@ Button {
   border-color: #2980b9;
   border-width: 1.0;
   corner-radius: 5.0;
+  exclude-subviews: UIActionSheet;
 }

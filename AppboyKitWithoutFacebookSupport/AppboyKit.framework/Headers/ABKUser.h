@@ -94,6 +94,19 @@
  */
 @property (nonatomic, copy) NSString *twitterAccountIdentifier;
 
+/*!
+ * This property is for when a user's twitter account with the given identifier isn't available, should Appboy also
+ * delete the saved twitter account in the server of that user.
+ *
+ * The default value of this property is NO. If the property is set to YES, when the twitter account data with the given
+ * twitter identifier(defined in the ABKUser's twitterAccountIdentifier property) isn't available, Appboy will also delete
+ * Appboy will delete the saved twitter account data of that user in Appboy's database.
+ *
+ * This property is only used when in appboyOptions, ABKSocialAccountAcquisitionPolicyOptionKey is set to be
+ * ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly, and twitterAccountIdentifier property has a valid value.
+ */
+@property (nonatomic, assign) BOOL clearTwitterDataWhenNoDataOfTwitterIdentifier;
+
 + (NSDictionary *) diffUserDictionary:(NSDictionary *)userAsDictionary againstOtherUserDictionary:(NSDictionary *)otherUserAsDictionary;
 
 /*!

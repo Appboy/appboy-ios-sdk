@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="gOF-q5-Lux">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="gOF-q5-Lux">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -58,7 +58,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Y3J-ih-wuJ"/>
-                                    <barButtonItem title="For Developers" id="SxM-y0-clC">
+                                    <barButtonItem title="Appboy" id="SxM-y0-clC">
                                         <connections>
                                             <segue destination="OhX-Dz-Po6" kind="push" id="occ-vA-Ssd"/>
                                         </connections>
@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="810" y="-390"/>
         </scene>
-        <!--Testing View Controller - Testing-->
+        <!--Testing View Controller - Appboy Settings-->
         <scene sceneID="Vlw-Hs-gW0">
             <objects>
                 <viewController id="OhX-Dz-Po6" customClass="TestingViewController" sceneMemberID="viewController">
@@ -209,13 +209,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FrM-PE-SSd">
-                                <rect key="frame" x="128" y="131" width="253" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
-                                <color key="textColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hvv-gY-OoN">
                                 <rect key="frame" x="128" y="492" width="177" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -238,7 +231,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Testing" id="q0y-eY-rr2"/>
+                    <navigationItem key="navigationItem" title="Appboy Settings" id="q0y-eY-rr2"/>
                     <connections>
                         <outlet property="totalCardsLabel" destination="88D-fZ-HzB" id="GmF-bd-E6O"/>
                         <outlet property="unreadCardLabel" destination="x27-UW-nx5" id="Mo5-5J-XiT"/>

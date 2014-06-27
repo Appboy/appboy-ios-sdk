@@ -57,7 +57,6 @@
 		95EF512A173D5FD600C0D780 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5128173D5FD600C0D780 /* MainStoryboard_iPad.storyboard */; };
 		95EF512D173D5FD600C0D780 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF512C173D5FD600C0D780 /* InitialViewController.m */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
-		E87DE6501820618A0004981F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87DE64F1820618A0004981F /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,7 +129,6 @@
 		95EF515F173D6AB100C0D780 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C5CC74A11766B955005DAD08 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
 		C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
-		E87DE64F1820618A0004981F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +150,6 @@
 				958071A6173D723400129B89 /* CoreLocation.framework in Frameworks */,
 				95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */,
 				95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */,
-				E87DE6501820618A0004981F /* GameKit.framework in Frameworks */,
 				95EF5112173D5FD600C0D780 /* CoreGraphics.framework in Frameworks */,
 				797795232AE54425A15B3018 /* libPods.a in Frameworks */,
 			);
@@ -208,7 +205,6 @@
 		95EF510C173D5FD600C0D780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E87DE64F1820618A0004981F /* GameKit.framework */,
 				958071A7173D727000129B89 /* QuartzCore.framework */,
 				95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */,
 				95EF514F173D6A6800C0D780 /* AssetsLibrary.framework */,
@@ -318,8 +314,11 @@
 					95EF5109173D5FD600C0D780 = {
 						DevelopmentTeam = 5GLZKGNWQ3;
 						SystemCapabilities = {
-							com.apple.GameCenter = {
+							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.GameCenter = {
+								enabled = 0;
 							};
 						};
 					};
@@ -512,9 +511,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
 			};
 			name = Debug;
 		};
@@ -543,6 +543,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
 			};
 			name = Release;
 		};
@@ -557,11 +558,12 @@
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
-					"\"${PODS_ROOT}/Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F321D01B-D8C8-464D-82ED-233DA62B757D";
+				PROVISIONING_PROFILE = "98AC78E9-6406-4C65-9693-7DD3982771EF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -577,9 +579,10 @@
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
-					"\"${PODS_ROOT}/Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Appboy Sample";
 				PROVISIONING_PROFILE = "960966F9-6356-4E1C-8A9E-94E88BD29D94";
 				WRAPPER_EXTENSION = app;

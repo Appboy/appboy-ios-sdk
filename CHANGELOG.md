@@ -1,3 +1,31 @@
+## 2.7
+### News Feed Update
+- Exposed raw card data in ABKFeedController
+  - Developers can use the raw card data to creat custom user interfaces for the news feed. For more details on the card data, please refer to ABKFeedController.h.
+- Added support for categories on cards and news feed view controllers.
+  - Categories include Announcement, Advertising, Social, News and No Category. You can get cards of certain categories from ABKFeedController, or you can make ABKFeedViewController only display certain categories of cards.
+- Used SDWebImage to handle images downloading and caching in the news feed, display a spinner while downloading images and show a default image when no image available.
+  - Added support for asynchronous image downloading in the news feed, asynchronous memory and disk image caching with automatic cache expiration handling.
+- Added news feed view controller delegate to support custom handling of card clicks on news feed.
+  - The app can customize click actions from the feed and display any card link in their own user interface.
+
+### Slideup Changes
+- Updated ABKSlideupControllerDelegate method onSlideupClicked to return a BOOL value to indicate if Appboy should continue to execute the click action.
+- Stopped logging slideup click when the slideup click action is ABKSlideupNoneClickAction.
+
+### Feedback Changes
+- Updated the ABKFeedbackViewControllerPopoverContext so now it should be used in all cases where the feedback page displayed in a popover, including the case that the feedback is push on a navigation controller in a popover.
+- Fixed the ABKFeedbackVIewControllerModalContext cancel button delegate issue.
+- Fixed the form sheet style ABKFeedbackViewControllerModalContext layout issue.
+
+### Other Changes
+- Added API to request feed and slideup refresh.
+- Added API to log news feed displayed and feedback displayed.
+  - Allows updating analytics data even using customized news feed or feedback user interfaces.
+- Updated badge count policy to only update when app is foreground.
+- Added clearTwitterDataWhenNoDataOfTwitterIdentifier to ABKUser, allowing developer to clear user data when a user disconnectes their twitter accounts.
+- Updated custom key and string value for custom attributes to automatically trim.
+
 ## 2.6.3
 - Updates the SDK to authenticate with the Twitter API using SSL.
 

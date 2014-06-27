@@ -34,8 +34,9 @@
   self.newsAndFeedbackNavigationController = [[[UINavigationController alloc] initWithRootViewController:feedViewController] autorelease];
   self.newsAndFeedbackNavigationController.delegate = self;
   self.newsAndFeedbackNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.16 green:0.5 blue:0.73 alpha:1.0];
+  self.newsAndFeedbackNavigationController.navigationBar.barStyle = UIBarStyleBlack;
   UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback", nil)
-                                                                              style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromModalFeed:)] autorelease];
+                                                                              style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromNavigationFeed:)] autorelease];
   feedViewController.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
   
   [[NSNotificationCenter defaultCenter] addObserver:self
@@ -48,11 +49,14 @@
 //
 // Examples of how to put Appboy in one action: a button that open feed page, on which there is a feedback button
 // function of the feedback button in the newsAndFeedback bar button item
-- (void) openFeedbackFromModalFeed:(id)sender {
-  ABKFeedbackViewControllerNavigationContext *navFeedback = [[[ABKFeedbackViewControllerNavigationContext alloc] init] autorelease];
-  // we want to dismiss the popover after user send a feedback successfully
-  navFeedback.delegate = self;
-  [self.newsAndFeedbackNavigationController pushViewController:navFeedback animated:YES];
+- (void) openFeedbackFromNavigationFeed:(id)sender {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    ABKFeedbackViewControllerPopoverContext *popoverFeedback = [[[ABKFeedbackViewControllerPopoverContext alloc] init] autorelease];
+    [self.newsAndFeedbackNavigationController pushViewController:popoverFeedback animated:YES];
+  } else {
+    ABKFeedbackViewControllerNavigationContext *navFeedback = [[[ABKFeedbackViewControllerNavigationContext alloc] init] autorelease];
+    [self.newsAndFeedbackNavigationController pushViewController:navFeedback animated:YES];
+  }
 }
 
 - (IBAction) newsAndFeedbackButtonTapped:(id)sender {
@@ -117,6 +121,7 @@
   if (self.latestNewsPopoverController == nil) {
     ABKFeedViewControllerPopoverContext *feedViewControllerPopoverContext =
         [[[ABKFeedViewControllerPopoverContext alloc] init] autorelease];
+    feedViewControllerPopoverContext.navigationBar.barStyle = UIBarStyleBlack;
     feedViewControllerPopoverContext.closeButtonDelegate = self;
     self.latestNewsPopoverController =
         [[[UIPopoverController alloc] initWithContentViewController:feedViewControllerPopoverContext] autorelease];
@@ -269,20 +274,6 @@
 
   [alertView show];
   [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma Appboy feedback navigation delegate method
-// Feedback was sent successfully in the newsAndFeedback popover
-- (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender {
-  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-title", nil)
-                                                       message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback.thank-message", nil)
-                                                      delegate:nil
-                                             cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                             otherButtonTitles:nil] autorelease];
-
-  [alertView show];
-
-  [self.newsAndFeedbackNavigationController popViewControllerAnimated:YES];
 }
 
 #pragma split view controller delegate methods

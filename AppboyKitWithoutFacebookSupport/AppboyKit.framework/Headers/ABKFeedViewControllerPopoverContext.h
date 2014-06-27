@@ -40,7 +40,7 @@
 /*! Title displayed in the top bar */
 @property (retain, nonatomic) NSString *navigationBarTitle;
 
-// Delegate
+/*! Delegate */
 @property (assign, nonatomic) id<ABKFeedViewControllerPopoverContextDelegate> closeButtonDelegate;
 
 @end

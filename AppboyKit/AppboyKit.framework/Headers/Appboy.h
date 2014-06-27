@@ -14,14 +14,16 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.6.3"
+#define APPBOY_SDK_VERSION @"2.7"
 #endif
 
 @class ABKSlideupController;
+@class ABKFeedController;
 @class ABKUser;
 @class ABKSlideup;
 @class ABKSlideupViewController;
 @protocol ABKSlideupControllerDelegate;
+
 
 @interface Appboy : NSObject
 
@@ -86,7 +88,7 @@ extern NSString *const ABKRequestProcessingPolicyOptionKey;
 extern NSString *const ABKSocialAccountAcquisitionPolicyOptionKey;
 
 /*!
- * Sets the data flush interval (in seconds). This only has an affect when the request processing mode is set to
+ * Sets the data flush interval (in seconds). This only has an effect when the request processing mode is set to
  * ABKAutomaticRequestProcessing (which is the default). Values are converted into NSTimeIntervals and must be greater
  * than 1.0.
  */
@@ -166,6 +168,8 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * Properties
  */
 
+@property (nonatomic, retain, readonly) ABKFeedController *feedController;
+
 /*!
  * The current slideup manager.
  * See ABKSlideupController.h.
@@ -201,8 +205,10 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 /*!
  * The total number of currently active cards displayed in any feed view. Cards are
  * counted only once even if they appear in multiple feed views.
+ * @deprecated This property is now deprecated and will be removed in the future. Please use 
+ * [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll] instead.
  */
-@property (readonly, nonatomic, assign) NSInteger cardCount;
+@property (readonly, nonatomic, assign) NSInteger cardCount __deprecated;
 
 /*!
  * unreadCardCount is the number of currently active cards which have not been viewed.
@@ -214,8 +220,11 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * back on, it's not re-counted.
  *
  * Cards are counted only once even if they appear in multiple feed views or across multiple devices.
+ *
+ * @deprecated This property is now deprecated and will be removed in the future. Please use
+ * [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead.
  */
-@property (readonly, nonatomic, assign) NSInteger unreadCardCount;
+@property (readonly, nonatomic, assign) NSInteger unreadCardCount __deprecated;
 
 /*!
 * The policy regarding processing of network requests by the SDK. See the enumeration values for more information on
@@ -414,33 +423,34 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  */
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 
-
-/* ------------------------------------------------------------------------------------------------------
- * Notifications
+/*!
+ * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
+ * the news feed back to Appboy with this method so that your campaign reporting features still work in the dashboard.
  */
+- (void) logFeedDisplayed;
 
 /*!
- * When the news feed is updated, Appboy will post a notification through the NSNotificationCenter.
- * The name of the notification is the string constant referred to by ABKFeedUpdatedNotification. There
- * is no userInfo associated with the notification.
- *
- * To listen for this notification, you would register an object as an observer of the notification
- * using something like:
- *
- * <pre>
- *   [[NSNotificationCenter defaultCenter] addObserver:self
- *                                            selector:@selector(feedUpdatedNotificationReceived:)
- *                                                name:ABKFeedUpdatedNotification
- *                                              object:nil];
- * </pre>
- *
- * where "feedUpdatedNotificationReceived:" is your callback method for handling the notification:
- *
- * <pre>
- *   - (void) feedUpdatedNotificationReceived:(NSNotification *)notification {
- *     < Do something in response to the notification >
- *   }
- * <pre>
+ * If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report
+ * impressions of the feedback page back to Appboy with this method so that your campaign reporting features still work
+ * in the dashboard.
  */
-extern NSString *const ABKFeedUpdatedNotification;
+- (void) logFeedbackDisplayed;
+
+/*!
+ * Enqueues a news feed request for the current user. Note that if the queue already contains another request for the
+ * current user, that the new feed request will be merged into the already existing request and only one will execute
+ * for that user.
+ *
+ * When the new cards for news feed return from Appboy server, the SDK will post an ABKFeedUpdatedNotification with an
+ * ABKFeedUpdatedIsSuccessfulKey in the notification's userInfo dictionary to indicate if the news feed request is successful
+ * or not. For more detail about the ABKFeedUpdatedNotification and the ABKFeedUpdatedIsSuccessfulKey, please check ABKFeedController.
+ */
+- (void) requestFeedRefresh;
+
+/*!
+ * Enqueues a slideup request for the current user. Note that if the queue already contains another request for the
+ * current user, that the slideup request will be merged into the already existing request and only one will execute
+ * for that user.
+ */
+- (void) requestSlideupRefresh;
 @end

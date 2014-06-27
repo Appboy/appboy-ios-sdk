@@ -96,14 +96,12 @@ typedef NS_ENUM(NSInteger, ABKSlideupDisplayChoice) {
 
 /*!
  * @param slideup The slideup object being offered to the delegate.
+ * @return Boolean Value which controls whether or not Appboy will execute the click action. Returning YES will prevent
+ *         Appboy from performing the click action. Returning NO will cause Appboy to execute the action defined in the
+ *         slideup's slideupClickActionType property after this delegate method is called.
  *
- * This delegate method is fired whenever the user clicks on the slideup. 
- *
- * Appboy will continue to execute the action defined in the slideup's slideupClickActionType property after this delegate
- * method is called. If you don't want Appboy to perform default slideup click action(e.g. opening a modal news feed or a
- * modal web view), you can set slideup.slideupClickActionType = ABKSlideupNoneClickAction; in this delegate method. See
- * ABKSlideup.h for more information.
+ * This delegate method is fired whenever the user clicks on the slideup. See ABKSlideup.h for more information.
  */
-- (void) onSlideupClicked:(ABKSlideup *)slideup;
+- (BOOL) onSlideupClicked:(ABKSlideup *)slideup;
 
 @end

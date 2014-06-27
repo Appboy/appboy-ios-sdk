@@ -38,10 +38,10 @@
  */
 @interface ABKFeedViewControllerModalContext : ABKFeedViewControllerGenericContext
 
-// Title displayed in the top bar
+/*! Title displayed in the top bar */
 @property (retain, nonatomic) NSString *navigationBarTitle;
 
-// Delegate
+/*! Delegate */
 @property (assign, nonatomic) id<ABKFeedViewControllerModalContextDelegate> closeButtonDelegate;
 
 @end

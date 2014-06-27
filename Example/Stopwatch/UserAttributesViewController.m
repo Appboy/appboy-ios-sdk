@@ -152,6 +152,11 @@ static NSMutableArray *attributesValuesArray = nil;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+  // When it's the date of birth text field get edited, we don't want to save the text in text field
+  // but the date object. Ignore the input of text filed here.
+  if (textField.tag == IndexOfBirthday + TextFieldTagNumber) {
+    return YES;
+  }
   // Save the input of text field, including the cases of valid text and empty input
   if (textField.text.length > 0) {
     [attributesValuesArray replaceObjectAtIndex:(NSUInteger)textField.tag - TextFieldTagNumber withObject:textField.text];
