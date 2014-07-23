@@ -5,8 +5,10 @@ var searchData=
   ['setcustomattributewithkey_3aanddoublevalue_3a',['setCustomAttributeWithKey:andDoubleValue:',['../interface_a_b_k_user.html#abe733374a95e245b8c02245719d1cffb',1,'ABKUser']]],
   ['setcustomattributewithkey_3aandintegervalue_3a',['setCustomAttributeWithKey:andIntegerValue:',['../interface_a_b_k_user.html#a61b6359f6b4abdc09868e7632f466597',1,'ABKUser']]],
   ['setcustomattributewithkey_3aandstringvalue_3a',['setCustomAttributeWithKey:andStringValue:',['../interface_a_b_k_user.html#abccfa73329731620008339c76a6f4272',1,'ABKUser']]],
+  ['setemailnotificationsubscriptiontype_3a',['setEmailNotificationSubscriptionType:',['../interface_a_b_k_user.html#ae8ef1e78bfafde343974a004ca81bb74',1,'ABKUser']]],
   ['setgender_3a',['setGender:',['../interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40',1,'ABKUser']]],
-  ['setissubscribedtoemails_3a',['setIsSubscribedToEmails:',['../interface_a_b_k_user.html#aa8979a0bf939fa9a27dc382c4de79998',1,'ABKUser']]],
+  ['setissubscribedtoemails_3a',['setIsSubscribedToEmails:',['../interface_a_b_k_user.html#a6450dd6bd805978fcb182911560d8f3c',1,'ABKUser']]],
+  ['setpushnotificationsubscriptiontype_3a',['setPushNotificationSubscriptionType:',['../interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3',1,'ABKUser']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#a998b424210ebceb1957f5547e45dfb12',1,'Appboy']]],
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
   ['slideupcontroller',['slideupController',['../interface_appboy.html#adc48570573712dbd1796cbbff0b9c9f5',1,'Appboy']]],
@@ -14,5 +16,7 @@ var searchData=
   ['slideupviewcontrollerwithslideup_3a',['slideupViewControllerWithSlideup:',['../protocol_a_b_k_slideup_controller_delegate-p.html#afe1067db947ce0f5a75fb42930cb9d95',1,'ABKSlideupControllerDelegate-p']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#a9a027766f3b350a09f44e0db4d6e22df',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#addd2d10f15efe49a8ee1dfa72a43043d',1,'Appboy']]],
-  ['submitfeedback_3amessage_3aisreportingabug_3a',['submitFeedback:message:isReportingABug:',['../interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0',1,'Appboy']]]
+  ['submitfeedback_3amessage_3aisreportingabug_3a',['submitFeedback:message:isReportingABug:',['../interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0',1,'Appboy']]],
+  ['supportedorientationmasks',['supportedOrientationMasks',['../interface_a_b_k_slideup_controller.html#a45779b7b05c273cdae9d1290054023ce',1,'ABKSlideupController']]],
+  ['supportedorientations',['supportedOrientations',['../interface_a_b_k_slideup_controller.html#a72f2cc9176eb0677220d722c38bf3456',1,'ABKSlideupController']]]
 ];

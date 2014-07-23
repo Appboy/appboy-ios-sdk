@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,8 +102,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:afe1067db947ce0f5a75fb42930cb9d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fb35f3dc961e233915646ab915f0841"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#a4fb35f3dc961e233915646ab915f0841">onSlideupDismissed:</a></td></tr>
 <tr class="separator:a4fb35f3dc961e233915646ab915f0841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc4fb1688ecb0887063ef626faa5dd19"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#abc4fb1688ecb0887063ef626faa5dd19">onSlideupClicked:</a></td></tr>
-<tr class="separator:abc4fb1688ecb0887063ef626faa5dd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32e28019497728092c15f4b1c972c4a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html#af32e28019497728092c15f4b1c972c4a">onSlideupClicked:</a></td></tr>
+<tr class="separator:af32e28019497728092c15f4b1c972c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The slideup delegate allows you to control the display and behavior of the <a class="el" href="interface_appboy.html">Appboy</a> slideup. For more detailed information on slideup behavior, including when and how the delegate is used, see the documentation for the ABKSlideupDisplayChoice enum above for more detailed information. </p>
@@ -151,7 +152,7 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abc4fb1688ecb0887063ef626faa5dd19"></a>
+<a class="anchor" id="af32e28019497728092c15f4b1c972c4a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -159,7 +160,7 @@ Instance Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) onSlideupClicked: </td>
+          <td class="memname">- (BOOL) onSlideupClicked: </td>
           <td></td>
           <td class="paramtype">(<a class="el" href="interface_a_b_k_slideup.html">ABKSlideup</a> *)&#160;</td>
           <td class="paramname"><em>slideup</em></td>
@@ -174,12 +175,12 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">slideup</td><td>The slideup object being offered to the delegate.</td></tr>
+    <tr><td class="paramname">slideup</td><td>The slideup object being offered to the delegate. </td></tr>
   </table>
   </dd>
 </dl>
-<p>This delegate method is fired whenever the user clicks on the slideup.</p>
-<p><a class="el" href="interface_appboy.html">Appboy</a> will continue to execute the action defined in the slideup's slideupClickActionType property after this delegate method is called. If you don't want <a class="el" href="interface_appboy.html">Appboy</a> to perform default slideup click action(e.g. opening a modal news feed or a modal web view), you can set slideup.slideupClickActionType = ABKSlideupNoneClickAction; in this delegate method. See <a class="el" href="_a_b_k_slideup_8h_source.html">ABKSlideup.h</a> for more information. </p>
+<dl class="section return"><dt>Returns</dt><dd>Boolean Value which controls whether or not <a class="el" href="interface_appboy.html">Appboy</a> will execute the click action. Returning YES will prevent <a class="el" href="interface_appboy.html">Appboy</a> from performing the click action. Returning NO will cause <a class="el" href="interface_appboy.html">Appboy</a> to execute the action defined in the slideup's slideupClickActionType property after this delegate method is called.</dd></dl>
+<p>This delegate method is fired whenever the user clicks on the slideup. See <a class="el" href="_a_b_k_slideup_8h_source.html">ABKSlideup.h</a> for more information. </p>
 
 </div>
 </div>
@@ -285,7 +286,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 17 2014 17:50:00 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 23 2014 14:51:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,6 +106,10 @@ Instance Methods</h2></td></tr>
 Properties</h2></td></tr>
 <tr class="memitem:a1f938c232db1b1161c31daf9ec58012f"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_a_b_k_slideup_controller_delegate-p.html">ABKSlideupControllerDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_slideup_controller.html#a1f938c232db1b1161c31daf9ec58012f">delegate</a></td></tr>
 <tr class="separator:a1f938c232db1b1161c31daf9ec58012f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45779b7b05c273cdae9d1290054023ce"><td class="memItemLeft" align="right" valign="top">UIInterfaceOrientationMask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_slideup_controller.html#a45779b7b05c273cdae9d1290054023ce">supportedOrientationMasks</a></td></tr>
+<tr class="separator:a45779b7b05c273cdae9d1290054023ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72f2cc9176eb0677220d722c38bf3456"><td class="memItemLeft" align="right" valign="top">UIInterfaceOrientation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_slideup_controller.html#a72f2cc9176eb0677220d722c38bf3456">supportedOrientations</a></td></tr>
+<tr class="separator:a72f2cc9176eb0677220d722c38bf3456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="a3f8657b14a11ddccb3a3430daf66415e"></a>
@@ -219,10 +224,54 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a45779b7b05c273cdae9d1290054023ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIInterfaceOrientationMask) supportedOrientationMasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>supportedOrientationMasks allows you to change which orientation masks the slideup (in-app message) supports. Slideups (in-app messages) will normally support the orientations specified in the app settings, but the method supportedInterfaceOrientations may optionally override that. The value of supportedOrientationMasks will be returned in supportedInterfaceOrientations in the slideup view controller.</p>
+<p>The default value of supportedOrientationMasks is UIInterfaceOrientationMaskAll. This property only works in iOS 6 and later. </p>
+
+</div>
+</div>
+<a class="anchor" id="a72f2cc9176eb0677220d722c38bf3456"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIInterfaceOrientation) supportedOrientations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>supportedOrientations allows you to change which orientation the slideup (in-app message) supports. Slideups (in-app messages) will normally support the orientations specified in the app settings, but method preferredInterfaceOrientationForPresentation may optionally override that. The value of supportedOrientations will be returned in preferredInterfaceOrientationForPresentation in slideup view controller.</p>
+<p>The default value of supportedOrientations includes all orientations: UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeRight, UIInterfaceOrientationLandscapeLeft and UIInterfaceOrientationPortraitUpsideDown. This property only works in iOS 6 and later. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 17 2014 17:50:00 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 23 2014 14:51:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

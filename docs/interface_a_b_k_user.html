@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,9 +83,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Instance Methods</a> &#124;
-<a href="#pub-static-methods">Class Methods</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_a_b_k_user-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -94,19 +94,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#import &lt;<a class="el" href="_a_b_k_user_8h_source.html">ABKUser.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:ac6115b2e21531a81d3eddecdda55a09c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a> { <b>ABKUserGenderMale</b> = 1 &lt;&lt; 0, 
-<b>ABKUserGenderFemale</b> = 1 &lt;&lt; 1
- }</td></tr>
-<tr class="separator:ac6115b2e21531a81d3eddecdda55a09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a3e261882c7e095c6e0381ab62ceebe40"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40">setGender:</a></td></tr>
 <tr class="separator:a3e261882c7e095c6e0381ab62ceebe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8979a0bf939fa9a27dc382c4de79998"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#aa8979a0bf939fa9a27dc382c4de79998">setIsSubscribedToEmails:</a></td></tr>
-<tr class="separator:aa8979a0bf939fa9a27dc382c4de79998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6450dd6bd805978fcb182911560d8f3c"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a6450dd6bd805978fcb182911560d8f3c">setIsSubscribedToEmails:</a></td></tr>
+<tr class="separator:a6450dd6bd805978fcb182911560d8f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ef1e78bfafde343974a004ca81bb74"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#ae8ef1e78bfafde343974a004ca81bb74">setEmailNotificationSubscriptionType:</a></td></tr>
+<tr class="separator:ae8ef1e78bfafde343974a004ca81bb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2c11d1889fd08537f90ee64c94efb3"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3">setPushNotificationSubscriptionType:</a></td></tr>
+<tr class="separator:afb2c11d1889fd08537f90ee64c94efb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb4fa3dd31b091338caa7c3ddcafe26"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#aafb4fa3dd31b091338caa7c3ddcafe26">setCustomAttributeWithKey:andBOOLValue:</a></td></tr>
 <tr class="separator:aafb4fa3dd31b091338caa7c3ddcafe26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61b6359f6b4abdc09868e7632f466597"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a61b6359f6b4abdc09868e7632f466597">setCustomAttributeWithKey:andIntegerValue:</a></td></tr>
@@ -124,11 +121,17 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a3311dadde4e172539dce54d82a6d9447"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3311dadde4e172539dce54d82a6d9447">incrementCustomUserAttribute:by:</a></td></tr>
 <tr class="separator:a3311dadde4e172539dce54d82a6d9447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Class Methods</h2></td></tr>
-<tr class="memitem:a17d672e4bc550fcb8339127a4367c2ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17d672e4bc550fcb8339127a4367c2ef"></a>
-(NSDictionary *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>diffUserDictionary:againstOtherUserDictionary:</b></td></tr>
-<tr class="separator:a17d672e4bc550fcb8339127a4367c2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:ac6115b2e21531a81d3eddecdda55a09c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a> { <b>ABKUserGenderMale</b>, 
+<b>ABKUserGenderFemale</b>
+ }</td></tr>
+<tr class="separator:ac6115b2e21531a81d3eddecdda55a09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f159bb21a5b669c611c2adfa0f7228"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a35f159bb21a5b669c611c2adfa0f7228">ABKNotificationSubscriptionType</a> { <b>ABKOptedIn</b>, 
+<b>ABKSubscribed</b>, 
+<b>ABKUnsubscribed</b>
+ }</td></tr>
+<tr class="separator:a35f159bb21a5b669c611c2adfa0f7228"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -157,11 +160,13 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 <tr class="separator:a0b80c46f2ed8eb2e95e5ff956c1fe08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e29efa565369bce73c6b727ccd41ec4"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a8e29efa565369bce73c6b727ccd41ec4">twitterAccountIdentifier</a></td></tr>
 <tr class="separator:a8e29efa565369bce73c6b727ccd41ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158222656745e50fa1db44133f862036"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a158222656745e50fa1db44133f862036">clearTwitterDataWhenNoDataOfTwitterIdentifier</a></td></tr>
+<tr class="separator:a158222656745e50fa1db44133f862036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>When setting the custom attributes with custom keys:</p>
 <ol type="1">
-<li>Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values for reserved keys, please find and set the corresponding property in this class. The reserved key list is:: email facebook twitter first_name last_name dob external_id country home_city bio gender phone email_subscribe foursquare_access_token image_url</li>
+<li>Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values for reserved keys, please find and set the corresponding property in this class. The reserved key list is:: email facebook twitter first_name last_name dob external_id country home_city bio gender phone email_subscribe foursquare_access_token image_url push_subscribe</li>
 </ol>
 <ol type="1">
 <li>The maximum key length is 255 characters; longer keys are truncated.</li>
@@ -170,14 +175,44 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 <li>The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated. </li>
 </ol>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a35f159bb21a5b669c611c2adfa0f7228"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (enum) <a class="el" href="interface_a_b_k_user.html#a35f159bb21a5b669c611c2adfa0f7228">ABKNotificationSubscriptionType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convenience enum to represent notification status, for email and push notifications.</p>
+<p>OPTED_IN: subscribed, and explicitly opted in. SUBSCRIBED: subscribed, but not explicitly opted in. UNSUBSCRIBED: unsubscribed and/or explicitly opted out. </p>
+
+</div>
+</div>
 <a class="anchor" id="ac6115b2e21531a81d3eddecdda55a09c"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">- (enum) <a class="el" href="interface_a_b_k_user.html#ac6115b2e21531a81d3eddecdda55a09c">ABKUserGenderType</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Values representing the gender recognized by the SDK. </p>
 
@@ -413,6 +448,30 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 
 </div>
 </div>
+<a class="anchor" id="ae8ef1e78bfafde343974a004ca81bb74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) setEmailNotificationSubscriptionType: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_user.html#a35f159bb21a5b669c611c2adfa0f7228">ABKNotificationSubscriptionType</a>)&#160;</td>
+          <td class="paramname"><em>emailNotificationSubscriptionType</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets whether or not the user should be sent email campaigns. Setting it to unsubscribed opts the user out of an email campaign that you create through the <a class="el" href="interface_appboy.html">Appboy</a> dashboard.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">emailNotificationSubscriptionType</td><td>enum representing the user's email notifications subscription type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the field is set successfully, else NO. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a3e261882c7e095c6e0381ab62ceebe40"></a>
 <div class="memitem">
 <div class="memproto">
@@ -436,7 +495,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 
 </div>
 </div>
-<a class="anchor" id="aa8979a0bf939fa9a27dc382c4de79998"></a>
+<a class="anchor" id="a6450dd6bd805978fcb182911560d8f3c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -444,11 +503,12 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
           <td class="memname">- (BOOL) setIsSubscribedToEmails: </td>
           <td></td>
           <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>subscribed</em></td>
+          <td class="paramname"><em>__deprecated</em></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Deprecated: Use setEmailNotificationSubscriptionType instead.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">subscribed</td><td>Whether or not this user should be subscribed to emails </td></tr>
@@ -456,6 +516,30 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if isSubscribedToEmail is set the same as parameter subscribed </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afb2c11d1889fd08537f90ee64c94efb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) setPushNotificationSubscriptionType: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_user.html#a35f159bb21a5b669c611c2adfa0f7228">ABKNotificationSubscriptionType</a>)&#160;</td>
+          <td class="paramname"><em>pushNotificationSubscriptionType</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the push notification subscription status of the user. Used to collect information about the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pushNotificationSubscriptionType</td><td>enum representing the user's push notifications subscription type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the field is set successfully, else NO. </dd></dl>
 
 </div>
 </div>
@@ -522,6 +606,29 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </table>
 </div><div class="memdoc">
 <p>The User's bio (String) </p>
+
+</div>
+</div>
+<a class="anchor" id="a158222656745e50fa1db44133f862036"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) clearTwitterDataWhenNoDataOfTwitterIdentifier</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This property is for when a user's twitter account with the given identifier isn't available, should <a class="el" href="interface_appboy.html">Appboy</a> also delete the saved twitter account in the server of that user.</p>
+<p>The default value of this property is NO. If the property is set to YES, when the twitter account data with the given twitter identifier(defined in the <a class="el" href="interface_a_b_k_user.html">ABKUser</a>'s twitterAccountIdentifier property) isn't available, <a class="el" href="interface_appboy.html">Appboy</a> will also delete <a class="el" href="interface_appboy.html">Appboy</a> will delete the saved twitter account data of that user in <a class="el" href="interface_appboy.html">Appboy</a>'s database.</p>
+<p>This property is only used when in appboyOptions, ABKSocialAccountAcquisitionPolicyOptionKey is set to be ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly, and twitterAccountIdentifier property has a valid value. </p>
 
 </div>
 </div>
@@ -717,7 +824,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 17 2014 17:50:00 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 23 2014 14:51:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
