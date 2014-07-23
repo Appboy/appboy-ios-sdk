@@ -51,8 +51,8 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
 @interface ABKFeedController : NSObject
 
 /*!
- * The latest cards of Appboy news feed that is saved in memory and disk. Right now the available card types are ABKCardBanner,
- * ABKCardCaptionedMessage, ABKCardCrossPromotionSmall, ABKCardNews and ABKCardTextAnnouncement. They are all subclasses
+ * The latest cards of Appboy news feed that is saved in memory and disk. Right now the available card types are ABKBannerCard,
+ * ABKCaptionedImageCard, ABKCrossPromotionCard, ABKClassicCard and ABKTextAnnouncementCard. They are all subclasses
  * of ABKCard.
  */
 @property (readonly) NSArray *newsFeedCards;

@@ -13,6 +13,29 @@
 @property (nonatomic, retain) id <ABKSlideupControllerDelegate> delegate;
 
 /*!
+ * supportedOrientationMasks allows you to change which orientation masks the slideup (in-app message) supports.
+ * Slideups (in-app messages) will normally support the orientations specified in the app settings, but the method
+ * supportedInterfaceOrientations may optionally override that. The value of supportedOrientationMasks will be returned
+ * in supportedInterfaceOrientations in the slideup view controller.
+ *
+ * The default value of supportedOrientationMasks is UIInterfaceOrientationMaskAll. This property only works in iOS 6 and later.
+ *
+ */
+@property (nonatomic, assign) UIInterfaceOrientationMask supportedOrientationMasks;
+
+/*!
+ * supportedOrientations allows you to change which orientation the slideup (in-app message) supports.
+ * Slideups (in-app messages) will normally support the orientations specified in the app settings, but method
+ * preferredInterfaceOrientationForPresentation may optionally override that. The value of supportedOrientations will be
+ * returned in preferredInterfaceOrientationForPresentation in slideup view controller.
+ *
+ * The default value of supportedOrientations includes all orientations: UIInterfaceOrientationPortrait,
+ * UIInterfaceOrientationLandscapeRight, UIInterfaceOrientationLandscapeLeft and UIInterfaceOrientationPortraitUpsideDown.
+ * This property only works in iOS 6 and later.
+ */
+@property (nonatomic, assign) UIInterfaceOrientation supportedOrientations;
+
+/*!
  * @param delegate The slideup delegate that implements the ABKSlideupControllerDelegate methods. If the delegate is
  * nil, it acts as one which always returns ABKDisplaySlideupNow and doesn't implement all other delegate methods.
  *

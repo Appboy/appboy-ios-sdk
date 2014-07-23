@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.7"
+  s.version      = "2.8"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.description  = <<-DESC
                     This pod has two subspecs, please ensure you only choose one of them when you are adding Appboy-iOS-SDK pod to your podfile by:
@@ -18,8 +18,9 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
   s.author       = { "Appboy" => "http://www.appboy.com" }
   s.source       = { :git => 'https://github.com/Appboy/appboy-ios-sdk.git', :tag => s.version.to_s}
-  s.ios.deployment_target = '5.1.1'
   s.platform = :ios
+  s.ios.deployment_target = '5.1.1'
+  s.requires_arc = false
   s.documentation_url = 'http://documentation.appboy.com/'
   s.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreImage'
   s.weak_framework = 'CoreTelephony', 'Social', 'Twitter', 'Accounts', 'AdSupport', 'StoreKit'

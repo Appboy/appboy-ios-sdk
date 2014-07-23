@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.7"
+#define APPBOY_SDK_VERSION @"2.8"
 #endif
 
 @class ABKSlideupController;
@@ -351,6 +351,13 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 - (void) logCustomEvent:(NSString *)eventName;
 
 /*!
+ * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity: with a quantity of 1.
+ * Please see logPurchase:inCurrency:atPrice:withQuantity: for more information.
+ *
+ */
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
+
+/*!
  * @param productIdentifier A String indicating the product that was purchased. Usually the product identifier in the
  * iTunes store.
  * @param currencyCode Currencies should be represented as an ISO 4217 currency code. Prices should
@@ -365,6 +372,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should
  * be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied
  * such that a maximum of two digits exist after their decimal point.
+ * @param quantity An unsigned number to indicate the purchase quantity. This number must be greater than 0 but no larger than 100.
  *
  * @discussion Logs a purchase made in the application.
  *
@@ -372,7 +380,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;
 
 /*!
 * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
