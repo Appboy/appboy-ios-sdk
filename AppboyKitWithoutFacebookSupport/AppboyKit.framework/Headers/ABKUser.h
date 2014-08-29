@@ -238,4 +238,34 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  */
 - (BOOL) incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;
 
+/**
+ * Adds the string value to a custom attribute string array specified by the key. If you add a key that has not
+ * previously been set, a custom attribute string array will be created containing the value.
+ *
+ * @param key The custom attribute key
+ * @param value A string to be added to the custom attribute string array
+ * @return YES if the operation was successful
+ */
+- (BOOL) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
+
+/**
+ * Removes the string value from a custom attribute string array specified by the key. If you remove a key that has not
+ * previously been set, nothing will be changed.
+ *
+ * @param key The custom attribute key
+ * @param value A string to be removed from the custom attribute string array
+ * @return YES if the operation was successful
+ */
+- (BOOL) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
+
+/**
+ * Sets a string array from a custom attribute specified by the key.
+ *
+ * @param key The custom attribute key
+ * @param valueArray A string array to set as a custom attribute. If this value is nil, then Appboy will unset the custom
+ *        attribute and remove the corresponding array if there is one.
+ * @return YES if the operation was successful
+ */
+- (BOOL) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray;
+
 @end

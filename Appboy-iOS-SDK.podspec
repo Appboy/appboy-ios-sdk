@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.8"
+  s.version      = "2.8.1"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.description  = <<-DESC
                     This pod has two subspecs, please ensure you only choose one of them when you are adding Appboy-iOS-SDK pod to your podfile by:

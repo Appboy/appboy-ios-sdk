@@ -36,11 +36,13 @@
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
   [_versionLabel release];
+  [_unReadIndicatorSwitch release];
   [super dealloc];
 }
 
 - (void) viewDidUnload {
   [self setVersionLabel:nil];
+  [self setUnReadIndicatorSwitch:nil];
   [super viewDidUnload];
 }
 
@@ -50,6 +52,7 @@
 
 - (IBAction)displayCategoriedNews:(id)sender {
   ABKFeedViewControllerNavigationContext *newsFeed = [[ABKFeedViewControllerNavigationContext alloc] init];
+  newsFeed.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   // Add Categories button
   UIBarButtonItem *categoriesButton = [[UIBarButtonItem alloc]
                                        initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.button.title", nil)

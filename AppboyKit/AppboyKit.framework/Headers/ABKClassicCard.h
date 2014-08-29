@@ -9,7 +9,7 @@
 /*
  * The description text for the card.
  */
-@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *cardDescription;
 
 //Optional:
 /*

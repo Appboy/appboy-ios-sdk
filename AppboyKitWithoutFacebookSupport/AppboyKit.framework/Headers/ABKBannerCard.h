@@ -19,4 +19,9 @@
  */
 @property (nonatomic, copy) NSString *domain;
 
+/*
+ * This property is the aspect ratio of the card's image.
+ */
+@property (nonatomic, assign) float imageAspectRatio;
+
 @end

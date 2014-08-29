@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.8"
+#define APPBOY_SDK_VERSION @"2.8.1"
 #endif
 
 @class ABKSlideupController;
@@ -23,7 +23,6 @@
 @class ABKSlideup;
 @class ABKSlideupViewController;
 @protocol ABKSlideupControllerDelegate;
-
 
 @interface Appboy : NSObject
 
@@ -296,6 +295,15 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * method of your App Delegate.
  */
 - (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
+
+/*!
+ * @param identifier The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:.
+ * @param userInfo An NSDictionary passed in from the handleActionWithIdentifier:forRemoteNotification: call.
+ *
+ * @discussion This method forwards remote notifications and the custom action chosen by user to Appboy. Call it from
+ * the application:handleActionWithIdentifier:forRemoteNotification: method of your App Delegate.
+ */
+- (void) getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo;
 
 /*!
 * @param userID The new user's ID (from the host application).

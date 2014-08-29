@@ -54,5 +54,11 @@
  */
 @property (nonatomic, assign) ABKCardCategory categories;
 
+/*!
+ *  This property allows you to enable or disable the unread indicator on the news feed. The default value is NO, which
+ *  will enable the displaying of the unread indicator on cards.
+ */
+@property (nonatomic, assign) BOOL disableUnreadIndicator;
+
 @end
 

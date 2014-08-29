@@ -7,13 +7,17 @@
  */
 @property (nonatomic, copy) NSString *image;
 /*
+ * This property is the aspect ratio of the card's image.
+ */
+@property (nonatomic, assign) float imageAspectRatio;
+/*
  * The title text for the card.
  */
 @property (nonatomic, copy) NSString *title;
 /*
  * The description text for the card.
  */
-@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *cardDescription;
 
 //Optional:
 /*
