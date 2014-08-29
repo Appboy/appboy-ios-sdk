@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['setcustomattributearraywithkey_3aarray_3a',['setCustomAttributeArrayWithKey:array:',['../interface_a_b_k_user.html#a807c199df35cbcf3f00c3a698272f1a5',1,'ABKUser']]],
   ['setcustomattributewithkey_3aandboolvalue_3a',['setCustomAttributeWithKey:andBOOLValue:',['../interface_a_b_k_user.html#aafb4fa3dd31b091338caa7c3ddcafe26',1,'ABKUser']]],
   ['setcustomattributewithkey_3aanddatevalue_3a',['setCustomAttributeWithKey:andDateValue:',['../interface_a_b_k_user.html#a4108d1bdd46e3cebc056d4c6f0bcac61',1,'ABKUser']]],
   ['setcustomattributewithkey_3aanddoublevalue_3a',['setCustomAttributeWithKey:andDoubleValue:',['../interface_a_b_k_user.html#abe733374a95e245b8c02245719d1cffb',1,'ABKUser']]],

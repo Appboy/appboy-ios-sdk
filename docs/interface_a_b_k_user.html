@@ -120,6 +120,12 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a8f9fa4894dd236dedd48e610d43ef316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3311dadde4e172539dce54d82a6d9447"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3311dadde4e172539dce54d82a6d9447">incrementCustomUserAttribute:by:</a></td></tr>
 <tr class="separator:a3311dadde4e172539dce54d82a6d9447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f4b6e8b77baf80a1c9d45c479a59b3"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a92f4b6e8b77baf80a1c9d45c479a59b3">addToCustomAttributeArrayWithKey:value:</a></td></tr>
+<tr class="separator:a92f4b6e8b77baf80a1c9d45c479a59b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade60374cb566bd3b7ec789d15059c3ae"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#ade60374cb566bd3b7ec789d15059c3ae">removeFromCustomAttributeArrayWithKey:value:</a></td></tr>
+<tr class="separator:ade60374cb566bd3b7ec789d15059c3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807c199df35cbcf3f00c3a698272f1a5"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a807c199df35cbcf3f00c3a698272f1a5">setCustomAttributeArrayWithKey:array:</a></td></tr>
+<tr class="separator:a807c199df35cbcf3f00c3a698272f1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -219,6 +225,41 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div>
 </div>
 <h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a92f4b6e8b77baf80a1c9d45c479a59b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) addToCustomAttributeArrayWithKey: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>key</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">value:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds the string value to a custom attribute string array specified by the key. If you add a key that has not previously been set, a custom attribute string array will be created containing the value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The custom attribute key </td></tr>
+    <tr><td class="paramname">value</td><td>A string to be added to the custom attribute string array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the operation was successful </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a8f9fa4894dd236dedd48e610d43ef316"></a>
 <div class="memitem">
 <div class="memproto">
@@ -275,6 +316,76 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the increment for the custom attribute of given key is saved </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ade60374cb566bd3b7ec789d15059c3ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) removeFromCustomAttributeArrayWithKey: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>key</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">value:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes the string value from a custom attribute string array specified by the key. If you remove a key that has not previously been set, nothing will be changed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The custom attribute key </td></tr>
+    <tr><td class="paramname">value</td><td>A string to be removed from the custom attribute string array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the operation was successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a807c199df35cbcf3f00c3a698272f1a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) setCustomAttributeArrayWithKey: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>key</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">array:</td>
+          <td></td>
+          <td class="paramtype">(NSArray *)&#160;</td>
+          <td class="paramname"><em>valueArray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets a string array from a custom attribute specified by the key.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The custom attribute key </td></tr>
+    <tr><td class="paramname">valueArray</td><td>A string array to set as a custom attribute. If this value is nil, then <a class="el" href="interface_appboy.html">Appboy</a> will unset the custom attribute and remove the corresponding array if there is one. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the operation was successful </dd></dl>
 
 </div>
 </div>
@@ -824,7 +935,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 23 2014 14:51:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 29 2014 14:28:01 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
