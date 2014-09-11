@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "AppboyKit.h"
+#import <AppboyKit.h>
 
 @interface SlideupTestViewController : UIViewController <ABKSlideupControllerDelegate>
 

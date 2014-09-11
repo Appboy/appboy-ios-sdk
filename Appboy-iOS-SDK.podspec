@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.8.1"
+  s.version      = "2.9"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.description  = <<-DESC
                     This pod has two subspecs, please ensure you only choose one of them when you are adding Appboy-iOS-SDK pod to your podfile by:
@@ -26,23 +26,19 @@ Pod::Spec.new do |s|
   s.weak_framework = 'CoreTelephony', 'Social', 'Twitter', 'Accounts', 'AdSupport', 'StoreKit'
 
   s.subspec 'AppboyKit' do |aks|
-    aks.source_files = 'AppboyKit/AppboyKit.framework/**/*.h', 'AppboyKit/*.m'
+    aks.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/*.m'
     aks.exclude_files = 'AppboyKit/**/*.txt'
-    aks.xcconfig   =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/Appboy-iOS-SDK/AppboyKit"', 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Appboy-iOS-SDK/AppboyKit"' }
-    aks.library = 'AppboyKitLibrary'
-    aks.resource_bundle = {'AppboyKit.framework' => ['AppboyKit/AppboyKit.framework'], 'LanguageBundle' => ['AppboyKit/*.lproj']}
+    aks.resource = 'AppboyKit/Appboy.bundle'
     aks.preserve_paths = 'AppboyKit/**/*.*'
     aks.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
-    aks.dependency 'Facebook-iOS-SDK'
+    aks.dependency 'Facebook-iOS-SDK', '~> 3.16.2'
     aks.dependency 'SDWebImage'
   end
 
   s.subspec 'AppboyKitWithoutFacebookSupport' do |akwfss|
-    akwfss.source_files = 'AppboyKitWithoutFacebookSupport/AppboyKit.framework/**/*.h', 'AppboyKitWithoutFacebookSupport/*.m'
+    akwfss.source_files = 'AppboyKitWithoutFacebookSupport/headers/AppboyKitLibrary/*.h', 'AppboyKitWithoutFacebookSupport/*.m'
     akwfss.exclude_files = 'AppboyKitWithoutFacebookSupport/**/*.txt'
-    akwfss.xcconfig   =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport"', 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport"' }
-    akwfss.library = 'AppboyKitLibrary'
-    akwfss.resource_bundle = {'AppboyKit.framework' => ['AppboyKitWithoutFacebookSupport/AppboyKit.framework'], 'LanguageBundle' => ['AppboyKitWithoutFacebookSupport/*.lproj']}
+    akwfss.resource = 'AppboyKitWithoutFacebookSupport/Appboy.bundle'
     akwfss.preserve_paths = 'AppboyKitWithoutFacebookSupport/**/*.*'
     akwfss.vendored_libraries = 'AppboyKitWithoutFacebookSupport/libAppboyKitLibrary.a'
     akwfss.dependency 'SDWebImage'

@@ -1,7 +1,6 @@
 #import "TestingViewController.h"
 #import "SlideupTestViewController.h"
-#import "AppboyKit.h"
-#import <ABKFeedController.h>
+#import <AppboyKit.h>
 
 @implementation TestingViewController
 

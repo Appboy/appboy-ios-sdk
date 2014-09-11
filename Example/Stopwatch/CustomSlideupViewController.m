@@ -1,5 +1,5 @@
 #import "CustomSlideupViewController.h"
-#import "AppboyKit.h"
+#import <AppboyKit.h>
 
 static CGFloat const slideupBottomPadding = 10.0f;
 

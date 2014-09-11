@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-#import "AppboyKit.h"
+#import <AppboyKit.h>
 #import "NUISettings.h"
 
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
@@ -30,12 +30,15 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
   // feedback form and news feed).
   [Appboy sharedInstance].useNUITheming = YES;
-
-  // Register for push notifications
-  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-      (UIRemoteNotificationTypeAlert |
-          UIRemoteNotificationTypeBadge |
-          UIRemoteNotificationTypeSound)];
+  
+  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeAlert |
+      UIRemoteNotificationTypeBadge |
+      UIRemoteNotificationTypeSound)];
+  } else {
+    [self setupPushCategories];
+  }
   return YES;
 }
 
@@ -58,5 +61,43 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
    Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
    */
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
+- (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo];
+  completionHandler();
+}
+
+- (void)setupPushCategories {
+  id UIMutableUserNotificationActionClass = NSClassFromString(@"UIMutableUserNotificationAction");
+  UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationActionClass alloc] init];
+  likeAction.identifier = @"LIKE_IDENTIFIER";
+  likeAction.title = @"Like";
+  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
+  likeAction.activationMode = UIUserNotificationActivationModeBackground;
+  likeAction.destructive = NO;
+  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
+  likeAction.authenticationRequired = NO;
+  
+  UIMutableUserNotificationAction *unlikeAction = [[UIMutableUserNotificationActionClass alloc] init];
+  unlikeAction.identifier = @"UNLIKE_IDENTIFIER";
+  unlikeAction.title = @"Unlike";
+  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
+  unlikeAction.activationMode = UIUserNotificationActivationModeBackground;
+  unlikeAction.destructive = NO;
+  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
+  unlikeAction.authenticationRequired = NO;
+  
+  id UIMutableUserNotificationCategoryClass = NSClassFromString(@"UIMutableUserNotificationCategory");
+  UIMutableUserNotificationCategory *likeCategory = [[UIMutableUserNotificationCategoryClass alloc] init];
+  likeCategory.identifier = @"LIKE_CATEGORY";
+  [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
+  
+  NSSet *categories = [NSSet setWithObjects:likeCategory, nil];
+  id UIUserNotificationSettingsClass = NSClassFromString(@"UIUserNotificationSettings");
+  UIUserNotificationSettings *settings = [UIUserNotificationSettingsClass settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
+  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 @end

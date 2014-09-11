@@ -1,5 +1,5 @@
 #import "FlushModeTestViewController.h"
-#import "AppboyKit.h"
+#import <AppboyKit.h>
 
 @implementation FlushModeTestViewController
 

@@ -1,5 +1,4 @@
-#import "ABKSlideupViewController.h"
-
+#import <AppboyKit.h>
 @interface CustomSlideupViewController : ABKSlideupViewController
 
 @property (retain, nonatomic) IBOutlet UILabel *slideupMessageLabel;

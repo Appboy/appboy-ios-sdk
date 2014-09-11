@@ -34,6 +34,7 @@
     }
   }
 #endif
+  NSLog(@"[APPBOY] %@", @"ASI code block disabled.");
   return nil;
 }
 
@@ -50,6 +51,7 @@
     return [NSNumber numberWithBool:[sharedManager isAdvertisingTrackingEnabled]];
   }
 #endif
+  NSLog(@"[APPBOY] %@", @"ASI code block disabled.");
   return nil;
 }
 
@@ -59,6 +61,7 @@
  *   against AdSupport framework).
  */
 + (ASIdentifierManager *) getASIdentifierManager {
+  NSLog(@"[APPBOY] %@", @"ASI code block enabled.");
   Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");
   if (ASIdentifierManagerClass) {
     // Don't use [ASIdentifierManager sharedManager] here so this method doesn't require that the host app link against

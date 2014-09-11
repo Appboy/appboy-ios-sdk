@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "Clock.h"
-#import "AppboyKit.h"
+#import <AppboyKit.h>
 #import "Crittercism.h"
 #import <CoreLocation/CoreLocation.h>
 #import <Twitter/Twitter.h>

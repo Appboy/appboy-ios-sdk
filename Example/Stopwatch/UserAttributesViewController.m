@@ -1,5 +1,5 @@
 #import "UserAttributesViewController.h"
-#import "AppboyKit.h"
+#import <AppboyKit.h>
 #import "UserAttributeCell.h"
 #import "Crittercism.h"
 
