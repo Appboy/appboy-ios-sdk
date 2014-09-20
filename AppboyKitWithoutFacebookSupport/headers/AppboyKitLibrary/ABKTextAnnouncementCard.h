@@ -7,7 +7,7 @@
  */
 @property (nonatomic, copy) NSString *title;
 /*
- * The descriptioin text for the card.
+ * The description text for the card.
  */
 @property (nonatomic, copy) NSString *cardDescription;
 

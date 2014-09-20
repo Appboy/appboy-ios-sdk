@@ -1,3 +1,6 @@
+## 2.9.1
+- Fixes a news feed bug: When a user refreshed the news feed by swiping down, if the total number of cards in the feed was going to be reduced by the refresh, the app would crash.
+
 ## 2.9.0
 - Fixes an App Store validation error introduced when the App Store started accepting submissions for iOS8. This was done by changing the packaging of the Appboy framework to include a universal binary and a resource bundle (instead of combining them both together in a universal framework). Due to this change, Cocoapod integration is even more highly recommended than before to fully automate integration.
 
@@ -149,7 +152,7 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
 * IDFA Collection is now optional.
   * By default, IDFA collection is now disabled by the Appboy SDK.
     * There will be no loss of continuity on user profiles or loss of functionality whatsoever as a result of this change. 
-    * If you’re using advertising elsewhere in the app or through our in-app News Feed, we recommend continuing to collect the IDFA through Appboy. You should be able to do so safely without fear of rejection from the iOS App Store. 
+    * If you’re using advertising elsewhere in the app or through our in-app news feed, we recommend continuing to collect the IDFA through Appboy. You should be able to do so safely without fear of rejection from the iOS App Store. 
     * The future availability of IDFAs will enable functionality like integrating with other third-party systems, including your own servers, and enabling re-targeting of existing users outside of Appboy. If you continue to record them we will store IDFAs free of charge so you can take advantage of these options immediately when they are released without additional development work.
   * Necessary Project Changes
     * ABKIdentifierForAdvertisingProvider.m and ABKIdentifierForAdvertisingProvider.h must be added to your project regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod.

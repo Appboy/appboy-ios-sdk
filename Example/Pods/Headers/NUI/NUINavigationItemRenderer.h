@@ -1,0 +1,1 @@
+../../NUI/NUI/Core/Renderers/NUINavigationItemRenderer.h
