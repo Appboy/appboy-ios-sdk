@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: Main Page</title>
+<title>Appboy iOS SDK: ABKFeedbackViewControllerNavigationContext Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,9 +37,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -58,7 +58,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,12 +80,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#properties">Properties</a> &#124;
+<a href="class_a_b_k_feedback_view_controller_navigation_context-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Appboy iOS SDK Documentation</div>  </div>
+<div class="title">ABKFeedbackViewControllerNavigationContext Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This site contains technical documentation for the Appboy iOS SDK. Click on the "Classes" link above to view the Appboy public interface classes and start integrating the SDK into your app! </p>
+
+<p><code>#import &lt;<a class="el" href="_a_b_k_feedback_view_controller_navigation_context_8h_source.html">ABKFeedbackViewControllerNavigationContext.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ae91a2ad759de6c20dddfb276725c517b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae91a2ad759de6c20dddfb276725c517b"></a>
+id<br class="typebreak"/>
+&lt; <a class="el" href="protocol_a_b_k_feedback_view_controller_navigation_context_delegate-p.html">ABKFeedbackViewControllerNavigationContextDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>delegate</b></td></tr>
+<tr class="separator:ae91a2ad759de6c20dddfb276725c517b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_interface_a_b_k_feedback_view_controller"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_a_b_k_feedback_view_controller')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_a_b_k_feedback_view_controller.html">ABKFeedbackViewController</a></td></tr>
+<tr class="memitem:a591bfe33b8920d5abf5c6b006726eeb5 inherit properties_interface_a_b_k_feedback_view_controller"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a591bfe33b8920d5abf5c6b006726eeb5"></a>
+id&#160;</td><td class="memItemRight" valign="bottom"><b>delegate</b></td></tr>
+<tr class="separator:a591bfe33b8920d5abf5c6b006726eeb5 inherit properties_interface_a_b_k_feedback_view_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The FeedbackViewController classes implement the form you present to your users to collect feedback. To integrate, simply create a FeedbackViewController &ndash; either programmatically or in a storyboard &ndash; like you'd create any view controller, and present it.</p>
+<p>There are three different versions of the FeedbackViewController: Modal, Popover, and Navigation. Pick the one which matches the context in which you're using the FeedbackViewController; for example, if you present the FeedbackViewController in a modal view, use FeedbackViewControllerModalContext. If you present it in a popover, use FeedbackViewControllerPopoverContext.</p>
+<p>Use the <a class="el" href="interface_a_b_k_feedback_view_controller_navigation_context.html">ABKFeedbackViewControllerNavigationContext</a> to present the feedback view controller as a child of a UINavigationController.</p>
+<p>If a delegate is set, the controller will send feedbackViewControllerNavigationContextFeedbackSent:sender after feedback has been sent successfully. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
