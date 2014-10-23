@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.9.1"
+  s.version      = "2.9.2"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.description  = <<-DESC
                     This pod has two subspecs, please ensure you only choose one of them when you are adding Appboy-iOS-SDK pod to your podfile by:
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     aks.preserve_paths = 'AppboyKit/**/*.*'
     aks.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
     aks.dependency 'Facebook-iOS-SDK', '~> 3.16.2'
-    aks.dependency 'SDWebImage'
+    aks.dependency 'SDWebImage', '>= 3.7.0'
   end
 
   s.subspec 'AppboyKitWithoutFacebookSupport' do |akwfss|
@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
     akwfss.resource = 'AppboyKitWithoutFacebookSupport/Appboy.bundle'
     akwfss.preserve_paths = 'AppboyKitWithoutFacebookSupport/**/*.*'
     akwfss.vendored_libraries = 'AppboyKitWithoutFacebookSupport/libAppboyKitLibrary.a'
-    akwfss.dependency 'SDWebImage'
+    akwfss.dependency 'SDWebImage', '>= 3.7.0'
   end
 
 end

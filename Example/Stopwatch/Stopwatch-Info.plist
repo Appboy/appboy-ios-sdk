@@ -16,21 +16,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>stopwatch-icon@2x.png</string>
-				<string>stopwatch-icon.png</string>
-				<string>stopwatch-icon-iPad@2x.png</string>
-				<string>stopwatch-icon-iPad.png</string>
-				<string>stopwatch-icon-76.png</string>
-				<string>stopwatch-icon-120.png</string>
-				<string>stopwatch-icon-152.png</string>
-			</array>
-		</dict>
-	</dict>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.appboy.stopwatch.production</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -40,15 +28,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.8.1</string>
+	<string>2.9.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.9.1</string>
+	<string>2.9.2</string>
 	<key>FacebookAppID</key>
 	<string>631617900200059</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Please share your location.</string>
 	<key>UIBackgroundModes</key>
 	<array/>
 	<key>UIMainStoryboardFile</key>

@@ -382,6 +382,9 @@
   // Set a movement threshold for new events.
   self.locationManager.distanceFilter = 500; // meters
   
+  if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    [self.locationManager requestWhenInUseAuthorization];
+  }
   [self.locationManager startUpdatingLocation];
 }
 

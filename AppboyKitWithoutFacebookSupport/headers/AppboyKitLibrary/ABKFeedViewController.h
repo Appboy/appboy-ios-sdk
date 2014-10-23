@@ -61,4 +61,3 @@
 @property (nonatomic, assign) BOOL disableUnreadIndicator;
 
 @end
-

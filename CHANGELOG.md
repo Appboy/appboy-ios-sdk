@@ -1,3 +1,9 @@
+## 2.9.2
+- Added the ability to turn off Appboy's automatic location collection by setting the ABKDisableAutomaticLocationCollectionKey boolean in AppboyOptions in startWithApiKey:inApplication:inApplication:withAppboyOptions:.
+- Added the ability to send location tracking events to Appboy manually using setLastKnownLocationWithLatitude:longitude:horizontalAccuracy: and setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy: on the ABKUser. this is intended to be used with ABKDisableAutomaticLocationCollectionKey set to true in the AppboyOptions so that locations are only being recorded from a single source.
+- Updated sample app core location fetching code based on the changes in iOS 8.
+- Fixed a news feed bug: sometimes the spinner keeps spinning on the screen even after the news feed card image is displayed.
+
 ## 2.9.1
 - Fixes a news feed bug: When a user refreshed the news feed by swiping down, if the total number of cards in the feed was going to be reduced by the refresh, the app would crash.
 

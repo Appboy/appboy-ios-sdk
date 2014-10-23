@@ -1,1 +1,0 @@
-../../NUI/NUI/Core/Renderers/NUITabBarItemRenderer.h

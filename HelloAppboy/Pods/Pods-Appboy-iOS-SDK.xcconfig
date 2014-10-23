@@ -1,0 +1,2 @@
+PODS_APPBOY_IOS_SDK_LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport"
+PODS_APPBOY_IOS_SDK_OTHER_LDFLAGS = -lAppboyKitLibrary -framework CoreImage -framework QuartzCore -framework SystemConfiguration -weak_framework Accounts -weak_framework AdSupport -weak_framework CoreTelephony -weak_framework Social -weak_framework StoreKit -weak_framework Twitter

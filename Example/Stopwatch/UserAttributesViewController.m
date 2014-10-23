@@ -266,10 +266,10 @@ static NSMutableArray *attributesValuesArray = nil;
 - (void) keyboardDidShow:(NSNotification *)notification {
 
   NSDictionary* info = [notification userInfo];
-  CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-
+  CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
   CGRect aRect = self.attributesTableView.frame;
-  aRect.size.height = self.view.frame.size.height - kbSize.height - 44; // 44 is the height of the navigation bar
+  aRect.size.height = self.view.bounds.size.height - keyboardHeight - 44; // 44 is the height of the navigation bar
   self.attributesTableView.frame = aRect;
 
 }
