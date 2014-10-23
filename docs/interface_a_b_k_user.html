@@ -126,6 +126,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ade60374cb566bd3b7ec789d15059c3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a807c199df35cbcf3f00c3a698272f1a5"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a807c199df35cbcf3f00c3a698272f1a5">setCustomAttributeArrayWithKey:array:</a></td></tr>
 <tr class="separator:a807c199df35cbcf3f00c3a698272f1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da5a1245765b2aa3f9d1e2c3322c6bd"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a1da5a1245765b2aa3f9d1e2c3322c6bd">setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:</a></td></tr>
+<tr class="separator:a1da5a1245765b2aa3f9d1e2c3322c6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc175e2db49ef60e49ad0929f35632a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a">setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:</a></td></tr>
+<tr class="separator:a3fc175e2db49ef60e49ad0929f35632a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -630,6 +634,102 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 
 </div>
 </div>
+<a class="anchor" id="a1da5a1245765b2aa3f9d1e2c3322c6bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) setLastKnownLocationWithLatitude: </td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>latitude</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">longitude:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>longitude</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">horizontalAccuracy:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>horizontalAccuracy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES when starting <a class="el" href="interface_appboy.html">Appboy</a>, so that the only locations being set are by the integrating app. Otherwise, calls to this method will be contending with automatic location update events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">latitude</td><td>The latitude of the User's location in degrees, the number should be in the range of [-90, 90] </td></tr>
+    <tr><td class="paramname">longitude</td><td>The longitude of the User's location in degrees, the number should be in the range of [-180, 180] </td></tr>
+    <tr><td class="paramname">horizontalAccuracy</td><td>The accuracy of the User's horizontal location in meters, the number should not be negative </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3fc175e2db49ef60e49ad0929f35632a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) setLastKnownLocationWithLatitude: </td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>latitude</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">longitude:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>longitude</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">horizontalAccuracy:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>horizontalAccuracy</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">altitude:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>altitude</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">verticalAccuracy:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>verticalAccuracy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES when starting <a class="el" href="interface_appboy.html">Appboy</a>, so that the only locations being set are by the integrating app. Otherwise, calls to this method will be contending with automatic location update events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">latitude</td><td>The latitude of the User's location in degrees, the number should be in the range of [-90, 90] </td></tr>
+    <tr><td class="paramname">longitude</td><td>The longitude of the User's location in degrees, the number should be in the range of [-180, 180] </td></tr>
+    <tr><td class="paramname">horizontalAccuracy</td><td>The accuracy of the User's horizontal location in meters, the number should not be negative </td></tr>
+    <tr><td class="paramname">altitude</td><td>The altitude of the User's location in meters </td></tr>
+    <tr><td class="paramname">verticalAccuracy</td><td>The accuracy of the User's vertical location in meters, the number should not be negative </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="afb2c11d1889fd08537f90ee64c94efb3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -935,7 +1035,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 30 2014 12:09:06 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 23 2014 19:54:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

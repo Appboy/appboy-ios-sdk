@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a4dca2a523d824d2c25a6c5384268322e">   81</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a4dca2a523d824d2c25a6c5384268322e">foursquareAccessToken</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">@property</span> (atomic, copy, readonly) NSString *userID;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">@property</span> (nonatomic, copy, readonly) NSString *userID;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b">   89</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b">avatarImageURL</a>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
@@ -164,11 +164,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;- (BOOL) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;- (BOOL) setLastKnownLocationWithLatitude:(<span class="keywordtype">double</span>)latitude longitude:(<span class="keywordtype">double</span>)longitude horizontalAccuracy:(<span class="keywordtype">double</span>)horizontalAccuracy;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;- (BOOL) setLastKnownLocationWithLatitude:(<span class="keywordtype">double</span>)latitude</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                longitude:(<span class="keywordtype">double</span>)longitude</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                       horizontalAccuracy:(<span class="keywordtype">double</span>)horizontalAccuracy</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                 altitude:(<span class="keywordtype">double</span>)altitude</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                         verticalAccuracy:(<span class="keywordtype">double</span>)verticalAccuracy;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 30 2014 12:09:06 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 23 2014 19:54:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

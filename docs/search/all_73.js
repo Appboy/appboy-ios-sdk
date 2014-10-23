@@ -9,6 +9,8 @@ var searchData=
   ['setemailnotificationsubscriptiontype_3a',['setEmailNotificationSubscriptionType:',['../interface_a_b_k_user.html#ae8ef1e78bfafde343974a004ca81bb74',1,'ABKUser']]],
   ['setgender_3a',['setGender:',['../interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40',1,'ABKUser']]],
   ['setissubscribedtoemails_3a',['setIsSubscribedToEmails:',['../interface_a_b_k_user.html#a6450dd6bd805978fcb182911560d8f3c',1,'ABKUser']]],
+  ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:',['../interface_a_b_k_user.html#a1da5a1245765b2aa3f9d1e2c3322c6bd',1,'ABKUser']]],
+  ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3aaltitude_3averticalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:',['../interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a',1,'ABKUser']]],
   ['setpushnotificationsubscriptiontype_3a',['setPushNotificationSubscriptionType:',['../interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3',1,'ABKUser']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#a998b424210ebceb1957f5547e45dfb12',1,'Appboy']]],
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
