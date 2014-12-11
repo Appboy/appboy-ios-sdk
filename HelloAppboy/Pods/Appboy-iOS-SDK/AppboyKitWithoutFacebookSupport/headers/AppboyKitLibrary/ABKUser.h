@@ -80,7 +80,7 @@
  */
 @property (nonatomic, copy) NSString *foursquareAccessToken;
 
-@property (atomic, copy, readonly) NSString *userID;
+@property (nonatomic, copy, readonly) NSString *userID;
 
 /*!
  * The User's avatar image URL. This URL will be processed by the server and used in their user profile on the
@@ -267,5 +267,33 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @return YES if the operation was successful
  */
 - (BOOL) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray;
+
+/*!
+* Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES
+* when starting Appboy, so that the only locations being set are by the integrating app.  Otherwise, calls to this
+* method will be contending with automatic location update events.
+*
+* @param latitude The latitude of the User's location in degrees, the number should be in the range of [-90, 90]
+* @param longitude The longitude of the User's location in degrees, the number should be in the range of [-180, 180]
+* @param horizontalAccuracy The accuracy of the User's horizontal location in meters, the number should not be negative
+*/
+- (BOOL) setLastKnownLocationWithLatitude:(double)latitude longitude:(double)longitude horizontalAccuracy:(double)horizontalAccuracy;
+
+/*!
+* Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES
+* when starting Appboy, so that the only locations being set are by the integrating app.  Otherwise, calls to this
+* method will be contending with automatic location update events.
+*
+* @param latitude The latitude of the User's location in degrees, the number should be in the range of [-90, 90]
+* @param longitude The longitude of the User's location in degrees, the number should be in the range of [-180, 180]
+* @param horizontalAccuracy The accuracy of the User's horizontal location in meters, the number should not be negative
+* @param altitude The altitude of the User's location in meters
+* @param verticalAccuracy The accuracy of the User's vertical location in meters, the number should not be negative
+*/
+- (BOOL) setLastKnownLocationWithLatitude:(double)latitude
+                                longitude:(double)longitude
+                       horizontalAccuracy:(double)horizontalAccuracy
+                                 altitude:(double)altitude
+                         verticalAccuracy:(double)verticalAccuracy;
 
 @end

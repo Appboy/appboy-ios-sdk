@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.9.2"
+#define APPBOY_SDK_VERSION @"2.9.3"
 #endif
 
 @class ABKSlideupController;
@@ -303,7 +303,21 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
  * method of your App Delegate.
  */
-- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
+- (void)  registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
+
+/*!
+ * @param application The app's UIApplication object
+ * @param notification An NSDictionary passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
+ * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
+ *
+ * @discussion This method forwards remote notifications to Appboy. When it's called in the background, Appboy will request
+ * a refresh of the news feed and call the completionHandler when the request is finished; If it's called while the app
+ * is in the foreground, Appboy won't fetch the news feed, and won't call the completionHandler.
+ * Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate.
+ */
+- (void) registerApplication:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)notification
+      fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
 /*!
  * @param identifier The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:.

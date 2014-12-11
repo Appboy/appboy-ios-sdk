@@ -9,6 +9,8 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Sets up Crittercism for crash and error tracking.
+  NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
+  
   [Crittercism enableWithAppID:CrittercismAppId];
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
 
@@ -44,7 +46,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
 // When a notification is received, pass it to Appboy
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+  NSLog(@"Application delegate method didReceiveRemoteNotification is called with user info: %@", userInfo);
   [Crittercism leaveBreadcrumb:@"registerApplicaion:didReceiveRemoteNotification:"];
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo];
 }
@@ -64,9 +66,18 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 }
 
 - (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+  NSLog(@"Application delegate method handleActionWithIdentifier:forRemoteNotification:completionHandler: is called with identifier: %@, userInfo:%@", identifier, userInfo);
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
   [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo];
   completionHandler();
+}
+
+// When a notification is received, pass it to Appboy. If the notification is received when the app
+// is in the background, Appboy will try to fetch the news feed, and call completionHandler after
+// the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
+- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
+  [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
 - (void)setupPushCategories {
@@ -75,7 +86,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   likeAction.identifier = @"LIKE_IDENTIFIER";
   likeAction.title = @"Like";
   // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
-  likeAction.activationMode = UIUserNotificationActivationModeBackground;
+  likeAction.activationMode = UIUserNotificationActivationModeForeground;
   likeAction.destructive = NO;
   // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
   likeAction.authenticationRequired = NO;

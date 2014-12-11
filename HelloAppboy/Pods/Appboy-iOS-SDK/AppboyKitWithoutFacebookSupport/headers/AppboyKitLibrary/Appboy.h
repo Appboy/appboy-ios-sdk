@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.9.1"
+#define APPBOY_SDK_VERSION @"2.9.2"
 #endif
 
 @class ABKSlideupController;
@@ -92,6 +92,15 @@ extern NSString *const ABKSocialAccountAcquisitionPolicyOptionKey;
  * than 1.0.
  */
 extern NSString *const ABKFlushIntervalOptionKey;
+
+/*!
+ * This key can be set to YES or NO and will configure whether Appboy will automatically collect location (if the user permits).
+ * If set to YES,location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
+ * ABKUser (i.e. you must manually set the location, Appboy will not).  If it is set to NO or omitted, Appboy will collect
+ * location if authorized.
+ */
+extern NSString *const ABKDisableAutomaticLocationCollectionKey;
+
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums
