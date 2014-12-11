@@ -123,6 +123,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a85e336e3dec8aa7fb30376e19ce1678e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a953f95703dfabac613d466bc52f690ab"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a953f95703dfabac613d466bc52f690ab">registerApplication:didReceiveRemoteNotification:</a></td></tr>
 <tr class="separator:a953f95703dfabac613d466bc52f690ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe0df88250686670ed0cd73915b8b6bf"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#abe0df88250686670ed0cd73915b8b6bf">registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:</a></td></tr>
+<tr class="separator:abe0df88250686670ed0cd73915b8b6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f23d9e1e69333f5c0330ed07c214f4d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a3f23d9e1e69333f5c0330ed07c214f4d">getActionWithIdentifier:forRemoteNotification:</a></td></tr>
 <tr class="separator:a3f23d9e1e69333f5c0330ed07c214f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e238e081dfc3d0fa25a3b9b0ba0ec68"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a3e238e081dfc3d0fa25a3b9b0ba0ec68">changeUser:</a></td></tr>
@@ -576,6 +578,47 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="abe0df88250686670ed0cd73915b8b6bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) registerApplication: </td>
+          <td></td>
+          <td class="paramtype">(UIApplication *)&#160;</td>
+          <td class="paramname"><em>application</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">didReceiveRemoteNotification:</td>
+          <td></td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramname"><em>notification</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">fetchCompletionHandler:</td>
+          <td></td>
+          <td class="paramtype">(UIBackgroundFetchResult)&#160;</td>
+          <td class="paramname"><em>completionHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">application</td><td>The app's UIApplication object </td></tr>
+    <tr><td class="paramname">notification</td><td>An NSDictionary passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call </td></tr>
+    <tr><td class="paramname">completionHandler</td><td>A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method forwards remote notifications to <a class="el" href="interface_appboy.html">Appboy</a>. When it's called in the background, <a class="el" href="interface_appboy.html">Appboy</a> will request a refresh of the news feed and call the completionHandler when the request is finished; If it's called while the app is in the foreground, <a class="el" href="interface_appboy.html">Appboy</a> won't fetch the news feed, and won't call the completionHandler. Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate. </p>
+
+</div>
+</div>
 <a class="anchor" id="a85e336e3dec8aa7fb30376e19ce1678e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1002,7 +1045,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 23 2014 19:54:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 11 2014 18:44:46 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
