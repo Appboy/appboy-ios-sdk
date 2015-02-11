@@ -29,8 +29,13 @@
  */
 @property (nonatomic, copy) NSString *image;
 /*
+ * A localized display price string.
+ */
+@property (nonatomic, copy) NSString *displayPrice;
+/*
  * The iTunes ID number of the promoted item.
  */
+
 @property (nonatomic, assign) long long iTunesId;
 /*
  * The rating of the promoted app.

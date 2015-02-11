@@ -68,17 +68,16 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 - (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
   NSLog(@"Application delegate method handleActionWithIdentifier:forRemoteNotification:completionHandler: is called with identifier: %@, userInfo:%@", identifier, userInfo);
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo];
-  completionHandler();
+  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
 }
 
 // When a notification is received, pass it to Appboy. If the notification is received when the app
 // is in the background, Appboy will try to fetch the news feed, and call completionHandler after
 // the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-}
+  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
+  }
 
 - (void)setupPushCategories {
   id UIMutableUserNotificationActionClass = NSClassFromString(@"UIMutableUserNotificationAction");

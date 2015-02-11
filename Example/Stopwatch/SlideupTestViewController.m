@@ -102,7 +102,7 @@
 // This delegate method is notified if the slideup is tapped.  You can use this to initiate an action
 // in response to the tap.  Note that when the delegate returns NO, Appboy SDK will perform the action sent down from
 // the Appboy Server after the delegate method is executed. If it returns YES, the response to the tap is up to you.
-- (void) onSlideupClicked:(ABKSlideup *)slideup {
+- (BOOL) onSlideupClicked:(ABKSlideup *)slideup {
   NSLog(@"Slideup tapped!");
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
                                                       message:NSLocalizedString(@"Appboy.Stowpatch.slideup-test.slideup-is-tap", nil)
@@ -112,6 +112,8 @@
   [alertView show];
   [alertView release];
   [slideup setSlideupClickActionToNone];
+  // Returning YES here to prevent Appboy from performing the click action.
+  return YES;
 }
 
 #pragma mark Stopwatch view controller methods

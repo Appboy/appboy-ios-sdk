@@ -1,3 +1,13 @@
+## 2.9.4
+- Added a major performance upgrade that reduces CPU usage, memory footprint, and network traffic. 
+- Added 26 additional languages to localization support for Appboy UI elements.
+- Added support for deep linking from APNS push notification clicks.
+- Added ability to customize the font of Feedback text using NUI with NUI class name `ABKFeedbackTextView`.
+- Fixed the feedback page UI issues in iOS 8: when the device's orientation is UIInterfaceOrientationPortraitUpsideDown, the contact info bar was off.
+- Fixed in-app messages to display correctly in landscape mode in iOS 8.
+- Updated the SDK to adopt the latest SDWebImage protocol methods.
+- Removed the "required" labels on the feedback page.
+
 ## 2.9.3
  - Added a new method `- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler` to support push with background fetch. This method should be called in `- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
  - Fixed a bug of when sessions were being created when the app opened in the background.

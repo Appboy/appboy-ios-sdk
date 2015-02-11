@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.9.3"
+#define APPBOY_SDK_VERSION @"2.9.4"
 #endif
 
 @class ABKSlideupController;
@@ -23,6 +23,7 @@
 @class ABKSlideup;
 @class ABKSlideupViewController;
 @protocol ABKSlideupControllerDelegate;
+@protocol ABKAppboyEndpointDelegate;
 
 @interface Appboy : NSObject
 
@@ -101,6 +102,11 @@ extern NSString *const ABKFlushIntervalOptionKey;
  */
 extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 
+/*!
+ * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modifying or substitute the API and Resource
+ * (e.g. image) URIs used by the Appboy SDK.
+ */
+extern NSString *const ABKAppboyEndpointDelegateKey;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums
@@ -249,10 +255,15 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 @property (nonatomic, assign) ABKRequestProcessingPolicy requestProcessingPolicy;
 
 
+/*!
+ * An class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
+ * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
+ */
+@property (nonatomic, retain) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
+
 /* ------------------------------------------------------------------------------------------------------
  * Methods
  */
-
 
 /*!
  * Enqueues a data flush request for the current user and immediately starts processing the network queue. Note that if
@@ -322,11 +333,14 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 /*!
  * @param identifier The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:.
  * @param userInfo An NSDictionary passed in from the handleActionWithIdentifier:forRemoteNotification: call.
+ * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  *
  * @discussion This method forwards remote notifications and the custom action chosen by user to Appboy. Call it from
  * the application:handleActionWithIdentifier:forRemoteNotification: method of your App Delegate.
  */
-- (void) getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo;
+- (void) getActionWithIdentifier:(NSString *)identifier
+           forRemoteNotification:(NSDictionary *)userInfo
+               completionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
 /*!
 * @param userID The new user's ID (from the host application).
