@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: ABKIdentifierForAdvertisingProvider Class Reference</title>
+<title>Appboy iOS SDK: &lt;ABKAppboyEndpointDelegate&gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,28 +83,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Class Methods</a> &#124;
-<a href="class_a_b_k_identifier_for_advertising_provider-members.html">List of all members</a>  </div>
+<a href="#pub-methods">Instance Methods</a> &#124;
+<a href="protocol_a_b_k_appboy_endpoint_delegate-p-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ABKIdentifierForAdvertisingProvider Class Reference</div>  </div>
+<div class="title">&lt;ABKAppboyEndpointDelegate&gt; Protocol Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#import &lt;<a class="el" href="_a_b_k_identifier_for_advertising_provider_8h_source.html">ABKIdentifierForAdvertisingProvider.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Class Methods</h2></td></tr>
-<tr class="memitem:aadf84310f5fd08427a00942ba34eb0e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadf84310f5fd08427a00942ba34eb0e2"></a>
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getIdentifierForAdvertiser</b></td></tr>
-<tr class="separator:aadf84310f5fd08427a00942ba34eb0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24fbbaedacc8379cdeb2520929c5cb27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24fbbaedacc8379cdeb2520929c5cb27"></a>
-(NSNumber *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getIsAdvertisingTrackingEnabledAsNSNumber</b></td></tr>
-<tr class="separator:a24fbbaedacc8379cdeb2520929c5cb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Instance Methods</h2></td></tr>
+<tr class="memitem:a8dd39a61f14febd5a8657f3e69fdbd9e"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html#a8dd39a61f14febd5a8657f3e69fdbd9e">getApiEndpoint:</a></td></tr>
+<tr class="separator:a8dd39a61f14febd5a8657f3e69fdbd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a08dc6787f5a0eba2e15abc2ba3b2fc"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html#a5a08dc6787f5a0eba2e15abc2ba3b2fc">getResourceEndpoint:</a></td></tr>
+<tr class="separator:a5a08dc6787f5a0eba2e15abc2ba3b2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Do not call these methods within your code. They are meant for <a class="el" href="interface_appboy.html">Appboy</a> internal use only.</p>
-<p>ABKIdentifierForAdvertisingProvider.m and <a class="el" href="_a_b_k_identifier_for_advertising_provider_8h_source.html">ABKIdentifierForAdvertisingProvider.h</a> must be added to your project regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod. </p>
-</div></div><!-- contents -->
+<h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a8dd39a61f14febd5a8657f3e69fdbd9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) getApiEndpoint: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>appboyApiEndpoint</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Given a valid <a class="el" href="interface_appboy.html">Appboy</a> API endpoint URI string, this method returns a valid endpoint URI string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">appboyEndpoint</td><td>A URI string for an <a class="el" href="interface_appboy.html">Appboy</a> API endpoint </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A valid <a class="el" href="interface_appboy.html">Appboy</a> API endpoint URI </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5a08dc6787f5a0eba2e15abc2ba3b2fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) getResourceEndpoint: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>appboyResourceEndpoint</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Given a valid <a class="el" href="interface_appboy.html">Appboy</a> Resource endpoint URI string, this method returns a valid resource endpoint URI string. Currently resource endpoints are image URIs, but may be extended to include video and other external content.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">appboyResourceEndpoint</td><td>A URI string for an <a class="el" href="interface_appboy.html">Appboy</a> API resource endpoint </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A valid <a class="el" href="interface_appboy.html">Appboy</a> API resource endpoint URI </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Wed Feb 11 2015 15:11:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">

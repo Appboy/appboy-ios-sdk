@@ -125,8 +125,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a953f95703dfabac613d466bc52f690ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe0df88250686670ed0cd73915b8b6bf"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#abe0df88250686670ed0cd73915b8b6bf">registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:</a></td></tr>
 <tr class="separator:abe0df88250686670ed0cd73915b8b6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f23d9e1e69333f5c0330ed07c214f4d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a3f23d9e1e69333f5c0330ed07c214f4d">getActionWithIdentifier:forRemoteNotification:</a></td></tr>
-<tr class="separator:a3f23d9e1e69333f5c0330ed07c214f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac182d8837e026923f6e23f2f8955b79b"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ac182d8837e026923f6e23f2f8955b79b">getActionWithIdentifier:forRemoteNotification:completionHandler:</a></td></tr>
+<tr class="separator:ac182d8837e026923f6e23f2f8955b79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e238e081dfc3d0fa25a3b9b0ba0ec68"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a3e238e081dfc3d0fa25a3b9b0ba0ec68">changeUser:</a></td></tr>
 <tr class="separator:a3e238e081dfc3d0fa25a3b9b0ba0ec68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">logCustomEvent:</a></td></tr>
@@ -169,6 +169,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9819dbd73ada69b599411209f5c6d92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7669bfcf39e8c3b155ac9c58ba1df7c2"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a7669bfcf39e8c3b155ac9c58ba1df7c2">ABKDisableAutomaticLocationCollectionKey</a></td></tr>
 <tr class="separator:a7669bfcf39e8c3b155ac9c58ba1df7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b6cec0748494e9dfb4cb178157ad3d"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a01b6cec0748494e9dfb4cb178157ad3d">ABKAppboyEndpointDelegateKey</a></td></tr>
+<tr class="separator:a01b6cec0748494e9dfb4cb178157ad3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -187,6 +189,8 @@ Properties</h2></td></tr>
 <tr class="separator:afd38c20feb8ee97db311dd4b7d20fa35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81cdd59419d76738927c123f1d06fc1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_appboy.html#a3824c355e9558f33a391f1f8f5e499ce">ABKRequestProcessingPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">requestProcessingPolicy</a></td></tr>
 <tr class="separator:a81cdd59419d76738927c123f1d06fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248ba35c0be127d4a05b3e1cda7feafe"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a248ba35c0be127d4a05b3e1cda7feafe">appboyEndpointDelegate</a></td></tr>
+<tr class="separator:a248ba35c0be127d4a05b3e1cda7feafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a3824c355e9558f33a391f1f8f5e499ce"></a>
@@ -296,7 +300,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3f23d9e1e69333f5c0330ed07c214f4d"></a>
+<a class="anchor" id="ac182d8837e026923f6e23f2f8955b79b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -310,7 +314,13 @@ Properties</h2></td></tr>
           <td class="paramkey">forRemoteNotification:</td>
           <td></td>
           <td class="paramtype">(NSDictionary *)&#160;</td>
-          <td class="paramname"><em>userInfo</em>&#160;</td>
+          <td class="paramname"><em>userInfo</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">completionHandler:</td>
+          <td></td>
+          <td class="paramtype">(UIBackgroundFetchResult)&#160;</td>
+          <td class="paramname"><em>completionHandler</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -322,7 +332,8 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">identifier</td><td>The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:. </td></tr>
-    <tr><td class="paramname">userInfo</td><td>An NSDictionary passed in from the handleActionWithIdentifier:forRemoteNotification: call.</td></tr>
+    <tr><td class="paramname">userInfo</td><td>An NSDictionary passed in from the handleActionWithIdentifier:forRemoteNotification: call. </td></tr>
+    <tr><td class="paramname">completionHandler</td><td>A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call</td></tr>
   </table>
   </dd>
 </dl>
@@ -839,6 +850,19 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a01b6cec0748494e9dfb4cb178157ad3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString* const) ABKAppboyEndpointDelegateKey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This key can be set to a class that extends <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> which can be used to modifying or substitute the API and Resource (e.g. image) URIs used by the <a class="el" href="interface_appboy.html">Appboy</a> SDK. </p>
+
+</div>
+</div>
 <a class="anchor" id="a7669bfcf39e8c3b155ac9c58ba1df7c2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -935,6 +959,27 @@ Properties</h2></td></tr>
 <p>Cards are counted as viewed only once &ndash; if a card scrolls off the screen and back on, it's not re-counted.</p>
 <p>Cards are counted only once even if they appear in multiple feed views or across multiple devices.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>This property is now deprecated and will be removed in the future. Please use [[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a248ba35c0be127d4a05b3e1cda7feafe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id&lt;<a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a>&gt;) appboyEndpointDelegate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An class extending <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> can be set to route <a class="el" href="interface_appboy.html">Appboy</a> API and Resource traffic in a custom way. For example, one might proxy <a class="el" href="interface_appboy.html">Appboy</a> image downloads by having the getResourceEndpoint method return a proxy URI. </p>
 
 </div>
 </div>
@@ -1045,7 +1090,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 11 2014 18:44:46 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 11 2015 15:11:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

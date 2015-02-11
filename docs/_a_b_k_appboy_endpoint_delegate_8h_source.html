@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: ABKIdentifierForAdvertisingProvider Class Reference</title>
+<title>Appboy iOS SDK: tmp/docs/ABKAppboyEndpointDelegate.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,7 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -58,14 +58,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,31 +72,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8af83c0dc83a45a35ca6968cdc29a7af.html">tmp</a></li><li class="navelem"><a class="el" href="dir_0a210242779ad4a14943a572f93f0ce8.html">docs</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Class Methods</a> &#124;
-<a href="class_a_b_k_identifier_for_advertising_provider-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ABKIdentifierForAdvertisingProvider Class Reference</div>  </div>
+<div class="title">ABKAppboyEndpointDelegate.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#import &lt;<a class="el" href="_a_b_k_identifier_for_advertising_provider_8h_source.html">ABKIdentifierForAdvertisingProvider.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Class Methods</h2></td></tr>
-<tr class="memitem:aadf84310f5fd08427a00942ba34eb0e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadf84310f5fd08427a00942ba34eb0e2"></a>
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getIdentifierForAdvertiser</b></td></tr>
-<tr class="separator:aadf84310f5fd08427a00942ba34eb0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24fbbaedacc8379cdeb2520929c5cb27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24fbbaedacc8379cdeb2520929c5cb27"></a>
-(NSNumber *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getIsAdvertisingTrackingEnabledAsNSNumber</b></td></tr>
-<tr class="separator:a24fbbaedacc8379cdeb2520929c5cb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Do not call these methods within your code. They are meant for <a class="el" href="interface_appboy.html">Appboy</a> internal use only.</p>
-<p>ABKIdentifierForAdvertisingProvider.m and <a class="el" href="_a_b_k_identifier_for_advertising_provider_8h_source.html">ABKIdentifierForAdvertisingProvider.h</a> must be added to your project regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod. </p>
-</div></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">    4</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> &lt;NSObject&gt;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;- (NSString *) getApiEndpoint:(NSString *)appboyApiEndpoint;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;- (NSString *) getResourceEndpoint:(NSString *)appboyResourceEndpoint;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">@end</span></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Wed Feb 11 2015 15:11:26 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
