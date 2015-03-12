@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['facebookuser',['facebookUser',['../interface_a_b_k_user.html#a3934b051a3ed848cb39da7055b7bd099',1,'ABKUser']]],
   ['feedbackviewcontrollermodalcontextcanceltapped_3a',['feedbackViewControllerModalContextCancelTapped:',['../protocol_a_b_k_feedback_view_controller_modal_context_delegate-p.html#a7954ab757460d95a09c47fa970e44e78',1,'ABKFeedbackViewControllerModalContextDelegate-p']]],
   ['feedbackviewcontrollermodalcontextfeedbacksent_3a',['feedbackViewControllerModalContextFeedbackSent:',['../protocol_a_b_k_feedback_view_controller_modal_context_delegate-p.html#ae5dca11ded08a0f2c243cb5c1e342004',1,'ABKFeedbackViewControllerModalContextDelegate-p']]],
   ['feedbackviewcontrollernavigationcontextfeedbacksent_3a',['feedbackViewControllerNavigationContextFeedbackSent:',['../protocol_a_b_k_feedback_view_controller_navigation_context_delegate-p.html#a66611a380c272328fd6b1ca4eb75c895',1,'ABKFeedbackViewControllerNavigationContextDelegate-p']]],
