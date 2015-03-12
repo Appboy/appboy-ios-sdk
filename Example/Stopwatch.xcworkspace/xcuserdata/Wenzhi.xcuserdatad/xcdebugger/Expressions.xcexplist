@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[UserAttributesViewController keyboardDidShow:]:UserAttributesViewController.m">
+         contextName = "-[ABKInAppMessageBlockingViewController setButton:height:]:ABKInAppMessageBlockingViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[ABKLocation locationEnabled]:ABKLocation.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.view">
+               value = "[LocationManagerClass authorizationStatus]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,12 +22,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "+[ABKLocation locationEnabled]:ABKLocation.m">
+         contextName = "-[ABKInAppMessageBlockingViewController createOneButtonAndConstraintsWithHeight:sideMargin:bottom:onView:]:ABKInAppMessageBlockingViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[LocationManagerClass authorizationStatus]">
+               value = "button = (ABKInAppMessageBlocking *)self.inAppMessage).buttons[0]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UserAttributesViewController keyboardDidShow:]:UserAttributesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ABKInAppMessageViewController applyIconImageToImageView:]:ABKInAppMessageViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

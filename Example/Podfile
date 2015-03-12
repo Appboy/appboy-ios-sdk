@@ -1,6 +1,6 @@
-platform :ios, '5.1.1'
+platform :ios, '6.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod 'Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport'
-pod 'NUI'
+pod 'Appboy-iOS-SDK'
+pod 'NUI'   

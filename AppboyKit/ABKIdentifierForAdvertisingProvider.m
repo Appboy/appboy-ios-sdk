@@ -34,7 +34,6 @@
     }
   }
 #endif
-  NSLog(@"[APPBOY] %@", @"ASI code block disabled.");
   return nil;
 }
 
@@ -51,7 +50,6 @@
     return [NSNumber numberWithBool:[sharedManager isAdvertisingTrackingEnabled]];
   }
 #endif
-  NSLog(@"[APPBOY] %@", @"ASI code block disabled.");
   return nil;
 }
 

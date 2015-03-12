@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "95EF5109173D5FD600C0D780"
-               BuildableName = "Stopwatch.app"
+               BuildableName = "StopwatchDevelop.app"
                BlueprintName = "Stopwatch"
                ReferencedContainer = "container:Stopwatch.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95EF5109173D5FD600C0D780"
-            BuildableName = "Stopwatch.app"
+            BuildableName = "StopwatchDevelop.app"
             BlueprintName = "Stopwatch"
             ReferencedContainer = "container:Stopwatch.xcodeproj">
          </BuildableReference>
@@ -48,16 +48,22 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95EF5109173D5FD600C0D780"
-            BuildableName = "Stopwatch.app"
+            BuildableName = "StopwatchDevelop.app"
             BlueprintName = "Stopwatch"
             ReferencedContainer = "container:Stopwatch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
+         <AdditionalOption
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
@@ -66,11 +72,12 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "95EF5109173D5FD600C0D780"
-            BuildableName = "Stopwatch.app"
+            BuildableName = "StopwatchDevelop.app"
             BlueprintName = "Stopwatch"
             ReferencedContainer = "container:Stopwatch.xcodeproj">
          </BuildableReference>

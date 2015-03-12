@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.9.4"
+#define APPBOY_SDK_VERSION @"2.10.0"
 #endif
 
 @class ABKSlideupController;
@@ -145,22 +145,16 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 /*!
 * Possible values for the SDK's social account acquisition policies:
 *   ABKAutomaticSocialAccountAcquisition (default) - At app startup and after you've set a social account identifier
-*       on the user object, Appboy will automatically attempt to fetch Twitter and Facebook social account data
+*       on the user object, Appboy will automatically attempt to fetch Twitter account data
 *       for the user and flush it to the server. In all cases, Appboy's automatic data acquisition will ensure that the
 *       user is not prompted or that the UI of your application is otherwise affected. For this reason, when Appboy
 *       tries to perform the data acquisition, your app must have already been granted the relevant permissions to
 *       obtain social account data. If you've specified the twitterAccountIdentifier, Appboy will only attempt to grab
 *       data for that twitter account. If you haven't specified it, Appboy will grab data for the first Twitter account
-*       returned by the system. An upcoming release will enable identifier targeting for Facebook as well.
-*
-*       Note: If you have not integrated the Facebook SDK into your app, there is no way to grab Facebook data without
-*       prompting the user, so you must call <pre>[[Appboy sharedInstance] promptUserForAccessToSocialNetwork:ABKSocialNetworkFacebook];</pre>
-*       and allow the user to be prompted. If you have integrated the Facebook SDK, you must ensure that the user has
-*       allowed read permissions. If permission is granted, Appboy will collect the user's basic public profile info
-*       "user_about_me" "email" "user_hometown" "user_birthday" and, if permission is granted, "user_likes".
+*       returned by the system.
 *   ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly - Appboy will only attempt to obtain social account information when
 *       an identifier is set on the user for the corresponding social network. Note: This currently only works for
-*       Twitter accounts. An upcoming release will enable identifier targeting for Facebook as well.
+*       Twitter accounts.
 *   ABKManualSocialAccountAcquisition - Appboy will NOT try to acquire social account data. You must call
 *       <pre>[[Appboy sharedInstance] promptUserForAccessToSocialNetwork:(ABKSocialNetwork)];</pre>
 */
@@ -447,19 +441,10 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 * We generally advise that you don't call this method on startup, as it will immediately prompt your users for
 * Twitter access.
 *
-* Notes:
-*   For ABKSocialNetworkTwitter:
-*   This only works for iOS5 and higher. In older versions, this method is a no-op.
-*
-*   For ABKSocialNetworkFacebook:
-*   This requires your Facebook App ID, which you enter in your app's plist under the key "FacebookAppID".
-*   Also, you must have configured a Facebook app with your bundle ID. For more help, see "Create a Facebook App" at
-*   https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
-*   Calls to this method without a defined FacebookAppID will NSLog an error and do nothing.
-*
-*   It is highly recommended that you also install the Facebook iOS SDK in your app. If you include the Facebook SDK
-*   in your app, this method will work for all iOS versions and provide a high-quality integration experience for the
-*   end user. If you do not include the Facebook SDK, this method call will only work on iOS6 or higher.
+* Please note that In versions 2.10 and above, Appboy will no longer prompt users to connect their Facebook accounts.
+* Please refer to the method "promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData" in SocialNetworkViewController.m
+* (https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/SocialNetworkViewController.m) to continue
+* prompting users to connect their Facebook account.
 */
 - (void) promptUserForAccessToSocialNetwork:(ABKSocialNetwork)socialNetwork;
 
