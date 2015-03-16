@@ -6,8 +6,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class ABKFacebookUser;
-
 /*!
  * When setting the custom attributes with custom keys:
  *
@@ -109,11 +107,6 @@
  * ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly, and twitterAccountIdentifier property has a valid value.
  */
 @property (nonatomic, assign) BOOL clearTwitterDataWhenNoDataOfTwitterIdentifier;
-
-/*!
- * The User's Facebook account information. For more detail, please refer to ABKFacebookUser.h.
- */
-@property (nonatomic, retain) ABKFacebookUser *facebookUser;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums

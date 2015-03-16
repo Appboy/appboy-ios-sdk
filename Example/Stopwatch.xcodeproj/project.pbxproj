@@ -23,7 +23,6 @@
 		4E6D661619DCC18F009983AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Images.xcassets */; };
 		4E76BAA2183546CF001872E3 /* libCrittercism_v4_1_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E76BAA1183546CF001872E3 /* libCrittercism_v4_1_2.a */; };
 		4E76BAA5183546E3001872E3 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4E76BAA4183546E3001872E3 /* dsym_upload.sh */; };
-		4E7D1C7E1A9FE1990087DB64 /* SocialNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D1C7D1A9FE1990087DB64 /* SocialNetworkViewController.m */; };
 		4E94D76E1743EE7100604EA0 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D76D1743EE7100604EA0 /* Clock.m */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
 		4EA0515C18998472007217BD /* CustomSlideupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0515A18998472007217BD /* CustomSlideupViewController.m */; };
@@ -88,8 +87,6 @@
 		4E76BAA1183546CF001872E3 /* libCrittercism_v4_1_2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_1_2.a; sourceTree = "<group>"; };
 		4E76BAA3183546E3001872E3 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
 		4E76BAA4183546E3001872E3 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
-		4E7D1C7C1A9FE1990087DB64 /* SocialNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkViewController.h; sourceTree = "<group>"; };
-		4E7D1C7D1A9FE1990087DB64 /* SocialNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkViewController.m; sourceTree = "<group>"; };
 		4E94D76C1743EE7100604EA0 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clock.h; sourceTree = "<group>"; };
 		4E94D76D1743EE7100604EA0 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clock.m; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,7 +135,7 @@
 		955DE8931741A70700C07A57 /* SlideupTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideupTestViewController.h; sourceTree = "<group>"; };
 		955DE8941741A70700C07A57 /* SlideupTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideupTestViewController.m; sourceTree = "<group>"; };
 		958071A7173D727000129B89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		95EF510A173D5FD600C0D780 /* StopwatchDevelop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopwatchDevelop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95EF510A173D5FD600C0D780 /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EF510D173D5FD600C0D780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95EF510F173D5FD600C0D780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95EF5111173D5FD600C0D780 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -239,7 +236,7 @@
 		95EF510B173D5FD600C0D780 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95EF510A173D5FD600C0D780 /* StopwatchDevelop.app */,
+				95EF510A173D5FD600C0D780 /* Stopwatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,8 +278,6 @@
 				955DE88F17419DB000C07A57 /* TestingViewController.m */,
 				955DE8931741A70700C07A57 /* SlideupTestViewController.h */,
 				955DE8941741A70700C07A57 /* SlideupTestViewController.m */,
-				4E7D1C7C1A9FE1990087DB64 /* SocialNetworkViewController.h */,
-				4E7D1C7D1A9FE1990087DB64 /* SocialNetworkViewController.m */,
 				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
 				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
 				95EF5114173D5FD600C0D780 /* Supporting Files */,
@@ -345,7 +340,7 @@
 			);
 			name = Stopwatch;
 			productName = Stopwatch;
-			productReference = 95EF510A173D5FD600C0D780 /* StopwatchDevelop.app */;
+			productReference = 95EF510A173D5FD600C0D780 /* Stopwatch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -505,7 +500,6 @@
 				955DE8961741A70700C07A57 /* SlideupTestViewController.m in Sources */,
 				4E94D76E1743EE7100604EA0 /* Clock.m in Sources */,
 				4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */,
-				4E7D1C7E1A9FE1990087DB64 /* SocialNetworkViewController.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
 				4EA0515C18998472007217BD /* CustomSlideupViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserAttributeCell.m in Sources */,
@@ -582,68 +576,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4E1C78971AAFA82000663F4B /* Develop */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
-			};
-			name = Develop;
-		};
-		4E1C78981AAFA82000663F4B /* Develop */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"${SRCROOT}/../Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
-				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/CrittercismSDK",
-				);
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f7313ca1-1b2b-4a9a-a644-ca23c136c9d5";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Develop;
-		};
 		95EF512E173D5FD600C0D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -670,10 +602,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "5204a378-9212-4432-9be5-439a04c1ad82";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -699,7 +630,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -724,13 +655,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = StopwatchDevelop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6889d9b7-b17d-4122-9db2-51d4da832dd4";
 				WRAPPER_EXTENSION = app;
 			};
@@ -751,14 +683,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "c0d2404e-41a8-4caf-a55f-2a14452e133b";
+				PRODUCT_NAME = "Appboy Sample";
+				PROVISIONING_PROFILE = "1672246d-f5a3-415a-8bd5-5ceb5ad9fa1f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -770,7 +703,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95EF512E173D5FD600C0D780 /* Debug */,
-				4E1C78971AAFA82000663F4B /* Develop */,
 				95EF512F173D5FD600C0D780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -780,7 +712,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95EF5131173D5FD600C0D780 /* Debug */,
-				4E1C78981AAFA82000663F4B /* Develop */,
 				95EF5132173D5FD600C0D780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

@@ -1,15 +1,3 @@
-## 2.10.1
-- Fixed an issue in deep linking handle for push. In 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with deep linking would crash the host app. 
-
-## 2.10.0
-- Updated the minimum deployment targets of Appboy iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Appboy SDK.
-- Stop collecting user's Facebook data automatically. You can pass a user's Facebook information to Appboy by initialzing a ABKFacebookUser object with the facebook data, and set it to [Appboy sharedInstance].user.facebookUser. For more information, please refer to ABKUser.h and ABKFacebookUser.h.
-- Removed the feature of prompting a user to connect his/her Facebook account. You can refer to the method `promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData` in [SocialNetworkViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/SocialNetworkViewController.m) to continue prompting the user to connect the Facebook account.
-- Removed Facebook SDK dependent builds.  Now there is a single library - AppboyKit - and a single Pod without functional subspecs - Appboy-iOS-SDK (note we now have both the subspecs pointing at the same library). Please update your Podfile to `pod 'Appboy-iOS-SDK` if you are integrating Appboy with Cocoapods.
-
-## 2.9.5
-- Fixed an issue in deep linking handle for push. In 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with deep linking would crash the host app.
-
 ## 2.9.4
 - Added a major performance upgrade that reduces CPU usage, memory footprint, and network traffic. 
 - Added 26 additional languages to localization support for Appboy UI elements.

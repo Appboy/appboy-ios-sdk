@@ -23,4 +23,3 @@
 #import "ABKClassicCard.h"
 #import "ABKTextAnnouncementCard.h"
 #import "ABKAppboyEndpointDelegate.h"
-#import "ABKFacebookUser.h"

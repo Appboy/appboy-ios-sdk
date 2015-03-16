@@ -1,9 +1,6 @@
 PODS:
-  - Appboy-iOS-SDK (2.10.1):
-    - Appboy-iOS-SDK/AppboyKit (= 2.10.1)
-    - SDWebImage (~> 3.7.0)
-  - Appboy-iOS-SDK/AppboyKit (2.10.1):
-    - SDWebImage (~> 3.7.0)
+  - Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport (2.9.4):
+    - SDWebImage (>= 3.7.0)
   - NUI (0.5.4):
     - NUIParse
   - NUIParse (1.2.1)
@@ -12,15 +9,11 @@ PODS:
   - SDWebImage/Core (3.7.1)
 
 DEPENDENCIES:
-  - Appboy-iOS-SDK (from `./../../Appboy-iOS-SDK/`)
+  - Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport (~> 2.9.0)
   - NUI
 
-EXTERNAL SOURCES:
-  Appboy-iOS-SDK:
-    :path: ./../../Appboy-iOS-SDK/
-
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: b1dec720114160e2dc526aef668e798981945c26
+  Appboy-iOS-SDK: 2880464e52dc52f4d1eaa275d9bfe031ac80edf0
   NUI: ce8570dc3bb7983ffa8ae58ab0fc852d378b00cb
   NUIParse: f29eb240cfc9848b216c827884f37ae64abd19e4
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
