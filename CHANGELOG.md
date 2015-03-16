@@ -1,5 +1,5 @@
 ## 2.10.1
-- Fixed an issue in deep linking handle for push. In 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with deep linking would crash the host app. 
+- Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances. 
 
 ## 2.10.0
 - Updated the minimum deployment targets of Appboy iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Appboy SDK.
