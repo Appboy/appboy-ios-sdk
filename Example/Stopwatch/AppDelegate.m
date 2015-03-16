@@ -110,4 +110,13 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [[UIApplication sharedApplication] registerForRemoteNotifications];
   [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
+
+// Here we are trying to handle deep linking with scheme beginning with "stopwatch".
+- (BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+  NSLog(@"Stopwatch get a deep link request: %@", url.absoluteString);
+  UIAlertView *deepLinkAlert = [[UIAlertView alloc] initWithTitle:@"Deep Linking" message:url.absoluteString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+  [deepLinkAlert show];
+  [deepLinkAlert release];
+  return YES;
+}
 @end
