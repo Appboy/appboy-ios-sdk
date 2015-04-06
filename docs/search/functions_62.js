@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['beforeslideupdisplayed_3awithkeyboardisup_3a',['beforeSlideupDisplayed:withKeyboardIsUp:',['../protocol_a_b_k_slideup_controller_delegate-p.html#acb2c48845aa3b0579c637cc1fdc0caa7',1,'ABKSlideupControllerDelegate-p']]]
+  ['beforeinappmessagedisplayed_3awithkeyboardisup_3a',['beforeInAppMessageDisplayed:withKeyboardIsUp:',['../protocol_a_b_k_in_app_message_controller_delegate-p.html#a0ecc07636c52e82648f45d772a9a361b',1,'ABKInAppMessageControllerDelegate-p']]]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: tmp/docs/ABKSlideupController.h Source File</title>
+<title>Appboy iOS SDK: tmp/docs/ABKInAppMessageControllerDelegate.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -79,34 +79,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ABKSlideupController.h</div>  </div>
+<div class="title">ABKInAppMessageControllerDelegate.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &quot;ABKSlideup.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#import &quot;ABKSlideupControllerDelegate.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessage.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessageViewController.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* Note: This class is not thread safe and all class methods should be called from the main thread.*/</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="interface_a_b_k_slideup_controller.html">    6</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_slideup_controller.html">ABKSlideupController</a> : NSObject</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a>;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="interface_a_b_k_slideup_controller.html#a1f938c232db1b1161c31daf9ec58012f">   13</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) id &lt;ABKSlideupControllerDelegate&gt; <a class="code" href="interface_a_b_k_slideup_controller.html#a1f938c232db1b1161c31daf9ec58012f">delegate</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="interface_a_b_k_slideup_controller.html#a45779b7b05c273cdae9d1290054023ce">   24</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) UIInterfaceOrientationMask <a class="code" href="interface_a_b_k_slideup_controller.html#a45779b7b05c273cdae9d1290054023ce">supportedOrientationMasks</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="interface_a_b_k_slideup_controller.html#a72f2cc9176eb0677220d722c38bf3456">   36</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) UIInterfaceOrientation <a class="code" href="interface_a_b_k_slideup_controller.html#a72f2cc9176eb0677220d722c38bf3456">supportedOrientations</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;- (void) displayNextSlideupWithDelegate:(<span class="keywordtype">id</span>&lt;<a class="code" href="protocol_a_b_k_slideup_controller_delegate-p.html">ABKSlideupControllerDelegate</a>&gt;)delegate;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;- (NSInteger) <a class="code" href="interface_a_b_k_slideup_controller.html#a5bb0a6b0ecb097e06a148e53a56fb839">slideupsRemainingOnStack</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;- (void) addSlideup:(<a class="code" href="interface_a_b_k_slideup.html">ABKSlideup</a> *)newSlideup;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;- (void) hideCurrentSlideup:(BOOL)animated;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  ABKDisplayInAppMessageNow,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ABKDisplayInAppMessageLater,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ABKDiscardInAppMessage</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">   34</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> &lt;NSObject&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;- (BOOL) onInAppMessageReceived:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;- (ABKInAppMessageDisplayChoice) beforeInAppMessageDisplayed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;- (<a class="code" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *) inAppMessageViewControllerWithInAppMessage:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;- (void) onInAppMessageDismissed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;- (BOOL) onInAppMessageClicked:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;- (BOOL) onInAppMessageButtonClicked:(<a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a> *)inAppMessage button:(<a class="code" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a> *)button;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 16 2015 08:39:00 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 5 2015 22:42:15 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
