@@ -14,15 +14,15 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.10.1"
+#define APPBOY_SDK_VERSION @"2.11.0"
 #endif
 
-@class ABKSlideupController;
+@class ABKInAppMessageController;
 @class ABKFeedController;
 @class ABKUser;
-@class ABKSlideup;
-@class ABKSlideupViewController;
-@protocol ABKSlideupControllerDelegate;
+@class ABKInAppMessage;
+@class ABKInAppMessageViewController;
+@protocol ABKInAppMessageControllerDelegate;
 @protocol ABKAppboyEndpointDelegate;
 
 @interface Appboy : NSObject
@@ -115,8 +115,8 @@ extern NSString *const ABKAppboyEndpointDelegateKey;
 /*!
 * Possible values for the SDK's request processing policies:
 *   ABKAutomaticRequestProcessing (default) - All server communication is handled automatically. This includes flushing
-*        analytics data to the server, updating the feed, requesting new slideups and posting feedback. Appboy's
-*        communication policy is to perform immediate server requests when user facing data is required (new slideups,
+*        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Appboy's
+*        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
 *        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
 *        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
 *   ABKAutomaticRequestProcessingExceptForDataFlush - The same as ABKAutomaticRequestProcessing, except that updates to
@@ -179,10 +179,10 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 @property (nonatomic, retain, readonly) ABKFeedController *feedController;
 
 /*!
- * The current slideup manager.
- * See ABKSlideupController.h.
+ * The current in-app message manager.
+ * See ABKInAppMessageController.h.
  */
-@property (nonatomic, retain, readonly) ABKSlideupController *slideupController;
+@property (nonatomic, retain, readonly) ABKInAppMessageController *inAppMessageController;
 
 /*!
  * The current app user. 
@@ -216,7 +216,8 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * @deprecated This property is now deprecated and will be removed in the future. Please use 
  * [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll] instead.
  */
-@property (readonly, nonatomic, assign) NSInteger cardCount __deprecated;
+@property (readonly, nonatomic, assign) NSInteger cardCount __deprecated_msg("Please use \n"
+"[[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll] instead");
 
 /*!
  * unreadCardCount is the number of currently active cards which have not been viewed.
@@ -232,7 +233,8 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * @deprecated This property is now deprecated and will be removed in the future. Please use
  * [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead.
  */
-@property (readonly, nonatomic, assign) NSInteger unreadCardCount __deprecated;
+@property (readonly, nonatomic, assign) NSInteger unreadCardCount __deprecated_msg("Please use \n"
+"[[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead");
 
 /*!
 * The policy regarding processing of network requests by the SDK. See the enumeration values for more information on
@@ -266,7 +268,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  *
  * If you're using ABKManualRequestProcessing, you need to call this after each network related activity in your app.
  * This includes:
- * * Retrieving an updated feed and slideup after a new session is opened or the user is changed. Appboy will
+ * * Retrieving an updated feed and in-app message after a new session is opened or the user is changed. Appboy will
  * automatically add the request for new data to the network queue, you just need to give it permission to execute
  * that request.
  * * Flushing updated user data (custom events, custom attributes, as well as automatically collected data).
@@ -334,7 +336,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void) getActionWithIdentifier:(NSString *)identifier
            forRemoteNotification:(NSDictionary *)userInfo
-               completionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+               completionHandler:(void (^)())completionHandler;
 
 /*!
 * @param userID The new user's ID (from the host application).
@@ -361,7 +363,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 *   - Note that switching from one an anonymous user to an identified user or from one identified user to another is
 *     a relatively costly operation. When you request the
 *     user switch, the current session for the previous user is automatically closed and a new session is started.
-*     Appboy will also automatically make a data refresh request to get the news feed, slideup and other information
+*     Appboy will also automatically make a data refresh request to get the news feed, in-app message and other information
 *     for the new user.
 *
 *  Note: Once you identify a user, you cannot go back to the "anonymous" profile. The transition from anonymous
@@ -486,9 +488,16 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 - (void) requestFeedRefresh;
 
 /*!
- * Enqueues a slideup request for the current user. Note that if the queue already contains another request for the
- * current user, that the slideup request will be merged into the already existing request and only one will execute
+ * Enqueues an in-app message request for the current user. Note that if the queue already contains another request for the
+ * current user, that the in-app message request will be merged into the already existing request and only one will execute
  * for that user.
  */
-- (void) requestSlideupRefresh;
+- (void) requestInAppMessageRefresh;
+
+/*!
+ * Enqueues an in-app message request for the current user. Note that this is deprecated from version 2.11.0. Please use
+ * requestInAppMessageRefresh instead.
+ */
+- (void) requestSlideupRefresh __deprecated_msg("This method is deprecated in version 2.11. Please use "
+"requestInAppMessageRefresh instead.");
 @end

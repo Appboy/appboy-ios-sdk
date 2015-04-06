@@ -30,5 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
     Appboy.sharedInstance().registerApplication(application, didReceiveRemoteNotification: userInfo)
   }
+  
+  func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    Appboy.sharedInstance().registerApplication(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+  }
 }
 

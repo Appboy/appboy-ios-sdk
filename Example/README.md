@@ -3,7 +3,7 @@
 Stopwatch is a simple timer application that shows Appboy in action. Below are some screenshots that will reference how to:
 
 * Display an Appboy feedback form and news feed
-* Activate an in-app slideup message
+* Activate an in-app message
 * Log custom event data and in-app purchases to Appboy
 * Set user attributes for the existing user on the device
 * Theme Appboy programmatically
@@ -30,10 +30,10 @@ shows how to open the feed and feedback in popovers
 * `InfoViewController.m` has a feedback view controller which
 opens in a modal view
 
-## In-app slideup messages
-You'll notice when you first open Stopwatch that a small, unobtrusive message appears on the bottom of the screen. This message is there to alert your users to new content. When you use a Production API Key, this slideup message only appears when you push out new content from the Appboy dashboard, but for this sample app it will appear every time the app is foregrounded.
+## In-app messages
+You'll notice when you first open Stopwatch that a small, unobtrusive message appears on the bottom of the screen. This message is there to alert your users to new content. When you use a Production API Key, this in-app message only appears when you push out new content from the Appboy dashboard, but for this sample app it will appear every time the app is foregrounded. There are three different in-app message types.
 
-You can control the timing of the slidesup so that it does not appear or appears only when you want it to. The `SlideupControlsViewController` has code samples for how to handle displaying and queuing of incoming slideup message.
+You can control the timing of the in-app message so that it does not appear or appears only when you want it to. The `InAppMessageTestViewController` has code samples for how to handle displaying and queuing of incoming in-app message.
 
 ## Custom events and in-app purchases
 When you start the timer on Stopwatch, Appboy logs a custom event in `InitialViewController.m`. Purchases are also logged when you click on the "Upgrade" button on the home screen of the app.

@@ -15,17 +15,17 @@ static NSMutableArray *attributesValuesArray = nil;
 - (void) viewDidLoad {
   [super viewDidLoad];
 
-  self.attributesLabelsArray = [NSArray arrayWithObjects:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.user-ID", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.first-name", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.last-name", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.country", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.home-city", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.bio", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.date-of-birth", nil),
-                                                         NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil), nil];
+  self.attributesLabelsArray = @[NSLocalizedString(@"Appboy.Stopwatch.user-attributes.user-ID", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.first-name", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.last-name", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.country", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.home-city", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.bio", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.date-of-birth", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil)];
 
   if (attributesValuesArray == nil || [attributesValuesArray count] <= 0) {
     attributesValuesArray = [[NSMutableArray arrayWithCapacity:TotalNumberOfAttributes] retain];
@@ -56,7 +56,7 @@ static NSMutableArray *attributesValuesArray = nil;
       cell = [[[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    id object = [attributesValuesArray objectAtIndex:(NSUInteger)indexPath.row];
+    id object = attributesValuesArray[(NSUInteger)indexPath.row];
     if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
       if ([(NSString *)object isEqualToString:@"m"]) {
         cell.attributeSegmentedControl.selectedSegmentIndex = 0;
@@ -75,10 +75,10 @@ static NSMutableArray *attributesValuesArray = nil;
     if (cell == nil) {
       cell = [[[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.attributeNameLabel.text = [self.attributesLabelsArray objectAtIndex:(NSUInteger)indexPath.row];
+    cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
 
     cell.attributeTextField.tag = TextFieldTagNumber + indexPath.row; // The text field's tag is 1000 plus the row number
-    id object = [attributesValuesArray objectAtIndex:(NSUInteger)indexPath.row];
+    id object = attributesValuesArray[(NSUInteger)indexPath.row];
     if ([object isKindOfClass:[NSString class]]) {
       cell.attributeTextField.text = (NSString *)object;
     }
@@ -159,17 +159,17 @@ static NSMutableArray *attributesValuesArray = nil;
   }
   // Save the input of text field, including the cases of valid text and empty input
   if (textField.text.length > 0) {
-    [attributesValuesArray replaceObjectAtIndex:(NSUInteger)textField.tag - TextFieldTagNumber withObject:textField.text];
+    attributesValuesArray[(NSUInteger)textField.tag - TextFieldTagNumber] = textField.text;
   }
   else {
-    [attributesValuesArray replaceObjectAtIndex:(NSUInteger)textField.tag - TextFieldTagNumber withObject:[NSNull null]];
+    attributesValuesArray[(NSUInteger)textField.tag - TextFieldTagNumber] = [NSNull null];
   }
   return YES;
 }
 
 - (void) datePickerValueChanged:(UIDatePicker *)sender {
   // Save the date value
-  [attributesValuesArray replaceObjectAtIndex:IndexOfBirthday withObject:sender.date];
+  attributesValuesArray[IndexOfBirthday] = sender.date;
 
   // Display the date value in the text field while user changing the date picker
   ((UITextField *)[self.view viewWithTag:IndexOfBirthday + TextFieldTagNumber]).text = [self getBirthdayStringFromDate:sender.date];
@@ -177,19 +177,17 @@ static NSMutableArray *attributesValuesArray = nil;
 
 - (IBAction) setGender:(UISegmentedControl *)sender {
   NSString *gender = sender.selectedSegmentIndex == 0 ? @"m" : @"f";
-  [attributesValuesArray replaceObjectAtIndex:IndexOfGender withObject:gender];
+  attributesValuesArray[IndexOfGender] = gender;
 }
 
 // Set user attributes and/or change the current userID.  See Appboy.h for a discussion about changing the userID.
 - (IBAction) doneButtonTapped:(id)sender {
   if (self.currentEditingTextField && self.currentEditingTextField.tag != IndexOfBirthday + TextFieldTagNumber) {
     if (self.currentEditingTextField.text.length > 0) {
-      [attributesValuesArray replaceObjectAtIndex:(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber
-                                       withObject:self.currentEditingTextField.text];
+      attributesValuesArray[(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber] = self.currentEditingTextField.text;
     }
     else {
-      [attributesValuesArray replaceObjectAtIndex:(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber
-                                       withObject:[NSNull null]];
+      attributesValuesArray[(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber] = [NSNull null];
     }
   }
 
@@ -202,10 +200,10 @@ static NSMutableArray *attributesValuesArray = nil;
                                             otherButtonTitles:nil] autorelease];
   [alertView show];
   
-  [self dismissModalViewControllerAnimated:YES];
+  [self dismissViewControllerAnimated:YES completion:nil];
 
   for (NSUInteger i = 0; i < TotalNumberOfAttributes; i ++) {
-    id object = [attributesValuesArray objectAtIndex:i];
+    id object = attributesValuesArray[i];
     if (object && object != [NSNull null]) {
       switch (i) {
         case 0:
@@ -266,7 +264,7 @@ static NSMutableArray *attributesValuesArray = nil;
 - (void) keyboardDidShow:(NSNotification *)notification {
 
   NSDictionary* info = [notification userInfo];
-  CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
   CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
   CGRect aRect = self.attributesTableView.frame;
   aRect.size.height = self.view.bounds.size.height - keyboardHeight - 44; // 44 is the height of the navigation bar

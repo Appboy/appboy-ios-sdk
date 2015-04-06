@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KkE-wg-28K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KkE-wg-28K">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Initial View Controller - 秒表-->
+        <!--秒表-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="InitialViewController" sceneMemberID="viewController">
@@ -139,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="786" y="226"/>
         </scene>
-        <!--Feed View Controller Navigation Context - News Feed-->
+        <!--News Feed-->
         <scene sceneID="Ils-Xl-iBt">
             <objects>
                 <viewController title="News Feed" id="5R2-WL-VFk" customClass="ABKFeedViewControllerNavigationContext" sceneMemberID="viewController">
@@ -234,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="888" y="961"/>
         </scene>
-        <!--Testing View Controller - Appoy 设置-->
+        <!--Appoy 设置-->
         <scene sceneID="KfL-Hx-YQe">
             <objects>
                 <viewController id="Lii-7i-Mid" customClass="TestingViewController" sceneMemberID="viewController">
@@ -442,16 +442,16 @@
             </objects>
             <point key="canvasLocation" x="1986" y="161"/>
         </scene>
-        <!--Slideup Test View Controller - 应用内消息设置-->
+        <!--应用内消息设置-->
         <scene sceneID="0ks-kz-f3B">
             <objects>
-                <viewController id="xc2-Om-yCX" customClass="SlideupTestViewController" sceneMemberID="viewController">
+                <viewController id="xc2-Om-yCX" customClass="InAppMessageTestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rWE-RI-3Zh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="ve6-vb-qDW">
-                                <rect key="frame" x="41" y="210" width="240" height="30"/>
+                                <rect key="frame" x="41" y="90" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="马上显示"/>
@@ -467,7 +467,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mUG-l7-ilL">
-                                <rect key="frame" x="42" y="258" width="237" height="44"/>
+                                <rect key="frame" x="42" y="185" width="237" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="显示下一条消息">
@@ -475,41 +475,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="displayNextAvailableSlideupPressed:" destination="xc2-Om-yCX" eventType="touchUpInside" id="zvM-UC-HQx"/>
+                                    <action selector="displayNextAvailableInAppPressed:" destination="xc2-Om-yCX" eventType="touchUpInside" id="zvM-UC-HQx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出现位置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sEa-2f-ZxM">
-                                <rect key="frame" x="35" y="112" width="103" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="skO-fe-S0O">
-                                <rect key="frame" x="179" y="109" width="81" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="底部"/>
-                                    <segment title="顶部"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="移除方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Nx-i8-SZC">
-                                <rect key="frame" x="35" y="161" width="123" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="l49-5R-gNv">
-                                <rect key="frame" x="153" y="158" width="133" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="自动"/>
-                                    <segment title="手动滑除"/>
-                                </segments>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dgu-i9-sS4">
-                                <rect key="frame" x="30" y="310" width="261" height="44"/>
+                                <rect key="frame" x="30" y="237" width="261" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="创建并且显示一条消息">
@@ -520,8 +490,30 @@
                                     <action selector="createAndDisplayACustomSlideup:" destination="xc2-Om-yCX" eventType="touchUpInside" id="JhL-kL-8VZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lda-Iv-Slv">
+                                <rect key="frame" x="42" y="133" width="237" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="获取一条消息">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestAnInApp:" destination="xc2-Om-yCX" eventType="touchUpInside" id="EOt-ya-N7u"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="lmI-2c-Ndg">
+                                <rect key="frame" x="28" y="304" width="267" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Slideup"/>
+                                    <segment title="Modal"/>
+                                    <segment title="Full"/>
+                                    <segment title="自定义"/>
+                                </segments>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SgB-7f-1Mj">
-                                <rect key="frame" x="30" y="362" width="261" height="38"/>
+                                <rect key="frame" x="30" y="347" width="261" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="移除正在显示的消息">
@@ -534,15 +526,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                        <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     </view>
                     <navigationItem key="navigationItem" title="应用内消息设置" id="unm-L1-MbZ"/>
                     <connections>
-                        <outlet property="displayNextAvailableSlideupButton" destination="mUG-l7-ilL" id="3Sq-vk-fVE"/>
-                        <outlet property="segmentedControlForSlideupMode" destination="ve6-vb-qDW" id="HHg-BV-OVH"/>
-                        <outlet property="slideupAnchorSegmentedControl" destination="skO-fe-S0O" id="h9m-bW-uke"/>
-                        <outlet property="slideupDismissTypeSegmentedControl" destination="l49-5R-gNv" id="5It-NV-fco"/>
+                        <outlet property="inAppMessageTypeSegmentedControl" destination="lmI-2c-Ndg" id="zLV-8c-LJN"/>
+                        <outlet property="segmentedControlForInAppMode" destination="ve6-vb-qDW" id="HHg-BV-OVH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrA-y3-hum" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -598,8 +586,6 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="1992" y="810"/>

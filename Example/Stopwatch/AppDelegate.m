@@ -14,20 +14,16 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [Crittercism enableWithAppID:CrittercismAppId];
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
 
-  // Starts up Appboy, opening a new session and causing an updated slideup/feed to be requested.
+  // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
   [Appboy startWithApiKey:AppboyApiKey
             inApplication:application
         withLaunchOptions:launchOptions
-        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: [NSNumber numberWithInteger:ABKAutomaticRequestProcessing],
-                            ABKSocialAccountAcquisitionPolicyOptionKey:[NSNumber numberWithInteger:ABKAutomaticSocialAccountAcquisition]}];
+        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
+                            ABKSocialAccountAcquisitionPolicyOptionKey:@(ABKAutomaticSocialAccountAcquisition)}];
 
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
   }
-
-  // This lets us use NUI, the theming/customization package. There is also some initialization code in main.m
-  // Look at NUI/NUIStyle.nss to see what's being customized.
-  [NUISettings initWithStylesheet:@"StopwatchNUIStyle"];
 
   // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
   // feedback form and news feed).
@@ -54,7 +50,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 // Pass the deviceToken to Appboy as well
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
-  NSLog(@"In application:didRegisterForRemoteNotificationWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
+  NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
 }
 
