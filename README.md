@@ -1,4 +1,4 @@
-![Appboy Logo](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy_Logo_Smiley_Red-01.png)
+![Appboy Logo](http://www.appboy.com/assets/logo-cee4c217ff207f321cc7250f86a1037d.gif)
 
 # iOS SDK
 

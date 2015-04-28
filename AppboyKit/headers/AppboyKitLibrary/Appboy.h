@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.11.1"
+#define APPBOY_SDK_VERSION @"2.11.2"
 #endif
 
 @class ABKInAppMessageController;
