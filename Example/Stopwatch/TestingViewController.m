@@ -1,5 +1,5 @@
 #import "TestingViewController.h"
-#import "InAppMessageTestViewController.h"
+#import "SlideupTestViewController.h"
 #import <AppboyKit.h>
 
 @implementation TestingViewController

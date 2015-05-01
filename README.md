@@ -10,7 +10,8 @@ Successful marketing automation is essential to the future of your mobile app. A
 
 ## Components
 
-- `AppboyKit` - Contains the variant of our SDK.
+- `AppboyKit` - Contains the variant of our SDK which assumes you have the FacebookSDK integrated into your app.
+- `AppboyKitWithoutFacebookSupport` - Contains the variant of our SDK which assumes you have the FacebookSDK integrated into your app.
 - `Example` - Contains the Stopwatch Sample App which contains integration examples for the iOS SDK.
 	- The Stopwatch Sample App uses [CocoaPods](http://guides.cocoapods.org/), so you must :
 	  1. [Install CocoaPods](http://guides.cocoapods.org/using/getting-started.html)
@@ -19,7 +20,7 @@ Successful marketing automation is essential to the future of your mobile app. A
 
 ## Version Support
 
-The iOS SDK supports iOS 6.0+
+The iOS SDK supports iOS 5.1.1+
 
 ## Questions?
 

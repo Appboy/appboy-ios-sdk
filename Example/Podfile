@@ -1,7 +1,6 @@
+platform :ios, '5.1.1'
+
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '7.0'
-
-pod 'Appboy-iOS-SDK'
-pod 'NUI',:git => 'https://github.com/tombenner/nui.git'
-pod 'KKColorListPicker', :git => 'git@github.com:leoru/KKColorListPicker.git'
+pod 'Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport'
+pod 'NUI'

@@ -1,10 +1,6 @@
 PODS:
-  - Appboy-iOS-SDK (2.11.2):
-    - Appboy-iOS-SDK/AppboyKit (= 2.11.2)
-    - SDWebImage (~> 3.7.0)
-  - Appboy-iOS-SDK/AppboyKit (2.11.2):
-    - SDWebImage (~> 3.7.0)
-  - KKColorListPicker (0.2.4)
+  - Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport (2.9.6):
+    - SDWebImage (>= 3.7.0)
   - NUI (0.5.5):
     - NUIParse
   - NUIParse (1.2.1)
@@ -13,31 +9,17 @@ PODS:
   - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
-  - Appboy-iOS-SDK (from `./../../Appboy-iOS-SDK/`)
-  - KKColorListPicker (from `git@github.com:leoru/KKColorListPicker.git`)
-  - NUI (from `https://github.com/tombenner/nui.git`)
+  - Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport (from `./../../Appboy-iOS-SDK/`)
+  - NUI
 
 EXTERNAL SOURCES:
   Appboy-iOS-SDK:
-    :path: "./../../Appboy-iOS-SDK/"
-  KKColorListPicker:
-    :git: git@github.com:leoru/KKColorListPicker.git
-  NUI:
-    :git: https://github.com/tombenner/nui.git
-
-CHECKOUT OPTIONS:
-  KKColorListPicker:
-    :commit: 2e796e48efd572fc1d6834f766d3f7d55f9da27c
-    :git: git@github.com:leoru/KKColorListPicker.git
-  NUI:
-    :commit: f4ae07451c34e5f88404b5cc8cc0d27a78a3d6a0
-    :git: https://github.com/tombenner/nui.git
+    :path: ./../../Appboy-iOS-SDK/
 
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: 54b33c3437895aee38af7d950c9da7d3a09878a8
-  KKColorListPicker: de772db47659dea2a8c77bf9bac97648929ce10a
+  Appboy-iOS-SDK: 0b4989178061fb83cb2d86e5fe8bf822c09f6794
   NUI: 53de7278003235deb2a375fe6f04c7a3aa3e49eb
   NUIParse: 9b6d5a6b782dc654ac6c846d623885080306f07f
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
-COCOAPODS: 0.36.1
+COCOAPODS: 0.35.0
