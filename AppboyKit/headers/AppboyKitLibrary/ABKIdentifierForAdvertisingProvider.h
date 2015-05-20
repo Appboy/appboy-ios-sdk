@@ -9,6 +9,9 @@
  * regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod.
  */
 
+/*
+ * Appboy Public API: ABKIdentifierForAdvertisingProvider
+ */
 @interface ABKIdentifierForAdvertisingProvider : NSObject
 + (NSString *) getIdentifierForAdvertiser;
 + (NSNumber *) getIsAdvertisingTrackingEnabledAsNSNumber;

@@ -43,6 +43,10 @@
  * If a delegate is set, the controller will send feedbackViewControllerNavigationContextFeedbackSent:sender after
  * feedback has been sent successfully.
  */
+
+/*
+ * Appboy Public API: ABKFeedbackViewControllerNavigationContext
+ */
 @interface ABKFeedbackViewControllerNavigationContext : ABKFeedbackViewController
 
 @property (assign, nonatomic) id <ABKFeedbackViewControllerNavigationContextDelegate> delegate;

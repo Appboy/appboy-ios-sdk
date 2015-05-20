@@ -61,6 +61,7 @@
   [newsFeed.navigationItem setRightBarButtonItem:categoriesButton animated:NO];
   [categoriesButton release];
   [self.navigationController pushViewController:newsFeed animated:YES];
+  [newsFeed release];
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

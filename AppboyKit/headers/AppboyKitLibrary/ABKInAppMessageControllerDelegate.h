@@ -31,6 +31,10 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * information on in-app message behavior, including when and how the delegate is used, see the documentation for the
  * ABKInAppMessageDisplayChoice enum above for more detailed information.
  */
+
+/*
+ * Appboy Public API: ABKInAppMessageControllerDelegate
+ */
 @protocol ABKInAppMessageControllerDelegate <NSObject>
 @optional
 

@@ -16,6 +16,9 @@
 @class ABKInAppMessage;
 @class ABKLabel;
 
+/*
+ * Appboy Public API: ABKInAppMessageViewController
+ */
 @interface ABKInAppMessageViewController : UIViewController
 
 @property (nonatomic, retain) ABKInAppMessage *inAppMessage;

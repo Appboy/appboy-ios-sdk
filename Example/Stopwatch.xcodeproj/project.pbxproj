@@ -54,6 +54,7 @@
 		95EF512A173D5FD600C0D780 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5128173D5FD600C0D780 /* MainStoryboard_iPad.storyboard */; };
 		95EF512D173D5FD600C0D780 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF512C173D5FD600C0D780 /* InitialViewController.m */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
+		E3AF79251AEACAB30075681E /* EventsAndPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AF79241AEACAB30075681E /* EventsAndPropertiesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -172,6 +173,8 @@
 		C5CC74A11766B955005DAD08 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
 		C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
 		D890D67844E95B1B065140B8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E3AF79231AEACAB30075681E /* EventsAndPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsAndPropertiesViewController.h; sourceTree = "<group>"; };
+		E3AF79241AEACAB30075681E /* EventsAndPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsAndPropertiesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +315,8 @@
 				4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */,
 				4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */,
 				4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */,
+				E3AF79231AEACAB30075681E /* EventsAndPropertiesViewController.h */,
+				E3AF79241AEACAB30075681E /* EventsAndPropertiesViewController.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				4EABC19D1A621B7F007259BD /* InAppMessageUICells.m in Sources */,
 				4E94D76E1743EE7100604EA0 /* Clock.m in Sources */,
 				4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */,
+				E3AF79251AEACAB30075681E /* EventsAndPropertiesViewController.m in Sources */,
 				4E7D1C7E1A9FE1990087DB64 /* SocialNetworkViewController.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserAttributeCell.m in Sources */,
@@ -643,8 +649,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${SRCROOT}/../Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport",
@@ -659,7 +665,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2e477cb9-d568-478e-9da5-35b2f5ab57c0";
+				PROVISIONING_PROFILE = "40732de2-14e2-49ac-8a03-369f0adb4a66";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Develop;
@@ -693,7 +699,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "5204a378-9212-4432-9be5-439a04c1ad82";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -751,7 +757,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = StopwatchDevelop;
-				PROVISIONING_PROFILE = "4f241a95-5869-45d3-8e06-44a36398982b";
+				PROVISIONING_PROFILE = "ca111731-3a13-436d-80b4-770d40ce2a2e";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -778,7 +784,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "1672246d-f5a3-415a-8bd5-5ceb5ad9fa1f";
+				PROVISIONING_PROFILE = "7d31dd8b-9551-4592-9ec6-60bc52741ec5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -2,6 +2,9 @@
 
 @class ABKCard;
 
+/*
+ * Appboy Public API: ABKFeedViewControllerDelegate
+ */
 @protocol ABKFeedViewControllerDelegate <NSObject>
 /*!
  @param newsFeed The calling news feed context

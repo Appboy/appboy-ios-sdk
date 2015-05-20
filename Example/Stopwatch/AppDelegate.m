@@ -105,6 +105,9 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   UIUserNotificationSettings *settings = [UIUserNotificationSettingsClass settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
   [[UIApplication sharedApplication] registerForRemoteNotifications];
   [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+  [likeAction release];
+  [unlikeAction release];
+  [likeCategory release];
 }
 
 // Here we are trying to handle deep linking with scheme beginning with "stopwatch".

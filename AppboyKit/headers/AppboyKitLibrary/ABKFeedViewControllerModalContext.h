@@ -10,6 +10,9 @@
  * ABKFeedViewController
  */
 
+/*
+ * Appboy Public API: ABKFeedViewControllerModalContextDelegate
+ */
 @protocol ABKFeedViewControllerModalContextDelegate;
 
 /*!
@@ -35,6 +38,10 @@
  * If the delegate is *not* set, the controller dismisses itself;  if it is set, it's the responsibility of
  * the delegate to dismiss the controller.  The delegate should adopt the
  * ABKFeedViewControllerModalContextDelegate protocol.
+ */
+
+/*
+ * Appboy Public API: ABKFeedViewControllerModalContext
  */
 @interface ABKFeedViewControllerModalContext : ABKFeedViewControllerGenericContext
 

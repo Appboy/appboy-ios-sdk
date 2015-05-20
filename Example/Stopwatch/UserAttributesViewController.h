@@ -9,6 +9,6 @@
 
 - (IBAction) doneButtonTapped:(id)sender;
 - (IBAction) setGender:(UISegmentedControl *)sender;
-
+- (IBAction)backButtonTapped:(id)sender;
 
 @end

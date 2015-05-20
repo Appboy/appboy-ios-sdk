@@ -2,6 +2,9 @@
 
 @class ABKInAppMessageButton;
 
+/*
+ * Appboy Public API: ABKInAppMessageImmersive
+ */
 @interface ABKInAppMessageImmersive : ABKInAppMessage
 
 /*!

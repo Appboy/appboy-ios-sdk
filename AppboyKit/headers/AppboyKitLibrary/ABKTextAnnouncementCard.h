@@ -1,5 +1,8 @@
 #import "ABKCard.h"
 
+/*
+ * Appboy Public API: ABKTextAnnouncementCard
+ */
 @interface ABKTextAnnouncementCard : ABKCard <NSCoding>
 
 /*

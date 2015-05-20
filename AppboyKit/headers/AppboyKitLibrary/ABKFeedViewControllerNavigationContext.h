@@ -29,6 +29,9 @@
  * a UINavigationController.
  */
 
+/*
+ * Appboy Public API: ABKFeedViewControllerNavigationContext
+ */
 @interface ABKFeedViewControllerNavigationContext : ABKFeedViewController <UINavigationControllerDelegate>;
 
 @end

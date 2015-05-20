@@ -2,7 +2,11 @@
 #import "ABKInAppMessage.h"
 #import "ABKInAppMessageControllerDelegate.h"
 
-/* Note: This class is not thread safe and all class methods should be called from the main thread.*/
+/*! Note: This class is not thread safe and all class methods should be called from the main thread.*/
+
+/*
+ * Appboy Public API: ABKInAppMessageController
+ */
 @interface ABKInAppMessageController : NSObject
 
 /*!

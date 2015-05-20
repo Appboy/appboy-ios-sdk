@@ -35,6 +35,10 @@
  * closeButtonDelegate.  You can use this message to trigger closing the popover.
  * The delegate should adopt the ABKFeedViewControllerPopoverContextDelegate protocol.
  */
+
+/*
+ * Appboy Public API: ABKFeedViewControllerPopoverContext
+ */
 @interface ABKFeedViewControllerPopoverContext : ABKFeedViewControllerGenericContext
 
 /*! Title displayed in the top bar */

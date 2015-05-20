@@ -35,6 +35,9 @@
  * 3. The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated.
  */
 
+/*
+ * Appboy Public API: ABKUser
+ */
 @interface ABKUser : NSObject
 
 /*!

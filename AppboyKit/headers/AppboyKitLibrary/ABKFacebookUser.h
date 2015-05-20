@@ -3,6 +3,9 @@
 
 extern NSInteger const DefaultNumberOfFriends;
 
+/*
+ * Appboy Public API: ABKFacebookUser
+ */
 @interface ABKFacebookUser : NSObject
 
 /*!

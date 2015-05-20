@@ -1,5 +1,8 @@
 #import "ABKInAppMessage.h"
 
+/*
+ * Appboy Public API: ABKInAppMessageButton
+ */
 @interface ABKInAppMessageButton : UIButton
 
 /*!

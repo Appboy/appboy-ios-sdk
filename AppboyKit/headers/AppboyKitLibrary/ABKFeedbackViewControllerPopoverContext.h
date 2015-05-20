@@ -54,6 +54,10 @@
  * When feedback has been sent successfully, the controller sends feedbackViewControllerPopoverContextFeedbackSent:sender.
  * Use these messages to trigger dismissing the popover.
  */
+
+/*
+ * Appboy Public API: ABKFeedbackViewControllerPopoverContext
+ */
 @interface ABKFeedbackViewControllerPopoverContext : ABKFeedbackViewController
 
 @property (assign, nonatomic) id <ABKFeedbackViewControllerPopoverContextDelegate> delegate;

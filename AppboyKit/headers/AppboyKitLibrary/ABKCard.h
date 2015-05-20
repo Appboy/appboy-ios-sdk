@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "ABKFeedController.h"
 
+/*
+ * Appboy Public API: ABKCard
+ */
 @interface ABKCard : NSObject <NSCopying, NSCoding>
 /*
  * Card's ID.
@@ -34,6 +37,12 @@
  * When the deserialization isn't successful, this method returns nil; otherwise, it returns the deserialized card.
  */
 + (ABKCard *) deserializeCardFromDictionary:(NSDictionary *)cardDictionary;
+
+/*!
+ * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
+ * You may want to design and implement a custom handler to access this data depending on your use case.
+ */
+@property (nonatomic, retain) NSDictionary *extras;
 
 /*
  * Serializes the card to binary data for use by wrappers such as Appboy's Unity SDK for iOS.

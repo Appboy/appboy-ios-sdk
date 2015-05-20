@@ -180,6 +180,11 @@ static NSMutableArray *attributesValuesArray = nil;
   attributesValuesArray[IndexOfGender] = gender;
 }
 
+
+- (IBAction)backButtonTapped:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 // Set user attributes and/or change the current userID.  See Appboy.h for a discussion about changing the userID.
 - (IBAction) doneButtonTapped:(id)sender {
   if (self.currentEditingTextField && self.currentEditingTextField.tag != IndexOfBirthday + TextFieldTagNumber) {

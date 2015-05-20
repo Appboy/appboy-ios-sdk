@@ -32,6 +32,9 @@
  * tab bar controller, or when it's in a split view controller.
  */
 
+/*
+ * Appboy Public API: ABKFeedViewControllerGenericContext
+ */
 @interface ABKFeedViewControllerGenericContext : UINavigationController <UINavigationControllerDelegate>
 
 /*!

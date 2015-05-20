@@ -12,6 +12,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+/*
+ * Appboy Public API: ABKFeedbackViewController
+ */
 @interface ABKFeedbackViewController : UIViewController
 
 @property (assign, nonatomic) id delegate;

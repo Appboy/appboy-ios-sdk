@@ -1,3 +1,10 @@
+## 2.11.3
+- Adds the ability to send and retrieve extra key-value pairs via a News Feed card.
+- Adds the ability to define custom key-value properties on a custom event or purchase. Property keys are strings and values may be NSString, NSDate, or NSNumber objects.
+
+## 2.11.2
+- Update the serialize and deserialize methods for in-app message classes. This is for use by wrappers such as Appboy's Unity SDK for iOS. 
+
 ## 2.11.1
 - Fixes a UI issue in modal in-app messages displayed on iPads running iOS 6/7.
 

@@ -13,6 +13,9 @@
 #import "ABKFeedViewControllerDelegate.h"
 #import "ABKFeedController.h"
 
+/*
+ * Appboy Public API: ABKFeedViewController
+ */
 @interface ABKFeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,
     SKStoreProductViewControllerDelegate>
 

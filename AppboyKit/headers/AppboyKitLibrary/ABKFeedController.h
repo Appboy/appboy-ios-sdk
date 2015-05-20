@@ -48,6 +48,9 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
   ABKCardCategoryAll = 1 << 0 | 1 << 1 | 1 << 2 | 1 << 3 | 1 << 4
 };
 
+/*
+ * Appboy Public API: ABKFeedController
+ */
 @interface ABKFeedController : NSObject
 
 /*!

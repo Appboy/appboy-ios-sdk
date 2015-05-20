@@ -34,6 +34,9 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
   ABKInAppMessageDismissManually
 };
 
+/*
+ * Appboy Public API: ABKInAppMessage
+ */
 @interface ABKInAppMessage : NSObject
 
 /*!

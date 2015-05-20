@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.11.2"
+#define APPBOY_SDK_VERSION @"2.11.3"
 #endif
 
 @class ABKInAppMessageController;
@@ -25,6 +25,9 @@
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKAppboyEndpointDelegate;
 
+/*
+ * Appboy Public API: Appboy
+ */
 @interface Appboy : NSObject
 
 /* ------------------------------------------------------------------------------------------------------
@@ -392,11 +395,43 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 - (void) logCustomEvent:(NSString *)eventName;
 
 /*!
- * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity: with a quantity of 1.
- * Please see logPurchase:inCurrency:atPrice:withQuantity: for more information.
+ * @param eventName The name of the event to log.
+ * @param properties An <code>NSDictionary</code> of properties to associate with this purchase. Property keys are non-empty <code>NSString</code> objects with
+ * <= 255 characters and no leading dollar signs.  Property values can be <code>NSNumber</code> booleans, integers, floats < 62 bits, <code>NSDate</code> objects or
+ * <code>NSString</code> objects with <= 255 characters.
+ *
+ * @discussion Adds an app specific event to event tracking log that's lazily pushed up to the server. Think of
+ *   events like counters. That is, each time you log an event, we'll update a counter for that user. Events should be
+ *   fairly broad like "beat level 1" or "watched video" instead of something more specific like "watched Katy
+ *   Perry's Last Friday Night" so you can create more broad user segments for targeting.
+ *
+ * <pre>
+ * [[Appboy sharedInstance] logCustomEvent:@"clicked_button" properties:@{@"key1":@"val"}];
+ * </pre>
+ */
+- (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties;
+
+/*!
+ * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties: with a quantity of 1 and nil properties.
+ * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
  *
  */
 - (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
+
+/*!
+ * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with a quantity of 1.
+ * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
+ *
+ */
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:properties;
+
+
+/*!
+ * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with nil properties.
+ * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
+ *
+ */
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;
 
 /*!
  * @param productIdentifier A String indicating the product that was purchased. Usually the product identifier in the
@@ -414,6 +449,9 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied
  * such that a maximum of two digits exist after their decimal point.
  * @param quantity An unsigned number to indicate the purchase quantity. This number must be greater than 0 but no larger than 100.
+ * @param properties An <code>NSDictionary</code> of properties to associate with this purchase. Property keys are non-empty <code>NSString</code> objects with
+ * <= 255 characters and no leading dollar signs.  Property values can be <code>NSNumber</code> integers, floats, booleans < 62 bits in length, <code>NSDate</code> objects or
+ * <code>NSString</code> objects with <= 255 characters.
  *
  * @discussion Logs a purchase made in the application.
  *
@@ -421,7 +459,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:properties;
 
 /*!
 * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.

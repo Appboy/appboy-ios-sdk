@@ -15,6 +15,9 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageSlideupAnchor) {
   ABKInAppMessageSlideupFromBottom
 };
 
+/*
+ * Appboy Public API: ABKInAppMessageSlideup
+ */
 @interface ABKInAppMessageSlideup : ABKInAppMessage
 
 /*!

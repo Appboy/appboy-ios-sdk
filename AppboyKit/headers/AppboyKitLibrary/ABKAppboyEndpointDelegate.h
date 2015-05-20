@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 
-
+/*
+ * Appboy Public API: ABKAppboyEndpointDelegate
+ */
 @protocol ABKAppboyEndpointDelegate <NSObject>
 
 /*!
