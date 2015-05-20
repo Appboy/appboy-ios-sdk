@@ -135,10 +135,17 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a3e238e081dfc3d0fa25a3b9b0ba0ec68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">logCustomEvent:</a></td></tr>
 <tr class="separator:ad80c39e8c96482a77562a5b1a1d387aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a4f0051d73d85cb37f63c232248124c79"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a4f0051d73d85cb37f63c232248124c79">logCustomEvent:withProperties:</a></td></tr>
+<tr class="separator:a4f0051d73d85cb37f63c232248124c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63d8c390bff05f87c7f8f86f2fc0deb6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a63d8c390bff05f87c7f8f86f2fc0deb6">logPurchase:inCurrency:atPrice:</a></td></tr>
 <tr class="separator:a63d8c390bff05f87c7f8f86f2fc0deb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35bb238aaa4fe9d1ede0439a4c401db"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad35bb238aaa4fe9d1ede0439a4c401db">logPurchase:inCurrency:atPrice:withProperties:</a></td></tr>
+<tr class="separator:ad35bb238aaa4fe9d1ede0439a4c401db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4c66ed060890c68690fd629a62ebfa2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#aa4c66ed060890c68690fd629a62ebfa2">logPurchase:inCurrency:atPrice:withQuantity:</a></td></tr>
 <tr class="separator:aa4c66ed060890c68690fd629a62ebfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0d8500d815c33f6fbbf4fcd1e619883"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ac0d8500d815c33f6fbbf4fcd1e619883">logPurchase:inCurrency:atPrice:withQuantity:andProperties:</a></td></tr>
+<tr class="separator:ac0d8500d815c33f6fbbf4fcd1e619883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ae16a3ae4f33d7ae23da740d67e4cd277">logSocialShare:</a></td></tr>
 <tr class="separator:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c503d30600c60d2fdc0152bc8e92fb8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a6c503d30600c60d2fdc0152bc8e92fb8">promptUserForAccessToSocialNetwork:</a></td></tr>
@@ -418,6 +425,43 @@ Properties</h2></td></tr>
 </pre> 
 </div>
 </div>
+<a class="anchor" id="a4f0051d73d85cb37f63c232248124c79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">logCustomEvent:</a> </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>eventName</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withProperties:</td>
+          <td></td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramname"><em>properties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventName</td><td>The name of the event to log. </td></tr>
+    <tr><td class="paramname">properties</td><td>An <code>NSDictionary</code> of properties to associate with this purchase. Property keys are non-empty <code>NSString</code> objects with &lt;= 255 characters and no leading dollar signs. Property values can be <code>NSNumber</code> booleans, integers, floats &lt; 62 bits, <code>NSDate</code> objects or <code>NSString</code> objects with &lt;= 255 characters.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Adds an app specific event to event tracking log that's lazily pushed up to the server. Think of events like counters. That is, each time you log an event, we'll update a counter for that user. Events should be fairly broad like "beat level 1" or "watched video" instead of something more specific like "watched Katy
+  Perry's Last Friday Night" so you can create more broad user segments for targeting.</p>
+<pre>
+[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logCustomEvent:"clicked_button" properties:@"key1":@"val"}];
+</pre> 
+</div>
+</div>
 <a class="anchor" id="a06154478e49f48c168232f48455e8173"></a>
 <div class="memitem">
 <div class="memproto">
@@ -479,7 +523,46 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity: with a quantity of 1. Please see logPurchase:inCurrency:atPrice:withQuantity: for more information. </p>
+<p>This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties: with a quantity of 1 and nil properties. Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad35bb238aaa4fe9d1ede0439a4c401db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) logPurchase: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>productIdentifier</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inCurrency:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>currencyCode</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">atPrice:</td>
+          <td></td>
+          <td class="paramtype">(NSDecimalNumber *)&#160;</td>
+          <td class="paramname"><em>price</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withProperties:</td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>properties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with a quantity of 1. Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information. </p>
 
 </div>
 </div>
@@ -518,12 +601,58 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with nil properties. Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac0d8500d815c33f6fbbf4fcd1e619883"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) logPurchase: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>productIdentifier</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inCurrency:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>currencyCode</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">atPrice:</td>
+          <td></td>
+          <td class="paramtype">(NSDecimalNumber *)&#160;</td>
+          <td class="paramname"><em>price</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withQuantity:</td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>quantity</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">andProperties:</td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>properties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">productIdentifier</td><td>A String indicating the product that was purchased. Usually the product identifier in the iTunes store. </td></tr>
     <tr><td class="paramname">currencyCode</td><td>Currencies should be represented as an ISO 4217 currency code. Prices should be sent in decimal format, with the same base units as are provided by the SKProduct class. Callers of this method who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings provided by StoreKit) can obtain the currency code by invoking: <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre> Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS, SAR, ZAR, AED, SEK, HKD, SPD, DKK, and TWD. Any other provided currency symbol will result in a logged warning and no other action taken by the SDK. </td></tr>
     <tr><td class="paramname">price</td><td>Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied such that a maximum of two digits exist after their decimal point. </td></tr>
-    <tr><td class="paramname">quantity</td><td>An unsigned number to indicate the purchase quantity. This number must be greater than 0 but no larger than 100.</td></tr>
+    <tr><td class="paramname">quantity</td><td>An unsigned number to indicate the purchase quantity. This number must be greater than 0 but no larger than 100. </td></tr>
+    <tr><td class="paramname">properties</td><td>An <code>NSDictionary</code> of properties to associate with this purchase. Property keys are non-empty <code>NSString</code> objects with &lt;= 255 characters and no leading dollar signs. Property values can be <code>NSNumber</code> integers, floats, booleans &lt; 62 bits in length, <code>NSDate</code> objects or <code>NSString</code> objects with &lt;= 255 characters.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1093,7 +1222,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 28 2015 12:09:15 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2015 17:19:43 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

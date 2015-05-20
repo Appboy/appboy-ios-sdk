@@ -93,28 +93,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#import &quot;ABKFeedViewControllerDelegate.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#import &quot;ABKFeedController.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html">   16</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_view_controller.html">ABKFeedViewController</a> : UIViewController &lt;UITableViewDataSource, UITableViewDelegate,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    SKStoreProductViewControllerDelegate&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a29e117b91c3f93f82292b66b9000d7ae">   24</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#a29e117b91c3f93f82292b66b9000d7ae">cardWidthForiPhone</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a9f7586e8cbe424e814051f749e127062">   31</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#a9f7586e8cbe424e814051f749e127062">cardWidthForiPad</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a01edbb1d648ffd8410fe2c28f9b8330a">   38</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#a01edbb1d648ffd8410fe2c28f9b8330a">minimumCardMarginForiPhone</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#ac788e148f5ca855402117cf0d8c594d8">   45</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#ac788e148f5ca855402117cf0d8c594d8">minimumCardMarginForiPad</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a1cfb67a5a1ab76ba073272f9e940856f">   48</a></span>&#160;<span class="keyword">@property</span> (assign, nonatomic) id&lt;ABKFeedViewControllerDelegate&gt; <a class="code" href="interface_a_b_k_feed_view_controller.html#a1cfb67a5a1ab76ba073272f9e940856f">appboyDelegate</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Appboy Public API: ABKFeedViewController</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html">   19</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_view_controller.html">ABKFeedViewController</a> : UIViewController &lt;UITableViewDataSource, UITableViewDelegate,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    SKStoreProductViewControllerDelegate&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a29e117b91c3f93f82292b66b9000d7ae">   27</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#a29e117b91c3f93f82292b66b9000d7ae">cardWidthForiPhone</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a9f7586e8cbe424e814051f749e127062">   34</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#a9f7586e8cbe424e814051f749e127062">cardWidthForiPad</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a01edbb1d648ffd8410fe2c28f9b8330a">   41</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#a01edbb1d648ffd8410fe2c28f9b8330a">minimumCardMarginForiPhone</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#ac788e148f5ca855402117cf0d8c594d8">   48</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_feed_view_controller.html#ac788e148f5ca855402117cf0d8c594d8">minimumCardMarginForiPad</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#af90d981a4acbc21be32aadf5d6d490ed">   55</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) ABKCardCategory <a class="code" href="interface_a_b_k_feed_view_controller.html#af90d981a4acbc21be32aadf5d6d490ed">categories</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a8cdecdce9740e996a73379f3722f5f69">   61</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) BOOL <a class="code" href="interface_a_b_k_feed_view_controller.html#a8cdecdce9740e996a73379f3722f5f69">disableUnreadIndicator</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a1cfb67a5a1ab76ba073272f9e940856f">   51</a></span>&#160;<span class="keyword">@property</span> (assign, nonatomic) id&lt;ABKFeedViewControllerDelegate&gt; <a class="code" href="interface_a_b_k_feed_view_controller.html#a1cfb67a5a1ab76ba073272f9e940856f">appboyDelegate</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#af90d981a4acbc21be32aadf5d6d490ed">   58</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) ABKCardCategory <a class="code" href="interface_a_b_k_feed_view_controller.html#af90d981a4acbc21be32aadf5d6d490ed">categories</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller.html#a8cdecdce9740e996a73379f3722f5f69">   64</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) BOOL <a class="code" href="interface_a_b_k_feed_view_controller.html#a8cdecdce9740e996a73379f3722f5f69">disableUnreadIndicator</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 28 2015 12:09:15 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2015 17:19:42 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

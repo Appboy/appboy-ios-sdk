@@ -84,27 +84,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessage.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html">    3</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a> : UIButton</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a8bcd16c602f145c8dd52e663ae0fb954">    9</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_in_app_message_button.html#a8bcd16c602f145c8dd52e663ae0fb954">buttonText</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a631dcbc3fc2014539892b5bea7b72b5b">   14</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) UIColor *<a class="code" href="interface_a_b_k_in_app_message_button.html#a631dcbc3fc2014539892b5bea7b72b5b">buttonBackgroundColor</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a0ef2fc61d079a80da6fe6273be8ab4ce">   20</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) UIColor *<a class="code" href="interface_a_b_k_in_app_message_button.html#a0ef2fc61d079a80da6fe6273be8ab4ce">buttonTextColor</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#aff938abb33df633a3473bdd457f210b0">   26</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) ABKInAppMessageClickActionType <a class="code" href="interface_a_b_k_in_app_message_button.html#aff938abb33df633a3473bdd457f210b0">buttonClickActionType</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a5f38cd1057b3fb113f55252098ad4527">   34</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy, readonly) NSURL *<a class="code" href="interface_a_b_k_in_app_message_button.html#a5f38cd1057b3fb113f55252098ad4527">buttonClickedURI</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a156c7b45dc50181841ac31ab64edde71">   40</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) NSInteger <a class="code" href="interface_a_b_k_in_app_message_button.html#a156c7b45dc50181841ac31ab64edde71">buttonID</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;- (void) setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(NSURL *)uri;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Appboy Public API: ABKInAppMessageButton</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html">    6</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a> : UIButton</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a8bcd16c602f145c8dd52e663ae0fb954">   12</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy) NSString *<a class="code" href="interface_a_b_k_in_app_message_button.html#a8bcd16c602f145c8dd52e663ae0fb954">buttonText</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a631dcbc3fc2014539892b5bea7b72b5b">   17</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) UIColor *<a class="code" href="interface_a_b_k_in_app_message_button.html#a631dcbc3fc2014539892b5bea7b72b5b">buttonBackgroundColor</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a0ef2fc61d079a80da6fe6273be8ab4ce">   23</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) UIColor *<a class="code" href="interface_a_b_k_in_app_message_button.html#a0ef2fc61d079a80da6fe6273be8ab4ce">buttonTextColor</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#aff938abb33df633a3473bdd457f210b0">   29</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) ABKInAppMessageClickActionType <a class="code" href="interface_a_b_k_in_app_message_button.html#aff938abb33df633a3473bdd457f210b0">buttonClickActionType</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a5f38cd1057b3fb113f55252098ad4527">   37</a></span>&#160;<span class="keyword">@property</span> (nonatomic, copy, readonly) NSURL *<a class="code" href="interface_a_b_k_in_app_message_button.html#a5f38cd1057b3fb113f55252098ad4527">buttonClickedURI</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_button.html#a156c7b45dc50181841ac31ab64edde71">   43</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) NSInteger <a class="code" href="interface_a_b_k_in_app_message_button.html#a156c7b45dc50181841ac31ab64edde71">buttonID</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;- (void) setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(NSURL *)uri;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 28 2015 12:09:15 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2015 17:19:42 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

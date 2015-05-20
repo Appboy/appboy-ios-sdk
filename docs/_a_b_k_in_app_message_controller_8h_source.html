@@ -86,27 +86,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessage.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessageControllerDelegate.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/* Note: This class is not thread safe and all class methods should be called from the main thread.*/</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html">    6</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a> : NSObject</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html#a80753997e8a3c809d0fa984f7d6d6bbe">   13</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) id &lt;ABKInAppMessageControllerDelegate&gt; <a class="code" href="interface_a_b_k_in_app_message_controller.html#a80753997e8a3c809d0fa984f7d6d6bbe">delegate</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html#a409b57bcd37168ce8a28cd66544d9f99">   24</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) UIInterfaceOrientationMask <a class="code" href="interface_a_b_k_in_app_message_controller.html#a409b57bcd37168ce8a28cd66544d9f99">supportedOrientationMasks</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html#a8d15f9bae17c3b7746e50e8f4da93d9a">   35</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) UIInterfaceOrientation <a class="code" href="interface_a_b_k_in_app_message_controller.html#a8d15f9bae17c3b7746e50e8f4da93d9a">supportedOrientations</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;- (void) displayNextInAppMessageWithDelegate:(<span class="keywordtype">id</span>&lt;<a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a>&gt;)delegate;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;- (NSInteger) <a class="code" href="interface_a_b_k_in_app_message_controller.html#a5832131be107c369436a58546d1a2810">inAppMessagesRemainingOnStack</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;- (void) addInAppMessage:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)newInAppMessage;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;- (void) hideCurrentInAppMessage:(BOOL)animated;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Appboy Public API: ABKInAppMessageController</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html">   10</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a> : NSObject</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html#a80753997e8a3c809d0fa984f7d6d6bbe">   17</a></span>&#160;<span class="keyword">@property</span> (nonatomic, retain) id &lt;ABKInAppMessageControllerDelegate&gt; <a class="code" href="interface_a_b_k_in_app_message_controller.html#a80753997e8a3c809d0fa984f7d6d6bbe">delegate</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html#a409b57bcd37168ce8a28cd66544d9f99">   28</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) UIInterfaceOrientationMask <a class="code" href="interface_a_b_k_in_app_message_controller.html#a409b57bcd37168ce8a28cd66544d9f99">supportedOrientationMasks</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_controller.html#a8d15f9bae17c3b7746e50e8f4da93d9a">   39</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) UIInterfaceOrientation <a class="code" href="interface_a_b_k_in_app_message_controller.html#a8d15f9bae17c3b7746e50e8f4da93d9a">supportedOrientations</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;- (void) displayNextInAppMessageWithDelegate:(<span class="keywordtype">id</span>&lt;<a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a>&gt;)delegate;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;- (NSInteger) <a class="code" href="interface_a_b_k_in_app_message_controller.html#a5832131be107c369436a58546d1a2810">inAppMessagesRemainingOnStack</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;- (void) addInAppMessage:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)newInAppMessage;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;- (void) hideCurrentInAppMessage:(BOOL)animated;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 28 2015 12:09:15 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2015 17:19:43 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

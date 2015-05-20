@@ -104,22 +104,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ABKCardCategoryAll = 1 &lt;&lt; 0 | 1 &lt;&lt; 1 | 1 &lt;&lt; 2 | 1 &lt;&lt; 3 | 1 &lt;&lt; 4</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_controller.html">   51</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_controller.html">ABKFeedController</a> : NSObject</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_controller.html#a0961da8d9ba3663c889c2661ec6dd794">   58</a></span>&#160;<span class="keyword">@property</span> (readonly) NSArray *<a class="code" href="interface_a_b_k_feed_controller.html#a0961da8d9ba3663c889c2661ec6dd794">newsFeedCards</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_controller.html#ac73559d03f1ad8081f66c34ba8504781">   63</a></span>&#160;<span class="keyword">@property</span> (readonly) NSDate *<a class="code" href="interface_a_b_k_feed_controller.html#ac73559d03f1ad8081f66c34ba8504781">lastUpdate</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;- (NSInteger) unreadCardCountForCategories:(ABKCardCategory)categories;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;- (NSInteger) cardCountForCategories:(ABKCardCategory)categories;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;- (NSArray *) getCardsInCategories:(ABKCardCategory)categories;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * Appboy Public API: ABKFeedController</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_controller.html">   54</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_controller.html">ABKFeedController</a> : NSObject</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_controller.html#a0961da8d9ba3663c889c2661ec6dd794">   61</a></span>&#160;<span class="keyword">@property</span> (readonly) NSArray *<a class="code" href="interface_a_b_k_feed_controller.html#a0961da8d9ba3663c889c2661ec6dd794">newsFeedCards</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_controller.html#ac73559d03f1ad8081f66c34ba8504781">   66</a></span>&#160;<span class="keyword">@property</span> (readonly) NSDate *<a class="code" href="interface_a_b_k_feed_controller.html#ac73559d03f1ad8081f66c34ba8504781">lastUpdate</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;- (NSInteger) unreadCardCountForCategories:(ABKCardCategory)categories;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;- (NSInteger) cardCountForCategories:(ABKCardCategory)categories;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;- (NSArray *) getCardsInCategories:(ABKCardCategory)categories;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 28 2015 12:09:15 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2015 17:19:42 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
