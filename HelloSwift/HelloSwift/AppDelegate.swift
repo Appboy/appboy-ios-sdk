@@ -1,4 +1,5 @@
 import UIKit
+import Appboy_iOS_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

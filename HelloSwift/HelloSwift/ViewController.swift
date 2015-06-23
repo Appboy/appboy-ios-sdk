@@ -1,4 +1,5 @@
 import UIKit
+import Appboy_iOS_SDK
 
 class ViewController: UIViewController {
   @IBOutlet weak var userIdTextField: UITextField!

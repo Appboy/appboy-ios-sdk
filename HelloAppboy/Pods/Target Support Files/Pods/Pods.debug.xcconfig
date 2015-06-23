@@ -1,0 +1,7 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Appboy-iOS-SDK" "${PODS_ROOT}/Headers/Public/SDWebImage"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Appboy-iOS-SDK" -isystem "${PODS_ROOT}/Headers/Public/SDWebImage"
+OTHER_LDFLAGS = -ObjC -l"AppboyKitLibrary" -l"Pods-Appboy-iOS-SDK" -l"Pods-SDWebImage" -framework "CoreImage" -framework "ImageIO" -framework "QuartzCore" -framework "SystemConfiguration" -weak_framework "Accounts" -weak_framework "AdSupport" -weak_framework "CoreTelephony" -weak_framework "Social" -weak_framework "StoreKit" -weak_framework "Twitter"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods
