@@ -6,21 +6,21 @@
 // project.
 
 
-// Appboy-iOS-SDK/AppboyKitWithoutFacebookSupport
-#define COCOAPODS_POD_AVAILABLE_Appboy_iOS_SDK_AppboyKitWithoutFacebookSupport
-#define COCOAPODS_VERSION_MAJOR_Appboy_iOS_SDK_AppboyKitWithoutFacebookSupport 2
-#define COCOAPODS_VERSION_MINOR_Appboy_iOS_SDK_AppboyKitWithoutFacebookSupport 9
-#define COCOAPODS_VERSION_PATCH_Appboy_iOS_SDK_AppboyKitWithoutFacebookSupport 3
+// Appboy-iOS-SDK
+#define COCOAPODS_POD_AVAILABLE_Appboy_iOS_SDK
+#define COCOAPODS_VERSION_MAJOR_Appboy_iOS_SDK 2
+#define COCOAPODS_VERSION_MINOR_Appboy_iOS_SDK 12
+#define COCOAPODS_VERSION_PATCH_Appboy_iOS_SDK 0
 
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage 7
-#define COCOAPODS_VERSION_PATCH_SDWebImage 1
+#define COCOAPODS_VERSION_PATCH_SDWebImage 2
 
 // SDWebImage/Core
 #define COCOAPODS_POD_AVAILABLE_SDWebImage_Core
 #define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 7
-#define COCOAPODS_VERSION_PATCH_SDWebImage_Core 1
+#define COCOAPODS_VERSION_PATCH_SDWebImage_Core 2
 

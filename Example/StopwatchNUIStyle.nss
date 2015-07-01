@@ -108,3 +108,22 @@ Button {
   corner-radius: 5.0;
   exclude-subviews: UIActionSheet;
 }
+
+ABKInAppMessageSlideupMessageLabel {
+}
+
+ABKInAppMessageeModalHeaderLabel {
+  font-name: PartyLetPlain;
+  font-size: 30.0;
+}
+
+ABKInAppMessageModalMessageLabel {
+  font-name: Chalkduster;
+  font-size: 11.0;
+}
+
+ABKInAppMessageFullHeaderLabel {
+}
+
+ABKInAppMessageFullMessageLabel {
+}
