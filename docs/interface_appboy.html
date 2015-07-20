@@ -38,7 +38,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,11 +100,6 @@ Public Types</h2></td></tr>
 <b>ABKManualRequestProcessing</b>
  }</td></tr>
 <tr class="separator:a3824c355e9558f33a391f1f8f5e499ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0addaa5ca4659716c36c2b41440d0659"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a0addaa5ca4659716c36c2b41440d0659">ABKSocialAccountAcquisitionPolicy</a> { <b>ABKAutomaticSocialAccountAcquisition</b>, 
-<b>ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly</b>, 
-<b>ABKManualSocialAccountAcquisition</b>
- }</td></tr>
-<tr class="separator:a0addaa5ca4659716c36c2b41440d0659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b77302b2297608a8d9ddf821a0f1be4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a> { <b>ABKSocialNetworkFacebook</b> = 1 &lt;&lt; 0, 
 <b>ABKSocialNetworkTwitter</b> = 1 &lt;&lt; 1
  }</td></tr>
@@ -113,10 +107,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:a460b4d6f0e1f073905c1944a4b8ba13e"><td class="memItemLeft" align="right" valign="top">(NSInteger cardCount)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a460b4d6f0e1f073905c1944a4b8ba13e">__deprecated_msg</a></td></tr>
-<tr class="separator:a460b4d6f0e1f073905c1944a4b8ba13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e1c57251f63264b951fa3962831dc5"><td class="memItemLeft" align="right" valign="top">(NSInteger unreadCardCount)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a68e1c57251f63264b951fa3962831dc5">__deprecated_msg</a></td></tr>
-<tr class="separator:a68e1c57251f63264b951fa3962831dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746fa87363a1530ba655498b4c36a0dd"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a746fa87363a1530ba655498b4c36a0dd">flushDataAndProcessRequestQueue</a></td></tr>
 <tr class="separator:a746fa87363a1530ba655498b4c36a0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26dfb2739d4f78b8a98e69b340ecdaf8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a></td></tr>
@@ -148,8 +138,6 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ac0d8500d815c33f6fbbf4fcd1e619883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ae16a3ae4f33d7ae23da740d67e4cd277">logSocialShare:</a></td></tr>
 <tr class="separator:ae16a3ae4f33d7ae23da740d67e4cd277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c503d30600c60d2fdc0152bc8e92fb8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a6c503d30600c60d2fdc0152bc8e92fb8">promptUserForAccessToSocialNetwork:</a></td></tr>
-<tr class="separator:a6c503d30600c60d2fdc0152bc8e92fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97232c008d1e5ee9eccb71d874fc91e0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0">submitFeedback:message:isReportingABug:</a></td></tr>
 <tr class="separator:a97232c008d1e5ee9eccb71d874fc91e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f5b55cdf6b2f18511f23f4bd3ce8f2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a></td></tr>
@@ -160,6 +148,9 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a680549ab7dba8c5971fd9a7fd938b452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a975f6aa8e673f173361fd9fd2cfe2bd6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a></td></tr>
 <tr class="separator:a975f6aa8e673f173361fd9fd2cfe2bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bacb27b6ff791b622d15e6f36ad1576"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bacb27b6ff791b622d15e6f36ad1576"></a>
+(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <b>handleWatchKitExtensionRequest:reply:</b></td></tr>
+<tr class="separator:a9bacb27b6ff791b622d15e6f36ad1576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa45207e6d9bfd0399d75fc5a0e736a90"><td class="memItemLeft" align="right" valign="top">(&quot;This method is deprecated in <br class="typebreak"/>
 version 2.11. Please use <br class="typebreak"/>
 &quot;&quot;<a class="el" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a> <br class="typebreak"/>
@@ -179,12 +170,16 @@ Class Methods</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae5f99fc09d44d7db0cfe65680547edda"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#ae5f99fc09d44d7db0cfe65680547edda">ABKRequestProcessingPolicyOptionKey</a></td></tr>
 <tr class="separator:ae5f99fc09d44d7db0cfe65680547edda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b6f31b7867dc45e2cf94789703904ec"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a4b6f31b7867dc45e2cf94789703904ec">ABKSocialAccountAcquisitionPolicyOptionKey</a></td></tr>
-<tr class="separator:a4b6f31b7867dc45e2cf94789703904ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9819dbd73ada69b599411209f5c6d92a"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a9819dbd73ada69b599411209f5c6d92a">ABKFlushIntervalOptionKey</a></td></tr>
 <tr class="separator:a9819dbd73ada69b599411209f5c6d92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7669bfcf39e8c3b155ac9c58ba1df7c2"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a7669bfcf39e8c3b155ac9c58ba1df7c2">ABKDisableAutomaticLocationCollectionKey</a></td></tr>
 <tr class="separator:a7669bfcf39e8c3b155ac9c58ba1df7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c8f1fbe6034a8c92ee6c6cc66c708f"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a63c8f1fbe6034a8c92ee6c6cc66c708f">ABKSignificantChangeCollectionEnabledOptionKey</a></td></tr>
+<tr class="separator:a63c8f1fbe6034a8c92ee6c6cc66c708f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece6306baf543e4348cd9dc991eb35c0"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#aece6306baf543e4348cd9dc991eb35c0">ABKSignificantChangeCollectionDistanceFilterOptionKey</a></td></tr>
+<tr class="separator:aece6306baf543e4348cd9dc991eb35c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e2fb1ed330a47cf18a30fd1cf39c2c"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#ab5e2fb1ed330a47cf18a30fd1cf39c2c">ABKSignificantChangeCollectionTimeFilterOptionKey</a></td></tr>
+<tr class="separator:ab5e2fb1ed330a47cf18a30fd1cf39c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b6cec0748494e9dfb4cb178157ad3d"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a01b6cec0748494e9dfb4cb178157ad3d">ABKAppboyEndpointDelegateKey</a></td></tr>
 <tr class="separator:a01b6cec0748494e9dfb4cb178157ad3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -197,6 +192,8 @@ Properties</h2></td></tr>
 <tr class="separator:aa3225751b163e9dca3efe040eed3d2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cf722b9aba835565b96e5cf1bdd67b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_user.html">ABKUser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">user</a></td></tr>
 <tr class="separator:a7cf722b9aba835565b96e5cf1bdd67b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942e878042066fc6c3762b98c6e7569a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_location_manager.html">ABKLocationManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a942e878042066fc6c3762b98c6e7569a">locationManager</a></td></tr>
+<tr class="separator:a942e878042066fc6c3762b98c6e7569a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2559b9e425866a5c34ad23ab2274d410"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">useNUITheming</a></td></tr>
 <tr class="separator:a2559b9e425866a5c34ad23ab2274d410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81cdd59419d76738927c123f1d06fc1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_appboy.html#a3824c355e9558f33a391f1f8f5e499ce">ABKRequestProcessingPolicy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">requestProcessingPolicy</a></td></tr>
@@ -220,19 +217,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0addaa5ca4659716c36c2b41440d0659"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (enum) <a class="el" href="interface_appboy.html#a0addaa5ca4659716c36c2b41440d0659">ABKSocialAccountAcquisitionPolicy</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Possible values for the SDK's social account acquisition policies: ABKAutomaticSocialAccountAcquisition (default) - At app startup and after you've set a social account identifier on the user object, <a class="el" href="interface_appboy.html">Appboy</a> will automatically attempt to fetch Twitter account data for the user and flush it to the server. In all cases, <a class="el" href="interface_appboy.html">Appboy</a>'s automatic data acquisition will ensure that the user is not prompted or that the UI of your application is otherwise affected. For this reason, when <a class="el" href="interface_appboy.html">Appboy</a> tries to perform the data acquisition, your app must have already been granted the relevant permissions to obtain social account data. If you've specified the twitterAccountIdentifier, <a class="el" href="interface_appboy.html">Appboy</a> will only attempt to grab data for that twitter account. If you haven't specified it, <a class="el" href="interface_appboy.html">Appboy</a> will grab data for the first Twitter account returned by the system. ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly - <a class="el" href="interface_appboy.html">Appboy</a> will only attempt to obtain social account information when an identifier is set on the user for the corresponding social network. Note: This currently only works for Twitter accounts. ABKManualSocialAccountAcquisition - <a class="el" href="interface_appboy.html">Appboy</a> will NOT try to acquire social account data. You must call </p>
-<pre>[[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] <a class="el" href="interface_appboy.html#a6c503d30600c60d2fdc0152bc8e92fb8">promptUserForAccessToSocialNetwork:</a>];</pre> 
-</div>
-</div>
 <a class="anchor" id="a8b77302b2297608a8d9ddf821a0f1be4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -247,44 +231,6 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="a460b4d6f0e1f073905c1944a4b8ba13e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSInteger cardCount) __deprecated_msg </td>
-          <td></td>
-          <td class="paramtype">(&quot;Please use \n&quot;&quot;.feedController cardCountForCategories:ABKCardCategoryAll] instead&quot;)&#160;</td>
-          <td class="paramname">[[Appboy sharedInstance]</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The total number of currently active cards displayed in any feed view. Cards are counted only once even if they appear in multiple feed views. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>This property is now deprecated and will be removed in the future. Please use [[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll] instead. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a68e1c57251f63264b951fa3962831dc5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSInteger unreadCardCount) __deprecated_msg </td>
-          <td></td>
-          <td class="paramtype">(&quot;Please use \n&quot;&quot;.feedController unreadCardCountForCategories:ABKCardCategoryAll] instead&quot;)&#160;</td>
-          <td class="paramname">[[Appboy sharedInstance]</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>unreadCardCount is the number of currently active cards which have not been viewed. A "view" happens when a card becomes visible in the feed view. This differentiates between cards which are off-screen in the scrolling view, and those which are on-screen; when a card scrolls onto the screen, it's counted as viewed.</p>
-<p>Cards are counted as viewed only once &ndash; if a card scrolls off the screen and back on, it's not re-counted.</p>
-<p>Cards are counted only once even if they appear in multiple feed views or across multiple devices.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>This property is now deprecated and will be removed in the future. Please use [[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="aa45207e6d9bfd0399d75fc5a0e736a90"></a>
 <div class="memitem">
 <div class="memproto">
@@ -684,32 +630,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6c503d30600c60d2fdc0152bc8e92fb8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) promptUserForAccessToSocialNetwork: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)&#160;</td>
-          <td class="paramname"><em>socialNetwork</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">socialNetworks</td><td>An ABKSocialNetwork indicating the network that you wish to access.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Use this method to prompt the user for permission to use social network data (you don't need to use it if permission has has been given at another point in your app &ndash; <a class="el" href="interface_appboy.html">Appboy</a> is already collecting data).</p>
-<p>After permission is given, <a class="el" href="interface_appboy.html">Appboy</a> starts collecting any social network data available on the device (e.g. name, e-mail, etc.) and reporting it to the server.</p>
-<p>We generally advise that you don't call this method on startup, as it will immediately prompt your users for Twitter access.</p>
-<p>Please note that In versions 2.10 and above, <a class="el" href="interface_appboy.html">Appboy</a> will no longer prompt users to connect their Facebook accounts. Please refer to the method "promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData" in SocialNetworkViewController.m (<a href="https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/SocialNetworkViewController.m">https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/SocialNetworkViewController.m</a>) to continue prompting users to connect their Facebook account. </p>
-
-</div>
-</div>
 <a class="anchor" id="a0fa827b56c9afc9f5d7aba9a02b9e9fb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1080,16 +1000,42 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4b6f31b7867dc45e2cf94789703904ec"></a>
+<a class="anchor" id="aece6306baf543e4348cd9dc991eb35c0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (NSString* const) ABKSocialAccountAcquisitionPolicyOptionKey</td>
+          <td class="memname">- (NSString* const) ABKSignificantChangeCollectionDistanceFilterOptionKey</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If you want to set the social account acquisition policy at app startup time (useful for avoiding automatic social account data requests made by <a class="el" href="interface_appboy.html">Appboy</a> at startup). You can include one of the ABKSocialAccountAcquisitionPolicy enum values as the value for the ABKSocialAccountAcquisitionPolicyOptionKey in the appboyOptions dictionary. </p>
+<p>This key can be set to an integer value that represents the minimum distance in meters between location events logged to <a class="el" href="interface_appboy.html">Appboy</a>. If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant change location provider. The default and minimum value is 50. Note that significant change location updates shouldn't occur if the user has gone 50 meters or less. </p>
+
+</div>
+</div>
+<a class="anchor" id="a63c8f1fbe6034a8c92ee6c6cc66c708f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString* const) ABKSignificantChangeCollectionEnabledOptionKey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This key can be set to YES or NO and will configure whether <a class="el" href="interface_appboy.html">Appboy</a> will automatically collect significant change location events. If this key isn't set and the server doesn't provide a value, it will defaul to false. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab5e2fb1ed330a47cf18a30fd1cf39c2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString* const) ABKSignificantChangeCollectionTimeFilterOptionKey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This key can be set to an integer value that represents the minimum time in seconds between location events logged to <a class="el" href="interface_appboy.html">Appboy</a>. If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant change location provider. The default value is 3600 (1 hour); the minimum is 300 (5 minutes). </p>
 
 </div>
 </div>
@@ -1133,6 +1079,27 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The current in-app message manager. See <a class="el" href="_a_b_k_in_app_message_controller_8h_source.html">ABKInAppMessageController.h</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a942e878042066fc6c3762b98c6e7569a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_a_b_k_location_manager.html">ABKLocationManager</a>*) locationManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The <a class="el" href="interface_appboy.html">Appboy</a> location manager provides access to location related functionality in the <a class="el" href="interface_appboy.html">Appboy</a> SDK. See <a class="el" href="_a_b_k_location_manager_8h_source.html">ABKLocationManager.h</a>. </p>
 
 </div>
 </div>
@@ -1222,7 +1189,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 7 2015 11:12:40 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 20 2015 13:57:52 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

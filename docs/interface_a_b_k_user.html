@@ -38,7 +38,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -168,12 +167,10 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 <tr class="separator:a13f35a2edcc748a5a0a8b816b383085f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b80c46f2ed8eb2e95e5ff956c1fe08b"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b">avatarImageURL</a></td></tr>
 <tr class="separator:a0b80c46f2ed8eb2e95e5ff956c1fe08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e29efa565369bce73c6b727ccd41ec4"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a8e29efa565369bce73c6b727ccd41ec4">twitterAccountIdentifier</a></td></tr>
-<tr class="separator:a8e29efa565369bce73c6b727ccd41ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158222656745e50fa1db44133f862036"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a158222656745e50fa1db44133f862036">clearTwitterDataWhenNoDataOfTwitterIdentifier</a></td></tr>
-<tr class="separator:a158222656745e50fa1db44133f862036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3934b051a3ed848cb39da7055b7bd099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_facebook_user.html">ABKFacebookUser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a3934b051a3ed848cb39da7055b7bd099">facebookUser</a></td></tr>
 <tr class="separator:a3934b051a3ed848cb39da7055b7bd099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89342bb3c97dbf78fc9545858364bf7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_twitter_user.html">ABKTwitterUser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a89342bb3c97dbf78fc9545858364bf7f">twitterUser</a></td></tr>
+<tr class="separator:a89342bb3c97dbf78fc9545858364bf7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>When setting the custom attributes with custom keys:</p>
@@ -822,29 +819,6 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 
 </div>
 </div>
-<a class="anchor" id="a158222656745e50fa1db44133f862036"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) clearTwitterDataWhenNoDataOfTwitterIdentifier</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This property is for when a user's twitter account with the given identifier isn't available, should <a class="el" href="interface_appboy.html">Appboy</a> also delete the saved twitter account in the server of that user.</p>
-<p>The default value of this property is NO. If the property is set to YES, when the twitter account data with the given twitter identifier(defined in the <a class="el" href="interface_a_b_k_user.html">ABKUser</a>'s twitterAccountIdentifier property) isn't available, <a class="el" href="interface_appboy.html">Appboy</a> will also delete <a class="el" href="interface_appboy.html">Appboy</a> will delete the saved twitter account data of that user in <a class="el" href="interface_appboy.html">Appboy</a>'s database.</p>
-<p>This property is only used when in appboyOptions, ABKSocialAccountAcquisitionPolicyOptionKey is set to be ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly, and twitterAccountIdentifier property has a valid value. </p>
-
-</div>
-</div>
 <a class="anchor" id="a3d3fb8c80f0f4a38346b9f3b279cf48a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1034,7 +1008,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 
 </div>
 </div>
-<a class="anchor" id="a8e29efa565369bce73c6b727ccd41ec4"></a>
+<a class="anchor" id="a89342bb3c97dbf78fc9545858364bf7f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1042,23 +1016,23 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (NSString*) twitterAccountIdentifier</td>
+          <td class="memname">- (<a class="el" href="interface_a_b_k_twitter_user.html">ABKTwitterUser</a>*) twitterUser</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">copy</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The Twitter account identifier for this user. If set, <a class="el" href="interface_appboy.html">Appboy</a> will only attempt to obtain Twitter data from the Accounts framework if the account with the specified identifier is available. See the ABKSocialAccountAcquisitionPolicy documentation in <a class="el" href="_appboy_8h_source.html">Appboy.h</a> for more information. </p>
+<p>The User's Twitter account information. For more detail, please refer to <a class="el" href="_a_b_k_twitter_user_8h_source.html">ABKTwitterUser.h</a>. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 7 2015 11:12:40 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 20 2015 13:57:52 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

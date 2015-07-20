@@ -38,7 +38,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -101,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -173,9 +172,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>chevronColor
 : <a class="el" href="interface_a_b_k_in_app_message_slideup.html#afa92e31725c4f1964fc8f4a615ca721b">ABKInAppMessageSlideup</a>
-</li>
-<li>clearTwitterDataWhenNoDataOfTwitterIdentifier
-: <a class="el" href="interface_a_b_k_user.html#a158222656745e50fa1db44133f862036">ABKUser</a>
 </li>
 <li>closeButtonColor
 : <a class="el" href="interface_a_b_k_in_app_message_immersive.html#a03008a80cfec882472d347b8e82d527a">ABKInAppMessageImmersive</a>
@@ -282,6 +278,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>lastUpdate
 : <a class="el" href="interface_a_b_k_feed_controller.html#ac73559d03f1ad8081f66c34ba8504781">ABKFeedController</a>
 </li>
+<li>locationManager
+: <a class="el" href="interface_appboy.html#a942e878042066fc6c3762b98c6e7569a">Appboy</a>
+</li>
 </ul>
 
 
@@ -339,8 +338,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>textColor
 : <a class="el" href="interface_a_b_k_in_app_message.html#a80d3c36a06f635dd176466c6a1d21fe8">ABKInAppMessage</a>
 </li>
-<li>twitterAccountIdentifier
-: <a class="el" href="interface_a_b_k_user.html#a8e29efa565369bce73c6b727ccd41ec4">ABKUser</a>
+<li>twitterUser
+: <a class="el" href="interface_a_b_k_user.html#a89342bb3c97dbf78fc9545858364bf7f">ABKUser</a>
 </li>
 </ul>
 
@@ -355,11 +354,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>user
 : <a class="el" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">Appboy</a>
 </li>
+<li>userDescription
+: <a class="el" href="interface_a_b_k_twitter_user.html#a8290ccfde55e28e82fd0cf4c3e2092d4">ABKTwitterUser</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 7 2015 11:12:40 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 20 2015 13:57:53 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

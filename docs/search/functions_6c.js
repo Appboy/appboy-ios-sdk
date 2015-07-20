@@ -10,5 +10,6 @@ var searchData=
   ['logpurchase_3aincurrency_3aatprice_3awithproperties_3a',['logPurchase:inCurrency:atPrice:withProperties:',['../interface_appboy.html#ad35bb238aaa4fe9d1ede0439a4c401db',1,'Appboy']]],
   ['logpurchase_3aincurrency_3aatprice_3awithquantity_3a',['logPurchase:inCurrency:atPrice:withQuantity:',['../interface_appboy.html#aa4c66ed060890c68690fd629a62ebfa2',1,'Appboy']]],
   ['logpurchase_3aincurrency_3aatprice_3awithquantity_3aandproperties_3a',['logPurchase:inCurrency:atPrice:withQuantity:andProperties:',['../interface_appboy.html#ac0d8500d815c33f6fbbf4fcd1e619883',1,'Appboy']]],
+  ['logsinglelocation',['logSingleLocation',['../interface_a_b_k_location_manager.html#a4069cdaef868b382cbebf6a0e1ce7d27',1,'ABKLocationManager']]],
   ['logsocialshare_3a',['logSocialShare:',['../interface_appboy.html#ae16a3ae4f33d7ae23da740d67e4cd277',1,'Appboy']]]
 ];
