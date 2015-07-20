@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 #import <AppboyKit.h>
 #import "NUISettings.h"
+#import "ABKPushUtils.h"
 
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
 static NSString *const CrittercismAppId = @"51b67d141386207417000002";
@@ -18,8 +19,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [Appboy startWithApiKey:AppboyApiKey
             inApplication:application
         withLaunchOptions:launchOptions
-        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
-                            ABKSocialAccountAcquisitionPolicyOptionKey:@(ABKAutomaticSocialAccountAcquisition)}];
+        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing)}];
 
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
@@ -71,6 +71,9 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 // is in the background, Appboy will try to fetch the news feed, and call completionHandler after
 // the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+  if ([ABKPushUtils isUninstallTrackingNotification:userInfo]) {
+    NSLog(@"Got uninstall tracking push from Appboy");
+  }
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
   NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
   }
@@ -118,4 +121,10 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [deepLinkAlert release];
   return YES;
 }
+
+- (void) application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
+  NSLog(@"%@",userInfo);
+  [[Appboy sharedInstance] handleWatchKitExtensionRequest:userInfo reply:reply];
+}
+
 @end

@@ -3,12 +3,15 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "+[ABKLocation locationEnabled]:ABKLocation.m">
+         contextName = "-[ABKInAppMessageBlockingViewController createOneButtonAndConstraintsWithHeight:sideMargin:bottom:onView:]:ABKInAppMessageBlockingViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[LocationManagerClass authorizationStatus]">
+               value = "button = (ABKInAppMessageBlocking *)self.inAppMessage).buttons[0]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ABKSignificantChangeLocationProvider singleLocationLogged:]:ABKSignificantChangeLocationProvider.m">
       </ContextState>
       <ContextState
          contextName = "resourcePathTo:ABKUtilityFunctions.m">
@@ -19,7 +22,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ABKInAppMessageBlockingViewController setButton:height:]:ABKInAppMessageBlockingViewController.m">
+         contextName = "-[ABKSignificantChangeLocationProvider locationServerConfigUpdated:]:ABKSignificantChangeLocationProvider.m">
       </ContextState>
       <ContextState
          contextName = "-[InAppMessageUIViewController displayInAppMessage:]:InAppMessageUIViewController.m">
@@ -30,18 +33,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ABKInAppMessageBlockingViewController createOneButtonAndConstraintsWithHeight:sideMargin:bottom:onView:]:ABKInAppMessageBlockingViewController.m">
+         contextName = "-[ABKSignificantChangeLocationProvider tryPromptForAlwaysAuthorization]:ABKSignificantChangeLocationProvider.m">
          <PersistentStrings>
             <PersistentString
-               value = "button = (ABKInAppMessageBlocking *)self.inAppMessage).buttons[0]">
+               value = "[_locationManager requestAlwaysAuthorization]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[InitialViewController startLocationUpdates]:InitialViewController.m">
+         contextName = "-[AppDelegate applicationDidBecomeActive:]:AppDelegate.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.locationManager.locationServicesEnabled">
+               value = "type">
+            </PersistentString>
+            <PersistentString
+               value = "[[UIApplication sharedApplication] enabledRemoteNotificationTypes]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -54,7 +60,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[InitialViewController startLocationUpdates]:InitialViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.locationManager.locationServicesEnabled">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ABKInAppMessageViewController applyIconImageToImageView:]:ABKInAppMessageViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[ABKLocation locationEnabled]:ABKLocation.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[LocationManagerClass authorizationStatus]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate application:didReceiveRemoteNotification:fetchCompletionHandler:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[UIApplication sharedApplication]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ABKInAppMessageBlockingViewController setButton:height:]:ABKInAppMessageBlockingViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

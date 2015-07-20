@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface SocialNetworkViewController : UIViewController
+@interface FacebookViewController : UIViewController
 
 @property (retain, nonatomic) IBOutlet UITextView *facebookDataTextView;
 @property (retain, nonatomic) NSDictionary *facebookUserProfile;

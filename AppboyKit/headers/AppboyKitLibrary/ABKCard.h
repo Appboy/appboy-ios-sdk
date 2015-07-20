@@ -31,7 +31,13 @@
 @property (nonatomic, assign) ABKCardCategory categories;
 
 /*
- * @param cardDictionary The dictionary for card deserialization.
+ * The property is the unix timestamp of the card's expiration time. When the value is less than 0, it means the card
+ * doesn't an expire date.
+ */
+@property (nonatomic, assign, readonly) double expiresAt;
+
+/*
+ * @param cardDictionary The dictionary for card deserialization.`
  *
  * Deserializes the dictionary to a card for use by wrappers such as Appboy's Unity SDK for iOS.
  * When the deserialization isn't successful, this method returns nil; otherwise, it returns the deserialized card.

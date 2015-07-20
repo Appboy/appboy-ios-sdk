@@ -81,7 +81,7 @@ static const int CustomInAppMessageDuration = 5;
     [(SegmentCell *) cell setUpWithItem:item];
     if (self.inAppMessageDictionary[item]) {
       ((SegmentCell *) cell).segmentControl.selectedSegmentIndex = [self.inAppMessageDictionary[item] integerValue];
-    } else {
+    } else if (((SegmentCell *)cell).titleLabel != nil) {
       self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] = [NSNumber numberWithInteger:0];
     }
   } else if ([item isEqualToString:ItemMessage] ||

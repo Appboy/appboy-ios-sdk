@@ -1,4 +1,4 @@
-#import "SocialNetworkViewController.h"
+#import "FacebookViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "AppboyKit.h"
@@ -8,7 +8,7 @@ static NSString *const FacebookUserProfileEndpointUrl = @"https://graph.facebook
 static NSString *const FacebookLikesEndpointUrl = @"https://graph.facebook.com/me/likes";
 static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com/me/friends";
 
-@implementation SocialNetworkViewController
+@implementation FacebookViewController
 
 - (void)dealloc {
     [_facebookDataTextView release];

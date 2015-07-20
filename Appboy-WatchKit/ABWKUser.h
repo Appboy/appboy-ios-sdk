@@ -2,8 +2,8 @@
 /*
  * This ABWKUser class is parallel with the ABKUser in the Appboy iOS SDK.
  *
- * NOTE: Make sure DO NOT pass a nil as a parameter, otherwise the watch SDK will throw an exception
- * when trying to parse the data to a dictionary.
+ * NOTE: Make sure you DO NOT pass a nil as a parameter, otherwise the watch SDK will throw an exception
+ * when trying to parse the data into a dictionary.
  */
 @interface ABWKUser : NSObject
 

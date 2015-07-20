@@ -1,12 +1,11 @@
 #import "InitialViewController.h"
+#import "ABKLocationManager.h"
 
 @interface InitialViewController ()
-
 @property (retain, nonatomic) Clock *clock;
 @property (retain, nonatomic) UIPopoverController *contactUsPopoverController;
 @property (retain, nonatomic) UIPopoverController *latestNewsPopoverController;
 @property (retain, nonatomic) UIPopoverController *newsAndFeedbackPopoverController;
-
 @property (retain, nonatomic) CLLocationManager *locationManager;
 @end
 
@@ -14,6 +13,7 @@
 
 - (void) viewDidLoad {
   [super viewDidLoad];
+
 
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timeUpdated:) name:TimeUpdatedNotification object:nil];
   self.clock = [[[Clock alloc] init] autorelease];
@@ -38,11 +38,40 @@
   UIBarButtonItem *feedbackBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback", nil)
                                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromNavigationFeed:)] autorelease];
   feedViewController.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
+
   
   [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(startLocationUpdates)
+                                           selector:@selector(requestLocationAuthorization)
                                                name:UIApplicationWillEnterForegroundNotification
                                              object:nil];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(saveFirstNewsFeedToWatch)
+                                               name:ABKFeedUpdatedNotification
+                                             object:nil];
+}
+
+// This method will find the first card with title and text body from Appboy SDK, and save the card's
+// title and text body in the shared container so the Stopwatch watch app can pull out and display the
+// data.
+- (void) saveFirstNewsFeedToWatch {
+  if ([UIDevice currentDevice].systemVersion.intValue >= 7) {
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.appboy.stopwatch"];
+    for (ABKCard *card in [[Appboy sharedInstance].feedController getCardsInCategories:ABKCardCategoryAll]) {
+      if ([card isKindOfClass:[ABKCaptionedImageCard class]] || [card isKindOfClass:[ABKTextAnnouncementCard class]] ||
+          [card isKindOfClass:[ABKClassicCard class]]) {
+        [defaults setObject:@{@"news-title" : [card title], @"news-body" : [card cardDescription]} forKey:@"AppboyFirstNews"];
+        [defaults synchronize];
+        break;
+      }
+    }
+    
+    [defaults release];
+  }
+}
+
+- (void)requestLocationAuthorization {
+  [[Appboy sharedInstance].locationManager allowRequestAlwaysPermission];
 }
 
 // newsAndFeedback Section
@@ -354,6 +383,7 @@
   [_twitterButton release];
   [_newsAndFeedbackButton release];
   [_newsAndFeedbackNavigationController release];
+  [_locationManager release];
   [super dealloc];
 }
 
@@ -363,50 +393,5 @@
   } else {
     return toInterfaceOrientation == UIInterfaceOrientationPortrait;
   }
-}
-
-// check user location
-
-- (void)startLocationUpdates {
-  // Create the location manager if this object does not
-  // already have one.
-  if (self.locationManager == nil) {
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    self.locationManager = locationManager;
-    [locationManager release];
-  }
-  
-  self.locationManager.delegate = self;
-  self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-  
-  // Set a movement threshold for new events.
-  self.locationManager.distanceFilter = 500; // meters
-  
-  if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-    [self.locationManager requestWhenInUseAuthorization];
-  }
-  [self.locationManager startUpdatingLocation];
-}
-
-#pragma location manager delegate method
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-  // test that the horizontal accuracy does not indicate an invalid measurement
-  if (newLocation.horizontalAccuracy < 0) return;
-  // test the age of the location measurement to determine if the measurement is cached
-  // in most cases you will not want to rely on cached measurements
-  NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
-  if (locationAge > 5.0) return;
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-  // The location "unknown" error simply means the manager is currently unable to get the location.
-  if ([error code] != kCLErrorLocationUnknown) {
-    [self stopUpdatingLocation];
-  }
-}
-
-- (void)stopUpdatingLocation {
-  [self.locationManager stopUpdatingLocation];
-  self.locationManager.delegate = nil;
 }
 @end

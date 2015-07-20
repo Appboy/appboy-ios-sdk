@@ -1,13 +1,13 @@
 PODS:
-  - Appboy-iOS-SDK (2.12.2):
+  - Appboy-iOS-SDK (2.13.0):
     - SDWebImage (~> 3.7.0)
   - KKColorListPicker (0.2.4)
   - NUI (0.5.5):
     - NUIParse
   - NUIParse (1.2.1)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
   - Appboy-iOS-SDK (from `./../../Appboy-iOS-SDK/`)
@@ -31,10 +31,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/tombenner/nui.git
 
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: 5da3707ae8999e97dc066b8742ae09d8f1e7e403
+  Appboy-iOS-SDK: 5a7e5145e648884a20c5e2caa17b26859f1001f2
   KKColorListPicker: de772db47659dea2a8c77bf9bac97648929ce10a
   NUI: 53de7278003235deb2a375fe6f04c7a3aa3e49eb
   NUIParse: 9b6d5a6b782dc654ac6c846d623885080306f07f
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.37.2
