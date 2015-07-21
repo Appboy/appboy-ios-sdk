@@ -1,3 +1,6 @@
+## 2.13.1
+- Updates the `isUninstallTrackingNotification` method in `ABKPushUtils` to return the correct value.
+
 ## 2.13
 - Stops collecting user's Twitter data automatically. You can pass a user's Twitter information to Appboy by initialzing a ABKTwitterUser object with the twitter data, and setting it to [Appboy sharedInstance].user.twitterUser. For more information, please refer to ABKUser.h and ABKTwitterUser.h.
 - Removes the feature of prompting a user to connect his/her social account. You can refer to the method `promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData` in [TwitterViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/TwitterViewController.m) to continue prompting the user to connect the Twitter account.
@@ -6,6 +9,7 @@
 - Adds client side blocking of blacklisted attributes and events.
 - Adds ABKPushUtils with method `+ (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;` that can be used to detect if a content-available push is from Appboy uninstall tracking (and shouldn't be acted upon).
 - Adds a new property `expiresAt` in class ABKCard. The property is the unix timestamp of the card's expiration time. For more detail, please refer to ABKCard.h.
+- Stops logging foreground push as a push open as it is not delivered by the system.
 
 ## 2.12.2
 - Fixes the slideup in-app message display issue. When the host app sets the launch screen file, slideup in-app message from bottom sometimes didn't dock at the bottom of the screen on iPhone 6 and iPhone 6 Plus. 
