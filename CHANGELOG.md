@@ -1,3 +1,6 @@
+## 2.13.2
+- Increases the number of supported currency codes from 22 to 171. All common currency codes are now supported. The full list of supported codes is available at `Appboy.h`.
+
 ## 2.13.1
 - Updates the `isUninstallTrackingNotification` method in `ABKPushUtils` to return the correct value.
 

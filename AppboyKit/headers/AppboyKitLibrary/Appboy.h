@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.13.1"
+#define APPBOY_SDK_VERSION @"2.13.2"
 #endif
 
 @class ABKInAppMessageController;
@@ -414,9 +414,15 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings
  * provided by StoreKit) can obtain the currency code by invoking:
  * <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre>
- * Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS,
- * SAR, ZAR, AED, SEK, HKD, SPD, DKK, and TWD. Any other provided currency symbol will result in a logged warning and
- * no other action taken by the SDK.
+ * Supported currency symbols include: AED, AFN, ALL, AMD, ANG, AOA, ARS, AUD, AWG, AZN, BAM, BBD, BDT, BGN, BHD, BIF, 
+ * BMD, BND, BOB, BRL, BSD, BTC, BTN, BWP, BYR, BZD, CAD, CDF, CHF, CLF, CLP, CNY, COP, CRC, CUC, CUP, CVE, CZK, DJF, 
+ * DKK, DOP, DZD, EEK, EGP, ERN, ETB, EUR, FJD, FKP, GBP, GEL, GGP, GHS, GIP, GMD, GNF, GTQ, GYD, HKD, HNL, HRK, HTG, HUF, 
+ * IDR, ILS, IMP, INR, IQD, IRR, ISK, JEP, JMD, JOD, JPY, KES, KGS, KHR, KMF, KPW, KRW, KWD, KYD, KZT, LAK, LBP, LKR, LRD, 
+ * LSL, LTL, LVL, LYD, MAD, MDL, MGA, MKD, MMK, MNT, MOP, MRO, MTL, MUR, MVR, MWK, MXN, MYR, MZN, NAD, NGN, NIO, NOK, NPR, 
+ * NZD, OMR, PAB, PEN, PGK, PHP, PKR, PLN, PYG, QAR, RON, RSD, RUB, RWF, SAR, SBD, SCR, SDG, SEK, SGD, SHP, SLL, SOS, SRD, 
+ * STD, SVC, SYP, SZL, THB, TJS, TMT, TND, TOP, TRY, TTD, TWD, TZS, UAH, UGX, USD, UYU, UZS, VEF, VND, VUV, WST, XAF, XAG, 
+ * XAU, XCD, XDR, XOF, XPD, XPF, XPT, YER, ZAR, ZMK, ZMW and ZWL. Any other provided currency symbol will result in a logged 
+ * warning and no other action taken by the SDK.
  * @param price Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct
  * from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should
  * be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied
