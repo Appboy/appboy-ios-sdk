@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef APPBOY_SDK_VERSION</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.13.1&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.13.2&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a>;</div>
@@ -211,29 +211,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:properties;</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;- (void) logSocialShare:(<a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)socialNetwork;</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;- (void) <a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:properties;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;- (void) logSocialShare:(<a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)socialNetwork;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;- (void) <a class="code" href="interface_appboy.html#a06154478e49f48c168232f48455e8173">logFeedbackDisplayed</a>;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;- (void) <a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;- (void) <a class="code" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a>;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;- (BOOL) handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(<span class="keywordtype">void</span> (^)(NSDictionary *replyInfo))reply;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;- (void) requestSlideupRefresh <a class="code" href="interface_appboy.html#aa45207e6d9bfd0399d75fc5a0e736a90">__deprecated_msg</a>(&quot;This method is deprecated in version 2.11. Please use &quot;</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;&quot;<a class="code" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a> instead.&quot;);</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;- (void) <a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;- (void) <a class="code" href="interface_appboy.html#a06154478e49f48c168232f48455e8173">logFeedbackDisplayed</a>;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;- (void) <a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;- (void) <a class="code" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a>;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;- (BOOL) handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(<span class="keywordtype">void</span> (^)(NSDictionary *replyInfo))reply;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;- (void) requestSlideupRefresh <a class="code" href="interface_appboy.html#aa45207e6d9bfd0399d75fc5a0e736a90">__deprecated_msg</a>(&quot;This method is deprecated in version 2.11. Please use &quot;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;&quot;<a class="code" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a> instead.&quot;);</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 21 2015 09:18:02 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 24 2015 12:14:55 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
