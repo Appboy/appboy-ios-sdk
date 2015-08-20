@@ -182,6 +182,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ab5e2fb1ed330a47cf18a30fd1cf39c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b6cec0748494e9dfb4cb178157ad3d"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a01b6cec0748494e9dfb4cb178157ad3d">ABKAppboyEndpointDelegateKey</a></td></tr>
 <tr class="separator:a01b6cec0748494e9dfb4cb178157ad3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f70f8cae7ab181844cc96b81f29309"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a04f70f8cae7ab181844cc96b81f29309">ABKSessionTimeoutKey</a></td></tr>
+<tr class="separator:a04f70f8cae7ab181844cc96b81f29309"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -1000,6 +1002,19 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a04f70f8cae7ab181844cc96b81f29309"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString* const) ABKSessionTimeoutKey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than the set time interval. In that case, the session won't be close even though the user closed the app, but will continue until it times out. The value should be an integer bigger than 0. </p>
+
+</div>
+</div>
 <a class="anchor" id="aece6306baf543e4348cd9dc991eb35c0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1053,7 +1068,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">weak</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1074,7 +1089,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">atomic</span><span class="mlabel">assign</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1116,7 +1131,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1178,7 +1193,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">atomic</span><span class="mlabel">assign</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1189,7 +1204,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 24 2015 12:14:55 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 20 2015 18:10:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -2,6 +2,7 @@ var searchData=
 [
   ['abkappboyendpointdelegate_2dp',['ABKAppboyEndpointDelegate-p',['../protocol_a_b_k_appboy_endpoint_delegate-p.html',1,'']]],
   ['abkappboyendpointdelegatekey',['ABKAppboyEndpointDelegateKey',['../interface_appboy.html#a01b6cec0748494e9dfb4cb178157ad3d',1,'Appboy']]],
+  ['abkattributiondata',['ABKAttributionData',['../interface_a_b_k_attribution_data.html',1,'']]],
   ['abkbannercard',['ABKBannerCard',['../interface_a_b_k_banner_card.html',1,'']]],
   ['abkcaptionedimagecard',['ABKCaptionedImageCard',['../interface_a_b_k_captioned_image_card.html',1,'']]],
   ['abkcard',['ABKCard',['../interface_a_b_k_card.html',1,'']]],
@@ -46,6 +47,7 @@ var searchData=
   ['abkpushutils',['ABKPushUtils',['../interface_a_b_k_push_utils.html',1,'']]],
   ['abkrequestprocessingpolicy',['ABKRequestProcessingPolicy',['../interface_appboy.html#a3824c355e9558f33a391f1f8f5e499ce',1,'Appboy']]],
   ['abkrequestprocessingpolicyoptionkey',['ABKRequestProcessingPolicyOptionKey',['../interface_appboy.html#ae5f99fc09d44d7db0cfe65680547edda',1,'Appboy']]],
+  ['abksessiontimeoutkey',['ABKSessionTimeoutKey',['../interface_appboy.html#a04f70f8cae7ab181844cc96b81f29309',1,'Appboy']]],
   ['abksignificantchangecollectiondistancefilteroptionkey',['ABKSignificantChangeCollectionDistanceFilterOptionKey',['../interface_appboy.html#aece6306baf543e4348cd9dc991eb35c0',1,'Appboy']]],
   ['abksignificantchangecollectionenabledoptionkey',['ABKSignificantChangeCollectionEnabledOptionKey',['../interface_appboy.html#a63c8f1fbe6034a8c92ee6c6cc66c708f',1,'Appboy']]],
   ['abksignificantchangecollectiontimefilteroptionkey',['ABKSignificantChangeCollectionTimeFilterOptionKey',['../interface_appboy.html#ab5e2fb1ed330a47cf18a30fd1cf39c2c',1,'Appboy']]],
@@ -61,5 +63,6 @@ var searchData=
   ['appboy',['Appboy',['../interface_appboy.html',1,'']]],
   ['appboydelegate',['appboyDelegate',['../interface_a_b_k_feed_view_controller.html#a1cfb67a5a1ab76ba073272f9e940856f',1,'ABKFeedViewController::appboyDelegate()'],['../interface_a_b_k_feed_view_controller_generic_context.html#a2db5106c44c7b44f8db4e94eb9937338',1,'ABKFeedViewControllerGenericContext::appboyDelegate()']]],
   ['appboyendpointdelegate',['appboyEndpointDelegate',['../interface_appboy.html#a248ba35c0be127d4a05b3e1cda7feafe',1,'Appboy']]],
+  ['attributiondata',['attributionData',['../interface_a_b_k_user.html#ad423f39f7bd2be15fd5cdedd7c1a2e7f',1,'ABKUser']]],
   ['avatarimageurl',['avatarImageURL',['../interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b',1,'ABKUser']]]
 ];

@@ -171,11 +171,13 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 <tr class="separator:a3934b051a3ed848cb39da7055b7bd099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89342bb3c97dbf78fc9545858364bf7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_twitter_user.html">ABKTwitterUser</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#a89342bb3c97dbf78fc9545858364bf7f">twitterUser</a></td></tr>
 <tr class="separator:a89342bb3c97dbf78fc9545858364bf7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad423f39f7bd2be15fd5cdedd7c1a2e7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_attribution_data.html">ABKAttributionData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_user.html#ad423f39f7bd2be15fd5cdedd7c1a2e7f">attributionData</a></td></tr>
+<tr class="separator:ad423f39f7bd2be15fd5cdedd7c1a2e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>When setting the custom attributes with custom keys:</p>
 <ol type="1">
-<li>Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values for reserved keys, please find and set the corresponding property in this class. The reserved key list is:: email facebook twitter first_name last_name dob external_id country home_city bio gender phone email_subscribe foursquare_access_token image_url push_subscribe</li>
+<li>Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values for reserved keys, please find and set the corresponding property in this class. The reserved key list is:: email facebook twitter first_name last_name dob external_id country home_city bio gender phone email_subscribe foursquare_access_token image_url push_subscribe attribution_data</li>
 </ol>
 <ol type="1">
 <li>The maximum key length is 255 characters; longer keys are truncated.</li>
@@ -777,6 +779,27 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="ad423f39f7bd2be15fd5cdedd7c1a2e7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_a_b_k_attribution_data.html">ABKAttributionData</a>*) attributionData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the attribution information for the user. For in apps that have an install tracking integration. For more information, please refer to <a class="el" href="_a_b_k_attribution_data_8h_source.html">ABKAttributionData.h</a>. </p>
+
+</div>
+</div>
 <a class="anchor" id="a0b80c46f2ed8eb2e95e5ff956c1fe08b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -895,7 +918,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1021,7 +1044,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1032,7 +1055,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 24 2015 12:14:55 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 20 2015 18:10:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

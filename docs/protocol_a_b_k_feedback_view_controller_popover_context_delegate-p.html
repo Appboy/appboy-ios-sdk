@@ -95,8 +95,41 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a018552880f03ede83c90ca675154c018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a8196551936d22bff8de37e20f97132"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_feedback_view_controller_popover_context_delegate-p.html#a4a8196551936d22bff8de37e20f97132">feedbackViewControllerPopoverContextFeedbackSent:</a></td></tr>
 <tr class="separator:a4a8196551936d22bff8de37e20f97132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef64b40b945e12f60552073801c4ea3"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_feedback_view_controller_popover_context_delegate-p.html#a0ef64b40b945e12f60552073801c4ea3">feedbackViewControllerBeforeFeedbackSent:</a></td></tr>
+<tr class="separator:a0ef64b40b945e12f60552073801c4ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a0ef64b40b945e12f60552073801c4ea3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) feedbackViewControllerBeforeFeedbackSent: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>message</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The feedback message</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Called before feedback is submitted. Return a message to be submitted. </p>
+
+</div>
+</div>
 <a class="anchor" id="a018552880f03ede83c90ca675154c018"></a>
 <div class="memitem">
 <div class="memproto">
@@ -162,7 +195,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 24 2015 12:14:55 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 20 2015 18:10:07 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
