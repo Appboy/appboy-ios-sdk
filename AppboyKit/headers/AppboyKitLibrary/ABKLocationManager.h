@@ -4,7 +4,8 @@
 
 @interface ABKLocationManager : NSObject
 
-@property (nonatomic, readonly, assign) BOOL disableLocationTracking;
+@property (readonly) BOOL disableLocationTracking;
+
 - (id) initWithServerConfig:(ABKServerConfig *)serverConfig andAppboyOptions:(NSDictionary *)appboyOptions;
 
 /*!

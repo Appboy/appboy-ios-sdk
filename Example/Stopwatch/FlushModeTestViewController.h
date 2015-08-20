@@ -2,7 +2,7 @@
 
 @interface FlushModeTestViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UILabel *flushModeLabel;
+@property IBOutlet UILabel *flushModeLabel;
 
 - (IBAction) FlushAppboyData:(id)sender;
 - (IBAction) changeAppboyFlushMode:(id)sender;

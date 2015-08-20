@@ -42,24 +42,24 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
 /*!
  * This property defines the message displayed within the in-app message.
  */
-@property (nonatomic, copy) NSString *message;
+@property (copy) NSString *message;
 
 /*!
  * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use-case.
  */
-@property (nonatomic, retain) NSDictionary *extras;
+@property NSDictionary *extras;
 
 /*!
  * This property defines the number of seconds before the in-app message is automatically dismissed.
  */
-@property (nonatomic, assign) NSTimeInterval duration;
+@property (nonatomic) NSTimeInterval duration;
 
 /*!
  * This property defines the action that will be performed when the in-app message is clicked.
  * See the ABKInAppMessageClickActionType enum documentation above offers additional details.
  */
-@property (nonatomic, assign, readonly) ABKInAppMessageClickActionType inAppMessageClickActionType;
+@property (readonly) ABKInAppMessageClickActionType inAppMessageClickActionType;
 
 /*!
  * When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, clicking on the in-app message will redirect to the uri defined
@@ -67,50 +67,50 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
  *
  * This property can be a HTTP URI or a protocol URI.
  */
-@property (nonatomic, copy, readonly) NSURL *uri;
+@property (readonly) NSURL *uri;
 
 /*!
  * inAppMessageDismissType defines the dismissal behavior of the in-app message.
  * See the above documentation for ABKInAppMessageDismissType for additional details.
  */
-@property (nonatomic, assign) ABKInAppMessageDismissType inAppMessageDismissType;
+@property ABKInAppMessageDismissType inAppMessageDismissType;
 
 /*!
  * backgroundColor defines the background color of the in-app message. The default background color is black with 0.9 alpha for
  * ABKInAppMessageSlideup, and white with 1.0 alpha for ABKInAppMessageModal and ABKInAppMessageFull.
  */
-@property (nonatomic, retain) UIColor *backgroundColor;
+@property UIColor *backgroundColor;
 
 /*!
  * textColor defines the message text color of the in-app message. The default text color is black.
  */
-@property (nonatomic, retain) UIColor *textColor;
+@property UIColor *textColor;
 
 /*!
  * icon defines the font awesome unicode string of the Appboy icon.
  * You can choose to display one of the Appboy icons from Appboy dashboard. When you do so, this property will have the
  * unicode string of font awesome.
  */
-@property (nonatomic, retain) NSString *icon;
+@property (nonatomic, copy) NSString *icon;
 
 /*!
  * iconColor defines the font color of icon property.
  * The default font color is white.
  */
-@property (nonatomic, retain) UIColor *iconColor;
+@property UIColor *iconColor;
 
 /*!
  * iconBackgroundColor defines the background color of icon property.
  *  * The default background color's RGB values are R:0 G:115 B:213.
  */
-@property (nonatomic, retain) UIColor *iconBackgroundColor;
+@property UIColor *iconBackgroundColor;
 
 /*!
  * imageURI defines the URI of the image icon on in-app message.
  * When there is a iconImage defined, the iconImage will be used and the value of property icon will 
  * be ignored.
  */
-@property (nonatomic, copy) NSURL *imageURI;
+@property (copy) NSURL *imageURI;
 
 /*!
  * If you're handling in-app messages completely on your own (returning YES from onInAppMessageReceived), you should still report

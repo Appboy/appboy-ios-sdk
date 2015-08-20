@@ -15,11 +15,6 @@ static NSString *const TwitterUserLookupEndpointUrl = @"https://api.twitter.com/
 
 @implementation TwitterViewController
 
-- (void)dealloc {
-    [_twitterDataTextView release];
-    [super dealloc];
-}
-
 /*
  * This method prompts user to connect the Facebook acount on the device, and fetch account data.
  * It can only fetch the Facebook data when:
@@ -97,7 +92,6 @@ static NSString *const TwitterUserLookupEndpointUrl = @"https://api.twitter.com/
         }
       }
     }
-    [store release];
   }];
 }
 
@@ -107,7 +101,7 @@ static NSString *const TwitterUserLookupEndpointUrl = @"https://api.twitter.com/
 
 // Pass the user's Twitter data to Appboy
 - (IBAction)passTwitterDataToAppboy:(id)sender {
-  ABKTwitterUser *twitterUser = [[[ABKTwitterUser alloc] init] autorelease];
+  ABKTwitterUser *twitterUser = [[ABKTwitterUser alloc] init];
   twitterUser.userDescription = self.userDescription;
   twitterUser.twitterID = self.twitterID;
   twitterUser.twitterName = self.twitterName;

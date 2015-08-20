@@ -11,18 +11,17 @@
     ABKFeedViewControllerPopoverContextDelegate,
     ABKFeedbackViewControllerModalContextDelegate,
     UISplitViewControllerDelegate, CrittercismDelegate,
-    ABKFeedbackViewControllerNavigationContextDelegate,
 UINavigationControllerDelegate, CLLocationManagerDelegate>
 
-@property (retain, nonatomic) IBOutlet UIButton *startButton;
-@property (retain, nonatomic) IBOutlet UILabel *timeLabel;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *UpgradeButton;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *facebookButton;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *twitterButton;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *newsAndFeedbackButton;
-@property (retain, nonatomic) IBOutlet UINavigationController *newsAndFeedbackNavigationController;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *contactUsButton;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *latestNewsButton;
+@property IBOutlet UIButton *startButton;
+@property IBOutlet UILabel *timeLabel;
+@property IBOutlet UIBarButtonItem *UpgradeButton;
+@property IBOutlet UIBarButtonItem *facebookButton;
+@property IBOutlet UIBarButtonItem *twitterButton;
+@property IBOutlet UIBarButtonItem *newsAndFeedbackButton;
+@property IBOutlet UINavigationController *newsAndFeedbackNavigationController;
+@property IBOutlet UIBarButtonItem *contactUsButton;
+@property IBOutlet UIBarButtonItem *latestNewsButton;
 
 
 - (IBAction) resetButtonTapped:(id)sender;

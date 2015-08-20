@@ -2,10 +2,10 @@
 
 @interface FacebookViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UITextView *facebookDataTextView;
-@property (retain, nonatomic) NSDictionary *facebookUserProfile;
-@property (retain, nonatomic) NSArray *facebookLikes;
-@property (assign, nonatomic) NSInteger numberOfFacebookFriends;
+@property IBOutlet UITextView *facebookDataTextView;
+@property NSDictionary *facebookUserProfile;
+@property NSArray *facebookLikes;
+@property NSInteger numberOfFacebookFriends;
 
 // This method will prompt the user for permission to use facebook account data from iOS system.
 - (IBAction)fetchFacebookAccountData:(id)sender;

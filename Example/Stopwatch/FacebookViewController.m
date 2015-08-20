@@ -10,11 +10,6 @@ static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com
 
 @implementation FacebookViewController
 
-- (void)dealloc {
-    [_facebookDataTextView release];
-    [super dealloc];
-}
-
 /*
  * This method prompts user to connect the Facebook acount on the device, and fetch account data.
  * It can only fetch the Facebook data when:
@@ -89,12 +84,11 @@ static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com
                                       if (renewError) {
                                         NSLog(@"Error encountered while renewing Facebook account: %@", error);
                                       } else {
-                                        NSLog(@"Renewed Facebook access token with status %d", renewResult);
+                                        NSLog(@"Renewed Facebook access token with status %ld", (long)renewResult);
                                         requestAccessCompletionBlock(account, FacebookUserProfileEndpointUrl);
                                         requestAccessCompletionBlock(account, FacebookLikesEndpointUrl);
                                         requestAccessCompletionBlock(account, FacebookFriendsEndpointUrl);
                                       }
-                                      [store release];
                                     }];
                                   }
                                 }
@@ -107,7 +101,7 @@ static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com
 
 // Pass the user's Facebook data to Appboy
 - (IBAction)passFacebookDataToAppboy:(id)sender {
-  ABKFacebookUser *facebookUser = [[[ABKFacebookUser alloc] initWithFacebookUserDictionary:self.facebookUserProfile numberOfFriends:self.numberOfFacebookFriends likes:self.facebookLikes] autorelease];
+  ABKFacebookUser *facebookUser = [[ABKFacebookUser alloc] initWithFacebookUserDictionary:self.facebookUserProfile numberOfFriends:self.numberOfFacebookFriends likes:self.facebookLikes];
   [Appboy sharedInstance].user.facebookUser = facebookUser;
 }
 @end

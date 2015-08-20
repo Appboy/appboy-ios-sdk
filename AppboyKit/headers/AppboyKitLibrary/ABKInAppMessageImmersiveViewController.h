@@ -7,7 +7,7 @@
  */
 @interface ABKInAppMessageImmersiveViewController : ABKInAppMessageViewController
 
-@property (retain, nonatomic) IBOutlet ABKLabel *inAppMessageHeaderLabel;
+@property IBOutlet ABKLabel *inAppMessageHeaderLabel;
 
 - (IBAction) dismissInAppMessage:(id)sender;
 @end

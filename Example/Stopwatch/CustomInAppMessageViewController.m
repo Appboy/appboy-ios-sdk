@@ -43,9 +43,4 @@ static CGFloat const inAppMessageBottomPadding = 10.0f;
   self.view.frame = onScreenViewFrame;
   self.view.center = CGPointMake(inAppMessageWindowFrame.size.width / 2, inAppMessageWindowFrame.size.height / 2);
 }
-
-- (void) dealloc {
-  [_inAppMessageBodyTextLabel release];
-  [super dealloc];
-}
 @end

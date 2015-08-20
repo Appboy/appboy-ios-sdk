@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.13.2"
+#define APPBOY_SDK_VERSION @"2.14.0"
 #endif
 
 @class ABKInAppMessageController;
@@ -126,6 +126,13 @@ extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
 
+/*!
+ * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
+ * the set time interval. In that case, the session won't be close even though the user closed the app, but will continue until
+ * it times out. The value should be an integer bigger than 0.
+ */
+extern NSString *const ABKSessionTimeoutKey;
+
 /* ------------------------------------------------------------------------------------------------------
  * Enums
  */
@@ -172,19 +179,19 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * Properties
  */
 
-@property (nonatomic, retain, readonly) ABKFeedController *feedController;
+@property (readonly) ABKFeedController *feedController;
 
 /*!
  * The current in-app message manager.
  * See ABKInAppMessageController.h.
  */
-@property (nonatomic, retain, readonly) ABKInAppMessageController *inAppMessageController;
+@property (readonly) ABKInAppMessageController *inAppMessageController;
 
 /*!
  * The current app user. 
  * See ABKUser.h and changeUser:userId below.
  */
-@property (nonatomic, retain, readonly) ABKUser *user;
+@property (readonly) ABKUser *user;
 
 /*!
  * The Appboy location manager provides access to location related functionality in the Appboy SDK.
@@ -210,7 +217,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app.  Note that
  * you can theme your app and Appboy differently -- Appboy uses NUI independently of your app's use of NUI.
  */
-@property (nonatomic, assign) BOOL useNUITheming;
+@property (nonatomic) BOOL useNUITheming;
 
 /*!
 * The policy regarding processing of network requests by the SDK. See the enumeration values for more information on
@@ -224,14 +231,14 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 * the next time an eligible request is enqueued. To force an immediate flush after changing the request processing
 * policy, invoke <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue]</pre>.
 */
-@property (nonatomic, assign) ABKRequestProcessingPolicy requestProcessingPolicy;
+@property ABKRequestProcessingPolicy requestProcessingPolicy;
 
 
 /*!
  * An class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
  * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
  */
-@property (nonatomic, retain) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
+@property (nonatomic, weak) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
 
 /* ------------------------------------------------------------------------------------------------------
  * Methods

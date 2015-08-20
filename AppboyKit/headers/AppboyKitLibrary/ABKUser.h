@@ -8,6 +8,7 @@
 
 @class ABKFacebookUser;
 @class ABKTwitterUser;
+@class ABKAttributionData;
 
 /*!
  * When setting the custom attributes with custom keys:
@@ -30,6 +31,7 @@
  *      foursquare_access_token
  *      image_url
  *      push_subscribe
+ *      attribution_data
  *
  * 2. The maximum key length is 255 characters; longer keys are truncated.
  *
@@ -97,12 +99,18 @@
 /*!
  * The User's Facebook account information. For more detail, please refer to ABKFacebookUser.h.
  */
-@property (nonatomic, retain) ABKFacebookUser *facebookUser;
+@property ABKFacebookUser *facebookUser;
 
 /*!
  * The User's Twitter account information. For more detail, please refer to ABKTwitterUser.h.
  */
-@property (nonatomic, retain) ABKTwitterUser *twitterUser;
+@property ABKTwitterUser *twitterUser;
+
+/*!
+ * Sets the attribution information for the user. For in apps that have an install tracking integration.
+ * For more information, please refer to ABKAttributionData.h.
+ */
+@property ABKAttributionData *attributionData;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums

@@ -4,9 +4,9 @@ static double const ClockTimeIncrement = 0.01;
 
 @interface Clock ()
 
-@property (retain, nonatomic) NSTimer *timer;
-@property (assign, nonatomic) NSTimeInterval elapsedTime;
-@property (retain, nonatomic) NSDateFormatter *dateFormatter;
+@property NSTimer *timer;
+@property NSTimeInterval elapsedTime;
+@property NSDateFormatter *dateFormatter;
 @end
 
 @implementation Clock
@@ -55,11 +55,5 @@ static double const ClockTimeIncrement = 0.01;
 
 - (void) timeUpdated {
   [[NSNotificationCenter defaultCenter] postNotificationName:TimeUpdatedNotification object:nil];
-}
-
-- (void) dealloc {
-  [_timer release];
-  [_dateFormatter release];
-  [super dealloc];
 }
 @end

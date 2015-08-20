@@ -29,8 +29,15 @@
 */
 - (void) feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender;
 
-@end
+@optional
+/*!
+ @param message The feedback message
+ 
+ Called before feedback is submitted.  Return a message to be submitted.
+ */
+- (NSString *) feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
 
+@end
 /*!
  * The FeedbackViewController classes implement the form you present to your users to collect feedback.
  * To integrate, simply create a FeedbackViewController -- either programmatically or in a storyboard -- like
@@ -60,6 +67,6 @@
  */
 @interface ABKFeedbackViewControllerPopoverContext : ABKFeedbackViewController
 
-@property (assign, nonatomic) id <ABKFeedbackViewControllerPopoverContextDelegate> delegate;
+@property (nonatomic, weak) id <ABKFeedbackViewControllerPopoverContextDelegate> delegate;
 
 @end

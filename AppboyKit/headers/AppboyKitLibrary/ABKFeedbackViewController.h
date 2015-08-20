@@ -17,6 +17,6 @@
  */
 @interface ABKFeedbackViewController : UIViewController
 
-@property (assign, nonatomic) id delegate;
+@property (nonatomic, weak) id delegate;
 
 @end

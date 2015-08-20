@@ -28,7 +28,7 @@ static NSMutableArray *attributesValuesArray = nil;
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil)];
 
   if (attributesValuesArray == nil || [attributesValuesArray count] <= 0) {
-    attributesValuesArray = [[NSMutableArray arrayWithCapacity:TotalNumberOfAttributes] retain];
+    attributesValuesArray = [NSMutableArray arrayWithCapacity:TotalNumberOfAttributes];
     for (int i = 0; i < TotalNumberOfAttributes; i ++) {
       [attributesValuesArray addObject:[NSNull null]];
     }
@@ -53,7 +53,7 @@ static NSMutableArray *attributesValuesArray = nil;
     UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     if (cell == nil) {
-      cell = [[[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     id object = attributesValuesArray[(NSUInteger)indexPath.row];
@@ -73,7 +73,7 @@ static NSMutableArray *attributesValuesArray = nil;
 
     UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-      cell = [[[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
 
@@ -120,7 +120,7 @@ static NSMutableArray *attributesValuesArray = nil;
 
   // If it is the text field for birthday, change the keyboard to date picker
   if (textField.tag == IndexOfBirthday + TextFieldTagNumber) {
-    UIDatePicker *datePicker = [[[UIDatePicker alloc] init] autorelease];
+    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     datePicker.datePickerMode = UIDatePickerModeDate;
     [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     datePicker.backgroundColor = [UIColor clearColor];
@@ -139,7 +139,6 @@ static NSMutableArray *attributesValuesArray = nil;
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   dateFormatter.dateFormat = @"MM/dd/yyyy";
   NSString *dateString = [dateFormatter stringFromDate:date];
-  [dateFormatter release];
   return dateString;
 }
 
@@ -147,7 +146,6 @@ static NSMutableArray *attributesValuesArray = nil;
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   dateFormatter.dateFormat = @"MM/dd/yyyy";
   NSDate *date = [dateFormatter dateFromString:birthdayString];
-  [dateFormatter release];
   return date;
 }
 
@@ -198,12 +196,13 @@ static NSMutableArray *attributesValuesArray = nil;
 
   [Crittercism leaveBreadcrumb:@"update appboy user's attributes"];
 
-  UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:nil
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                       message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
                                                      delegate:nil
                                             cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                            otherButtonTitles:nil] autorelease];
+                                            otherButtonTitles:nil];
   [alertView show];
+  alertView = nil;
   
   [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -285,10 +284,6 @@ static NSMutableArray *attributesValuesArray = nil;
 
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self.modalNavBar];
-  [_attributesLabelsArray release];
-  [_attributesTableView release];
-  [_modalNavBar release];
-  [super dealloc];
 }
 
 - (BOOL)prefersStatusBarHidden {

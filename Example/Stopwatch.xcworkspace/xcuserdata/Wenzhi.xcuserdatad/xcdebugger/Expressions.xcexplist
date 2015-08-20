@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[ABKPersistentData setPlistOverrides]:ABKPersistentData.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[ABKLogger logLevel]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ABKInAppMessageBlockingViewController createOneButtonAndConstraintsWithHeight:sideMargin:bottom:onView:]:ABKInAppMessageBlockingViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -22,15 +30,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ABKSignificantChangeLocationProvider locationServerConfigUpdated:]:ABKSignificantChangeLocationProvider.m">
-      </ContextState>
-      <ContextState
          contextName = "-[InAppMessageUIViewController displayInAppMessage:]:InAppMessageUIViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "[UIApplication sharedApplication]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ABKSignificantChangeLocationProvider locationServerConfigUpdated:]:ABKSignificantChangeLocationProvider.m">
       </ContextState>
       <ContextState
          contextName = "-[ABKSignificantChangeLocationProvider tryPromptForAlwaysAuthorization]:ABKSignificantChangeLocationProvider.m">
@@ -52,6 +60,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ABKInAppMessageViewController applyIconImageToImageView:]:ABKInAppMessageViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[UserAttributesViewController keyboardDidShow:]:UserAttributesViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -66,9 +77,6 @@
                value = "self.locationManager.locationServicesEnabled">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[ABKInAppMessageViewController applyIconImageToImageView:]:ABKInAppMessageViewController.m">
       </ContextState>
       <ContextState
          contextName = "+[ABKLocation locationEnabled]:ABKLocation.m">

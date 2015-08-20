@@ -3,9 +3,9 @@
 
 @interface InAppMessageTestViewController : UIViewController <ABKInAppMessageControllerDelegate>
 
-@property (nonatomic, retain) IBOutlet UISegmentedControl *segmentedControlForInAppMode;
-@property (nonatomic, assign) BOOL shouldDisplayInAppMessage;
-@property (retain, nonatomic) IBOutlet UISegmentedControl *inAppMessageTypeSegmentedControl;
+@property IBOutlet UISegmentedControl *segmentedControlForInAppMode;
+@property BOOL shouldDisplayInAppMessage;
+@property IBOutlet UISegmentedControl *inAppMessageTypeSegmentedControl;
 
 - (IBAction) displayNextAvailableInAppPressed:(id)sender;
 - (IBAction)requestAnInApp:(id)sender;

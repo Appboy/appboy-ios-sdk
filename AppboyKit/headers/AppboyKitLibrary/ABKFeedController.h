@@ -58,7 +58,7 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
  * ABKCaptionedImageCard, ABKCrossPromotionCard, ABKClassicCard and ABKTextAnnouncementCard. They are all subclasses
  * of ABKCard.
  */
-@property (readonly) NSArray *newsFeedCards;
+@property (readonly, getter=getNewsFeedCards) NSArray *newsFeedCards;
 
 /*!
  * The NSDate object that indicates the last time the newsFeedCards property was updated from Appboy server.

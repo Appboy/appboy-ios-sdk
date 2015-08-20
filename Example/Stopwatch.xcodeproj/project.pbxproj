@@ -56,7 +56,6 @@
 		958071A2173D723400129B89 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5157173D6A8800C0D780 /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		958071A3173D723400129B89 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5159173D6A9000C0D780 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		958071A4173D723400129B89 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF515B173D6A9800C0D780 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		958071A5173D723400129B89 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF515D173D6AAA00C0D780 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		958071A6173D723400129B89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF515F173D6AB100C0D780 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF510D173D5FD600C0D780 /* UIKit.framework */; };
 		95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF510F173D5FD600C0D780 /* Foundation.framework */; };
@@ -274,7 +273,6 @@
 				958071A2173D723400129B89 /* Twitter.framework in Frameworks */,
 				958071A3173D723400129B89 /* Accounts.framework in Frameworks */,
 				958071A4173D723400129B89 /* AdSupport.framework in Frameworks */,
-				958071A5173D723400129B89 /* StoreKit.framework in Frameworks */,
 				958071A6173D723400129B89 /* CoreLocation.framework in Frameworks */,
 				95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */,
 				95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */,
@@ -563,7 +561,7 @@
 		95EF5102173D5FD600C0D780 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Appboy;
 				TargetAttributes = {
 					4E69E0671B0AA273003D87FF = {
@@ -876,7 +874,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -914,6 +911,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1003,7 +1001,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "f4dfc4dd-4f26-48e9-b7fa-62a3ffe24c6e";
+				PROVISIONING_PROFILE = "1aa15f07-ef08-4ddc-912f-0dfa26d3c3aa";
 				SKIP_INSTALL = YES;
 			};
 			name = Develop;
@@ -1106,7 +1104,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f4dfc4dd-4f26-48e9-b7fa-62a3ffe24c6e";
+				PROVISIONING_PROFILE = "8c771fb2-6e59-4bc8-a72f-7432d72bacfc";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -1150,7 +1148,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1174,7 +1171,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "21e8bce6-aa38-46ea-aa2a-63782fd37da3";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1186,7 +1183,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1218,6 +1214,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1243,6 +1240,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

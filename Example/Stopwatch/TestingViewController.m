@@ -34,9 +34,6 @@
 
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-  [_versionLabel release];
-  [_unReadIndicatorSwitch release];
-  [super dealloc];
 }
 
 - (void) viewDidUnload {
@@ -59,9 +56,7 @@
                                                       target:self
                                                       action:@selector(displayCategoriesActionSheet)];
   [newsFeed.navigationItem setRightBarButtonItem:categoriesButton animated:NO];
-  [categoriesButton release];
   [self.navigationController pushViewController:newsFeed animated:YES];
-  [newsFeed release];
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -87,7 +82,7 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-  ABKFeedViewControllerNavigationContext *newsFeed = (ABKFeedViewControllerNavigationContext *)self.navigationController.visibleViewController;
+  ABKFeedViewControllerNavigationContext *newsFeed = (ABKFeedViewControllerNavigationContext *)self.navigationController.topViewController;
   switch (buttonIndex) {
     case 0:
       [newsFeed setCategories:ABKCardCategoryAll];

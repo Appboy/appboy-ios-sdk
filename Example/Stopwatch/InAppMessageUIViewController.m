@@ -34,13 +34,6 @@ static const int CustomInAppMessageDuration = 5;
 
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-  [_inAppSlideupList release];
-  [_inAppModalList release];
-  [_inAppFullList release];
-  [_inAppMessageTypeSegment release];
-  [_tableView release];
-  [_inAppMessageDictionary release];
-  [super dealloc];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -119,7 +112,7 @@ static const int CustomInAppMessageDuration = 5;
 - (UITableViewCell *) createCellWithCellIdentifier:(NSString *)identifier withClass:(Class)cellClass tableView:(UITableView *)tableView {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
   if (cell == nil && [cellClass isKindOfClass:[UITableViewCell class]]) {
-    cell = [(UITableViewCell *)[[cellClass alloc] init] autorelease];
+    cell = (UITableViewCell *)[[cellClass alloc] init];
   }
   return cell;
 }
@@ -133,7 +126,6 @@ static const int CustomInAppMessageDuration = 5;
   colorListViewController.delegate = self;
   colorListViewController.headerTitle = [cell isKindOfClass:[ColorCell class]] ? ((ColorCell *)cell).titleLabel.text : nil;
   [self presentViewController:colorListViewController animated:YES completion:nil];
-  [colorListViewController release];
 }
 
 - (void)colorListPickerDidComplete:(KKColorListViewController *)controller {
@@ -171,17 +163,17 @@ static const int CustomInAppMessageDuration = 5;
           [self.inAppMessageDictionary removeObjectForKey:ItemButtonTwo];
           if ([[self currentArrayList] indexOfObject:ItemButtonOne] == NSNotFound) {
             [[self currentArrayList] addObject:ItemButtonOne];
-            self.inAppMessageDictionary[ItemButtonOne] = [[[ABKInAppMessageButton alloc] init] autorelease];
+            self.inAppMessageDictionary[ItemButtonOne] = [[ABKInAppMessageButton alloc] init];
           }
           break;
         case 2:
           if ([[self currentArrayList] indexOfObject:ItemButtonOne] == NSNotFound) {
             [[self currentArrayList] addObject:ItemButtonOne];
-            self.inAppMessageDictionary[ItemButtonOne] = [[[ABKInAppMessageButton alloc] init] autorelease];
+            self.inAppMessageDictionary[ItemButtonOne] = [[ABKInAppMessageButton alloc] init];
           }
           if ([[self currentArrayList] indexOfObject:ItemButtonTwo] == NSNotFound) {
             [[self currentArrayList] addObject:ItemButtonTwo];
-            self.inAppMessageDictionary[ItemButtonTwo] = [[[ABKInAppMessageButton alloc] init] autorelease];
+            self.inAppMessageDictionary[ItemButtonTwo] = [[ABKInAppMessageButton alloc] init];
           }
           break;
         default:
@@ -309,7 +301,6 @@ static const int CustomInAppMessageDuration = 5;
     }
   }
   [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppMessage];
-  [inAppMessage release];
 }
 
 - (void) keyboardDidShow:(NSNotification *)notification {

@@ -7,6 +7,6 @@
  */
 @interface ABKInAppMessageSlideupViewController : ABKInAppMessageViewController
 
-@property (retain, nonatomic) IBOutlet UIImageView *arrowImage;
+@property IBOutlet UIImageView *arrowImage;
 
 @end

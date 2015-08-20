@@ -29,35 +29,35 @@ static NSString *const CellIdentifierColor = @"ColorCellIdentifier";
 static NSString *const CellIdentifierButton = @"ButtonCellIdentifer";
 
 @interface SegmentCell : UITableViewCell
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
-@property (retain, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property IBOutlet UILabel *titleLabel;
+@property IBOutlet UISegmentedControl *segmentControl;
 - (void) setUpWithItem:(NSString *)item;
 @end
 
 @interface TextFieldCell : UITableViewCell
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
-@property (retain, nonatomic) IBOutlet UITextField *textField;
+@property IBOutlet UILabel *titleLabel;
+@property IBOutlet UITextField *textField;
 
 @end
 
 @interface ColorCell : UITableViewCell
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
-@property (retain, nonatomic) IBOutlet UIButton *colorButton;
+@property IBOutlet UILabel *titleLabel;
+@property IBOutlet UIButton *colorButton;
 - (void) setColor:(UIColor *)color;
 - (UIColor *)color;
 @end
 
 @interface HideChevronCell : UITableViewCell
-@property (retain, nonatomic) IBOutlet UISwitch *hideChevronSwitch;
+@property IBOutlet UISwitch *hideChevronSwitch;
 
 @end
 
 @interface InAppMessageButtonCell : UITableViewCell <UITextFieldDelegate, KKColorListViewControllerDelegate>
-@property (retain, nonatomic) IBOutlet UITextField *titleTextField;
-@property (retain, nonatomic) IBOutlet UIButton *textColorButton;
-@property (retain, nonatomic) IBOutlet UIButton *backgroundColorButton;
-@property (retain, nonatomic) IBOutlet UISegmentedControl *actionSegmentControl;
-@property (retain, nonatomic) IBOutlet UITextField *URITextField;
-@property (retain, nonatomic) ABKInAppMessageButton *button;
-@property (retain, nonatomic) NSURL *buttonURL;
+@property IBOutlet UITextField *titleTextField;
+@property IBOutlet UIButton *textColorButton;
+@property IBOutlet UIButton *backgroundColorButton;
+@property IBOutlet UISegmentedControl *actionSegmentControl;
+@property IBOutlet UITextField *URITextField;
+@property (nonatomic) ABKInAppMessageButton *button;
+@property NSURL *buttonURL;
 @end

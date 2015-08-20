@@ -2,10 +2,10 @@
 
 @interface UserAttributesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property (retain, nonatomic) NSArray *attributesLabelsArray;
-@property (retain, nonatomic) IBOutlet UINavigationBar *modalNavBar;
-@property (retain, nonatomic) IBOutlet UITableView *attributesTableView;
-@property (assign, nonatomic) UITextField *currentEditingTextField;
+@property NSArray *attributesLabelsArray;
+@property IBOutlet UINavigationBar *modalNavBar;
+@property IBOutlet UITableView *attributesTableView;
+@property (weak) UITextField *currentEditingTextField;
 
 - (IBAction) doneButtonTapped:(id)sender;
 - (IBAction) setGender:(UISegmentedControl *)sender;

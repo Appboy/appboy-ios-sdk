@@ -24,17 +24,17 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageSlideupAnchor) {
  * If hideChevron equals YES, the in-app message will not render the chevron on the right side of the in-app message.
  * The chevron is a useful visual cue for the user that more content may be reached by tapping the in-app message.
  */
-@property (nonatomic, assign) BOOL hideChevron;
+@property BOOL hideChevron;
 
 /*!
  * inAppMessageSlideupAnchor defines the position of the in-app message on screen.
  * See the above documentation for ABKInAppMessageAnchor enum documentation above offers additional details.
  */
-@property (nonatomic, assign) ABKInAppMessageSlideupAnchor inAppMessageSlideupAnchor;
+@property ABKInAppMessageSlideupAnchor inAppMessageSlideupAnchor;
 
 /*!
  * chevronColor defines the chevron arrow color of the in-app message.
  * When this property is nil, the chevron's default color is white.
  */
-@property (nonatomic, retain) UIColor *chevronColor;
+@property UIColor *chevronColor;
 @end

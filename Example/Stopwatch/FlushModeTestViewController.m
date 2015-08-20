@@ -65,11 +65,6 @@
   [[Appboy sharedInstance] shutdownServerCommunication];
 }
 
-- (void)dealloc {
-  [_flushModeLabel release];
-  [super dealloc];
-}
-
 - (void)viewDidUnload {
   [self setFlushModeLabel:nil];
   [super viewDidUnload];

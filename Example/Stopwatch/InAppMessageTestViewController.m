@@ -77,13 +77,13 @@
 // Also, the view of the returned view controller should be an instance of ABKInAppMessageView or its subclass.
 - (ABKInAppMessageViewController *) inAppMessageViewControllerWithInAppMessage:(ABKInAppMessage *)inAppMessage {
   if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
-    return [[[ABKInAppMessageSlideupViewController alloc] initWithInAppMessage:inAppMessage] autorelease];
+    return [[ABKInAppMessageSlideupViewController alloc] initWithInAppMessage:inAppMessage];
   } else if ([inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
-    return [[[ABKInAppMessageModalViewController alloc] initWithInAppMessage:inAppMessage] autorelease];
+    return [[ABKInAppMessageModalViewController alloc] initWithInAppMessage:inAppMessage];
   } else if ([inAppMessage isKindOfClass:[ABKInAppMessageFull class]]) {
-    return [[[ABKInAppMessageFullViewController alloc] initWithInAppMessage:inAppMessage] autorelease];
+    return [[ABKInAppMessageFullViewController alloc] initWithInAppMessage:inAppMessage];
   } else {
-    CustomInAppMessageViewController *customInAppMessage = [[[CustomInAppMessageViewController alloc] initWithInAppMessage:inAppMessage] autorelease];
+    CustomInAppMessageViewController *customInAppMessage = [[CustomInAppMessageViewController alloc] initWithInAppMessage:inAppMessage];
     return customInAppMessage;
   }
   return nil;
@@ -100,7 +100,7 @@
                                             cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                             otherButtonTitles:nil];
   [alertView show];
-  [alertView release];
+  alertView = nil;
   
   [inAppMessage setInAppMessageClickAction:ABKInAppMessageNoneClickAction withURI:nil];
   // Returning YES here to prevent Appboy from performing the click action.
@@ -142,12 +142,6 @@
   [[Appboy sharedInstance] requestInAppMessageRefresh];
 }
 
-- (void) dealloc {
-  [_segmentedControlForInAppMode release];
-  [_inAppMessageTypeSegmentedControl release];
-  [super dealloc];
-}
-
 - (IBAction)createAndDisplayACustomSlideup:(id)sender {
   ABKInAppMessage *inAppMessage = nil;
   switch (self.inAppMessageTypeSegmentedControl.selectedSegmentIndex) {
@@ -155,8 +149,7 @@
       ABKInAppMessage *customInApp = [[ABKInAppMessage alloc] init];
       customInApp.message = NSLocalizedString(@"Appboy.Stowpatch.slideup-test.custom-slideup-message", nil);
       customInApp.inAppMessageDismissType = ABKInAppMessageDismissManually;
-      inAppMessage = [customInApp retain];
-      [customInApp release];
+      inAppMessage = customInApp;
       break;
     }
     case 2: {
@@ -167,17 +160,14 @@
       button.buttonText = @"OK";
       [button setButtonClickAction:ABKInAppMessageNoneClickAction withURI:nil];
       [customFull setInAppMessageButtons:@[button]];
-      [button release];
-      inAppMessage = [customFull retain];
-      [customFull release];
+      inAppMessage = customFull;
       break;
     }
     case 1: {
       ABKInAppMessageModal *customModal = [[ABKInAppMessageModal alloc] init];
       customModal.imageURI = [NSURL URLWithString:@"http://www.adweek.com/socialtimes/wp-content/uploads/sites/2/2013/11/appboy-6501.png"];
       customModal.message = NSLocalizedString(@"Appboy.Stowpatch.slideup-test.custom-slideup-message", nil);
-      inAppMessage = [customModal retain];
-      [customModal release];
+      inAppMessage = customModal;
       break;
     }
     case 0:
@@ -186,15 +176,13 @@
       customSlideup.icon = @"\uf197";
       customSlideup.message = NSLocalizedString(@"Appboy.Stowpatch.slideup-test.custom-slideup-message", nil);
       customSlideup.duration = 4.0;
-      inAppMessage = [customSlideup retain];
-      [customSlideup release];
+      inAppMessage = customSlideup;
       break;
     }
   }
   self.shouldDisplayInAppMessage = YES;
   [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppMessage];
   self.shouldDisplayInAppMessage = NO;
-  [inAppMessage release];
 }
 
 - (IBAction)dismissCurrentSlideup:(id)sender {

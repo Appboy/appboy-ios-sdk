@@ -2,15 +2,15 @@
 
 @interface TwitterViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UITextView *twitterDataTextView;
-@property (nonatomic, copy) NSString* userDescription;
-@property (nonatomic, copy) NSString* twitterName;
-@property (nonatomic, copy) NSString* profileImageUrl;
-@property (nonatomic, copy) NSString* screenName;
-@property (nonatomic, assign) NSInteger followersCount;
-@property (nonatomic, assign) NSInteger friendsCount;
-@property (nonatomic, assign) NSInteger statusesCount;
-@property (nonatomic, assign) NSInteger twitterID;
+@property IBOutlet UITextView *twitterDataTextView;
+@property (copy) NSString* userDescription;
+@property (copy) NSString* twitterName;
+@property (copy) NSString* profileImageUrl;
+@property (copy) NSString* screenName;
+@property NSInteger followersCount;
+@property NSInteger friendsCount;
+@property NSInteger statusesCount;
+@property NSInteger twitterID;
 
 // This method will prompt the user for permission to use twitter account data from iOS system.
 - (IBAction)fetchTwitterAccountData:(id)sender;

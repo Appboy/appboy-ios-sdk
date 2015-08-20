@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.13.2"
+  s.version      = "2.14.0"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.appboy.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/Appboy/appboy-ios-sdk.git', :tag => s.version.to_s}
   s.platform = :ios
   s.ios.deployment_target = '6.0'
-  s.requires_arc = false
+  s.requires_arc = true
   s.documentation_url = 'http://documentation.appboy.com/'
   s.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreImage', 'CoreText'
   s.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'StoreKit'

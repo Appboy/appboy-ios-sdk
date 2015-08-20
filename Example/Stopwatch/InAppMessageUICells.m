@@ -15,21 +15,9 @@
     [self.segmentControl insertSegmentWithTitle:segmentList[i] atIndex:i animated:NO];
   }
 }
-
-- (void) dealloc {
-  [_titleLabel release];
-  [_segmentControl release];
-  [super dealloc];
-}
 @end
 
 @implementation TextFieldCell : UITableViewCell
-
-- (void) dealloc {
-  [_titleLabel release];
-  [_textField release];
-  [super dealloc];
-}
 @end
 
 @implementation ColorCell : UITableViewCell
@@ -44,26 +32,15 @@
 - (UIColor *)color {
   return self.colorButton.backgroundColor;
 }
-
-- (void) dealloc {
-  [_titleLabel release];
-  [_colorButton release];
-  [super dealloc];
-}
 @end
 
 @implementation HideChevronCell : UITableViewCell
 
-- (void) dealloc {
-  [_hideChevronSwitch release];
-  [super dealloc];
-}
 @end
 
 @implementation InAppMessageButtonCell : UITableViewCell
 - (void) setButton:(ABKInAppMessageButton *)button {
-  [_button release];
-  _button = [button retain];
+  _button = button;
   self.titleTextField.text = button.buttonText;
   if (button.buttonTextColor) {
     self.textColorButton.backgroundColor = button.buttonTextColor;
@@ -94,7 +71,6 @@
   colorListViewController.delegate = self;
   sender.selected = YES;
   [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:colorListViewController animated:YES completion:nil];
-  [colorListViewController release];
 }
 
 - (void) colorListController:(KKColorListViewController *)controller didSelectColor:(KKColor *)color {
@@ -127,15 +103,5 @@
     default:
       break;
   }
-}
-
-- (void) dealloc {
-  [_textColorButton release];
-  [_backgroundColorButton release];
-  [_actionSegmentControl release];
-  [_URITextField release];
-  [_button release];
-  [_buttonURL release];
-  [super dealloc];
 }
 @end
