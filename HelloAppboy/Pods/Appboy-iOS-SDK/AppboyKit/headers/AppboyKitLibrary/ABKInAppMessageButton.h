@@ -14,19 +14,19 @@
 /*!
  * This property defines the button's background color.
  */
-@property (nonatomic, retain) UIColor *buttonBackgroundColor;
+@property (nonatomic) UIColor *buttonBackgroundColor;
 
 /*!
  * This property defines the button's title color in UIControlStateNormal. Setting this property will also change the
  * button title color.
  */
-@property (nonatomic, retain) UIColor *buttonTextColor;
+@property (nonatomic) UIColor *buttonTextColor;
 
 /*!
  * This property defines the action that will be performed when the button is clicked.
  * See the ABKInAppMessageClickActionType enum documentation in ABKInAppMessage.h offers additional details.
  */
-@property (nonatomic, assign, readonly) ABKInAppMessageClickActionType buttonClickActionType;
+@property (readonly) ABKInAppMessageClickActionType buttonClickActionType;
 
 /*!
  * When the button's buttonClickActionType is ABKInAppMessageRedirectToURI, clicking on the button will redirect to the uri
@@ -34,13 +34,13 @@
  *
  * This property can be a HTTP URI or a protocol URI.
  */
-@property (nonatomic, copy, readonly) NSURL *buttonClickedURI;
+@property (readonly, copy) NSURL *buttonClickedURI;
 
 /*!
  * This property defines the button's ID. Button's ID is used to track user's clicking action and used for corresponding
  * data analytics.
  */
-@property (nonatomic, assign, readonly) NSInteger buttonID;
+@property (readonly) NSInteger buttonID;
 
 /*!
  * This method will set the buttonClickActionType property.

@@ -21,10 +21,10 @@
  */
 @interface ABKInAppMessageViewController : UIViewController
 
-@property (nonatomic, retain) ABKInAppMessage *inAppMessage;
-@property (retain, nonatomic) IBOutlet UIImageView *iconImageView;
-@property (retain, nonatomic) IBOutlet UILabel *iconLabelView;
-@property (retain, nonatomic) IBOutlet ABKLabel *inAppMessageMessageLabel;
+@property ABKInAppMessage *inAppMessage;
+@property IBOutlet UIImageView *iconImageView;
+@property IBOutlet UILabel *iconLabelView;
+@property IBOutlet ABKLabel *inAppMessageMessageLabel;
 
 /*
  * The initWithInAppMessage method may be used to pass the inAppMessage property to any custom view controller that you create.

@@ -1,0 +1,2 @@
+APPBOY_IOS_SDK_LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Appboy-iOS-SDK/AppboyKit"
+APPBOY_IOS_SDK_OTHER_LDFLAGS = -l"AppboyKitLibrary" -framework "CoreImage" -framework "CoreText" -framework "QuartzCore" -framework "SystemConfiguration" -weak_framework "Accounts" -weak_framework "AdSupport" -weak_framework "CoreTelephony" -weak_framework "Social" -weak_framework "StoreKit"

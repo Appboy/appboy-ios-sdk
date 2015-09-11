@@ -7,6 +7,8 @@
 #import <Foundation/Foundation.h>
 
 @class ABKFacebookUser;
+@class ABKTwitterUser;
+@class ABKAttributionData;
 
 /*!
  * When setting the custom attributes with custom keys:
@@ -29,6 +31,7 @@
  *      foursquare_access_token
  *      image_url
  *      push_subscribe
+ *      attribution_data
  *
  * 2. The maximum key length is 255 characters; longer keys are truncated.
  *
@@ -94,29 +97,20 @@
 @property (nonatomic, copy) NSString *avatarImageURL;
 
 /*!
- * The Twitter account identifier for this user. If set, Appboy will only attempt to obtain Twitter data from the
- * Accounts framework if the account with the specified identifier is available. See the
- * ABKSocialAccountAcquisitionPolicy documentation in Appboy.h for more information.
- */
-@property (nonatomic, copy) NSString *twitterAccountIdentifier;
-
-/*!
- * This property is for when a user's twitter account with the given identifier isn't available, should Appboy also
- * delete the saved twitter account in the server of that user.
- *
- * The default value of this property is NO. If the property is set to YES, when the twitter account data with the given
- * twitter identifier(defined in the ABKUser's twitterAccountIdentifier property) isn't available, Appboy will also delete
- * Appboy will delete the saved twitter account data of that user in Appboy's database.
- *
- * This property is only used when in appboyOptions, ABKSocialAccountAcquisitionPolicyOptionKey is set to be
- * ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly, and twitterAccountIdentifier property has a valid value.
- */
-@property (nonatomic, assign) BOOL clearTwitterDataWhenNoDataOfTwitterIdentifier;
-
-/*!
  * The User's Facebook account information. For more detail, please refer to ABKFacebookUser.h.
  */
-@property (nonatomic, retain) ABKFacebookUser *facebookUser;
+@property ABKFacebookUser *facebookUser;
+
+/*!
+ * The User's Twitter account information. For more detail, please refer to ABKTwitterUser.h.
+ */
+@property ABKTwitterUser *twitterUser;
+
+/*!
+ * Sets the attribution information for the user. For in apps that have an install tracking integration.
+ * For more information, please refer to ABKAttributionData.h.
+ */
+@property ABKAttributionData *attributionData;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums

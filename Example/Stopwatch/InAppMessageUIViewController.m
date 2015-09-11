@@ -23,7 +23,7 @@ static const int CustomInAppMessageDuration = 5;
   self.inAppFullList = [NSMutableArray arrayWithArray:
     @[ItemImageURL, ItemHeader, ItemHeaderColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor,
       ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemButtonNumber]];
-  self.inAppMessageDictionary[ItemImageURL] = @"http://i49.vbox7.com/o/9f9/9f9fba82c00.jpg";
+  self.inAppMessageDictionary[ItemImageURL] = @"https://appboy-images.com/appboy/communication/marketing/slide_up/slide_up_message_parameters/images/55e0c42664617307440c0000/147326cf775c7ce6f24ad5ad731254f040ed97f7/original.?1440793642";
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }

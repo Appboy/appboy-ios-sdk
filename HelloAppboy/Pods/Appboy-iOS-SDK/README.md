@@ -21,6 +21,8 @@ Successful marketing automation is essential to the future of your mobile app. A
 
 The iOS SDK supports iOS 6.0+
 
+Appboy uses [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.3.0 for in-app message icons.  Check out the [cheat sheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) to browse available icons.
+
 ## Questions?
 
 If you have questions, please contact [support@appboy.com](mailto:support@appboy.com).

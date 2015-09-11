@@ -42,31 +42,31 @@
  * utilized when each margin between the card and the left and right edges of the view is greater than or equal to
  * minimumCardMarginForiPhone. This property is not utilized on iPad, iPad mini or iPad air.
  */
-@property (nonatomic, assign) CGFloat cardWidthForiPhone;
+@property CGFloat cardWidthForiPhone;
 
 /*!
  * This property defines the width for each feed card on an iPad, iPad mini or iPad air. The default width is 600.0f.
  * This property will only utilized when each margin between the card and the left and right edges of the view is greater
  * than or equal to minimumCardMarginForiPad. This property is not utilized on iPhones.
  */
-@property (nonatomic, assign) CGFloat cardWidthForiPad;
+@property CGFloat cardWidthForiPad;
 
 /*!
  * This property defines the minimum acceptable left and right margins between the card and and the edge of the view on an iPhone.
  * The default value is 10.0f. If the defined cardWidthForiPhone would create margins less than the value of this property
  * a new card width will be calculated automatically to provide the defined minimumCardMarginForiPhone
  */
-@property (nonatomic, assign) CGFloat minimumCardMarginForiPhone;
+@property CGFloat minimumCardMarginForiPhone;
 
 /*!
  * This property defines the minimum acceptable left and right margins between the card and and the edge of the view on an iPad.
  * The default value is 20.0f. If the defined cardWidthForiPad would create margins less than the value of this property
  * a new card width will be calculated automatically to provide the defined minimumCardMarginForiPad.
  */
-@property (nonatomic, assign) CGFloat minimumCardMarginForiPad;
+@property CGFloat minimumCardMarginForiPad;
 
 /*! Delegate */
-@property (assign, nonatomic) id<ABKFeedViewControllerDelegate> appboyDelegate;
+@property (weak) id<ABKFeedViewControllerDelegate> appboyDelegate;
 
 - (void)closeButtonPressed:(id)sender;
 
@@ -74,12 +74,12 @@
  * This property is to indicate what categories of cards the news feed is displaying.
  * Setting this proerty will automatically update the news feed page and only display cards in the given categories.
  */
-@property (nonatomic, assign) ABKCardCategory categories;
+@property ABKCardCategory categories;
 
 /*!
  *  This property allows you to enable or disable the unread indicator on the news feed. The default value is NO, which
  *  will enable the displaying of the unread indicator on cards.
  */
-@property (nonatomic, assign) BOOL disableUnreadIndicator;
+@property BOOL disableUnreadIndicator;
 
 @end

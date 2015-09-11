@@ -28,9 +28,7 @@ extern NSInteger const DefaultNumberOfFriends;
 - (id) initWithFacebookUserDictionary:(NSDictionary *)facebookUserDictionary
                       numberOfFriends:(NSInteger)numberOfFriends
                                 likes:(NSArray *)likes;
-
-@property (nonatomic, copy, readonly) NSDictionary *facebookUserDictionary;
-@property (nonatomic, assign, readonly) NSInteger numberOfFriends;
-@property (nonatomic, retain, readonly) NSArray *likes;
-
+@property (readonly) NSDictionary *facebookUserDictionary;
+@property (readonly) NSInteger numberOfFriends;
+@property (readonly) NSArray *likes;
 @end

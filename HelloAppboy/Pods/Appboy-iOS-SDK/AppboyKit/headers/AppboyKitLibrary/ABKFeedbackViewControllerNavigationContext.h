@@ -20,6 +20,14 @@
 */
 - (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender;
 
+@optional
+/*!
+  @param message The feedback message
+
+  Called before feedback is submitted.  Return a message to be submitted.
+*/
+- (NSString *) feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
+
 @end
 
 /*!
@@ -49,6 +57,6 @@
  */
 @interface ABKFeedbackViewControllerNavigationContext : ABKFeedbackViewController
 
-@property (assign, nonatomic) id <ABKFeedbackViewControllerNavigationContextDelegate> delegate;
+@property (nonatomic, weak) id <ABKFeedbackViewControllerNavigationContextDelegate> delegate;
 
 @end

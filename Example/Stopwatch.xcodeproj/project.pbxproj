@@ -20,20 +20,8 @@
 		4E49ED1819DDE84F00ADC43F /* stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0019DDE84F00ADC43F /* stopwatch.png */; };
 		4E49ED1919DDE84F00ADC43F /* stopwatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */; };
 		4E49ED1A19DDE84F00ADC43F /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0219DDE84F00ADC43F /* twitter-icon.png */; };
-		4E4E68411B56E590007C286C /* StopwatchDevelop WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4E69E0681B0AA273003D87FF /* StopwatchDevelop WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4E5212511B377B9A00CD4CE6 /* ABWKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E52124D1B377B9A00CD4CE6 /* ABWKUser.m */; };
-		4E5212521B377B9A00CD4CE6 /* AppboyWatchKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E52124F1B377B9A00CD4CE6 /* AppboyWatchKit.m */; };
-		4E619A9C1B0E85BC002B396E /* NewsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E619A9B1B0E85BC002B396E /* NewsInterfaceController.m */; };
-		4E619A9F1B0E85CD002B396E /* AppboyInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E619A9E1B0E85CD002B396E /* AppboyInterfaceController.m */; };
-		4E69E06F1B0AA273003D87FF /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E69E06E1B0AA273003D87FF /* InterfaceController.m */; };
-		4E69E0721B0AA273003D87FF /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E69E0711B0AA273003D87FF /* NotificationController.m */; };
-		4E69E0751B0AA273003D87FF /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E69E0741B0AA273003D87FF /* GlanceController.m */; };
-		4E69E0771B0AA273003D87FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E69E0761B0AA273003D87FF /* Images.xcassets */; };
-		4E69E07B1B0AA274003D87FF /* StopwatchDevelop WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 4E69E07A1B0AA273003D87FF /* StopwatchDevelop WatchKit App.app */; };
-		4E69E0831B0AA274003D87FF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E69E0811B0AA274003D87FF /* Interface.storyboard */; };
-		4E69E0851B0AA274003D87FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E69E0841B0AA274003D87FF /* Images.xcassets */; };
+		4E608A721B6ADCE20094F050 /* libCrittercism_v5_2_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E608A711B6ADCE20094F050 /* libCrittercism_v5_2_0.a */; };
 		4E6D661619DCC18F009983AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Images.xcassets */; };
-		4E76BAA2183546CF001872E3 /* libCrittercism_v4_1_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E76BAA1183546CF001872E3 /* libCrittercism_v4_1_2.a */; };
 		4E76BAA5183546E3001872E3 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4E76BAA4183546E3001872E3 /* dsym_upload.sh */; };
 		4E7D1C7E1A9FE1990087DB64 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D1C7D1A9FE1990087DB64 /* FacebookViewController.m */; };
 		4E94D76E1743EE7100604EA0 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D76D1743EE7100604EA0 /* Clock.m */; };
@@ -69,30 +57,6 @@
 		E3AF79251AEACAB30075681E /* EventsAndPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AF79241AEACAB30075681E /* EventsAndPropertiesViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4E4E68421B56E590007C286C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95EF5102173D5FD600C0D780 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E69E0671B0AA273003D87FF;
-			remoteInfo = "StopwatchDevelop WatchKit Extension";
-		};
-		4E4E68461B56E599007C286C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95EF5102173D5FD600C0D780 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E69E0791B0AA273003D87FF;
-			remoteInfo = "StopwatchDevelop WatchKit App";
-		};
-		4E69E07C1B0AA274003D87FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95EF5102173D5FD600C0D780 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E69E0791B0AA273003D87FF;
-			remoteInfo = "StopwatchDevelop WatchKit App";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		4E321B9519C12246000EE12B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -102,17 +66,6 @@
 			files = (
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E4E68441B56E590007C286C /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				4E4E68411B56E590007C286C /* StopwatchDevelop WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -134,16 +87,12 @@
 		4E49ED0019DDE84F00ADC43F /* stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopwatch.png; sourceTree = "<group>"; };
 		4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch@2x.png"; sourceTree = "<group>"; };
 		4E49ED0219DDE84F00ADC43F /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-icon.png"; sourceTree = "<group>"; };
-		4E52124C1B377B9A00CD4CE6 /* ABWKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABWKUser.h; path = "../Appboy-WatchKit/ABWKUser.h"; sourceTree = SOURCE_ROOT; };
-		4E52124D1B377B9A00CD4CE6 /* ABWKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABWKUser.m; path = "../Appboy-WatchKit/ABWKUser.m"; sourceTree = SOURCE_ROOT; };
-		4E52124E1B377B9A00CD4CE6 /* AppboyWatchKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppboyWatchKit.h; path = "../Appboy-WatchKit/AppboyWatchKit.h"; sourceTree = SOURCE_ROOT; };
-		4E52124F1B377B9A00CD4CE6 /* AppboyWatchKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppboyWatchKit.m; path = "../Appboy-WatchKit/AppboyWatchKit.m"; sourceTree = SOURCE_ROOT; };
-		4E5212501B377B9A00CD4CE6 /* AppboyWatchKitKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppboyWatchKitKeys.h; path = "../Appboy-WatchKit/AppboyWatchKitKeys.h"; sourceTree = SOURCE_ROOT; };
+		4E608A701B6ADCE20094F050 /* CrittercismConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismConfig.h; sourceTree = "<group>"; };
+		4E608A711B6ADCE20094F050 /* libCrittercism_v5_2_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v5_2_0.a; sourceTree = "<group>"; };
 		4E619A9A1B0E85BC002B396E /* NewsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsInterfaceController.h; sourceTree = "<group>"; };
 		4E619A9B1B0E85BC002B396E /* NewsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInterfaceController.m; sourceTree = "<group>"; };
 		4E619A9D1B0E85CD002B396E /* AppboyInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyInterfaceController.h; sourceTree = "<group>"; };
 		4E619A9E1B0E85CD002B396E /* AppboyInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppboyInterfaceController.m; sourceTree = "<group>"; };
-		4E69E0681B0AA273003D87FF /* StopwatchDevelop WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "StopwatchDevelop WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E69E06B1B0AA273003D87FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E69E06C1B0AA273003D87FF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		4E69E06D1B0AA273003D87FF /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -153,12 +102,10 @@
 		4E69E0731B0AA273003D87FF /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
 		4E69E0741B0AA273003D87FF /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
 		4E69E0761B0AA273003D87FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E69E07A1B0AA273003D87FF /* StopwatchDevelop WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StopwatchDevelop WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E69E0801B0AA274003D87FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E69E0821B0AA274003D87FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4E69E0841B0AA274003D87FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E6D661519DCC18F009983AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E76BAA1183546CF001872E3 /* libCrittercism_v4_1_2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_1_2.a; sourceTree = "<group>"; };
 		4E76BAA3183546E3001872E3 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
 		4E76BAA4183546E3001872E3 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
 		4E7D1C7C1A9FE1990087DB64 /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
@@ -252,13 +199,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4E69E0651B0AA273003D87FF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95EF5107173D5FD600C0D780 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,7 +209,7 @@
 				95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */,
 				958071A0173D723400129B89 /* CoreTelephony.framework in Frameworks */,
 				958071A1173D723400129B89 /* Social.framework in Frameworks */,
-				4E76BAA2183546CF001872E3 /* libCrittercism_v4_1_2.a in Frameworks */,
+				4E608A721B6ADCE20094F050 /* libCrittercism_v5_2_0.a in Frameworks */,
 				958071A2173D723400129B89 /* Twitter.framework in Frameworks */,
 				958071A3173D723400129B89 /* Accounts.framework in Frameworks */,
 				958071A4173D723400129B89 /* AdSupport.framework in Frameworks */,
@@ -312,19 +252,6 @@
 			);
 			name = Images;
 			path = Stopwatch/Images;
-			sourceTree = "<group>";
-		};
-		4E52124B1B377B9A00CD4CE6 /* Appboy-WatchKit */ = {
-			isa = PBXGroup;
-			children = (
-				4E52124C1B377B9A00CD4CE6 /* ABWKUser.h */,
-				4E52124D1B377B9A00CD4CE6 /* ABWKUser.m */,
-				4E52124E1B377B9A00CD4CE6 /* AppboyWatchKit.h */,
-				4E52124F1B377B9A00CD4CE6 /* AppboyWatchKit.m */,
-				4E5212501B377B9A00CD4CE6 /* AppboyWatchKitKeys.h */,
-			);
-			name = "Appboy-WatchKit";
-			path = "../Appboy-WatchKit";
 			sourceTree = "<group>";
 		};
 		4E69E0691B0AA273003D87FF /* StopwatchDevelop WatchKit Extension */ = {
@@ -386,7 +313,6 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
-				4E52124B1B377B9A00CD4CE6 /* Appboy-WatchKit */,
 				4E49ECEA19DDE84F00ADC43F /* Images */,
 				4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */,
 				4E3E94E118BD52C60008C815 /* Localizable.strings */,
@@ -404,8 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				95EF510A173D5FD600C0D780 /* StopwatchDevelop.app */,
-				4E69E0681B0AA273003D87FF /* StopwatchDevelop WatchKit Extension.appex */,
-				4E69E07A1B0AA273003D87FF /* StopwatchDevelop WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -486,9 +410,10 @@
 		C5CC74A01766B955005DAD08 /* CrittercismSDK */ = {
 			isa = PBXGroup;
 			children = (
+				4E608A701B6ADCE20094F050 /* CrittercismConfig.h */,
+				4E608A711B6ADCE20094F050 /* libCrittercism_v5_2_0.a */,
 				4E76BAA3183546E3001872E3 /* CRFilter.h */,
 				4E76BAA4183546E3001872E3 /* dsym_upload.sh */,
-				4E76BAA1183546CF001872E3 /* libCrittercism_v4_1_2.a */,
 				C5CC74A11766B955005DAD08 /* Crittercism.h */,
 				C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */,
 			);
@@ -498,39 +423,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E69E0671B0AA273003D87FF /* StopwatchDevelop WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4E69E0901B0AA274003D87FF /* Build configuration list for PBXNativeTarget "StopwatchDevelop WatchKit Extension" */;
-			buildPhases = (
-				4E69E0641B0AA273003D87FF /* Sources */,
-				4E69E0651B0AA273003D87FF /* Frameworks */,
-				4E69E0661B0AA273003D87FF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4E69E07D1B0AA274003D87FF /* PBXTargetDependency */,
-			);
-			name = "StopwatchDevelop WatchKit Extension";
-			productName = "StopwatchDevelop WatchKit Extension";
-			productReference = 4E69E0681B0AA273003D87FF /* StopwatchDevelop WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
-		};
-		4E69E0791B0AA273003D87FF /* StopwatchDevelop WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4E69E08F1B0AA274003D87FF /* Build configuration list for PBXNativeTarget "StopwatchDevelop WatchKit App" */;
-			buildPhases = (
-				4E69E0781B0AA273003D87FF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "StopwatchDevelop WatchKit App";
-			productName = "StopwatchDevelop WatchKit App";
-			productReference = 4E69E07A1B0AA273003D87FF /* StopwatchDevelop WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
-		};
 		95EF5109173D5FD600C0D780 /* Stopwatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95EF5130173D5FD600C0D780 /* Build configuration list for PBXNativeTarget "Stopwatch" */;
@@ -542,13 +434,10 @@
 				C5CC74A51766BC6B005DAD08 /* Upload DYSM to Crittercism */,
 				3993FFFAF9154BEEBDD5FA87 /* Copy Pods Resources */,
 				4E321B9519C12246000EE12B /* Embed Frameworks */,
-				4E4E68441B56E590007C286C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4E4E68431B56E590007C286C /* PBXTargetDependency */,
-				4E4E68471B56E599007C286C /* PBXTargetDependency */,
 			);
 			name = Stopwatch;
 			productName = Stopwatch;
@@ -564,19 +453,6 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Appboy;
 				TargetAttributes = {
-					4E69E0671B0AA273003D87FF = {
-						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 5GLZKGNWQ3;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					4E69E0791B0AA273003D87FF = {
-						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 5GLZKGNWQ3;
-					};
 					95EF5109173D5FD600C0D780 = {
 						DevelopmentTeam = 5GLZKGNWQ3;
 						SystemCapabilities = {
@@ -637,31 +513,11 @@
 			projectRoot = "";
 			targets = (
 				95EF5109173D5FD600C0D780 /* Stopwatch */,
-				4E69E0671B0AA273003D87FF /* StopwatchDevelop WatchKit Extension */,
-				4E69E0791B0AA273003D87FF /* StopwatchDevelop WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4E69E0661B0AA273003D87FF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E69E07B1B0AA274003D87FF /* StopwatchDevelop WatchKit App.app in Resources */,
-				4E69E0771B0AA273003D87FF /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E69E0781B0AA273003D87FF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E69E0831B0AA274003D87FF /* Interface.storyboard in Resources */,
-				4E69E0851B0AA274003D87FF /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95EF5108173D5FD600C0D780 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -738,20 +594,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4E69E0641B0AA273003D87FF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E69E0721B0AA273003D87FF /* NotificationController.m in Sources */,
-				4E69E06F1B0AA273003D87FF /* InterfaceController.m in Sources */,
-				4E619A9C1B0E85BC002B396E /* NewsInterfaceController.m in Sources */,
-				4E5212511B377B9A00CD4CE6 /* ABWKUser.m in Sources */,
-				4E69E0751B0AA273003D87FF /* GlanceController.m in Sources */,
-				4E5212521B377B9A00CD4CE6 /* AppboyWatchKit.m in Sources */,
-				4E619A9F1B0E85CD002B396E /* AppboyInterfaceController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95EF5106173D5FD600C0D780 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -775,24 +617,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4E4E68431B56E590007C286C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4E69E0671B0AA273003D87FF /* StopwatchDevelop WatchKit Extension */;
-			targetProxy = 4E4E68421B56E590007C286C /* PBXContainerItemProxy */;
-		};
-		4E4E68471B56E599007C286C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4E69E0791B0AA273003D87FF /* StopwatchDevelop WatchKit App */;
-			targetProxy = 4E4E68461B56E599007C286C /* PBXContainerItemProxy */;
-		};
-		4E69E07D1B0AA274003D87FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4E69E0791B0AA273003D87FF /* StopwatchDevelop WatchKit App */;
-			targetProxy = 4E69E07C1B0AA274003D87FF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E3E94E118BD52C60008C815 /* Localizable.strings */ = {
@@ -914,15 +738,17 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
+					"$(PROJECT_DIR)/CrittercismSDK",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -930,219 +756,6 @@
 				WRAPPER_EXTENSION = app;
 			};
 			name = Develop;
-		};
-		4E69E0891B0AA274003D87FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "StopwatchDevelop WatchKit Extension/StopwatchDevelop WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"${PROJECT_DIR}/../AppboyKit-WatchKit\"",
-				);
-				INFOPLIST_FILE = "StopwatchDevelop WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "1f60e1db-5436-43ef-b8bf-f340466977be";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		4E69E08A1B0AA274003D87FF /* Develop */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "StopwatchDevelop WatchKit Extension/StopwatchDevelop WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"${PROJECT_DIR}/../AppboyKit-WatchKit\"",
-				);
-				INFOPLIST_FILE = "StopwatchDevelop WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "1aa15f07-ef08-4ddc-912f-0dfa26d3c3aa";
-				SKIP_INSTALL = YES;
-			};
-			name = Develop;
-		};
-		4E69E08B1B0AA274003D87FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "StopwatchDevelop WatchKit Extension/StopwatchDevelop WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"${PROJECT_DIR}/../AppboyKit-WatchKit\"",
-				);
-				INFOPLIST_FILE = "StopwatchDevelop WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "e3a04a8c-4f91-4a39-bdc7-c92d30472e1f";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		4E69E08C1B0AA274003D87FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				IBSC_MODULE = StopwatchDevelop_WatchKit_Extension;
-				INFOPLIST_FILE = "StopwatchDevelop WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f35bd3b3-52d4-49d0-b3e9-216e8e7b5dc1";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Debug;
-		};
-		4E69E08D1B0AA274003D87FF /* Develop */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				IBSC_MODULE = StopwatchDevelop_WatchKit_Extension;
-				INFOPLIST_FILE = "StopwatchDevelop WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8c771fb2-6e59-4bc8-a72f-7432d72bacfc";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Develop;
-		};
-		4E69E08E1B0AA274003D87FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				IBSC_MODULE = StopwatchDevelop_WatchKit_Extension;
-				INFOPLIST_FILE = "StopwatchDevelop WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "012636b9-53c0-43d9-94b8-6f390cb96065";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Release;
 		};
 		95EF512E173D5FD600C0D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1217,15 +830,17 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
+					"$(PROJECT_DIR)/CrittercismSDK",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = StopwatchDevelop;
@@ -1243,15 +858,17 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/CrittercismSDK",
+					"$(PROJECT_DIR)/CrittercismSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Stopwatch;
@@ -1263,26 +880,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E69E08F1B0AA274003D87FF /* Build configuration list for PBXNativeTarget "StopwatchDevelop WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E69E08C1B0AA274003D87FF /* Debug */,
-				4E69E08D1B0AA274003D87FF /* Develop */,
-				4E69E08E1B0AA274003D87FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		4E69E0901B0AA274003D87FF /* Build configuration list for PBXNativeTarget "StopwatchDevelop WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E69E0891B0AA274003D87FF /* Debug */,
-				4E69E08A1B0AA274003D87FF /* Develop */,
-				4E69E08B1B0AA274003D87FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		95EF5105173D5FD600C0D780 /* Build configuration list for PBXProject "Stopwatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

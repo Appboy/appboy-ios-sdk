@@ -14,7 +14,7 @@
  * Your app can set the delegate to override the default behavior of the ABKInAppMessageController. See
  * ABKInAppMessageControllerDelegate.h for more information.
  */
-@property (nonatomic, retain) id <ABKInAppMessageControllerDelegate> delegate;
+@property (weak) id <ABKInAppMessageControllerDelegate> delegate;
 
 /*!
  * supportedOrientationMasks allows you to change which orientation masks the in-app message supports.
@@ -25,7 +25,7 @@
  * The default value of supportedOrientationMasks is UIInterfaceOrientationMaskAll.
  *
  */
-@property (nonatomic, assign) UIInterfaceOrientationMask supportedOrientationMasks;
+@property UIInterfaceOrientationMask supportedOrientationMasks;
 
 /*!
  * supportedOrientations allows you to change which orientation the in-app message supports.
@@ -36,7 +36,7 @@
  * The default value of supportedOrientations includes all orientations: UIInterfaceOrientationPortrait,
  * UIInterfaceOrientationLandscapeRight, UIInterfaceOrientationLandscapeLeft and UIInterfaceOrientationPortraitUpsideDown.
  */
-@property (nonatomic, assign) UIInterfaceOrientation supportedOrientations;
+@property UIInterfaceOrientation supportedOrientations;
 
 /*!
  * @param delegate The in-app message delegate that implements the ABKInAppMessageControllerDelegate methods. If the delegate is

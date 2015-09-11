@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.12.1"
+#define APPBOY_SDK_VERSION @"2.14.0"
 #endif
 
 @class ABKInAppMessageController;
@@ -24,6 +24,7 @@
 @class ABKInAppMessageViewController;
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKAppboyEndpointDelegate;
+@class ABKLocationManager;
 
 /*
  * Appboy Public API: Appboy
@@ -84,13 +85,6 @@
 extern NSString *const ABKRequestProcessingPolicyOptionKey;
 
 /*!
-* If you want to set the social account acquisition policy at app startup time (useful for avoiding automatic
-* social account data requests made by Appboy at startup). You can include one of the ABKSocialAccountAcquisitionPolicy
-* enum values as the value for the ABKSocialAccountAcquisitionPolicyOptionKey in the appboyOptions dictionary.
-*/
-extern NSString *const ABKSocialAccountAcquisitionPolicyOptionKey;
-
-/*!
  * Sets the data flush interval (in seconds). This only has an effect when the request processing mode is set to
  * ABKAutomaticRequestProcessing (which is the default). Values are converted into NSTimeIntervals and must be greater
  * than 1.0.
@@ -106,10 +100,38 @@ extern NSString *const ABKFlushIntervalOptionKey;
 extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 
 /*!
+ * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location events.  If this key isn't set and the server doesn't provide a value, it will defaul to false.
+ */
+extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
+
+/*!
+ * This key can be set to an integer value that represents the minimum distance in meters between location events logged to Appboy.
+ * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
+ * change location provider.  The default and minimum value is 50.  Note that significant change location updates shouldn't occur if the user has
+ * gone 50 meters or less.
+ */
+extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
+
+/*!
+ * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Appboy.  
+ * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
+ * change location provider.  The default value is 3600 (1 hour); the minimum is 300 (5 minutes).
+ */
+extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
+
+
+/*!
  * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modifying or substitute the API and Resource
  * (e.g. image) URIs used by the Appboy SDK.
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
+
+/*!
+ * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
+ * the set time interval. In that case, the session won't be close even though the user closed the app, but will continue until
+ * it times out. The value should be an integer bigger than 0.
+ */
+extern NSString *const ABKSessionTimeoutKey;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums
@@ -146,28 +168,6 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 };
 
 /*!
-* Possible values for the SDK's social account acquisition policies:
-*   ABKAutomaticSocialAccountAcquisition (default) - At app startup and after you've set a social account identifier
-*       on the user object, Appboy will automatically attempt to fetch Twitter account data
-*       for the user and flush it to the server. In all cases, Appboy's automatic data acquisition will ensure that the
-*       user is not prompted or that the UI of your application is otherwise affected. For this reason, when Appboy
-*       tries to perform the data acquisition, your app must have already been granted the relevant permissions to
-*       obtain social account data. If you've specified the twitterAccountIdentifier, Appboy will only attempt to grab
-*       data for that twitter account. If you haven't specified it, Appboy will grab data for the first Twitter account
-*       returned by the system.
-*   ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly - Appboy will only attempt to obtain social account information when
-*       an identifier is set on the user for the corresponding social network. Note: This currently only works for
-*       Twitter accounts.
-*   ABKManualSocialAccountAcquisition - Appboy will NOT try to acquire social account data. You must call
-*       <pre>[[Appboy sharedInstance] promptUserForAccessToSocialNetwork:(ABKSocialNetwork)];</pre>
-*/
-typedef NS_ENUM(NSInteger, ABKSocialAccountAcquisitionPolicy) {
-  ABKAutomaticSocialAccountAcquisition,
-  ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly,
-  ABKManualSocialAccountAcquisition
-};
-
-/*!
 * Values representing the Social Networks recognized by the SDK.
 */
 typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
@@ -179,19 +179,25 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * Properties
  */
 
-@property (nonatomic, retain, readonly) ABKFeedController *feedController;
+@property (readonly) ABKFeedController *feedController;
 
 /*!
  * The current in-app message manager.
  * See ABKInAppMessageController.h.
  */
-@property (nonatomic, retain, readonly) ABKInAppMessageController *inAppMessageController;
+@property (readonly) ABKInAppMessageController *inAppMessageController;
 
 /*!
  * The current app user. 
  * See ABKUser.h and changeUser:userId below.
  */
-@property (nonatomic, retain, readonly) ABKUser *user;
+@property (readonly) ABKUser *user;
+
+/*!
+ * The Appboy location manager provides access to location related functionality in the Appboy SDK.
+ * See ABKLocationManager.h.
+ */
+@property (nonatomic, readonly) ABKLocationManager *locationManager;
 
 /*!
  * Appboy UI elements can be themed using the NUI framework. See https://github.com/tombenner/nui and the Appboy docs.
@@ -211,33 +217,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app.  Note that
  * you can theme your app and Appboy differently -- Appboy uses NUI independently of your app's use of NUI.
  */
-@property (nonatomic, assign) BOOL useNUITheming;
-
-/*!
- * The total number of currently active cards displayed in any feed view. Cards are
- * counted only once even if they appear in multiple feed views.
- * @deprecated This property is now deprecated and will be removed in the future. Please use 
- * [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll] instead.
- */
-@property (readonly, nonatomic, assign) NSInteger cardCount __deprecated_msg("Please use \n"
-"[[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll] instead");
-
-/*!
- * unreadCardCount is the number of currently active cards which have not been viewed.
- * A "view" happens when a card becomes visible in the feed view.  This differentiates
- * between cards which are off-screen in the scrolling view, and those which
- * are on-screen; when a card scrolls onto the screen, it's counted as viewed.
- *
- * Cards are counted as viewed only once -- if a card scrolls off the screen and
- * back on, it's not re-counted.
- *
- * Cards are counted only once even if they appear in multiple feed views or across multiple devices.
- *
- * @deprecated This property is now deprecated and will be removed in the future. Please use
- * [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead.
- */
-@property (readonly, nonatomic, assign) NSInteger unreadCardCount __deprecated_msg("Please use \n"
-"[[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead");
+@property (nonatomic) BOOL useNUITheming;
 
 /*!
 * The policy regarding processing of network requests by the SDK. See the enumeration values for more information on
@@ -251,14 +231,14 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 * the next time an eligible request is enqueued. To force an immediate flush after changing the request processing
 * policy, invoke <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue]</pre>.
 */
-@property (nonatomic, assign) ABKRequestProcessingPolicy requestProcessingPolicy;
+@property ABKRequestProcessingPolicy requestProcessingPolicy;
 
 
 /*!
  * An class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
  * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
  */
-@property (nonatomic, retain) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
+@property (nonatomic, weak) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
 
 /* ------------------------------------------------------------------------------------------------------
  * Methods
@@ -441,9 +421,15 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings
  * provided by StoreKit) can obtain the currency code by invoking:
  * <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre>
- * Supported currency symbols include: USD, CAD, EUR, GBP, JPY, AUD, CHF, NOK, MXN, NZD, CNY, RUB, TRY, INR, IDR, ILS,
- * SAR, ZAR, AED, SEK, HKD, SPD, DKK, and TWD. Any other provided currency symbol will result in a logged warning and
- * no other action taken by the SDK.
+ * Supported currency symbols include: AED, AFN, ALL, AMD, ANG, AOA, ARS, AUD, AWG, AZN, BAM, BBD, BDT, BGN, BHD, BIF, 
+ * BMD, BND, BOB, BRL, BSD, BTC, BTN, BWP, BYR, BZD, CAD, CDF, CHF, CLF, CLP, CNY, COP, CRC, CUC, CUP, CVE, CZK, DJF, 
+ * DKK, DOP, DZD, EEK, EGP, ERN, ETB, EUR, FJD, FKP, GBP, GEL, GGP, GHS, GIP, GMD, GNF, GTQ, GYD, HKD, HNL, HRK, HTG, HUF, 
+ * IDR, ILS, IMP, INR, IQD, IRR, ISK, JEP, JMD, JOD, JPY, KES, KGS, KHR, KMF, KPW, KRW, KWD, KYD, KZT, LAK, LBP, LKR, LRD, 
+ * LSL, LTL, LVL, LYD, MAD, MDL, MGA, MKD, MMK, MNT, MOP, MRO, MTL, MUR, MVR, MWK, MXN, MYR, MZN, NAD, NGN, NIO, NOK, NPR, 
+ * NZD, OMR, PAB, PEN, PGK, PHP, PKR, PLN, PYG, QAR, RON, RSD, RUB, RWF, SAR, SBD, SCR, SDG, SEK, SGD, SHP, SLL, SOS, SRD, 
+ * STD, SVC, SYP, SZL, THB, TJS, TMT, TND, TOP, TRY, TTD, TWD, TZS, UAH, UGX, USD, UYU, UZS, VEF, VND, VUV, WST, XAF, XAG, 
+ * XAU, XCD, XDR, XOF, XPD, XPF, XPT, YER, ZAR, ZMK, ZMW and ZWL. Any other provided currency symbol will result in a logged 
+ * warning and no other action taken by the SDK.
  * @param price Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct
  * from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should
  * be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied
@@ -468,25 +454,6 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 *   that's lazily pushed up to the server.
 */
 - (void) logSocialShare:(ABKSocialNetwork)socialNetwork;
-
-/*!
-* @param socialNetworks An ABKSocialNetwork indicating the network that you wish to access.
-*
-* @discussion Use this method to prompt the user for permission to use social network data (you don't need to use it
-* if permission has has been given at another point in your app -- Appboy is already collecting data).
-*
-* After permission is given, Appboy starts collecting any social network data available on the device (e.g. name, e-mail, etc.)
-* and reporting it to the server.
-*
-* We generally advise that you don't call this method on startup, as it will immediately prompt your users for
-* Twitter access.
-*
-* Please note that In versions 2.10 and above, Appboy will no longer prompt users to connect their Facebook accounts.
-* Please refer to the method "promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData" in SocialNetworkViewController.m
-* (https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/SocialNetworkViewController.m) to continue
-* prompting users to connect their Facebook account.
-*/
-- (void) promptUserForAccessToSocialNetwork:(ABKSocialNetwork)socialNetwork;
 
 /*!
  * @param replyToEmail The email address to send feedback replies to.
@@ -531,6 +498,8 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * for that user.
  */
 - (void) requestInAppMessageRefresh;
+
+- (BOOL) handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *replyInfo))reply;
 
 /*!
  * Enqueues an in-app message request for the current user. Note that this is deprecated from version 2.11.0. Please use
