@@ -753,6 +753,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21e8bce6-aa38-46ea-aa2a-63782fd37da3";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Develop;
@@ -845,6 +846,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = StopwatchDevelop;
 				PROVISIONING_PROFILE = "96addba3-911e-4172-a30c-4fa5f7399be2";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -873,6 +875,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Stopwatch;
 				PROVISIONING_PROFILE = "38ca3614-b7e9-4a23-a02f-520282dbb3ab";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

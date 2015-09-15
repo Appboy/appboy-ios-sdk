@@ -1,3 +1,6 @@
+##2.15.1
+- Fixes the warning "full bitcode bundle could not be generated because XXX was built only with bitcode marker".
+
 ## 2.15
 - Updates the SDK to support iOS 9.  In iOS9, previous versions of the SDK:  1) did not have bitcode support, 2) had a minor UI issue in in-app messages where the slideup messages were not docked on the bottom of the screen if they had one line of text, 3) failed to localize for zh-HK and zh-TW.
 
