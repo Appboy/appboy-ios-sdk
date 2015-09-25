@@ -15,6 +15,7 @@
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
   [[Appboy sharedInstance].user setCustomAttributeWithKey:@"Appboy love rate" andDoubleValue:(double)self.ratingSlider.value];
 }
 
