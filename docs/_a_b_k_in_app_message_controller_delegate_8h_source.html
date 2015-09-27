@@ -87,36 +87,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a>;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  ABKDisplayInAppMessageNow,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ABKDisplayInAppMessageLater,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ABKDiscardInAppMessage</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * Appboy Public API: ABKInAppMessageControllerDelegate</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">   38</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> &lt;NSObject&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">@optional</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;- (BOOL) onInAppMessageReceived:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;- (ABKInAppMessageDisplayChoice) beforeInAppMessageDisplayed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;- (<a class="code" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *) inAppMessageViewControllerWithInAppMessage:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;- (void) onInAppMessageDismissed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;- (BOOL) onInAppMessageClicked:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;- (BOOL) onInAppMessageButtonClicked:(<a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a> *)inAppMessage button:(<a class="code" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a> *)button;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_h_t_m_l.html">ABKInAppMessageHTML</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ABKDisplayInAppMessageNow,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ABKDisplayInAppMessageLater,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  ABKDiscardInAppMessage</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * Appboy Public API: ABKInAppMessageControllerDelegate</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">   39</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> &lt;NSObject&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;- (BOOL) onInAppMessageReceived:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;- (ABKInAppMessageDisplayChoice) beforeInAppMessageDisplayed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;- (<a class="code" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *) inAppMessageViewControllerWithInAppMessage:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;- (void) onInAppMessageDismissed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;- (BOOL) onInAppMessageClicked:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;- (BOOL) onInAppMessageButtonClicked:(<a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a> *)inAppMessage button:(<a class="code" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a> *)button;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;- (BOOL) onInAppMessageHTMLButtonClicked:(<a class="code" href="interface_a_b_k_in_app_message_h_t_m_l.html">ABKInAppMessageHTML</a> *)inAppMessage buttonID:(NSString *)buttonID;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 13:53:47 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 27 2015 15:54:58 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

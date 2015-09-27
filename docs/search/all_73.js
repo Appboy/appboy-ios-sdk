@@ -17,6 +17,7 @@ var searchData=
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3aaltitude_3averticalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:',['../interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a',1,'ABKUser']]],
   ['setpushnotificationsubscriptiontype_3a',['setPushNotificationSubscriptionType:',['../interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3',1,'ABKUser']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#a998b424210ebceb1957f5547e45dfb12',1,'Appboy']]],
+  ['shouldopenuriexternally',['shouldOpenURIExternally',['../interface_a_b_k_in_app_message.html#a87dd41a097105bc27d0a4881e1119ef8',1,'ABKInAppMessage']]],
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#a9a027766f3b350a09f44e0db4d6e22df',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#addd2d10f15efe49a8ee1dfa72a43043d',1,'Appboy']]],

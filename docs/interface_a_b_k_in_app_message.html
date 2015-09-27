@@ -114,6 +114,8 @@ Properties</h2></td></tr>
 <tr class="separator:a14e5b3e1822190a499d25b4d67e5baa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5008f6c7125a3902685d7cfb795539fd"><td class="memItemLeft" align="right" valign="top">NSURL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#a5008f6c7125a3902685d7cfb795539fd">uri</a></td></tr>
 <tr class="separator:a5008f6c7125a3902685d7cfb795539fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87dd41a097105bc27d0a4881e1119ef8"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#a87dd41a097105bc27d0a4881e1119ef8">shouldOpenURIExternally</a></td></tr>
+<tr class="separator:a87dd41a097105bc27d0a4881e1119ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa607c4e109e5853db1abc5c4a66c5a65"><td class="memItemLeft" align="right" valign="top">ABKInAppMessageDismissType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#aa607c4e109e5853db1abc5c4a66c5a65">inAppMessageDismissType</a></td></tr>
 <tr class="separator:aa607c4e109e5853db1abc5c4a66c5a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcbc0aac4cce6e40c58f7b035a9139e"><td class="memItemLeft" align="right" valign="top">UIColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#aadcbc0aac4cce6e40c58f7b035a9139e">backgroundColor</a></td></tr>
@@ -405,6 +407,27 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a87dd41a097105bc27d0a4881e1119ef8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) shouldOpenURIExternally</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES, the uri will be opened in an external web browser app. If this property is set to NO, the uri will be opened in a modal UIWebView inside the app. </p>
+
+</div>
+</div>
 <a class="anchor" id="a80d3c36a06f635dd176466c6a1d21fe8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -451,7 +474,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 13:53:47 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 27 2015 15:54:58 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

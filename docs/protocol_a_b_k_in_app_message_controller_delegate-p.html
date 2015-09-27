@@ -105,6 +105,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a7bc269046bd6037b9b704c8abcebbeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82b630d4457c2b287d4fd0d4f2d7ad06"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html#a82b630d4457c2b287d4fd0d4f2d7ad06">onInAppMessageButtonClicked:button:</a></td></tr>
 <tr class="separator:a82b630d4457c2b287d4fd0d4f2d7ad06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c4fb9f817732ebc39b0d60ee698103"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html#a68c4fb9f817732ebc39b0d60ee698103">onInAppMessageHTMLButtonClicked:buttonID:</a></td></tr>
+<tr class="separator:a68c4fb9f817732ebc39b0d60ee698103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The in-app message delegate allows you to control the display and behavior of the <a class="el" href="interface_appboy.html">Appboy</a> in-app message. For more detailed information on in-app message behavior, including when and how the delegate is used, see the documentation for the ABKInAppMessageDisplayChoice enum above for more detailed information. </p>
@@ -318,6 +320,49 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a68c4fb9f817732ebc39b0d60ee698103"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) onInAppMessageHTMLButtonClicked: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message_h_t_m_l.html">ABKInAppMessageHTML</a> *)&#160;</td>
+          <td class="paramname"><em>inAppMessage</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">buttonID:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>buttonID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inAppMessage</td><td>The in-app message object being offered to the delegate. </td></tr>
+    <tr><td class="paramname">buttonID</td><td>The buttonID within the clicked link being offered to the delegate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Boolean Value which controls whether or not <a class="el" href="interface_appboy.html">Appboy</a> will execute the click action. Returning YES will prevent <a class="el" href="interface_appboy.html">Appboy</a> from performing the click action. Returning NO will cause <a class="el" href="interface_appboy.html">Appboy</a> to follow the link.</dd></dl>
+<p>This delegate method is fired whenever the user clicks a link on the HTML in-app message. See <a class="el" href="_a_b_k_in_app_message_h_t_m_l_8h_source.html">ABKInAppMessageHTML.h</a> for more information. </p>
+
+</div>
+</div>
 <a class="anchor" id="abe6345c3c0c6676007ffcb14ebbc0007"></a>
 <div class="memitem">
 <div class="memproto">
@@ -354,7 +399,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 15 2015 13:53:47 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 27 2015 15:54:58 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
