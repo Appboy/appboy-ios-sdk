@@ -29,6 +29,12 @@ static const int CustomInAppMessageDuration = 5;
 }
 
 - (IBAction) inAppMessageTypeChanged:(id)sender {
+  if (self.inAppMessageTypeSegment.selectedSegmentIndex == 3) {
+    self.HTMLComposerView.hidden = NO;
+    return;
+  }
+  [self.HTMLInAppTextView resignFirstResponder];
+  self.HTMLComposerView.hidden = YES;
   [self.tableView reloadData];
 }
 
@@ -202,6 +208,16 @@ static const int CustomInAppMessageDuration = 5;
 - (IBAction) displayInAppMessage:(id)sender {
   ABKInAppMessage *inAppMessage = nil;
   switch (self.inAppMessageTypeSegment.selectedSegmentIndex) {
+    case 3: {
+      [self.HTMLInAppTextView resignFirstResponder];
+      ABKInAppMessageHTMLFull *inAppHTMLFull = [[ABKInAppMessageHTMLFull alloc] init];
+      if (self.zipRemoteURLTextField.text != nil && ![self.zipRemoteURLTextField.text isEqualToString:@""]) {
+        inAppHTMLFull.assetsZipRemoteUrl = [NSURL URLWithString:self.zipRemoteURLTextField.text];
+      }
+      inAppHTMLFull.message = self.HTMLInAppTextView.text;
+      [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppHTMLFull];
+      return;
+    }
     case 2:
       inAppMessage = [[ABKInAppMessageFull alloc] init];
       break;
@@ -307,14 +323,23 @@ static const int CustomInAppMessageDuration = 5;
   NSDictionary* info = [notification userInfo];
   CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
   CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
-  CGRect aRect = self.tableView.frame;
-  aRect.size.height = self.view.bounds.size.height - keyboardHeight - TableViewTopY;
-  self.tableView.frame = aRect;
+  [self setTableViewOrHTMLComposerHeight:self.view.bounds.size.height - keyboardHeight - TableViewTopY];
 }
 
 - (void) keyboardWillHide:(NSNotification *)notification {
-  CGRect aRect = self.tableView.frame;
-  aRect.size.height = self.view.bounds.size.height - TableViewTopY;
-  self.tableView.frame = aRect;
+  BOOL isHTMLComposer = !self.HTMLComposerView.hidden;
+  CGRect aRect = isHTMLComposer ? self.tableView.frame : self.HTMLComposerView.frame;
+  [self setTableViewOrHTMLComposerHeight:self.view.bounds.size.height - TableViewTopY];
+}
+
+- (void) setTableViewOrHTMLComposerHeight:(CGFloat)height {
+  BOOL isHTMLComposer = !self.HTMLComposerView.hidden;
+  CGRect aRect = isHTMLComposer ? self.tableView.frame : self.HTMLComposerView.frame;
+  aRect.size.height = height;
+  if (isHTMLComposer) {
+    self.HTMLComposerView.frame = aRect;
+  } else {
+    self.tableView.frame = aRect;
+  }
 }
 @end

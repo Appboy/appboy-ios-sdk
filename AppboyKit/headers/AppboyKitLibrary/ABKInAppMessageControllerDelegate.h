@@ -4,6 +4,7 @@
 
 @class ABKInAppMessageButton;
 @class ABKInAppMessageImmersive;
+@class ABKInAppMessageHTML;
 
 /*!
  * Possible values for in-app message handling after a in-app message is offered to an ABKInAppMessageControllerDelegate
@@ -142,5 +143,16 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * ABKInAppMessageBlock.h for more information.
  */
 - (BOOL) onInAppMessageButtonClicked:(ABKInAppMessageImmersive *)inAppMessage button:(ABKInAppMessageButton *)button;
+
+/*!
+ * @param inAppMessage The in-app message object being offered to the delegate.
+ * @param buttonID The buttonID within the clicked link being offered to the delegate.
+ * @return Boolean Value which controls whether or not Appboy will execute the click action. Returning YES will prevent
+ *         Appboy from performing the click action. Returning NO will cause Appboy to follow the link.
+ *
+ * This delegate method is fired whenever the user clicks a link on the HTML in-app message. See
+ * ABKInAppMessageHTML.h for more information.
+ */
+- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage buttonID:(NSString *)buttonID;
 
 @end

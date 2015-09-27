@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KkE-wg-28K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="KkE-wg-28K">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Stopwatch-->
@@ -81,21 +81,6 @@
                                 </state>
                                 <connections>
                                     <action selector="purchaseButtonTapped:" destination="2" eventType="touchUpInside" id="H6W-2Y-CnR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O9E-05-J6o">
-                                <rect key="frame" x="170" y="369" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="facebook-icon.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="facebookButtonTapped:" destination="2" eventType="touchUpInside" id="Z2Q-BU-45Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1A0-sK-cXh">
@@ -276,7 +261,7 @@
             <objects>
                 <viewController id="Lii-7i-Mid" customClass="TestingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qst-xo-ut8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DtZ-Hx-ehS">
@@ -863,7 +848,7 @@
             <objects>
                 <viewController id="mDO-W3-fC2" customClass="InAppMessageUIViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AT8-s9-IyQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ts5-L4-diY">
@@ -1107,6 +1092,7 @@
                                     <segment title="Slideup"/>
                                     <segment title="Modal"/>
                                     <segment title="Full"/>
+                                    <segment title="HTML Full"/>
                                 </segments>
                                 <connections>
                                     <action selector="inAppMessageTypeChanged:" destination="mDO-W3-fC2" eventType="valueChanged" id="kyC-f8-u9a"/>
@@ -1122,14 +1108,151 @@
                                     <action selector="displayInAppMessage:" destination="mDO-W3-fC2" eventType="touchUpInside" id="wJy-GZ-bi3"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" id="Bec-ax-Xja">
+                                <rect key="frame" x="0.0" y="94" width="320" height="410"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://www.dropbox.com/s/ikn7ge2tfrfx2cn/Archive.zip?dl=1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="BR7-AN-VRz">
+                                        <rect key="frame" x="80" y="8" width="223" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="mDO-W3-fC2" id="yBs-AQ-OZ5"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kqp-CP-KHm">
+                                        <rect key="frame" x="18" y="12" width="66" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTML:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e1I-T8-4R3">
+                                        <rect key="frame" x="18" y="48" width="59" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="jaI-iG-bLb">
+                                        <rect key="frame" x="18" y="74" width="285" height="313"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <mutableString key="text">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang="en"&gt;
+&lt;meta charset="UTF-8"/&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/&gt;
+&lt;script type="text/javascript" src="myscript.js"&gt;&lt;/script&gt;
+&lt;style&gt;
+@font-face {
+font-family: "Roboto";
+src: local(':cloud:'), url(./Roboto-Medium.ttf) format("ttf");
+font-weight: 400;
+}
+
+@font-face {
+font-family: "Roboto";
+src: local(':cloud:'), url(./Roboto-Regular.ttf) format("ttf");
+font-weight: 300;
+}
+
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+body {
+background: transparent;
+font-family: "Roboto", sans-serif;
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+color: #333;
+text-align: left;
+background: #0073d5;
+}
+
+.box {
+border-radius: 2px;
+width: 100%;
+height: 100%;
+min-width: 220px;
+min-height: 220px;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+}
+
+a {
+display: block;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+color: #fff;
+padding: 20px;
+}
+
+div.relativeLeft {
+position: relative;
+top: 0px;
+right: 0;
+width: 0px;
+height: 0px;
+}
+
+div.relativeRight {
+position: relative;
+float: right;
+}
+
+div.relativeTopRight {
+position: relative;
+float: top;
+float: right;
+}
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="box"&gt;
+&lt;div class="relativeTopRight"&gt;
+&lt;a href="appboy://close"&gt;X&lt;/a&gt;
+&lt;/div&gt;
+&lt;a href="https://appboy.com?abExternalOpen=false&amp;abButtonId=1"&gt;Visit Appboy.com&lt;/a&gt;
+&lt;a href="mailto:stopwatch@appboy.com"&gt;Email Stopwatch&lt;/a&gt;
+&lt;a href="appboy://feed"&gt;Open the Newsfeed&lt;/a&gt;
+&lt;button id="color-change" onclick='javascript:sayHi();'&gt;Change Color To Red&lt;/button&gt;
+&lt;img src="jpg_3.jpg" width="100%"&gt;
+&lt;div class="relativeLeft"&gt;
+&lt;a href="https://twitter.com/appboy?abButtonId=0&amp;abExternalOpen=true"&gt;Appboy Twitter&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="relativeRight"&gt;
+&lt;a href="appboy://close"&gt;Close&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="-94" maxX="320" maxY="504"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Br4-Wj-UYc"/>
                     <connections>
+                        <outlet property="HTMLComposerView" destination="Bec-ax-Xja" id="l8M-PZ-cf9"/>
+                        <outlet property="HTMLInAppTextView" destination="jaI-iG-bLb" id="6gw-sa-2Wh"/>
                         <outlet property="inAppMessageTypeSegment" destination="1YE-tT-35I" id="LRB-zk-CsY"/>
                         <outlet property="tableView" destination="Ts5-L4-diY" id="IZj-vs-FQK"/>
+                        <outlet property="zipRemoteURLTextField" destination="BR7-AN-VRz" id="dd8-JL-b1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezC-nR-x8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1138,12 +1261,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="facebook-icon.png" width="62" height="62"/>
         <image name="twitter-icon.png" width="62" height="62"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

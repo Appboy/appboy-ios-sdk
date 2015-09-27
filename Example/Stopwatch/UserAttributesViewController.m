@@ -4,9 +4,9 @@
 #import "Crittercism.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
-static NSInteger const TotalNumberOfAttributes = 11;
-static NSInteger const IndexOfGender = 7;
-static NSInteger const IndexOfBirthday = 9;
+static NSInteger const TotalNumberOfAttributes = 10;
+static NSInteger const IndexOfGender = 6;
+static NSInteger const IndexOfBirthday = 8;
 static NSMutableArray *attributesValuesArray = nil;
 
 @implementation UserAttributesViewController
@@ -21,7 +21,6 @@ static NSMutableArray *attributesValuesArray = nil;
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.country", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.home-city", nil),
-                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.bio", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.date-of-birth", nil),
@@ -236,26 +235,22 @@ static NSMutableArray *attributesValuesArray = nil;
           [Appboy sharedInstance].user.homeCity = (NSString *)object;
           continue;
 
-        case 6:
-          [Appboy sharedInstance].user.bio = (NSString *)object;
-          continue;
-
-        case 7:{
+        case 6:{
           BOOL genderIsMale = [(NSString *)object isEqualToString:@"m"];
           ABKUserGenderType userGender = genderIsMale ? ABKUserGenderMale : ABKUserGenderFemale;
           [[Appboy sharedInstance].user setGender:userGender];
           continue;
         }
 
-        case 8:
+        case 7:
           [Appboy sharedInstance].user.phone = (NSString *)object;
           continue;
 
-        case 9:
+        case 8:
           [Appboy sharedInstance].user.dateOfBirth = (NSDate *)object;
           continue;
 
-        case 10:
+        case 9:
           [[Appboy sharedInstance].user setCustomAttributeWithKey:@"favorite_color" andStringValue:(NSString *)object];
 
         default:

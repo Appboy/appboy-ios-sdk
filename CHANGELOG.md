@@ -1,3 +1,8 @@
+## 2.16
+- Deprecates the method `- (void) logSocialShare:(ABKSocialNetwork)socialNetwork` and enum `ABKSocialNetwork` in the `Appboy` class. If you use `logSocialShare:` to track user's social account sharing, you can use `logCustomEvent:` instead.
+- Deprecates the property `bio` in the `ABKUser` class.
+- Adds HTML In-App Message types. HTML In-App Messages consist of HTML and a url of a zipped archive of assets (e.g. images, css) to download locally which the HTML can reference. See [InAppMessageUIViewController](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/InAppMessageUIViewController.m#213) in our Stopwatch sample app for an example for the callbacks on the actions inside the WebView hosting the HTML In-App Message.
+
 ##2.15.1
 - Fixes the warning "full bitcode bundle could not be generated because XXX was built only with bitcode marker".
 

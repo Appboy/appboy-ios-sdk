@@ -215,19 +215,7 @@
 }
 
 - (void) userDidShareOnTwitter {
-  [Crittercism leaveBreadcrumb:@"Appboy: logSocialShare:ABKSocialNetworkTwitter"];
-  [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkTwitter];
   UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.twitter-share.thank-message", nil)
-                                                       delegate:nil cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                              otherButtonTitles:nil];
-  [uiAlertView show];
-  uiAlertView = nil;
-}
-
-- (IBAction) facebookButtonTapped:(id)sender {
-  [Crittercism leaveBreadcrumb:@"Appboy: logSocialShare:ABKSocialNetworkFacebook"];
-  [[Appboy sharedInstance] logSocialShare:ABKSocialNetworkFacebook];
-  UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Appboy.Stopwatch.initial-view.facebook-share.thank-message", nil)
                                                        delegate:nil cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
                                               otherButtonTitles:nil];
   [uiAlertView show];

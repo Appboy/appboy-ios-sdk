@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.15.1"
+#define APPBOY_SDK_VERSION @"2.16.0"
 #endif
 
 @class ABKInAppMessageController;
@@ -168,8 +168,8 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 };
 
 /*!
-* Values representing the Social Networks recognized by the SDK.
-*/
+ * Values representing the Social Networks recognized by the SDK.
+ */
 typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
   ABKSocialNetworkFacebook = 1 << 0,
   ABKSocialNetworkTwitter = 1 << 1
@@ -448,12 +448,12 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 - (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:properties;
 
 /*!
-* @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
-*
-* @discussion Records that the current user shared something to social network. This is added to the event tracking log
-*   that's lazily pushed up to the server.
-*/
-- (void) logSocialShare:(ABKSocialNetwork)socialNetwork;
+ * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
+ *
+ * @discussion Records that the current user shared something to social network. This is added to the event tracking log
+ *   that's lazily pushed up to the server.
+ */
+- (void) logSocialShare:(ABKSocialNetwork)socialNetwork __deprecated;
 
 /*!
  * @param replyToEmail The email address to send feedback replies to.

@@ -76,7 +76,7 @@
 /*!
  * The User's bio (String)
  */
-@property (nonatomic, copy) NSString *bio;
+@property (nonatomic, copy) NSString *bio DEPRECATED_ATTRIBUTE;
 
 /*!
  * The User's phone number (String)
