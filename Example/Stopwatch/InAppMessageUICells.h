@@ -21,6 +21,7 @@ static NSString *const ItemAnimatedFrom = @"Aminated From";
 static NSString *const ItemButtonNumber = @"Buttons:";
 static NSString *const ItemButtonOne = @"Button One";
 static NSString *const ItemButtonTwo = @"Button Two";
+static NSString *const ItemModalFrameColor = @"Frame Color";
 
 static NSString *const CellIdentifierSegment = @"SegmentCellIdentifier";
 static NSString *const CellIdentifierText = @"TextCellIdentifier";

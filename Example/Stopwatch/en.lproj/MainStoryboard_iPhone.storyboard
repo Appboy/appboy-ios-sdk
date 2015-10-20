@@ -1112,7 +1112,7 @@
                                 <rect key="frame" x="0.0" y="94" width="320" height="410"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://www.dropbox.com/s/ikn7ge2tfrfx2cn/Archive.zip?dl=1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="BR7-AN-VRz">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://appboy-images.com/HTML_ZIP_STOPWATCH.zip" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="BR7-AN-VRz">
                                         <rect key="frame" x="80" y="8" width="223" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1138,7 +1138,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="jaI-iG-bLb">
                                         <rect key="frame" x="18" y="74" width="285" height="313"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <mutableString key="text">&lt;!DOCTYPE html&gt;
+                                        <string key="text">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head lang="en"&gt;
 &lt;meta charset="UTF-8"/&gt;
@@ -1224,7 +1224,7 @@ float: right;
 &lt;a href="https://appboy.com?abExternalOpen=false&amp;abButtonId=1"&gt;Visit Appboy.com&lt;/a&gt;
 &lt;a href="mailto:stopwatch@appboy.com"&gt;Email Stopwatch&lt;/a&gt;
 &lt;a href="appboy://feed"&gt;Open the Newsfeed&lt;/a&gt;
-&lt;button id="color-change" onclick='javascript:sayHi();'&gt;Change Color To Red&lt;/button&gt;
+&lt;button id="color-change" onclick='javascript:sayHi();'&gt;Change Color To Red&lt;/button&gt; &lt;button onclick="window.location = 'appboy://customEvent?name=iOSHtmlIamCustomEvent&amp;pOne=pTwo';"&gt;Log Custom Event&lt;/button&gt;
 &lt;img src="jpg_3.jpg" width="100%"&gt;
 &lt;div class="relativeLeft"&gt;
 &lt;a href="https://twitter.com/appboy?abButtonId=0&amp;abExternalOpen=true"&gt;Appboy Twitter&lt;/a&gt;
@@ -1234,7 +1234,7 @@ float: right;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</mutableString>
+&lt;/html&gt;</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>

@@ -1,9 +1,15 @@
+## 2.16.1
+- Adds the ability to log a custom event from an HTML in-app message. To log a custom event from an HTML in-app message, navigate a user to a url of the form `appboy://customEvent?name=customEventName&p1=v2`, where the `name` URL parameter is the name of the event, and the remaining parameters are logged as String properties on the event.
+- Enables users to input text into HTML in-app messages by allowing HTML in-app messages to be displayed with a keyboard on screen. For all other in-app messages, the in-app message will be dismissed when a keyboard is displayed.
+- Fixes an issue where daylight savings changes were not reflected in the user profile timezone.
+- Adds the support for customization of the background color of modal in-app messages.
+
 ## 2.16
 - Deprecates the method `- (void) logSocialShare:(ABKSocialNetwork)socialNetwork` and enum `ABKSocialNetwork` in the `Appboy` class. If you use `logSocialShare:` to track user's social account sharing, you can use `logCustomEvent:` instead.
 - Deprecates the property `bio` in the `ABKUser` class.
 - Adds HTML In-App Message types. HTML In-App Messages consist of HTML and a url of a zipped archive of assets (e.g. images, css) to download locally which the HTML can reference. See [InAppMessageUIViewController](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/InAppMessageUIViewController.m#213) in our Stopwatch sample app for an example for the callbacks on the actions inside the WebView hosting the HTML In-App Message.
 
-##2.15.1
+## 2.15.1
 - Fixes the warning "full bitcode bundle could not be generated because XXX was built only with bitcode marker".
 
 ## 2.15

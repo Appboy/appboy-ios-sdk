@@ -18,7 +18,7 @@ static const int CustomInAppMessageDuration = 5;
     @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemHideChevron, ItemChevronColor,
       ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemAnimatedFrom]];
   self.inAppModalList = [NSMutableArray arrayWithArray:
-    @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemIconColor, ItemHeader, ItemHeaderColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor,
+    @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemIconColor, ItemHeader, ItemHeaderColor, ItemModalFrameColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor,
       ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemButtonNumber]];
   self.inAppFullList = [NSMutableArray arrayWithArray:
     @[ItemImageURL, ItemHeader, ItemHeaderColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor,
@@ -97,6 +97,7 @@ static const int CustomInAppMessageDuration = 5;
   } else if ([item isEqualToString:ItemHeaderColor] ||
              [item isEqualToString:ItemBodyColor] ||
              [item isEqualToString:ItemBackgroundColor] ||
+             [item isEqualToString:ItemModalFrameColor] ||
              [item isEqualToString:ItemIconColor] ||
              [item isEqualToString:ItemIconBackgroundColor] ||
              [item isEqualToString:ItemChevronColor] ||
@@ -312,6 +313,11 @@ static const int CustomInAppMessageDuration = 5;
           [inAppImmersive setInAppMessageButtons: @[self.inAppMessageDictionary[ItemButtonOne], self.inAppMessageDictionary[ItemButtonTwo]]];
         } else {
           [inAppImmersive setInAppMessageButtons:@[self.inAppMessageDictionary[ItemButtonOne]]];
+        }
+      }
+      if ([inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
+        if ([key isEqualToString:ItemModalFrameColor]) {
+          ((ABKInAppMessageModal *)inAppMessage).modalFrameColor = self.inAppMessageDictionary[key];
         }
       }
     }
