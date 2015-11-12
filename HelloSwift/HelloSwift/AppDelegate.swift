@@ -11,7 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Appboy.startWithApiKey("6deb7788-edee-4a02-b75a-a254cdb9f58b", inApplication:application, withLaunchOptions:launchOptions)
     
     // Register push
-    let setting : UIUserNotificationSettings = UIUserNotificationSettings(forTypes:[.Badge, .Sound, .Alert], categories: nil)
+    let types : UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert
+    var setting : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
     UIApplication.sharedApplication().registerUserNotificationSettings(setting)
     UIApplication.sharedApplication().registerForRemoteNotifications()
     

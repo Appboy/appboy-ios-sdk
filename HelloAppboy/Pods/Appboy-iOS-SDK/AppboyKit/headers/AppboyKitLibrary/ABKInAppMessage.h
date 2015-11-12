@@ -70,6 +70,13 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
 @property (readonly) NSURL *uri;
 
 /*!
+ * When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES,
+ * the uri will be opened in an external web browser app. If this property is set to NO, the uri will be opened in a
+ * modal UIWebView inside the app.
+ */
+@property BOOL shouldOpenURIExternally;
+
+/*!
  * inAppMessageDismissType defines the dismissal behavior of the in-app message.
  * See the above documentation for ABKInAppMessageDismissType for additional details.
  */

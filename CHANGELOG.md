@@ -1,3 +1,10 @@
+## 2.17
+- Removes the Facebook button from Feedback page. 
+- Makes the WebView background for HTML in-app messages transparent.  Ensure HTML in-app messages you send to the device are created expecting a transparent background.
+- Fixed the crash caused by inserting a nil object into an NSDictionary when parsing an event object.
+- Adds a new button clicked delegate method for HTML in-app message. The new delegate method also passes the URL of the clicked button.
+- Applies the Appboy endpoint delegate methods to in-app messages' resource(zip and image) fetching.
+
 ## 2.16.1
 - Adds the ability to log a custom event from an HTML in-app message. To log a custom event from an HTML in-app message, navigate a user to a url of the form `appboy://customEvent?name=customEventName&p1=v2`, where the `name` URL parameter is the name of the event, and the remaining parameters are logged as String properties on the event.
 - Enables users to input text into HTML in-app messages by allowing HTML in-app messages to be displayed with a keyboard on screen. For all other in-app messages, the in-app message will be dismissed when a keyboard is displayed.

@@ -24,7 +24,7 @@
     
     // As Apple docs say 'you do not add subviews to a navigation bar directly', we have to programmatically
     // add the button items
-    self.navigationItem.rightBarButtonItems = @[self.UpgradeButton, self.facebookButton, self.twitterButton, self.contactUsButton];
+    self.navigationItem.rightBarButtonItems = @[self.UpgradeButton, self.contactUsButton];
     self.navigationItem.leftBarButtonItems = @[self.latestNewsButton, self.newsAndFeedbackButton];
   }
 
@@ -334,7 +334,6 @@
   [self setContactUsButton:nil];
   [self setLatestNewsButton:nil];
   [self setUpgradeButton:nil];
-  [self setFacebookButton:nil];
   [self setTwitterButton:nil];
   [self setNewsAndFeedbackButton:nil];
   [self setNewsAndFeedbackNavigationController:nil];

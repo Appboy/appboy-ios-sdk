@@ -101,7 +101,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" id="so5-Oe-oie">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bbE-IL-53R">
-                                <rect key="frame" x="326" y="6.5" width="30" height="31"/>
+                                <rect key="frame" x="326" y="7" width="30" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="twitter-icon.png">
@@ -824,7 +824,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="ahE-Xs-AZ0">
                                         <rect key="frame" x="18" y="74" width="733" height="725"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <string key="text">&lt;!DOCTYPE html&gt;
+                                        <mutableString key="text">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head lang="en"&gt;
 &lt;meta charset="UTF-8"/&gt;
@@ -855,11 +855,10 @@ font-family: "Roboto", sans-serif;
 -ms-text-size-adjust: 100%;
 -webkit-text-size-adjust: 100%;
 color: #333;
-text-align: left;
+text-align: left; background-color: rgba(0,115,213,.95);
 }
 
 .box {
-background: #0073d5;
 border-radius: 2px;
 width: 100%;
 height: 100%;
@@ -920,7 +919,7 @@ float: right;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</string>
+&lt;/html&gt;</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>

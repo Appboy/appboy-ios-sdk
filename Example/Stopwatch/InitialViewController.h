@@ -16,7 +16,6 @@ UINavigationControllerDelegate, CLLocationManagerDelegate>
 @property IBOutlet UIButton *startButton;
 @property IBOutlet UILabel *timeLabel;
 @property IBOutlet UIBarButtonItem *UpgradeButton;
-@property IBOutlet UIBarButtonItem *facebookButton;
 @property IBOutlet UIBarButtonItem *twitterButton;
 @property IBOutlet UIBarButtonItem *newsAndFeedbackButton;
 @property IBOutlet UINavigationController *newsAndFeedbackNavigationController;
@@ -33,7 +32,6 @@ UINavigationControllerDelegate, CLLocationManagerDelegate>
 - (IBAction) newsAndFeedbackButtonTapped:(id)sender;
 
 - (IBAction) purchaseButtonTapped:(id)sender;
-- (IBAction) facebookButtonTapped:(id)sender;
 - (IBAction) twitterButtonTapped:(id)sender;
 
 @end

@@ -438,6 +438,7 @@
 				C5CC74A51766BC6B005DAD08 /* Upload DYSM to Crittercism */,
 				3993FFFAF9154BEEBDD5FA87 /* Copy Pods Resources */,
 				4E321B9519C12246000EE12B /* Embed Frameworks */,
+				1BEF3789CC507F95559EA780 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -550,6 +551,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1BEF3789CC507F95559EA780 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3993FFFAF9154BEEBDD5FA87 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -726,7 +742,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "21e8bce6-aa38-46ea-aa2a-63782fd37da3";
+				PROVISIONING_PROFILE = "b313693b-0178-4916-bfcc-7047d67e010f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -756,7 +772,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21e8bce6-aa38-46ea-aa2a-63782fd37da3";
+				PROVISIONING_PROFILE = "b313693b-0178-4916-bfcc-7047d67e010f";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -790,7 +806,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "21e8bce6-aa38-46ea-aa2a-63782fd37da3";
+				PROVISIONING_PROFILE = "b313693b-0178-4916-bfcc-7047d67e010f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -818,7 +834,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "21e8bce6-aa38-46ea-aa2a-63782fd37da3";
+				PROVISIONING_PROFILE = "b313693b-0178-4916-bfcc-7047d67e010f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -849,7 +865,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = StopwatchDevelop;
-				PROVISIONING_PROFILE = "96addba3-911e-4172-a30c-4fa5f7399be2";
+				PROVISIONING_PROFILE = "a84a14f8-b97b-4c32-b627-1ef89b964c33";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

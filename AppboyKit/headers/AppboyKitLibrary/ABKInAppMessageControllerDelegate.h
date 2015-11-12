@@ -146,6 +146,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate.
+ * @param clickedURL The URL that is clicked by user.
  * @param buttonID The buttonID within the clicked link being offered to the delegate.
  * @return Boolean Value which controls whether or not Appboy will execute the click action. Returning YES will prevent
  *         Appboy from performing the click action. Returning NO will cause Appboy to follow the link.
@@ -153,6 +154,8 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * This delegate method is fired whenever the user clicks a link on the HTML in-app message. See
  * ABKInAppMessageHTML.h for more information.
  */
-- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage buttonID:(NSString *)buttonID;
+- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(NSURL *)clickedURL buttonID:(NSString *)buttonID;
+
+- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage buttonID:(NSString *)buttonID __deprecated;
 
 @end

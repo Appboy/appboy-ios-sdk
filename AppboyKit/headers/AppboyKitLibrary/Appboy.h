@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.16.1"
+#define APPBOY_SDK_VERSION @"2.17.0"
 #endif
 
 @class ABKInAppMessageController;
@@ -403,7 +403,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:properties;
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(NSDictionary *)properties;
 
 
 /*!
@@ -445,7 +445,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:properties;
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(NSDictionary *)properties;
 
 /*!
  * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
