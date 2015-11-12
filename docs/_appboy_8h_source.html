@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef APPBOY_SDK_VERSION</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.16.1&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.17.0&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a>;</div>
@@ -208,12 +208,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:properties;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(NSDictionary *)properties;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:properties;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(NSDictionary *)properties;</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;- (void) logSocialShare:(<a class="code" href="interface_appboy.html#a8b77302b2297608a8d9ddf821a0f1be4">ABKSocialNetwork</a>)socialNetwork __deprecated;</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;</div>
@@ -235,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 20 2015 17:32:59 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 11 2015 21:30:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
