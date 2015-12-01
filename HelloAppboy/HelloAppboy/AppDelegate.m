@@ -7,7 +7,7 @@
   [Appboy startWithApiKey:@"9875081e-4793-49fa-9d09-8cf73ce4f3ee"
             inApplication:application
         withLaunchOptions:launchOptions
-        withAppboyOptions:@{ABKSessionTimeoutKey : @(60)}]; // Change the seesion timout to be 1 minute.
+        withAppboyOptions:@{ABKSessionTimeoutKey : @(60)}]; // Change the session timeout to be 1 minute.
   return YES;
 }
 							
