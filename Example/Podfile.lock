@@ -1,10 +1,10 @@
 PODS:
-  - Appboy-iOS-SDK (2.17.0):
+  - Appboy-iOS-SDK (2.17.1):
     - SDWebImage (~> 3.7.0)
   - KKColorListPicker (0.2.4)
   - NUI (0.5.5):
     - NUIParse
-  - NUIParse (1.2.1)
+  - NUIParse (1.3)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -27,14 +27,14 @@ CHECKOUT OPTIONS:
     :commit: 2e796e48efd572fc1d6834f766d3f7d55f9da27c
     :git: git@github.com:leoru/KKColorListPicker.git
   NUI:
-    :commit: d8b1b08df29a5b3a1573010ffe73e858d400709d
+    :commit: cbf8503f40a8d30a1011e6a04cd5cd3d5181d7d8
     :git: https://github.com/tombenner/nui.git
 
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: cc3b430b910c2b4a231f7891cd587957a3041553
+  Appboy-iOS-SDK: 6fe9e4eb95a9b292b6f618cd807c9910b55990ea
   KKColorListPicker: de772db47659dea2a8c77bf9bac97648929ce10a
   NUI: 53de7278003235deb2a375fe6f04c7a3aa3e49eb
-  NUIParse: 9b6d5a6b782dc654ac6c846d623885080306f07f
+  NUIParse: 2e3885ba7807477266396292626bd387d34c2338
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
 COCOAPODS: 0.39.0

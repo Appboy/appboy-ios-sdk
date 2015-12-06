@@ -1,3 +1,6 @@
+## 2.17.1
+- Fixes a bug where in certain conditions the SDK would resend user attributes that had already synced with the server.
+
 ## 2.17
 - Removes the Facebook button from Feedback page. 
 - Makes the WebView background for HTML in-app messages transparent.  Ensure HTML in-app messages you send to the device are created expecting a transparent background.
