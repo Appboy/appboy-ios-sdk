@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate method. It can be an
- * instance of class ABKInAppMessageSlideup, ABKInAppMessageModal or ABKInAppMssageFull.
+ * instance of class ABKInAppMessageSlideup, ABKInAppMessageModal or ABKInAppMessageFull.
  *
  * This delegate gets called when a new in-app message is received from the Appboy server and controls whether or not you're
  * going to use custom handling for the in-app message.
