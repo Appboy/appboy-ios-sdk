@@ -11,8 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Appboy.startWithApiKey("6deb7788-edee-4a02-b75a-a254cdb9f58b", inApplication:application, withLaunchOptions:launchOptions)
     
     // Register push
-    let types : UIUserNotificationType = UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert
-    var setting : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+    let setting : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
     UIApplication.sharedApplication().registerUserNotificationSettings(setting)
     UIApplication.sharedApplication().registerForRemoteNotifications()
     
@@ -24,16 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-    var deviceTokenString = String(format: "%@", deviceToken)
-    Appboy.sharedInstance().registerPushToken(deviceTokenString)
+    let deviceTokenString = String(format: "%@", deviceToken)
+    Appboy.sharedInstance()!.registerPushToken(deviceTokenString)
   }
   
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-    Appboy.sharedInstance().registerApplication(application, didReceiveRemoteNotification: userInfo)
+    Appboy.sharedInstance()!.registerApplication(application, didReceiveRemoteNotification: userInfo)
   }
   
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-    Appboy.sharedInstance().registerApplication(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+    Appboy.sharedInstance()!.registerApplication(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
   }
 }
 

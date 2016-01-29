@@ -1,3 +1,7 @@
+## 2.18.1
+- Fixs the nullability annotation warnings in the public header files.
+- Updates HelloSwift sample app to adopt swift 2.0.
+
 ## 2.18
 - Removes the deprecated method `requestSlideupRefresh` from Appboy class.
 - Adds nullability annotations to all Appboy public APIs.

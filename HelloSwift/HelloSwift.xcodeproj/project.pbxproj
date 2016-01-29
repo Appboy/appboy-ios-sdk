@@ -12,7 +12,7 @@
 		4E1644F71A04170E0007CA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F51A04170E0007CA5C /* Main.storyboard */; };
 		4E1644F91A04170E0007CA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F81A04170E0007CA5C /* Images.xcassets */; };
 		4E1644FC1A04170E0007CA5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644FA1A04170E0007CA5C /* LaunchScreen.xib */; };
-		6C0FE8FD45BA558FEEEB06FC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446901049F7C1F60144D6DC2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6C0FE8FD45BA558FEEEB06FC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446901049F7C1F60144D6DC2 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,7 +127,8 @@
 		4E1644E41A04170E0007CA5C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Appboy;
 				TargetAttributes = {
 					4E1644EB1A04170E0007CA5C = {
@@ -266,6 +267,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -335,6 +337,7 @@
 				INFOPLIST_FILE = HelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3e8870a1-7f58-490d-a8ff-997037d7fff9";
 			};
@@ -348,6 +351,7 @@
 				INFOPLIST_FILE = HelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2a8586b4-b7b8-4927-8ecd-151776bac9f1";
 			};

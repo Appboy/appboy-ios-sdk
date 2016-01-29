@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "ABKUser.h"
 
+NS_ASSUME_NONNULL_BEGIN
 extern NSInteger const DefaultNumberOfFriends;
 
 /*
  * Appboy Public API: ABKFacebookUser
  */
-NS_ASSUME_NONNULL_BEGIN
 @interface ABKFacebookUser : NSObject
 
 /*!

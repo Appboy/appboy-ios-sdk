@@ -29,6 +29,7 @@
  *   }
  * <pre>
  */
+NS_ASSUME_NONNULL_BEGIN
 extern NSString *const ABKFeedUpdatedNotification;
 extern NSString *const ABKFeedUpdatedIsSuccessfulKey;
 
@@ -51,7 +52,6 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
 /*
  * Appboy Public API: ABKFeedController
  */
-NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedController : NSObject
 
 /*!
