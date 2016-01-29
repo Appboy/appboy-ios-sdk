@@ -1,5 +1,5 @@
 ## 2.18.1
-- Fixs the nullability annotation warnings in the public header files.
+- Fixes the nullability annotation warnings in the public header files.
 - Updates HelloSwift sample app to adopt swift 2.0.
 
 ## 2.18
