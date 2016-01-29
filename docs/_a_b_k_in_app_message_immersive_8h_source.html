@@ -88,24 +88,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Appboy Public API: ABKInAppMessageImmersive</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html">    8</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a> : <a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a6c744c795b56e76dcf3da6750405a3e6">   15</a></span>&#160;<span class="keyword">@property</span> (copy) NSString *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a6c744c795b56e76dcf3da6750405a3e6">header</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a36b73f28854a1670020494df6c0673d6">   21</a></span>&#160;<span class="keyword">@property</span> UIColor *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a36b73f28854a1670020494df6c0673d6">headerTextColor</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a03008a80cfec882472d347b8e82d527a">   27</a></span>&#160;<span class="keyword">@property</span> UIColor *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a03008a80cfec882472d347b8e82d527a">closeButtonColor</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a646e55128215ea394fa543d30116d51a">   35</a></span>&#160;<span class="keyword">@property</span> (readonly) NSArray *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a646e55128215ea394fa543d30116d51a">buttons</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;- (void) logInAppMessageClickedWithButtonID:(NSInteger)buttonID;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;- (void) setInAppMessageButtons:(NSArray *)buttonArray;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html">    9</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a> : <a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a6c744c795b56e76dcf3da6750405a3e6">   16</a></span>&#160;<span class="keyword">@property</span> (copy, nullable) NSString *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a6c744c795b56e76dcf3da6750405a3e6">header</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a36b73f28854a1670020494df6c0673d6">   22</a></span>&#160;<span class="keyword">@property</span> (nullable) UIColor *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a36b73f28854a1670020494df6c0673d6">headerTextColor</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a03008a80cfec882472d347b8e82d527a">   28</a></span>&#160;<span class="keyword">@property</span> (nullable) UIColor *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a03008a80cfec882472d347b8e82d527a">closeButtonColor</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_immersive.html#a646e55128215ea394fa543d30116d51a">   36</a></span>&#160;<span class="keyword">@property</span> (readonly, nullable) NSArray *<a class="code" href="interface_a_b_k_in_app_message_immersive.html#a646e55128215ea394fa543d30116d51a">buttons</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;- (void) logInAppMessageClickedWithButtonID:(NSInteger)buttonID;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;- (void) setInAppMessageButtons:(NSArray *)buttonArray;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 00:33:50 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 28 2016 19:49:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -86,16 +86,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Appboy Public API: ABKAppboyEndpointDelegate</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">    6</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> &lt;NSObject&gt;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">    7</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> &lt;NSObject&gt;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;- (NSString *) getApiEndpoint:(NSString *)appboyApiEndpoint;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;- (NSString *) getResourceEndpoint:(NSString *)appboyResourceEndpoint;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;- (NSString *) getResourceEndpoint:(NSString *)appboyResourceEndpoint;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 00:33:50 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 28 2016 19:49:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

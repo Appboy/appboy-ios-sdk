@@ -96,33 +96,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Appboy Public API: ABKFeedViewControllerModalContextDelegate</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * ABKFeedViewControllerModalContext</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * Appboy Public API: ABKFeedViewControllerModalContext</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">   46</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> : <a class="code" href="interface_a_b_k_feed_view_controller_generic_context.html">ABKFeedViewControllerGenericContext</a></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a224e393a3d4f0cd540fdbc15b30317a8">   49</a></span>&#160;<span class="keyword">@property</span> NSString *<a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a224e393a3d4f0cd540fdbc15b30317a8">navigationBarTitle</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a3fce9e9b602651d664711704c824dd09">   52</a></span>&#160;<span class="keyword">@property</span> (weak) id&lt;ABKFeedViewControllerModalContextDelegate&gt; <a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a3fce9e9b602651d664711704c824dd09">closeButtonDelegate</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * ABKFeedViewControllerModalContext</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * Appboy Public API: ABKFeedViewControllerModalContext</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">   47</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> : <a class="code" href="interface_a_b_k_feed_view_controller_generic_context.html">ABKFeedViewControllerGenericContext</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a224e393a3d4f0cd540fdbc15b30317a8">   50</a></span>&#160;<span class="keyword">@property</span> (nullable) NSString *<a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a224e393a3d4f0cd540fdbc15b30317a8">navigationBarTitle</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a3fce9e9b602651d664711704c824dd09">   53</a></span>&#160;<span class="keyword">@property</span> (weak, nullable) id&lt;ABKFeedViewControllerModalContextDelegate&gt; <a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html#a3fce9e9b602651d664711704c824dd09">closeButtonDelegate</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">   57</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a> &lt;NSObject&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;- (void) feedViewControllerModalContextCloseTapped:(<a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> *)sender;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">   58</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_feed_view_controller_modal_context_delegate-p.html">ABKFeedViewControllerModalContextDelegate</a> &lt;NSObject&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;- (void) feedViewControllerModalContextCloseTapped:(<a class="code" href="interface_a_b_k_feed_view_controller_modal_context.html">ABKFeedViewControllerModalContext</a> *)sender;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 6 2015 00:33:50 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 28 2016 19:49:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
