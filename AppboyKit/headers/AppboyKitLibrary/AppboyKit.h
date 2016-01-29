@@ -3,6 +3,7 @@
 #import "ABKAppboyEndpointDelegate.h"
 #import "ABKFacebookUser.h"
 #import "ABKTwitterUser.h"
+#import "ABKPushURIDelegate.h"
 
 // Feedback
 #import "ABKFeedbackViewController.h"

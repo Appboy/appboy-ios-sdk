@@ -5,6 +5,7 @@
 /*
  * Appboy Public API: ABKInAppMessageImmersive
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageImmersive : ABKInAppMessage
 
 /*!
@@ -12,19 +13,19 @@
  * The header will only be displayed in one line on the default Appboy in-app messages. If the header is more than one
  * line, it will be truncated at the end.
  */
-@property (copy) NSString *header;
+@property (copy, nullable) NSString *header;
 
 /*!
  * headerTextColor defines the header text color, when there is a header string in the in-app message. The default text color
  * is black.
  */
-@property UIColor *headerTextColor;
+@property (nullable) UIColor *headerTextColor;
 
 /*!
  * closeButtonColor defines the close button color of the in-app message.
  * When this property is nil, the close button's default color is black.
  */
-@property UIColor *closeButtonColor;
+@property (nullable) UIColor *closeButtonColor;
 
 /*!
  * buttons defines the buttons of the in-app message.
@@ -32,7 +33,7 @@
  * When there are more than two buttons in the array, only the first two buttons will be displayed in the in-app message.
  * For more information and setting of ABKInAppMessageButton, please see the documentation in ABKInAppMessageButton.h for additional details.
  */
-@property (readonly) NSArray *buttons;
+@property (readonly, nullable) NSArray *buttons;
 
 /*!
  * @param buttonID The clicked button's button ID for the in-app message. This number can't be negative.
@@ -52,3 +53,4 @@
  */
 - (void) setInAppMessageButtons:(NSArray *)buttonArray;
 @end
+NS_ASSUME_NONNULL_END

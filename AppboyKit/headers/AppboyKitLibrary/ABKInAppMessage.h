@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
 /*
  * Appboy Public API: ABKInAppMessage
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessage : NSObject
 
 /*!
@@ -48,7 +49,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
  * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use-case.
  */
-@property NSDictionary *extras;
+@property (nullable) NSDictionary *extras;
 
 /*!
  * This property defines the number of seconds before the in-app message is automatically dismissed.
@@ -67,7 +68,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
  *
  * This property can be a HTTP URI or a protocol URI.
  */
-@property (readonly) NSURL *uri;
+@property (readonly, nullable) NSURL *uri;
 
 /*!
  * When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES,
@@ -86,38 +87,38 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
  * backgroundColor defines the background color of the in-app message. The default background color is black with 0.9 alpha for
  * ABKInAppMessageSlideup, and white with 1.0 alpha for ABKInAppMessageModal and ABKInAppMessageFull.
  */
-@property UIColor *backgroundColor;
+@property (nullable) UIColor *backgroundColor;
 
 /*!
  * textColor defines the message text color of the in-app message. The default text color is black.
  */
-@property UIColor *textColor;
+@property (nullable) UIColor *textColor;
 
 /*!
  * icon defines the font awesome unicode string of the Appboy icon.
  * You can choose to display one of the Appboy icons from Appboy dashboard. When you do so, this property will have the
  * unicode string of font awesome.
  */
-@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy, nullable) NSString *icon;
 
 /*!
  * iconColor defines the font color of icon property.
  * The default font color is white.
  */
-@property UIColor *iconColor;
+@property (nullable) UIColor *iconColor;
 
 /*!
  * iconBackgroundColor defines the background color of icon property.
  *  * The default background color's RGB values are R:0 G:115 B:213.
  */
-@property UIColor *iconBackgroundColor;
+@property (nullable) UIColor *iconBackgroundColor;
 
 /*!
  * imageURI defines the URI of the image icon on in-app message.
  * When there is a iconImage defined, the iconImage will be used and the value of property icon will 
  * be ignored.
  */
-@property (copy) NSURL *imageURI;
+@property (copy, nullable) NSURL *imageURI;
 
 /*!
  * If you're handling in-app messages completely on your own (returning YES from onInAppMessageReceived), you should still report
@@ -136,11 +137,12 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
  * ABKInAppMessageDisplayNewsFeed or ABKInAppMessageNoneClickAction, the parameter uri will be ignored, and property uri
  * will be set to nil.
  */
-- (void) setInAppMessageClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(NSURL *)uri;
+- (void) setInAppMessageClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
 
 /*!
  * Serializes the in-app message to binary data for use by wrappers such as Appboy's Unity SDK for iOS.
  */
-- (NSData *) serializeToData;
+- (nullable NSData *) serializeToData;
 
 @end
+NS_ASSUME_NONNULL_END

@@ -24,6 +24,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
   }
+  [Appboy sharedInstance].appboyPushURIDelegate = self;
 
   // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
   // feedback form and news feed).
@@ -122,6 +123,22 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 - (void) application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
   NSLog(@"%@",userInfo);
   [[Appboy sharedInstance] handleWatchKitExtensionRequest:userInfo reply:reply];
+}
+
+- (BOOL) handleAppboyPushURI:(NSString *)URIString withNotificationInfo:(NSDictionary *)notificationInfo {
+  NSRange range = [URIString rangeOfString:@"secret"];
+  if (range.location != NSNotFound) {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ssh"
+                                                    message:@"The deep link of the push is a secret."
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    [alert show];
+    alert = nil;
+    return YES;
+  } else {
+    return NO;
+  }
 }
 
 @end

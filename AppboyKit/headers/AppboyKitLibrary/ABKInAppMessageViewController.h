@@ -19,6 +19,7 @@
 /*
  * Appboy Public API: ABKInAppMessageViewController
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageViewController : UIViewController
 
 @property ABKInAppMessage *inAppMessage;
@@ -68,3 +69,4 @@
 - (void) moveInAppMessageViewOnScreen:(CGRect)inAppMessageWindowFrame;
 
 @end
+NS_ASSUME_NONNULL_END

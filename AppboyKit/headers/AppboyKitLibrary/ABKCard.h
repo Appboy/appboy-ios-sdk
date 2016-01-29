@@ -4,6 +4,7 @@
 /*
  * Appboy Public API: ABKCard
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKCard : NSObject <NSCopying, NSCoding>
 /*
  * Card's ID.
@@ -40,7 +41,7 @@
  * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use case.
  */
-@property NSDictionary *extras;
+@property (nullable) NSDictionary *extras;
 
 /*
  * @param cardDictionary The dictionary for card deserialization.`
@@ -48,12 +49,12 @@
  * Deserializes the dictionary to a card for use by wrappers such as Appboy's Unity SDK for iOS.
  * When the deserialization isn't successful, this method returns nil; otherwise, it returns the deserialized card.
  */
-+ (ABKCard *) deserializeCardFromDictionary:(NSDictionary *)cardDictionary;
++ (nullable ABKCard *) deserializeCardFromDictionary:(nullable NSDictionary *)cardDictionary;
 
 /*
  * Serializes the card to binary data for use by wrappers such as Appboy's Unity SDK for iOS.
  */
-- (NSData *) serializeToData;
+- (nullable NSData *) serializeToData;
 
 /*
  * Manually log an impression to Appboy for the card.
@@ -69,3 +70,4 @@
 
 - (BOOL) hasSameId:(ABKCard *)card;
 @end
+NS_ASSUME_NONNULL_END

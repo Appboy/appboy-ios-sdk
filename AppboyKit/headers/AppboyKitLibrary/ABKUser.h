@@ -41,52 +41,53 @@
 /*
  * Appboy Public API: ABKUser
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKUser : NSObject
 
 /*!
  * The User's first name (String)
  */
-@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, copy, nullable) NSString *firstName;
 
 /*!
  * The User's last name (String)
  */
-@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, copy, nullable) NSString *lastName;
 
 /*!
  * The User's email (String)
  */
-@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy, nullable) NSString *email;
 
 /*!
  * The User's date of birth (NSDate)
  */
-@property (nonatomic, copy) NSDate *dateOfBirth;
+@property (nonatomic, copy, nullable) NSDate *dateOfBirth;
 
 /*!
  * The User's country (String)
  */
-@property (nonatomic, copy) NSString *country;
+@property (nonatomic, copy, nullable) NSString *country;
 
 /*!
  * The User's home city (String)
  */
-@property (nonatomic, copy) NSString *homeCity;
+@property (nonatomic, copy, nullable) NSString *homeCity;
 
 /*!
  * The User's bio (String)
  */
-@property (nonatomic, copy) NSString *bio DEPRECATED_ATTRIBUTE;
+@property (nonatomic, copy, nullable) NSString *bio DEPRECATED_ATTRIBUTE;
 
 /*!
  * The User's phone number (String)
  */
-@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy, nullable) NSString *phone;
 
 /*!
  * The User's foursquare access token (String)
  */
-@property (nonatomic, copy) NSString *foursquareAccessToken;
+@property (nonatomic, copy, nullable) NSString *foursquareAccessToken;
 
 @property (nonatomic, copy, readonly) NSString *userID;
 
@@ -94,23 +95,23 @@
  * The User's avatar image URL. This URL will be processed by the server and used in their user profile on the
  * dashboard. (String)
  */
-@property (nonatomic, copy) NSString *avatarImageURL;
+@property (nonatomic, copy, nullable) NSString *avatarImageURL;
 
 /*!
  * The User's Facebook account information. For more detail, please refer to ABKFacebookUser.h.
  */
-@property ABKFacebookUser *facebookUser;
+@property (nullable) ABKFacebookUser *facebookUser;
 
 /*!
  * The User's Twitter account information. For more detail, please refer to ABKTwitterUser.h.
  */
-@property ABKTwitterUser *twitterUser;
+@property (nullable) ABKTwitterUser *twitterUser;
 
 /*!
  * Sets the attribution information for the user. For in apps that have an install tracking integration.
  * For more information, please refer to ABKAttributionData.h.
  */
-@property ABKAttributionData *attributionData;
+@property (nullable) ABKAttributionData *attributionData;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums
@@ -270,7 +271,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  *        attribute and remove the corresponding array if there is one.
  * @return YES if the operation was successful
  */
-- (BOOL) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray;
+- (BOOL) setCustomAttributeArrayWithKey:(NSString *)key array:(nullable NSArray *)valueArray;
 
 /*!
 * Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES
@@ -301,3 +302,4 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
                          verticalAccuracy:(double)verticalAccuracy;
 
 @end
+NS_ASSUME_NONNULL_END

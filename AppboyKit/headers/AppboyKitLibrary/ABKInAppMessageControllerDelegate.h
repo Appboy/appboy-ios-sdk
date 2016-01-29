@@ -36,6 +36,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
 /*
  * Appboy Public API: ABKInAppMessageControllerDelegate
  */
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKInAppMessageControllerDelegate <NSObject>
 @optional
 
@@ -154,8 +155,9 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * This delegate method is fired whenever the user clicks a link on the HTML in-app message. See
  * ABKInAppMessageHTML.h for more information.
  */
-- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(NSURL *)clickedURL buttonID:(NSString *)buttonID;
+- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(nullable NSURL *)clickedURL buttonID:(NSString *)buttonID;
 
 - (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage buttonID:(NSString *)buttonID __deprecated;
 
 @end
+NS_ASSUME_NONNULL_END

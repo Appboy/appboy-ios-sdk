@@ -5,8 +5,10 @@ static NSString *const ABKAppboyPushNotificationUninstallTrackingKey = @"appboy_
 /*
  * Appboy Public API: ABKPushUtils
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKPushUtils : NSObject
 
 + (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;
 
 @end
+NS_ASSUME_NONNULL_END

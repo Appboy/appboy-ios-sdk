@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageSlideupAnchor) {
 /*
  * Appboy Public API: ABKInAppMessageSlideup
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageSlideup : ABKInAppMessage
 
 /*!
@@ -36,5 +37,6 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageSlideupAnchor) {
  * chevronColor defines the chevron arrow color of the in-app message.
  * When this property is nil, the chevron's default color is white.
  */
-@property UIColor *chevronColor;
+@property (nullable) UIColor *chevronColor;
 @end
+NS_ASSUME_NONNULL_END

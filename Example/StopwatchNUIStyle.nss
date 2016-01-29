@@ -112,16 +112,6 @@ Button {
 ABKInAppMessageSlideupMessageLabel {
 }
 
-ABKInAppMessageeModalHeaderLabel {
-  font-name: PartyLetPlain;
-  font-size: 30.0;
-}
-
-ABKInAppMessageModalMessageLabel {
-  font-name: Chalkduster;
-  font-size: 11.0;
-}
-
 ABKInAppMessageFullHeaderLabel {
 }
 

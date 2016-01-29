@@ -39,13 +39,14 @@
 /*
  * Appboy Public API: ABKFeedViewControllerPopoverContext
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewControllerPopoverContext : ABKFeedViewControllerGenericContext
 
 /*! Title displayed in the top bar */
-@property NSString *navigationBarTitle;
+@property (nullable) NSString *navigationBarTitle;
 
 /*! Delegate */
-@property (weak) id<ABKFeedViewControllerPopoverContextDelegate> closeButtonDelegate;
+@property (weak, nullable) id<ABKFeedViewControllerPopoverContextDelegate> closeButtonDelegate;
 
 @end
 
@@ -59,3 +60,4 @@
 - (void) feedViewControllerPopoverContextCloseTapped:(ABKFeedViewControllerPopoverContext *)sender;
 
 @end
+NS_ASSUME_NONNULL_END

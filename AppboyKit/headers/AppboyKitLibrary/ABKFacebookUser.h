@@ -6,6 +6,7 @@ extern NSInteger const DefaultNumberOfFriends;
 /*
  * Appboy Public API: ABKFacebookUser
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKFacebookUser : NSObject
 
 /*!
@@ -25,10 +26,11 @@ extern NSInteger const DefaultNumberOfFriends;
  *
  * Please checkout the SocialNetworkViewController class for the sample code of how to use ABKFacebookUser.
  */
-- (id) initWithFacebookUserDictionary:(NSDictionary *)facebookUserDictionary
+- (id) initWithFacebookUserDictionary:(nullable NSDictionary *)facebookUserDictionary
                       numberOfFriends:(NSInteger)numberOfFriends
-                                likes:(NSArray *)likes;
-@property (readonly) NSDictionary *facebookUserDictionary;
+                                likes:(nullable NSArray *)likes;
+@property (readonly, nullable) NSDictionary *facebookUserDictionary;
 @property (readonly) NSInteger numberOfFriends;
-@property (readonly) NSArray *likes;
+@property (readonly, nullable) NSArray *likes;
 @end
+NS_ASSUME_NONNULL_END

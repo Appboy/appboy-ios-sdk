@@ -1,3 +1,9 @@
+## 2.18
+- Removes the deprecated method `requestSlideupRefresh` from Appboy class.
+- Adds nullability annotations to all Appboy public APIs.
+- Adds a new delegate method to support custom push URI handle. For more detail, please see [ABKPushURIDelegate.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/headers/AppboyKitLibrary/ABKPushURIDelegate.h);
+- Updates to auto-dismiss the Appboy web view when a user returns to the app after following a link out of the app from an Appboy web view.
+
 ## 2.17.1
 - Fixes a bug where in certain conditions the SDK would resend user attributes that had already synced with the server.
 

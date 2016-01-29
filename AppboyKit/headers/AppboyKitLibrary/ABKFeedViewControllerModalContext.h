@@ -13,6 +13,7 @@
 /*
  * Appboy Public API: ABKFeedViewControllerModalContextDelegate
  */
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedViewControllerModalContextDelegate;
 
 /*!
@@ -46,10 +47,10 @@
 @interface ABKFeedViewControllerModalContext : ABKFeedViewControllerGenericContext
 
 /*! Title displayed in the top bar */
-@property NSString *navigationBarTitle;
+@property (nullable) NSString *navigationBarTitle;
 
 /*! Delegate */
-@property (weak) id<ABKFeedViewControllerModalContextDelegate> closeButtonDelegate;
+@property (weak, nullable) id<ABKFeedViewControllerModalContextDelegate> closeButtonDelegate;
 
 @end
 
@@ -64,3 +65,4 @@
 - (void) feedViewControllerModalContextCloseTapped:(ABKFeedViewControllerModalContext *)sender;
 
 @end
+NS_ASSUME_NONNULL_END
