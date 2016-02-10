@@ -1,5 +1,4 @@
 #import "AppDelegate.h"
-#import <AppboyKit.h>
 
 @implementation AppDelegate
 

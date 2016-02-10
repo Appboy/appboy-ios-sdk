@@ -1,3 +1,7 @@
+## 2.18.2
+- Deprecates the delegate method `getResourceEndpoint:` in ABKAppboyEndpointDelegate. The SDK will no longer call this delegate method.
+- Adds warning logging if `[Appboy sharedInstance]` is called while in an uninitialized state.
+
 ## 2.18.1
 - Fixes the nullability annotation warnings in the public header files.
 - Updates HelloSwift sample app to adopt swift 2.0.
