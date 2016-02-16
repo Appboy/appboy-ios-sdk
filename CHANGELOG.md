@@ -1,3 +1,6 @@
+## 2.18.3
+- Makes an internal update to provide functionality for SDKs that embed this library.
+
 ## 2.18.2
 - Deprecates the delegate method `getResourceEndpoint:` in ABKAppboyEndpointDelegate. The SDK will no longer call this delegate method.
 - Adds warning logging if `[Appboy sharedInstance]` is called while in an uninitialized state.
