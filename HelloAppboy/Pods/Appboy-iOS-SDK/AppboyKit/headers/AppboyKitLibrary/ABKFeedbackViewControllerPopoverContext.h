@@ -11,6 +11,7 @@
 
 @class ABKFeedbackViewControllerPopoverContext;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedbackViewControllerPopoverContextDelegate <NSObject>
 
 @required
@@ -67,6 +68,7 @@
  */
 @interface ABKFeedbackViewControllerPopoverContext : ABKFeedbackViewController
 
-@property (nonatomic, weak) id <ABKFeedbackViewControllerPopoverContextDelegate> delegate;
+@property (nonatomic, weak, nullable) id <ABKFeedbackViewControllerPopoverContextDelegate> delegate;
 
 @end
+NS_ASSUME_NONNULL_END

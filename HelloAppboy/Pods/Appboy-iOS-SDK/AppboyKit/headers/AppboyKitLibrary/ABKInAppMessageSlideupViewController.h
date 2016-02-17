@@ -5,8 +5,10 @@
 /*
  * Appboy Public API: ABKInAppMessageSlideupViewController
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageSlideupViewController : ABKInAppMessageViewController
 
-@property IBOutlet UIImageView *arrowImage;
+@property (nullable) IBOutlet UIImageView *arrowImage;
 
 @end
+NS_ASSUME_NONNULL_END

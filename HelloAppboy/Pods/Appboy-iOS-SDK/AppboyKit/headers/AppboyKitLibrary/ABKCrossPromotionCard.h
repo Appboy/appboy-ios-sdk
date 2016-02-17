@@ -3,6 +3,7 @@
 /*
  * Appboy Public API: ABKCrossPromotionCard
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKCrossPromotionCard : ABKCard <NSCoding>
 
 /*
@@ -34,7 +35,7 @@
 /*
  * A localized display price string.
  */
-@property (copy) NSString *displayPrice;
+@property (copy, nullable) NSString *displayPrice;
 /*
  * The iTunes ID number of the promoted item.
  */
@@ -71,3 +72,4 @@
  */
 @property BOOL universal;
 @end
+NS_ASSUME_NONNULL_END

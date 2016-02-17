@@ -7,6 +7,7 @@
 /*
  * Appboy Public API: ABKInAppMessageController
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageController : NSObject
 
 /*!
@@ -14,7 +15,7 @@
  * Your app can set the delegate to override the default behavior of the ABKInAppMessageController. See
  * ABKInAppMessageControllerDelegate.h for more information.
  */
-@property (weak) id <ABKInAppMessageControllerDelegate> delegate;
+@property (weak, nullable) id <ABKInAppMessageControllerDelegate> delegate;
 
 /*!
  * supportedOrientationMasks allows you to change which orientation masks the in-app message supports.
@@ -48,7 +49,7 @@
  *
  * If there are no in-app messages available this returns immediately having taken no action.
  */
-- (void) displayNextInAppMessageWithDelegate:(id<ABKInAppMessageControllerDelegate>)delegate;
+- (void) displayNextInAppMessageWithDelegate:(nullable id<ABKInAppMessageControllerDelegate>)delegate;
 
 /*!
  * @return The number of in-app messages that are locally waiting to be displayed.
@@ -85,3 +86,4 @@
  */
 - (void) hideCurrentInAppMessage:(BOOL)animated;
 @end
+NS_ASSUME_NONNULL_END

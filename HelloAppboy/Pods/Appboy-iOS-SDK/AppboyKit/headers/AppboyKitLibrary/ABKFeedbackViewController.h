@@ -15,8 +15,10 @@
 /*
  * Appboy Public API: ABKFeedbackViewController
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedbackViewController : UIViewController
 
-@property (nonatomic, weak) id delegate;
+@property (nonatomic, weak, nullable) id delegate;
 
 @end
+NS_ASSUME_NONNULL_END

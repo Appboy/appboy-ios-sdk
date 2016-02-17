@@ -5,7 +5,9 @@
 /*
  * Appboy Public API: ABKFeedViewControllerDelegate
  */
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedViewControllerDelegate <NSObject>
+@optional
 /*!
  @param newsFeed The calling news feed context
  @param clickedCard The card that's clicked by user.
@@ -17,3 +19,4 @@
 - (BOOL) onCardClicked:(ABKCard *)clickedCard feedViewController:(UIViewController *)newsFeed;
 
 @end
+NS_ASSUME_NONNULL_END

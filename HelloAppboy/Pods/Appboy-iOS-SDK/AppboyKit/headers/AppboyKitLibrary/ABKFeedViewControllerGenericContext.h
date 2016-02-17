@@ -35,6 +35,7 @@
 /*
  * Appboy Public API: ABKFeedViewControllerGenericContext
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewControllerGenericContext : UINavigationController <UINavigationControllerDelegate>
 
 /*!
@@ -66,7 +67,7 @@
 @property CGFloat minimumCardMarginForiPad;
 
 /*! Delegate */
-@property (weak) id<ABKFeedViewControllerDelegate> appboyDelegate;
+@property (weak, nullable) id<ABKFeedViewControllerDelegate> appboyDelegate;
 
 - (void)closeButtonPressed:(id)sender;
 
@@ -83,3 +84,4 @@
 @property BOOL disableUnreadIndicator;
 
 @end
+NS_ASSUME_NONNULL_END

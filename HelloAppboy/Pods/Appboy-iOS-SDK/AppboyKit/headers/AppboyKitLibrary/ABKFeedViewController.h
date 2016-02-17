@@ -16,6 +16,7 @@
 /*
  * Appboy Public API: ABKFeedViewController
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,
     SKStoreProductViewControllerDelegate>
 
@@ -48,7 +49,7 @@
 @property CGFloat minimumCardMarginForiPad;
 
 /*! Delegate */
-@property (weak) id<ABKFeedViewControllerDelegate> appboyDelegate;
+@property (weak, nullable) id<ABKFeedViewControllerDelegate> appboyDelegate;
 
 /*!
  * This property is to indicate what categories of cards the news feed is displaying. 
@@ -64,3 +65,4 @@
 @property (nonatomic) BOOL disableUnreadIndicator;
 
 @end
+NS_ASSUME_NONNULL_END

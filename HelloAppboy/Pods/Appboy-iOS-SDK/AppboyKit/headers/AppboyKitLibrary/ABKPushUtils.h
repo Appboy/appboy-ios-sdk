@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 static NSString *const ABKAppboyPushNotificationUninstallTrackingKey = @"appboy_uninstall_tracking";
 
 /*
@@ -10,3 +11,4 @@ static NSString *const ABKAppboyPushNotificationUninstallTrackingKey = @"appboy_
 + (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;
 
 @end
+NS_ASSUME_NONNULL_END

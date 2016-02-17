@@ -32,6 +32,8 @@
 /*
  * Appboy Public API: ABKFeedViewControllerNavigationContext
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewControllerNavigationContext : ABKFeedViewController <UINavigationControllerDelegate>;
 
 @end
+NS_ASSUME_NONNULL_END

@@ -2,6 +2,7 @@
 
 @class ABKServerConfig;
 
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKLocationManager : NSObject
 
 @property (readonly) BOOL disableLocationTracking;
@@ -26,3 +27,4 @@
  */
 - (void) logSingleLocation;
 @end
+NS_ASSUME_NONNULL_END

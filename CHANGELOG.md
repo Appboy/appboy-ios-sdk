@@ -1,3 +1,6 @@
+## 2.18.4
+- Fixes a Cocoapods issue that emerged during the release of 2.8.13.
+
 ## 2.18.3
 - Makes an internal update to provide functionality for SDKs that embed this library.
 

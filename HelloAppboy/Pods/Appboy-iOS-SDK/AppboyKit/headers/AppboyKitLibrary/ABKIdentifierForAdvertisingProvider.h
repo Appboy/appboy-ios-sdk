@@ -12,7 +12,9 @@
 /*
  * Appboy Public API: ABKIdentifierForAdvertisingProvider
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKIdentifierForAdvertisingProvider : NSObject
-+ (NSString *) getIdentifierForAdvertiser;
-+ (NSNumber *) getIsAdvertisingTrackingEnabledAsNSNumber;
++ (nullable NSString *) getIdentifierForAdvertiser;
++ (nullable NSNumber *) getIsAdvertisingTrackingEnabledAsNSNumber;
 @end
+NS_ASSUME_NONNULL_END

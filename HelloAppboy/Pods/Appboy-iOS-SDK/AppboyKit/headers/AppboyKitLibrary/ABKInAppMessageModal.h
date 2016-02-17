@@ -3,6 +3,7 @@
 /*
  * Appboy Public API: ABKInAppMessageModal
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageModal : ABKInAppMessageImmersive
 
 /*!
@@ -10,6 +11,7 @@
  * screen outside of modal in-app message. When the property is nil, the color will be
  * set to the default color, which is black with 90% opacity.
  */
-@property UIColor *modalFrameColor;
+@property (nullable) UIColor *modalFrameColor;
 
 @end
+NS_ASSUME_NONNULL_END

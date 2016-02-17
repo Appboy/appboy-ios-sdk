@@ -3,8 +3,8 @@
 /*
  * Appboy Public API: ABKAppboyEndpointDelegate
  */
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKAppboyEndpointDelegate <NSObject>
-
 /*!
  * Given a valid Appboy API endpoint URI string, this method returns a valid endpoint URI string.
  *
@@ -13,12 +13,11 @@
  */
 - (NSString *) getApiEndpoint:(NSString *)appboyApiEndpoint;
 
+@optional
 /*!
- * Given a valid Appboy Resource endpoint URI string, this method returns a valid resource endpoint URI string.
- * Currently resource endpoints are image URIs, but may be extended to include video and other external content.
- *
- * @param appboyResourceEndpoint A URI string for an Appboy API resource endpoint
- * @return A valid Appboy API resource endpoint URI
+ * This method is deprecated. Appboy SDK will not call this delegate method no matter it is implemented or not.
+ * Please do not use or implement it.
  */
-- (NSString *) getResourceEndpoint:(NSString *)appboyResourceEndpoint;
+- (NSString *) getResourceEndpoint:(NSString *)appboyResourceEndpoint __deprecated;
 @end
+NS_ASSUME_NONNULL_END

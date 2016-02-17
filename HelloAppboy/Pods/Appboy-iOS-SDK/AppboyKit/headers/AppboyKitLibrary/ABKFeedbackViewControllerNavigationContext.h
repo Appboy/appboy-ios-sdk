@@ -11,6 +11,7 @@
 
 @class ABKFeedbackViewControllerNavigationContext;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedbackViewControllerNavigationContextDelegate <NSObject>
 
 /*!
@@ -57,6 +58,7 @@
  */
 @interface ABKFeedbackViewControllerNavigationContext : ABKFeedbackViewController
 
-@property (nonatomic, weak) id <ABKFeedbackViewControllerNavigationContextDelegate> delegate;
+@property (nonatomic, weak, nullable) id <ABKFeedbackViewControllerNavigationContextDelegate> delegate;
 
 @end
+NS_ASSUME_NONNULL_END

@@ -36,12 +36,13 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
 /*
  * Appboy Public API: ABKInAppMessageControllerDelegate
  */
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKInAppMessageControllerDelegate <NSObject>
 @optional
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate method. It can be an
- * instance of class ABKInAppMessageSlideup, ABKInAppMessageModal or ABKInAppMssageFull.
+ * instance of class ABKInAppMessageSlideup, ABKInAppMessageModal or ABKInAppMessageFull.
  *
  * This delegate gets called when a new in-app message is received from the Appboy server and controls whether or not you're
  * going to use custom handling for the in-app message.
@@ -154,8 +155,9 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * This delegate method is fired whenever the user clicks a link on the HTML in-app message. See
  * ABKInAppMessageHTML.h for more information.
  */
-- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(NSURL *)clickedURL buttonID:(NSString *)buttonID;
+- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(nullable NSURL *)clickedURL buttonID:(NSString *)buttonID;
 
 - (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage buttonID:(NSString *)buttonID __deprecated;
 
 @end
+NS_ASSUME_NONNULL_END

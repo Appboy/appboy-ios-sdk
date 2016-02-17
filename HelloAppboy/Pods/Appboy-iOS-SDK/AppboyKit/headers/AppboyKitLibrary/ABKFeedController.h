@@ -29,6 +29,7 @@
  *   }
  * <pre>
  */
+NS_ASSUME_NONNULL_BEGIN
 extern NSString *const ABKFeedUpdatedNotification;
 extern NSString *const ABKFeedUpdatedIsSuccessfulKey;
 
@@ -58,12 +59,12 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
  * ABKCaptionedImageCard, ABKCrossPromotionCard, ABKClassicCard and ABKTextAnnouncementCard. They are all subclasses
  * of ABKCard.
  */
-@property (readonly, getter=getNewsFeedCards) NSArray *newsFeedCards;
+@property (readonly, nullable, getter=getNewsFeedCards) NSArray *newsFeedCards;
 
 /*!
  * The NSDate object that indicates the last time the newsFeedCards property was updated from Appboy server.
  */
-@property (readonly) NSDate *lastUpdate;
+@property (readonly, nullable) NSDate *lastUpdate;
 
 /*!
  * This method returns the number of currently active cards which have not been viewed in the given categories.
@@ -92,5 +93,6 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
  * @discussion This method will find the cards of given categories and return them.
  * When the given categories don't exist in any card, this method will return an empty array.
  */
-- (NSArray *) getCardsInCategories:(ABKCardCategory)categories;
+- (nullable NSArray *) getCardsInCategories:(ABKCardCategory)categories;
 @end
+NS_ASSUME_NONNULL_END

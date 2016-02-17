@@ -4,6 +4,7 @@
 /*
  * Appboy Public API: ABKAttributionData
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKAttributionData : NSObject
 
 /*!
@@ -14,13 +15,14 @@
  *
  * @discussion: Creates an ABKAttributionData object to send to Appboy's servers.
  */
-- (id) initWithNetwork:(NSString *)network
-              campaign:(NSString *)campaign
-               adGroup:(NSString *)adGroup
-              creative:(NSString *) creative;
+- (id) initWithNetwork:(nullable NSString *)network
+              campaign:(nullable NSString *)campaign
+               adGroup:(nullable NSString *)adGroup
+              creative:(nullable NSString *) creative;
 
-@property (nonatomic, readonly) NSString *network;
-@property (nonatomic, readonly) NSString *campaign;
-@property (nonatomic, readonly) NSString *adGroup;
-@property (nonatomic, readonly) NSString *creative;
+@property (nonatomic, readonly, nullable) NSString *network;
+@property (nonatomic, readonly, nullable) NSString *campaign;
+@property (nonatomic, readonly, nullable) NSString *adGroup;
+@property (nonatomic, readonly, nullable) NSString *creative;
 @end
+NS_ASSUME_NONNULL_END

@@ -11,6 +11,7 @@
 
 @class ABKFeedbackViewControllerModalContext;
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedbackViewControllerModalContextDelegate <NSObject>
 @optional
 /*!
@@ -66,6 +67,7 @@
  */
 @interface ABKFeedbackViewControllerModalContext : UINavigationController
 
-@property (weak) id <ABKFeedbackViewControllerModalContextDelegate> feedbackDelegate;
+@property (weak, nullable) id <ABKFeedbackViewControllerModalContextDelegate> feedbackDelegate;
 
 @end
+NS_ASSUME_NONNULL_END
