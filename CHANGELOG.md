@@ -1,3 +1,7 @@
+## 2.19.0
+- Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events. 
+- Deprecates the old system of requesting in-app message display, now collectively known as 'original' in-app messaging, where messages were limited to displaying at app start.  
+
 ## 2.18.4
 - Fixes a Cocoapods issue that emerged during the release of 2.8.13.
 

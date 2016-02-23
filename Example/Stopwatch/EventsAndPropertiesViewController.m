@@ -57,7 +57,58 @@
   self.attributionCounter++;
 }
 
+- (IBAction)logCustomEventFromTextBox:(id)sender {
+  [self.customEventTextField resignFirstResponder];
+  NSString *customEventName = self.customEventTextField.text;
+  self.customEventTextField.text = @"";
+  // wait 1 second to dismiss the keyboard in case an IAM is triggered and waiting for displaying
+  [[Appboy sharedInstance] performSelector:@selector(logCustomEvent:) withObject:customEventName afterDelay:1];
+}
+- (IBAction)logPropertyFromTextBox:(id)sender {
+  [self.purchaseTextField resignFirstResponder];
+  NSString *purchaseName = self.purchaseTextField.text;
+  self.purchaseTextField.text = @"";
+  // wait 1 second to dismiss the keyboard in case an IAM is triggered and waiting for displaying
+  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
+  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    [[Appboy sharedInstance] logPurchase:purchaseName inCurrency:@"USD" atPrice:[[NSDecimalNumber alloc] initWithString:@"0.99"] withQuantity:1];
+  });
+}
+
 - (NSString *)attributionStringGenerator:(NSString *)inputString {
   return [inputString stringByAppendingString:[NSString stringWithFormat:@"%i", self.attributionCounter]];
 }
+
+- (IBAction)launchCachedFilesAlertView:(id)sender {
+  NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+  NSArray *allFiles = [self getDirectoryContentsWithPath:cachePath];
+  NSString *fileString = [allFiles componentsJoinedByString:@"\n"];
+  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Cache Files"
+                                                     message:fileString
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+  [theAlert show];
+}
+
+- (NSArray *)getDirectoryContentsWithPath:(NSString *)path {
+  NSMutableArray *returnArray = [NSMutableArray array];
+  NSArray *subpaths = [[NSFileManager defaultManager] subpathsAtPath:path];
+  BOOL isDirectory;
+  int count = 1;
+  for (NSString *item in subpaths){
+    NSString *fullPath = [[path stringByAppendingString:@"/"] stringByAppendingString:item];
+    BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:fullPath isDirectory:&isDirectory];
+    if (fileExistsAtPath) {
+      if (!isDirectory && ![item hasSuffix:@".DS_Store"])
+      {
+        [returnArray addObject:[NSString stringWithFormat:@"%d) %@", count, item]];
+        count++;
+        NSLog(@"Cache file: %@", item);
+      }
+    }
+  }
+  return returnArray;
+}
+
 @end

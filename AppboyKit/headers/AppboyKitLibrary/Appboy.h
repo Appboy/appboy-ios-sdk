@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.18.4"
+#define APPBOY_SDK_VERSION @"2.19.0"
 #endif
 
 @class ABKInAppMessageController;
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 /*!
- * Get the Appboy singleton.
+ * Get the Appboy singleton.  Returns nil if accessed before startWithApiKey: called.
  */
 + (nullable Appboy *) sharedInstance;
 
@@ -135,6 +135,12 @@ extern NSString *const ABKAppboyEndpointDelegateKey;
  * it times out. The value should be an integer bigger than 0.
  */
 extern NSString *const ABKSessionTimeoutKey;
+
+/*!
+ * Set the minimum time interval in seconds between triggers. After a trigger happens, we will ignore any triggers until
+ * the minimum time interval elapses. The default value is 30s.
+ */
+extern NSString *const ABKMinimumTriggerTimeIntervalKey;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums

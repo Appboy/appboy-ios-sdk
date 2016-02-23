@@ -8,6 +8,16 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
 @implementation AppDelegate
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [Appboy startWithApiKey:AppboyApiKey
+            inApplication:application
+        withLaunchOptions:launchOptions
+        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
+                            ABKMinimumTriggerTimeIntervalKey: @(5)}];
+  
+  return YES;
+}
+
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Sets up Crittercism for crash and error tracking.
   NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
@@ -16,10 +26,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
 
   // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
-  [Appboy startWithApiKey:AppboyApiKey
-            inApplication:application
-        withLaunchOptions:launchOptions
-        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing)}];
+  
 
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
@@ -59,6 +66,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   /*
    Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
    */
+  NSLog(@"applicationDidBecomeActive:(UIApplication *)application");
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
@@ -77,7 +85,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   }
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
   NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
-  }
+}
 
 - (void)setupPushCategories {
   id UIMutableUserNotificationActionClass = NSClassFromString(@"UIMutableUserNotificationAction");
