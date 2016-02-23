@@ -47,6 +47,7 @@ var searchData=
   ['abkinappmessageview',['ABKInAppMessageView',['../interface_a_b_k_in_app_message_view.html',1,'']]],
   ['abkinappmessageviewcontroller',['ABKInAppMessageViewController',['../interface_a_b_k_in_app_message_view_controller.html',1,'']]],
   ['abklocationmanager',['ABKLocationManager',['../interface_a_b_k_location_manager.html',1,'']]],
+  ['abkminimumtriggertimeintervalkey',['ABKMinimumTriggerTimeIntervalKey',['../interface_appboy.html#a37f0119e57f7016a24d1521c4a91b592',1,'Appboy']]],
   ['abknotificationsubscriptiontype',['ABKNotificationSubscriptionType',['../interface_a_b_k_user.html#a35f159bb21a5b669c611c2adfa0f7228',1,'ABKUser']]],
   ['abkpushuridelegate_2dp',['ABKPushURIDelegate-p',['../protocol_a_b_k_push_u_r_i_delegate-p.html',1,'']]],
   ['abkpushutils',['ABKPushUtils',['../interface_a_b_k_push_utils.html',1,'']]],

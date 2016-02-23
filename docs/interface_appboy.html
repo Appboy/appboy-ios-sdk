@@ -179,6 +179,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a01b6cec0748494e9dfb4cb178157ad3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04f70f8cae7ab181844cc96b81f29309"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a04f70f8cae7ab181844cc96b81f29309">ABKSessionTimeoutKey</a></td></tr>
 <tr class="separator:a04f70f8cae7ab181844cc96b81f29309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f0119e57f7016a24d1521c4a91b592"><td class="memItemLeft" align="right" valign="top">NSString *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a37f0119e57f7016a24d1521c4a91b592">ABKMinimumTriggerTimeIntervalKey</a></td></tr>
+<tr class="separator:a37f0119e57f7016a24d1521c4a91b592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -779,7 +781,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the <a class="el" href="interface_appboy.html">Appboy</a> singleton. </p>
+<p>Get the <a class="el" href="interface_appboy.html">Appboy</a> singleton. Returns nil if accessed before startWithApiKey: called. </p>
 
 </div>
 </div>
@@ -967,6 +969,19 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Sets the data flush interval (in seconds). This only has an effect when the request processing mode is set to ABKAutomaticRequestProcessing (which is the default). Values are converted into NSTimeIntervals and must be greater than 1.0. </p>
+
+</div>
+</div>
+<a class="anchor" id="a37f0119e57f7016a24d1521c4a91b592"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString* const) ABKMinimumTriggerTimeIntervalKey</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the minimum time interval in seconds between triggers. After a trigger happens, we will ignore any triggers until the minimum time interval elapses. The default value is 30s. </p>
 
 </div>
 </div>
@@ -1206,7 +1221,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 16 2016 20:01:31 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 23 2016 16:43:31 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
