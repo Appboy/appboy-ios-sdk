@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
  * beforeInAppMessageDisplayed:withKeyboardIsUp: delegate method if no other in-app message is 
  * currently on the screen.
  */
-- (BOOL) onInAppMessageReceived:(ABKInAppMessage *)inAppMessage;
+- (BOOL) onInAppMessageReceived:(ABKInAppMessage *)inAppMessage __deprecated;
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate method.

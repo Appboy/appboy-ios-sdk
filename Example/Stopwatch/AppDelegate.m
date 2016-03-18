@@ -48,6 +48,11 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   return YES;
 }
 
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+  NSLog(@"application:continueUserActivity:restorationHandler called");
+  return false;
+}
+
 // When a notification is received, pass it to Appboy
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
   NSLog(@"Application delegate method didReceiveRemoteNotification is called with user info: %@", userInfo);

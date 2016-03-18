@@ -1,3 +1,11 @@
+## 2.19.1
+- Analytics are now logged for in-app messages and in-app message buttons with 'ABKInAppMessageNoneClickAction' click actions.
+- Removes the logging "*** -[NSKeyedUnarchiver initForReadingWithData:]: data is NULL" from the console when the archive trigger in-app message data is nil.
+- Fixes a NULL error: when the old SDK receives an Appboy push with campaign ID as NULL, push clicked trigger in-app message wouldn't be triggered.
+- Adds sample code for universal link in Stopwatch.
+- Fixes an issue where unread card data got merged across users; when changing user between known users (i.e. users with an external ID), the read/unread news feed cards data of the old user would be merged to the new user's data.
+- Fixes an issue that after giving a default user attribute an initial value and then changed the value, you couldn't change the user attribute to the initial value again. The bug was introduced in version 2.17.1.
+
 ## 2.19.0
 - Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events. 
 - Deprecates the old system of requesting in-app message display, now collectively known as 'original' in-app messaging, where messages were limited to displaying at app start.  

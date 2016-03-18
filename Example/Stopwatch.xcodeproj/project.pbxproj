@@ -55,6 +55,7 @@
 		95EF512D173D5FD600C0D780 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF512C173D5FD600C0D780 /* InitialViewController.m */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
+		E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */; };
 		E3AF79251AEACAB30075681E /* EventsAndPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AF79241AEACAB30075681E /* EventsAndPropertiesViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -462,13 +463,16 @@
 						DevelopmentTeam = 5GLZKGNWQ3;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.GameCenter = {
 								enabled = 0;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
 							};
 						};
 					};
@@ -537,6 +541,7 @@
 				4E76BAA5183546E3001872E3 /* dsym_upload.sh in Resources */,
 				4E49ED0319DDE84F00ADC43F /* btn-backarrow.png in Resources */,
 				4E49ED0819DDE84F00ADC43F /* Default@2x.png in Resources */,
+				E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */,
 				4E49ED0619DDE84F00ADC43F /* Default-568h@2x.png in Resources */,
 				4E49ED1A19DDE84F00ADC43F /* twitter-icon.png in Resources */,
 				4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */,
@@ -608,7 +613,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_ID=\"51b67d141386207417000002\"\nAPI_KEY=\"n9vujab6u83in5zd2wggxhxqeiatsj4f\"\nsource ${SRCROOT}/CrittercismSDK/dsym_upload.sh";
+			shellScript = "APP_ID=\"51b67d141386207417000002\"\nAPI_KEY=\"n9vujab6u83in5zd2wggxhxqeiatsj4f\"\n#source ${SRCROOT}/CrittercismSDK/dsym_upload.sh";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -725,8 +730,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -742,7 +747,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "1d7b1660-dd65-4635-98fd-e2468906f559";
+				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -757,7 +762,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wenzhi Lin (LU84W4P9RR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -772,7 +777,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1d7b1660-dd65-4635-98fd-e2468906f559";
+				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -789,8 +794,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -806,7 +811,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1d7b1660-dd65-4635-98fd-e2468906f559";
+				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -824,8 +829,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -834,7 +839,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "1d7b1660-dd65-4635-98fd-e2468906f559";
+				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -865,7 +870,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = StopwatchDevelop;
-				PROVISIONING_PROFILE = "4f4a747e-05d8-465e-9cc9-50ed01eeb646";
+				PROVISIONING_PROFILE = "e7b8dde9-8877-4fd5-8c27-6aff4625e35d";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -894,7 +899,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "38ca3614-b7e9-4a23-a02f-520282dbb3ab";
+				PROVISIONING_PROFILE = "2a47eccb-fcf3-424e-a3df-9610c6f4cae8";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

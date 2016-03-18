@@ -4,9 +4,10 @@
 #import "Crittercism.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
-static NSInteger const TotalNumberOfAttributes = 10;
+static NSInteger const TotalNumberOfAttributes = 11;
 static NSInteger const IndexOfGender = 6;
 static NSInteger const IndexOfBirthday = 8;
+static NSInteger const IndexOfPushSubscriptionState = 10;
 static NSMutableArray *attributesValuesArray = nil;
 
 @implementation UserAttributesViewController
@@ -24,7 +25,8 @@ static NSMutableArray *attributesValuesArray = nil;
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.date-of-birth", nil),
-                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil)];
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil),
+                                 @"Push Sub"];
 
   if (attributesValuesArray == nil || [attributesValuesArray count] <= 0) {
     attributesValuesArray = [NSMutableArray arrayWithCapacity:TotalNumberOfAttributes];
@@ -47,12 +49,12 @@ static NSMutableArray *attributesValuesArray = nil;
 {
   // Cell with gender segmented control
   if (indexPath.row == IndexOfGender) {
-    static NSString *CellIdentifier = @"gender cell";
+    NSString *cellIdentifier = @"gender cell";
 
-    UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
     if (cell == nil) {
-      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     id object = attributesValuesArray[(NSUInteger)indexPath.row];
@@ -65,8 +67,27 @@ static NSMutableArray *attributesValuesArray = nil;
     }
     return cell;
 
-  }
-  else {
+  } else if (indexPath.row == IndexOfPushSubscriptionState) {
+    NSString *cellIdentifier = @"pushsub cell";
+    
+    UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    id object = attributesValuesArray[(NSUInteger)indexPath.row];
+    if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
+      if ([(NSString *)object isEqualToString:@"u"]) {
+        cell.attributeSegmentedControl.selectedSegmentIndex = 0;
+      } else if ([(NSString *)object isEqualToString:@"s"]) {
+        cell.attributeSegmentedControl.selectedSegmentIndex = 1;
+      } else {
+        cell.attributeSegmentedControl.selectedSegmentIndex = 2;
+      }
+    }
+    return cell;
+  } else {
     // Cell with text field
     static NSString *CellIdentifier = @"text field cell";
 
@@ -177,6 +198,17 @@ static NSMutableArray *attributesValuesArray = nil;
   attributesValuesArray[IndexOfGender] = gender;
 }
 
+- (IBAction)setPushSubscriptionState:(UISegmentedControl *)sender {
+  NSString *pushSubscriptionState;
+  if (sender.selectedSegmentIndex == 0) {
+    pushSubscriptionState = @"u";
+  } else if (sender.selectedSegmentIndex == 1) {
+    pushSubscriptionState = @"s";
+  } else {
+    pushSubscriptionState = @"o";
+  }
+  attributesValuesArray[IndexOfPushSubscriptionState] = pushSubscriptionState;
+}
 
 - (IBAction)backButtonTapped:(id)sender {
   [self dismissViewControllerAnimated:YES completion:nil];
@@ -252,6 +284,21 @@ static NSMutableArray *attributesValuesArray = nil;
 
         case 9:
           [[Appboy sharedInstance].user setCustomAttributeWithKey:@"favorite_color" andStringValue:(NSString *)object];
+          continue;
+          
+        case 10:{
+          NSString *subscriptionValue = (NSString *)object;
+          ABKNotificationSubscriptionType subscriptionType;
+          if ([subscriptionValue isEqualToString:@"u"]) {
+            subscriptionType = ABKUnsubscribed;
+          } else if ([subscriptionValue isEqualToString:@"s"]) {
+            subscriptionType = ABKSubscribed;
+          } else {
+            subscriptionType = ABKOptedIn;
+          }
+          [[Appboy sharedInstance].user setPushNotificationSubscriptionType:subscriptionType];
+          continue;
+        }
 
         default:
           break;
