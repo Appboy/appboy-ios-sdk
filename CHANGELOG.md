@@ -1,10 +1,10 @@
 ## 2.19.1
-- Analytics are now logged for in-app messages and in-app message buttons with 'ABKInAppMessageNoneClickAction' click actions.
-- Removes the logging "*** -[NSKeyedUnarchiver initForReadingWithData:]: data is NULL" from the console when the archive trigger in-app message data is nil.
-- Fixes a NULL error: when the old SDK receives an Appboy push with campaign ID as NULL, push clicked trigger in-app message wouldn't be triggered.
-- Adds sample code for universal link in Stopwatch.
-- Fixes an issue where unread card data got merged across users; when changing user between known users (i.e. users with an external ID), the read/unread news feed cards data of the old user would be merged to the new user's data.
-- Fixes an issue that after giving a default user attribute an initial value and then changed the value, you couldn't change the user attribute to the initial value again. The bug was introduced in version 2.17.1.
+- Analytics are now logged for in-app messages and in-app message buttons with 'ABKInAppMessageNoneClickAction' click actions.  `ABKInAppMessageNoneClickAction` is set when an in-app message on the dashboard has a click action that only closes the in-app message; formerly this did not count as a click.
+- Fixes the benign issue that caused the log message `*** -[NSKeyedUnarchiver initForReadingWithData:]: data is NULL`.
+- Fixes an issue where NULL campaign IDs in push messages (e.g. from a REST API push message without a specified campaign id) resulted in push-clicked triggers for triggered in-app messages not firing.
+- Fixes an issue where calling `changeUser` between identified users caused the read/unread state of the news feed cards of the old user to be set as the new user's read/unread states.
+- Fixes an issue where a user attribute value that had been set to multiple different values created a state that would not let you set the original value again. The bug was introduced in version 2.17.1.
+- Adds sample code for a universal link in Stopwatch.
 
 ## 2.19.0
 - Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events. 
