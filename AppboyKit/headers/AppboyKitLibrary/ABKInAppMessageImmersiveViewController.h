@@ -8,7 +8,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageImmersiveViewController : ABKInAppMessageViewController
 
-@property IBOutlet ABKLabel *inAppMessageHeaderLabel;
+@property (weak) IBOutlet ABKLabel *inAppMessageHeaderLabel;
 
 - (IBAction) dismissInAppMessage:(id)sender;
 @end

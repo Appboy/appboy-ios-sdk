@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
  * screen outside of modal in-app message. When the property is nil, the color will be
  * set to the default color, which is black with 90% opacity.
  */
-@property (nullable) UIColor *modalFrameColor;
+@property (strong, nullable) UIColor *modalFrameColor;
 
 @end
 NS_ASSUME_NONNULL_END

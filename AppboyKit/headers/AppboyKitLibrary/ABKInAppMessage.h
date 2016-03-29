@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use-case.
  */
-@property (nullable) NSDictionary *extras;
+@property (strong, nullable) NSDictionary *extras;
 
 /*!
  * This property defines the number of seconds before the in-app message is automatically dismissed.
@@ -87,12 +87,12 @@ NS_ASSUME_NONNULL_BEGIN
  * backgroundColor defines the background color of the in-app message. The default background color is black with 0.9 alpha for
  * ABKInAppMessageSlideup, and white with 1.0 alpha for ABKInAppMessageModal and ABKInAppMessageFull.
  */
-@property (nullable) UIColor *backgroundColor;
+@property (strong, nullable) UIColor *backgroundColor;
 
 /*!
  * textColor defines the message text color of the in-app message. The default text color is black.
  */
-@property (nullable) UIColor *textColor;
+@property (strong, nullable) UIColor *textColor;
 
 /*!
  * icon defines the font awesome unicode string of the Appboy icon.
@@ -105,13 +105,13 @@ NS_ASSUME_NONNULL_BEGIN
  * iconColor defines the font color of icon property.
  * The default font color is white.
  */
-@property (nullable) UIColor *iconColor;
+@property (strong, nullable) UIColor *iconColor;
 
 /*!
  * iconBackgroundColor defines the background color of icon property.
  *  * The default background color's RGB values are R:0 G:115 B:213.
  */
-@property (nullable) UIColor *iconBackgroundColor;
+@property (strong, nullable) UIColor *iconBackgroundColor;
 
 /*!
  * imageURI defines the URI of the image icon on in-app message.
