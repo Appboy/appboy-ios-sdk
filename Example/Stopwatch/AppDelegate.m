@@ -8,16 +8,6 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [Appboy startWithApiKey:AppboyApiKey
-            inApplication:application
-        withLaunchOptions:launchOptions
-        withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
-                            ABKMinimumTriggerTimeIntervalKey: @(5)}];
-  
-  return YES;
-}
-
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Sets up Crittercism for crash and error tracking.
   NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
@@ -26,7 +16,11 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
 
   // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
-  
+  [Appboy startWithApiKey:AppboyApiKey
+          inApplication:application
+      withLaunchOptions:launchOptions
+      withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
+                          ABKMinimumTriggerTimeIntervalKey: @(5)}];
 
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
