@@ -10,6 +10,32 @@
 @class ABKTwitterUser;
 @class ABKAttributionData;
 
+NS_ASSUME_NONNULL_BEGIN
+/* ------------------------------------------------------------------------------------------------------
+ * Enums
+ */
+
+/*!
+ * Values representing the gender recognized by the SDK.
+ */
+typedef NS_ENUM(NSInteger , ABKUserGenderType) {
+  ABKUserGenderMale,
+  ABKUserGenderFemale
+};
+
+/*!
+ * Convenience enum to represent notification status, for email and push notifications.
+ *
+ * OPTED_IN: subscribed, and explicitly opted in.
+ * SUBSCRIBED: subscribed, but not explicitly opted in.
+ * UNSUBSCRIBED: unsubscribed and/or explicitly opted out.
+ */
+typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
+  ABKOptedIn,
+  ABKSubscribed,
+  ABKUnsubscribed
+};
+
 /*!
  * When setting the custom attributes with custom keys:
  *
@@ -41,7 +67,6 @@
 /*
  * Appboy Public API: ABKUser
  */
-NS_ASSUME_NONNULL_BEGIN
 @interface ABKUser : NSObject
 
 /*!
@@ -112,31 +137,6 @@ NS_ASSUME_NONNULL_BEGIN
  * For more information, please refer to ABKAttributionData.h.
  */
 @property (nullable) ABKAttributionData *attributionData;
-
-/* ------------------------------------------------------------------------------------------------------
- * Enums
- */
-
-/*!
- * Values representing the gender recognized by the SDK.
- */
-typedef NS_ENUM(NSInteger , ABKUserGenderType) {
-  ABKUserGenderMale,
-  ABKUserGenderFemale
-};
-
-/*!
-* Convenience enum to represent notification status, for email and push notifications.
-*
-* OPTED_IN: subscribed, and explicitly opted in.
-* SUBSCRIBED: subscribed, but not explicitly opted in.
-* UNSUBSCRIBED: unsubscribed and/or explicitly opted out.
-*/
-typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
-  ABKOptedIn,
-  ABKSubscribed,
-  ABKUnsubscribed
-};
 
 /*!
  * @param gender ABKUserGender enum representing the user's gender.

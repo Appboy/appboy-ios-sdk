@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.19.1"
+#define APPBOY_SDK_VERSION @"2.19.2"
 #endif
 
 @class ABKInAppMessageController;
@@ -27,10 +27,120 @@
 @protocol ABKAppboyEndpointDelegate;
 @protocol ABKPushURIDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+/* ------------------------------------------------------------------------------------------------------
+ * Keys for Appboy startup options
+ */
+
+/*!
+ * If you want to set the request policy at app startup time (useful for avoiding any automatic data requests made by
+ * Appboy at startup if you're looking to have full manual control). You can include one of the
+ * ABKRequestProcessingPolicy enum values as the value for the ABKRequestProcessingPolicyOptionKey in the appboyOptions
+ * dictionary.
+ */
+extern NSString *const ABKRequestProcessingPolicyOptionKey;
+
+/*!
+ * Sets the data flush interval (in seconds). This only has an effect when the request processing mode is set to
+ * ABKAutomaticRequestProcessing (which is the default). Values are converted into NSTimeIntervals and must be greater
+ * than 1.0.
+ */
+extern NSString *const ABKFlushIntervalOptionKey;
+
+/*!
+ * This key can be set to YES or NO and will configure whether Appboy will automatically collect location (if the user permits).
+ * If set to YES,location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
+ * ABKUser (i.e. you must manually set the location, Appboy will not).  If it is set to NO or omitted, Appboy will collect
+ * location if authorized.
+ */
+extern NSString *const ABKDisableAutomaticLocationCollectionKey;
+
+/*!
+ * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location
+ * events.  If this key isn't set and the server doesn't provide a value, it will defaul to false.
+ */
+extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
+
+/*!
+ * This key can be set to an integer value that represents the minimum distance in meters between location events logged to Appboy.
+ * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
+ * change location provider.  The default and minimum value is 50.  Note that significant change location updates shouldn't occur if the user has
+ * gone 50 meters or less.
+ */
+extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
+
+/*!
+ * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Appboy.
+ * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
+ * change location provider.  The default value is 3600 (1 hour); the minimum is 300 (5 minutes).
+ */
+extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
+
+
+/*!
+ * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modifying or substitute the API and Resource
+ * (e.g. image) URIs used by the Appboy SDK.
+ */
+extern NSString *const ABKAppboyEndpointDelegateKey;
+
+/*!
+ * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
+ * the set time interval. In that case, the session won't be close even though the user closed the app, but will continue until
+ * it times out. The value should be an integer bigger than 0.
+ */
+extern NSString *const ABKSessionTimeoutKey;
+
+/*!
+ * Set the minimum time interval in seconds between triggers. After a trigger happens, we will ignore any triggers until
+ * the minimum time interval elapses. The default value is 30s.
+ */
+extern NSString *const ABKMinimumTriggerTimeIntervalKey;
+
+/* ------------------------------------------------------------------------------------------------------
+ * Enums
+ */
+
+/*!
+ * Possible values for the SDK's request processing policies:
+ *   ABKAutomaticRequestProcessing (default) - All server communication is handled automatically. This includes flushing
+ *        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Appboy's
+ *        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
+ *        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
+ *        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
+ *   ABKAutomaticRequestProcessingExceptForDataFlush - The same as ABKAutomaticRequestProcessing, except that updates to
+ *        custom attributes and triggering of custom events will not automatically flush to the server. Instead, you
+ *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
+ *   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
+ *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
+ *        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
+ *        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
+ *        the screen, for example, in response to a user click.
+ *        You can direct Appboy to perform an immediate data flush as well as process any other
+ *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
+ *        This mode is only recommended for advanced use cases. If you're merely trying to
+ *        control the background flush behavior, consider using ABKAutomaticRequestProcessing
+ *        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
+ *
+ * Regardless of policy, Appboy will intelligently combine requests on the queue to minimize the total number of
+ * requests and their combined payload.
+ */
+typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
+  ABKAutomaticRequestProcessing,
+  ABKAutomaticRequestProcessingExceptForDataFlush,
+  ABKManualRequestProcessing
+};
+
+/*!
+ * Values representing the Social Networks recognized by the SDK.
+ */
+typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
+  ABKSocialNetworkFacebook = 1 << 0,
+  ABKSocialNetworkTwitter = 1 << 1
+};
+
 /*
  * Appboy Public API: Appboy
  */
-NS_ASSUME_NONNULL_BEGIN
 @interface Appboy : NSObject
 
 /* ------------------------------------------------------------------------------------------------------
@@ -73,116 +183,6 @@ NS_ASSUME_NONNULL_BEGIN
            inApplication:(UIApplication *)application
        withLaunchOptions:(nullable NSDictionary *)launchOptions
        withAppboyOptions:(nullable NSDictionary *)appboyOptions;
-
-/* ------------------------------------------------------------------------------------------------------
- * Keys for Appboy startup options
- */
-
-/*!
-* If you want to set the request policy at app startup time (useful for avoiding any automatic data requests made by
-* Appboy at startup if you're looking to have full manual control). You can include one of the
-* ABKRequestProcessingPolicy enum values as the value for the ABKRequestProcessingPolicyOptionKey in the appboyOptions
-* dictionary.
-*/
-extern NSString *const ABKRequestProcessingPolicyOptionKey;
-
-/*!
- * Sets the data flush interval (in seconds). This only has an effect when the request processing mode is set to
- * ABKAutomaticRequestProcessing (which is the default). Values are converted into NSTimeIntervals and must be greater
- * than 1.0.
- */
-extern NSString *const ABKFlushIntervalOptionKey;
-
-/*!
- * This key can be set to YES or NO and will configure whether Appboy will automatically collect location (if the user permits).
- * If set to YES,location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
- * ABKUser (i.e. you must manually set the location, Appboy will not).  If it is set to NO or omitted, Appboy will collect
- * location if authorized.
- */
-extern NSString *const ABKDisableAutomaticLocationCollectionKey;
-
-/*!
- * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location
- * events.  If this key isn't set and the server doesn't provide a value, it will defaul to false.
- */
-extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
-
-/*!
- * This key can be set to an integer value that represents the minimum distance in meters between location events logged to Appboy.
- * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
- * change location provider.  The default and minimum value is 50.  Note that significant change location updates shouldn't occur if the user has
- * gone 50 meters or less.
- */
-extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
-
-/*!
- * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Appboy.  
- * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
- * change location provider.  The default value is 3600 (1 hour); the minimum is 300 (5 minutes).
- */
-extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
-
-
-/*!
- * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modifying or substitute the API and Resource
- * (e.g. image) URIs used by the Appboy SDK.
- */
-extern NSString *const ABKAppboyEndpointDelegateKey;
-
-/*!
- * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
- * the set time interval. In that case, the session won't be close even though the user closed the app, but will continue until
- * it times out. The value should be an integer bigger than 0.
- */
-extern NSString *const ABKSessionTimeoutKey;
-
-/*!
- * Set the minimum time interval in seconds between triggers. After a trigger happens, we will ignore any triggers until
- * the minimum time interval elapses. The default value is 30s.
- */
-extern NSString *const ABKMinimumTriggerTimeIntervalKey;
-
-/* ------------------------------------------------------------------------------------------------------
- * Enums
- */
-
-/*!
-* Possible values for the SDK's request processing policies:
-*   ABKAutomaticRequestProcessing (default) - All server communication is handled automatically. This includes flushing
-*        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Appboy's
-*        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
-*        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
-*        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
-*   ABKAutomaticRequestProcessingExceptForDataFlush - The same as ABKAutomaticRequestProcessing, except that updates to
-*        custom attributes and triggering of custom events will not automatically flush to the server. Instead, you
-*        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
-*   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
-*        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
-*        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
-*        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
-*        the screen, for example, in response to a user click.
-*        You can direct Appboy to perform an immediate data flush as well as process any other
-*        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
-*        This mode is only recommended for advanced use cases. If you're merely trying to
-*        control the background flush behavior, consider using ABKAutomaticRequestProcessing
-*        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
-*
-* Regardless of policy, Appboy will intelligently combine requests on the queue to minimize the total number of
-* requests and their combined payload.
-*/
-typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
-  ABKAutomaticRequestProcessing,
-  ABKAutomaticRequestProcessingExceptForDataFlush,
-  ABKManualRequestProcessing
-};
-
-/*!
- * Values representing the Social Networks recognized by the SDK.
- */
-typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
-  ABKSocialNetworkFacebook = 1 << 0,
-  ABKSocialNetworkTwitter = 1 << 1
-};
 
 /* ------------------------------------------------------------------------------------------------------
  * Properties
