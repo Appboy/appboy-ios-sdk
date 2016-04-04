@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * This property is the remote URL of the assets zip file.
  */
-@property (nullable) NSURL *assetsZipRemoteUrl;
+@property (strong, nullable) NSURL *assetsZipRemoteUrl;
 
 /*!
  * Log a click on the in-app message with a buttonID. Clicks may only be logged once per in-app message.

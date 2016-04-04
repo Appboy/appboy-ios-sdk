@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewControllerModalContext : ABKFeedViewControllerGenericContext
 
 /*! Title displayed in the top bar */
-@property (nullable) NSString *navigationBarTitle;
+@property (strong, nullable) NSString *navigationBarTitle;
 
 /*! Delegate */
 @property (weak, nullable) id<ABKFeedViewControllerModalContextDelegate> closeButtonDelegate;

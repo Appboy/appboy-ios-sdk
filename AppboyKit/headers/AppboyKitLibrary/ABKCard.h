@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use case.
  */
-@property (nullable) NSDictionary *extras;
+@property (strong, nullable) NSDictionary *extras;
 
 /*
  * @param cardDictionary The dictionary for card deserialization.`

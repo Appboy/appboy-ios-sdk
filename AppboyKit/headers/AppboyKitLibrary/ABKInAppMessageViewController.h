@@ -22,10 +22,10 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageViewController : UIViewController
 
-@property ABKInAppMessage *inAppMessage;
-@property IBOutlet UIImageView *iconImageView;
-@property IBOutlet UILabel *iconLabelView;
-@property IBOutlet ABKLabel *inAppMessageMessageLabel;
+@property (strong) ABKInAppMessage *inAppMessage;
+@property (weak) IBOutlet UIImageView *iconImageView;
+@property (weak) IBOutlet UILabel *iconLabelView;
+@property (weak) IBOutlet ABKLabel *inAppMessageMessageLabel;
 
 /*
  * The initWithInAppMessage method may be used to pass the inAppMessage property to any custom view controller that you create.

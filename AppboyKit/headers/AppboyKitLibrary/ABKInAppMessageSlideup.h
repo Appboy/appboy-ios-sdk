@@ -37,6 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
  * chevronColor defines the chevron arrow color of the in-app message.
  * When this property is nil, the chevron's default color is white.
  */
-@property (nullable) UIColor *chevronColor;
+@property (strong, nullable) UIColor *chevronColor;
 @end
 NS_ASSUME_NONNULL_END
