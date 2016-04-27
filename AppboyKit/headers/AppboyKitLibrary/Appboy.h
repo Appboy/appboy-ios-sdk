@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.19.2"
+#define APPBOY_SDK_VERSION @"2.19.3"
 #endif
 
 @class ABKInAppMessageController;
@@ -78,10 +78,16 @@ extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
 
 
 /*!
- * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modifying or substitute the API and Resource
+ * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modify or substitute the API and Resource
  * (e.g. image) URIs used by the Appboy SDK.
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
+
+/*!
+ * This key can be set to a class that extends ABKPushURIDelegate which can be used to handle deep linking 
+ * in push in a custom way.
+ */
+extern NSString *const ABKPushURIDelegateKey;
 
 /*!
  * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than

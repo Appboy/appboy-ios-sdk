@@ -55,6 +55,7 @@
 		95EF512D173D5FD600C0D780 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF512C173D5FD600C0D780 /* InitialViewController.m */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
+		D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */; };
 		E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */; };
 		E3AF79251AEACAB30075681E /* EventsAndPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AF79241AEACAB30075681E /* EventsAndPropertiesViewController.m */; };
 /* End PBXBuildFile section */
@@ -196,6 +197,8 @@
 		C16085C51B964BC600E57F30 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C5CC74A11766B955005DAD08 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
 		C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesArrayViewController.m; sourceTree = "<group>"; };
+		D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAttributesArrayViewController.h; sourceTree = "<group>"; };
 		D890D67844E95B1B065140B8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E3AF79231AEACAB30075681E /* EventsAndPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsAndPropertiesViewController.h; sourceTree = "<group>"; };
 		E3AF79241AEACAB30075681E /* EventsAndPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsAndPropertiesViewController.m; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 				4EA3EE231745B9A2000E403C /* UserAttributeCell.m */,
 				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
 				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
+				D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */,
+				D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 			files = (
 				95EF511A173D5FD600C0D780 /* main.m in Sources */,
 				95EF512D173D5FD600C0D780 /* InitialViewController.m in Sources */,
+				D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */,
 				4EA7AA8E185626EC00D2B651 /* FlushModeTestViewController.m in Sources */,
 				955DE89017419DB000C07A57 /* TestingViewController.m in Sources */,
 				4EB014FE1A79D4C900E11E41 /* CustomInAppMessageViewController.m in Sources */,
@@ -747,7 +753,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
+				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -763,6 +769,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -777,7 +784,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
+				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -811,7 +818,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
+				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -839,7 +846,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "987fb11a-9e83-4f7c-bbdd-2604fc624c5e";
+				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -856,6 +863,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -870,7 +878,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = StopwatchDevelop;
-				PROVISIONING_PROFILE = "e7b8dde9-8877-4fd5-8c27-6aff4625e35d";
+				PROVISIONING_PROFILE = "a3be206a-c063-44e6-aadc-0ae239cdf2f0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -885,6 +893,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -899,7 +908,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "2a47eccb-fcf3-424e-a3df-9610c6f4cae8";
+				PROVISIONING_PROFILE = "9488a8cf-9f1c-4349-9aee-02b09da3d5d2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

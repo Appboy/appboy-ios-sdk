@@ -1,3 +1,8 @@
+## 2.19.3
+- Adds a new feature allowing manual control of deep link handling in push notications. To use this, add a `ABKPushURIDelegate` value for the `ABKPushURIDelegate` key in the `appboyOptions` dictionary of `startWithApiKey:inApplication:inApplication:withAppboyOptions:`. Also updates the `ABKPushURIDelegate` integration to be initialized through that integration point.
+- Fixes an issue where duplicate data could be recorded when a force quit or crash occurs after a network request completed successfully, but before any other activity (such as leaving the app, putting it to sleep, updating an attribute or firing some other event or purchase) occurred.
+- Adds guarding against a possible crash caused by a user's offline state being corrupted and not including an active session when a network request occurred.
+
 ## 2.19.2
 - Fixes a bug where users who went from being eligible for triggered messages to not being eligible for any triggered messages didn't see their local triggers configuration get updated.  This has already been fixed with a server-side update for affected versions; this update fixes the issue client-side.
 - Updates headers to be compatible with Swift 2.2.
