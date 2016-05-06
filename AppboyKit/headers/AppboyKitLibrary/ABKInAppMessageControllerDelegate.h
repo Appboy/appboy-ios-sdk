@@ -157,7 +157,5 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  */
 - (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(nullable NSURL *)clickedURL buttonID:(NSString *)buttonID;
 
-- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage buttonID:(NSString *)buttonID __deprecated;
-
 @end
 NS_ASSUME_NONNULL_END

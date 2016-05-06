@@ -1,3 +1,13 @@
+## 2.20.0
+- Removed the delegate method `onInAppMessageHTMLButtonClicked:buttonID:` from `ABKInAppMessageControllerDelegate` protocol.
+- Adds Carthage support.
+- Fixes a multithreading issue where logging custom events from different threads would sporadically cause errors.
+- Now the `onInAppMessageHTMLButtonClicked:clickedURL:buttonID:` delegate method will be called every time a URL is clicked. The method used to be only called when there was a button ID in the URL link.
+- Fixes the issue where a close button's color on modal and full in-app messages didn't respect the opacity value.
+- Updates the feedback element to reject messages that contain only whitespace.
+- Updates remote push handling to call the completion handler passed in every time (a code path previously existed that would return without calling it).
+- Fixes an issue where failure to download HTML in-app message assets mid-download resulted in display without assets.
+
 ## 2.19.3
 - Adds a new feature allowing manual control of deep link handling in push notications. To use this, add a `ABKPushURIDelegate` value for the `ABKPushURIDelegate` key in the `appboyOptions` dictionary of `startWithApiKey:inApplication:inApplication:withAppboyOptions:`. Also updates the `ABKPushURIDelegate` integration to be initialized through that integration point.
 - Fixes an issue where duplicate data could be recorded when a force quit or crash occurs after a network request completed successfully, but before any other activity (such as leaving the app, putting it to sleep, updating an attribute or firing some other event or purchase) occurred.
