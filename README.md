@@ -1,6 +1,7 @@
 ![Appboy Logo](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy_Logo_400x100.png)
 
 # iOS SDK
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Successful marketing automation is essential to the future of your mobile app. Appboy helps you engage your users beyond the download. Visit the following links for details and we'll have you up and running in no time!
 
