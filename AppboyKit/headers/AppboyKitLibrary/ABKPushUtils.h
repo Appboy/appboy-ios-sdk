@@ -9,7 +9,8 @@ static NSString *const ABKAppboyPushNotificationFetchTestTriggersKey = @"ab_push
  */
 @interface ABKPushUtils : NSObject
 
-+ (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;
-+ (BOOL) shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo;
++ (BOOL)isUninstallTrackingNotification:(NSDictionary *)userInfo;
++ (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo;
+
 @end
 NS_ASSUME_NONNULL_END

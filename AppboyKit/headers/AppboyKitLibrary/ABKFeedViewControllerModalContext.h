@@ -2,7 +2,7 @@
 //  ABKFeedViewControllerModalContext.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved.
+//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import <UIKit/UIKit.h>
 #import "ABKFeedViewControllerGenericContext.h"
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 
   Called when the feed modal is closed.
 */
-- (void) feedViewControllerModalContextCloseTapped:(ABKFeedViewControllerModalContext *)sender;
+- (void)feedViewControllerModalContextCloseTapped:(ABKFeedViewControllerModalContext *)sender;
 
 @end
 NS_ASSUME_NONNULL_END

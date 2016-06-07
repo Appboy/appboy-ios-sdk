@@ -13,7 +13,7 @@
 // This delegate method is called every time a new in-app message is received from the Appboy server.
 // Implementing this method is OPTIONAL. The default behavior is equivalent to a return of NO from this method. In other
 // words, Appboy will handle the in-app message display automatically if this delegate method is not implemented.
-- (BOOL) onInAppMessageReceived:(ABKInAppMessage *)inAppMessage {
+- (BOOL)onInAppMessageReceived:(ABKInAppMessage *)inAppMessage {
   //Return NO when you want Appboy to handle the in-app message display.
   return NO;
 }
@@ -40,7 +40,7 @@
  * Note that if you unset the delegate after some in-app messages have been stacked, the accumulated stacked in-app messages
  * will be displayed according to the above scheme.
  */
-- (ABKInAppMessageDisplayChoice) beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage
+- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage
                                             withKeyboardIsUp:(BOOL)keyboardIsUp {
   NSLog(@"Received in-app message with message: %@", inAppMessage.message);
   
@@ -75,7 +75,7 @@
 // This delegate method asks if there is any custom in-app message view controller that developers want to pass in. The returned
 // view controller should be a subclass of ABKInAppMessageViewController.
 // Also, the view of the returned view controller should be an instance of ABKInAppMessageView or its subclass.
-- (ABKInAppMessageViewController *) inAppMessageViewControllerWithInAppMessage:(ABKInAppMessage *)inAppMessage {
+- (ABKInAppMessageViewController *)inAppMessageViewControllerWithInAppMessage:(ABKInAppMessage *)inAppMessage {
   if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
     return [[ABKInAppMessageSlideupViewController alloc] initWithInAppMessage:inAppMessage];
   } else if ([inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
@@ -92,7 +92,7 @@
 // This delegate method is notified if the in-app message is tapped.  You can use this to initiate an action
 // in response to the tap.  Note that when the delegate returns NO, Appboy SDK will perform the action sent down from
 // the Appboy Server after the delegate method is executed. If it returns YES, the response to the tap is up to you.
-- (BOOL) onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
+- (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
   NSLog(@"In-app message tapped!");
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
                                                       message:NSLocalizedString(@"Appboy.Stowpatch.slideup-test.slideup-is-tap", nil)
@@ -109,7 +109,7 @@
 
 #pragma mark Stopwatch view controller methods
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
   [super viewDidLoad];
 
   if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
@@ -120,19 +120,19 @@
   }
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   // Here we set self as the in-app message controller delegate to enable in-app message customization on this page.
   [Appboy sharedInstance].inAppMessageController.delegate = self;
 }
 
-- (void) viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
   [super viewDidDisappear:animated];
   [Appboy sharedInstance].inAppMessageController.delegate = nil;
 }
 // If we've been returning ABKDisplayInAppMessageLater and in-app message have arrived, they'll be put in the stack.  Here, take
 // one off the stack and display it.
-- (IBAction) displayNextAvailableInAppPressed:(id)sender {
+- (IBAction)displayNextAvailableInAppPressed:(id)sender {
   self.shouldDisplayInAppMessage = YES;
   [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:self];
   self.shouldDisplayInAppMessage = NO;
@@ -140,49 +140,6 @@
 
 - (IBAction)requestAnInApp:(id)sender {
   [[Appboy sharedInstance] requestInAppMessageRefresh];
-}
-
-- (IBAction)createAndDisplayACustomSlideup:(id)sender {
-  ABKInAppMessage *inAppMessage = nil;
-  switch (self.inAppMessageTypeSegmentedControl.selectedSegmentIndex) {
-    case 3: {
-      ABKInAppMessage *customInApp = [[ABKInAppMessage alloc] init];
-      customInApp.message = NSLocalizedString(@"Appboy.Stowpatch.slideup-test.custom-slideup-message", nil);
-      customInApp.inAppMessageDismissType = ABKInAppMessageDismissManually;
-      inAppMessage = customInApp;
-      break;
-    }
-    case 2: {
-      ABKInAppMessageFull *customFull = [[ABKInAppMessageFull alloc] init];
-      customFull.imageURI = [NSURL URLWithString:@"http://www.agartworks.com/wp-content/uploads/2014/05/Appboy-Robot-770.png"];
-      customFull.message = NSLocalizedString(@"Appboy.Stowpatch.slideup-test.custom-slideup-message", nil);
-      ABKInAppMessageButton *button = [[ABKInAppMessageButton alloc] init];
-      button.buttonText = @"OK";
-      [button setButtonClickAction:ABKInAppMessageNoneClickAction withURI:nil];
-      [customFull setInAppMessageButtons:@[button]];
-      inAppMessage = customFull;
-      break;
-    }
-    case 1: {
-      ABKInAppMessageModal *customModal = [[ABKInAppMessageModal alloc] init];
-      customModal.imageURI = [NSURL URLWithString:@"http://www.adweek.com/socialtimes/wp-content/uploads/sites/2/2013/11/appboy-6501.png"];
-      customModal.message = NSLocalizedString(@"Appboy.Stowpatch.slideup-test.custom-slideup-message", nil);
-      inAppMessage = customModal;
-      break;
-    }
-    case 0:
-    default: {
-      ABKInAppMessageSlideup *customSlideup = [[ABKInAppMessageSlideup alloc] init];
-      customSlideup.icon = @"\uf197";
-      customSlideup.message = NSLocalizedString(@"Appboy.Stowpatch.slideup-test.custom-slideup-message", nil);
-      customSlideup.duration = 4.0;
-      inAppMessage = customSlideup;
-      break;
-    }
-  }
-  self.shouldDisplayInAppMessage = YES;
-  [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppMessage];
-  self.shouldDisplayInAppMessage = NO;
 }
 
 - (IBAction)dismissCurrentSlideup:(id)sender {

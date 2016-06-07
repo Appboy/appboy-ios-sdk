@@ -12,7 +12,7 @@ Successful marketing automation is essential to the future of your mobile app. A
 
 - `AppboyKit` - Contains the variant of our SDK.
 - `Example` - Contains the Stopwatch Sample App which contains integration examples for the iOS SDK.
-	- The Stopwatch Sample App uses [CocoaPods](http://guides.cocoapods.org/), so you must :
+	- The Stopwatch Sample App uses our [CocoaPods](http://guides.cocoapods.org/) integration (`Appboy-iOS-SDK`), so you must :
 	  1. [Install CocoaPods](http://guides.cocoapods.org/using/getting-started.html)
 	  2. Run `pod install` in the `Example` directory
 	  3. Open the `Stopwatch.xcworkspace` to open the project.

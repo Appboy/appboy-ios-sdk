@@ -10,4 +10,5 @@
 // This method will prompt the user for permission to use facebook account data from iOS system.
 - (IBAction)fetchFacebookAccountData:(id)sender;
 - (IBAction)passFacebookDataToAppboy:(id)sender;
+
 @end

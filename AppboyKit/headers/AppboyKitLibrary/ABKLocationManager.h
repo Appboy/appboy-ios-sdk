@@ -7,24 +7,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly) BOOL disableLocationTracking;
 
-- (id) initWithServerConfig:(ABKServerConfig *)serverConfig andAppboyOptions:(NSDictionary *)appboyOptions;
+- (id)initWithServerConfig:(ABKServerConfig *)serverConfig andAppboyOptions:(NSDictionary *)appboyOptions;
 
 /*!
  * Calling this method gives Appboy permission to request WhenInUse authorization on your behalf the next time we attempt to collect
  * location in the foreground.
  */
-- (void) allowRequestWhenInUseLocationPermission;
+- (void)allowRequestWhenInUseLocationPermission;
 
 /*!
  * Calling this method gives Appboy permission to request Always authorization on your behalf the next time we attempt to collect
  * significant location changes.
  */
-- (void) allowRequestAlwaysPermission;
+- (void)allowRequestAlwaysPermission;
 
 /*!
  * Calling this method will log a location using the regular location provider if a location is reported in under
- * 60 seconds.  After 60 seconds expires the regular location provider will stop collecting location.
+ * 60 seconds. After 60 seconds expires the regular location provider will stop collecting location.
  */
-- (void) logSingleLocation;
+- (void)logSingleLocation;
+
 @end
 NS_ASSUME_NONNULL_END

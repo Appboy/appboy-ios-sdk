@@ -127,8 +127,8 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * Note: Each in-app message can log at most one impression and at most one click.
  */
-- (void) logInAppMessageImpression;
-- (void) logInAppMessageClicked;
+- (void)logInAppMessageImpression;
+- (void)logInAppMessageClicked;
 
 /*!
  * This method will set the inAppMessageClickActionType property.
@@ -137,12 +137,12 @@ NS_ASSUME_NONNULL_BEGIN
  * ABKInAppMessageDisplayNewsFeed or ABKInAppMessageNoneClickAction, the parameter uri will be ignored, and property uri
  * will be set to nil.
  */
-- (void) setInAppMessageClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
+- (void)setInAppMessageClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
 
 /*!
  * Serializes the in-app message to binary data for use by wrappers such as Appboy's Unity SDK for iOS.
  */
-- (nullable NSData *) serializeToData;
+- (nullable NSData *)serializeToData;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -30,14 +30,14 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  * The initWithInAppMessage method may be used to pass the inAppMessage property to any custom view controller that you create.
  */
-- (id) initWithInAppMessage:(ABKInAppMessage *)inAppMessage;
+- (id)initWithInAppMessage:(ABKInAppMessage *)inAppMessage;
 
 /*!
  * @param animated If YES, the inAppMessage will animate off the screen. If NO, the inAppMessage will disappear immediately without an animation.
  *
  * @discussion The void method hideInAppMessage may be called in order to dismiss the inAppMessage. Animation of the dismissal is controlled with the animated parameter.
  */
-- (void) hideInAppMessage:(BOOL)animated;
+- (void)hideInAppMessage:(BOOL)animated;
 
 /*
  *  The following two methods are used during slideup display/hide animation, and are required to implement by subclasses.
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  * e.g. move the in-app message view out of the bound of the screen, or set the alpha of the view to 0.
  * Your view controller should override this method. The default implementation of this method does nothing.
  */
-- (void) moveInAppMessageViewOffScreen:(CGRect)inAppMessageWindowFrame;
+- (void)moveInAppMessageViewOffScreen:(CGRect)inAppMessageWindowFrame;
 
 /*
  * @param inAppMessageWindowFrame the frame of the in-app message full-screen window, which is the super view of the in-app message
@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
  * e.g. move the in-app message view in the center of the screen, or set the alpha of the view to 1.
  * Your view controller should override this method. The default implementation of this method does nothing.
  */
-- (void) moveInAppMessageViewOnScreen:(CGRect)inAppMessageWindowFrame;
+- (void)moveInAppMessageViewOnScreen:(CGRect)inAppMessageWindowFrame;
 
 @end
 NS_ASSUME_NONNULL_END

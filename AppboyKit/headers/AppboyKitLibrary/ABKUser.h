@@ -2,7 +2,7 @@
 //  ABKUser.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved.
+//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import <Foundation/Foundation.h>
 
@@ -142,7 +142,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @param gender ABKUserGender enum representing the user's gender.
  * @return YES if the user gender is set properly
  */
-- (BOOL) setGender:(ABKUserGenderType)gender;
+- (BOOL)setGender:(ABKUserGenderType)gender;
 
 
 /*!
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @param subscribed Whether or not this user should be subscribed to emails
  * @return YES if isSubscribedToEmail is set the same as parameter subscribed
  */
-- (BOOL) setIsSubscribedToEmails:(BOOL)subscribed __deprecated;
+- (BOOL)setIsSubscribedToEmails:(BOOL)subscribed __deprecated;
 
 /*!
  * Sets whether or not the user should be sent email campaigns. Setting it to unsubscribed opts the user out of
@@ -160,7 +160,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @param emailNotificationSubscriptionType enum representing the user's email notifications subscription type.
  * @return YES if the field is set successfully, else NO.
  */
-- (BOOL) setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType;
+- (BOOL)setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType;
 
 /*!
  * Sets the push notification subscription status of the user. Used to collect information about the user.
@@ -168,7 +168,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @param pushNotificationSubscriptionType enum representing the user's push notifications subscription type.
  * @return YES if the field is set successfully, else NO.
  */
-- (BOOL) setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType;
+- (BOOL)setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType;
 
 /*!
  * @param key The String name of the custom user attribute
@@ -177,7 +177,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  *         your value might have been invalid (either nil, or not of the correct type), or you tried to set a value for
  *         one of the reserved keys. Please check the log for more details about the specific failure you encountered.
  */
-- (BOOL) setCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value;
+- (BOOL)setCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value;
 
 /*!
  * @param key The String name of the custom user attribute
@@ -186,7 +186,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  *         your value might have been invalid (either nil, or not of the correct type), or you tried to set a value for
  *         one of the reserved keys. Please check the log for more details about the specific failure you encountered.
  */
-- (BOOL) setCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value;
+- (BOOL)setCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value;
 
 /*!
  * @param key The String name of the custom user attribute
@@ -195,7 +195,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  *         your value might have been invalid (either nil, or not of the correct type), or you tried to set a value for
  *         one of the reserved keys. Please check the log for more details about the specific failure you encountered.
  */
-- (BOOL) setCustomAttributeWithKey:(NSString *)key andDoubleValue:(double)value;
+- (BOOL)setCustomAttributeWithKey:(NSString *)key andDoubleValue:(double)value;
 
 /*!
  * @param key The String name of the custom user attribute
@@ -204,7 +204,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  *         your value might have been invalid (either nil, or not of the correct type), or you tried to set a value for
  *         one of the reserved keys. Please check the log for more details about the specific failure you encountered.
  */
-- (BOOL) setCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value;
+- (BOOL)setCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value;
 
 /*!
  * @param key The String name of the custom user attribute
@@ -213,13 +213,13 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  *         your value might have been invalid (either nil, or not of the correct type), or you tried to set a value for
  *         one of the reserved keys. Please check the log for more details about the specific failure you encountered.
  */
-- (BOOL) setCustomAttributeWithKey:(NSString *)key andDateValue:(NSDate *)value;
+- (BOOL)setCustomAttributeWithKey:(NSString *)key andDateValue:(NSDate *)value;
 
 /*!
  * @param key The String name of the custom user attribute to unset
  * @return whether or not the custom user attribute was unset successfully
  */
-- (BOOL) unsetCustomAttributeWithKey:(NSString *)key;
+- (BOOL)unsetCustomAttributeWithKey:(NSString *)key;
 
 /**
    * Increments the value of an custom attribute by one. Only integer and long custom attributes can be incremented.
@@ -229,7 +229,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
    * @param key The identifier of the custom attribute
    * @return YES if the increment for the custom attribute of given key is saved
    */
-- (BOOL) incrementCustomUserAttribute:(NSString *)key;
+- (BOOL)incrementCustomUserAttribute:(NSString *)key;
 
 /**
  * Increments the value of an custom attribute by a given amount. Only integer and long custom attributes can be
@@ -241,7 +241,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @param incrementValue The amount by which to increment the custom attribute
  * @return YES if the increment for the custom attribute of given key is saved
  */
-- (BOOL) incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;
+- (BOOL)incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;
 
 /**
  * Adds the string value to a custom attribute string array specified by the key. If you add a key that has not
@@ -251,7 +251,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @param value A string to be added to the custom attribute string array
  * @return YES if the operation was successful
  */
-- (BOOL) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
+- (BOOL)addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
 
 /**
  * Removes the string value from a custom attribute string array specified by the key. If you remove a key that has not
@@ -261,7 +261,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @param value A string to be removed from the custom attribute string array
  * @return YES if the operation was successful
  */
-- (BOOL) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
+- (BOOL)removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
 
 /**
  * Sets a string array from a custom attribute specified by the key.
@@ -271,7 +271,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  *        attribute and remove the corresponding array if there is one.
  * @return YES if the operation was successful
  */
-- (BOOL) setCustomAttributeArrayWithKey:(NSString *)key array:(nullable NSArray *)valueArray;
+- (BOOL)setCustomAttributeArrayWithKey:(NSString *)key array:(nullable NSArray *)valueArray;
 
 /*!
 * Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES
@@ -282,7 +282,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 * @param longitude The longitude of the User's location in degrees, the number should be in the range of [-180, 180]
 * @param horizontalAccuracy The accuracy of the User's horizontal location in meters, the number should not be negative
 */
-- (BOOL) setLastKnownLocationWithLatitude:(double)latitude longitude:(double)longitude horizontalAccuracy:(double)horizontalAccuracy;
+- (BOOL)setLastKnownLocationWithLatitude:(double)latitude longitude:(double)longitude horizontalAccuracy:(double)horizontalAccuracy;
 
 /*!
 * Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES
@@ -295,11 +295,11 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 * @param altitude The altitude of the User's location in meters
 * @param verticalAccuracy The accuracy of the User's vertical location in meters, the number should not be negative
 */
-- (BOOL) setLastKnownLocationWithLatitude:(double)latitude
-                                longitude:(double)longitude
-                       horizontalAccuracy:(double)horizontalAccuracy
-                                 altitude:(double)altitude
-                         verticalAccuracy:(double)verticalAccuracy;
+- (BOOL)setLastKnownLocationWithLatitude:(double)latitude
+                               longitude:(double)longitude
+                      horizontalAccuracy:(double)horizontalAccuracy
+                                altitude:(double)altitude
+                        verticalAccuracy:(double)verticalAccuracy;
 
 @end
 NS_ASSUME_NONNULL_END

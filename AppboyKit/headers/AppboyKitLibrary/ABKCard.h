@@ -6,6 +6,7 @@
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKCard : NSObject <NSCopying, NSCoding>
+
 /*
  * Card's ID.
  */
@@ -49,25 +50,26 @@ NS_ASSUME_NONNULL_BEGIN
  * Deserializes the dictionary to a card for use by wrappers such as Appboy's Unity SDK for iOS.
  * When the deserialization isn't successful, this method returns nil; otherwise, it returns the deserialized card.
  */
-+ (nullable ABKCard *) deserializeCardFromDictionary:(nullable NSDictionary *)cardDictionary;
++ (nullable ABKCard *)deserializeCardFromDictionary:(nullable NSDictionary *)cardDictionary;
 
 /*
  * Serializes the card to binary data for use by wrappers such as Appboy's Unity SDK for iOS.
  */
-- (nullable NSData *) serializeToData;
+- (nullable NSData *)serializeToData;
 
 /*
  * Manually log an impression to Appboy for the card.
  * This should only be used for custom news feed view controller. ABKFeedViewController already has card impression logging.
  */
-- (void) logCardImpression;
+- (void)logCardImpression;
 
 /*
  * Manually log a click to Appboy for the card.
  * * This should only be used for custom news feed view controller. ABKFeedViewController already has card click logging.
  */
-- (void) logCardClicked;
+- (void)logCardClicked;
 
-- (BOOL) hasSameId:(ABKCard *)card;
+- (BOOL)hasSameId:(ABKCard *)card;
+
 @end
 NS_ASSUME_NONNULL_END

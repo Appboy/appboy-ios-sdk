@@ -10,5 +10,6 @@
 @property UITextField *currentTextField;
 @property (nonatomic, assign) BOOL isEditing;
 @property (weak, nonatomic) IBOutlet UIButton *removeValuesButton;
+@property (weak, nonatomic) IBOutlet UIButton *addValuesButton;
 
 @end

@@ -10,6 +10,32 @@
 @class ABKTwitterUser;
 @class ABKAttributionData;
 
+NS_ASSUME_NONNULL_BEGIN
+/* ------------------------------------------------------------------------------------------------------
+ * Enums
+ */
+
+/*!
+ * Values representing the gender recognized by the SDK.
+ */
+typedef NS_ENUM(NSInteger , ABKUserGenderType) {
+  ABKUserGenderMale,
+  ABKUserGenderFemale
+};
+
+/*!
+ * Convenience enum to represent notification status, for email and push notifications.
+ *
+ * OPTED_IN: subscribed, and explicitly opted in.
+ * SUBSCRIBED: subscribed, but not explicitly opted in.
+ * UNSUBSCRIBED: unsubscribed and/or explicitly opted out.
+ */
+typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
+  ABKOptedIn,
+  ABKSubscribed,
+  ABKUnsubscribed
+};
+
 /*!
  * When setting the custom attributes with custom keys:
  *
@@ -41,7 +67,6 @@
 /*
  * Appboy Public API: ABKUser
  */
-NS_ASSUME_NONNULL_BEGIN
 @interface ABKUser : NSObject
 
 /*!
@@ -100,43 +125,18 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * The User's Facebook account information. For more detail, please refer to ABKFacebookUser.h.
  */
-@property (nullable) ABKFacebookUser *facebookUser;
+@property (strong, nullable) ABKFacebookUser *facebookUser;
 
 /*!
  * The User's Twitter account information. For more detail, please refer to ABKTwitterUser.h.
  */
-@property (nullable) ABKTwitterUser *twitterUser;
+@property (strong, nullable) ABKTwitterUser *twitterUser;
 
 /*!
  * Sets the attribution information for the user. For in apps that have an install tracking integration.
  * For more information, please refer to ABKAttributionData.h.
  */
-@property (nullable) ABKAttributionData *attributionData;
-
-/* ------------------------------------------------------------------------------------------------------
- * Enums
- */
-
-/*!
- * Values representing the gender recognized by the SDK.
- */
-typedef NS_ENUM(NSInteger , ABKUserGenderType) {
-  ABKUserGenderMale,
-  ABKUserGenderFemale
-};
-
-/*!
-* Convenience enum to represent notification status, for email and push notifications.
-*
-* OPTED_IN: subscribed, and explicitly opted in.
-* SUBSCRIBED: subscribed, but not explicitly opted in.
-* UNSUBSCRIBED: unsubscribed and/or explicitly opted out.
-*/
-typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
-  ABKOptedIn,
-  ABKSubscribed,
-  ABKUnsubscribed
-};
+@property (strong, nullable) ABKAttributionData *attributionData;
 
 /*!
  * @param gender ABKUserGender enum representing the user's gender.

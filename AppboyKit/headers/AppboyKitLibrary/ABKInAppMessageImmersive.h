@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * Note: Each in-app message can log at most one button click.
  */
-- (void) logInAppMessageClickedWithButtonID:(NSInteger)buttonID;
+- (void)logInAppMessageClickedWithButtonID:(NSInteger)buttonID;
 
 /*!
  * @param buttonArray The button array for the in-app message. This array should NOT be nil nor empty. Every object in the array
@@ -51,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * This method will set the in-app message buttons.
  */
-- (void) setInAppMessageButtons:(NSArray *)buttonArray;
+- (void)setInAppMessageButtons:(NSArray *)buttonArray;
+
 @end
 NS_ASSUME_NONNULL_END

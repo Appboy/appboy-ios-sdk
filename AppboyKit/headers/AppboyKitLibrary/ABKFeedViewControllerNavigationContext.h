@@ -2,7 +2,7 @@
 //  ABKFeedViewControllerNavigationContext.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved.
+//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import "ABKFeedViewController.h"
 /* ------------------------------------------------------------------------------------------------------

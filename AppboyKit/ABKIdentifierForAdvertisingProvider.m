@@ -25,7 +25,7 @@
  *
  * To enable IDFA collection add a PreProcessor Macro to your build settings called ABK_ENABLE_IDFA_COLLECTION=1
  */
-+ (NSString *) getIdentifierForAdvertiser {
++ (NSString *)getIdentifierForAdvertiser {
 #ifdef ABK_ENABLE_IDFA_COLLECTION
   ASIdentifierManager *sharedManager = [self getASIdentifierManager];
   if (sharedManager) {
@@ -43,11 +43,11 @@
  *   in the case that the user has not enabled advertising tracking, but rather the rules surrounding its use become
  *   more strict.
  */
-+ (NSNumber *) getIsAdvertisingTrackingEnabledAsNSNumber {
++ (NSNumber *)getIsAdvertisingTrackingEnabledAsNSNumber {
 #ifdef ABK_ENABLE_IDFA_COLLECTION
   ASIdentifierManager *sharedManager = [self getASIdentifierManager];
   if (sharedManager) {
-    return [NSNumber numberWithBool:[sharedManager isAdvertisingTrackingEnabled]];
+    return @([sharedManager isAdvertisingTrackingEnabled]);
   }
 #endif
   return nil;
@@ -58,7 +58,7 @@
  * @discussion Returns the [ASIdentifierManager sharedManager] if it is available (i.e., iOS >= 6.0 and app is linked
  *   against AdSupport framework).
  */
-+ (ASIdentifierManager *) getASIdentifierManager {
++ (ASIdentifierManager *)getASIdentifierManager {
   Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");
   if (ASIdentifierManagerClass) {
     // Don't use [ASIdentifierManager sharedManager] here so this method doesn't require that the host app link against

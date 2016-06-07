@@ -1,3 +1,7 @@
+## 2.20.1
+- Implements an optimization in push handling to not prefetch the News Feed when a push arrives and the app is in the background. 
+- Fixes an issue where in certain conditions NSUserDefault blocking would cause custom events logged in the main thread to result in UI freezing.
+
 ## 2.20.0
 - Removed the delegate method `onInAppMessageHTMLButtonClicked:buttonID:` from `ABKInAppMessageControllerDelegate` protocol.
 - Adds Carthage support.

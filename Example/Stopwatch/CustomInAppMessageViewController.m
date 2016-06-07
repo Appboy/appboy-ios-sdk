@@ -4,7 +4,7 @@ static CGFloat const inAppMessageBottomPadding = 10.0f;
 
 @implementation CustomInAppMessageViewController
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
   [super viewDidLoad];
 
   self.inAppMessageBodyTextLabel.text = self.inAppMessage.message;
@@ -18,7 +18,7 @@ static CGFloat const inAppMessageBottomPadding = 10.0f;
   }
 }
 
-- (IBAction) closeButtonTapped:(id)sender {
+- (IBAction)closeButtonTapped:(id)sender {
   // This is a method of ABKInAppMessageViewController, custom in-app message view controller can call it to dismiss the in-app message
   [self hideInAppMessage:YES];
 }
@@ -26,12 +26,12 @@ static CGFloat const inAppMessageBottomPadding = 10.0f;
 // Create cutom animation for in-app message.
 // You have to override moveInAppMessageViewOffScreen: and moveInAppMessageViewOnScreen: to create
 // animation for in-app message's display and dismissal.
-- (void) moveInAppMessageViewOffScreen:(CGRect)inAppMessageWindowFrame {
+- (void)moveInAppMessageViewOffScreen:(CGRect)inAppMessageWindowFrame {
   self.view.frame = CGRectMake(0.0, 0.0, 1.0, 1.0);
   self.view.center = CGPointMake(inAppMessageWindowFrame.size.width / 2, inAppMessageWindowFrame.size.height / 2);
 }
 
-- (void) moveInAppMessageViewOnScreen:(CGRect)inAppMessageWindowFrame {
+- (void)moveInAppMessageViewOnScreen:(CGRect)inAppMessageWindowFrame {
   CGRect onScreenViewFrame = inAppMessageWindowFrame;
   onScreenViewFrame.size.width = inAppMessageWindowFrame.size.width / 1.3f;
   self.view.frame = onScreenViewFrame;

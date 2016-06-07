@@ -24,7 +24,7 @@ static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com
  * After getting all the user's Facebook data, you can pass the information to Appboy using
  * method "- (IBAction)passFacebookDataToAppboy:(id)sender";
  */
-- (void) promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData {
+- (void)promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData {
   ACAccountStore *store = [[ACAccountStore alloc] init];
   // Please put your Facebook ID in the app's plist file with key "FacebookAppID"
   NSString *facebookID = [[NSBundle mainBundle] infoDictionary][FacebookIDPlistKey];

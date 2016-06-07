@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * Appboy Public API: ABKInAppMessageControllerDelegate
  */
 @protocol ABKInAppMessageControllerDelegate <NSObject>
+
 @optional
 
 /*!
@@ -56,7 +57,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * beforeInAppMessageDisplayed:withKeyboardIsUp: delegate method if no other in-app message is 
  * currently on the screen.
  */
-- (BOOL) onInAppMessageReceived:(ABKInAppMessage *)inAppMessage __deprecated;
+- (BOOL)onInAppMessageReceived:(ABKInAppMessage *)inAppMessage __deprecated;
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate method.
@@ -71,7 +72,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * However, if there are other situations where you would not want the in-app message to appear (such as during a full screen
  * game or on a loading screen), you can use this delegate to delay or discard pending in-app message messages.
  */
-- (ABKInAppMessageDisplayChoice) beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp;
+- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp;
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate.
@@ -108,7 +109,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * ABKInAppMessageViewController. The view of the returned view controller should be an instance of ABKInAppMessageView or its
  * subclass.
  */
-- (ABKInAppMessageViewController *) inAppMessageViewControllerWithInAppMessage:(ABKInAppMessage *)inAppMessage;
+- (ABKInAppMessageViewController *)inAppMessageViewControllerWithInAppMessage:(ABKInAppMessage *)inAppMessage;
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate.
@@ -120,7 +121,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * Use this method to perform any custom logic that should execute after the in-app message has been
  * dismissed.
  */
-- (void) onInAppMessageDismissed:(ABKInAppMessage *)inAppMessage;
+- (void)onInAppMessageDismissed:(ABKInAppMessage *)inAppMessage;
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate.
@@ -131,7 +132,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * This delegate method is fired when the user clicks on a slideup in-app message, or a modal/full
  * in-app message without button(s) on it. See ABKInAppMessage.h for more information.
  */
-- (BOOL) onInAppMessageClicked:(ABKInAppMessage *)inAppMessage;
+- (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage;
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate.
@@ -143,7 +144,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * This delegate method is fired whenever the user clicks a button on the in-app message. See 
  * ABKInAppMessageBlock.h for more information.
  */
-- (BOOL) onInAppMessageButtonClicked:(ABKInAppMessageImmersive *)inAppMessage button:(ABKInAppMessageButton *)button;
+- (BOOL)onInAppMessageButtonClicked:(ABKInAppMessageImmersive *)inAppMessage button:(ABKInAppMessageButton *)button;
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate.
@@ -155,7 +156,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * This delegate method is fired whenever the user clicks a link on the HTML in-app message. See
  * ABKInAppMessageHTML.h for more information.
  */
-- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(nullable NSURL *)clickedURL buttonID:(NSString *)buttonID;
+- (BOOL)onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(nullable NSURL *)clickedURL buttonID:(NSString *)buttonID;
 
 @end
 NS_ASSUME_NONNULL_END

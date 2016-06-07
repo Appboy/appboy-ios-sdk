@@ -30,30 +30,38 @@ static NSString *const CellIdentifierColor = @"ColorCellIdentifier";
 static NSString *const CellIdentifierButton = @"ButtonCellIdentifer";
 
 @interface SegmentCell : UITableViewCell
+
 @property IBOutlet UILabel *titleLabel;
 @property IBOutlet UISegmentedControl *segmentControl;
-- (void) setUpWithItem:(NSString *)item;
+- (void)setUpWithItem:(NSString *)item;
+
 @end
 
 @interface TextFieldCell : UITableViewCell
+
 @property IBOutlet UILabel *titleLabel;
 @property IBOutlet UITextField *textField;
 
 @end
 
 @interface ColorCell : UITableViewCell
+
 @property IBOutlet UILabel *titleLabel;
 @property IBOutlet UIButton *colorButton;
-- (void) setColor:(UIColor *)color;
+
+- (void)setColor:(UIColor *)color;
 - (UIColor *)color;
+
 @end
 
 @interface HideChevronCell : UITableViewCell
+
 @property IBOutlet UISwitch *hideChevronSwitch;
 
 @end
 
 @interface InAppMessageButtonCell : UITableViewCell <UITextFieldDelegate, KKColorListViewControllerDelegate>
+
 @property IBOutlet UITextField *titleTextField;
 @property IBOutlet UIButton *textColorButton;
 @property IBOutlet UIButton *backgroundColorButton;
@@ -61,4 +69,5 @@ static NSString *const CellIdentifierButton = @"ButtonCellIdentifer";
 @property IBOutlet UITextField *URITextField;
 @property (nonatomic) ABKInAppMessageButton *button;
 @property NSURL *buttonURL;
+
 @end

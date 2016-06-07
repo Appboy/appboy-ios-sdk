@@ -19,13 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
  * headerTextColor defines the header text color, when there is a header string in the in-app message. The default text color
  * is black.
  */
-@property (nullable) UIColor *headerTextColor;
+@property (strong, nullable) UIColor *headerTextColor;
 
 /*!
  * closeButtonColor defines the close button color of the in-app message.
  * When this property is nil, the close button's default color is black.
  */
-@property (nullable) UIColor *closeButtonColor;
+@property (strong, nullable) UIColor *closeButtonColor;
 
 /*!
  * buttons defines the buttons of the in-app message.

@@ -2,7 +2,7 @@
 //  ABKFeedbackViewControllerPopoverContext.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved.
+//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import "ABKFeedbackViewController.h"
 /* ------------------------------------------------------------------------------------------------------
@@ -21,14 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
 
   Called when the popover is cancelled.
 */
-- (void) feedbackViewControllerPopoverContextCancelTapped:(ABKFeedbackViewControllerPopoverContext *)sender;
+- (void)feedbackViewControllerPopoverContextCancelTapped:(ABKFeedbackViewControllerPopoverContext *)sender;
 
 /*!
   @param sender The calling context
 
   Called when feedback is sent by the popover.
 */
-- (void) feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender;
+- (void)feedbackViewControllerPopoverContextFeedbackSent:(ABKFeedbackViewControllerPopoverContext *)sender;
 
 @optional
 /*!
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  Called before feedback is submitted.  Return a message to be submitted.
  */
-- (NSString *) feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
+- (NSString *)feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
 
 @end
 /*!

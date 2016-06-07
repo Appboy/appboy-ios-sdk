@@ -8,7 +8,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 
 @implementation AppDelegate
 
-- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Sets up Crittercism for crash and error tracking.
   NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
   
@@ -48,20 +48,20 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 }
 
 // When a notification is received, pass it to Appboy
-- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
   NSLog(@"Application delegate method didReceiveRemoteNotification is called with user info: %@", userInfo);
   [Crittercism leaveBreadcrumb:@"registerApplicaion:didReceiveRemoteNotification:"];
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo];
 }
 
 // Pass the deviceToken to Appboy as well
-- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
   NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
 }
 
-- (void) applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication *)application {
   /*
    Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
    */
@@ -69,7 +69,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
-- (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
   NSLog(@"Application delegate method handleActionWithIdentifier:forRemoteNotification:completionHandler: is called with identifier: %@, userInfo:%@", identifier, userInfo);
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
   [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
@@ -78,7 +78,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 // When a notification is received, pass it to Appboy. If the notification is received when the app
 // is in the background, Appboy will try to fetch the news feed, and call completionHandler after
 // the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
-- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   if ([ABKPushUtils isUninstallTrackingNotification:userInfo]) {
     NSLog(@"Got uninstall tracking push from Appboy");
   }
@@ -119,7 +119,7 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 }
 
 // Here we are trying to handle deep linking with scheme beginning with "stopwatch".
-- (BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
   NSLog(@"Stopwatch get a deep link request: %@", url.absoluteString);
   UIAlertView *deepLinkAlert = [[UIAlertView alloc] initWithTitle:@"Deep Linking" message:url.absoluteString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
   [deepLinkAlert show];
@@ -127,12 +127,12 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
   return YES;
 }
 
-- (void) application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
+- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
   NSLog(@"%@",userInfo);
   [[Appboy sharedInstance] handleWatchKitExtensionRequest:userInfo reply:reply];
 }
 
-- (BOOL) handleAppboyPushURI:(NSString *)URIString withNotificationInfo:(NSDictionary *)notificationInfo {
+- (BOOL)handleAppboyPushURI:(NSString *)URIString withNotificationInfo:(NSDictionary *)notificationInfo {
   NSRange range = [URIString rangeOfString:@"secret"];
   if (range.location != NSNotFound) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ssh"

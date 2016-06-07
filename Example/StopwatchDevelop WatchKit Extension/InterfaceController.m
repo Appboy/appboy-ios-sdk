@@ -9,7 +9,7 @@
 
 @implementation InterfaceController
 
-- (IBAction) resetButtonTapped {
+- (IBAction)resetButtonTapped {
   if (self.timerIsRunning) {
     self.timerIsRunning = NO;
     [self.timer stop];
@@ -17,7 +17,7 @@
   [self.timer setDate:[NSDate date]];
 }
 
-- (IBAction) startButtonTapped {
+- (IBAction)startButtonTapped {
   if (self.timerIsRunning) {
     [self.timer stop];
     [self.startStopButton setTitle:@"Start"];

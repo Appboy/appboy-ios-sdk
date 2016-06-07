@@ -2,7 +2,7 @@
 //  ABKFeedbackViewControllerNavigationContext.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved..
+//  Copyright (c) 2016 Appboy. All rights reserved..
 
 #import "ABKFeedbackViewController.h"
 /* ------------------------------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
   Called when feedback is sent.
 */
-- (void) feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender;
+- (void)feedbackViewControllerNavigationContextFeedbackSent:(ABKFeedbackViewControllerNavigationContext *)sender;
 
 @optional
 /*!
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
   Called before feedback is submitted.  Return a message to be submitted.
 */
-- (NSString *) feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
+- (NSString *)feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
 
 @end
 

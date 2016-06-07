@@ -1,15 +1,15 @@
 #import "UserAttributesArrayViewController.h"
-#import "UserAttributeCell.h"
+#import "UserCells.h"
 #import <AppboyKit.h>
 
 @implementation UserAttributesArrayViewController
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
   [super viewDidLoad];
   [self customizeRemoveValuesButton];
 }
 
-#pragma Table View Data Source Methods
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.setValuesArray.count;
@@ -43,7 +43,7 @@
   return YES;
 }
 
-#pragma Text Field Delegate Methods
+#pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
   self.currentTextField = textField;
@@ -52,13 +52,13 @@
 
 // Add text field value to array at tableView row index
 - (IBAction)addValue:(id)sender {
-  id cell = [[((UIView*)sender) superview] superview]; // Get UITextField's parent UITableViewCell
-  NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
+  id cell = [[((UIView *)sender) superview] superview]; // Get UITextField's parent UITableViewCell
+  NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
   NSInteger row = [indexPath row];
   self.setValuesArray[row] = ((UITextField *)sender).text;
 }
 
-- (void) customizeRemoveValuesButton {
+- (void)customizeRemoveValuesButton {
   [self.removeValuesButton setTitle:@"Edit" forState:UIControlStateNormal];
   [self.removeValuesButton setTitle:@"Done" forState:UIControlStateSelected];
   self.removeValuesButton.selected = NO;
@@ -68,16 +68,21 @@
   if (self.setToSegmentedControl.selectedSegmentIndex == 1) {
     // if set to nil is selected, hide tableView
     self.tableView.hidden = YES;
+    self.addValuesButton.hidden = YES;
+    self.removeValuesButton.hidden = YES;
   } else {
     self.tableView.hidden = NO;
+    self.addValuesButton.hidden = NO;
+    self.removeValuesButton.hidden = NO;
+
   }
 }
 
-- (IBAction) hideKeyboard:(id)sender {
-  [self.currentTextField endEditing:YES];
+- (IBAction)hideKeyboard:(id)sender {
+  [self.currentTextField resignFirstResponder];
 }
 
--(void) sendAlertWithMessage: (NSString*)message {
+- (void)sendAlertWithMessage:(NSString*)message {
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: nil
                                                       message:message
                                                      delegate:nil
@@ -87,12 +92,12 @@
   alertView = nil;
 }
 
-- (BOOL) stringIsNotEmpty: (NSString*)string {
+- (BOOL)stringIsNotEmpty:(NSString *)string {
   return (string && [string length] > 0);
 }
 
 // Returns appropriate error message if input(s) are invalid
-- (BOOL) inputIsValid: (BOOL)isValid forKeyOrValue: (NSString*)keyOrValue {
+- (BOOL)inputIsValid:(BOOL)isValid forKeyOrValue:(NSString *)keyOrValue {
   if (!isValid) {
     if ([keyOrValue isEqualToString:@"k"]) {
       [self sendAlertWithMessage:NSLocalizedString(@"Appboy.Stopwatch.user-attributes-array.missing-key", nil)];
@@ -106,7 +111,7 @@
 }
 
 // Exit tableView editing mode
-- (void) exitEditingMode {
+- (void)exitEditingMode {
   [self.tableView setEditing:NO animated:YES];
   self.isEditing = NO;
   self.removeValuesButton.selected = NO;
@@ -148,7 +153,7 @@
 }
 
 // Tell Appboy to add or remove values from array
-- (void) addOrRemoveFromArray: (NSString*) addOrRemove {
+- (void)addOrRemoveFromArray:(NSString *)addOrRemove {
   BOOL keyIsValid = [self stringIsNotEmpty:self.attributeKeyTextField.text];
   BOOL valueIsValid = [self stringIsNotEmpty:self.attributeValueTextField.text];
   

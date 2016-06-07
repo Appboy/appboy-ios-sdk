@@ -2,7 +2,7 @@
 //  ABKFeedViewControllerPopoverContext.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved.
+//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import <UIKit/UIKit.h>
 #import "ABKFeedViewControllerGenericContext.h"
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 
   Called when the Popover context's close button is tapped
 */
-- (void) feedViewControllerPopoverContextCloseTapped:(ABKFeedViewControllerPopoverContext *)sender;
+- (void)feedViewControllerPopoverContextCloseTapped:(ABKFeedViewControllerPopoverContext *)sender;
 
 @end
 NS_ASSUME_NONNULL_END

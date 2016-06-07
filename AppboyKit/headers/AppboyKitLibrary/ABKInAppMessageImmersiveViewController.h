@@ -10,6 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak) IBOutlet ABKLabel *inAppMessageHeaderLabel;
 
-- (IBAction) dismissInAppMessage:(id)sender;
+- (IBAction)dismissInAppMessage:(id)sender;
+
 @end
 NS_ASSUME_NONNULL_END

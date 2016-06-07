@@ -6,9 +6,9 @@
 @property IBOutlet UINavigationBar *modalNavBar;
 @property IBOutlet UITableView *attributesTableView;
 @property (weak) UITextField *currentEditingTextField;
+@property NSString *userID;
 
-- (IBAction) doneButtonTapped:(id)sender;
-- (IBAction) setGender:(UISegmentedControl *)sender;
-- (IBAction)backButtonTapped:(id)sender;
+- (IBAction)doneButtonTapped:(id)sender;
+- (IBAction)setGender:(UISegmentedControl *)sender;
 
 @end

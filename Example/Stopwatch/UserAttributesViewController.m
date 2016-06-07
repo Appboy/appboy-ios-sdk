@@ -1,19 +1,19 @@
 #import "UserAttributesViewController.h"
 #import <AppboyKit.h>
-#import "UserAttributeCell.h"
+#import "UserCells.h"
 #import "Crittercism.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
-static NSInteger const TotalNumberOfAttributes = 11;
+static NSInteger const TotalNumberOfAttributes = 12;
 static NSInteger const IndexOfGender = 6;
 static NSInteger const IndexOfBirthday = 8;
 static NSInteger const IndexOfPushSubscriptionState = 10;
+static NSInteger const IndexOfEmailSubscriptionState = 11;
 static NSMutableArray *attributesValuesArray = nil;
 
 @implementation UserAttributesViewController
 
-
-- (void) viewDidLoad {
+- (void)viewDidLoad {
   [super viewDidLoad];
 
   self.attributesLabelsArray = @[NSLocalizedString(@"Appboy.Stopwatch.user-attributes.user-ID", nil),
@@ -26,7 +26,8 @@ static NSMutableArray *attributesValuesArray = nil;
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.date-of-birth", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil),
-                                 @"Push Sub"];
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.push-subscription", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email-subscription", nil)];
 
   if (attributesValuesArray == nil || [attributesValuesArray count] <= 0) {
     attributesValuesArray = [NSMutableArray arrayWithCapacity:TotalNumberOfAttributes];
@@ -34,13 +35,18 @@ static NSMutableArray *attributesValuesArray = nil;
       [attributesValuesArray addObject:[NSNull null]];
     }
   }
+}
 
+- (void)viewWillAppear:(BOOL)animated {
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
   
-  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
-    // in iOS 7, views are automatically extended to full screen mode, under the navigation bar etc. For our feedback,
-    // we don't want the view to under any other UI in all cases, so we need to turn it off in iOS 7
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+  // Pull current, locally-stored user ID every time user navigates to this page
+  NSString *appboyUserID = [Appboy sharedInstance].user.userID;
+  if (appboyUserID != nil) {
+    self.userID = appboyUserID;
+    attributesValuesArray[0] = self.userID;
+    [self.attributesTableView reloadData];
   }
 }
 
@@ -66,15 +72,17 @@ static NSMutableArray *attributesValuesArray = nil;
       }
     }
     return cell;
-
-  } else if (indexPath.row == IndexOfPushSubscriptionState) {
-    NSString *cellIdentifier = @"pushsub cell";
+    // Cells with subscription state segmented control
+  } else if (indexPath.row == IndexOfPushSubscriptionState || indexPath.row == IndexOfEmailSubscriptionState) {
+    NSString *cellIdentifier = @"subscription cell";
     
     UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
       cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
+    [cell.attributeSegmentedControl setTag:(TextFieldTagNumber + indexPath.row)]; // Segmented control's tag is 1000 + row number
     
     id object = attributesValuesArray[(NSUInteger)indexPath.row];
     if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
@@ -96,6 +104,18 @@ static NSMutableArray *attributesValuesArray = nil;
       cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
+    
+    // Keyboard typing
+    cell.attributeTextField.inputView = nil;
+    if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email", nil)]) {
+      // Email keyboard
+      cell.attributeTextField.keyboardType = UIKeyboardTypeEmailAddress;
+    } else if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil)]) {
+      // Phone keyboard
+      cell.attributeTextField.keyboardType = UIKeyboardTypePhonePad;
+    } else {
+      cell.attributeTextField.keyboardType = UIKeyboardTypeDefault;
+    }
 
     cell.attributeTextField.tag = TextFieldTagNumber + indexPath.row; // The text field's tag is 1000 plus the row number
     id object = attributesValuesArray[(NSUInteger)indexPath.row];
@@ -117,11 +137,11 @@ static NSMutableArray *attributesValuesArray = nil;
 }
 
 #pragma Text Field Delegate Methods
-- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
 
   NSInteger nextTag = textField.tag + 1;
   // Try to find next responder
-  UIResponder* nextResponder = [self.view viewWithTag:nextTag];
+  UIResponder *nextResponder = [self.view viewWithTag:nextTag];
   if (nextResponder) {
     // Found next responder, so set it.
     [nextResponder becomeFirstResponder];
@@ -129,7 +149,7 @@ static NSMutableArray *attributesValuesArray = nil;
   return YES;
 }
 
-- (BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
   // keep track of the current editing text field, so we can save the value of the last text field
   // user edited right before he/she click the "Done" button
   self.currentEditingTextField = textField;
@@ -155,14 +175,14 @@ static NSMutableArray *attributesValuesArray = nil;
   return YES;
 }
 
-- (NSString *) getBirthdayStringFromDate:(NSDate *)date {
+- (NSString *)getBirthdayStringFromDate:(NSDate *)date {
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   dateFormatter.dateFormat = @"MM/dd/yyyy";
   NSString *dateString = [dateFormatter stringFromDate:date];
   return dateString;
 }
 
-- (NSDate *) getDateFromBirthdayString:(NSString *)birthdayString {
+- (NSDate *)getDateFromBirthdayString:(NSString *)birthdayString {
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   dateFormatter.dateFormat = @"MM/dd/yyyy";
   NSDate *date = [dateFormatter dateFromString:birthdayString];
@@ -185,7 +205,7 @@ static NSMutableArray *attributesValuesArray = nil;
   return YES;
 }
 
-- (void) datePickerValueChanged:(UIDatePicker *)sender {
+- (void)datePickerValueChanged:(UIDatePicker *)sender {
   // Save the date value
   attributesValuesArray[IndexOfBirthday] = sender.date;
 
@@ -193,29 +213,26 @@ static NSMutableArray *attributesValuesArray = nil;
   ((UITextField *)[self.view viewWithTag:IndexOfBirthday + TextFieldTagNumber]).text = [self getBirthdayStringFromDate:sender.date];
 }
 
-- (IBAction) setGender:(UISegmentedControl *)sender {
+- (IBAction)setGender:(UISegmentedControl *)sender {
   NSString *gender = sender.selectedSegmentIndex == 0 ? @"m" : @"f";
   attributesValuesArray[IndexOfGender] = gender;
 }
 
-- (IBAction)setPushSubscriptionState:(UISegmentedControl *)sender {
-  NSString *pushSubscriptionState;
+- (IBAction)setSubscriptionState:(UISegmentedControl *)sender {
+  NSString *subscriptionState;
   if (sender.selectedSegmentIndex == 0) {
-    pushSubscriptionState = @"u";
+    subscriptionState = @"u"; // unsubscribed
   } else if (sender.selectedSegmentIndex == 1) {
-    pushSubscriptionState = @"s";
+    subscriptionState = @"s"; // subscribed
   } else {
-    pushSubscriptionState = @"o";
+    subscriptionState = @"o"; // opted-in
   }
-  attributesValuesArray[IndexOfPushSubscriptionState] = pushSubscriptionState;
-}
 
-- (IBAction)backButtonTapped:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
+  attributesValuesArray[sender.tag - TextFieldTagNumber] = subscriptionState;
 }
 
 // Set user attributes and/or change the current userID.  See Appboy.h for a discussion about changing the userID.
-- (IBAction) doneButtonTapped:(id)sender {
+- (IBAction)doneButtonTapped:(id)sender {
   if (self.currentEditingTextField && self.currentEditingTextField.tag != IndexOfBirthday + TextFieldTagNumber) {
     if (self.currentEditingTextField.text.length > 0) {
       attributesValuesArray[(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber] = self.currentEditingTextField.text;
@@ -287,16 +304,12 @@ static NSMutableArray *attributesValuesArray = nil;
           continue;
           
         case 10:{
-          NSString *subscriptionValue = (NSString *)object;
-          ABKNotificationSubscriptionType subscriptionType;
-          if ([subscriptionValue isEqualToString:@"u"]) {
-            subscriptionType = ABKUnsubscribed;
-          } else if ([subscriptionValue isEqualToString:@"s"]) {
-            subscriptionType = ABKSubscribed;
-          } else {
-            subscriptionType = ABKOptedIn;
-          }
-          [[Appboy sharedInstance].user setPushNotificationSubscriptionType:subscriptionType];
+          [[Appboy sharedInstance].user setPushNotificationSubscriptionType:[self getSubscriptionType:object]];
+          continue;
+        }
+          
+        case 11: {
+          [[Appboy sharedInstance].user setEmailNotificationSubscriptionType:[self getSubscriptionType:object]];
           continue;
         }
 
@@ -307,24 +320,39 @@ static NSMutableArray *attributesValuesArray = nil;
   }
 }
 
-- (void) keyboardDidShow:(NSNotification *)notification {
+- (ABKNotificationSubscriptionType)getSubscriptionType:(id)object {
+  NSString *subscriptionValue = (NSString*)object;
+  ABKNotificationSubscriptionType subscriptionType;
+  if ([subscriptionValue isEqualToString:@"u"]) {
+    subscriptionType = ABKUnsubscribed;
+  } else if ([subscriptionValue isEqualToString:@"s"]) {
+    subscriptionType = ABKSubscribed;
+  } else {
+    subscriptionType = ABKOptedIn;
+  }
+  return subscriptionType;
+}
 
-  NSDictionary* info = [notification userInfo];
+- (void)keyboardDidShow:(NSNotification *)notification {
+  NSDictionary *info = [notification userInfo];
   CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
   CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
   CGRect aRect = self.attributesTableView.frame;
-  aRect.size.height = self.view.bounds.size.height - keyboardHeight - 44; // 44 is the height of the navigation bar
+  aRect.size.height = self.view.bounds.size.height - keyboardHeight;
   self.attributesTableView.frame = aRect;
-
 }
 
-- (void) viewDidUnload {
+- (void)keyboardWillHide:(NSNotification *)notification {
+  [self.attributesTableView setNeedsUpdateConstraints];
+}
+
+- (void)viewDidUnload {
   [self setAttributesTableView:nil];
   [self setModalNavBar:nil];
   [super viewDidUnload];
 }
 
-- (void) dealloc {
+- (void)dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self.modalNavBar];
 }
 
@@ -332,10 +360,16 @@ static NSMutableArray *attributesValuesArray = nil;
   return YES;
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
     return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
   }
   return toInterfaceOrientation == UIInterfaceOrientationPortrait;
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 @end

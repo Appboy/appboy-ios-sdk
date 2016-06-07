@@ -29,7 +29,7 @@ static NSString *const TwitterUserLookupEndpointUrl = @"https://api.twitter.com/
  * After getting all the user's Facebook data, you can pass the information to Appboy using
  * method "- (IBAction)passFacebookDataToAppboy:(id)sender";
  */
-- (void) promptUserToConnectTwitterAccountOnDeviceAndFetchAccountData {
+- (void)promptUserToConnectTwitterAccountOnDeviceAndFetchAccountData {
   // First, we need to obtain the account instance for the user's Twitter account
   ACAccountStore *store = [[ACAccountStore alloc] init];
   ACAccountType *twitterAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -46,8 +46,7 @@ static NSString *const TwitterUserLookupEndpointUrl = @"https://api.twitter.com/
       NSArray *twitterAccounts = [store accountsWithAccountType:twitterAccountType];
       if ([twitterAccounts count] > 0) {
         // Use the first account for simplicity
-        // TODO (jon) Get other accounts if they're available.
-        account = [twitterAccounts objectAtIndex:0];
+        account = twitterAccounts[0];
       }
       
       if (account != nil) {

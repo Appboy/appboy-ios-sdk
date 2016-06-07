@@ -5,8 +5,7 @@
 
 @property IBOutlet UISegmentedControl *segmentedControlForInAppMode;
 @property BOOL shouldDisplayInAppMessage;
-@property IBOutlet UISegmentedControl *inAppMessageTypeSegmentedControl;
 
-- (IBAction) displayNextAvailableInAppPressed:(id)sender;
+- (IBAction)displayNextAvailableInAppPressed:(id)sender;
 - (IBAction)requestAnInApp:(id)sender;
 @end

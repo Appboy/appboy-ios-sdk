@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param buttonId the id of the click
  */
-- (void) logInAppMessageHTMLClickWithButtonID:(NSString *)buttonID;
+- (void)logInAppMessageHTMLClickWithButtonID:(NSString *)buttonID;
+
 @end
 NS_ASSUME_NONNULL_END

@@ -26,11 +26,13 @@ extern NSInteger const DefaultNumberOfFriends;
  *
  * Please checkout the SocialNetworkViewController class for the sample code of how to use ABKFacebookUser.
  */
-- (id) initWithFacebookUserDictionary:(nullable NSDictionary *)facebookUserDictionary
-                      numberOfFriends:(NSInteger)numberOfFriends
-                                likes:(nullable NSArray *)likes;
+- (id)initWithFacebookUserDictionary:(nullable NSDictionary *)facebookUserDictionary
+                     numberOfFriends:(NSInteger)numberOfFriends
+                               likes:(nullable NSArray *)likes;
+
 @property (readonly, nullable) NSDictionary *facebookUserDictionary;
 @property (readonly) NSInteger numberOfFriends;
 @property (readonly, nullable) NSArray *likes;
+
 @end
 NS_ASSUME_NONNULL_END

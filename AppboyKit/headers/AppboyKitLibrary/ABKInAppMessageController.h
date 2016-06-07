@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * If there are no in-app messages available this returns immediately having taken no action.
  */
-- (void) displayNextInAppMessageWithDelegate:(nullable id<ABKInAppMessageControllerDelegate>)delegate;
+- (void)displayNextInAppMessageWithDelegate:(nullable id<ABKInAppMessageControllerDelegate>)delegate;
 
 /*!
  * @return The number of in-app messages that are locally waiting to be displayed.
@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Note: Returning ABKDisplayInAppMessageLater in the beforeInAppMessageDisplayed: delegate method will put the in-app message back onto
  * the stack and this will be reflected in inAppMessagesRemainingOnStack.
  */
-- (NSInteger) inAppMessagesRemainingOnStack;
+- (NSInteger)inAppMessagesRemainingOnStack;
 
 /*!
  * @param newInAppMessage A new in-app message that will be added into the top of the stack of in-app messages that haven't been displayed yet.
@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Note: Clicks and impressions of in-app messages added by this method will not be collected by Appboy and will not be
  * reflected on the dashboard.
  */
-- (void) addInAppMessage:(ABKInAppMessage *)newInAppMessage;
+- (void)addInAppMessage:(ABKInAppMessage *)newInAppMessage;
 
 /*!
  * @param animated If YES, the in-app message will slide off the screen. If NO, the in-app message will disappear immediately without
@@ -84,6 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * Note: This will not fire the onInAppMessageDismissed: delegate method.
  */
-- (void) hideCurrentInAppMessage:(BOOL)animated;
+- (void)hideCurrentInAppMessage:(BOOL)animated;
+
 @end
 NS_ASSUME_NONNULL_END

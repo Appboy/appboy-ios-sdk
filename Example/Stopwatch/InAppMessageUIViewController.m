@@ -2,7 +2,7 @@
 #import "InAppMessageUICells.h"
 #import "AppboyKit.h"
 
-static const int TableViewTopY = 94;
+static const int TableViewTopY = 44;
 static const NSInteger textFieldTagNumber = 50;
 static const CGFloat ButtonTableViewCellHeight = 176.0f;
 static const CGFloat NormalTableViewCellHeight = 44.0f;
@@ -28,7 +28,7 @@ static const int CustomInAppMessageDuration = 5;
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
-- (IBAction) inAppMessageTypeChanged:(id)sender {
+- (IBAction)inAppMessageTypeChanged:(id)sender {
   if (self.inAppMessageTypeSegment.selectedSegmentIndex == 3) {
     self.HTMLComposerView.hidden = NO;
     return;
@@ -38,11 +38,11 @@ static const int CustomInAppMessageDuration = 5;
   [self.tableView reloadData];
 }
 
-- (void) dealloc {
+- (void)dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return [self currentArrayList].count;
 }
 
@@ -69,7 +69,7 @@ static const int CustomInAppMessageDuration = 5;
   }
 }
 
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSString *item = [self currentArrayList][indexPath.row];
   UITableViewCell *cell = nil;
   if ([item isEqualToString:ItemClickAction] ||
@@ -81,7 +81,7 @@ static const int CustomInAppMessageDuration = 5;
     if (self.inAppMessageDictionary[item]) {
       ((SegmentCell *) cell).segmentControl.selectedSegmentIndex = [self.inAppMessageDictionary[item] integerValue];
     } else if (((SegmentCell *)cell).titleLabel != nil) {
-      self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] = [NSNumber numberWithInteger:0];
+      self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] =  @(0);
     }
   } else if ([item isEqualToString:ItemMessage] ||
     [item isEqualToString:ItemIcon] ||
@@ -90,6 +90,12 @@ static const int CustomInAppMessageDuration = 5;
     [item isEqualToString:ItemClickActionURL] ||
     [item isEqualToString:ItemDuration]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierText withClass:[TextFieldCell class] tableView:tableView];
+    
+    // Pre-populate message and header
+    if (([item isEqualToString:ItemMessage] || [item isEqualToString:ItemHeader]) && self.inAppMessageDictionary[item] == nil) {
+      self.inAppMessageDictionary[item] = @"Testing";
+    }
+    
     ((TextFieldCell *) cell).titleLabel.text = item;
     ((TextFieldCell *) cell).textField.text = self.inAppMessageDictionary[item];
     ((TextFieldCell *) cell).textField.delegate = self;
@@ -116,7 +122,7 @@ static const int CustomInAppMessageDuration = 5;
   return cell;
 }
 
-- (UITableViewCell *) createCellWithCellIdentifier:(NSString *)identifier withClass:(Class)cellClass tableView:(UITableView *)tableView {
+- (UITableViewCell *)createCellWithCellIdentifier:(NSString *)identifier withClass:(Class)cellClass tableView:(UITableView *)tableView {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
   if (cell == nil && [cellClass isKindOfClass:[UITableViewCell class]]) {
     cell = (UITableViewCell *)[[cellClass alloc] init];
@@ -148,7 +154,7 @@ static const int CustomInAppMessageDuration = 5;
 }
 
 - (IBAction)hideChevronChanged:(UISwitch *)sender {
-  self.inAppMessageDictionary[ItemHideChevron] = [NSNumber numberWithBool:sender.on];
+  self.inAppMessageDictionary[ItemHideChevron] = @(sender.on);
 }
 
 - (IBAction)buttonSegmentChanged:(UISegmentedControl *)sender {
@@ -157,7 +163,7 @@ static const int CustomInAppMessageDuration = 5;
     cell = cell.superview;
   }
   if ([cell isKindOfClass:[SegmentCell class]]) {
-    self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] = [NSNumber numberWithInteger:sender.selectedSegmentIndex];
+    self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] = @(sender.selectedSegmentIndex);
     if ([((SegmentCell *)cell).titleLabel.text isEqualToString:ItemButtonNumber]) {
       switch (sender.selectedSegmentIndex) {
         case 0:
@@ -191,12 +197,16 @@ static const int CustomInAppMessageDuration = 5;
   }
 }
 
-- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [textField resignFirstResponder];
   return YES;
 }
 
-- (void) textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+  self.currentTextField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
   UIView *cell = textField.superview;
   while (![cell isKindOfClass:[TextFieldCell class]] && cell.superview != nil) {
     cell = cell.superview;
@@ -204,9 +214,11 @@ static const int CustomInAppMessageDuration = 5;
   if ([cell isKindOfClass:[TextFieldCell class]]) {
     self.inAppMessageDictionary[((TextFieldCell *)cell).titleLabel.text] = textField.text;
   }
+  self.currentTextField = nil;
 }
 
-- (IBAction) displayInAppMessage:(id)sender {
+- (IBAction)displayInAppMessage:(id)sender {
+  [self.currentTextField resignFirstResponder];
   ABKInAppMessage *inAppMessage = nil;
   switch (self.inAppMessageTypeSegment.selectedSegmentIndex) {
     case 3: {
@@ -325,25 +337,28 @@ static const int CustomInAppMessageDuration = 5;
   [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppMessage];
 }
 
-- (void) keyboardDidShow:(NSNotification *)notification {
-  NSDictionary* info = [notification userInfo];
+- (void)keyboardDidShow:(NSNotification *)notification {
+  NSDictionary *info = [notification userInfo];
   CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
   CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
-  [self setTableViewOrHTMLComposerHeight:self.view.bounds.size.height - keyboardHeight - TableViewTopY];
+  if (!self.HTMLComposerView.hidden) {
+    [self setTableViewOrHTMLComposerHeight:self.HTMLComposerView.frame.size.height - keyboardHeight];
+  } else {
+    [self setTableViewOrHTMLComposerHeight:self.view.bounds.size.height - keyboardHeight - TableViewTopY];
+  }
 }
 
-- (void) keyboardWillHide:(NSNotification *)notification {
-  BOOL isHTMLComposer = !self.HTMLComposerView.hidden;
-  CGRect aRect = isHTMLComposer ? self.tableView.frame : self.HTMLComposerView.frame;
-  [self setTableViewOrHTMLComposerHeight:self.view.bounds.size.height - TableViewTopY];
+- (void)keyboardWillHide:(NSNotification *)notification {
+  [self.view setNeedsUpdateConstraints];
+  [self.HTMLInAppTextView layoutIfNeeded];
 }
 
-- (void) setTableViewOrHTMLComposerHeight:(CGFloat)height {
+- (void)setTableViewOrHTMLComposerHeight:(CGFloat)height {
   BOOL isHTMLComposer = !self.HTMLComposerView.hidden;
-  CGRect aRect = isHTMLComposer ? self.tableView.frame : self.HTMLComposerView.frame;
+  CGRect aRect = isHTMLComposer ? self.HTMLComposerView.frame : self.tableView.frame;
   aRect.size.height = height;
   if (isHTMLComposer) {
-    self.HTMLComposerView.frame = aRect;
+    self.HTMLInAppTextView.frame = aRect;
   } else {
     self.tableView.frame = aRect;
   }

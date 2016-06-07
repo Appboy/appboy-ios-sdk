@@ -14,7 +14,9 @@
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKIdentifierForAdvertisingProvider : NSObject
-+ (nullable NSString *) getIdentifierForAdvertiser;
-+ (nullable NSNumber *) getIsAdvertisingTrackingEnabledAsNSNumber;
+
++ (nullable NSString *)getIdentifierForAdvertiser;
++ (nullable NSNumber *)getIsAdvertisingTrackingEnabledAsNSNumber;
+
 @end
 NS_ASSUME_NONNULL_END

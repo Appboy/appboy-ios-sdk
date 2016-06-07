@@ -71,5 +71,6 @@ NS_ASSUME_NONNULL_BEGIN
  * This property indicates if the promoted item is universal or not.
  */
 @property BOOL universal;
+
 @end
 NS_ASSUME_NONNULL_END

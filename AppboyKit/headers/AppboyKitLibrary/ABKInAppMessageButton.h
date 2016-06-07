@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
  * buttonClickedURI. When clickActionType is ABKInAppMessageDisplayNewsFeed or ABKInAppMessageNoneClickAction, the
  * parameter uri will be ignored, and property uri  will be set to nil.
  */
-- (void) setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
+- (void)setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
 
 @end
 NS_ASSUME_NONNULL_END

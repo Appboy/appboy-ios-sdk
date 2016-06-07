@@ -15,4 +15,5 @@
 // This method will prompt the user for permission to use twitter account data from iOS system.
 - (IBAction)fetchTwitterAccountData:(id)sender;
 - (IBAction)passTwitterDataToAppboy:(id)sender;
+
 @end

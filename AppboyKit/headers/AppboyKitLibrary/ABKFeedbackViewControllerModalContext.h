@@ -2,7 +2,7 @@
 //  ABKFeedbackViewControllerModalContext.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved.
+//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import "ABKFeedbackViewController.h"
 /* ------------------------------------------------------------------------------------------------------
@@ -19,21 +19,21 @@ NS_ASSUME_NONNULL_BEGIN
 
   Called when the feedback modal is cancelled.
 */
-- (void) feedbackViewControllerModalContextCancelTapped:(ABKFeedbackViewControllerModalContext *)sender;
+- (void)feedbackViewControllerModalContextCancelTapped:(ABKFeedbackViewControllerModalContext *)sender;
 
 /*!
   @param sender The calling context
 
   Called when feedback is sent from the modal.
 */
-- (void) feedbackViewControllerModalContextFeedbackSent:(ABKFeedbackViewControllerModalContext *)sender;
+- (void)feedbackViewControllerModalContextFeedbackSent:(ABKFeedbackViewControllerModalContext *)sender;
 
 /*!
   @param message The feedback message
 
   Called before feedback is submitted.  Return a message to be submitted.
 */
-- (NSString *) feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
+- (NSString *)feedbackViewControllerBeforeFeedbackSent:(NSString *)message;
 
 @end
 

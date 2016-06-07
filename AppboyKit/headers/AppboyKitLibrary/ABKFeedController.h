@@ -23,8 +23,8 @@
  * where "feedUpdatedNotificationReceived:" is your callback method for handling the notification:
  *
  * <pre>
- *   - (void) feedUpdatedNotificationReceived:(NSNotification *)notification {
- *     BOOL updateIsSuccessful = [[notification.userInfo objectForKey:ABKFeedUpdatedIsSuccessfulKey] boolValue];
+ *   - (void)feedUpdatedNotificationReceived:(NSNotification *)notification {
+ *     BOOL updateIsSuccessful = [notification.userInfo[ABKFeedUpdatedIsSuccessfulKey] boolValue];
  *     < Do something in response to the notification >
  *   }
  * <pre>
@@ -77,13 +77,13 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
  *
  * Cards are counted only once even if they appear in multiple feed views or across multiple devices.
  */
-- (NSInteger) unreadCardCountForCategories:(ABKCardCategory)categories;
+- (NSInteger)unreadCardCountForCategories:(ABKCardCategory)categories;
 
 /*!
  * This method returns the total number of currently active cards belongs to given categories. Cards are
  * counted only once even if they appear in multiple feed views.
  */
-- (NSInteger) cardCountForCategories:(ABKCardCategory)categories;
+- (NSInteger)cardCountForCategories:(ABKCardCategory)categories;
 
 /*!
  * @param categories An ABKCardCategory indicating the categories that you want to get. You can pass more than one category
@@ -93,6 +93,7 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
  * @discussion This method will find the cards of given categories and return them.
  * When the given categories don't exist in any card, this method will return an empty array.
  */
-- (nullable NSArray *) getCardsInCategories:(ABKCardCategory)categories;
+- (nullable NSArray *)getCardsInCategories:(ABKCardCategory)categories;
+
 @end
 NS_ASSUME_NONNULL_END

@@ -6,6 +6,7 @@
 @class ABKInAppMessageImmersive;
 @class ABKInAppMessageHTML;
 
+NS_ASSUME_NONNULL_BEGIN
 /*!
  * Possible values for in-app message handling after a in-app message is offered to an ABKInAppMessageControllerDelegate
  *   ABKDisplayInAppMessageNow - The in-app message will be displayed immediately.
@@ -36,7 +37,6 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
 /*
  * Appboy Public API: ABKInAppMessageControllerDelegate
  */
-NS_ASSUME_NONNULL_BEGIN
 @protocol ABKInAppMessageControllerDelegate <NSObject>
 @optional
 
@@ -156,8 +156,6 @@ NS_ASSUME_NONNULL_BEGIN
  * ABKInAppMessageHTML.h for more information.
  */
 - (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(nullable NSURL *)clickedURL buttonID:(NSString *)buttonID;
-
-- (BOOL) onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage buttonID:(NSString *)buttonID __deprecated;
 
 @end
 NS_ASSUME_NONNULL_END

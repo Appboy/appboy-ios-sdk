@@ -1,8 +1,8 @@
-#import <Foundation/Foundation.h>
 #import "InAppMessageUICells.h"
 
 @implementation SegmentCell : UITableViewCell
-- (void) setUpWithItem:(NSString *)item {
+
+- (void)setUpWithItem:(NSString *)item {
   self.titleLabel.text = item;
   NSDictionary *segmentDictionary = @{ItemIcon : @[@"None", @"Badge", @"URL"],
                                       ItemClickAction : @[@"Feed", @"None", @"URL"],
@@ -18,10 +18,12 @@
 @end
 
 @implementation TextFieldCell : UITableViewCell
+
 @end
 
 @implementation ColorCell : UITableViewCell
-- (void) setColor:(UIColor *)color {
+
+- (void)setColor:(UIColor *)color {
   if (color != nil) {
     self.colorButton.backgroundColor = color;
   } else {
@@ -39,7 +41,8 @@
 @end
 
 @implementation InAppMessageButtonCell : UITableViewCell
-- (void) setButton:(ABKInAppMessageButton *)button {
+
+- (void)setButton:(ABKInAppMessageButton *)button {
   _button = button;
   self.titleTextField.text = button.buttonText;
   if (button.buttonTextColor) {
@@ -52,7 +55,7 @@
   self.URITextField.text = [button.buttonClickedURI absoluteString];
 }
 
-- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [textField resignFirstResponder];
   if (textField == self.titleTextField) {
     self.button.buttonText = textField.text;
@@ -66,14 +69,14 @@
   return YES;
 }
 
-- (IBAction) changeColor:(UIButton *)sender {
+- (IBAction)changeColor:(UIButton *)sender {
   KKColorListViewController *colorListViewController = [[KKColorListViewController alloc] initWithSchemeType:KKColorsSchemeTypeCrayola];
   colorListViewController.delegate = self;
   sender.selected = YES;
   [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:colorListViewController animated:YES completion:nil];
 }
 
-- (void) colorListController:(KKColorListViewController *)controller didSelectColor:(KKColor *)color {
+- (void)colorListController:(KKColorListViewController *)controller didSelectColor:(KKColor *)color {
   if (self.textColorButton.selected) {
     self.textColorButton.backgroundColor = [color uiColor];
     self.button.buttonTextColor = self.textColorButton.backgroundColor;
@@ -104,4 +107,5 @@
       break;
   }
 }
+
 @end

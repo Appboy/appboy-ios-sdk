@@ -38,5 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
  * When this property is nil, the chevron's default color is white.
  */
 @property (strong, nullable) UIColor *chevronColor;
+
 @end
 NS_ASSUME_NONNULL_END

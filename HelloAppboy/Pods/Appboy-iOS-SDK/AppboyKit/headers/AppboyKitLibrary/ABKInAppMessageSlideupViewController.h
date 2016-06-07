@@ -8,7 +8,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageSlideupViewController : ABKInAppMessageViewController
 
-@property (nullable) IBOutlet UIImageView *arrowImage;
+@property (weak, nullable) IBOutlet UIImageView *arrowImage;
 
 @end
 NS_ASSUME_NONNULL_END

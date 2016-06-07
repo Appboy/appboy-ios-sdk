@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  Called when a card on the news feed is clicked.
  */
-- (BOOL) onCardClicked:(ABKCard *)clickedCard feedViewController:(UIViewController *)newsFeed;
+- (BOOL)onCardClicked:(ABKCard *)clickedCard feedViewController:(UIViewController *)newsFeed;
 
 @end
 NS_ASSUME_NONNULL_END

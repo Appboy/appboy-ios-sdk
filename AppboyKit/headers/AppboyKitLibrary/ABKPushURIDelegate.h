@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Appboy SDK opens the URI. If you want Appboy SDK to handle the URI, return NO. If
  * you return YES in the delegate method, Appboy SDK won't open the URI.
  */
-- (BOOL) handleAppboyPushURI:(NSString *)URIString withNotificationInfo:(NSDictionary *)notificationInfo;
+- (BOOL)handleAppboyPushURI:(NSString *)URIString withNotificationInfo:(NSDictionary *)notificationInfo;
 
 @end
 NS_ASSUME_NONNULL_END

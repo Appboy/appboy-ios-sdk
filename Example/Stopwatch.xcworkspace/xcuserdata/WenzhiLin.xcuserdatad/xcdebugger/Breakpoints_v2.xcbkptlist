@@ -36,13 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stopwatch/InAppMessageUIViewController.m"
-            timestampString = "465238713.032428"
+            timestampString = "486682672.093709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "-displayInAppMessage:"
-            landmarkType = "5">
+            startingLineNumber = "381"
+            endingLineNumber = "381">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -183,7 +181,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "-receiveKeyboardWasShownNotification:"
+            landmarkName = "-receiveKeyboardDidHideNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -210,11 +208,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stopwatch/InAppMessageUIViewController.m"
-            timestampString = "465238666.693118"
+            timestampString = "486682672.093709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "-displayInAppMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1258,8 +1256,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
             endingLineNumber = "288"
-            landmarkName = "@implementation ABKInAppMessageController"
-            landmarkType = "3">
+            landmarkName = "-showInAppMessage:withDelegate:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1724,11 +1722,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stopwatch/AppDelegate.m"
-            timestampString = "479247552.139326"
+            timestampString = "486415662.651594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-application:continueUserActivity:restorationHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1976,11 +1974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stopwatch/InAppMessageUIViewController.m"
-            timestampString = "476229352.686804"
+            timestampString = "486682672.093709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "-displayInAppMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1997,7 +1995,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
             endingLineNumber = "110"
-            landmarkName = "-receiveInAppMessageFromNetwork:"
+            landmarkName = "-inAppMessageWindowDismissed:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2174,7 +2172,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../AppboyKit/AppboyKit/UserInterface/InAppMessage/ABKInAppMessageController.m"
@@ -2183,7 +2181,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "299"
             endingLineNumber = "299"
-            landmarkName = "-handleInAppMessageTrigger:"
+            landmarkName = "-showInAppMessage:withDelegate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3014,7 +3012,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
             endingLineNumber = "300"
-            landmarkName = "-handleInAppMessageTrigger:"
+            landmarkName = "-showInAppMessage:withDelegate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3371,53 +3369,6 @@
             endingLineNumber = "222"
             landmarkName = "-handleExistingInAppMessagesInQueueWithDelegate:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__76-[ABKInAppMessageController handleExistingInAppMessagesInQueueWithDelegate:]_block_invoke.351"
-                  moduleName = "Stopwatch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/WenzhiLin/Desktop/AppboyKit/AppboyKit/AppboyKit/UserInterface/InAppMessage/ABKInAppMessageController.m"
-                  timestampString = "484006561.111153"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "223"
-                  endingLineNumber = "223"
-                  offsetFromSymbolStart = "348">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.354"
-                  moduleName = "Stopwatch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/WenzhiLin/Desktop/AppboyKit/AppboyKit/AppboyKit/UserInterface/InAppMessage/ABKInAppMessageController.m"
-                  timestampString = "484006561.11126"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "223"
-                  endingLineNumber = "223"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.355"
-                  moduleName = "Stopwatch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/WenzhiLin/Desktop/AppboyKit/AppboyKit/AppboyKit/UserInterface/InAppMessage/ABKInAppMessageController.m"
-                  timestampString = "484006561.111355"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "223"
-                  endingLineNumber = "223"
-                  offsetFromSymbolStart = "79">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3464,7 +3415,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "305"
             endingLineNumber = "305"
-            landmarkName = "-handleInAppMessageTrigger:"
+            landmarkName = "-getInAppMessageStack"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3554,11 +3505,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../AppboyKit/AppboyKit/UserInterface/InAppMessage/ABKInAppMessageImmersiveViewController.m"
-            timestampString = "483653803.24645"
+            timestampString = "486681673.32281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "-changeCloseButtonColor"
             landmarkType = "5">
          </BreakpointContent>
@@ -3591,7 +3542,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "-feedbackButtonTapped:"
+            landmarkName = "-flushDataToAppboy:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3607,7 +3558,151 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "-newsfeedButtonTapped:"
+            landmarkName = "@implementation ContainerViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/InAppMessageUIViewController.m"
+            timestampString = "486682672.093709"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "-displayInAppMessage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/InAppMessageUIViewController.m"
+            timestampString = "486682672.093709"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-displayInAppMessage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/InAppMessageUIViewController.m"
+            timestampString = "486682672.093709"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "-displayInAppMessage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/AppDelegate.m"
+            timestampString = "486075508.815056"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/AppDelegate.m"
+            timestampString = "486075509.725481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/InAppMessageUIViewController.m"
+            timestampString = "486682962.71435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "-buttonSegmentChanged:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/InAppMessageUIViewController.m"
+            timestampString = "486683013.067415"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/InAppMessageUIViewController.m"
+            timestampString = "486683059.737012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Stopwatch/InAppMessageUIViewController.m"
+            timestampString = "486683082.886841"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

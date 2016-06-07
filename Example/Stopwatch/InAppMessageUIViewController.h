@@ -14,7 +14,8 @@
 @property IBOutlet UIView *HTMLComposerView;
 @property IBOutlet UITextField *zipRemoteURLTextField;
 @property IBOutlet UITextView *HTMLInAppTextView;
+@property UITextField *currentTextField;
 
-- (IBAction) inAppMessageTypeChanged:(id)sender;
+- (IBAction)inAppMessageTypeChanged:(id)sender;
 
 @end
