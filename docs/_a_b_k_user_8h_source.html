@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  ABKUser.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  AppboySDK</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Copyright (c) 2013 Appboy. All rights reserved.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Copyright (c) 2016 Appboy. All rights reserved.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
@@ -142,51 +142,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
 <div class="line"><a name="l00139"></a><span class="lineno"><a class="code" href="interface_a_b_k_user.html#ad423f39f7bd2be15fd5cdedd7c1a2e7f">  139</a></span>&#160;<span class="keyword">@property</span> (strong, nullable) <a class="code" href="interface_a_b_k_attribution_data.html">ABKAttributionData</a> *<a class="code" href="interface_a_b_k_user.html#ad423f39f7bd2be15fd5cdedd7c1a2e7f">attributionData</a>;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;- (BOOL) setGender:(ABKUserGenderType)gender;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;- (BOOL)setGender:(ABKUserGenderType)gender;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;- (BOOL) setIsSubscribedToEmails:(BOOL)subscribed __deprecated;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;- (BOOL)setIsSubscribedToEmails:(BOOL)subscribed __deprecated;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;- (BOOL) setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;- (BOOL)setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;- (BOOL) setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;- (BOOL)setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;- (BOOL)setCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;- (BOOL)setCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andDoubleValue:(<span class="keywordtype">double</span>)value;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;- (BOOL)setCustomAttributeWithKey:(NSString *)key andDoubleValue:(<span class="keywordtype">double</span>)value;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;- (BOOL)setCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;- (BOOL) setCustomAttributeWithKey:(NSString *)key andDateValue:(NSDate *)value;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;- (BOOL)setCustomAttributeWithKey:(NSString *)key andDateValue:(NSDate *)value;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;- (BOOL) unsetCustomAttributeWithKey:(NSString *)key;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;- (BOOL)unsetCustomAttributeWithKey:(NSString *)key;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;- (BOOL) incrementCustomUserAttribute:(NSString *)key;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;- (BOOL)incrementCustomUserAttribute:(NSString *)key;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;- (BOOL) incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;- (BOOL)incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;- (BOOL) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;- (BOOL)addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;- (BOOL) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;- (BOOL)removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;- (BOOL) setCustomAttributeArrayWithKey:(NSString *)key array:(nullable NSArray *)valueArray;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;- (BOOL)setCustomAttributeArrayWithKey:(NSString *)key array:(nullable NSArray *)valueArray;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;- (BOOL) setLastKnownLocationWithLatitude:(<span class="keywordtype">double</span>)latitude longitude:(<span class="keywordtype">double</span>)longitude horizontalAccuracy:(<span class="keywordtype">double</span>)horizontalAccuracy;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;- (BOOL)setLastKnownLocationWithLatitude:(<span class="keywordtype">double</span>)latitude longitude:(<span class="keywordtype">double</span>)longitude horizontalAccuracy:(<span class="keywordtype">double</span>)horizontalAccuracy;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;- (BOOL) setLastKnownLocationWithLatitude:(<span class="keywordtype">double</span>)latitude</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                longitude:(<span class="keywordtype">double</span>)longitude</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                       horizontalAccuracy:(<span class="keywordtype">double</span>)horizontalAccuracy</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                 altitude:(<span class="keywordtype">double</span>)altitude</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                         verticalAccuracy:(<span class="keywordtype">double</span>)verticalAccuracy;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;- (BOOL)setLastKnownLocationWithLatitude:(<span class="keywordtype">double</span>)latitude</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                               longitude:(<span class="keywordtype">double</span>)longitude</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                      horizontalAccuracy:(<span class="keywordtype">double</span>)horizontalAccuracy</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                altitude:(<span class="keywordtype">double</span>)altitude</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        verticalAccuracy:(<span class="keywordtype">double</span>)verticalAccuracy;</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2016 21:03:44 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 7 2016 18:09:33 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

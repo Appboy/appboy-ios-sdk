@@ -645,7 +645,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This method forwards remote notifications to <a class="el" href="interface_appboy.html">Appboy</a>. When it's called in the background, <a class="el" href="interface_appboy.html">Appboy</a> will request a refresh of the news feed and call the completionHandler when the request is finished; If it's called while the app is in the foreground, <a class="el" href="interface_appboy.html">Appboy</a> won't fetch the news feed, and won't call the completionHandler. Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate. </p>
+<p>This method forwards remote notifications to <a class="el" href="interface_appboy.html">Appboy</a>. The SDK will call the completionHandler with UIBackgroundFetchResultNoData. Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate. </p>
 
 </div>
 </div>
@@ -1039,7 +1039,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2016 21:03:44 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 7 2016 18:09:33 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

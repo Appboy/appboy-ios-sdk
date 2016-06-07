@@ -85,13 +85,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  Appboy.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  AppboySDK</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Copyright (c) 2013 Appboy. All rights reserved.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Copyright (c) 2016 Appboy. All rights reserved.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef APPBOY_SDK_VERSION</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.20.0&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;2.20.1&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@class</span> <a class="code" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a>;</div>
@@ -154,16 +154,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"> * Initialization</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;+ (nullable <a class="code" href="interface_appboy.html">Appboy</a> *) <a class="code" href="interface_appboy.html#aa62135eada7135024e1e042325f426fa">sharedInstance</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;+ (nullable <a class="code" href="interface_appboy.html">Appboy</a> *)<a class="code" href="interface_appboy.html#aa62135eada7135024e1e042325f426fa">sharedInstance</a>;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;+ (void) startWithApiKey:(NSString *)apiKey</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;           inApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;       withLaunchOptions:(nullable NSDictionary *)launchOptions;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;+ (void)startWithApiKey:(NSString *)apiKey</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;          inApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      withLaunchOptions:(nullable NSDictionary *)launchOptions;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;+ (void) startWithApiKey:(NSString *)apiKey</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;           inApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;       withLaunchOptions:(nullable NSDictionary *)launchOptions</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;       withAppboyOptions:(nullable NSDictionary *)appboyOptions;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;+ (void)startWithApiKey:(NSString *)apiKey</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          inApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      withLaunchOptions:(nullable NSDictionary *)launchOptions</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      withAppboyOptions:(nullable NSDictionary *)appboyOptions;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"> * Properties</span></div>
@@ -190,57 +190,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment"> * Methods</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;- (void) <a class="code" href="interface_appboy.html#a746fa87363a1530ba655498b4c36a0dd">flushDataAndProcessRequestQueue</a>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;- (void)<a class="code" href="interface_appboy.html#a746fa87363a1530ba655498b4c36a0dd">flushDataAndProcessRequestQueue</a>;</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;- (void) <a class="code" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;- (void)<a class="code" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a>;</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;- (BOOL) pushNotificationWasSentFromAppboy:(NSDictionary *)options;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;- (void) registerPushToken:(NSString *)token;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;- (void)registerPushToken:(NSString *)token;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;- (void)  registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;- (void) registerApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;didReceiveRemoteNotification:(NSDictionary *)notification</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      fetchCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(UIBackgroundFetchResult))completionHandler;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;- (void) getActionWithIdentifier:(NSString *)identifier</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;           forRemoteNotification:(NSDictionary *)userInfo</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;               completionHandler:(nullable <span class="keywordtype">void</span> (^)())completionHandler;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;- (void) changeUser:(NSString *)userID;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;- (void) logCustomEvent:(NSString *)eventName;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;- (void) logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;- (void) logSocialShare:(ABKSocialNetwork)socialNetwork __deprecated;</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;- (void) <a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;- (void) <a class="code" href="interface_appboy.html#a06154478e49f48c168232f48455e8173">logFeedbackDisplayed</a>;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;- (void) <a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;- (void) <a class="code" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a>;</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;- (BOOL) handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(<span class="keywordtype">void</span> (^)(NSDictionary * _Nullable replyInfo))reply;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;- (void)registerApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        didReceiveRemoteNotification:(NSDictionary *)notification</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        fetchCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(UIBackgroundFetchResult))completionHandler;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;- (void)getActionWithIdentifier:(NSString *)identifier</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;          forRemoteNotification:(NSDictionary *)userInfo</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;              completionHandler:(nullable <span class="keywordtype">void</span> (^)())completionHandler;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;- (void)changeUser:(NSString *)userID;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;- (void)logCustomEvent:(NSString *)eventName;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;- (void)logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;- (void)logSocialShare:(ABKSocialNetwork)socialNetwork __deprecated;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;- (BOOL)submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;- (void)<a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;- (void)<a class="code" href="interface_appboy.html#a06154478e49f48c168232f48455e8173">logFeedbackDisplayed</a>;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;- (void)<a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;- (void)<a class="code" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a>;</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;- (BOOL)handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(<span class="keywordtype">void</span> (^)(NSDictionary * _Nullable replyInfo))reply;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2016 21:03:44 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 7 2016 18:09:33 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
