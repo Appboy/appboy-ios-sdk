@@ -48,6 +48,8 @@ static NSString *const CellIdentifierButton = @"ButtonCellIdentifer";
 
 @property IBOutlet UILabel *titleLabel;
 @property IBOutlet UIButton *colorButton;
+@property IBOutlet UILabel *opacityLabel;
+@property IBOutlet UISlider *opacitySlider;
 
 - (void)setColor:(UIColor *)color;
 - (UIColor *)color;

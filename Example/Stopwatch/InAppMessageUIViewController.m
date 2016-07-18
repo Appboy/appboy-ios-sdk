@@ -6,6 +6,7 @@ static const int TableViewTopY = 44;
 static const NSInteger textFieldTagNumber = 50;
 static const CGFloat ButtonTableViewCellHeight = 176.0f;
 static const CGFloat NormalTableViewCellHeight = 44.0f;
+static const CGFloat ColorTableViewCellHeight = 88.0f;
 
 static const int CustomInAppMessageDuration = 5;
 
@@ -15,11 +16,12 @@ static const int CustomInAppMessageDuration = 5;
   [super viewDidLoad];
   self.inAppMessageDictionary = [NSMutableDictionary dictionaryWithCapacity:3];
   self.inAppSlideupList = [NSMutableArray arrayWithArray:
-    @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemHideChevron, ItemChevronColor,
-      ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemAnimatedFrom]];
+    @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemHideChevron,
+      ItemChevronColor, ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemAnimatedFrom]];
   self.inAppModalList = [NSMutableArray arrayWithArray:
-    @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemIconColor, ItemHeader, ItemHeaderColor, ItemModalFrameColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor,
-      ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemButtonNumber]];
+    @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemIconColor, ItemHeader, ItemHeaderColor, ItemModalFrameColor,
+      ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor, ItemClickAction, ItemClickActionURL,
+      ItemDismissType, ItemDuration, ItemButtonNumber]];
   self.inAppFullList = [NSMutableArray arrayWithArray:
     @[ItemImageURL, ItemHeader, ItemHeaderColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor,
       ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemButtonNumber]];
@@ -64,6 +66,15 @@ static const int CustomInAppMessageDuration = 5;
   NSString *item = [self currentArrayList][indexPath.row];
   if ([item isEqualToString:ItemButtonOne] || [item isEqualToString:ItemButtonTwo]) {
     return ButtonTableViewCellHeight;
+  } else if ([item isEqualToString:ItemHeaderColor] ||
+             [item isEqualToString:ItemBodyColor] ||
+             [item isEqualToString:ItemBackgroundColor] ||
+             [item isEqualToString:ItemModalFrameColor] ||
+             [item isEqualToString:ItemIconColor] ||
+             [item isEqualToString:ItemIconBackgroundColor] ||
+             [item isEqualToString:ItemChevronColor] ||
+             [item isEqualToString:ItemCloseButtonColor]) {
+    return ColorTableViewCellHeight;
   } else {
     return NormalTableViewCellHeight;
   }
@@ -77,9 +88,9 @@ static const int CustomInAppMessageDuration = 5;
     [item isEqualToString:ItemAnimatedFrom] ||
     [item isEqualToString:ItemButtonNumber]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierSegment withClass:[SegmentCell class] tableView:tableView];
-    [(SegmentCell *) cell setUpWithItem:item];
+    [(SegmentCell *)cell setUpWithItem:item];
     if (self.inAppMessageDictionary[item]) {
-      ((SegmentCell *) cell).segmentControl.selectedSegmentIndex = [self.inAppMessageDictionary[item] integerValue];
+      ((SegmentCell *)cell).segmentControl.selectedSegmentIndex = [self.inAppMessageDictionary[item] integerValue];
     } else if (((SegmentCell *)cell).titleLabel != nil) {
       self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] =  @(0);
     }
@@ -96,10 +107,10 @@ static const int CustomInAppMessageDuration = 5;
       self.inAppMessageDictionary[item] = @"Testing";
     }
     
-    ((TextFieldCell *) cell).titleLabel.text = item;
-    ((TextFieldCell *) cell).textField.text = self.inAppMessageDictionary[item];
-    ((TextFieldCell *) cell).textField.delegate = self;
-    ((TextFieldCell *) cell).textField.tag = [item isEqualToString:ItemIcon] ? textFieldTagNumber : 0;
+    ((TextFieldCell *)cell).titleLabel.text = item;
+    ((TextFieldCell *)cell).textField.text = self.inAppMessageDictionary[item];
+    ((TextFieldCell *)cell).textField.delegate = self;
+    ((TextFieldCell *)cell).textField.tag = [item isEqualToString:ItemIcon] ? textFieldTagNumber : 0;
   } else if ([item isEqualToString:ItemHeaderColor] ||
              [item isEqualToString:ItemBodyColor] ||
              [item isEqualToString:ItemBackgroundColor] ||
@@ -110,10 +121,12 @@ static const int CustomInAppMessageDuration = 5;
              [item isEqualToString:ItemCloseButtonColor]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierColor withClass:[ColorCell class] tableView:tableView];
     ((ColorCell *)cell).titleLabel.text = item;
-    [(ColorCell *) cell setColor:self.inAppMessageDictionary[item]];
+    [(ColorCell *)cell setColor:self.inAppMessageDictionary[item]];
+    ((ColorCell *)cell).opacitySlider.value = 1.0;
+    ((ColorCell *)cell).colorButton.backgroundColor = [((ColorCell *) cell).colorButton.backgroundColor colorWithAlphaComponent:1.0];
   } else if ([item isEqualToString:ItemHideChevron]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierChevron withClass:[HideChevronCell class] tableView:tableView];
-    ((HideChevronCell *) cell).hideChevronSwitch.on = [self.inAppMessageDictionary[item] boolValue];
+    ((HideChevronCell *)cell).hideChevronSwitch.on = [self.inAppMessageDictionary[item] boolValue];
   } else if ([item isEqualToString:ItemButtonOne] ||
              [item isEqualToString:ItemButtonTwo]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierButton withClass:[InAppMessageButtonCell class] tableView:tableView];
@@ -149,8 +162,8 @@ static const int CustomInAppMessageDuration = 5;
   NSString *item = controller.headerTitle;
   NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[[self currentArrayList] indexOfObject:item] inSection:0];
   ColorCell *cell = (ColorCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-  [cell setColor:[color uiColor]];
-  self.inAppMessageDictionary[item] = [color uiColor];
+  [cell setColor:[[color uiColor] colorWithAlphaComponent:cell.opacitySlider.value]];
+  self.inAppMessageDictionary[item] = [[color uiColor] colorWithAlphaComponent:cell.opacitySlider.value];
 }
 
 - (IBAction)hideChevronChanged:(UISwitch *)sender {
@@ -215,6 +228,17 @@ static const int CustomInAppMessageDuration = 5;
     self.inAppMessageDictionary[((TextFieldCell *)cell).titleLabel.text] = textField.text;
   }
   self.currentTextField = nil;
+}
+
+- (IBAction)opacitySliderValueChanged:(UISlider *)slider {
+  UIView *cell = slider.superview;
+  while (![cell isKindOfClass:[ColorCell class]] && cell.superview != nil) {
+    cell = cell.superview;
+  }
+  if ([cell isKindOfClass:[ColorCell class]]) {
+    ((ColorCell *)cell).colorButton.backgroundColor = [((ColorCell *)cell).colorButton.backgroundColor colorWithAlphaComponent:((ColorCell *)cell).opacitySlider.value];
+    self.inAppMessageDictionary[((ColorCell *)cell).titleLabel.text] = [((ColorCell *)cell).colorButton.backgroundColor colorWithAlphaComponent:slider.value];
+  }
 }
 
 - (IBAction)displayInAppMessage:(id)sender {

@@ -3,11 +3,16 @@
 @class ABKServerConfig;
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface ABKLocationManager : NSObject
 
+/*!
+ * Use ABKDisableAutomaticLocationCollectionKey to disable automatic location tracking. 
+ * For more information, please refer to Appboy.h.
+ */
 @property (readonly) BOOL disableLocationTracking;
 
-- (id)initWithServerConfig:(ABKServerConfig *)serverConfig andAppboyOptions:(NSDictionary *)appboyOptions;
+- (instancetype)initWithServerConfig:(ABKServerConfig *)serverConfig andAppboyOptions:(NSDictionary *)appboyOptions;
 
 /*!
  * Calling this method gives Appboy permission to request WhenInUse authorization on your behalf the next time we attempt to collect

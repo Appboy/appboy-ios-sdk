@@ -1,3 +1,12 @@
+## 2.21.0
+- Drops support for iOS 6. Appboy SDK requires iOS 7 as the minimum supported iOS version.
+- Updates the podspec to fetch the latest version of SDWebImage.
+- Replaced deprecated NSURLConnection with NSURLSession.
+- Adds support for deep link with Unicode. When url string has non-English character, the SDK will encode the url string to create a valid deep link NSURL.
+- Updates the SDK to always call `canOpenURL:` before opening a deep link. After this change, the SDK will only direct deep links whose schemes are whitelisted.
+- Updates push registration to immediately send up the push token.
+- Fixed the bug that the slideup in-app message's background was still transparent even with 100% opacity.
+
 ## 2.20.1
 - Implements an optimization in push handling to not prefetch the News Feed when a push arrives and the app is in the background. 
 - Fixes an issue where in certain conditions NSUserDefault blocking would cause custom events logged in the main thread to result in UI freezing.

@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  * The initWithInAppMessage method may be used to pass the inAppMessage property to any custom view controller that you create.
  */
-- (id)initWithInAppMessage:(ABKInAppMessage *)inAppMessage;
+- (instancetype)initWithInAppMessage:(ABKInAppMessage *)inAppMessage;
 
 /*!
  * @param animated If YES, the inAppMessage will animate off the screen. If NO, the inAppMessage will disappear immediately without an animation.

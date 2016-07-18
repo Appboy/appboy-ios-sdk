@@ -2,18 +2,16 @@
 #import <AppboyKit.h>
 #import "NUISettings.h"
 #import "ABKPushUtils.h"
+#import <Crittercism/Crittercism.h>
 
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
 static NSString *const CrittercismAppId = @"51b67d141386207417000002";
+static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Sets up Crittercism for crash and error tracking.
   NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
-  
-  [Crittercism enableWithAppID:CrittercismAppId];
-  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
 
   // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
   [Appboy startWithApiKey:AppboyApiKey
@@ -21,6 +19,16 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
       withLaunchOptions:launchOptions
       withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
                           ABKMinimumTriggerTimeIntervalKey: @(5)}];
+  
+  // Sets up Crittercism for crash and error tracking.
+  // Need to initialize Appboy before initializing Crittercism so custom events will be logged in crashDidOccur.
+  // Need to subscribe to crash notifications before initializing Crittercism.
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(crashDidOccur:)
+                                               name:CrittercismObserverName object:nil];
+  
+  [Crittercism enableWithAppID:CrittercismAppId];
+  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
 
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
@@ -40,6 +48,17 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
     [self setupPushCategories];
   }
   return YES;
+}
+
+/* Send crash event to Appboy upon notification */
+- (void) crashDidOccur:(NSNotification*)notification {
+  NSDictionary *crashInfo = notification.userInfo;
+  
+  [[Appboy sharedInstance] logCustomEvent:@"ApteligentCrashEvent"
+                           withProperties:crashInfo];
+  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashName" andStringValue:crashInfo[@"crashName"]];
+  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashReason" andStringValue:crashInfo[@"crashReason"]];
+  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashDate" andDateValue:crashInfo[@"crashDate"]];
 }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
@@ -121,7 +140,8 @@ static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 // Here we are trying to handle deep linking with scheme beginning with "stopwatch".
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
   NSLog(@"Stopwatch get a deep link request: %@", url.absoluteString);
-  UIAlertView *deepLinkAlert = [[UIAlertView alloc] initWithTitle:@"Deep Linking" message:url.absoluteString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+  NSString *urlString = url.absoluteString.stringByRemovingPercentEncoding;
+  UIAlertView *deepLinkAlert = [[UIAlertView alloc] initWithTitle:@"Deep Linking" message:urlString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
   [deepLinkAlert show];
   deepLinkAlert = nil;
   return YES;

@@ -4,7 +4,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
-pod 'Appboy-iOS-SDK'
+target 'HelloSwfit' do
+  pod 'Appboy-iOS-SDK'
+end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

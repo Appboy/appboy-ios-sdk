@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Za8-FW-PxY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Za8-FW-PxY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1008,8 +1008,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ts5-L4-diY">
-                                <rect key="frame" x="0.0" y="80" width="320" height="488"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ts5-L4-diY">
+                                <rect key="frame" x="0.0" y="80" width="320" height="576"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.28122158190000002" green="0.53170477839999997" blue="0.90852012429999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1088,23 +1088,20 @@
                                             <outlet property="titleLabel" destination="vjg-D4-JuJ" id="Mk4-43-jMX"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ColorCellIdentifier" id="xra-jY-v1W" customClass="ColorCell">
-                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ColorCellIdentifier" rowHeight="88" id="xra-jY-v1W" customClass="ColorCell">
+                                        <rect key="frame" x="0.0" y="110" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xra-jY-v1W" id="AjN-Sl-T3G">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-9z-EQ7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-9z-EQ7">
                                                     <rect key="frame" x="28" y="13" width="122" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="122" id="szY-0z-SLG"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-jL-GrZ">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-jL-GrZ">
                                                     <rect key="frame" x="158" y="5" width="134" height="34"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1115,22 +1112,35 @@
                                                         <action selector="changeColor:" destination="mDO-W3-fC2" eventType="touchUpInside" id="yYf-aH-tcv"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-nm-JMW">
+                                                    <rect key="frame" x="28" y="57" width="122" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-4S-K0E">
+                                                    <rect key="frame" x="158" y="50" width="134" height="31"/>
+                                                    <connections>
+                                                        <action selector="opacitySliderValueChanged:" destination="mDO-W3-fC2" eventType="valueChanged" id="ipX-GH-FWS"/>
+                                                    </connections>
+                                                </slider>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CH6-9z-EQ7" firstAttribute="centerY" secondItem="f0a-jL-GrZ" secondAttribute="centerY" id="6hP-6B-7hd"/>
-                                                <constraint firstItem="f0a-jL-GrZ" firstAttribute="leading" secondItem="CH6-9z-EQ7" secondAttribute="trailing" constant="8" id="YXk-ec-iT8"/>
-                                                <constraint firstItem="CH6-9z-EQ7" firstAttribute="leading" secondItem="AjN-Sl-T3G" secondAttribute="leadingMargin" constant="20" id="fIa-hj-Yhr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="f0a-jL-GrZ" secondAttribute="trailing" constant="20" id="hPb-Tb-mUC"/>
-                                                <constraint firstItem="CH6-9z-EQ7" firstAttribute="centerY" secondItem="AjN-Sl-T3G" secondAttribute="centerY" id="tlG-7E-fmv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jdh-4S-K0E" secondAttribute="trailing" constant="20" id="2r1-j2-v9E"/>
+                                                <constraint firstItem="jdh-4S-K0E" firstAttribute="leading" secondItem="4e4-nm-JMW" secondAttribute="trailing" constant="8" id="77F-4c-Sq2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f0a-jL-GrZ" secondAttribute="trailing" constant="20" id="8wW-ct-wnR"/>
+                                                <constraint firstItem="f0a-jL-GrZ" firstAttribute="leading" secondItem="CH6-9z-EQ7" secondAttribute="trailing" constant="8" id="Hys-H8-M7s"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="colorButton" destination="f0a-jL-GrZ" id="ec2-cm-Ogo"/>
+                                            <outlet property="opacityLabel" destination="4e4-nm-JMW" id="Y92-p2-I6L"/>
+                                            <outlet property="opacitySlider" destination="jdh-4S-K0E" id="dIB-L5-gUn"/>
                                             <outlet property="titleLabel" destination="CH6-9z-EQ7" id="t0o-Ug-94N"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChevronCellIdentifier" id="4Nk-Pk-PQL" customClass="HideChevronCell">
-                                        <rect key="frame" x="0.0" y="154" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="198" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Nk-Pk-PQL" id="mBQ-DV-uoV">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1161,7 +1171,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ButtonCellIdentifer" rowHeight="176" id="9uC-TL-qAH" customClass="InAppMessageButtonCell">
-                                        <rect key="frame" x="0.0" y="198" width="320" height="176"/>
+                                        <rect key="frame" x="0.0" y="242" width="320" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9uC-TL-qAH" id="5K7-ZB-uZM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>

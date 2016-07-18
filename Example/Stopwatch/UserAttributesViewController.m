@@ -1,7 +1,7 @@
 #import "UserAttributesViewController.h"
 #import <AppboyKit.h>
 #import "UserCells.h"
-#import "Crittercism.h"
+#import <Crittercism/Crittercism.h>
 
 static NSInteger const TextFieldTagNumber = 1000;
 static NSInteger const TotalNumberOfAttributes = 12;

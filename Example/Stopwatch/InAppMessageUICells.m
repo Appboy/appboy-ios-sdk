@@ -34,6 +34,7 @@
 - (UIColor *)color {
   return self.colorButton.backgroundColor;
 }
+
 @end
 
 @implementation HideChevronCell : UITableViewCell

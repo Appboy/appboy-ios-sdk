@@ -4,9 +4,9 @@
 #import "AppboyKit.h"
 
 static NSString *const FacebookIDPlistKey = @"FacebookAppID";
-static NSString *const FacebookUserProfileEndpointUrl = @"https://graph.facebook.com/me";
-static NSString *const FacebookLikesEndpointUrl = @"https://graph.facebook.com/me/likes";
-static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com/me/friends";
+static NSString *const FacebookUserProfileEndpointUrl = @"https://graph.facebook.com/v2.6/me";
+static NSString *const FacebookLikesEndpointUrl = @"https://graph.facebook.com/v2.6/me/likes";
+static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com/v2.6/me/friends";
 
 @implementation FacebookViewController
 

@@ -20,9 +20,7 @@
 		4E49ED1819DDE84F00ADC43F /* stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0019DDE84F00ADC43F /* stopwatch.png */; };
 		4E49ED1919DDE84F00ADC43F /* stopwatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */; };
 		4E49ED1A19DDE84F00ADC43F /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0219DDE84F00ADC43F /* twitter-icon.png */; };
-		4E608A721B6ADCE20094F050 /* libCrittercism_v5_2_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E608A711B6ADCE20094F050 /* libCrittercism_v5_2_0.a */; };
 		4E6D661619DCC18F009983AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Images.xcassets */; };
-		4E76BAA5183546E3001872E3 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4E76BAA4183546E3001872E3 /* dsym_upload.sh */; };
 		4E7D1C7E1A9FE1990087DB64 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D1C7D1A9FE1990087DB64 /* FacebookViewController.m */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
 		4EA0515D18998472007217BD /* CustomInAppMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0515B18998472007217BD /* CustomInAppMessageViewController.xib */; };
@@ -33,7 +31,6 @@
 		4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */; };
 		4EB014FE1A79D4C900E11E41 /* CustomInAppMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0515A18998472007217BD /* CustomInAppMessageViewController.m */; };
 		4EDB97211B3B6226003BB81D /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB97201B3B6226003BB81D /* TwitterViewController.m */; };
-		797795232AE54425A15B3018 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F620394EDC4EF6A11D6429 /* libPods.a */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
 		9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */; };
 		9580719F173D723400129B89 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514F173D6A6800C0D780 /* AssetsLibrary.framework */; };
@@ -50,6 +47,7 @@
 		95EF511A173D5FD600C0D780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5119173D5FD600C0D780 /* main.m */; };
 		95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
+		AB3160C1390A4E534FDF9EDA /* libPods-Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C91B6C0E8A7C7C6CB6BD7B04 /* libPods-Stopwatch.a */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
 		D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D400EBF21CC86A6100550AD8 /* EventsViewController.m */; };
 		D411F3121CD0355200100702 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D411F3111CD0355200100702 /* CustomTabBarController.m */; };
@@ -89,7 +87,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01F620394EDC4EF6A11D6429 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3E94E218BD52C60008C815 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E3E94E418BD52CE0008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StopwatchNUIStyle.nss; sourceTree = "<group>"; };
@@ -103,8 +100,6 @@
 		4E49ED0019DDE84F00ADC43F /* stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopwatch.png; sourceTree = "<group>"; };
 		4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch@2x.png"; sourceTree = "<group>"; };
 		4E49ED0219DDE84F00ADC43F /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-icon.png"; sourceTree = "<group>"; };
-		4E608A701B6ADCE20094F050 /* CrittercismConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismConfig.h; sourceTree = "<group>"; };
-		4E608A711B6ADCE20094F050 /* libCrittercism_v5_2_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v5_2_0.a; sourceTree = "<group>"; };
 		4E619A9A1B0E85BC002B396E /* NewsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsInterfaceController.h; sourceTree = "<group>"; };
 		4E619A9B1B0E85BC002B396E /* NewsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInterfaceController.m; sourceTree = "<group>"; };
 		4E619A9D1B0E85CD002B396E /* AppboyInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyInterfaceController.h; sourceTree = "<group>"; };
@@ -122,8 +117,6 @@
 		4E69E0821B0AA274003D87FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4E69E0841B0AA274003D87FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E6D661519DCC18F009983AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E76BAA3183546E3001872E3 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
-		4E76BAA4183546E3001872E3 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
 		4E7D1C7C1A9FE1990087DB64 /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
 		4E7D1C7D1A9FE1990087DB64 /* FacebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookViewController.m; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -143,7 +136,6 @@
 		4EDB97201B3B6226003BB81D /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Stopwatch.entitlements; sourceTree = "<group>"; };
 		4EEAD0EF1B0FB0B700883707 /* StopwatchDevelop WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "StopwatchDevelop WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7FFB110B1A70275200A6DAFB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FFB11201A703BAE00A6DAFB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FFB11211A703BB900A6DAFB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -173,6 +165,7 @@
 		7FFB113A1A703CC700A6DAFB /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FFB113D1A704B2E00A6DAFB /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7FFB113E1A704B3A00A6DAFB /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		91E944D9C8A3DA5A40706246 /* Pods-Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
 		953574A81743F862003A64B3 /* UserAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesViewController.m; sourceTree = "<group>"; };
 		953574A91743F862003A64B3 /* UserAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesViewController.h; sourceTree = "<group>"; };
 		955DE8931741A70700C07A57 /* InAppMessageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppMessageTestViewController.h; sourceTree = "<group>"; };
@@ -201,8 +194,7 @@
 		95EF515D173D6AAA00C0D780 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		95EF515F173D6AB100C0D780 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C16085C51B964BC600E57F30 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C5CC74A11766B955005DAD08 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
-		C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		C91B6C0E8A7C7C6CB6BD7B04 /* libPods-Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D400EBF11CC86A6100550AD8 /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		D400EBF21CC86A6100550AD8 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		D411F3101CD0355200100702 /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
@@ -229,7 +221,8 @@
 		D4992FE71CD4126D007CC304 /* user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@3x.png"; sourceTree = "<group>"; };
 		D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesArrayViewController.m; sourceTree = "<group>"; };
 		D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAttributesArrayViewController.h; sourceTree = "<group>"; };
-		D890D67844E95B1B065140B8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F64BF868819C85CC2393453B /* Pods-Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
+		FB77A8700F98010D11EB03E7 /* Pods-Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +237,6 @@
 				95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */,
 				958071A0173D723400129B89 /* CoreTelephony.framework in Frameworks */,
 				958071A1173D723400129B89 /* Social.framework in Frameworks */,
-				4E608A721B6ADCE20094F050 /* libCrittercism_v5_2_0.a in Frameworks */,
 				958071A2173D723400129B89 /* Twitter.framework in Frameworks */,
 				958071A3173D723400129B89 /* Accounts.framework in Frameworks */,
 				958071A4173D723400129B89 /* AdSupport.framework in Frameworks */,
@@ -252,7 +244,7 @@
 				95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */,
 				95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */,
 				95EF5112173D5FD600C0D780 /* CoreGraphics.framework in Frameworks */,
-				797795232AE54425A15B3018 /* libPods.a in Frameworks */,
+				AB3160C1390A4E534FDF9EDA /* libPods-Stopwatch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,28 +344,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4F0CF3B17114F763B7942B56 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */,
-				D890D67844E95B1B065140B8 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
 				4E49ECEA19DDE84F00ADC43F /* Images */,
 				4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */,
 				4E3E94E118BD52C60008C815 /* Localizable.strings */,
-				C5CC74A01766B955005DAD08 /* CrittercismSDK */,
 				95EF5113173D5FD600C0D780 /* Stopwatch */,
 				4E69E0691B0AA273003D87FF /* StopwatchDevelop WatchKit Extension */,
 				4E69E07E1B0AA274003D87FF /* StopwatchDevelop WatchKit App */,
 				95EF510C173D5FD600C0D780 /* Frameworks */,
 				95EF510B173D5FD600C0D780 /* Products */,
-				4F0CF3B17114F763B7942B56 /* Pods */,
+				C3172995BDE3FA26F13A8B46 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -403,7 +385,7 @@
 				95EF510D173D5FD600C0D780 /* UIKit.framework */,
 				95EF510F173D5FD600C0D780 /* Foundation.framework */,
 				95EF5111173D5FD600C0D780 /* CoreGraphics.framework */,
-				01F620394EDC4EF6A11D6429 /* libPods.a */,
+				C91B6C0E8A7C7C6CB6BD7B04 /* libPods-Stopwatch.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -460,17 +442,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C5CC74A01766B955005DAD08 /* CrittercismSDK */ = {
+		C3172995BDE3FA26F13A8B46 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4E608A701B6ADCE20094F050 /* CrittercismConfig.h */,
-				4E608A711B6ADCE20094F050 /* libCrittercism_v5_2_0.a */,
-				4E76BAA3183546E3001872E3 /* CRFilter.h */,
-				4E76BAA4183546E3001872E3 /* dsym_upload.sh */,
-				C5CC74A11766B955005DAD08 /* Crittercism.h */,
-				C5CC74A21766B955005DAD08 /* CrittercismDelegate.h */,
+				91E944D9C8A3DA5A40706246 /* Pods-Stopwatch.debug.xcconfig */,
+				F64BF868819C85CC2393453B /* Pods-Stopwatch.develop.xcconfig */,
+				FB77A8700F98010D11EB03E7 /* Pods-Stopwatch.release.xcconfig */,
 			);
-			path = CrittercismSDK;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,14 +459,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95EF5130173D5FD600C0D780 /* Build configuration list for PBXNativeTarget "Stopwatch" */;
 			buildPhases = (
-				58CD4522874B443180A63587 /* Check Pods Manifest.lock */,
+				3FF357DF66715857744FC7C3 /* [CP] Check Pods Manifest.lock */,
 				95EF5106173D5FD600C0D780 /* Sources */,
 				95EF5107173D5FD600C0D780 /* Frameworks */,
 				95EF5108173D5FD600C0D780 /* Resources */,
-				C5CC74A51766BC6B005DAD08 /* Upload DYSM to Crittercism */,
-				3993FFFAF9154BEEBDD5FA87 /* Copy Pods Resources */,
 				4E321B9519C12246000EE12B /* Embed Frameworks */,
-				1BEF3789CC507F95559EA780 /* Embed Pods Frameworks */,
+				5F8EE1AEEA3F70EDE9F4E877 /* [CP] Embed Pods Frameworks */,
+				4D0F0E629CC8F906F269DD80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -595,7 +573,6 @@
 				4E49ED1919DDE84F00ADC43F /* stopwatch@2x.png in Resources */,
 				4E49ED0519DDE84F00ADC43F /* btn-close@2x.png in Resources */,
 				D4938B9A1CE3C6CC00450D78 /* appboy@2x.png in Resources */,
-				4E76BAA5183546E3001872E3 /* dsym_upload.sh in Resources */,
 				D4139BDB1CBD88C100CA3307 /* bubble@2x.png in Resources */,
 				4E49ED0319DDE84F00ADC43F /* btn-backarrow.png in Resources */,
 				4E49ED0819DDE84F00ADC43F /* Default@2x.png in Resources */,
@@ -619,44 +596,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BEF3789CC507F95559EA780 /* Embed Pods Frameworks */ = {
+		3FF357DF66715857744FC7C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3993FFFAF9154BEEBDD5FA87 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		58CD4522874B443180A63587 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,19 +611,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C5CC74A51766BC6B005DAD08 /* Upload DYSM to Crittercism */ = {
+		4D0F0E629CC8F906F269DD80 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Upload DYSM to Crittercism";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_ID=\"51b67d141386207417000002\"\nAPI_KEY=\"n9vujab6u83in5zd2wggxhxqeiatsj4f\"\nsource ${SRCROOT}/CrittercismSDK/dsym_upload.sh";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F8EE1AEEA3F70EDE9F4E877 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -798,10 +760,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
+				PROVISIONING_PROFILE = "b02f48fe-e97e-4605-bc75-d9c9fff4d43a";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -810,7 +772,7 @@
 		};
 		4E1C78981AAFA82000663F4B /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F64BF868819C85CC2393453B /* Pods-Stopwatch.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -823,7 +785,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -833,7 +794,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
+				PROVISIONING_PROFILE = "b02f48fe-e97e-4605-bc75-d9c9fff4d43a";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -865,10 +826,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
+				PROVISIONING_PROFILE = "b02f48fe-e97e-4605-bc75-d9c9fff4d43a";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -893,10 +854,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "3f0cd9bb-f0ea-4255-b286-3b82494804c2";
+				PROVISIONING_PROFILE = "b02f48fe-e97e-4605-bc75-d9c9fff4d43a";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -906,7 +867,7 @@
 		};
 		95EF5131173D5FD600C0D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 91E944D9C8A3DA5A40706246 /* Pods-Stopwatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -919,7 +880,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -929,7 +889,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = StopwatchDevelop;
-				PROVISIONING_PROFILE = "a3be206a-c063-44e6-aadc-0ae239cdf2f0";
+				PROVISIONING_PROFILE = "df57da1f-5d4d-409c-a173-2479ec2370ff";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -937,7 +897,7 @@
 		};
 		95EF5132173D5FD600C0D780 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D890D67844E95B1B065140B8 /* Pods.release.xcconfig */;
+			baseConfigurationReference = FB77A8700F98010D11EB03E7 /* Pods-Stopwatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -950,7 +910,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -960,7 +919,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "9488a8cf-9f1c-4349-9aee-02b09da3d5d2";
+				PROVISIONING_PROFILE = "8474dac7-d5d9-4ba4-8e07-7a8d449a3544";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

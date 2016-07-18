@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @discussion: Creates an ABKAttributionData object to send to Appboy's servers.
  */
-- (id)initWithNetwork:(nullable NSString *)network
+- (instancetype)initWithNetwork:(nullable NSString *)network
              campaign:(nullable NSString *)campaign
               adGroup:(nullable NSString *)adGroup
              creative:(nullable NSString *)creative;

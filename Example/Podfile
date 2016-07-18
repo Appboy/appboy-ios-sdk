@@ -2,6 +2,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '7.0'
 
-pod 'Appboy-iOS-SDK'
-pod 'NUI',:git => 'https://github.com/tombenner/nui.git'
-pod 'KKColorListPicker', :git => 'git@github.com:leoru/KKColorListPicker.git'
+target 'Stopwatch' do
+  pod 'Appboy-iOS-SDK'
+  pod 'NUI',:git => 'https://github.com/tombenner/nui.git'
+  pod 'KKColorListPicker', :git => 'git@github.com:leoru/KKColorListPicker.git'
+  pod 'CrittercismSDK'
+end

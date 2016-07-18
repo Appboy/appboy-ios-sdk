@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.20.1"
+#define APPBOY_SDK_VERSION @"2.21.0"
 #endif
 
 @class ABKInAppMessageController;
@@ -49,7 +49,7 @@ extern NSString *const ABKFlushIntervalOptionKey;
 
 /*!
  * This key can be set to YES or NO and will configure whether Appboy will automatically collect location (if the user permits).
- * If set to YES,location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
+ * If set to YES, location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
  * ABKUser (i.e. you must manually set the location, Appboy will not).  If it is set to NO or omitted, Appboy will collect
  * location if authorized.
  */
@@ -57,7 +57,7 @@ extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 
 /*!
  * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location
- * events.  If this key isn't set and the server doesn't provide a value, it will defaul to false.
+ * events.  If this key isn't set and the server doesn't provide a value, it will default to false.
  */
 extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
 
@@ -250,13 +250,13 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 
 
 /*!
- * An class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
+ * A class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
  * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
  */
 @property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
 
 /*!
- * An class extending ABKPushURIDelegate can be set to handle deep linking in push in a custom way.
+ * A class extending ABKPushURIDelegate can be set to handle deep linking in push in a custom way.
  */
 @property (nonatomic, weak, nullable) id<ABKPushURIDelegate> appboyPushURIDelegate;
 

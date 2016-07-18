@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * When setting the custom attributes with custom keys:
  *
  * 1. Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values
- *    for reserved keys, please find and set the corresponding property in this class. The reserved key list is::
+ *    for reserved keys, please find and set the corresponding property in this class. The reserved key list is:
  *      email
  *      facebook
  *      twitter
