@@ -15,4 +15,5 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework/Headers/*.h'
   s.preserve_paths = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'
   s.vendored_frameworks = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'
+  s.source_files = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework/**/*.*'
 end

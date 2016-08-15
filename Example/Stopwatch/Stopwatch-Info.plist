@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Appboy</key>
-	<dict>
-		<key>LogLevel</key>
-		<string>0</string>
-		<key>Server</key>
-		<string>https://sondheim.appboy.com/api/v2</string>
-	</dict>
 	<key>AppboyAPIKeys</key>
 	<dict>
 		<key>AU</key>
@@ -62,7 +55,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSExceptionDomains</key>
-	<string/>
+	<string></string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Please share your location.</string>
 	<key>UIBackgroundModes</key>

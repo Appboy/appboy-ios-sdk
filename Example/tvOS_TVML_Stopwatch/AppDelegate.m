@@ -46,7 +46,7 @@ static NSString *tvBootURL = @"http://localhost:9001/application.js";
     
     self.appController = [[TVApplicationController alloc] initWithContext:appControllerContext window:self.window delegate:self];
 
-    [Appboy startWithApiKey:@"5cc68912-754f-4a2f-bf05-f98c4bc7ea63"
+    [Appboy startWithApiKey:@"appboy-sample-tvos"
               inApplication:application
           withLaunchOptions:launchOptions
           withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),

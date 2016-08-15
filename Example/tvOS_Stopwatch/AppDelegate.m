@@ -9,7 +9,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [Appboy startWithApiKey:@"3c4aa87c-ddc5-4604-b1f9-439f34f75463"
+  [Appboy startWithApiKey:@"appboy-sample-tvos"
             inApplication:application
         withLaunchOptions:launchOptions
         withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
