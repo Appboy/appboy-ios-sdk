@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Za8-FW-PxY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Za8-FW-PxY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGZ-3n-QlF">
-                                <rect key="frame" x="94" y="88" width="132" height="28"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <rect key="frame" x="94" y="98" width="132" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Get Twitter Data">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -29,8 +29,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8R-MD-gyj">
-                                <rect key="frame" x="85" y="40" width="151" height="28"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <rect key="frame" x="85" y="40" width="151" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Get Facebook Data">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -69,18 +69,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fba-Vc-gZu" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-qJ-HE9">
-                                                <rect key="frame" x="145" y="131" width="31" height="15"/>
+                                                <rect key="frame" x="145" y="141" width="31" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7i6-27-s0b">
-                                                <rect key="frame" x="114" y="154" width="93" height="28"/>
+                                                <rect key="frame" x="114" y="164" width="93" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Flush Data">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -92,9 +92,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-iv-ktD">
-                                                <rect key="frame" x="53" y="66" width="214" height="28"/>
+                                                <rect key="frame" x="53" y="66" width="214" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Change Appboy Flush Mode">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -106,14 +106,14 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appboy Flush Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8J-GY-Dyi">
-                                                <rect key="frame" x="81" y="102" width="158" height="21"/>
+                                                <rect key="frame" x="81" y="112" width="158" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H5-ee-dQb">
-                                                <rect key="frame" x="81" y="222" width="158" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="81" y="242" width="158" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Log Attribution Data">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -128,16 +128,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg7-JD-KCe">
-                                                <rect key="frame" x="74" y="318" width="172" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="74" y="358" width="172" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Show Caches Dir Files"/>
                                                 <connections>
                                                     <action selector="launchCachedFilesAlertView:" destination="Lea-J4-vz9" eventType="touchUpInside" id="W6m-lj-uOx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLG-60-Vzq">
-                                                <rect key="frame" x="83" y="270" width="155" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="83" y="300" width="155" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Log Single Location"/>
                                                 <connections>
                                                     <action selector="logSingleLocation:" destination="Lea-J4-vz9" eventType="touchUpInside" id="c6W-Ts-ih8"/>
@@ -210,15 +210,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADm-6d-4t0">
-                                <rect key="frame" x="36" y="124" width="248" height="424"/>
+                                <rect key="frame" x="36" y="144" width="248" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdD-gL-Fkv">
-                                <rect key="frame" x="77" y="88" width="166" height="28"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <rect key="frame" x="77" y="98" width="166" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Pass Data To Appboy">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -227,8 +227,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trg-w2-sHM">
-                                <rect key="frame" x="51" y="40" width="219" height="28"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <rect key="frame" x="51" y="40" width="219" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Get Facebook Data From iOS">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -272,8 +272,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvy-rf-V6r">
-                                <rect key="frame" x="61" y="40" width="199" height="28"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <rect key="frame" x="61" y="40" width="199" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Get Twitter Data From iOS">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -282,8 +282,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="him-MA-xkk">
-                                <rect key="frame" x="78" y="88" width="166" height="28"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <rect key="frame" x="78" y="98" width="166" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Pass Data To Appboy">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -292,7 +292,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O80-RR-3No">
-                                <rect key="frame" x="36" y="124" width="248" height="424"/>
+                                <rect key="frame" x="36" y="144" width="248" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -334,16 +334,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2U-KN-For">
-                                <rect key="frame" x="20" y="8" width="280" height="28"/>
+                                <rect key="frame" x="20" y="8" width="280" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Update User Attributes"/>
                                 <connections>
                                     <action selector="doneButtonTapped:" destination="MCx-rX-d2z" eventType="touchUpInside" id="AMw-Y9-dUR"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tnF-3C-Pfo">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="54" width="320" height="514"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="text field cell" id="3ou-J4-do1" customClass="UserAttributeCell">
@@ -421,6 +421,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="attributeNameLabel" destination="jHN-Qg-Ubg" id="9G2-S4-Hta"/>
                                             <outlet property="attributeSegmentedControl" destination="QLK-7y-iQI" id="Vfb-yJ-kmO"/>
                                         </connections>
                                     </tableViewCell>
@@ -522,9 +523,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfF-ZQ-WhW">
-                                <rect key="frame" x="195" y="126" width="89" height="32"/>
+                                <rect key="frame" x="195" y="126" width="89" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Remove">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -533,10 +534,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXO-Ci-Wfc">
-                                <rect key="frame" x="255" y="208" width="29" height="26"/>
+                                <rect key="frame" x="255" y="218" width="29" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -545,9 +546,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkk-Rw-4Hu">
-                                <rect key="frame" x="36" y="126" width="55" height="32"/>
+                                <rect key="frame" x="36" y="126" width="55" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Add">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -556,7 +557,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-jj-FcO">
-                                <rect key="frame" x="36" y="242" width="248" height="278"/>
+                                <rect key="frame" x="36" y="262" width="248" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="attributeValueCell" rowHeight="44" id="Z4Y-wV-Zqx" customClass="UserAttributeCell">
@@ -603,9 +604,9 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1R-hI-Oze">
-                                <rect key="frame" x="36" y="528" width="123" height="32"/>
+                                <rect key="frame" x="36" y="518" width="123" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Set Array to">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -614,7 +615,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dto-Lp-2n1">
-                                <rect key="frame" x="175" y="530" width="109" height="29"/>
+                                <rect key="frame" x="175" y="525" width="109" height="29"/>
                                 <segments>
                                     <segment title="Values"/>
                                     <segment title="Nil"/>
@@ -624,7 +625,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Custom Array" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJ5-ru-hE2">
-                                <rect key="frame" x="84" y="178" width="153" height="22"/>
+                                <rect key="frame" x="84" y="188" width="153" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -642,10 +643,10 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmn-If-AR1">
-                                <rect key="frame" x="36" y="208" width="44" height="26"/>
+                                <rect key="frame" x="36" y="218" width="44" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -731,9 +732,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgB-7f-1Mj">
-                                <rect key="frame" x="37" y="128" width="246" height="28"/>
+                                <rect key="frame" x="37" y="213" width="246" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Dismiss Current In-App Message">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -750,9 +751,9 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUG-l7-ilL">
-                                <rect key="frame" x="50" y="92" width="221" height="28"/>
+                                <rect key="frame" x="50" y="167" width="221" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Display Next Available In-App">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -761,9 +762,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-Ot-b1C">
-                                <rect key="frame" x="53" y="56" width="215" height="28"/>
+                                <rect key="frame" x="53" y="121" width="215" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Request An In-App Message">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -771,6 +772,21 @@
                                     <action selector="requestAnInApp:" destination="xc2-Om-yCX" eventType="touchUpInside" id="VxD-G0-nic"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V9S-Cb-JMZ">
+                                <rect key="frame" x="235" y="56" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Custom View Controller:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7B-c3-iDw">
+                                <rect key="frame" x="20" y="62" width="203" height="18.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15.5"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IAMs Remaining in Stack:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxs-cn-U60">
+                                <rect key="frame" x="71" y="95" width="177.5" height="18.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15.5"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -778,15 +794,23 @@
                             <constraint firstItem="ve6-vb-qDW" firstAttribute="top" secondItem="rWE-RI-3Zh" secondAttribute="topMargin" constant="20" id="2Po-HV-mVd"/>
                             <constraint firstItem="mUG-l7-ilL" firstAttribute="centerX" secondItem="ve6-vb-qDW" secondAttribute="centerX" id="4Kb-bK-96V"/>
                             <constraint firstItem="SgB-7f-1Mj" firstAttribute="centerX" secondItem="ve6-vb-qDW" secondAttribute="centerX" id="90n-Ow-TVg"/>
+                            <constraint firstItem="PdH-Ot-b1C" firstAttribute="top" secondItem="dxs-cn-U60" secondAttribute="bottom" constant="8" id="E1c-YU-g79"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V9S-Cb-JMZ" secondAttribute="trailing" constant="20" id="If3-K5-aHR"/>
+                            <constraint firstItem="V9S-Cb-JMZ" firstAttribute="centerY" secondItem="E7B-c3-iDw" secondAttribute="centerY" id="N8g-B8-Ho7"/>
+                            <constraint firstItem="dxs-cn-U60" firstAttribute="centerX" secondItem="ve6-vb-qDW" secondAttribute="centerX" id="UZQ-85-BxS"/>
+                            <constraint firstItem="dxs-cn-U60" firstAttribute="top" secondItem="V9S-Cb-JMZ" secondAttribute="bottom" constant="8" id="VYU-aT-M1N"/>
+                            <constraint firstItem="V9S-Cb-JMZ" firstAttribute="top" secondItem="ve6-vb-qDW" secondAttribute="bottom" constant="8" id="Xnm-SB-I5e"/>
                             <constraint firstItem="PdH-Ot-b1C" firstAttribute="centerX" secondItem="ve6-vb-qDW" secondAttribute="centerX" id="YcC-pg-1gD"/>
                             <constraint firstItem="mUG-l7-ilL" firstAttribute="top" secondItem="PdH-Ot-b1C" secondAttribute="bottom" constant="8" id="aR1-ge-oRl"/>
                             <constraint firstItem="SgB-7f-1Mj" firstAttribute="top" secondItem="mUG-l7-ilL" secondAttribute="bottom" constant="8" id="swr-3T-awv"/>
-                            <constraint firstItem="PdH-Ot-b1C" firstAttribute="top" secondItem="ve6-vb-qDW" secondAttribute="bottom" constant="8" id="xC5-pb-le7"/>
+                            <constraint firstAttribute="leading" secondItem="E7B-c3-iDw" secondAttribute="leading" constant="-20" id="uhQ-bG-3NA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="In-App Controls" id="unm-L1-MbZ"/>
                     <connections>
+                        <outlet property="remainingIAMLabel" destination="dxs-cn-U60" id="bcr-AU-MiI"/>
                         <outlet property="segmentedControlForInAppMode" destination="ve6-vb-qDW" id="HHg-BV-OVH"/>
+                        <outlet property="useCustomViewControllerSwitch" destination="V9S-Cb-JMZ" id="RtD-eB-ff7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrA-y3-hum" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -880,8 +904,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5V-pd-M04">
-                                                    <rect key="frame" x="28" y="8" width="264" height="28"/>
-                                                    <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                    <rect key="frame" x="28" y="3" width="264" height="38"/>
+                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="logEventOrPurchase:" destination="kug-bN-j3b" eventType="touchUpInside" id="hT8-Qu-Ykl"/>
@@ -1008,8 +1032,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ts5-L4-diY">
-                                <rect key="frame" x="0.0" y="80" width="320" height="576"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ts5-L4-diY">
+                                <rect key="frame" x="0.0" y="90" width="320" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.28122158190000002" green="0.53170477839999997" blue="0.90852012429999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1095,13 +1119,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-9z-EQ7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-9z-EQ7">
                                                     <rect key="frame" x="28" y="13" width="122" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="122" id="jV2-1y-hd3"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-jL-GrZ">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-jL-GrZ">
                                                     <rect key="frame" x="158" y="5" width="134" height="34"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1112,24 +1139,31 @@
                                                         <action selector="changeColor:" destination="mDO-W3-fC2" eventType="touchUpInside" id="yYf-aH-tcv"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-nm-JMW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-nm-JMW">
                                                     <rect key="frame" x="28" y="57" width="122" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-4S-K0E">
-                                                    <rect key="frame" x="158" y="50" width="134" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-4S-K0E">
+                                                    <rect key="frame" x="156" y="50" width="138" height="31"/>
                                                     <connections>
                                                         <action selector="opacitySliderValueChanged:" destination="mDO-W3-fC2" eventType="valueChanged" id="ipX-GH-FWS"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="jdh-4S-K0E" firstAttribute="centerY" secondItem="4e4-nm-JMW" secondAttribute="centerY" id="2Pt-Gi-qoH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jdh-4S-K0E" secondAttribute="trailing" constant="20" id="2r1-j2-v9E"/>
                                                 <constraint firstItem="jdh-4S-K0E" firstAttribute="leading" secondItem="4e4-nm-JMW" secondAttribute="trailing" constant="8" id="77F-4c-Sq2"/>
+                                                <constraint firstItem="CH6-9z-EQ7" firstAttribute="centerY" secondItem="f0a-jL-GrZ" secondAttribute="centerY" id="84S-2E-CUy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="f0a-jL-GrZ" secondAttribute="trailing" constant="20" id="8wW-ct-wnR"/>
                                                 <constraint firstItem="f0a-jL-GrZ" firstAttribute="leading" secondItem="CH6-9z-EQ7" secondAttribute="trailing" constant="8" id="Hys-H8-M7s"/>
+                                                <constraint firstItem="jdh-4S-K0E" firstAttribute="centerX" secondItem="f0a-jL-GrZ" secondAttribute="centerX" id="cnr-xb-I4C"/>
+                                                <constraint firstItem="CH6-9z-EQ7" firstAttribute="leading" secondItem="4e4-nm-JMW" secondAttribute="leading" id="ewc-R9-hkp"/>
+                                                <constraint firstItem="jdh-4S-K0E" firstAttribute="top" secondItem="f0a-jL-GrZ" secondAttribute="bottom" constant="11" id="o4q-fi-6eI"/>
+                                                <constraint firstItem="jdh-4S-K0E" firstAttribute="bottom" secondItem="AjN-Sl-T3G" secondAttribute="bottomMargin" id="vSw-Zg-vda"/>
+                                                <constraint firstItem="CH6-9z-EQ7" firstAttribute="leading" secondItem="AjN-Sl-T3G" secondAttribute="leadingMargin" constant="20" id="zt8-5v-8Q5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1301,7 +1335,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-tT-35I">
-                                <rect key="frame" x="7" y="44" width="307" height="29"/>
+                                <rect key="frame" x="7" y="54" width="307" height="29"/>
                                 <segments>
                                     <segment title="Slideup"/>
                                     <segment title="Modal"/>
@@ -1313,8 +1347,8 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyC-VM-qi9">
-                                <rect key="frame" x="20" y="8" width="280" height="28"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <rect key="frame" x="20" y="8" width="280" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Display In-App Message">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1323,10 +1357,23 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMX-LN-XIf">
-                                <rect key="frame" x="20" y="80" width="280" height="488"/>
+                                <rect key="frame" x="20" y="90" width="280" height="478"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8r7-Fh-H5N">
+                                        <rect key="frame" x="10" y="10" width="260" height="29"/>
+                                        <segments>
+                                            <segment title="With .js"/>
+                                            <segment title="With .css"/>
+                                            <segment title="Deep Link"/>
+                                            <segment title="Transparent"/>
+                                            <segment title="No Zip"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="HTMLTypeChanged:" destination="mDO-W3-fC2" eventType="valueChanged" id="E5j-Vx-KKz"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://appboy-images.com/HTML_ZIP_STOPWATCH.zip" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6g-oW-bN6">
-                                        <rect key="frame" x="84" y="8" width="176" height="30"/>
+                                        <rect key="frame" x="74" y="46" width="196" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -1334,116 +1381,19 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymx-4q-h36">
-                                        <rect key="frame" x="20" y="14" width="56" height="17"/>
+                                        <rect key="frame" x="10" y="46" width="56" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTML:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfq-f7-LMN">
-                                        <rect key="frame" x="20" y="46" width="41" height="16"/>
+                                        <rect key="frame" x="10" y="91" width="41" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bAf-N7-JxV">
-                                        <rect key="frame" x="20" y="70" width="240" height="398"/>
-                                        <string key="text">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head lang="en"&gt;
-&lt;meta charset="UTF-8"/&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/&gt;
-&lt;script type="text/javascript" src="myscript.js"&gt;&lt;/script&gt;
-&lt;style&gt;
-@font-face {
-font-family: "Roboto";
-src: local(':cloud:'), url(./Roboto-Medium.ttf) format("ttf");
-font-weight: 400;
-}
-
-@font-face {
-font-family: "Roboto";
-src: local(':cloud:'), url(./Roboto-Regular.ttf) format("ttf");
-font-weight: 300;
-}
-
-* {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-
-body {
-background: transparent;
-font-family: "Roboto", sans-serif;
--ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;
-color: #333;
-text-align: left;
-background-color: rgba(0,115,213,.98);
-}
-
-.box {
-border-radius: 2px;
-width: 100%;
-height: 100%;
-min-width: 220px;
-min-height: 220px;
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-}
-
-a {
-display: block;
-text-align: center;
-text-decoration: none;
-text-transform: uppercase;
-color: #fff;
-padding: 20px;
-}
-
-div.relativeLeft {
-position: relative;
-top: 0px;
-right: 0;
-width: 0px;
-height: 0px;
-}
-
-div.relativeRight {
-position: relative;
-float: right;
-}
-
-div.relativeTopRight {
-position: relative;
-float: top;
-float: right;
-}
-
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class="box"&gt;
-&lt;div class="relativeTopRight"&gt;
-&lt;a href="appboy://close"&gt;X&lt;/a&gt;
-&lt;/div&gt;
-&lt;a href="https://appboy.com?abExternalOpen=false&amp;abButtonId=1"&gt;Visit Appboy.com&lt;/a&gt;
-&lt;a href="mailto:stopwatch@appboy.com"&gt;Email Stopwatch&lt;/a&gt;
-&lt;a href="appboy://feed"&gt;Open the Newsfeed&lt;/a&gt;
-&lt;button id="color-change" onclick='javascript:sayHi();'&gt;Change Color To Red&lt;/button&gt; &lt;button onclick="window.location = 'appboy://customEvent?name=iOSHtmlIamCustomEvent&amp;pOne=pTwo';"&gt;Log Custom Event&lt;/button&gt;
-&lt;img src="jpg_3.jpg" width="100%"&gt;
-&lt;div class="relativeLeft"&gt;
-&lt;a href="https://twitter.com/appboy?abButtonId=0&amp;abExternalOpen=true"&gt;Appboy Twitter&lt;/a&gt;
-&lt;/div&gt;
-&lt;div class="relativeRight"&gt;
-&lt;a href="appboy://close"&gt;Close&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</string>
+                                        <rect key="frame" x="10" y="115" width="260" height="353"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -1451,16 +1401,20 @@ float: right;
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Ymx-4q-h36" firstAttribute="centerY" secondItem="E6g-oW-bN6" secondAttribute="centerY" id="3HW-vo-x3H"/>
+                                    <constraint firstItem="8r7-Fh-H5N" firstAttribute="trailing" secondItem="E6g-oW-bN6" secondAttribute="trailing" id="7sP-f4-nE8"/>
                                     <constraint firstItem="bAf-N7-JxV" firstAttribute="top" secondItem="Kfq-f7-LMN" secondAttribute="bottom" constant="8" id="AqE-Be-1iF"/>
                                     <constraint firstItem="Kfq-f7-LMN" firstAttribute="top" secondItem="Ymx-4q-h36" secondAttribute="bottom" constant="15" id="CKq-bQ-86I"/>
                                     <constraint firstItem="bAf-N7-JxV" firstAttribute="leading" secondItem="Ymx-4q-h36" secondAttribute="leading" id="GJ8-zG-Zct"/>
+                                    <constraint firstAttribute="trailing" secondItem="8r7-Fh-H5N" secondAttribute="trailing" constant="10" id="Kxu-uJ-NDV"/>
                                     <constraint firstItem="E6g-oW-bN6" firstAttribute="trailing" secondItem="bAf-N7-JxV" secondAttribute="trailing" id="XXE-0D-iJY"/>
-                                    <constraint firstAttribute="trailing" secondItem="E6g-oW-bN6" secondAttribute="trailing" constant="20" id="ZgW-fX-gr0"/>
-                                    <constraint firstAttribute="bottom" secondItem="bAf-N7-JxV" secondAttribute="bottom" constant="20" id="eZL-3v-7WO"/>
-                                    <constraint firstItem="E6g-oW-bN6" firstAttribute="top" secondItem="JMX-LN-XIf" secondAttribute="top" constant="8" id="jZf-zW-KHC"/>
+                                    <constraint firstItem="8r7-Fh-H5N" firstAttribute="leading" secondItem="JMX-LN-XIf" secondAttribute="leading" constant="10" id="byI-an-DWF"/>
+                                    <constraint firstAttribute="bottom" secondItem="bAf-N7-JxV" secondAttribute="bottom" constant="10" id="eZL-3v-7WO"/>
+                                    <constraint firstItem="Ymx-4q-h36" firstAttribute="top" secondItem="8r7-Fh-H5N" secondAttribute="bottom" constant="8" id="jnL-i0-nXj"/>
                                     <constraint firstItem="E6g-oW-bN6" firstAttribute="leading" secondItem="Ymx-4q-h36" secondAttribute="trailing" constant="8" id="qX3-Ip-W8l"/>
                                     <constraint firstItem="Kfq-f7-LMN" firstAttribute="leading" secondItem="Ymx-4q-h36" secondAttribute="leading" id="qxV-S8-ZJb"/>
-                                    <constraint firstItem="Ymx-4q-h36" firstAttribute="leading" secondItem="JMX-LN-XIf" secondAttribute="leading" constant="20" id="udz-cM-xUo"/>
+                                    <constraint firstItem="8r7-Fh-H5N" firstAttribute="leading" secondItem="Ymx-4q-h36" secondAttribute="leading" id="sLM-0v-Ho1"/>
+                                    <constraint firstItem="8r7-Fh-H5N" firstAttribute="top" secondItem="JMX-LN-XIf" secondAttribute="top" constant="10" id="ung-Zp-tdG"/>
+                                    <constraint firstItem="E6g-oW-bN6" firstAttribute="top" secondItem="8r7-Fh-H5N" secondAttribute="bottom" constant="8" id="uqL-Xe-YRf"/>
                                 </constraints>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="-94" maxX="320" maxY="504"/>
                             </view>
@@ -1487,6 +1441,7 @@ float: right;
                     <connections>
                         <outlet property="HTMLComposerView" destination="JMX-LN-XIf" id="PAo-kn-fEh"/>
                         <outlet property="HTMLInAppTextView" destination="bAf-N7-JxV" id="yOJ-98-8Ci"/>
+                        <outlet property="HTMLTypeSegment" destination="8r7-Fh-H5N" id="AYO-b0-TwN"/>
                         <outlet property="inAppMessageTypeSegment" destination="1YE-tT-35I" id="LRB-zk-CsY"/>
                         <outlet property="tableView" destination="Ts5-L4-diY" id="IZj-vs-FQK"/>
                         <outlet property="zipRemoteURLTextField" destination="E6g-oW-bN6" id="IbF-ys-PIp"/>
@@ -1512,37 +1467,37 @@ float: right;
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-GN-ctJ" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="432"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="502"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-0t-ELk">
-                                                <rect key="frame" x="88" y="254" width="143" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="88" y="284" width="143" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Modal News Feed"/>
                                                 <connections>
                                                     <action selector="modalNewsFeedButtonTapped:" destination="u60-7s-wwM" eventType="touchUpInside" id="jhu-Wa-zRx"/>
                                                 </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgt-SU-GU8">
-                                                <rect key="frame" x="250" y="39" width="51" height="31"/>
+                                                <rect key="frame" x="250" y="49" width="51" height="31"/>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFl-Ga-Ugb">
-                                                <rect key="frame" x="57" y="384" width="204" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="57" y="444" width="204" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Navigation Feedback Form"/>
                                                 <connections>
                                                     <segue destination="Dud-jw-0GI" kind="push" id="XuP-M3-QpG"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With Unread Indicator: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abl-Vy-tyH">
-                                                <rect key="frame" x="20" y="53" width="150" height="17"/>
+                                                <rect key="frame" x="20" y="63" width="150" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36C-Qv-kSf">
-                                                <rect key="frame" x="20" y="20" width="138" height="28"/>
+                                                <rect key="frame" x="20" y="20" width="138" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Categoried News">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -1551,39 +1506,39 @@ float: right;
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxP-of-Mtr">
-                                                <rect key="frame" x="73" y="348" width="173" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="73" y="398" width="173" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Modal Feedback Form"/>
                                                 <connections>
                                                     <action selector="modalFeedbackButtonTapped:" destination="u60-7s-wwM" eventType="touchUpInside" id="ahG-t7-mFx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjf-jA-cZc">
-                                                <rect key="frame" x="73" y="290" width="173" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="73" y="330" width="173" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Navigation News Feed"/>
                                                 <connections>
                                                     <segue destination="lnD-Hc-GsV" kind="push" id="uHh-fR-BR2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-LM-jxU">
-                                                <rect key="frame" x="69" y="196" width="181" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="69" y="216" width="181" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="News Feed + Feedback"/>
                                                 <connections>
                                                     <action selector="newsAndFeedbackButtonTapped:" destination="u60-7s-wwM" eventType="touchUpInside" id="RYQ-Tj-af7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXq-y8-C6i">
-                                                <rect key="frame" x="64" y="138" width="191" height="28"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <rect key="frame" x="64" y="148" width="191" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" title="Submit Instant Feedback"/>
                                                 <connections>
                                                     <action selector="submitInstantFeedback:" destination="u60-7s-wwM" eventType="touchUpInside" id="5g9-Aw-PaA"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unread cards:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-VP-eHp">
-                                                <rect key="frame" x="109" y="90" width="101" height="18"/>
+                                                <rect key="frame" x="109" y="100" width="101" height="18"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>

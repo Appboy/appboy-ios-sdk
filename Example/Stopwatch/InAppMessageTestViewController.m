@@ -49,6 +49,8 @@
   if (keyboardIsUp && [inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
     ((ABKInAppMessageSlideup *)inAppMessage).inAppMessageSlideupAnchor = ABKInAppMessageSlideupFromTop;
   }
+  
+  [self updateRemainingIAMLabel];
 
   // /Check if the delegate is called by a click on the "Display Next Available In-App Message" button.
   if (self.shouldDisplayInAppMessage && self.segmentedControlForInAppMode.selectedSegmentIndex == 1) {
@@ -76,7 +78,9 @@
 // view controller should be a subclass of ABKInAppMessageViewController.
 // Also, the view of the returned view controller should be an instance of ABKInAppMessageView or its subclass.
 - (ABKInAppMessageViewController *)inAppMessageViewControllerWithInAppMessage:(ABKInAppMessage *)inAppMessage {
-  if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
+  if (self.useCustomViewControllerSwitch.isOn) {
+    return [[CustomInAppMessageViewController alloc] initWithInAppMessage:inAppMessage];
+  } else if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
     return [[ABKInAppMessageSlideupViewController alloc] initWithInAppMessage:inAppMessage];
   } else if ([inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
     return [[ABKInAppMessageModalViewController alloc] initWithInAppMessage:inAppMessage];
@@ -111,7 +115,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+  
   if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
     // In iOS 7, views are automatically extended to fit the size of the screen. Therefore, views may end up under
     // the navigation bar, which makes some buttons invisible or unclickable. In order to prevent this behaviour, we set
@@ -124,6 +128,8 @@
   [super viewDidAppear:animated];
   // Here we set self as the in-app message controller delegate to enable in-app message customization on this page.
   [Appboy sharedInstance].inAppMessageController.delegate = self;
+  
+  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %d", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -136,14 +142,21 @@
   self.shouldDisplayInAppMessage = YES;
   [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:self];
   self.shouldDisplayInAppMessage = NO;
+  [self updateRemainingIAMLabel];
 }
 
 - (IBAction)requestAnInApp:(id)sender {
   [[Appboy sharedInstance] requestInAppMessageRefresh];
+  [self updateRemainingIAMLabel];
 }
 
 - (IBAction)dismissCurrentSlideup:(id)sender {
   [[Appboy sharedInstance].inAppMessageController hideCurrentInAppMessage:YES];
+  [self updateRemainingIAMLabel];
+}
+
+- (void)updateRemainingIAMLabel {
+  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %d", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
 }
 
 @end

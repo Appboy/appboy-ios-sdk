@@ -2,6 +2,11 @@
 #import <AppboyKit.h>
 #import "UserCells.h"
 
+/*
+ * We use the number 44 here because the height of a table view cell is 44.
+ */
+static const int TableViewTopY = 44;
+
 @implementation EventsViewController
 
 static NSString *const LogEvent = @"Log Custom Event";
@@ -56,7 +61,7 @@ static NSString *const PurchaseValue = @"Purchase Value";
   CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
   CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
   CGRect aRect = self.tableView.frame;
-  aRect.size.height = self.view.bounds.size.height - keyboardHeight;
+  aRect.size.height = self.view.bounds.size.height - keyboardHeight + TableViewTopY;
   self.tableView.frame = aRect;
 }
 
@@ -89,6 +94,9 @@ static NSString *const PurchaseValue = @"Purchase Value";
     ((EventTextFieldCell *)cell).eventLabel.text = label;
     ((EventTextFieldCell *)cell).eventTextField.tag = row;
     ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArray[row]];
+    if ([label isEqualToString:Price] || [label isEqualToString:Quantity]) {
+      ((EventTextFieldCell *)cell).eventTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    }
   } else {
     // EventSwitchCell
     cell = [self createCellWithIdentifier:@"switch cell" withClass:[EventSwitchCell class]];

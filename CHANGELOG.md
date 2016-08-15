@@ -1,3 +1,7 @@
+## 2.22.0
+- Adds tvOS support for logging analytics; adds sample applications for tvOS and TVML.
+- Adds Hebrew localization support.
+
 ## 2.21.0
 - Drops support for iOS 6.
 - Updates the podspec SDWebImage dependency to fetch the latest version. 

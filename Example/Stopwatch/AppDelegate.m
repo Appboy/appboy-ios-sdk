@@ -63,7 +63,7 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
   NSLog(@"application:continueUserActivity:restorationHandler called");
-  return false;
+  return NO;
 }
 
 // When a notification is received, pass it to Appboy

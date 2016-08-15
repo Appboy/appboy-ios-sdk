@@ -62,6 +62,7 @@ static NSMutableArray *attributesValuesArray = nil;
     if (cell == nil) {
       cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
     
     id object = attributesValuesArray[(NSUInteger)indexPath.row];
     if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
