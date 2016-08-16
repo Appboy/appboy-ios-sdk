@@ -1,6 +1,8 @@
 #import "AppDelegate.h"
 #import <AppboyTVOSKit/AppboyKit.h>
 
+static NSString *const AppboyApiKey = @"appboy-sample-ios-tv";
+
 @interface AppDelegate ()
 
 @end
@@ -9,7 +11,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [Appboy startWithApiKey:@"appboy-sample-tvos"
+  [Appboy startWithApiKey:AppboyApiKey
             inApplication:application
         withLaunchOptions:launchOptions
         withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),

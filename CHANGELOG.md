@@ -1,3 +1,6 @@
+## 2.22.1
+- Updates tvOS bitcode support, patching an error introduced by an Xcode bug.
+
 ## 2.22.0
 - Adds tvOS support for logging analytics; adds sample applications for tvOS and TVML.
 - Adds Hebrew localization support.
