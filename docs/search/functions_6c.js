@@ -11,6 +11,5 @@ var searchData=
   ['logpurchase_3aincurrency_3aatprice_3awithproperties_3a',['logPurchase:inCurrency:atPrice:withProperties:',['../interface_appboy.html#aaca4b885a8f61ac9fad3936b091448cc',1,'Appboy']]],
   ['logpurchase_3aincurrency_3aatprice_3awithquantity_3a',['logPurchase:inCurrency:atPrice:withQuantity:',['../interface_appboy.html#aa4c66ed060890c68690fd629a62ebfa2',1,'Appboy']]],
   ['logpurchase_3aincurrency_3aatprice_3awithquantity_3aandproperties_3a',['logPurchase:inCurrency:atPrice:withQuantity:andProperties:',['../interface_appboy.html#ab50403068be47c0acba9943583e259fa',1,'Appboy']]],
-  ['logsinglelocation',['logSingleLocation',['../interface_a_b_k_location_manager.html#a4069cdaef868b382cbebf6a0e1ce7d27',1,'ABKLocationManager']]],
-  ['logsocialshare_3a',['logSocialShare:',['../interface_appboy.html#a2a11ccb805e92764933ab517305134e0',1,'Appboy']]]
+  ['logsinglelocation',['logSingleLocation',['../interface_a_b_k_location_manager.html#a4069cdaef868b382cbebf6a0e1ce7d27',1,'ABKLocationManager']]]
 ];

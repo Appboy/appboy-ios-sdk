@@ -112,8 +112,6 @@ Instance Methods</h2></td></tr>
 <tr class="separator:aa4c66ed060890c68690fd629a62ebfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50403068be47c0acba9943583e259fa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ab50403068be47c0acba9943583e259fa">logPurchase:inCurrency:atPrice:withQuantity:andProperties:</a></td></tr>
 <tr class="separator:ab50403068be47c0acba9943583e259fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a11ccb805e92764933ab517305134e0"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a2a11ccb805e92764933ab517305134e0">logSocialShare:</a></td></tr>
-<tr class="separator:a2a11ccb805e92764933ab517305134e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97232c008d1e5ee9eccb71d874fc91e0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0">submitFeedback:message:isReportingABug:</a></td></tr>
 <tr class="separator:a97232c008d1e5ee9eccb71d874fc91e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f5b55cdf6b2f18511f23f4bd3ce8f2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a></td></tr>
@@ -525,29 +523,6 @@ Properties</h2></td></tr>
 </dl>
 <p>Logs a purchase made in the application.</p>
 <p>Note: <a class="el" href="interface_appboy.html">Appboy</a> supports purchases in multiple currencies. Purchases that you report in a currency other than USD will be shown in the dashboard in USD based on the exchange rate at the date they were reported. </p>
-
-</div>
-</div>
-<a class="anchor" id="a2a11ccb805e92764933ab517305134e0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) logSocialShare: </td>
-          <td></td>
-          <td class="paramtype">(ABKSocialNetwork)&#160;</td>
-          <td class="paramname"><em>__deprecated</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">socialNetwork</td><td>An ABKSocialNetwork indicating the network that you wish to access.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Records that the current user shared something to social network. This is added to the event tracking log that's lazily pushed up to the server. </p>
 
 </div>
 </div>
@@ -1039,7 +1014,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 15 2016 20:03:25 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 6 2016 15:01:28 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
