@@ -34,6 +34,24 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDismissType) {
   ABKInAppMessageDismissManually
 };
 
+/*!
+ * The ABKInAppMessageOrientation defines preferred screen orientation for the in-app message.
+ *
+ *   ABKInAppMessageOrientationAny - This is the default value for an in-app message's orientation. This
+ *     value allows the in-app message display in any orientation.
+ *
+ *   ABKInAppMessageOrientationPortrait - This value will limit the in-app message to only display in
+ *     protrait and portrait upside down orientation.
+ *
+ *   ABKInAppMessageOrientationLandscape - This value will limit the in-app message to only display in
+ *     landscape orientation, including landscape left and landscape right.
+ */
+typedef NS_ENUM(NSInteger, ABKInAppMessageOrientation) {
+  ABKInAppMessageOrientationAny,
+  ABKInAppMessageOrientationPortrait,
+  ABKInAppMessageOrientationLandscape
+};
+
 /*
  * Appboy Public API: ABKInAppMessage
  */
@@ -119,6 +137,43 @@ NS_ASSUME_NONNULL_BEGIN
  * be ignored.
  */
 @property (copy, nullable) NSURL *imageURI;
+
+/*!
+ * imageContentMode defines the content mode of the image on in-app message.
+ * For immersive in-app messages, the imageContentMode defines both the image icon and the graphic
+ * image's content mode.
+ *
+ * The imageContentMode default values are:
+ *     Slideup: UIViewContentModeScaleAspectFit
+ *       Modal: UIViewContentModeScaleAspectFit
+ *        Full: UIViewContentModeScaleAspectFill
+ */
+@property UIViewContentMode imageContentMode;
+
+/*!
+ * orientation defines the preferred screen orientation for the in-app message.
+ * In-app messages will only display if the preferred orientation matches the current status bar
+ * orientation. However, there is an important exception for iPads. For in-app messages that
+ * have a preferred orientation and are being displayed on an iPad, the in-app message will appear
+ * in the style of the preferred orientation regardless of actual screen orientation.
+ */
+@property ABKInAppMessageOrientation orientation;
+
+/*!
+ * messageTextAlignment defines the preferred text alignment of the message label.
+ * The default values are:
+ *     Slideup: NSTextAlignmentNatural
+ *       Modal: NSTextAlignmentCenter
+ *        Full: NSTextAlignmentCenter
+ */
+@property NSTextAlignment messageTextAlignment;
+
+/*
+ * animateIn/animateOut define if the in-app message should be animated in/out on the screen when
+ * displaying/dismissing. The default value is YES.
+ */
+@property BOOL animateIn;
+@property BOOL animateOut;
 
 /*!
  * If you're handling in-app messages completely on your own (returning YES from onInAppMessageReceived), you should still report

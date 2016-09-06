@@ -22,12 +22,18 @@ static NSString *const ItemButtonNumber = @"Buttons:";
 static NSString *const ItemButtonOne = @"Button One";
 static NSString *const ItemButtonTwo = @"Button Two";
 static NSString *const ItemModalFrameColor = @"Frame Color";
+static NSString *const ItemOrientation = @"Orientation";
+static NSString *const ItemImageGraphic = @"Graphic Image";
+static NSString *const ItemImageContentMode = @"Image Content";
+static NSString *const ItemMessageAlignment = @"Message Align";
+static NSString *const ItemHeaderAlignment  = @"Header Align";
 
 static NSString *const CellIdentifierSegment = @"SegmentCellIdentifier";
 static NSString *const CellIdentifierText = @"TextCellIdentifier";
 static NSString *const CellIdentifierChevron = @"ChevronCellIdentifier";
 static NSString *const CellIdentifierColor = @"ColorCellIdentifier";
 static NSString *const CellIdentifierButton = @"ButtonCellIdentifer";
+static NSString *const CellIdentifierButtonLabel = @"ButtonLabelCellIdentifier";
 
 @interface SegmentCell : UITableViewCell
 
@@ -44,6 +50,18 @@ static NSString *const CellIdentifierButton = @"ButtonCellIdentifer";
 
 @end
 
+@interface ButtonLabelCell : TextFieldCell <UIActionSheetDelegate>
+
+@property IBOutlet UIButton *titleButton;
+@property NSMutableDictionary *inAppMessageDictionary;
++ (NSDictionary *)imageDictionary;
++ (NSDictionary *)messageDictionary;
++ (NSDictionary *)headerDictionary;
+- (UIAlertController *)getAlertControllerWithIAMDictionary:(NSMutableDictionary *)dictionary;
+- (UIActionSheet *)getActionSheetWithIAMDictionary:(NSMutableDictionary *)dictionary;
+
+@end
+
 @interface ColorCell : UITableViewCell
 
 @property IBOutlet UILabel *titleLabel;
@@ -56,8 +74,9 @@ static NSString *const CellIdentifierButton = @"ButtonCellIdentifer";
 
 @end
 
-@interface HideChevronCell : UITableViewCell
+@interface SwitchCell : UITableViewCell
 
+@property IBOutlet UILabel *titleLabel;
 @property IBOutlet UISwitch *hideChevronSwitch;
 
 @end

@@ -1,3 +1,9 @@
+## 2.23.0
+- Removes the deprecated method `logSocialShare` from Appboy class.
+- Adds support for upgraded in-app messages including image-only messages, improved image sizing/cropping, text scrolling, text alignment, configurable orientation, and configurable frame color.
+- Adds support for in-app messages triggered on custom event properties, purchase properties, and in-app message clicks.
+- Adds support for templating event properties within in-app messages.
+
 ## 2.22.1
 - Updates tvOS bitcode support, patching an error introduced by an Xcode bug.
 
@@ -7,7 +13,7 @@
 
 ## 2.21.0
 - Drops support for iOS 6.
-- Updates the podspec SDWebImage dependency to fetch the latest version. 
+- Updates the podspec SDWebImage dependency to fetch the latest version.
 - Replaces SDK usage of NSURLConnection with NSURLSession.
 - Adds support for deep links with non-URL-encoded characters. The SDK will encode unencoded url strings to create valid deep link NSURLs.
 - Updates the SDK to always call `canOpenURL:` before opening a deep link. After this change, the SDK will only direct deep links whose schemes are whitelisted.
@@ -15,7 +21,7 @@
 - Fixes a bug where the background of a slideup in-app message remained transparent when configured with 100% opacity.
 
 ## 2.20.1
-- Implements an optimization in push handling to not prefetch the News Feed when a push arrives and the app is in the background. 
+- Implements an optimization in push handling to not prefetch the News Feed when a push arrives and the app is in the background.
 - Fixes an issue where in certain conditions NSUserDefault blocking would cause custom events logged in the main thread to result in UI freezing.
 
 ## 2.20.0
@@ -47,7 +53,7 @@
 - Adds sample code for a universal link in Stopwatch.
 
 ## 2.19.0
-- Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events. 
+- Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events.
 - Deprecates the old system of requesting in-app message display, now collectively known as 'original' in-app messaging, where messages were limited to displaying at app start.  
 
 ## 2.18.4
@@ -74,7 +80,7 @@
 - Fixes a bug where in certain conditions the SDK would resend user attributes that had already synced with the server.
 
 ## 2.17
-- Removes the Facebook button from Feedback page. 
+- Removes the Facebook button from Feedback page.
 - Makes the WebView background for HTML in-app messages transparent.  Ensure HTML in-app messages you send to the device are created expecting a transparent background.
 - Fixed the crash caused by inserting a nil object into an NSDictionary when parsing an event object.
 - Adds a new button clicked delegate method for HTML in-app message. The new delegate method also passes the URL of the clicked button.
@@ -113,14 +119,14 @@
 - Stops collecting user's Twitter data automatically. You can pass a user's Twitter information to Appboy by initialzing a ABKTwitterUser object with the twitter data, and setting it to [Appboy sharedInstance].user.twitterUser. For more information, please refer to ABKUser.h and ABKTwitterUser.h.
 - Removes the feature of prompting a user to connect his/her social account. You can refer to the method `promptUserToConnectTwitterAccountOnDeviceAndFetchAccountData` in [TwitterViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/TwitterViewController.m) to continue prompting the user to connect the Twitter account.
 - Adds an open-source Watch SDK to support data analytics on watchKit apps. You can use the Appboy-WatchKit SDK by downloading and adding the "Appboy-WatchKit" folder in your watchKit extension target. For more detail, please refer to [ABWKUser.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy-WatchKit/ABWKUser.h) and [AppboyWatchKit.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy-WatchKit/AppboyWatchKit.h).
-- Adds an opt-in location service that logs background location events; adds ABKLocationManager with methods for allowing Appboy to request location permission on your behalf and logging the current location.  More information on the background location capabilities will be made available when dashboard support is released. 
+- Adds an opt-in location service that logs background location events; adds ABKLocationManager with methods for allowing Appboy to request location permission on your behalf and logging the current location.  More information on the background location capabilities will be made available when dashboard support is released.
 - Adds client side blocking of blacklisted attributes and events.
 - Adds ABKPushUtils with method `+ (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;` that can be used to detect if a content-available push is from Appboy uninstall tracking (and shouldn't be acted upon).
 - Adds a new property `expiresAt` in class ABKCard. The property is the unix timestamp of the card's expiration time. For more detail, please refer to ABKCard.h.
 - Stops logging foreground push as a push open as it is not delivered by the system.
 
 ## 2.12.2
-- Fixes the slideup in-app message display issue. When the host app sets the launch screen file, slideup in-app message from bottom sometimes didn't dock at the bottom of the screen on iPhone 6 and iPhone 6 Plus. 
+- Fixes the slideup in-app message display issue. When the host app sets the launch screen file, slideup in-app message from bottom sometimes didn't dock at the bottom of the screen on iPhone 6 and iPhone 6 Plus.
 
 ## 2.12.1
 - Fixes news feed issue where no news feed cards resulted in the loading spinner remaining on screen.
@@ -151,7 +157,7 @@
 - Added the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
 
 ## 2.10.1
-- Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances. 
+- Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
 
 ## 2.10.0
 - Updated the minimum deployment targets of Appboy iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Appboy SDK.
@@ -166,7 +172,7 @@
 - Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
 
 ## 2.9.4
-- Added a major performance upgrade that reduces CPU usage, memory footprint, and network traffic. 
+- Added a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
 - Added 26 additional languages to localization support for Appboy UI elements.
 - Added support for deep linking from APNS push notification clicks.
 - Added ability to customize the font of Feedback text using NUI with NUI class name `ABKFeedbackTextView`.
@@ -272,7 +278,7 @@ You can install legacy versions of our SDK via [CocoaPods](http://guides.cocoapo
 
 Localization is now supported in version 2.5 of the Appboy SDK. We have provided `.string` files for English, Simplified Chinese and Traditional Chinese. You can also optionally override our Appboy's default `LocalizedAppboyUIString.strings` right within your app's `Localizable.Strings` file in much the same way you would do an override in CSS. To do so, copy the key and string pair into your `Localizable.Strings` file and edit the string as you so desire.
 
-For your convenience our CocoaPod integrates the `LocalizedAppboyUIString.strings` files for the three aforementioned languages. If you do not wish to use one or more of these languages, you can feel free to delete these files from your project. 
+For your convenience our CocoaPod integrates the `LocalizedAppboyUIString.strings` files for the three aforementioned languages. If you do not wish to use one or more of these languages, you can feel free to delete these files from your project.
 
 ###  Slideup Upgrade
 
@@ -280,12 +286,12 @@ Appboy version 2.5 provides a substantial upgrade to the slideup code and reorga
 
 #### New Slideup Controller
 - The property `slideupController` has been added to the Appboy object. Please see [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for details.
-  - The `delegate` property allows you to specify a delegate for the slideup. 
-    - This replaces `slideupDelegate` which has been removed. 
-  - The `displayNextSlideupWithDelegate:` method displays the next available slideup with the specified delegate. 
+  - The `delegate` property allows you to specify a delegate for the slideup.
+    - This replaces `slideupDelegate` which has been removed.
+  - The `displayNextSlideupWithDelegate:` method displays the next available slideup with the specified delegate.
     - This replaces `provideSlideupToDelegate:` which has been removed from Appboy.
   - The `slideupsRemainingOnStack` method returns the number of slideups that are waiting locally to be displayed.
-  - The `addSlideup:` method allows you to display a slideup object with custom content. This is useful in testing or if you want to use the Appboy slideup's UI/UX with another notification system that you are using. 
+  - The `addSlideup:` method allows you to display a slideup object with custom content. This is useful in testing or if you want to use the Appboy slideup's UI/UX with another notification system that you are using.
     - Clicks and impressions of slideups added by this method will not be collected by Appboy.
   - `hideCurrentSlideup:` method will remove any slideup currently on screen, with or without animation.
 
@@ -297,7 +303,7 @@ The following properties and methods all belong to the `ABKSlideup` object. Plea
 - The `extras` property carries additional data within key value pairs that have been defined on the dashboard, just like a push notification. Appboy does nothing with the extras property, any additional behavior is at your discretion.
 - The `slideupAnchor` property defines whether the slideup originates from the top or the bottom of the screen.
 - The `slideupDismissType` property controls whether the slideup will dismiss automatically after a period of time has lapsed, or if it will wait for interaction with the user before disappearing.
-  - The slideup will be dismissed automatically after the number of seconds defined by the newly added `duration` property if the slideup's `slideupDismissType` is `ABKSlideupDismissAutomatically`. 
+  - The slideup will be dismissed automatically after the number of seconds defined by the newly added `duration` property if the slideup's `slideupDismissType` is `ABKSlideupDismissAutomatically`.
 - The `slideupClickActionType` property defines the action behavior after the slideup is clicked: displaying a news feed, redirect to a uri, or nothing but dismissing the slideup. This property is read only. If you want to change the slideup's click behavior, you can call one of the following method: `setSlideupClickActionToNewsFeed`, `setSlideupClickActionToUri:` or `setSlideupClickActionToNone`.
 - The `uri` property defines the uri string that the slide up will open when the slideupClickActionType is ABKSlideupRedirectToURI. This is a read only property, you can call `setSlideupClickActionToUri:` to change it's value.
 
@@ -309,18 +315,18 @@ The following properties and methods all belong to the `ABKSlideup` object. Plea
 
 All former Appboy slideup delegate methods have been depreciated and removed. In their place Appboy has added new slideup delegate methods within [`ABKSlideupControllerDelegate.h`](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupControllerDelegate.h).
 
-- `onSlideupReceived:` is called when slideup objects are received from the Appboy server. 
+- `onSlideupReceived:` is called when slideup objects are received from the Appboy server.
 - `beforeSlideupDisplayed:withKeyboardIsUp:` is called before slideup objects are displayed, the return value determines whether the slideup will be displayed, queued or discarded.
 - `slideupViewControllerWithSlideup:` This delegate method allows you to specify custom view controllers in which your slideups will be displayed.
-  - The custom view controller should be a subclass of `ABKSlideupViewController`. 
+  - The custom view controller should be a subclass of `ABKSlideupViewController`.
     - Alternatively, it can also be an instance of `ABKSlideupViewController`.
-  - The view of the returned view controller should be an instance of `ABKSlideupView` or its subclass. 
+  - The view of the returned view controller should be an instance of `ABKSlideupView` or its subclass.
   - For integration examples of a custom slideup view controller, see the `CustomSlideupViewController` class in Appboy's sample app Stopwatch.
-- `onSlideupClicked:` is called when a user clicks on a slideup. We recommend that you specify behavior on click via the dashboard, but you can additionally specify behavior on click by defining this delegate method. 
-- `onSlideupDismissed:` is called whenever the slideup is dismissed regardless of whether the dismissal occurs automatically or via swipe. This method is not called if the user clicks on the slideup. If the user clicks or taps on the slideup, `onSlideupClicked` is called instead. 
+- `onSlideupClicked:` is called when a user clicks on a slideup. We recommend that you specify behavior on click via the dashboard, but you can additionally specify behavior on click by defining this delegate method.
+- `onSlideupDismissed:` is called whenever the slideup is dismissed regardless of whether the dismissal occurs automatically or via swipe. This method is not called if the user clicks on the slideup. If the user clicks or taps on the slideup, `onSlideupClicked` is called instead.
 
 #### New Options on the Dashboard
-- Slideup behavior on click can now be set within the dashboard to open a modal news feed, open a URI within a modal, or do nothing. 
+- Slideup behavior on click can now be set within the dashboard to open a modal news feed, open a URI within a modal, or do nothing.
 - The following properties can be set remotely from the Appboy Dashboard:
   - `extras`
   - `slideupAnchor`
@@ -330,7 +336,7 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
 
 ### News Feed Changes
 - News feed items are now cached in offline storage, allowing the news feed to render even when no internet connectivity is available. Appboy will still automatically try to pull down a new news feed when a session opens, even if an offline feed is available.
-- Each card now has a maximum height of no more than 2009 points to avoid any performance issues as recommended by iOS developer guidelines. 
+- Each card now has a maximum height of no more than 2009 points to avoid any performance issues as recommended by iOS developer guidelines.
 - The entirety of captioned image cards are now clickable. Formerly, only the link itself was clickable.
 - When the news feed is brought to the foreground, it will now automatically check for new content if the cached version of the feed was received more than 60 seconds ago.
 — The width of news feed cards as well as the minimum margin between any card and the left & right edges of the view controller can now be customized. These values can be set separately for both iPad and iPhone. This allows for a larger news feed to render on larger screen sizes. All card images will scale proportionally. Please see `ABKFeedViewControllerContext.h` and `ABKFeedViewController.h` for more information.
@@ -341,8 +347,8 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
 ## 2.4
 * IDFA Collection is now optional.
   * By default, IDFA collection is now disabled by the Appboy SDK.
-    * There will be no loss of continuity on user profiles or loss of functionality whatsoever as a result of this change. 
-    * If you’re using advertising elsewhere in the app or through our in-app news feed, we recommend continuing to collect the IDFA through Appboy. You should be able to do so safely without fear of rejection from the iOS App Store. 
+    * There will be no loss of continuity on user profiles or loss of functionality whatsoever as a result of this change.
+    * If you’re using advertising elsewhere in the app or through our in-app news feed, we recommend continuing to collect the IDFA through Appboy. You should be able to do so safely without fear of rejection from the iOS App Store.
     * The future availability of IDFAs will enable functionality like integrating with other third-party systems, including your own servers, and enabling re-targeting of existing users outside of Appboy. If you continue to record them we will store IDFAs free of charge so you can take advantage of these options immediately when they are released without additional development work.
   * Necessary Project Changes
     * ABKIdentifierForAdvertisingProvider.m and ABKIdentifierForAdvertisingProvider.h must be added to your project regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod.

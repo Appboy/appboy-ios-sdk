@@ -1037,8 +1037,44 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.28122158190000002" green="0.53170477839999997" blue="0.90852012429999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SegmentCellIdentifier" id="M8f-00-pZx" customClass="SegmentCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ButtonLabelCellIdentifier" id="MDJ-2I-1to" customClass="ButtonLabelCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MDJ-2I-1to" id="X3E-8y-c1B">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7s-5M-qPp">
+                                                    <rect key="frame" x="20" y="7" width="122" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="122" id="2IO-FY-awC"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="ChangeTextFieldContent:" destination="mDO-W3-fC2" eventType="touchUpInside" id="d2U-Yi-VAX"/>
+                                                    </connections>
+                                                </button>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQ9-Rd-mqB">
+                                                    <rect key="frame" x="150" y="7" width="142" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GQ9-Rd-mqB" secondAttribute="trailing" constant="20" id="6IG-pM-mbC"/>
+                                                <constraint firstItem="D7s-5M-qPp" firstAttribute="centerY" secondItem="X3E-8y-c1B" secondAttribute="centerY" id="A0m-DC-9u2"/>
+                                                <constraint firstItem="GQ9-Rd-mqB" firstAttribute="leading" secondItem="D7s-5M-qPp" secondAttribute="trailing" constant="8" id="Jl3-Nu-EV1"/>
+                                                <constraint firstItem="D7s-5M-qPp" firstAttribute="leading" secondItem="X3E-8y-c1B" secondAttribute="leading" constant="20" id="MO5-Mp-JZC"/>
+                                                <constraint firstItem="GQ9-Rd-mqB" firstAttribute="centerY" secondItem="D7s-5M-qPp" secondAttribute="centerY" id="WBo-oM-6FZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textField" destination="GQ9-Rd-mqB" id="8T9-uf-SNJ"/>
+                                            <outlet property="titleButton" destination="D7s-5M-qPp" id="ain-43-2yI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SegmentCellIdentifier" id="M8f-00-pZx" customClass="SegmentCell">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8f-00-pZx" id="Maf-Pi-Svw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1078,7 +1114,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextCellIdentifier" id="NMn-Qb-D1i" customClass="TextFieldCell">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NMn-Qb-D1i" id="jqk-4O-GUk">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1113,7 +1149,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ColorCellIdentifier" rowHeight="88" id="xra-jY-v1W" customClass="ColorCell">
-                                        <rect key="frame" x="0.0" y="110" width="320" height="88"/>
+                                        <rect key="frame" x="0.0" y="154" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xra-jY-v1W" id="AjN-Sl-T3G">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
@@ -1173,8 +1209,8 @@
                                             <outlet property="titleLabel" destination="CH6-9z-EQ7" id="t0o-Ug-94N"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChevronCellIdentifier" id="4Nk-Pk-PQL" customClass="HideChevronCell">
-                                        <rect key="frame" x="0.0" y="198" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChevronCellIdentifier" id="4Nk-Pk-PQL" customClass="SwitchCell">
+                                        <rect key="frame" x="0.0" y="242" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Nk-Pk-PQL" id="mBQ-DV-uoV">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1183,7 +1219,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="R5c-r9-Sw3">
                                                     <rect key="frame" x="243" y="6" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="hideChevronChanged:" destination="mDO-W3-fC2" eventType="valueChanged" id="bg2-eY-6an"/>
+                                                        <action selector="hideChevronChanged:" destination="mDO-W3-fC2" eventType="valueChanged" id="wpq-9P-gJa"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide Chevron:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-89-O60">
@@ -1202,10 +1238,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="hideChevronSwitch" destination="R5c-r9-Sw3" id="RVX-0d-D3y"/>
+                                            <outlet property="titleLabel" destination="KBd-89-O60" id="67z-hF-wwL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ButtonCellIdentifer" rowHeight="176" id="9uC-TL-qAH" customClass="InAppMessageButtonCell">
-                                        <rect key="frame" x="0.0" y="242" width="320" height="176"/>
+                                        <rect key="frame" x="0.0" y="286" width="320" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9uC-TL-qAH" id="5K7-ZB-uZM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>

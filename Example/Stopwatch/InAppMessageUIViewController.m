@@ -24,14 +24,15 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
   self.inAppMessageDictionary = [NSMutableDictionary dictionaryWithCapacity:3];
   self.inAppSlideupList = [NSMutableArray arrayWithArray:
     @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemHideChevron,
-      ItemChevronColor, ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemAnimatedFrom]];
+      ItemChevronColor, ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemAnimatedFrom,
+      ItemMessageAlignment, ItemImageContentMode]];
   self.inAppModalList = [NSMutableArray arrayWithArray:
     @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemIconColor, ItemHeader, ItemHeaderColor, ItemModalFrameColor,
       ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor, ItemClickAction, ItemClickActionURL,
-      ItemDismissType, ItemDuration, ItemButtonNumber]];
+      ItemDismissType, ItemDuration, ItemOrientation, ItemImageGraphic, ItemMessageAlignment, ItemHeaderAlignment, ItemImageContentMode, ItemButtonNumber]];
   self.inAppFullList = [NSMutableArray arrayWithArray:
-    @[ItemImageURL, ItemHeader, ItemHeaderColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor,
-      ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemButtonNumber]];
+    @[ItemImageURL, ItemHeader, ItemHeaderColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor, ItemModalFrameColor,
+      ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemOrientation, ItemImageGraphic, ItemMessageAlignment, ItemHeaderAlignment, ItemImageContentMode, ItemButtonNumber]];
   self.inAppMessageDictionary[ItemImageURL] = @"https://appboy-images.com/appboy/communication/marketing/slide_up/slide_up_message_parameters/images/55e0c42664617307440c0000/147326cf775c7ce6f24ad5ad731254f040ed97f7/original.?1440793642";
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -117,9 +118,13 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
   NSString *item = [self currentArrayList][indexPath.row];
   UITableViewCell *cell = nil;
   if ([item isEqualToString:ItemClickAction] ||
-    [item isEqualToString:ItemDismissType] ||
-    [item isEqualToString:ItemAnimatedFrom] ||
-    [item isEqualToString:ItemButtonNumber]) {
+      [item isEqualToString:ItemDismissType] ||
+      [item isEqualToString:ItemAnimatedFrom] ||
+      [item isEqualToString:ItemOrientation] ||
+      [item isEqualToString:ItemMessageAlignment] ||
+      [item isEqualToString:ItemHeaderAlignment] ||
+      [item isEqualToString:ItemImageContentMode] ||
+      [item isEqualToString:ItemButtonNumber]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierSegment withClass:[SegmentCell class] tableView:tableView];
     [(SegmentCell *)cell setUpWithItem:item];
     if (self.inAppMessageDictionary[item]) {
@@ -128,9 +133,13 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
       self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] =  @(0);
     }
   } else if ([item isEqualToString:ItemMessage] ||
-    [item isEqualToString:ItemIcon] ||
-    [item isEqualToString:ItemImageURL] ||
-    [item isEqualToString:ItemHeader] ||
+             [item isEqualToString:ItemHeader] ||
+             [item isEqualToString:ItemImageURL]) {
+    cell = [self createCellWithCellIdentifier:CellIdentifierButtonLabel withClass:[ButtonLabelCell class] tableView:tableView];
+    [((ButtonLabelCell *) cell).titleButton setTitle:item forState:UIControlStateNormal];
+    ((ButtonLabelCell *) cell).textField.text = self.inAppMessageDictionary[item];
+    ((ButtonLabelCell *) cell).textField.delegate = self;
+  } else if ([item isEqualToString:ItemIcon] ||
     [item isEqualToString:ItemClickActionURL] ||
     [item isEqualToString:ItemDuration]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierText withClass:[TextFieldCell class] tableView:tableView];
@@ -154,12 +163,14 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
              [item isEqualToString:ItemCloseButtonColor]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierColor withClass:[ColorCell class] tableView:tableView];
     ((ColorCell *)cell).titleLabel.text = item;
-    [(ColorCell *)cell setColor:self.inAppMessageDictionary[item]];
+    [(ColorCell *) cell setColor:self.inAppMessageDictionary[item]];
     ((ColorCell *)cell).opacitySlider.value = 1.0;
     ((ColorCell *)cell).colorButton.backgroundColor = [((ColorCell *) cell).colorButton.backgroundColor colorWithAlphaComponent:1.0];
-  } else if ([item isEqualToString:ItemHideChevron]) {
-    cell = [self createCellWithCellIdentifier:CellIdentifierChevron withClass:[HideChevronCell class] tableView:tableView];
-    ((HideChevronCell *)cell).hideChevronSwitch.on = [self.inAppMessageDictionary[item] boolValue];
+  } else if ([item isEqualToString:ItemHideChevron] ||
+             [item isEqualToString:ItemImageGraphic]) {
+    cell = [self createCellWithCellIdentifier:CellIdentifierChevron withClass:[SwitchCell class] tableView:tableView];
+    ((SwitchCell *)cell).titleLabel.text = item;
+    ((SwitchCell *) cell).hideChevronSwitch.on = [self.inAppMessageDictionary[item] boolValue];
   } else if ([item isEqualToString:ItemButtonOne] ||
              [item isEqualToString:ItemButtonTwo]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierButton withClass:[InAppMessageButtonCell class] tableView:tableView];
@@ -174,6 +185,24 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
     cell = (UITableViewCell *)[[cellClass alloc] init];
   }
   return cell;
+}
+
+- (IBAction)ChangeTextFieldContent:(UIButton *)sender {
+  UIView *cell = sender.superview;
+  while (![cell isKindOfClass:[ButtonLabelCell class]] && cell.superview != nil) {
+    cell = cell.superview;
+  }
+  
+  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
+    UIAlertController *actionSheet = [(ButtonLabelCell *)cell getAlertControllerWithIAMDictionary:self.inAppMessageDictionary];
+    actionSheet.popoverPresentationController.sourceView = sender;
+    actionSheet.popoverPresentationController.sourceRect = sender.bounds;
+
+    [self presentViewController:actionSheet animated:YES completion:nil];
+  } else {
+    UIActionSheet *actionSheet = [(ButtonLabelCell *)cell getActionSheetWithIAMDictionary:self.inAppMessageDictionary];
+    [actionSheet showInView:self.view];
+  }
 }
 
 - (IBAction)changeColor:(UIButton *)sender {
@@ -201,6 +230,12 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
 
 - (IBAction)hideChevronChanged:(UISwitch *)sender {
   self.inAppMessageDictionary[ItemHideChevron] = @(sender.on);
+  
+  UIView *cell = sender.superview;
+  while (![cell isKindOfClass:[SwitchCell class]] && cell.superview != nil) {
+    cell = cell.superview;
+  }
+  self.inAppMessageDictionary[((SwitchCell *)cell).titleLabel.text] = @(sender.on);
 }
 
 - (IBAction)buttonSegmentChanged:(UISegmentedControl *)sender {
@@ -257,7 +292,9 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
   while (![cell isKindOfClass:[TextFieldCell class]] && cell.superview != nil) {
     cell = cell.superview;
   }
-  if ([cell isKindOfClass:[TextFieldCell class]]) {
+  if ([cell isKindOfClass:[ButtonLabelCell class]]) {
+    self.inAppMessageDictionary[((ButtonLabelCell *)cell).titleButton.titleLabel.text] = textField.text;
+  } else if ([cell isKindOfClass:[TextFieldCell class]]) {
     self.inAppMessageDictionary[((TextFieldCell *)cell).titleLabel.text] = textField.text;
   }
   self.currentTextField = nil;
@@ -349,6 +386,44 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
       } else {
         inAppMessage.duration = CustomInAppMessageDuration;
       }
+    } else if ([key isEqualToString:ItemOrientation]) {
+      ABKInAppMessageOrientation orientation;
+      switch ([self.inAppMessageDictionary[key] integerValue]) {
+        case 0:
+        default:
+          orientation = ABKInAppMessageOrientationAny;
+          break;
+        case 1:
+          orientation = ABKInAppMessageOrientationPortrait;
+          break;
+        case 2:
+          orientation = ABKInAppMessageOrientationLandscape;
+          break;
+      }
+      inAppMessage.orientation = orientation;
+    } else if ([key isEqualToString:ItemMessageAlignment]) {
+      switch ([self.inAppMessageDictionary[key] integerValue]) {
+        case 0:
+        default:
+          inAppMessage.messageTextAlignment = NSTextAlignmentCenter;
+          break;
+        case 1:
+          inAppMessage.messageTextAlignment = NSTextAlignmentLeft;
+          break;
+        case 2:
+          inAppMessage.messageTextAlignment = NSTextAlignmentRight;
+          break;
+      }
+    } else if ([key isEqualToString:ItemImageContentMode]) {
+      switch ([self.inAppMessageDictionary[key] integerValue]) {
+        case 0:
+        default:
+          inAppMessage.imageContentMode = UIViewContentModeScaleAspectFit;
+          break;
+        case 1:
+          inAppMessage.imageContentMode = UIViewContentModeScaleAspectFill;
+          break;
+      }
     }
 
     if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
@@ -373,6 +448,19 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
       ABKInAppMessageImmersive *inAppImmersive = (ABKInAppMessageImmersive *) inAppMessage;
       if ([key isEqualToString:ItemHeader]) {
         inAppImmersive.header = self.inAppMessageDictionary[key];
+      }else if ([key isEqualToString:ItemHeaderAlignment]) {
+        switch ([self.inAppMessageDictionary[key] integerValue]) {
+          case 0:
+          default:
+            inAppImmersive.headerTextAlignment = NSTextAlignmentCenter;
+            break;
+          case 1:
+            inAppImmersive.headerTextAlignment = NSTextAlignmentLeft;
+            break;
+          case 2:
+            inAppImmersive.headerTextAlignment = NSTextAlignmentRight;
+            break;
+        }
       } else if ([key isEqualToString:ItemHeaderColor]) {
         inAppImmersive.headerTextColor = self.inAppMessageDictionary[key];
       } else if ([key isEqualToString:ItemCloseButtonColor]) {
@@ -383,11 +471,14 @@ static NSString *const HTMLWithNoLink = @"<!DOCTYPE html>\n<html>\n<head lang=\"
         } else {
           [inAppImmersive setInAppMessageButtons:@[self.inAppMessageDictionary[ItemButtonOne]]];
         }
-      }
-      if ([inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
-        if ([key isEqualToString:ItemModalFrameColor]) {
-          ((ABKInAppMessageModal *)inAppMessage).modalFrameColor = self.inAppMessageDictionary[key];
+      }else if ([key isEqualToString:ItemImageGraphic]) {
+        if ([self.inAppMessageDictionary[key] boolValue]) {
+          inAppImmersive.imageStyle = ABKInAppMessageGraphic;
+        } else {
+          inAppImmersive.imageStyle = ABKInAppMessageTopImage;
         }
+      }else if ([key isEqualToString:ItemModalFrameColor]) {
+        ((ABKInAppMessageImmersive *)inAppMessage).frameColor = self.inAppMessageDictionary[key];
       }
     }
   }

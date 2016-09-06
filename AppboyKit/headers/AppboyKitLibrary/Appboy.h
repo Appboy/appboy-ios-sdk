@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.22.1"
+#define APPBOY_SDK_VERSION @"2.23.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -419,14 +419,6 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  *
  */
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
-
-/*!
- * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
- *
- * @discussion Records that the current user shared something to social network. This is added to the event tracking log
- *   that's lazily pushed up to the server.
- */
-- (void)logSocialShare:(ABKSocialNetwork)socialNetwork __deprecated;
 
 /*!
  * @param replyToEmail The email address to send feedback replies to.

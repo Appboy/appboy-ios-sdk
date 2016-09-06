@@ -6,6 +6,22 @@
  * Appboy Public API: ABKInAppMessageImmersive
  */
 NS_ASSUME_NONNULL_BEGIN
+
+/*!
+ * The ABKInAppMessageImmersiveImageStyle defines the image style of the in-app message
+ *
+ *   ABKInAppMessageGraphic - The image will make up the entire in-app message, with buttons on the
+ *     image(buttons are optional). No icons, headers or message will be displayed in this style.
+ *
+ *
+ *   ABKInAppMessageTopImage - This is the default image style. The image will be on upper top of the
+ *     in-app message if there is one, with all other in-app message elements.
+ */
+typedef NS_ENUM(NSInteger, ABKInAppMessageImmersiveImageStyle) {
+  ABKInAppMessageGraphic,
+  ABKInAppMessageTopImage
+};
+
 @interface ABKInAppMessageImmersive : ABKInAppMessage
 
 /*!
@@ -34,6 +50,26 @@ NS_ASSUME_NONNULL_BEGIN
  * For more information and setting of ABKInAppMessageButton, please see the documentation in ABKInAppMessageButton.h for additional details.
  */
 @property (readonly, nullable) NSArray *buttons;
+
+/*!
+ * frameColor defines the frame color of an immersive in-app message. This color will fill the
+ * screen outside of the in-app message. When the property is nil, the color will be
+ * set to the default color, which is black with 90% opacity.
+ */
+@property (strong, nullable) UIColor *frameColor;
+
+/*!
+ * headerTextAlignment defines the preferred text alignment of the header label.
+ * The default value is NSTextAlignmentCenter.
+ */
+@property NSTextAlignment headerTextAlignment;
+
+/*!
+ * imageStyle defines the image style of a immersive in-app message. 
+ * For more information about the possible image styles, please check the documentation of
+ * ABKInAppMessageImmersiveImageStyle above.
+ */
+@property ABKInAppMessageImmersiveImageStyle imageStyle;
 
 /*!
  * @param buttonID The clicked button's button ID for the in-app message. This number can't be negative.
