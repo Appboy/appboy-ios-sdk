@@ -4,7 +4,7 @@
 - Deprecates two push delegate methods: 
   `- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification` and 
   `- (void)getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo ompletionHandler:(nullable void (^)())completionHandler`.
-- **NOTE:** iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on existing Appboy iOS integrations.  Please see our updated documentation; if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we reccomend that all users update. 
+- **NOTE:** iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on existing Appboy iOS integrations.  Please see our updated documentation [here](https://www.appboy.com/documentation/iOS/#step-3-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we reccomend that all users update. 
 
 ## 2.23.0
 - Removes the deprecated method `logSocialShare` from Appboy class.
