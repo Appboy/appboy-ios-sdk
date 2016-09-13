@@ -8,7 +8,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
   }
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     // Display the Appboy user ID in the text field
     userIdTextField.text = Appboy.sharedInstance()!.user.userID
   }

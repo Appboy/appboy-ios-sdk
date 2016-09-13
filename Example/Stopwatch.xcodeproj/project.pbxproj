@@ -49,6 +49,7 @@
 		95EF511A173D5FD600C0D780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5119173D5FD600C0D780 /* main.m */; };
 		95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
+		C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
 		D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D400EBF21CC86A6100550AD8 /* EventsViewController.m */; };
 		D411F3121CD0355200100702 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D411F3111CD0355200100702 /* CustomTabBarController.m */; };
@@ -76,6 +77,8 @@
 		E32835B41CC6C6F200E2C2DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E32835B31CC6C6F200E2C2DE /* AppDelegate.m */; };
 		E32835B71CC6C6F200E2C2DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32835B61CC6C6F200E2C2DE /* Assets.xcassets */; };
 		E32835BD1CC6CEAF00E2C2DE /* application.js in Resources */ = {isa = PBXBuildFile; fileRef = E32835B51CC6C6F200E2C2DE /* application.js */; };
+		E330881D1D6BB0B4008935A9 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = E330881C1D6BB0B4008935A9 /* NotificationService.m */; };
+		E33088211D6BB0B4008935A9 /* StopwatchNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E33088191D6BB0B4008935A9 /* StopwatchNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E340E7EC1CCED05B00042335 /* AppboyBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E340E7EB1CCED05B00042335 /* AppboyBridge.m */; };
 		E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */; };
 		E397F4111CC5BA540095A3ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E397F4101CC5BA540095A3ED /* main.m */; };
@@ -84,6 +87,16 @@
 		E397F41A1CC5BA550095A3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E397F4181CC5BA540095A3ED /* Main.storyboard */; };
 		E397F41C1CC5BA550095A3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397F41B1CC5BA550095A3ED /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E330881F1D6BB0B4008935A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95EF5102173D5FD600C0D780 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E33088181D6BB0B4008935A9;
+			remoteInfo = StopwatchNotificationService;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4E321B9519C12246000EE12B /* Embed Frameworks */ = {
@@ -94,6 +107,17 @@
 			files = (
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E33088141D6BB09D008935A9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E33088211D6BB0B4008935A9 /* StopwatchNotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -218,6 +242,7 @@
 		95EF515F173D6AB100C0D780 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BD58B9C6267D5D909845B9E7 /* Pods-tvOS_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
 		C03E52C51D46574A0065ABD6 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C12172071D5A3815003B986E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C16085C51B964BC600E57F30 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D400EBF11CC86A6100550AD8 /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		D400EBF21CC86A6100550AD8 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
@@ -254,8 +279,13 @@
 		E32835B51CC6C6F200E2C2DE /* application.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = application.js; sourceTree = "<group>"; };
 		E32835B61CC6C6F200E2C2DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E32835B81CC6C6F200E2C2DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E33088191D6BB0B4008935A9 /* StopwatchNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StopwatchNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E330881B1D6BB0B4008935A9 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		E330881C1D6BB0B4008935A9 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		E330881E1D6BB0B4008935A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E340E7EA1CCED05B00042335 /* AppboyBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyBridge.h; sourceTree = "<group>"; };
 		E340E7EB1CCED05B00042335 /* AppboyBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppboyBridge.m; sourceTree = "<group>"; };
+		E3688B1A1D6BB2DD0032091D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		E397F40D1CC5BA540095A3ED /* tvOS_Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvOS_Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E397F4101CC5BA540095A3ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E397F4121CC5BA540095A3ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -266,7 +296,6 @@
 		E397F41B1CC5BA550095A3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E397F41D1CC5BA550095A3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3ED8D401CE54C0300C23B99 /* AppboyTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyTVOSKit.framework; path = ../Public/AppboyTVOSKit.framework; sourceTree = "<group>"; };
-		E3ED8E221CE684F900C23B99 /* AppboyTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyTVOSKit.framework; path = ../build/tv/AppboyTVOSKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */,
 				C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */,
 				4E3E94F318BD6AED0008C815 /* QuartzCore.framework in Frameworks */,
 				9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */,
@@ -297,6 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E02B5BE43671FE0E7550C1CE /* libPods-tvOS_TVML_Stopwatch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E33088161D6BB0B4008935A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +470,7 @@
 				4E69E07E1B0AA274003D87FF /* StopwatchDevelop WatchKit App */,
 				E397F40E1CC5BA540095A3ED /* tvOS_Stopwatch */,
 				E32835AE1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */,
+				E330881A1D6BB0B4008935A9 /* StopwatchNotificationService */,
 				95EF510C173D5FD600C0D780 /* Frameworks */,
 				95EF510B173D5FD600C0D780 /* Products */,
 				4F0CF3B17114F763B7942B56 /* Pods */,
@@ -445,6 +483,7 @@
 				95EF510A173D5FD600C0D780 /* StopwatchDevelop.app */,
 				E397F40D1CC5BA540095A3ED /* tvOS_Stopwatch.app */,
 				E32835AD1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch.app */,
+				E33088191D6BB0B4008935A9 /* StopwatchNotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -452,7 +491,8 @@
 		95EF510C173D5FD600C0D780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E3ED8E221CE684F900C23B99 /* AppboyTVOSKit.framework */,
+				E3688B1A1D6BB2DD0032091D /* UserNotificationsUI.framework */,
+				C12172071D5A3815003B986E /* UserNotifications.framework */,
 				E3ED8D401CE54C0300C23B99 /* AppboyTVOSKit.framework */,
 				C16085C51B964BC600E57F30 /* libz.dylib */,
 				958071A7173D727000129B89 /* QuartzCore.framework */,
@@ -552,6 +592,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E330881A1D6BB0B4008935A9 /* StopwatchNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				E330881B1D6BB0B4008935A9 /* NotificationService.h */,
+				E330881C1D6BB0B4008935A9 /* NotificationService.m */,
+				E330881E1D6BB0B4008935A9 /* Info.plist */,
+			);
+			path = StopwatchNotificationService;
+			sourceTree = "<group>";
+		};
 		E397F40E1CC5BA540095A3ED /* tvOS_Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,10 +639,12 @@
 				3993FFFAF9154BEEBDD5FA87 /* [CP] Copy Pods Resources */,
 				4E321B9519C12246000EE12B /* Embed Frameworks */,
 				1BEF3789CC507F95559EA780 /* [CP] Embed Pods Frameworks */,
+				E33088141D6BB09D008935A9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E33088201D6BB0B4008935A9 /* PBXTargetDependency */,
 			);
 			name = Stopwatch;
 			productName = Stopwatch;
@@ -618,6 +670,23 @@
 			productName = tvOS_TVML_Stopwatch;
 			productReference = E32835AD1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E33088181D6BB0B4008935A9 /* StopwatchNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E33088221D6BB0B4008935A9 /* Build configuration list for PBXNativeTarget "StopwatchNotificationService" */;
+			buildPhases = (
+				E33088151D6BB0B4008935A9 /* Sources */,
+				E33088161D6BB0B4008935A9 /* Frameworks */,
+				E33088171D6BB0B4008935A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StopwatchNotificationService;
+			productName = StopwatchNotificationService;
+			productReference = E33088191D6BB0B4008935A9 /* StopwatchNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		E397F40C1CC5BA540095A3ED /* tvOS_Stopwatch */ = {
 			isa = PBXNativeTarget;
@@ -660,6 +729,9 @@
 							com.apple.GameCenter = {
 								enabled = 0;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
 							};
@@ -668,6 +740,12 @@
 					E32835AC1CC6C6F200E2C2DE = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 5GLZKGNWQ3;
+					};
+					E33088181D6BB0B4008935A9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5GLZKGNWQ3;
+						DevelopmentTeamName = "Appboy Inc.";
+						ProvisioningStyle = Manual;
 					};
 					E397F40C1CC5BA540095A3ED = {
 						CreatedOnToolsVersion = 7.3;
@@ -722,6 +800,7 @@
 				95EF5109173D5FD600C0D780 /* Stopwatch */,
 				E397F40C1CC5BA540095A3ED /* tvOS_Stopwatch */,
 				E32835AC1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */,
+				E33088181D6BB0B4008935A9 /* StopwatchNotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -773,6 +852,13 @@
 			files = (
 				E32835BD1CC6CEAF00E2C2DE /* application.js in Resources */,
 				E32835B71CC6C6F200E2C2DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E33088171D6BB0B4008935A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +1045,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E33088151D6BB0B4008935A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E330881D1D6BB0B4008935A9 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E397F4091CC5BA540095A3ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -970,6 +1064,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E33088201D6BB0B4008935A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E33088181D6BB0B4008935A9 /* StopwatchNotificationService */;
+			targetProxy = E330881F1D6BB0B4008935A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E3E94E118BD52C60008C815 /* Localizable.strings */ = {
@@ -1091,6 +1193,7 @@
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1106,7 +1209,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
+				PROVISIONING_PROFILE = "fbc30420-4ac5-400b-a7e4-7260267c79eb";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1187,6 +1291,7 @@
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1202,7 +1307,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = StopwatchDevelop;
-				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_adhoc)";
+				PROVISIONING_PROFILE = "dddcde4d-f37e-4c45-b69d-7acaf5a7d4d4";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1218,6 +1324,7 @@
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1233,7 +1340,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_appstore)";
+				PROVISIONING_PROFILE = "70101ee1-995f-436b-bbb0-be9874f0f746";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1361,6 +1469,112 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		E33088231D6BB0B4008935A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = StopwatchNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "120372bb-38df-4572-8a40-7c47f3dcfb99";
+				PROVISIONING_PROFILE_SPECIFIER = StopwatchNotificationExtensionAdHoc;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E33088241D6BB0B4008935A9 /* Develop */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = StopwatchNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d654d0a9-4f29-4239-9915-cc1d605d8358";
+				PROVISIONING_PROFILE_SPECIFIER = StopwatchNotificationService;
+				SKIP_INSTALL = YES;
+			};
+			name = Develop;
+		};
+		E33088251D6BB0B4008935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = StopwatchNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "120372bb-38df-4572-8a40-7c47f3dcfb99";
+				PROVISIONING_PROFILE_SPECIFIER = StopwatchNotificationExtensionAdHoc;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1524,6 +1738,16 @@
 				E32835B91CC6C6F200E2C2DE /* Debug */,
 				E32835BA1CC6C6F200E2C2DE /* Develop */,
 				E32835BB1CC6C6F200E2C2DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E33088221D6BB0B4008935A9 /* Build configuration list for PBXNativeTarget "StopwatchNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E33088231D6BB0B4008935A9 /* Debug */,
+				E33088241D6BB0B4008935A9 /* Develop */,
+				E33088251D6BB0B4008935A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -12,10 +12,12 @@
 		4E1644F71A04170E0007CA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F51A04170E0007CA5C /* Main.storyboard */; };
 		4E1644F91A04170E0007CA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F81A04170E0007CA5C /* Images.xcassets */; };
 		4E1644FC1A04170E0007CA5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644FA1A04170E0007CA5C /* LaunchScreen.xib */; };
-		6C0FE8FD45BA558FEEEB06FC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446901049F7C1F60144D6DC2 /* Pods.framework */; };
+		C1E6FB391D83682F0084F8CE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */; };
+		D7999436856B456BD02675FF /* Pods_HelloSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		446901049F7C1F60144D6DC2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1644EC1A04170E0007CA5C /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1644F01A04170E0007CA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -26,6 +28,11 @@
 		4E1644FB1A04170E0007CA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4E1645111A060EB70007CA5C /* HelloSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		68DB17C99DFBF44C773C2141 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C1E6FB321D835D230084F8CE /* HelloSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloSwift.entitlements; sourceTree = "<group>"; };
+		C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C1E6FB371D83671A0084F8CE /* AirshipKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AirshipKit.framework; path = ../../../../Downloads/Carthage/Build/iOS/AirshipKit.framework; sourceTree = "<group>"; };
+		CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.release.xcconfig"; sourceTree = "<group>"; };
+		D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2DEB2A95BEB5EA28A525D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -34,7 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C0FE8FD45BA558FEEEB06FC /* Pods.framework in Frameworks */,
+				C1E6FB391D83682F0084F8CE /* NotificationCenter.framework in Frameworks */,
+				D7999436856B456BD02675FF /* Pods_HelloSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +54,8 @@
 			children = (
 				FD2DEB2A95BEB5EA28A525D0 /* Pods.debug.xcconfig */,
 				68DB17C99DFBF44C773C2141 /* Pods.release.xcconfig */,
+				D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */,
+				CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -71,6 +81,7 @@
 		4E1644EE1A04170E0007CA5C /* HelloSwift */ = {
 			isa = PBXGroup;
 			children = (
+				C1E6FB321D835D230084F8CE /* HelloSwift.entitlements */,
 				4E1645111A060EB70007CA5C /* HelloSwift-Bridging-Header.h */,
 				4E1644F11A04170E0007CA5C /* AppDelegate.swift */,
 				4E1644F31A04170E0007CA5C /* ViewController.swift */,
@@ -93,7 +104,10 @@
 		5C274ADBE04DAF82D572D7B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1E6FB371D83671A0084F8CE /* AirshipKit.framework */,
+				C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */,
 				446901049F7C1F60144D6DC2 /* Pods.framework */,
+				0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -105,12 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E16450B1A04170E0007CA5C /* Build configuration list for PBXNativeTarget "HelloSwift" */;
 			buildPhases = (
-				FD6070489574B6E0BA1CD4DD /* Check Pods Manifest.lock */,
+				FD6070489574B6E0BA1CD4DD /* [CP] Check Pods Manifest.lock */,
 				4E1644E81A04170E0007CA5C /* Sources */,
 				4E1644E91A04170E0007CA5C /* Frameworks */,
 				4E1644EA1A04170E0007CA5C /* Resources */,
-				39B5362B3CB8F18636630D7B /* Copy Pods Resources */,
-				67A905DB4C5F541D992B5B21 /* Embed Pods Frameworks */,
+				39B5362B3CB8F18636630D7B /* [CP] Copy Pods Resources */,
+				67A905DB4C5F541D992B5B21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +147,14 @@
 				TargetAttributes = {
 					4E1644EB1A04170E0007CA5C = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 5GLZKGNWQ3;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -168,44 +190,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39B5362B3CB8F18636630D7B /* Copy Pods Resources */ = {
+		39B5362B3CB8F18636630D7B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		67A905DB4C5F541D992B5B21 /* Embed Pods Frameworks */ = {
+		67A905DB4C5F541D992B5B21 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD6070489574B6E0BA1CD4DD /* Check Pods Manifest.lock */ = {
+		FD6070489574B6E0BA1CD4DD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,33 +357,39 @@
 		};
 		4E16450C1A04170E0007CA5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD2DEB2A95BEB5EA28A525D0 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloSwift/HelloSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(sigh_Appboy.HelloSwift_development)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		4E16450D1A04170E0007CA5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68DB17C99DFBF44C773C2141 /* Pods.release.xcconfig */;
+			baseConfigurationReference = CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloSwift/HelloSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(sigh_Appboy.HelloSwift_adhoc)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

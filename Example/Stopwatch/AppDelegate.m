@@ -39,15 +39,76 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   // feedback form and news feed).
   [Appboy sharedInstance].useNUITheming = YES;
   
-  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-     (UIRemoteNotificationTypeAlert |
-      UIRemoteNotificationTypeBadge |
-      UIRemoteNotificationTypeSound)];
-  } else {
-    [self setupPushCategories];
-  }
+  [self setUpRemoteNotification];
   return YES;
+}
+
+- (void) setupRemoteNotificationForiOS7 {
+  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+   (UIRemoteNotificationTypeAlert |
+    UIRemoteNotificationTypeBadge |
+    UIRemoteNotificationTypeSound)];
+}
+
+- (void) setupRemoteNotificationForiOS8And9 {
+  UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationAction alloc] init];
+  likeAction.identifier = @"LIKE_IDENTIFIER";
+  likeAction.title = @"Like";
+  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
+  likeAction.activationMode = UIUserNotificationActivationModeForeground;
+  likeAction.destructive = NO;
+  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
+  likeAction.authenticationRequired = NO;
+  
+  UIMutableUserNotificationAction *unlikeAction = [[UIMutableUserNotificationAction alloc] init];
+  unlikeAction.identifier = @"UNLIKE_IDENTIFIER";
+  unlikeAction.title = @"Unlike";
+  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
+  unlikeAction.activationMode = UIUserNotificationActivationModeBackground;
+  unlikeAction.destructive = NO;
+  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
+  unlikeAction.authenticationRequired = NO;
+  
+  UIMutableUserNotificationCategory *likeCategory = [[UIMutableUserNotificationCategory alloc] init];
+  likeCategory.identifier = @"LIKE_CATEGORY";
+  [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
+  
+  NSSet *categories = [NSSet setWithObjects:likeCategory, nil];
+  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
+  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+}
+
+- (void) setupRemoteNotificationForiOS10 {
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+  [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge)
+                        completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                          NSLog(@"Permission granted.");
+                        }];
+  center.delegate = self;
+  
+  UNNotificationAction *likeAction = [UNNotificationAction actionWithIdentifier:@"LIKE_IDENTIFIER"
+                                                                          title:@"Like"
+                                                                        options:UNNotificationActionOptionForeground];
+  UNNotificationAction *unlikeAction = [UNNotificationAction actionWithIdentifier:@"UNLIKE_IDENTIFIER"
+                                                                            title:@"Unlike"
+                                                                          options:0];
+  UNNotificationCategory *likeCategory = [UNNotificationCategory categoryWithIdentifier:@"LIKE_CATEGORY"
+                                                                                actions:@[likeAction, unlikeAction]
+                                                                      intentIdentifiers:@[]
+                                                                                options:0];
+  [center setNotificationCategories:[NSSet setWithObject:likeCategory]];
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
+}
+
+- (void) setUpRemoteNotification {
+  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
+    [self setupRemoteNotificationForiOS10];
+  } else if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
+    [self setupRemoteNotificationForiOS8And9];
+  } else {
+    [self setupRemoteNotificationForiOS7];
+  }
 }
 
 /* Send crash event to Appboy upon notification */
@@ -66,32 +127,11 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   return NO;
 }
 
-// When a notification is received, pass it to Appboy
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-  NSLog(@"Application delegate method didReceiveRemoteNotification is called with user info: %@", userInfo);
-  [Crittercism leaveBreadcrumb:@"registerApplicaion:didReceiveRemoteNotification:"];
-  [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo];
-}
-
 // Pass the deviceToken to Appboy as well
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
   NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-  /*
-   Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-   */
-  NSLog(@"applicationDidBecomeActive:(UIApplication *)application");
-  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-}
-
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
-  NSLog(@"Application delegate method handleActionWithIdentifier:forRemoteNotification:completionHandler: is called with identifier: %@, userInfo:%@", identifier, userInfo);
-  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
 }
 
 // When a notification is received, pass it to Appboy. If the notification is received when the app
@@ -105,36 +145,12 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
 }
 
-- (void)setupPushCategories {
-  id UIMutableUserNotificationActionClass = NSClassFromString(@"UIMutableUserNotificationAction");
-  UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationActionClass alloc] init];
-  likeAction.identifier = @"LIKE_IDENTIFIER";
-  likeAction.title = @"Like";
-  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
-  likeAction.activationMode = UIUserNotificationActivationModeForeground;
-  likeAction.destructive = NO;
-  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
-  likeAction.authenticationRequired = NO;
-  
-  UIMutableUserNotificationAction *unlikeAction = [[UIMutableUserNotificationActionClass alloc] init];
-  unlikeAction.identifier = @"UNLIKE_IDENTIFIER";
-  unlikeAction.title = @"Unlike";
-  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
-  unlikeAction.activationMode = UIUserNotificationActivationModeBackground;
-  unlikeAction.destructive = NO;
-  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
-  unlikeAction.authenticationRequired = NO;
-  
-  id UIMutableUserNotificationCategoryClass = NSClassFromString(@"UIMutableUserNotificationCategory");
-  UIMutableUserNotificationCategory *likeCategory = [[UIMutableUserNotificationCategoryClass alloc] init];
-  likeCategory.identifier = @"LIKE_CATEGORY";
-  [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
-  
-  NSSet *categories = [NSSet setWithObjects:likeCategory, nil];
-  id UIUserNotificationSettingsClass = NSClassFromString(@"UIUserNotificationSettings");
-  UIUserNotificationSettings *settings = [UIUserNotificationSettingsClass settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
-  [[UIApplication sharedApplication] registerForRemoteNotifications];
-  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  /*
+   Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+   */
+  NSLog(@"applicationDidBecomeActive:(UIApplication *)application");
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 // Here we are trying to handle deep linking with scheme beginning with "stopwatch".
@@ -145,11 +161,6 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   [deepLinkAlert show];
   deepLinkAlert = nil;
   return YES;
-}
-
-- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
-  NSLog(@"%@",userInfo);
-  [[Appboy sharedInstance] handleWatchKitExtensionRequest:userInfo reply:reply];
 }
 
 - (BOOL)handleAppboyPushURI:(NSString *)URIString withNotificationInfo:(NSDictionary *)notificationInfo {
@@ -166,6 +177,19 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   } else {
     return NO;
   }
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+       willPresentNotification:(UNNotification *)notification
+         withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+  NSLog(@"Application delegate method userNotificationCenter:willPresentNotification:withCompletionHandler: is called.");
+  completionHandler(UNNotificationPresentationOptionAlert);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+  [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+  NSLog(@"Application delegate method userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: is called with user info: %@", response);
 }
 
 @end

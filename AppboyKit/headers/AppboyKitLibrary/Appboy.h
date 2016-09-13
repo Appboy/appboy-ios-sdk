@@ -12,9 +12,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.23.0"
+#define APPBOY_SDK_VERSION @"2.24.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -137,14 +138,6 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
   ABKAutomaticRequestProcessing,
   ABKAutomaticRequestProcessingExceptForDataFlush,
   ABKManualRequestProcessing
-};
-
-/*!
- * Values representing the Social Networks recognized by the SDK.
- */
-typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
-  ABKSocialNetworkFacebook = 1 << 0,
-  ABKSocialNetworkTwitter = 1 << 1
 };
 
 /*
@@ -488,7 +481,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
  * method of your App Delegate.
  */
-- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
+- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification __deprecated_msg("`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.");
 
 /*!
  * @param application The app's UIApplication object
@@ -514,7 +507,20 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)getActionWithIdentifier:(NSString *)identifier
           forRemoteNotification:(NSDictionary *)userInfo
-              completionHandler:(nullable void (^)())completionHandler;
+              completionHandler:(nullable void (^)())completionHandler __deprecated_msg("`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
+
+/*!
+ * @param center The app's current UNUserNotificationCenter object
+ * @param response The UNNotificationResponse object passed in from the didReceiveNotificationResponse:withCompletionHandler: call
+ * @param completionHandler A block passed in from the didReceiveNotificationResponse:withCompletionHandler: call. Appboy will call
+ * it at the end of the method if one is passed in. If you prefer to handle the completionHandler youself, please pass nil to Appboy.
+ *
+ * @discussion This method forwards the response of the notification to Appboy after user interacted with the notification.
+ * Call it from the userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: method of your App Delegate.
+ */
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+      withCompletionHandler:(void (^)())completionHandler;
 
 - (BOOL)handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
 #endif

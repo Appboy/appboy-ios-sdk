@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144CE4CC85AB5D4F325123BA /* libPods-HelloAppboy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4336804E93268FD0B366BBB /* libPods-HelloAppboy.a */; };
 		4EBAC83A1959F8D800554880 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBAC8391959F8D800554880 /* Foundation.framework */; };
 		4EBAC83C1959F8D800554880 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBAC83B1959F8D800554880 /* CoreGraphics.framework */; };
 		4EBAC83E1959F8D800554880 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBAC83D1959F8D800554880 /* UIKit.framework */; };
@@ -23,7 +24,6 @@
 		4EBAC8651959F8D800554880 /* HelloAppboyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBAC8641959F8D800554880 /* HelloAppboyTests.m */; };
 		4EBAC86F1959FC6200554880 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAC86E1959FC6200554880 /* like.png */; };
 		4EBAC8711959FD0100554880 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EBAC8701959FD0100554880 /* like@2x.png */; };
-		8E923567F75645E092E51913 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA79D02A32EC424689103B6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +58,12 @@
 		4EBAC8641959F8D800554880 /* HelloAppboyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloAppboyTests.m; sourceTree = "<group>"; };
 		4EBAC86E1959FC6200554880 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		4EBAC8701959FD0100554880 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
+		503CC9635F07C00D16ADA7F4 /* Pods-HelloAppboy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloAppboy.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloAppboy/Pods-HelloAppboy.release.xcconfig"; sourceTree = "<group>"; };
 		7A10628A1F5C8E2FF6AB33B2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9750E9444D92A139D9FAA90F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A69D49CA07DE92962E0AFFB8 /* Pods-HelloAppboy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloAppboy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloAppboy/Pods-HelloAppboy.debug.xcconfig"; sourceTree = "<group>"; };
 		DA79D02A32EC424689103B6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4336804E93268FD0B366BBB /* libPods-HelloAppboy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HelloAppboy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +74,7 @@
 				4EBAC83C1959F8D800554880 /* CoreGraphics.framework in Frameworks */,
 				4EBAC83E1959F8D800554880 /* UIKit.framework in Frameworks */,
 				4EBAC83A1959F8D800554880 /* Foundation.framework in Frameworks */,
-				8E923567F75645E092E51913 /* libPods.a in Frameworks */,
+				144CE4CC85AB5D4F325123BA /* libPods-HelloAppboy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +96,8 @@
 			children = (
 				7A10628A1F5C8E2FF6AB33B2 /* Pods.debug.xcconfig */,
 				9750E9444D92A139D9FAA90F /* Pods.release.xcconfig */,
+				A69D49CA07DE92962E0AFFB8 /* Pods-HelloAppboy.debug.xcconfig */,
+				503CC9635F07C00D16ADA7F4 /* Pods-HelloAppboy.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				4EBAC83D1959F8D800554880 /* UIKit.framework */,
 				4EBAC8581959F8D800554880 /* XCTest.framework */,
 				DA79D02A32EC424689103B6B /* libPods.a */,
+				E4336804E93268FD0B366BBB /* libPods-HelloAppboy.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,11 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EBAC8681959F8D800554880 /* Build configuration list for PBXNativeTarget "HelloAppboy" */;
 			buildPhases = (
-				B3084867085F4470A9336970 /* Check Pods Manifest.lock */,
+				B3084867085F4470A9336970 /* [CP] Check Pods Manifest.lock */,
 				4EBAC8321959F8D800554880 /* Sources */,
 				4EBAC8331959F8D800554880 /* Frameworks */,
 				4EBAC8341959F8D800554880 /* Resources */,
-				920546BA04EF4C2C91F52278 /* Copy Pods Resources */,
+				920546BA04EF4C2C91F52278 /* [CP] Copy Pods Resources */,
+				A7A6852167BC8EE75B691060 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,6 +230,10 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Appboy;
 				TargetAttributes = {
+					4EBAC8351959F8D800554880 = {
+						DevelopmentTeam = 5GLZKGNWQ3;
+						ProvisioningStyle = Automatic;
+					};
 					4EBAC8561959F8D800554880 = {
 						TestTargetID = 4EBAC8351959F8D800554880;
 					};
@@ -271,29 +282,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		920546BA04EF4C2C91F52278 /* Copy Pods Resources */ = {
+		920546BA04EF4C2C91F52278 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloAppboy/Pods-HelloAppboy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3084867085F4470A9336970 /* Check Pods Manifest.lock */ = {
+		A7A6852167BC8EE75B691060 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloAppboy/Pods-HelloAppboy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3084867085F4470A9336970 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,34 +462,36 @@
 		};
 		4EBAC8691959F8D800554880 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A10628A1F5C8E2FF6AB33B2 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = A69D49CA07DE92962E0AFFB8 /* Pods-HelloAppboy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloAppboy/HelloAppboy-Prefix.pch";
 				INFOPLIST_FILE = "HelloAppboy/HelloAppboy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(sigh_com.appboy.HelloAppboy_development)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		4EBAC86A1959F8D800554880 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9750E9444D92A139D9FAA90F /* Pods.release.xcconfig */;
+			baseConfigurationReference = 503CC9635F07C00D16ADA7F4 /* Pods-HelloAppboy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloAppboy/HelloAppboy-Prefix.pch";
 				INFOPLIST_FILE = "HelloAppboy/HelloAppboy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "$(sigh_com.appboy.HelloAppboy_adhoc)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

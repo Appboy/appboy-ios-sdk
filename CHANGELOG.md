@@ -1,3 +1,11 @@
+## 2.24.0
+- Updates the iOS and tvOS SDKs to support iOS 10.
+- Adds a new method `- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler`. This method supports the new delegate method for push notification handling in `UserNotification` framework. 
+- Deprecates two push delegate methods: 
+  `- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification` and 
+  `- (void)getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo ompletionHandler:(nullable void (^)())completionHandler`.
+- **NOTE:** iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on existing Appboy iOS integrations.  Please see our updated documentation; if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we reccomend that all users update. 
+
 ## 2.23.0
 - Removes the deprecated method `logSocialShare` from Appboy class.
 - Adds support for upgraded in-app messages including image-only messages, improved image sizing/cropping, text scrolling, text alignment, configurable orientation, and configurable frame color.
