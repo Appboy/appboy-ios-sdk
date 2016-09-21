@@ -6,5 +6,5 @@ var searchData=
   ['usenuitheming',['useNUITheming',['../interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410',1,'Appboy']]],
   ['user',['user',['../interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1',1,'Appboy']]],
   ['userdescription',['userDescription',['../interface_a_b_k_twitter_user.html#a8290ccfde55e28e82fd0cf4c3e2092d4',1,'ABKTwitterUser']]],
-  ['usernotificationcenter_3adidreceivenotificationresponse_3awithcompletionhandler_3a',['userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:',['../interface_appboy.html#a01d9e2d6766a041bb0809c88fb3e1278',1,'Appboy']]]
+  ['usernotificationcenter_3adidreceivenotificationresponse_3awithcompletionhandler_3a',['userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:',['../interface_appboy.html#a2a4cd6539cc043012b0e34448c901a50',1,'Appboy']]]
 ];
