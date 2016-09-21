@@ -1177,6 +1177,7 @@
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.appboy.stopwatch";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -1246,6 +1247,7 @@
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.appboy.stopwatch";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s armv6 x86_64 i386";
@@ -1274,6 +1276,7 @@
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.appboy.stopwatch";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1340,8 +1343,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "70101ee1-995f-436b-bbb0-be9874f0f746";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch";
+				PROVISIONING_PROFILE = "710cc9d2-a3db-4e57-85bf-cb1302fdac6a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -15,7 +15,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.24.0"
+#define APPBOY_SDK_VERSION @"2.24.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -520,7 +520,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-      withCompletionHandler:(void (^)())completionHandler;
+      withCompletionHandler:(nullable void (^)())completionHandler;
 
 - (BOOL)handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
 #endif
