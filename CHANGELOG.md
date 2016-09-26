@@ -1,3 +1,7 @@
+## 2.24.2
+- Fixes an issue where HTML in-app messages loaded JavaScript more than once.
+- Fixes the Appboy.inAppMessage.webview.done-button.title string in the French localization file, which was named incorrectly and wasn't being found.
+
 ## 2.24.1
 - Adds nullability annotation for the completionHandler in `userNotificationCenter :didReceiveNotificationResponse:withCompletionHandler`.
 

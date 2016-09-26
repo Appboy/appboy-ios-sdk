@@ -1487,7 +1487,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1503,8 +1502,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "120372bb-38df-4572-8a40-7c47f3dcfb99";
-				PROVISIONING_PROFILE_SPECIFIER = StopwatchNotificationExtensionAdHoc;
+				PROVISIONING_PROFILE = "6c8a51d5-845f-47d4-9a56-bb227d99f75a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch.StopwatchNotificationService";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1521,7 +1520,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
@@ -1539,8 +1537,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d654d0a9-4f29-4239-9915-cc1d605d8358";
-				PROVISIONING_PROFILE_SPECIFIER = StopwatchNotificationService;
+				PROVISIONING_PROFILE = "fec6b0ff-b42d-494e-86a1-c6a9366c97ec";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.appboy.stopwatch.StopwatchNotificationService";
 				SKIP_INSTALL = YES;
 			};
 			name = Develop;
@@ -1557,7 +1555,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
@@ -1575,8 +1572,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "120372bb-38df-4572-8a40-7c47f3dcfb99";
-				PROVISIONING_PROFILE_SPECIFIER = StopwatchNotificationExtensionAdHoc;
+				PROVISIONING_PROFILE = "6c8a51d5-845f-47d4-9a56-bb227d99f75a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch.StopwatchNotificationService";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
