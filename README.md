@@ -1,7 +1,6 @@
 ![Appboy Logo](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy_Logo_400x100.png)
 
 # iOS SDK
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Successful marketing automation is essential to the future of your mobile app. Appboy helps you engage your users beyond the download. Visit the following links for details and we'll have you up and running in no time!
 
@@ -24,6 +23,8 @@ The iOS SDK supports iOS 6.0+
 
 Appboy uses [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.3.0 for in-app message icons.  Check out the [cheat sheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) to browse available icons.
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) as a prebuilt framework.  Building from source currently not supported, see [85](https://github.com/Appboy/appboy-ios-sdk/issues/85). 
+
 ## Questions?
 
-If you have questions, please contact [support@appboy.com](mailto:support@appboy.com).
+If you have questions, please contact [support@appboy.com](mailto:support@appboy.com). 
