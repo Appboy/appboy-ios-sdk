@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.resource = 'AppboyKit/Appboy.bundle'
   s.preserve_paths = 'AppboyKit/**/*.*'
   s.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
-  s.dependency 'SDWebImage', '~>3.7'
+  s.dependency 'SDWebImage', '~>4.0'
 end
