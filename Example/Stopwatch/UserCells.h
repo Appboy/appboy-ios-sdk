@@ -28,3 +28,9 @@
 @property IBOutlet UIButton *eventButton;
 
 @end
+
+@interface EventSegmentedControlCell : UITableViewCell
+
+@property IBOutlet UISegmentedControl *customEventPropertyTypeSegment;
+
+@end

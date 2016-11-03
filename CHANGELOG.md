@@ -1,3 +1,16 @@
+## 2.24.3
+### Update REQUIRED for apps using Appboy SDK 2.24.0, 2.24.1 or 2.24.2 with UserNotifications.framework
+- Fixes an issue where a user's foreground push enabled status could erroneously be marked as disabled. This issue can occur when opening the app from suspended mode. At that time, the foreground push enabled status was defaulted to disabled until the UserNotifications.framework returned the user's push authorization status. If the user closed the app within a few seconds, the SDK would not flush the updated push status and the user would mistakenly be marked as "push disabled".
+
+ This issue only affected apps using UserNotifications.framework to register for push notifications.
+ The updated code stores the push authorization status on disk to fix the issue.
+- Fixes an issue where triggered in-app messages with event property templating did not respect re-eligibility settings.
+- Updates the Podspecs for iOS and tvOS SDK.
+- Updates deprecation warnings to specify iOS version.
+- Updates the ABKFeedController with more generic nullability.
+- Disables all data detectors on HTML in-app messages. Phone numbers, web URLs, addresses and calendar events will no longer be automatically converted.
+- Disables scrolling bounces on HTML in-app messages.
+
 ## 2.24.2
 - Fixes an issue where HTML in-app messages loaded JavaScript more than once.
 - Fixes the Appboy.inAppMessage.webview.done-button.title string in the French localization file, which was named incorrectly and wasn't being found.

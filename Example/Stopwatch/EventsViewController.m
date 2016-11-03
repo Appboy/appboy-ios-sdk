@@ -18,23 +18,33 @@ static NSString *const ProductID = @"Product ID";
 static NSString *const CurrencyCode = @"Currency Code";
 static NSString *const Price = @"Price";
 static NSString *const Quantity = @"Quantity";
-static NSString *const EventKey = @"Event Key";
-static NSString *const EventValue = @"Event Value";
-static NSString *const PurchaseKey = @"Purchase Key";
-static NSString *const PurchaseValue = @"Purchase Value";
+static NSString *const EventPropertyKey = @"Event Key";
+static NSString *const EventPropertyValue = @"Event Value";
+static NSString *const PurchasePropertyKey = @"Purchase Key";
+static NSString *const PurchasePropertyValue = @"Purchase Value";
+static NSString *const CustomEventPropertyType = @"Custom Event Property Type";
+static NSString *const PurchasePropertyType = @"Purchase Property Type";
+static NSString *const ButtonCell = @"button cell";
+static NSString *const TextFieldCell = @"text field cell";
+static NSString *const SegmentedControlCell = @"segmented control cell";
+static NSString *const SwitchCell = @"switch cell";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.labelsArray = [NSMutableArray arrayWithArray:@[LogEvent,
+  self.eventPropertyType = 0;
+  self.purchasePropertyType = 0;
+  
+  self.labelsArraySection1 = [NSMutableArray arrayWithArray:@[LogEvent,
                                                       Name,
-                                                      EventSwitch,
-                                                      LogPurchase,
-                                                      ProductID,
-                                                      CurrencyCode,
-                                                      Price,
-                                                      Quantity,
-                                                      PurchaseSwitch]];
+                                                      EventSwitch]];
+  
+  self.labelsArraySection2 = [NSMutableArray arrayWithArray:@[LogPurchase,
+                                                              ProductID,
+                                                              CurrencyCode,
+                                                              Price,
+                                                              Quantity,
+                                                              PurchaseSwitch]];
   
   self.valuesDictionary = [NSMutableDictionary dictionaryWithDictionary:@{
                                                                           Name : @"",
@@ -44,10 +54,10 @@ static NSString *const PurchaseValue = @"Purchase Value";
                                                                           Price: @"5",
                                                                           Quantity : @"1",
                                                                           PurchaseSwitch : @(NO),
-                                                                          EventKey : @"",
-                                                                          EventValue : @"",
-                                                                          PurchaseKey : @"",
-                                                                          PurchaseValue : @""
+                                                                          EventPropertyKey : @"",
+                                                                          EventPropertyValue : @"",
+                                                                          PurchasePropertyKey : @"",
+                                                                          PurchasePropertyValue : @""
                                                                           }];
 }
 
@@ -71,38 +81,58 @@ static NSString *const PurchaseValue = @"Purchase Value";
 
 #pragma mark UITableViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 2;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSInteger row = indexPath.row;
-  NSString *label = self.labelsArray[row];
+  NSString *label;
+  if (indexPath.section == 0) {
+    label = self.labelsArraySection1[row];
+  } else if (indexPath.section == 1) {
+    label = self.labelsArraySection2[row];
+  }
   
   UITableViewCell *cell = nil;
   if ([label isEqualToString:LogEvent] || [label isEqualToString:LogPurchase]) {
     // EventButtonCell
-    cell = [self createCellWithIdentifier:@"button cell" withClass:[EventButtonCell class]];
+    cell = [self createCellWithIdentifier:ButtonCell withClass:[EventButtonCell class]];
     [((EventButtonCell*) cell).eventButton setTitle:label forState:UIControlStateNormal];
   } else if ([label isEqualToString:Name]
              || [label isEqualToString:ProductID]
              || [label isEqualToString:CurrencyCode]
              || [label isEqualToString:Price]
              || [label isEqualToString:Quantity]
-             || [label isEqualToString:EventKey]
-             || [label isEqualToString:EventValue]
-             || [label isEqualToString:PurchaseKey]
-             || [label isEqualToString:PurchaseValue]) {
+             || [label isEqualToString:EventPropertyKey]
+             || [label isEqualToString:EventPropertyValue]
+             || [label isEqualToString:PurchasePropertyKey]
+             || [label isEqualToString:PurchasePropertyValue]) {
     // EventTextFieldCell
-    cell = [self createCellWithIdentifier:@"text field cell" withClass:[EventTextFieldCell class]];
+    cell = [self createCellWithIdentifier:TextFieldCell withClass:[EventTextFieldCell class]];
     ((EventTextFieldCell *)cell).eventLabel.text = label;
-    ((EventTextFieldCell *)cell).eventTextField.tag = row;
-    ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArray[row]];
-    if ([label isEqualToString:Price] || [label isEqualToString:Quantity]) {
-      ((EventTextFieldCell *)cell).eventTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    if (indexPath.section == 0) {
+      ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArraySection1[row]];
+    } else if (indexPath.section == 1) {
+      ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArraySection2[row]];
+    }
+  } else if ([label isEqualToString:CustomEventPropertyType] || [label isEqualToString:PurchasePropertyType]) {
+    // EventSegmentedControlCell
+    cell =  [self createCellWithIdentifier:SegmentedControlCell withClass:[EventSegmentedControlCell class]];
+    if (indexPath.section == 0) {
+      ((EventSegmentedControlCell *)cell).customEventPropertyTypeSegment.selectedSegmentIndex = self.eventPropertyType;
+    } else if (indexPath.section == 1) {
+      ((EventSegmentedControlCell *)cell).customEventPropertyTypeSegment.selectedSegmentIndex = self.purchasePropertyType;
     }
   } else {
     // EventSwitchCell
-    cell = [self createCellWithIdentifier:@"switch cell" withClass:[EventSwitchCell class]];
+    cell = [self createCellWithIdentifier:SwitchCell withClass:[EventSwitchCell class]];
     ((EventSwitchCell *)cell).eventLabel.text = label;
-    ((EventSwitchCell *)cell).eventPropertySwitch.tag = row;
-    ((EventSwitchCell *)cell).eventPropertySwitch.on = [self.valuesDictionary[self.labelsArray[row]] boolValue];
+    if (indexPath.section == 0) {
+      ((EventSwitchCell *)cell).eventPropertySwitch.on = [self.valuesDictionary[self.labelsArraySection1[row]] boolValue];
+    } else if (indexPath.section == 1) {
+      ((EventSwitchCell *)cell).eventPropertySwitch.on = [self.valuesDictionary[self.labelsArraySection2[row]] boolValue];
+    }
   }
   return cell;
 }
@@ -116,42 +146,126 @@ static NSString *const PurchaseValue = @"Purchase Value";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.labelsArray count];
+  if (section == 0) {
+    return self.labelsArraySection1.count;
+  } else {
+    return self.labelsArraySection2.count;
+  }
 }
 
 #pragma mark UITextFieldDelegate
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-  self.currentTextField = textField;
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+  // Need to know index path to know which section this text field is in
+  UITableViewCell *cell = ((UITableViewCell *)[[((UIView *)textField) superview] superview]); // Get UITextField's parent UITableViewCell
+  NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+  
+  // Check if the text field being edited is the event value or purchase value so we can implement the date picker if
+  // the user wants to input a date value
+  if ((indexPath.section == 0 && self.eventPropertyType == 3 && [self.labelsArraySection1[indexPath.row] isEqualToString:EventPropertyValue]) ||
+          (indexPath.section == 1 && self.purchasePropertyType == 3 && [self.labelsArraySection2[indexPath.row] isEqualToString:PurchasePropertyValue])) {
+    self.currentTextField = textField;
+    textField.text = nil;
+    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    datePicker.datePickerMode = UIDatePickerModeDate;
+    [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+    datePicker.backgroundColor = [UIColor clearColor];
+    textField.inputView = datePicker;
+    if (textField.text && textField.text.length > 0) {
+      datePicker.date = [self getDateFromString:textField.text];
+    } else {
+      textField.text = [self getStringFromDate:datePicker.date];
+    }
+  }
+  
+  if (indexPath.section == 0) {
+    if ([self.labelsArraySection1[indexPath.row] isEqualToString:Name]
+        || [self.labelsArraySection1[indexPath.row] isEqualToString:EventPropertyKey]) {
+      [self setUpTextField:textField withKeyboardType:UIKeyboardTypeDefault];
+    }
+  } else if (indexPath.section == 1) {
+    if ([self.labelsArraySection2[indexPath.row] isEqualToString:ProductID]
+        || [self.labelsArraySection2[indexPath.row] isEqualToString:PurchasePropertyKey]
+        || [self.labelsArraySection2[indexPath.row] isEqualToString:CurrencyCode]) {
+      [self setUpTextField:textField withKeyboardType:UIKeyboardTypeDefault];
+    } else if ([self.labelsArraySection2[indexPath.row] isEqualToString:Price]
+               || [self.labelsArraySection2[indexPath.row] isEqualToString:Quantity]) {
+      [self setUpTextField:textField withKeyboardType:UIKeyboardTypeNumberPad];
+    }
+  }
+  
+  return YES;
+}
+
+- (void)setUpTextField:(UITextField *)textField withKeyboardType:(UIKeyboardType)keyboardType {
+  textField.inputView = nil;
+  [textField reloadInputViews];
+  textField.keyboardType = keyboardType;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-  self.valuesDictionary[self.labelsArray[textField.tag]] = textField.text;
+  // Need to know index path to know which section this text field is in
+  UITableViewCell *cell = ((UITableViewCell *)[[((UIView *)textField) superview] superview]); // Get UITextField's parent UITableViewCell
+  NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+  if (indexPath.section == 0) {
+    self.valuesDictionary[self.labelsArraySection1[indexPath.row]] = textField.text;
+  } else if (indexPath.section == 1) {
+    self.valuesDictionary[self.labelsArraySection2[indexPath.row]] = textField.text;
+  }
   self.currentTextField = nil;
 }
 
 - (IBAction)hideKeyboard:(UITextField*)textField {
-  [textField resignFirstResponder];
+  [self.view endEditing:YES];
+}
+
+- (void) setUpPropertyKeyTextFieldWithSwitchIndexPath:(NSIndexPath *)indexPath {
+  NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+  EventTextFieldCell *textFieldCell = [self.tableView cellForRowAtIndexPath:newIndexPath];
+  UITextField *textField = textFieldCell.eventTextField;
+  textField.keyboardType = UIKeyboardTypeDefault;
+  textField.text = nil;
 }
 
 - (IBAction)switchChangedValue:(UISwitch *)sender {
-  [self.currentTextField resignFirstResponder];
-  self.valuesDictionary[self.labelsArray[sender.tag]] = @(sender.on);
+  [self.view endEditing:YES];
   
-  if (sender.on) {
-    if ([self.labelsArray[sender.tag] isEqualToString:EventSwitch]) {
+  // Need to know index path to know which section this switch is in
+  UITableViewCell *cell = ((UITableViewCell *)[[((UIView *)sender) superview] superview]); // Get UISwitch's parent UITableViewCell
+  NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+  
+  if (indexPath.section == 0) {
+    self.valuesDictionary[self.labelsArraySection1[indexPath.row]] = @(sender.on);
+    if (sender.on) {
       // Add Key and Value to labelsArray
-      [self.labelsArray insertObject:EventKey atIndex:sender.tag + 1];
-      [self.labelsArray insertObject:EventValue atIndex:sender.tag + 2];
+      [self.labelsArraySection1 insertObject:EventPropertyKey atIndex:indexPath.row + 1];
+      [self.labelsArraySection1 insertObject:CustomEventPropertyType atIndex:indexPath.row + 2];
+      [self.labelsArraySection1 insertObject:EventPropertyValue atIndex:indexPath.row + 3];
+    
+      [self setUpPropertyKeyTextFieldWithSwitchIndexPath:indexPath];
+      self.eventPropertyType = 0;
     } else {
-      [self.labelsArray insertObject:PurchaseKey atIndex:sender.tag + 1];
-      [self.labelsArray insertObject:PurchaseValue atIndex:sender.tag + 2];
+      // Remove Key and Value from labelsArray
+      NSRange indexRange = NSMakeRange(indexPath.row + 1, 3);
+      [self.labelsArraySection1 removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:indexRange]];
     }
-  } else {
-    // Remove Key and Value from labelsArray
-    NSRange indexRange = NSMakeRange(sender.tag + 1, 2);
-    [self.labelsArray removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:indexRange]];
+  } else if (indexPath.section == 1) {
+    self.valuesDictionary[self.labelsArraySection2[indexPath.row]] = @(sender.on);
+    if (sender.on) {
+      // Add Key and Value to labelsArray
+      [self.labelsArraySection2 insertObject:PurchasePropertyKey atIndex:indexPath.row + 1];
+      [self.labelsArraySection2 insertObject:PurchasePropertyType atIndex:indexPath.row + 2];
+      [self.labelsArraySection2 insertObject:PurchasePropertyValue atIndex:indexPath.row + 3];
+      
+      [self setUpPropertyKeyTextFieldWithSwitchIndexPath:indexPath];
+      self.purchasePropertyType = 0;
+    } else {
+      // Remove Key and Value from labelsArray
+      NSRange indexRange = NSMakeRange(indexPath.row + 1, 3);
+      [self.labelsArraySection2 removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:indexRange]];
+    }
   }
+  
   [self.tableView reloadData];
 }
 
@@ -165,7 +279,7 @@ static NSString *const PurchaseValue = @"Purchase Value";
   alertView = nil;
 }
 
-- (BOOL)validateTextForField:(NSString *)field {
+- (BOOL)checkIfFieldIsEmpty:(NSString *)field {
   NSString *string = self.valuesDictionary[field];
   if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] <= 0) {
     NSString *message = [NSString localizedStringWithFormat:@"Cannot have blank %@", field];
@@ -175,33 +289,27 @@ static NSString *const PurchaseValue = @"Purchase Value";
   return YES;
 }
 
-- (BOOL)validateDecimalForField:(NSString *)field {
-  NSString *string = self.valuesDictionary[field];
-  if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] <= 0
-      && [[NSDecimalNumber decimalNumberWithString:string] isEqualToNumber:[NSDecimalNumber notANumber]]) {
-    NSString *message = [NSString localizedStringWithFormat:@"%@ must be a number", field];
-    [self showAlertWithMessage:message];
-    return NO;
-  }
-  return YES;
-}
-
 - (BOOL)validateIntegerForField:(NSString *)field {
-  NSString *string = self.valuesDictionary[field];
-  if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] <= 0
-      && [string integerValue] == 0) {
-    NSString *message = [NSString localizedStringWithFormat:@"%@ is an invalid number", field];
-    [self showAlertWithMessage:message];
-    return NO;
+  // Check if it's a string because if you click "Log Custom Event" or "Log Purchase", the value becomes an integer in
+  // the dictionary so then if you click the button again without changing the value, it'll try to read it as a string and
+  // throw an exception.
+  if ([self.valuesDictionary[field] isKindOfClass:[NSString class]]) {
+    NSString *string = self.valuesDictionary[field];
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] <= 0
+        || [string integerValue] == 0) {
+      NSString *message = [NSString localizedStringWithFormat:@"%@ is an invalid number", field];
+      [self showAlertWithMessage:message];
+      return NO;
+    }
   }
   return YES;
 }
 
 - (IBAction)logEventOrPurchase:(UIButton *)sender {
-  [self.currentTextField resignFirstResponder];
+  [self.view endEditing:YES];
 
   // Custom Event
-  if ([sender.titleLabel.text isEqualToString:LogEvent] && [self validateTextForField:Name]) {
+  if ([sender.titleLabel.text isEqualToString:LogEvent] && [self checkIfFieldIsEmpty:Name]) {
     NSString *eventName = self.valuesDictionary[Name];
     if (![self.valuesDictionary[EventSwitch] boolValue]) {
       // Log Event
@@ -209,18 +317,22 @@ static NSString *const PurchaseValue = @"Purchase Value";
       [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ logged", eventName]];
     } else {
       // Log Event with Properties
-      if ([self validateTextForField:EventKey] && [self validateTextForField:EventValue]) {
-        NSDictionary *properties = @{self.valuesDictionary[EventKey] : self.valuesDictionary[EventValue]};
+      if ([self validateAndStorePropertyWithKey:EventPropertyKey andValue:EventPropertyValue withPropertyType:self.eventPropertyType]) {
+        NSDictionary *properties = @{self.valuesDictionary[EventPropertyKey] : self.valuesDictionary[EventPropertyValue]};
         [[Appboy sharedInstance] logCustomEvent:eventName withProperties:properties];
-        [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ logged with properties %@", eventName, properties]];
+        if ([self.valuesDictionary[EventPropertyValue] isKindOfClass:[NSDate class]]) {
+          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ logged with properties {\n%@ = %@\n}", eventName, self.valuesDictionary[EventPropertyKey], [self getStringFromDate:self.valuesDictionary[EventPropertyValue]]]];
+        } else {
+          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ logged with properties %@", eventName, properties]];
+        }
       }
     }
   }
   // Purchase Event
   else if ([sender.titleLabel.text isEqualToString:LogPurchase]
-             && [self validateTextForField:ProductID]
-             && [self validateTextForField:CurrencyCode]
-             && [self validateDecimalForField:Price]
+             && [self checkIfFieldIsEmpty:ProductID]
+             && [self checkIfFieldIsEmpty:CurrencyCode]
+             && [self checkIfFieldIsEmpty:Price]
              && [self validateIntegerForField:Quantity]){
     NSString *productID = self.valuesDictionary[ProductID];
     NSString *currencyCode = self.valuesDictionary[CurrencyCode];
@@ -230,13 +342,101 @@ static NSString *const PurchaseValue = @"Purchase Value";
       // Log Purchase
       [[Appboy sharedInstance] logPurchase:productID inCurrency:currencyCode atPrice:price withQuantity:quantity];
       [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased", productID]];
-    } else if ([self validateTextForField:PurchaseKey] && [self validateTextForField:PurchaseValue]) {
+    } else {
       // Log Purchase with Properties
-      NSDictionary *properties = @{self.valuesDictionary[PurchaseKey] : self.valuesDictionary[PurchaseValue]};
-      [[Appboy sharedInstance] logPurchase:productID inCurrency:currencyCode atPrice:price withQuantity:quantity andProperties:properties];
-      [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased with properties %@", productID, properties]];
+      if ([self validateAndStorePropertyWithKey:PurchasePropertyKey andValue:PurchasePropertyValue withPropertyType:self.purchasePropertyType]) {
+        NSDictionary *properties = @{self.valuesDictionary[PurchasePropertyKey] : self.valuesDictionary[PurchasePropertyValue]};
+        [[Appboy sharedInstance] logPurchase:productID inCurrency:currencyCode atPrice:price withQuantity:quantity andProperties:properties];
+        if ([self.valuesDictionary[PurchasePropertyValue] isKindOfClass:[NSDate class]]) {
+          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased with properties {\n%@ = %@\n}", productID, self.valuesDictionary[PurchasePropertyKey], [self getStringFromDate:self.valuesDictionary[PurchasePropertyValue]]]];
+        } else {
+          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased with properties %@", productID, properties]];
+        }
+      }
     }
   }
+}
+
+- (BOOL)validateAndStorePropertyWithKey: (NSString *)key andValue:(NSString *)value withPropertyType:(NSInteger)propertyType {
+  if (![self checkIfFieldIsEmpty:key]) {
+    return NO;
+  }
+  switch (propertyType) {
+    case 0:
+      if (![self checkIfFieldIsEmpty:value]) {
+        return NO;
+      }
+      break;
+    case 1:
+      if (![self checkIfFieldIsEmpty:value]) {
+        return NO;
+      }
+      self.valuesDictionary[value] = @([self.valuesDictionary[value] integerValue]);
+      break;
+    case 2:
+      if (![self checkIfFieldIsEmpty:value]) {
+        return NO;
+      }
+      self.valuesDictionary[value] = @([self.valuesDictionary[value] doubleValue]);
+      break;
+    case 3:
+      if (![self.valuesDictionary[value] isKindOfClass:[NSDate class]]) {
+        self.valuesDictionary[value] = [self getDateFromString:self.valuesDictionary[value]];
+      }
+      break;
+  }
+  return YES;
+}
+
+- (IBAction)customEventPropertyTypeChanged:(UISegmentedControl *)sender {
+  [self.view endEditing:YES];
+  // Need to know index path to know which section this text field is in
+  UITableViewCell *cell = ((UITableViewCell *)[[((UIView *)sender) superview] superview]); // Get UISegmentedControl's parent UITableViewCell
+  NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+  if(indexPath.section == 0) {
+    self.eventPropertyType = sender.selectedSegmentIndex;
+    self.valuesDictionary[EventPropertyValue] = @"";
+  } else if (indexPath.section == 1) {
+    self.purchasePropertyType = sender.selectedSegmentIndex;
+    self.valuesDictionary[PurchasePropertyValue] = @"";
+  }
+  
+  NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+  EventTextFieldCell *textFieldCell = [self.tableView cellForRowAtIndexPath:newIndexPath];
+  UITextField *textField = textFieldCell.eventTextField;
+  textField.text = nil;
+  
+  switch(sender.selectedSegmentIndex) {
+    case 0:
+      [self setUpTextField:textField withKeyboardType:UIKeyboardTypeDefault];
+      break;
+    case 1:
+      [self setUpTextField:textField withKeyboardType:UIKeyboardTypeNumberPad];
+      break;
+    case 2:
+      [self setUpTextField:textField withKeyboardType:UIKeyboardTypeDecimalPad];
+      break;
+    case 3:
+      break;
+  }
+}
+
+- (void)datePickerValueChanged:(UIDatePicker *)sender {
+  self.currentTextField.text = [self getStringFromDate:sender.date];
+}
+
+- (NSString *)getStringFromDate:(NSDate *)date {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateFormat = @"MM/dd/yyyy";
+  NSString *dateString = [dateFormatter stringFromDate:date];
+  return dateString;
+}
+
+- (NSDate *)getDateFromString:(NSString *)birthdayString {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateFormat = @"MM/dd/yyyy";
+  NSDate *date = [dateFormatter dateFromString:birthdayString];
+  return date;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

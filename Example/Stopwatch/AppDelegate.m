@@ -84,6 +84,7 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge)
                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
                           NSLog(@"Permission granted.");
+                          [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
                         }];
   center.delegate = self;
   

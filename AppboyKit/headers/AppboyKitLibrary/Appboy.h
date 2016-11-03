@@ -15,7 +15,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.24.2"
+#define APPBOY_SDK_VERSION @"2.24.3"
 #endif
 
 #if !TARGET_OS_TV
@@ -481,7 +481,7 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
  * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
  * method of your App Delegate.
  */
-- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification __deprecated_msg("`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.");
+- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification NS_DEPRECATED_IOS(3_0, 10_0, "`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.");
 
 /*!
  * @param application The app's UIApplication object
@@ -507,7 +507,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)getActionWithIdentifier:(NSString *)identifier
           forRemoteNotification:(NSDictionary *)userInfo
-              completionHandler:(nullable void (^)())completionHandler __deprecated_msg("`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
+              completionHandler:(nullable void (^)())completionHandler NS_DEPRECATED_IOS(9_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
 
 /*!
  * @param center The app's current UNUserNotificationCenter object
@@ -521,6 +521,18 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
       withCompletionHandler:(nullable void (^)())completionHandler;
+
+/*!
+ * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's 
+ * requestAuthorizationWithOptions:completionHandler: method, which indicates if the push authorization
+ * was granted or not.
+ *
+ * @discussion This method forwards the push authorization result to Appboy after the user interacts with
+ * the notification prompt.
+ * Call it from the UNUserNotificationCenter's requestAuthorizationWithOptions:completionHandler: method 
+ * when you prompt users to enable push.
+ */
+- (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;
 
 - (BOOL)handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
 #endif

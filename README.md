@@ -27,4 +27,4 @@ Appboy uses [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.3.0 for
 
 ## Questions?
 
-If you have questions, please contact [support@appboy.com](mailto:support@appboy.com). 
+If you have questions, please contact [support@appboy.com](mailto:support@appboy.com).

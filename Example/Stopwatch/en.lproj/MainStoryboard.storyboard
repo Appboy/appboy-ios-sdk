@@ -948,6 +948,38 @@
                                             <outlet property="eventPropertySwitch" destination="AmU-CV-rMf" id="QVT-PF-DjA"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="segmented control cell" id="maE-Zs-CMt" customClass="EventSegmentedControlCell">
+                                        <rect key="frame" x="0.0" y="160" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="maE-Zs-CMt" id="37k-rg-5Tu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-9U-yBh">
+                                                    <rect key="frame" x="28" y="11" width="264" height="23"/>
+                                                    <segments>
+                                                        <segment title="String"/>
+                                                        <segment title="Integer"/>
+                                                        <segment title="Double"/>
+                                                        <segment title="Date"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="customEventPropertyTypeChanged:" destination="kug-bN-j3b" eventType="valueChanged" id="oYt-Qy-7eD"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ABs-9U-yBh" firstAttribute="centerY" secondItem="37k-rg-5Tu" secondAttribute="centerY" id="5ID-oz-AI7"/>
+                                                <constraint firstItem="ABs-9U-yBh" firstAttribute="leading" secondItem="37k-rg-5Tu" secondAttribute="leadingMargin" constant="20" id="H9E-ZZ-Mdu"/>
+                                                <constraint firstItem="ABs-9U-yBh" firstAttribute="top" secondItem="37k-rg-5Tu" secondAttribute="topMargin" constant="3" id="Ylj-Yf-0pa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ABs-9U-yBh" secondAttribute="bottom" constant="3" id="aOB-Pa-9xJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ABs-9U-yBh" secondAttribute="trailing" constant="20" id="exT-jL-ENC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="customEventPropertyTypeSegment" destination="ABs-9U-yBh" id="5Rh-Wc-H9u"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="kug-bN-j3b" id="6bi-o3-de3"/>

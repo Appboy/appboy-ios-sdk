@@ -19,3 +19,7 @@
 @implementation EventButtonCell
 
 @end
+
+@implementation EventSegmentedControlCell
+
+@end

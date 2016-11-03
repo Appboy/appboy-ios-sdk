@@ -59,7 +59,7 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
  * ABKCaptionedImageCard, ABKCrossPromotionCard, ABKClassicCard and ABKTextAnnouncementCard. They are all subclasses
  * of ABKCard.
  */
-@property (readonly, nullable, getter=getNewsFeedCards) NSArray *newsFeedCards;
+@property (readonly, getter=getNewsFeedCards) NSArray *newsFeedCards;
 
 /*!
  * The NSDate object that indicates the last time the newsFeedCards property was updated from Appboy server.
@@ -93,7 +93,7 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
  * @discussion This method will find the cards of given categories and return them.
  * When the given categories don't exist in any card, this method will return an empty array.
  */
-- (nullable NSArray *)getCardsInCategories:(ABKCardCategory)categories;
+- (NSArray *)getCardsInCategories:(ABKCardCategory)categories;
 
 @end
 NS_ASSUME_NONNULL_END
