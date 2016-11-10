@@ -15,7 +15,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.24.3"
+#define APPBOY_SDK_VERSION @"2.24.4"
 #endif
 
 #if !TARGET_OS_TV
@@ -507,7 +507,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)getActionWithIdentifier:(NSString *)identifier
           forRemoteNotification:(NSDictionary *)userInfo
-              completionHandler:(nullable void (^)())completionHandler NS_DEPRECATED_IOS(9_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
+              completionHandler:(nullable void (^)())completionHandler NS_DEPRECATED_IOS(8_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
 
 /*!
  * @param center The app's current UNUserNotificationCenter object

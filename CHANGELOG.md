@@ -1,3 +1,7 @@
+## 2.24.4
+- Fixes the iOS version number in the deprecation warnings in Appboy.h.
+- Adds protection around in-app message UI code to avoid displaying in-app messages with corrupted images.
+
 ## 2.24.3
 ### Update REQUIRED for apps using Appboy SDK 2.24.0, 2.24.1 or 2.24.2 with UserNotifications.framework
 - Fixes an issue where a user's foreground push enabled status could erroneously be marked as disabled. This issue can occur when opening the app from suspended mode. At that time, the foreground push enabled status was defaulted to disabled until the UserNotifications.framework returned the user's push authorization status. If the user closed the app within a few seconds, the SDK would not flush the updated push status and the user would mistakenly be marked as "push disabled".
