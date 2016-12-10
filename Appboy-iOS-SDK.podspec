@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.24.4"
+  s.version      = "2.24.5"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.appboy.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
