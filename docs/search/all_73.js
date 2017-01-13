@@ -22,6 +22,7 @@ var searchData=
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#afd911d60dfe7e5361afbfb364f5d20f9',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#aa9f1bd9e4a5c082133dd9cc344108b24',1,'Appboy']]],
   ['submitfeedback_3amessage_3aisreportingabug_3a',['submitFeedback:message:isReportingABug:',['../interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0',1,'Appboy']]],
+  ['submitfeedback_3awithcompletionhandler_3a',['submitFeedback:withCompletionHandler:',['../interface_appboy.html#a7f6b6363a366b6bb61420b284167a3e8',1,'Appboy']]],
   ['supportedorientationmasks',['supportedOrientationMasks',['../interface_a_b_k_in_app_message_controller.html#a409b57bcd37168ce8a28cd66544d9f99',1,'ABKInAppMessageController']]],
   ['supportedorientations',['supportedOrientations',['../interface_a_b_k_in_app_message_controller.html#a8d15f9bae17c3b7746e50e8f4da93d9a',1,'ABKInAppMessageController']]]
 ];

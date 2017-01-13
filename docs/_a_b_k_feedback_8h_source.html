@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: tmp/docs/ABKInAppMessageFull.h Source File</title>
+<title>Appboy iOS SDK: tmp/docs/ABKFeedback.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,19 +78,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ABKInAppMessageFull.h</div>  </div>
+<div class="title">ABKFeedback.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessageImmersive.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Appboy Public API: ABKInAppMessageFull</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_full.html">    7</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_full.html">ABKInAppMessageFull</a> : <a class="code" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  ABKValidFeedback,</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  ABKInvalidEmailAddressFeedback,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  ABKEmptyFeedbackMessageFeedback</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;} ABKFeedbackValidation;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="interface_a_b_k_feedback.html">   10</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_feedback.html">ABKFeedback</a> : NSObject</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">@property</span> (copy) NSString *message;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">@property</span> (copy) NSString *email;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">@property</span> BOOL isBug;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;- (instancetype)initWithFeedbackMessage:(NSString *)message email:(NSString *)email isBug:(BOOL)isBug;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;- (ABKFeedbackValidation)<a class="code" href="interface_a_b_k_feedback.html#a49e031beef71107d915ba394b190a0f2">feedbackValidation</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
