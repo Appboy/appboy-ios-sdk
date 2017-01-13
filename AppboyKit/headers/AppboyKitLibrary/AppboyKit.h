@@ -26,6 +26,7 @@
 #import "ABKPushURIDelegate.h"
 
 // Feedback
+#import "ABKFeedback.h"
 #import "ABKFeedbackViewController.h"
 #import "ABKFeedbackViewControllerPopoverContext.h"
 #import "ABKFeedbackViewControllerModalContext.h"

@@ -2,6 +2,7 @@
 #import <AppboyKit.h>
 #import "ABKAttributionData.h"
 #import "ABKLocationManager.h"
+#import "AppDelegate.h"
 
 @implementation MiscViewController
 
@@ -11,7 +12,10 @@
   self.versionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.appboy-version.message", nil), APPBOY_SDK_VERSION];
   [self displayAppboyRequestPolicy];
   self.attributionCounter++;
-  self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+  
+  self.apiKeyTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideApiKeyStorageKey];
+  self.endointTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideEndpointStorageKey];
+  self.inAppMessageDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
 }
 
 /* Data Flush Settings */
@@ -69,6 +73,24 @@
   [super viewDidUnload];
 }
 
+- (void)keyboardDidShow:(NSNotification *)notification {
+  NSDictionary *info = [notification userInfo];
+  CGRect keyboardRect = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+  keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+  
+  UIEdgeInsets contentInset = self.scrollView.contentInset;
+  contentInset.bottom = keyboardRect.size.height;
+  self.scrollView.contentInset = contentInset;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+}
+
 /* Logging Attribution Data */
 - (IBAction)logAttributionData:(id)sender {
   ABKAttributionData *attributionData = [[ABKAttributionData alloc]
@@ -97,6 +119,16 @@
   [theAlert show];
 }
 
+- (IBAction)rebootAndApplyEnvironment:(id)sender {
+  [[NSUserDefaults standardUserDefaults] setObject:self.apiKeyTextField.text forKey:OverrideApiKeyStorageKey];
+  [[NSUserDefaults standardUserDefaults] setObject:self.endointTextField.text forKey:OverrideEndpointStorageKey];
+  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Environment set"
+                                                     message:@"Force Stop and Open to Apply"
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+  [theAlert show];
+}
 - (NSArray *)getDirectoryContentsWithPath:(NSString *)path {
   NSMutableArray *returnArray = [NSMutableArray array];
   NSArray *subpaths = [[NSFileManager defaultManager] subpathsAtPath:path];
@@ -114,6 +146,17 @@
     }
   }
   return returnArray;
+}
+
+- (IBAction)setInAppDelegateSwitchChanged:(id)sender {
+  [[NSUserDefaults standardUserDefaults] setBool:self.inAppMessageDelegateSwitch.on forKey:SetInAppMessageControllerDelegateKey];
+  NSString *switchStatus = (self.inAppMessageDelegateSwitch.on) ? @"Set" : @"Unset";
+  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"In-App Message Controller Delegate %@", switchStatus]
+                                                     message:@"Force Close App and Re-Open to Apply"
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+  [theAlert show];
 }
 
 /* Location Tracking */

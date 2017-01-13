@@ -1,11 +1,11 @@
 <!--
  CHANGELOG format:
- 
+
  ## major.minor.build
 
 ##### Breaking:
- - Breaking change 
-   - requirements for breaking change 
+ - Breaking change
+   - requirements for breaking change
    - detail for breaking change
 
 ##### Added:
@@ -29,6 +29,23 @@
  - Removal 2
  -->
 
+## 2.25.0
+
+##### Added:
+- Adds the ability to set the `ABKInAppMessageControllerDelegate` when the SDK starts by passing a delegate object to the `ABKInAppMessageControllerDelegateKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`. 
+  - This is the recommended way to set the `ABKInAppMessageControllerDelegate` and circumvents a potential race condition where in-app messages can be shown before the delegate has been set.
+- Exposes the ABKFeedback object and adds a new method `- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;` in `Appboy`. The new method accepts a completion handler which receives an ABKFeedbackSentResult enum as feedback sending result. 
+  - The possible feedback sending results are: invalid feedback object(ABKInvalidFeedback), fail to send feedback(ABKNetworkIssue), and feedback sent successfully(ABKFeedbackSentSuccessfully).
+- Adds the utility method `- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response;` to `Appboy`. This method is compatible with the `UserNotifications` framework and returns whether a push notification was sent from Appboy's server.
+  - Those using `- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;` who have integrated the `UserNotifications` framework should use this method instead.
+
+##### Fixed:
+- Changes the ABKInAppMessageButton from a `UIButton` object to a pure data model class in `NSObject`. 
+   - This resolves the issue https://github.com/Appboy/appboy-ios-sdk/issues/97.
+
+##### Changed:
+- Adds more protection around triggered in-app message display.
+
 ## 2.24.5
 
 ##### Fixed:
@@ -36,7 +53,7 @@
 
 ##### Changed:
  - Updates push registration to flush the token to the server immediately.
- - Improves the accessibility of in-app messages and news feed cards. 
+ - Improves the accessibility of in-app messages and news feed cards.
    - When in voiceOver mode, the SDK auto-focuses on in-app messages when they appear and resets focus on dismissal.  
    - VoiceOver no longer reads Appboy internal labels.  
    - News feed cards are enhanced to be more accessible.
@@ -55,7 +72,7 @@
  - Update REQUIRED for apps using Appboy SDK 2.24.0, 2.24.1 or 2.24.2 with UserNotifications.framework
 
 ##### Fixed:
- - Fixes an issue where a user's foreground push enabled status could erroneously be marked as disabled. 
+ - Fixes an issue where a user's foreground push enabled status could erroneously be marked as disabled.
    - This issue can occur when opening the app from suspended mode. At that time, the foreground push enabled status was defaulted to disabled until the UserNotifications.framework returned the user's push authorization status. If the user closed the app within a few seconds, the SDK would not flush the updated push status and the user would mistakenly be marked as "push disabled".
    - This issue only affected apps using UserNotifications.framework to register for push notifications.
    - The updated code stores the push authorization status on disk to fix the issue.
@@ -83,15 +100,15 @@
 
 ##### Breaking:
  - Updates the SDK to requres XCode 8.
- - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Appboy iOS integrations.  Please see our updated documentation [here](https://www.appboy.com/documentation/iOS/#step-4-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update. 
+ - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Appboy iOS integrations.  Please see our updated documentation [here](https://www.appboy.com/documentation/iOS/#step-4-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update.
 
 ##### Added:
  - Updates the iOS and tvOS SDKs to support iOS 10.
- - Adds a new method `- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler`. This method supports the new delegate method for push notification handling in `UserNotification` framework. 
+ - Adds a new method `- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler`. This method supports the new delegate method for push notification handling in `UserNotification` framework.
 
 ##### Changed:
- - Deprecates two push delegate methods: 
-  `- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification` and 
+ - Deprecates two push delegate methods:
+  `- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification` and
   `- (void)getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(nullable void (^)())completionHandler`.
 
 ## 2.23.0
@@ -148,7 +165,7 @@
 ##### Fixed:
  - Fixes a multithreading issue where logging custom events from different threads would sporadically cause errors.
  - Fixes the issue where a close button's color on modal and full in-app messages didn't respect the opacity value.
- - Fixes an issue where failure to download HTML in-app message assets mid-download resulted in display without assets. 
+ - Fixes an issue where failure to download HTML in-app message assets mid-download resulted in display without assets.
 
 ##### Changed:
  - Now the `onInAppMessageHTMLButtonClicked:clickedURL:buttonID:` delegate method will be called every time a URL is clicked. The method used to be only called when there was a button ID in the URL link.
@@ -162,7 +179,7 @@
 
 ##### Added:
  - Adds a new feature allowing manual control of deep link handling in push notications. To use this, add a `ABKPushURIDelegate` value for the `ABKPushURIDelegate` key in the `appboyOptions` dictionary of `startWithApiKey:inApplication:inApplication:withAppboyOptions:`. Also updates the `ABKPushURIDelegate` integration to be initialized through that integration point.
- - Adds guarding against a possible crash caused by a user's offline state being corrupted and not including an active session when a network request 
+ - Adds guarding against a possible crash caused by a user's offline state being corrupted and not including an active session when a network request
 occurred.
 
 ##### Fixed:
@@ -195,7 +212,7 @@ occurred.
  - Analytics are now logged for in-app messages and in-app message buttons with 'ABKInAppMessageNoneClickAction' click actions.  `ABKInAppMessageNoneClickAction` is set when an in-app message on the dashboard has a click action that only closes the in-app message; formerly this did not count as a click.
 
 ## 2.19.0
- 
+
 ##### Added:
  - Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events.
 
@@ -224,7 +241,7 @@ occurred.
 
 ##### Fixed:
  - Fixes the nullability annotation warnings in the public header files.
- 
+
 ##### Changed:
  - Updates HelloSwift sample app to adopt swift 2.0.
 
@@ -275,7 +292,7 @@ occurred.
 ## 2.16
 
 ##### Added:
- - Adds HTML In-App Message types. 
+ - Adds HTML In-App Message types.
    - HTML In-App Messages consist of HTML and a url of a zipped archive of assets (e.g. images, css) to download locally which the HTML can reference. See [InAppMessageUIViewController](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/InAppMessageUIViewController.m#213) in our Stopwatch sample app for an example for the callbacks on the actions inside the WebView hosting the HTML In-App Message.
 
 ##### Changed:
@@ -535,7 +552,7 @@ occurred.
  - Update data flush time interval.
 
 ## 2.6.1
- 
+
 ##### Fixed:
  - Fixes a minor display problem that affected news items with no image or link for version 2.6.
 

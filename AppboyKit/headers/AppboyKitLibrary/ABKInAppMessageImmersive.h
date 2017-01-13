@@ -72,14 +72,14 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageImmersiveImageStyle) {
 @property ABKInAppMessageImmersiveImageStyle imageStyle;
 
 /*!
- * @param buttonID The clicked button's button ID for the in-app message. This number can't be negative.
+ * @param buttonId The clicked button's button ID for the in-app message. This number can't be negative.
  * If you're handling in-app messages completely on your own (returning YES from onInAppMessageReceived), you should still report
  * clicks on the in-app message button back to Appboy with this method so that your campaign reporting features
  * still work in the dashboard.
  *
  * Note: Each in-app message can log at most one button click.
  */
-- (void)logInAppMessageClickedWithButtonID:(NSInteger)buttonID;
+- (void)logInAppMessageClickedWithButtonID:(NSInteger)buttonId;
 
 /*!
  * @param buttonArray The button array for the in-app message. This array should NOT be nil nor empty. Every object in the array

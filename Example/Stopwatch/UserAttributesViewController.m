@@ -42,10 +42,10 @@ static NSMutableArray *attributesValuesArray = nil;
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
   
   // Pull current, locally-stored user ID every time user navigates to this page
-  NSString *appboyUserID = [Appboy sharedInstance].user.userID;
-  if (appboyUserID != nil) {
-    self.userID = appboyUserID;
-    attributesValuesArray[0] = self.userID;
+  NSString *appboyUserId = [Appboy sharedInstance].user.userID;
+  if (appboyUserId != nil) {
+    self.userId = appboyUserId;
+    attributesValuesArray[0] = self.userId;
     [self.attributesTableView reloadData];
   }
 }
@@ -232,7 +232,7 @@ static NSMutableArray *attributesValuesArray = nil;
   attributesValuesArray[sender.tag - TextFieldTagNumber] = subscriptionState;
 }
 
-// Set user attributes and/or change the current userID.  See Appboy.h for a discussion about changing the userID.
+// Set user attributes and/or change the current userId.  See Appboy.h for a discussion about changing the userId.
 - (IBAction)doneButtonTapped:(id)sender {
   if (self.currentEditingTextField && self.currentEditingTextField.tag != IndexOfBirthday + TextFieldTagNumber) {
     if (self.currentEditingTextField.text.length > 0) {

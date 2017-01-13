@@ -65,7 +65,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*
  * Manually log a click to Appboy for the card.
- * * This should only be used for custom news feed view controller. ABKFeedViewController already has card click logging.
+ * This should only be used for custom news feed view controller. ABKFeedViewController already has card click logging.
+ * The SDK will only log a card click when the card has the url property with a valid url.
  */
 - (void)logCardClicked;
 

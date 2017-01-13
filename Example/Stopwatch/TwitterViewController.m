@@ -81,7 +81,7 @@ static NSString *const TwitterUserLookupEndpointUrl = @"https://api.twitter.com/
                   self.followersCount = [twitter[TwitterAccountFollowersKey] integerValue];
                   self.screenName = twitter[TwitterAccountTwitterHandleKey];
                   self.statusesCount = [twitter[TwitterAccountNumTweetsKey] integerValue];
-                  self.twitterID = [twitter[TwitterAccountUserIdKey] integerValue];
+                  self.twitterId = [twitter[TwitterAccountUserIdKey] integerValue];
                 }
               } else {
                 self.twitterDataTextView.text = [jsonError description];
@@ -102,7 +102,7 @@ static NSString *const TwitterUserLookupEndpointUrl = @"https://api.twitter.com/
 - (IBAction)passTwitterDataToAppboy:(id)sender {
   ABKTwitterUser *twitterUser = [[ABKTwitterUser alloc] init];
   twitterUser.userDescription = self.userDescription;
-  twitterUser.twitterID = self.twitterID;
+  twitterUser.twitterID = self.twitterId;
   twitterUser.twitterName = self.twitterName;
   twitterUser.profileImageUrl = self.profileImageUrl;
   twitterUser.friendsCount = self.friendsCount;

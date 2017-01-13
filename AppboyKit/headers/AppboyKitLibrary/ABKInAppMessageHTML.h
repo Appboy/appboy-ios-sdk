@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nullable) NSURL *assetsZipRemoteUrl;
 
 /*!
- * Log a click on the in-app message with a buttonID. Clicks may only be logged once per in-app message.
+ * Log a click on the in-app message with a buttonId. Clicks may only be logged once per in-app message.
  *
  * @param buttonId the id of the click
  */
-- (void)logInAppMessageHTMLClickWithButtonID:(NSString *)buttonID;
+- (void)logInAppMessageHTMLClickWithButtonID:(NSString *)buttonId;
 
 @end
 NS_ASSUME_NONNULL_END

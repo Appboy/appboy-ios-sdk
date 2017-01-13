@@ -3,6 +3,7 @@
 #import "NUISettings.h"
 #import "ABKPushUtils.h"
 #import <Crittercism/Crittercism.h>
+#import "OverrideEndpointDelegate.h"
 
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
 static NSString *const CrittercismAppId = @"51b67d141386207417000002";
@@ -13,12 +14,35 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
 
+  NSString *overrideApiKey = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideApiKeyStorageKey];
+  NSString *overrideEndpoint = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideEndpointStorageKey];
+  
+  OverrideEndpointDelegate* endpointDelegate = nil;
+  
+  if (overrideEndpoint != nil && overrideEndpoint.length != 0) {
+    endpointDelegate = [[OverrideEndpointDelegate alloc] initWithEndpoint:overrideEndpoint];
+  }
+
+  NSString *apiKeyToUse = (overrideApiKey != nil && overrideApiKey.length != 0) ? overrideApiKey : AppboyApiKey;
+  
+  NSMutableDictionary *appboyOptions = [NSMutableDictionary dictionary];
+  appboyOptions[ABKRequestProcessingPolicyOptionKey] = @(ABKAutomaticRequestProcessing);
+  appboyOptions[ABKMinimumTriggerTimeIntervalKey] = @(5);
+  if (endpointDelegate != nil) {
+    appboyOptions[ABKAppboyEndpointDelegateKey] = endpointDelegate;
+  }
+
+  // Set ABKInAppMessageControllerDelegate on startup
+  BOOL setInAppDelegate = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
+  if (setInAppDelegate) {
+    appboyOptions[ABKInAppMessageControllerDelegateKey] = self;
+  }
+
   // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
-  [Appboy startWithApiKey:AppboyApiKey
+  [Appboy startWithApiKey:apiKeyToUse
           inApplication:application
       withLaunchOptions:launchOptions
-      withAppboyOptions:@{ABKRequestProcessingPolicyOptionKey: @(ABKAutomaticRequestProcessing),
-                          ABKMinimumTriggerTimeIntervalKey: @(5)}];
+      withAppboyOptions:appboyOptions];
   
   // Sets up Crittercism for crash and error tracking.
   // Need to initialize Appboy before initializing Crittercism so custom events will be logged in crashDidOccur.
@@ -144,6 +168,11 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   }
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
   NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
+  
+  if ([[Appboy sharedInstance] pushNotificationWasSentFromAppboy:userInfo]) {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    NSLog(@"User notification was sent from Appboy, clearing badge number.");
+  }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -188,9 +217,25 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
-  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
   [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
   NSLog(@"Application delegate method userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: is called with user info: %@", response);
+
+  if ([[Appboy sharedInstance] userNotificationWasSentFromAppboy:response]) {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    NSLog(@"User notification was sent from Appboy, clearing badge number.");
+  }
+}
+
+#pragma mark - ABKInAppMessageControllerDelegate methods
+
+- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp {
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You've got mail!"
+                                                  message:inAppMessage.message
+                                                 delegate:nil
+                                        cancelButtonTitle:@"Unset this from the Advanced tab"
+                                        otherButtonTitles:nil];
+  [alert show];
+  return ABKDiscardInAppMessage;
 }
 
 @end

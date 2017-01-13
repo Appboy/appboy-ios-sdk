@@ -10,7 +10,7 @@
 @property NSInteger followersCount;
 @property NSInteger friendsCount;
 @property NSInteger statusesCount;
-@property NSInteger twitterID;
+@property NSInteger twitterId;
 
 // This method will prompt the user for permission to use twitter account data from iOS system.
 - (IBAction)fetchTwitterAccountData:(id)sender;

@@ -4,24 +4,24 @@
  * Appboy Public API: ABKInAppMessageButton
  */
 NS_ASSUME_NONNULL_BEGIN
-@interface ABKInAppMessageButton : UIButton
+@interface ABKInAppMessageButton : NSObject
 
 /*!
  * This property defines the button title text in UIControlStateNormal. Setting this property will also change the button
  * title text.
  */
-@property (nonatomic, copy, nullable) NSString *buttonText;
+@property (copy, nullable) NSString *buttonText;
 
 /*!
  * This property defines the button's background color.
  */
-@property (nonatomic, strong, nullable) UIColor *buttonBackgroundColor;
+@property (strong, nullable) UIColor *buttonBackgroundColor;
 
 /*!
  * This property defines the button's title color in UIControlStateNormal. Setting this property will also change the
  * button title color.
  */
-@property (nonatomic, strong, nullable) UIColor *buttonTextColor;
+@property (strong, nullable) UIColor *buttonTextColor;
 
 /*!
  * This property defines the action that will be performed when the button is clicked.

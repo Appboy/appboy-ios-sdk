@@ -14,7 +14,7 @@ static NSString *const LogPurchase = @"Log Purchase";
 static NSString *const EventSwitch = @"Event Property";
 static NSString *const PurchaseSwitch = @"Purchase Property";
 static NSString *const Name = @"Event Name";
-static NSString *const ProductID = @"Product ID";
+static NSString *const ProductId = @"Product ID";
 static NSString *const CurrencyCode = @"Currency Code";
 static NSString *const Price = @"Price";
 static NSString *const Quantity = @"Quantity";
@@ -40,7 +40,7 @@ static NSString *const SwitchCell = @"switch cell";
                                                       EventSwitch]];
   
   self.labelsArraySection2 = [NSMutableArray arrayWithArray:@[LogPurchase,
-                                                              ProductID,
+                                                              ProductId,
                                                               CurrencyCode,
                                                               Price,
                                                               Quantity,
@@ -49,7 +49,7 @@ static NSString *const SwitchCell = @"switch cell";
   self.valuesDictionary = [NSMutableDictionary dictionaryWithDictionary:@{
                                                                           Name : @"",
                                                                           EventSwitch : @(NO),
-                                                                          ProductID : @"",
+                                                                          ProductId : @"",
                                                                           CurrencyCode : @"USD",
                                                                           Price: @"5",
                                                                           Quantity : @"1",
@@ -100,7 +100,7 @@ static NSString *const SwitchCell = @"switch cell";
     cell = [self createCellWithIdentifier:ButtonCell withClass:[EventButtonCell class]];
     [((EventButtonCell*) cell).eventButton setTitle:label forState:UIControlStateNormal];
   } else if ([label isEqualToString:Name]
-             || [label isEqualToString:ProductID]
+             || [label isEqualToString:ProductId]
              || [label isEqualToString:CurrencyCode]
              || [label isEqualToString:Price]
              || [label isEqualToString:Quantity]
@@ -184,7 +184,7 @@ static NSString *const SwitchCell = @"switch cell";
       [self setUpTextField:textField withKeyboardType:UIKeyboardTypeDefault];
     }
   } else if (indexPath.section == 1) {
-    if ([self.labelsArraySection2[indexPath.row] isEqualToString:ProductID]
+    if ([self.labelsArraySection2[indexPath.row] isEqualToString:ProductId]
         || [self.labelsArraySection2[indexPath.row] isEqualToString:PurchasePropertyKey]
         || [self.labelsArraySection2[indexPath.row] isEqualToString:CurrencyCode]) {
       [self setUpTextField:textField withKeyboardType:UIKeyboardTypeDefault];
@@ -330,27 +330,27 @@ static NSString *const SwitchCell = @"switch cell";
   }
   // Purchase Event
   else if ([sender.titleLabel.text isEqualToString:LogPurchase]
-             && [self checkIfFieldIsEmpty:ProductID]
+             && [self checkIfFieldIsEmpty:ProductId]
              && [self checkIfFieldIsEmpty:CurrencyCode]
              && [self checkIfFieldIsEmpty:Price]
              && [self validateIntegerForField:Quantity]){
-    NSString *productID = self.valuesDictionary[ProductID];
+    NSString *productId = self.valuesDictionary[ProductId];
     NSString *currencyCode = self.valuesDictionary[CurrencyCode];
     NSDecimalNumber *price = [NSDecimalNumber decimalNumberWithString:self.valuesDictionary[Price]];
     NSUInteger quantity = (NSUInteger)[self.valuesDictionary[Quantity] integerValue];
     if (![self.valuesDictionary[PurchaseSwitch] boolValue]) {
       // Log Purchase
-      [[Appboy sharedInstance] logPurchase:productID inCurrency:currencyCode atPrice:price withQuantity:quantity];
-      [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased", productID]];
+      [[Appboy sharedInstance] logPurchase:productId inCurrency:currencyCode atPrice:price withQuantity:quantity];
+      [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased", productId]];
     } else {
       // Log Purchase with Properties
       if ([self validateAndStorePropertyWithKey:PurchasePropertyKey andValue:PurchasePropertyValue withPropertyType:self.purchasePropertyType]) {
         NSDictionary *properties = @{self.valuesDictionary[PurchasePropertyKey] : self.valuesDictionary[PurchasePropertyValue]};
-        [[Appboy sharedInstance] logPurchase:productID inCurrency:currencyCode atPrice:price withQuantity:quantity andProperties:properties];
+        [[Appboy sharedInstance] logPurchase:productId inCurrency:currencyCode atPrice:price withQuantity:quantity andProperties:properties];
         if ([self.valuesDictionary[PurchasePropertyValue] isKindOfClass:[NSDate class]]) {
-          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased with properties {\n%@ = %@\n}", productID, self.valuesDictionary[PurchasePropertyKey], [self getStringFromDate:self.valuesDictionary[PurchasePropertyValue]]]];
+          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased with properties {\n%@ = %@\n}", productId, self.valuesDictionary[PurchasePropertyKey], [self getStringFromDate:self.valuesDictionary[PurchasePropertyValue]]]];
         } else {
-          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased with properties %@", productID, properties]];
+          [self showAlertWithMessage:[NSString localizedStringWithFormat:@"%@ purchased with properties %@", productId, properties]];
         }
       }
     }

@@ -3,20 +3,20 @@
 @implementation ContainerViewController
 
 /**
- @param segmentIndexToViewControllerID  An array where indices represent UISegmentedControl segment indices and values are the child UIViewController storyboard restoration IDs (NSString*) associated with that segment index. Restoration IDs also double as UISegmentedControl titles for a given segment.
+ @param segmentIndexToViewControllerId  An array where indices represent UISegmentedControl segment indices and values are the child UIViewController storyboard restoration IDs (NSString*) associated with that segment index. Restoration IDs also double as UISegmentedControl titles for a given segment.
  @param title The UITabBarItem title for this tab in the root UITabBarController
  @param imageName The image filename associated with the UITabBarItem image for this tab
  @param withNavigationButtons A boolean indicating whether this ContainerViewController will have News Feed and Data Flush UIBarButtonItems in the UINavigationBar
  */
-- (void)initWithArray:(NSArray *)segmentIndexToViewControllerID andTitle:(NSString *)title andImageName:(NSString *)imageName withFeedAndFlushButtons:(BOOL)hasButtons {
-  self.segmentIndexToViewControllerID = segmentIndexToViewControllerID;
+- (void)initWithArray:(NSArray *)segmentIndexToViewControllerId andTitle:(NSString *)title andImageName:(NSString *)imageName withFeedAndFlushButtons:(BOOL)hasButtons {
+  self.segmentIndexToViewControllerId = segmentIndexToViewControllerId;
   self.hasFeedAndFlushButtons = hasButtons;
   
   self.tabBarItem.title = title;
   self.tabBarItem.image = [UIImage imageNamed:imageName];
   
   // Initialize UISegmentedControl
-  self.segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentIndexToViewControllerID];
+  self.segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentIndexToViewControllerId];
   [self.segmentedControl addTarget:self action:@selector(changeViewController:) forControlEvents:UIControlEventValueChanged];
   [self.segmentedControl setSelectedSegmentIndex:0];
 }
@@ -46,10 +46,10 @@
 }
 
 - (void)instantiateChildViewControllers{
-  NSInteger numberOfChildViews = [self.segmentIndexToViewControllerID count];
+  NSInteger numberOfChildViews = [self.segmentIndexToViewControllerId count];
   self.childViewControllers = [NSMutableArray arrayWithCapacity:numberOfChildViews];
   for (int i = 0; i < numberOfChildViews; i++) {
-    self.childViewControllers[i] = [self.storyboard instantiateViewControllerWithIdentifier:self.segmentIndexToViewControllerID[i]];
+    self.childViewControllers[i] = [self.storyboard instantiateViewControllerWithIdentifier:self.segmentIndexToViewControllerId[i]];
   }
 }
 

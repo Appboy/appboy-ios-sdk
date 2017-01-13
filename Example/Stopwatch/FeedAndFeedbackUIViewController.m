@@ -153,14 +153,26 @@
 # pragma mark Feedback
 
 - (IBAction)submitInstantFeedback:(id)sender {
-  [[Appboy sharedInstance] submitFeedback:@"test@mail.com" message:@"Submitting feedback" isReportingABug:NO];
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                      message:NSLocalizedString(@"Feedback submitted", nil)
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                            otherButtonTitles:nil];
-  [alertView show];
-  alertView = nil;
+  ABKFeedback* feedback = [[ABKFeedback alloc] initWithFeedbackMessage:@"Submitting feedback"
+                                                                email:@"test@mail.com"
+                                                                isBug:NO];
+  [[Appboy sharedInstance] submitFeedback:feedback withCompletionHandler:^(ABKFeedbackSentResult feedbackSentResult) {
+    NSString *feedbackAlertMessage = nil;
+    if (feedbackSentResult != ABKFeedbackSentSuccessfully) {
+      feedbackAlertMessage = NSLocalizedString(@"Appboy.Stopwatch.feedback.fail", nil);
+    } else {
+      feedbackAlertMessage = NSLocalizedString(@"Feedback submitted", nil);
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+      UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                          message:feedbackAlertMessage
+                                                         delegate:nil
+                                                cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
+                                                otherButtonTitles:nil];
+      [alertView show];
+      alertView = nil;
+    });
+  }];
 }
 
 @end

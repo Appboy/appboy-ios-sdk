@@ -15,8 +15,6 @@
 		4E49ED0419DDE84F00ADC43F /* btn-close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ECEC19DDE84F00ADC43F /* btn-close.png */; };
 		4E49ED0519DDE84F00ADC43F /* btn-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ECED19DDE84F00ADC43F /* btn-close@2x.png */; };
 		4E49ED0619DDE84F00ADC43F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ECEE19DDE84F00ADC43F /* Default-568h@2x.png */; };
-		4E49ED0719DDE84F00ADC43F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ECEF19DDE84F00ADC43F /* Default.png */; };
-		4E49ED0819DDE84F00ADC43F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ECF019DDE84F00ADC43F /* Default@2x.png */; };
 		4E49ED0919DDE84F00ADC43F /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ECF119DDE84F00ADC43F /* facebook-icon.png */; };
 		4E49ED1819DDE84F00ADC43F /* stopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0019DDE84F00ADC43F /* stopwatch.png */; };
 		4E49ED1919DDE84F00ADC43F /* stopwatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */; };
@@ -73,6 +71,7 @@
 		D4992FEE1CD4126D007CC304 /* user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE71CD4126D007CC304 /* user@3x.png */; };
 		D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */; };
 		E02B5BE43671FE0E7550C1CE /* libPods-tvOS_TVML_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6D9C089486F8011F4C9486 /* libPods-tvOS_TVML_Stopwatch.a */; };
+		E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */; };
 		E32835B11CC6C6F200E2C2DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E32835B01CC6C6F200E2C2DE /* main.m */; };
 		E32835B41CC6C6F200E2C2DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E32835B31CC6C6F200E2C2DE /* AppDelegate.m */; };
 		E32835B71CC6C6F200E2C2DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E32835B61CC6C6F200E2C2DE /* Assets.xcassets */; };
@@ -136,8 +135,6 @@
 		4E49ECEC19DDE84F00ADC43F /* btn-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-close.png"; sourceTree = "<group>"; };
 		4E49ECED19DDE84F00ADC43F /* btn-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-close@2x.png"; sourceTree = "<group>"; };
 		4E49ECEE19DDE84F00ADC43F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4E49ECEF19DDE84F00ADC43F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		4E49ECF019DDE84F00ADC43F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4E49ECF119DDE84F00ADC43F /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon.png"; sourceTree = "<group>"; };
 		4E49ED0019DDE84F00ADC43F /* stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopwatch.png; sourceTree = "<group>"; };
 		4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch@2x.png"; sourceTree = "<group>"; };
@@ -272,6 +269,8 @@
 		D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAttributesArrayViewController.h; sourceTree = "<group>"; };
 		D890D67844E95B1B065140B8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E240A2DCC40A3A0AC31351E7 /* Pods-Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
+		E31F9E231DEB7D3400EFB62F /* OverrideEndpointDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverrideEndpointDelegate.h; sourceTree = "<group>"; };
+		E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverrideEndpointDelegate.m; sourceTree = "<group>"; };
 		E32835AD1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvOS_TVML_Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32835B01CC6C6F200E2C2DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E32835B21CC6C6F200E2C2DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -375,8 +374,6 @@
 				D4139BD51CBD88C100CA3307 /* cloud@2x.png */,
 				D4992FE31CD4126D007CC304 /* cloud@3x.png */,
 				4E49ECEE19DDE84F00ADC43F /* Default-568h@2x.png */,
-				4E49ECEF19DDE84F00ADC43F /* Default.png */,
-				4E49ECF019DDE84F00ADC43F /* Default@2x.png */,
 				4E49ECF119DDE84F00ADC43F /* facebook-icon.png */,
 				D4139BD61CBD88C100CA3307 /* IAM@2x.png */,
 				D4992FE41CD4126D007CC304 /* IAM@3x.png */,
@@ -551,6 +548,8 @@
 				D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */,
 				4EA3EE221745B9A2000E403C /* UserCells.h */,
 				4EA3EE231745B9A2000E403C /* UserCells.m */,
+				E31F9E231DEB7D3400EFB62F /* OverrideEndpointDelegate.h */,
+				E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -820,7 +819,6 @@
 				D4992FEA1CD4126D007CC304 /* cloud@3x.png in Resources */,
 				D4992FEE1CD4126D007CC304 /* user@3x.png in Resources */,
 				D4992FE81CD4126D007CC304 /* bolt@3x.png in Resources */,
-				4E49ED0719DDE84F00ADC43F /* Default.png in Resources */,
 				4E3E94F218BD5D530008C815 /* StopwatchNUIStyle.nss in Resources */,
 				D4992FEB1CD4126D007CC304 /* IAM@3x.png in Resources */,
 				4E49ED1919DDE84F00ADC43F /* stopwatch@2x.png in Resources */,
@@ -828,7 +826,6 @@
 				D4938B9A1CE3C6CC00450D78 /* appboy@2x.png in Resources */,
 				D4139BDB1CBD88C100CA3307 /* bubble@2x.png in Resources */,
 				4E49ED0319DDE84F00ADC43F /* btn-backarrow.png in Resources */,
-				4E49ED0819DDE84F00ADC43F /* Default@2x.png in Resources */,
 				E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */,
 				4E49ED0619DDE84F00ADC43F /* Default-568h@2x.png in Resources */,
 				D4139BDF1CBD88C100CA3307 /* newsfeed@2x.png in Resources */,
@@ -1031,6 +1028,7 @@
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
 				4EDB97211B3B6226003BB81D /* TwitterViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserCells.m in Sources */,
+				E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */,
 				D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

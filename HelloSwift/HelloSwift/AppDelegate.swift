@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
   
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    let deviceTokenString = String(format: "%@", deviceToken.description)
+    let deviceTokenString = String(format: "%@", deviceToken as CVarArg)
     Appboy.sharedInstance()!.registerPushToken(deviceTokenString)
   }
   

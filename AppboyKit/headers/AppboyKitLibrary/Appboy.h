@@ -15,7 +15,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.24.5"
+#define APPBOY_SDK_VERSION @"2.25.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -27,6 +27,7 @@
 @class ABKUser;
 @class ABKFeedController;
 @class ABKLocationManager;
+@class ABKFeedback;
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKAppboyEndpointDelegate;
 @protocol ABKPushURIDelegate;
@@ -82,16 +83,21 @@ extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
 
 
 /*!
- * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modify or substitute the API and Resource
+ * This key can be set to an instance of a class that extends ABKAppboyEndpointDelegate, which can be used to modify or substitute the API and Resource
  * (e.g. image) URIs used by the Appboy SDK.
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
 
 /*!
- * This key can be set to a class that extends ABKPushURIDelegate which can be used to handle deep linking 
+ * This key can be set to an instance of a class that extends ABKPushURIDelegate, which can be used to handle deep linking
  * in push in a custom way.
  */
 extern NSString *const ABKPushURIDelegateKey;
+
+/*!
+ * This key can be set to an instance of a class that conforms to the ABKInAppMessageControllerDelegate protocol, allowing it to handle in-app messages in a custom way.
+ */
+extern NSString *const ABKInAppMessageControllerDelegateKey;
 
 /*!
  * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
@@ -138,6 +144,19 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
   ABKAutomaticRequestProcessing,
   ABKAutomaticRequestProcessingExceptForDataFlush,
   ABKManualRequestProcessing
+};
+
+/*!
+ * Possible values for the result of submitting feedback:
+ *   ABKInvalidFeedback - The passed-in feedback isn't valid. Please check the validity of the ABKFeedback
+ *        object with instance method `feedbackValidation` before submitting it to Appboy.
+ *   ABKNetworkIssue - The SDK failed to send the feedback due to network issue. 
+ *   ABKFeedbackSentSuccessfully - The feedback is sent to Appboy server successfully.
+ */
+typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
+  ABKInvalidFeedback,
+  ABKNetworkIssue,
+  ABKFeedbackSentSuccessfully
 };
 
 /*
@@ -289,7 +308,7 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 - (void)shutdownServerCommunication;
 
 /*!
-* @param userID The new user's ID (from the host application).
+* @param userId The new user's ID (from the host application).
 *
 * @discussion
 * This method changes the user's ID.
@@ -325,7 +344,7 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 *  separately keeping track of the user ID you want to target while logged out and switching back to
 *  that user ID as part of your app's logout process.
 */
-- (void)changeUser:(NSString *)userID;
+- (void)changeUser:(NSString *)userId;
 
 /*!
  * @param eventName The name of the event to log.
@@ -427,6 +446,18 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 - (BOOL)submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 
 /*!
+ * @param feedback The feedback object with feedback message, email, and is-bug flag.
+ * @param completionHandler The block to execute when the feedback sending process is complete. An ABKFeedbackSentResult enum
+ * will be passed to the block indicating if the feedback was sent successfully.
+ *
+ * @discussion Submits a piece of feedback to the Appboy feedback center so that it can be handled in the Appboy dashboard.
+ * The request to submit feedback is made immediately. However, this method does not block and will return as soon as the
+ * feedback request is placed on the network queue.
+ *
+ */
+- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;
+
+/*!
  * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
  * the news feed back to Appboy with this method so that your campaign reporting features still work in the dashboard.
  */
@@ -457,6 +488,13 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
  * for that user.
  */
 - (void)requestInAppMessageRefresh;
+
+/*!
+ * @param response The response passed in from userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
+ *
+ * @discussion This method returns whether or not a UNNotification was sent from Appboy's servers.
+ */
+- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response;
 
 /*!
  * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or

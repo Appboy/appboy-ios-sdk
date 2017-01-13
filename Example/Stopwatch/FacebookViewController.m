@@ -3,7 +3,7 @@
 #import <Social/Social.h>
 #import "AppboyKit.h"
 
-static NSString *const FacebookIDPlistKey = @"FacebookAppID";
+static NSString *const FacebookIdPlistKey = @"FacebookAppID";
 static NSString *const FacebookUserProfileEndpointUrl = @"https://graph.facebook.com/v2.6/me";
 static NSString *const FacebookLikesEndpointUrl = @"https://graph.facebook.com/v2.6/me/likes";
 static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com/v2.6/me/friends";
@@ -27,11 +27,11 @@ static NSString *const FacebookFriendsEndpointUrl = @"https://graph.facebook.com
 - (void)promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData {
   ACAccountStore *store = [[ACAccountStore alloc] init];
   // Please put your Facebook ID in the app's plist file with key "FacebookAppID"
-  NSString *facebookID = [[NSBundle mainBundle] infoDictionary][FacebookIDPlistKey];
+  NSString *facebookId = [[NSBundle mainBundle] infoDictionary][FacebookIdPlistKey];
   // Here you can change Facebook read permission.
   NSArray *facebookPermission = @[@"user_about_me", @"email", @"user_hometown", @"user_likes", @"user_birthday"];
   ACAccountType *facebookAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
-  NSDictionary *options = @{ACFacebookAppIdKey : facebookID, ACFacebookPermissionsKey : facebookPermission};
+  NSDictionary *options = @{ACFacebookAppIdKey : facebookId, ACFacebookPermissionsKey : facebookPermission};
   
   void (^requestAccessCompletionBlock)(ACAccount *, NSString *) = ^(ACAccount *account,  NSString *endPointUrl) {
     // Now make an authenticated request to our endpoint

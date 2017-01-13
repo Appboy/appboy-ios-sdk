@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSInteger statusesCount;
 
 /*
- * @param twitterID The value returned from twitter user API with key "id". Please
+ * @param twitterId The value returned from twitter user API with key "id". Please
  * refer to https://dev.twitter.com/overview/api/users for more information.
  */
 @property NSInteger twitterID;
