@@ -99,7 +99,7 @@
 ## 2.24.0
 
 ##### Breaking:
- - Updates the SDK to requres XCode 8.
+ - Updates the SDK to require XCode 8.
  - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Appboy iOS integrations.  Please see our updated documentation [here](https://www.appboy.com/documentation/iOS/#step-4-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update.
 
 ##### Added:
