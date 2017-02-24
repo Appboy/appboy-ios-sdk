@@ -15,7 +15,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.25.0"
+#define APPBOY_SDK_VERSION @"2.26.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -29,6 +29,7 @@
 @class ABKLocationManager;
 @class ABKFeedback;
 @protocol ABKInAppMessageControllerDelegate;
+@protocol ABKIDFADelegate;
 @protocol ABKAppboyEndpointDelegate;
 @protocol ABKPushURIDelegate;
 
@@ -81,6 +82,10 @@ extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
  */
 extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
 
+/*!
+ * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to to Appboy.
+ */
+extern NSString *const ABKIDFADelegateKey;
 
 /*!
  * This key can be set to an instance of a class that extends ABKAppboyEndpointDelegate, which can be used to modify or substitute the API and Resource
@@ -174,6 +179,11 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 + (nullable Appboy *)sharedInstance;
 
 /*!
+ * Get the Appboy singleton.  Throws an exception if accessed before startWithApiKey: is called.
+ */
++ (nonnull Appboy *)unsafeInstance;
+
+/*!
  * @param apiKey The app's API key
  * @param inApplication The current app
  * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
@@ -237,6 +247,11 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
  */
 @property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
+
+/*!
+ * A class extending ABKIDFADelegate can be set to provide the IDFA to Appboy.
+ */
+@property (nonatomic, strong, nullable) id<ABKIDFADelegate> idfaDelegate;
 
 #if !TARGET_OS_TV
 /*!

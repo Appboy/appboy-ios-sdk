@@ -129,7 +129,7 @@
   // Here we set self as the in-app message controller delegate to enable in-app message customization on this page.
   [Appboy sharedInstance].inAppMessageController.delegate = self;
   
-  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %d", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
+  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %ld", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -156,7 +156,7 @@
 }
 
 - (void)updateRemainingIAMLabel {
-  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %d", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
+  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %ld", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
 }
 
 @end

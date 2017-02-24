@@ -14,7 +14,7 @@
   
   NSMutableString *modifiedEndpoint = [appboyApiEndpoint mutableCopy];
   NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:
-                                @"https.*\.com" options:0 error:nil];
+                                @"https.*\\.com" options:0 error:nil];
   
   [regex replaceMatchesInString:modifiedEndpoint options:0 range:NSMakeRange(0, [modifiedEndpoint length]) withTemplate:self.appboyEndpoint];
 

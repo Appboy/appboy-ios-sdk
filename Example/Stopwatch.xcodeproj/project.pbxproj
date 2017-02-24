@@ -85,6 +85,7 @@
 		E397F4171CC5BA540095A3ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E397F4161CC5BA540095A3ED /* ViewController.m */; };
 		E397F41A1CC5BA550095A3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E397F4181CC5BA540095A3ED /* Main.storyboard */; };
 		E397F41C1CC5BA550095A3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397F41B1CC5BA550095A3ED /* Assets.xcassets */; };
+		E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,8 @@
 		E397F4191CC5BA550095A3ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E397F41B1CC5BA550095A3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E397F41D1CC5BA550095A3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3A8A3621E5E6C07002E8821 /* IDFADelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDFADelegate.h; sourceTree = "<group>"; };
+		E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFADelegate.m; sourceTree = "<group>"; };
 		E3ED8D401CE54C0300C23B99 /* AppboyTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyTVOSKit.framework; path = ../Public/AppboyTVOSKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -550,6 +553,8 @@
 				4EA3EE231745B9A2000E403C /* UserCells.m */,
 				E31F9E231DEB7D3400EFB62F /* OverrideEndpointDelegate.h */,
 				E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */,
+				E3A8A3621E5E6C07002E8821 /* IDFADelegate.h */,
+				E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -1025,6 +1030,7 @@
 				D411F3121CD0355200100702 /* CustomTabBarController.m in Sources */,
 				4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */,
 				4E7D1C7E1A9FE1990087DB64 /* FacebookViewController.m in Sources */,
+				E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
 				4EDB97211B3B6226003BB81D /* TwitterViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserCells.m in Sources */,
@@ -1166,6 +1172,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"PUSH_DEV=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1200,11 +1207,7 @@
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/CrittercismSDK",
-					"$(PROJECT_DIR)/CrittercismSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1300,11 +1303,7 @@
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/CrittercismSDK",
-					"$(PROJECT_DIR)/CrittercismSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = StopwatchDevelop;
@@ -1333,11 +1332,7 @@
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/CrittercismSDK",
-					"$(PROJECT_DIR)/CrittercismSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = Stopwatch;

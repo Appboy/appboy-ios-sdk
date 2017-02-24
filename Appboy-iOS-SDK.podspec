@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.25.0"
+  s.version      = "2.26.0"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.appboy.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -10,14 +10,27 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
   s.requires_arc = true
   s.documentation_url = 'http://documentation.appboy.com/'
-  s.library = 'z'
-  s.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreImage', 'CoreText'
-  s.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'StoreKit','UserNotifications'
-  s.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/*.m'
   s.exclude_files = 'AppboyKit/**/*.txt'
-  s.resource = 'AppboyKit/Appboy.bundle'
   s.preserve_paths = 'AppboyKit/**/*.*'
-  s.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
-  s.dependency 'SDWebImage', '~>3.7'
+  s.default_subspec = 'UI'
+
+  s.subspec 'Core' do |sc|
+    sc.ios.library = 'z'
+    sc.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreText'
+    sc.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/*.m'
+    sc.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
+    sc.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'StoreKit','UserNotifications'
+    sc.resource = 'AppboyKit/Appboy.bundle'
+  end
+
+  s.subspec 'UI' do |sui|
+    sui.ios.library = 'z'
+    sui.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreImage', 'CoreText'
+    sui.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/*.m'
+    sui.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
+    sui.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'StoreKit','UserNotifications'
+    sui.resource = 'AppboyKit/Appboy.bundle'
+    sui.dependency 'SDWebImage/GIF', '~>4.0'
+  end
 end

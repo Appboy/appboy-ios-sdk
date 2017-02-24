@@ -4,8 +4,14 @@
 #import "ABKPushUtils.h"
 #import <Crittercism/Crittercism.h>
 #import "OverrideEndpointDelegate.h"
+#import "IDFADelegate.h"
+#import "ABKThemableFeedNavigationBar.h"
 
+#ifdef PUSH_DEV
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
+#else
+static NSString *const AppboyApiKey = @"appboy-sample-ios";
+#endif
 static NSString *const CrittercismAppId = @"51b67d141386207417000002";
 static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
@@ -31,6 +37,9 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   if (endpointDelegate != nil) {
     appboyOptions[ABKAppboyEndpointDelegateKey] = endpointDelegate;
   }
+  
+  IDFADelegate *idfaDelegate = [[IDFADelegate alloc] init];
+  appboyOptions[ABKIDFADelegateKey] = idfaDelegate;
 
   // Set ABKInAppMessageControllerDelegate on startup
   BOOL setInAppDelegate = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
@@ -62,6 +71,10 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
   // feedback form and news feed).
   [Appboy sharedInstance].useNUITheming = YES;
+  
+  // Set feed navigation bar to opaque green
+  [[ABKThemableFeedNavigationBar appearance] setTranslucent:NO];
+  [[ABKThemableFeedNavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.25 green:0.81 blue:0.50 alpha:1.0]];
   
   [self setUpRemoteNotification];
   return YES;

@@ -135,7 +135,7 @@
   if (!self.setValuesArray) {
     self.setValuesArray = [[NSMutableArray alloc] init];
   }
-  int valuesArrayIndex = self.setValuesArray.count;
+  NSInteger valuesArrayIndex = self.setValuesArray.count;
   [self.setValuesArray insertObject: [NSString string] atIndex:valuesArrayIndex];
   NSIndexPath *indexPath = [NSIndexPath indexPathForRow:valuesArrayIndex inSection:0];
   [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];

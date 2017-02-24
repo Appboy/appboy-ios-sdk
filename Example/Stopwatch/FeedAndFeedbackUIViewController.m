@@ -34,7 +34,7 @@
 #pragma mark News Feed Card Count
 
 - (void)feedUpdated:(NSNotification *)notification {
-  self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Feed Cards: %d / %d", [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll], [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll]];
+  self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Feed Cards: %ld / %ld", [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll], [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll]];
   
   // Update the application icon badge count to reflect the number of unread news feed cards
   [UIApplication sharedApplication].applicationIconBadgeNumber = [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll];

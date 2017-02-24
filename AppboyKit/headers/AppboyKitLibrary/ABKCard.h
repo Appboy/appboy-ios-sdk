@@ -44,6 +44,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nullable) NSDictionary *extras;
 
+//Optional:
+/*
+ * The URL string that will be opened after the card is clicked on.
+ */
+@property (copy, nullable) NSString *urlString;
+
 /*
  * @param cardDictionary The dictionary for card deserialization.`
  *

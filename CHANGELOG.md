@@ -29,18 +29,37 @@
  - Removal 2
  -->
 
+## 2.26.0
+
+##### Breaking:
+ - Adds support for SDWebImage version 4.0.0 with GIF support. SDWebImage version 3.x will not be supported from this version on. Please make sure you are using the correct version of SDWebImage.framework.  Note: SDWebImage 4.0.0 relies on FLAnimatedImage - users integrating in ways besides CocoaPods should ensure they link the FLAnimatedImage framework if they want GIF support.
+ - Removes the `url` property from subclasses of `ABKCard`. This property has been renamed to `urlString` and moved onto the `ABKCard` superclass.
+
+##### Added:
+ - Adds Cocoapods subspecs "Core" and "UI". 
+   - The "UI" subspsec has the full feature set of the current SDK. This is the default subspec when no subspec is specified in the Podfile.
+   - The "Core" subspec removes the SDWebImage framework dependency. This is for apps who do not use any Appboy UI that leverages images (News Feed, in-app messages). If you use the "Core" subspec, in-app messages with images will not display, and the News Feed will render with plain white images.
+ - Makes `ABKThemableFeedNavigationBar.h` and `ABKNavigationBar.h` public.
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/68
+ - Adds an `unsafeInstance` method that returns a nonoptional `Appboy` instance. If used before calling `startWithApiKey:` an exception will be thrown. 
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/45.
+ - Adds `ABKIDFADelegate` protocol that can be used to create a delegate to pass Appboy the IDFA in `startWithApiKey:` in the `appboyOptions` dictionary under the `ABKIDFADelegateKey` key.  Alternative to existinng `ABKIdentifierForAdvertisingProvider` compile flag solution.
+
+##### Changed:
+ - Disables the `-webkit-touch-callout` property on HTML in-app messages. Long presses and 3D Touch on links will no longer display pop-ups with additional link information.
+
 ## 2.25.0
 
 ##### Added:
-- Adds the ability to set the `ABKInAppMessageControllerDelegate` when the SDK starts by passing a delegate object to the `ABKInAppMessageControllerDelegateKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`. 
+- Adds the ability to set the `ABKInAppMessageControllerDelegate` when the SDK starts by passing a delegate object to the `ABKInAppMessageControllerDelegateKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`.
   - This is the recommended way to set the `ABKInAppMessageControllerDelegate` and circumvents a potential race condition where in-app messages can be shown before the delegate has been set.
-- Exposes the ABKFeedback object and adds a new method `- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;` in `Appboy`. The new method accepts a completion handler which receives an ABKFeedbackSentResult enum as feedback sending result. 
+- Exposes the ABKFeedback object and adds a new method `- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;` in `Appboy`. The new method accepts a completion handler which receives an ABKFeedbackSentResult enum as feedback sending result.
   - The possible feedback sending results are: invalid feedback object(ABKInvalidFeedback), fail to send feedback(ABKNetworkIssue), and feedback sent successfully(ABKFeedbackSentSuccessfully).
 - Adds the utility method `- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response;` to `Appboy`. This method is compatible with the `UserNotifications` framework and returns whether a push notification was sent from Appboy's server.
   - Those using `- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;` who have integrated the `UserNotifications` framework should use this method instead.
 
 ##### Fixed:
-- Changes the ABKInAppMessageButton from a `UIButton` object to a pure data model class in `NSObject`. 
+- Changes the ABKInAppMessageButton from a `UIButton` object to a pure data model class in `NSObject`.
    - This resolves the issue https://github.com/Appboy/appboy-ios-sdk/issues/97.
 
 ##### Changed:

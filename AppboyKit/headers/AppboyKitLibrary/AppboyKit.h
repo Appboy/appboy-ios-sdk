@@ -1,5 +1,6 @@
 #import "Appboy.h"
 #import "ABKUser.h"
+#import "ABKIDFADelegate.h"
 #import "ABKAppboyEndpointDelegate.h"
 #import "ABKFacebookUser.h"
 #import "ABKTwitterUser.h"

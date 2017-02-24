@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     center.delegate = self
     UIApplication.shared.registerForRemoteNotifications()
     
+    // Sample usage of unsafeInstance.  Note: startWithApiKey: MUST be called before calling unsafeInstance or an exception will be thrown.  
+    // Note: this is a nonoptional alternative to sharedInstance()
+    Appboy.unsafeInstance().user.setCustomAttributeWithKey("unsafeCustomAttributeSwift", andStringValue: "unsafeCustomAttributeSwift value")
+
     return true
   }
 
