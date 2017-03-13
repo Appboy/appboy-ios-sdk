@@ -12,7 +12,6 @@ var searchData=
   ['setgender_3a',['setGender:',['../interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40',1,'ABKUser']]],
   ['setinappmessagebuttons_3a',['setInAppMessageButtons:',['../interface_a_b_k_in_app_message_immersive.html#aa5248ecdd2e20db9b2461ca491239c5b',1,'ABKInAppMessageImmersive']]],
   ['setinappmessageclickaction_3awithuri_3a',['setInAppMessageClickAction:withURI:',['../interface_a_b_k_in_app_message.html#a8934add7d8cbca7a8bafa1596b4be5c6',1,'ABKInAppMessage']]],
-  ['setissubscribedtoemails_3a',['setIsSubscribedToEmails:',['../interface_a_b_k_user.html#a6450dd6bd805978fcb182911560d8f3c',1,'ABKUser']]],
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:',['../interface_a_b_k_user.html#a1da5a1245765b2aa3f9d1e2c3322c6bd',1,'ABKUser']]],
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3aaltitude_3averticalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:',['../interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a',1,'ABKUser']]],
   ['setpushnotificationsubscriptiontype_3a',['setPushNotificationSubscriptionType:',['../interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3',1,'ABKUser']]],
