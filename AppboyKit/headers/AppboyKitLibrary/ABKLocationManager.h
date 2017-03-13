@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (readonly) BOOL disableLocationTracking;
 
-- (instancetype)initWithServerConfig:(ABKServerConfig *)serverConfig andAppboyOptions:(NSDictionary *)appboyOptions;
-
 /*!
  * Calling this method gives Appboy permission to request WhenInUse authorization on your behalf the next time we attempt to collect
  * location in the foreground.

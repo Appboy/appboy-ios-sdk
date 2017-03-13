@@ -13,12 +13,5 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)getApiEndpoint:(NSString *)appboyApiEndpoint;
 
-@optional
-/*!
- * This method is deprecated. Appboy SDK will not call this delegate method no matter it is implemented or not.
- * Please do not use or implement it.
- */
-- (NSString *)getResourceEndpoint:(NSString *)appboyResourceEndpoint __deprecated;
-
 @end
 NS_ASSUME_NONNULL_END

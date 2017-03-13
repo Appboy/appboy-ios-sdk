@@ -57,6 +57,34 @@
             </objects>
             <point key="canvasLocation" x="594" y="-2840"/>
         </scene>
+        <!--Geofences View Controller-->
+        <scene sceneID="ecb-2W-QUo">
+            <objects>
+                <viewController id="WvD-PZ-pUN" customClass="GeofencesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qUf-du-1cE"/>
+                        <viewControllerLayoutGuide type="bottom" id="wC8-jx-2Ax"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D6c-Y2-opW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lou-kK-19X">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HXA-BH-Hte"/>
+                    <connections>
+                        <outlet property="mapView" destination="Lou-kK-19X" id="rut-WN-uU0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKF-Tb-uuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151.5" y="-3626.5"/>
+        </scene>
         <!--Misc View Controller-->
         <scene sceneID="WJM-fM-e7F">
             <objects>
@@ -73,7 +101,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fba-Vc-gZu" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="681"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appboy Version:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNO-pV-BHh">
                                                 <rect key="frame" x="80" y="10" width="100" height="38"/>
@@ -215,8 +243,17 @@
                                                     <action selector="setInAppDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="bFy-lY-zOS"/>
                                                 </connections>
                                             </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBd-3z-vDi">
+                                                <rect key="frame" x="86.5" y="623" width="202" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                <state key="normal" title="See Registered Geofences"/>
+                                                <connections>
+                                                    <segue destination="WvD-PZ-pUN" kind="push" id="Rzh-GU-UzO"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="VBd-3z-vDi" firstAttribute="centerX" secondItem="fba-Vc-gZu" secondAttribute="centerX" id="3M9-MJ-WE6"/>
                                             <constraint firstItem="Szq-qJ-HE9" firstAttribute="top" secondItem="z8J-GY-Dyi" secondAttribute="bottom" constant="10" id="4FK-vN-l2I"/>
                                             <constraint firstItem="Dg7-JD-KCe" firstAttribute="top" secondItem="DLG-60-Vzq" secondAttribute="bottom" constant="10" id="4fE-Lh-2mo"/>
                                             <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="7H5-ee-dQb" secondAttribute="centerX" id="77E-9o-hPb"/>
@@ -226,6 +263,7 @@
                                             <constraint firstItem="0xO-D6-9YS" firstAttribute="trailing" secondItem="pKk-eq-dcv" secondAttribute="trailing" id="DHS-C8-bzu"/>
                                             <constraint firstItem="0xO-D6-9YS" firstAttribute="leading" secondItem="Vz4-x6-sYU" secondAttribute="trailing" constant="15" id="EYJ-f2-vHL"/>
                                             <constraint firstItem="DLG-60-Vzq" firstAttribute="height" secondItem="wNO-pV-BHh" secondAttribute="height" id="GpY-xi-GNn"/>
+                                            <constraint firstItem="VBd-3z-vDi" firstAttribute="top" secondItem="0xO-D6-9YS" secondAttribute="bottom" constant="10" id="Lfk-U9-eiW"/>
                                             <constraint firstItem="Dg7-JD-KCe" firstAttribute="height" secondItem="wNO-pV-BHh" secondAttribute="height" id="MtI-Xx-mmY"/>
                                             <constraint firstItem="z8J-GY-Dyi" firstAttribute="height" secondItem="wNO-pV-BHh" secondAttribute="height" id="NCl-3f-QhC"/>
                                             <constraint firstItem="7H5-ee-dQb" firstAttribute="top" secondItem="7i6-27-s0b" secondAttribute="bottom" constant="10" id="OUe-jF-Zev"/>
@@ -243,12 +281,12 @@
                                             <constraint firstItem="Vz4-x6-sYU" firstAttribute="top" secondItem="vQB-sU-MHh" secondAttribute="bottom" constant="33" id="l8e-OJ-tYO"/>
                                             <constraint firstItem="0xO-D6-9YS" firstAttribute="centerY" secondItem="Vz4-x6-sYU" secondAttribute="centerY" id="mHZ-P7-yMm"/>
                                             <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="Szq-qJ-HE9" secondAttribute="centerX" id="nOY-xB-b0R"/>
+                                            <constraint firstAttribute="bottom" secondItem="VBd-3z-vDi" secondAttribute="bottom" constant="20" id="nks-AR-w73"/>
                                             <constraint firstItem="wNO-pV-BHh" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="80" id="o1a-oB-0Na"/>
                                             <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="F6w-iv-ktD" secondAttribute="centerX" id="oop-ZS-PjZ"/>
                                             <constraint firstItem="vQB-sU-MHh" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="10" id="tX6-M2-Rfv"/>
                                             <constraint firstItem="vQB-sU-MHh" firstAttribute="top" secondItem="Dg7-JD-KCe" secondAttribute="bottom" constant="10" id="upz-rx-WIE"/>
                                             <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="7i6-27-s0b" secondAttribute="centerX" id="zX5-V5-ygY"/>
-                                            <constraint firstItem="Vz4-x6-sYU" firstAttribute="bottom" secondItem="fba-Vc-gZu" secondAttribute="bottom" constant="-20" id="zcR-vn-2AZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1846,7 +1884,7 @@
                 <navigationController storyboardIdentifier="ContainerNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2pe-V5-asx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="aP6-j8-blf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="1jG-xR-sYh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1jG-xR-sYh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

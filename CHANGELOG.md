@@ -28,6 +28,29 @@
  - Removal 1
  - Removal 2
  -->
+## 2.27.0
+
+##### Breaking:
+ - Removes the following deprecated items:  the `bio` field of `ABKUser`, the `setIsSubscribedToEmails:` method of `ABKUser`, and the `getResourceEndpoint:` method of the `ABKAppboyEndpointDelegate` protocol.
+
+##### Added:
+ - Added support for registering geofences and messaging on geofence events. Please reach out to success@appboy.com for more information about this feature.
+ - Adds Appboy default push categories which can be fetched from `ABKPushUtils`. 
+   - To use the Appboy default push categories, you need to manually add the Appboy categories when you register for push. You can get the Appboy categories from `[ABKPushUtils getAppboyUNNotificationCategorySet]` or `[ABKPushUtils getAppboyUIUserNotificationCategorySet]`.
+   - In this version, we add four sets of push action buttons: accept/decline, yes/no, confirm/cancel, more. These will be available as button sets on the dashboard when creating an iOS push campaign. 
+   - All Appboy push action buttons support localization.
+ - Adds support for web link and deep link handling of push action buttons.
+ 
+##### Fixed:
+ - Fixes the issue where the combination of the Core subspec of the SDK and a non-supported version of SDWebImage framework can cause apps to crash.
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/104.
+
+##### Changed:
+ - HTML in-app messages now log body click analytics on all links that are not `appboy://customEvent` and do not include the `abButtonId` query field. Previously, no body click analytics were logged.
+
+##### Removed:
+ - Removes deprecated method `- (NSString *)getResourceEndpoint:(NSString *)appboyResourceEndpoint` from `ABKAppboyEndpointDelegate`.
+ - Removes deprecated property `bio` and deprecated method `- (BOOL)setIsSubscribedToEmails:(BOOL)subscribed` from `ABKUser`.
 
 ## 2.26.0
 
@@ -36,12 +59,12 @@
  - Removes the `url` property from subclasses of `ABKCard`. This property has been renamed to `urlString` and moved onto the `ABKCard` superclass.
 
 ##### Added:
- - Adds Cocoapods subspecs "Core" and "UI". 
+ - Adds Cocoapods subspecs "Core" and "UI".
    - The "UI" subspsec has the full feature set of the current SDK. This is the default subspec when no subspec is specified in the Podfile.
    - The "Core" subspec removes the SDWebImage framework dependency. This is for apps who do not use any Appboy UI that leverages images (News Feed, in-app messages). If you use the "Core" subspec, in-app messages with images will not display, and the News Feed will render with plain white images.
  - Makes `ABKThemableFeedNavigationBar.h` and `ABKNavigationBar.h` public.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/68
- - Adds an `unsafeInstance` method that returns a nonoptional `Appboy` instance. If used before calling `startWithApiKey:` an exception will be thrown. 
+ - Adds an `unsafeInstance` method that returns a nonoptional `Appboy` instance. If used before calling `startWithApiKey:` an exception will be thrown.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/45.
  - Adds `ABKIDFADelegate` protocol that can be used to create a delegate to pass Appboy the IDFA in `startWithApiKey:` in the `appboyOptions` dictionary under the `ABKIDFADelegateKey` key.  Alternative to existinng `ABKIdentifierForAdvertisingProvider` compile flag solution.
 
@@ -59,11 +82,11 @@
   - Those using `- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;` who have integrated the `UserNotifications` framework should use this method instead.
 
 ##### Fixed:
-- Changes the ABKInAppMessageButton from a `UIButton` object to a pure data model class in `NSObject`.
+ - Changes the ABKInAppMessageButton from a `UIButton` object to a pure data model class in `NSObject`.
    - This resolves the issue https://github.com/Appboy/appboy-ios-sdk/issues/97.
 
 ##### Changed:
-- Adds more protection around triggered in-app message display.
+ - Adds more protection around triggered in-app message display.
 
 ## 2.24.5
 

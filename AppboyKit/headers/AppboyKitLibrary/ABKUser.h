@@ -100,11 +100,6 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 @property (nonatomic, copy, nullable) NSString *homeCity;
 
 /*!
- * The User's bio (String)
- */
-@property (nonatomic, copy, nullable) NSString *bio DEPRECATED_ATTRIBUTE;
-
-/*!
  * The User's phone number (String)
  */
 @property (nonatomic, copy, nullable) NSString *phone;
@@ -143,15 +138,6 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * @return YES if the user gender is set properly
  */
 - (BOOL)setGender:(ABKUserGenderType)gender;
-
-
-/*!
- * Deprecated: Use setEmailNotificationSubscriptionType instead.
- *
- * @param subscribed Whether or not this user should be subscribed to emails
- * @return YES if isSubscribedToEmail is set the same as parameter subscribed
- */
-- (BOOL)setIsSubscribedToEmails:(BOOL)subscribed __deprecated;
 
 /*!
  * Sets whether or not the user should be sent email campaigns. Setting it to unsubscribed opts the user out of

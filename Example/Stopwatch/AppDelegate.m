@@ -110,7 +110,9 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   likeCategory.identifier = @"LIKE_CATEGORY";
   [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
   
-  NSSet *categories = [NSSet setWithObjects:likeCategory, nil];
+  // Adding Appboy default categories
+  NSMutableSet *categories = [NSMutableSet setWithSet:[ABKPushUtils getAppboyUIUserNotificationCategorySet]];
+  [categories addObject:likeCategory];
   UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
   [[UIApplication sharedApplication] registerForRemoteNotifications];
   [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
@@ -135,7 +137,10 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
                                                                                 actions:@[likeAction, unlikeAction]
                                                                       intentIdentifiers:@[]
                                                                                 options:0];
-  [center setNotificationCategories:[NSSet setWithObject:likeCategory]];
+  // Adding Appboy default categories
+  NSMutableSet *categories = [NSMutableSet setWithSet:[ABKPushUtils getAppboyUNNotificationCategorySet]];
+  [categories addObject:likeCategory];
+  [center setNotificationCategories:categories];
   [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
@@ -188,6 +193,11 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   }
 }
 
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+   NSLog(@"application:handleActionWithIdentifier:forRemoteNotification:completionHandler: with identifier %@", identifier);
+  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
+}
+
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   /*
    Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -231,7 +241,7 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
   [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-  NSLog(@"Application delegate method userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: is called with user info: %@", response);
+  NSLog(@"Application delegate method userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: is called with user info: %@", response.notification.request.content.userInfo);
 
   if ([[Appboy sharedInstance] userNotificationWasSentFromAppboy:response]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
