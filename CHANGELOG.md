@@ -28,6 +28,14 @@
  - Removal 1
  - Removal 2
  -->
+## 2.28.0
+
+##### Breaking:
+ - Removes support for watchOS 1, including Appboy WatchKit SDK and all public APIs for watchOS in Appboy iOS SDK. 
+
+##### Added:
+ - Added `ABKSDWebImageProxy` to access the SDWebImage framework. This will prevent the Core subspec of the SDK from calling any SDWebImage methods directly.
+
 ## 2.27.0
 
 ##### Breaking:
@@ -47,6 +55,10 @@
 
 ##### Changed:
  - HTML in-app messages now log body click analytics on all links that are not `appboy://customEvent` and do not include the `abButtonId` query field. Previously, no body click analytics were logged.
+
+##### Removed:
+ - Removes deprecated method `- (NSString *)getResourceEndpoint:(NSString *)appboyResourceEndpoint` from `ABKAppboyEndpointDelegate`.
+ - Removes deprecated property `bio` and deprecated method `- (BOOL)setIsSubscribedToEmails:(BOOL)subscribed` from `ABKUser`.
 
 ## 2.26.0
 

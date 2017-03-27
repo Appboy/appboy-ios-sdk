@@ -53,4 +53,7 @@
 
 // IDFA
 #import "ABKIdentifierForAdvertisingProvider.h"
+
+// SDWebImage
+#import "ABKSDWebImageProxy.h"
 #endif
