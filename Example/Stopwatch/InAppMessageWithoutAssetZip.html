@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+    body {
+      background: transparent;
+      font-family: "Roboto", sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      color: #333;
+      text-align: left;
+      background-color: rgba(128,255,128,.98);
+    }
+    .box {
+      border-radius: 2px;
+      width: 100%;
+      height: 100%;
+      min-width: 220px;
+      min-height: 220px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    a, p {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #0606e0;
+      padding: 20px;
+    }
+    div.relativeLeft {
+      position: relative;
+      top: 0px;
+      right: 0;
+      width: 0px;
+      height: 0px;
+    }
+    div.relativeRight {
+      position: relative;
+      float: right;
+    }
+    div.relativeTopRight {
+      position: relative;
+      float: top;
+      float: right;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="relativeTopRight">
+        <a href="appboy://close">X</a>
+      </div>
+      <p>This is an HTML IAM without a zip file.</p>
+      <a href="https://www.appboy.com?abExternalOpen=false&abButtonId=1">Visit Appboy.com</a>
+      <a href="mailto:stopwatch@appboy.com">Email Stopwatch</a>
+      <a href="appboy://feed">Open the Newsfeed</a>
+      <button onclick="window.location = \'appboy://customEvent?name=iOSHtmlIamCustomEvent&pOne=pTwo\';">Log Custom Event</button>
+      <img src="https://appboy-images.com/appboy/communication/marketing/slide_up/slide_up_message_parameters/images/55e0c42664617307440c0000/147326cf775c7ce6f24ad5ad731254f040ed97f7/original.?1440793642" width="100%">
+        <div class="relativeLeft">
+          <a href="https://twitter.com/appboy?abButtonId=0&abExternalOpen=true">Appboy Twitter</a>
+        </div>
+        <div class="relativeRight">
+          <a href="appboy://close">Close</a>
+        </div>
+        </div>
+  </body>
+</html>

@@ -9,6 +9,7 @@
 @property IBOutlet UITextField *apiKeyTextField;
 @property IBOutlet UITextField *endointTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *inAppMessageDelegateSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *urlDelegateSwitch;
 
 - (IBAction)flushAppboyData:(id)sender;
 - (IBAction)changeAppboyFlushMode:(id)sender;
@@ -16,5 +17,6 @@
 - (IBAction)launchCachedFilesAlertView:(id)sender;
 - (IBAction)logSingleLocation:(id)sender;
 - (IBAction)setInAppDelegateSwitchChanged:(id)sender;
+- (IBAction)urlDelegateSwitchChanged:(id)sender;
 
 @end

@@ -89,11 +89,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nullable) NSURL *uri;
 
 /*!
- * When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES,
- * the uri will be opened in an external web browser app. If this property is set to NO, the uri will be opened in a
- * modal UIWebView inside the app.
+ * When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES, 
+ * the URI will be opened in a modal UIWebView inside the app. If this property is set to NO, the URI will be opened by
+ * the OS and web URIs will be opened in an external web browser app.
+ *
+ * This property defaults to YES on ABKInAppMessageHTML subclasses and NO on all other ABKInAppMessage subclasses.
  */
-@property BOOL shouldOpenURIExternally;
+@property BOOL openUrlInWebView;
 
 /*!
  * inAppMessageDismissType defines the dismissal behavior of the in-app message.

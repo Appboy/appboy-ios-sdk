@@ -4,6 +4,7 @@
  * Appboy Public API: ABKPushURIDelegate
  */
 NS_ASSUME_NONNULL_BEGIN
+__deprecated_msg("Use ABKURLDelegate instead.")
 @protocol ABKPushURIDelegate <NSObject>
 /*!
  * @param URIString The URI string in the Appboy push payload.

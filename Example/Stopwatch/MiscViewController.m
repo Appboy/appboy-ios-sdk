@@ -16,6 +16,7 @@
   self.apiKeyTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideApiKeyStorageKey];
   self.endointTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideEndpointStorageKey];
   self.inAppMessageDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
+  self.urlDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetURLDelegateKey];
 }
 
 /* Data Flush Settings */
@@ -122,13 +123,9 @@
 - (IBAction)rebootAndApplyEnvironment:(id)sender {
   [[NSUserDefaults standardUserDefaults] setObject:self.apiKeyTextField.text forKey:OverrideApiKeyStorageKey];
   [[NSUserDefaults standardUserDefaults] setObject:self.endointTextField.text forKey:OverrideEndpointStorageKey];
-  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Environment set"
-                                                     message:@"Force Stop and Open to Apply"
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-  [theAlert show];
+  [self showForceCloseAlertWithTitle:@"Environment Set"];
 }
+
 - (NSArray *)getDirectoryContentsWithPath:(NSString *)path {
   NSMutableArray *returnArray = [NSMutableArray array];
   NSArray *subpaths = [[NSFileManager defaultManager] subpathsAtPath:path];
@@ -151,18 +148,31 @@
 - (IBAction)setInAppDelegateSwitchChanged:(id)sender {
   [[NSUserDefaults standardUserDefaults] setBool:self.inAppMessageDelegateSwitch.on forKey:SetInAppMessageControllerDelegateKey];
   NSString *switchStatus = (self.inAppMessageDelegateSwitch.on) ? @"Set" : @"Unset";
-  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"In-App Message Controller Delegate %@", switchStatus]
-                                                     message:@"Force Close App and Re-Open to Apply"
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-  [theAlert show];
+  NSString *alertTitle = [NSString stringWithFormat:@"In-App Message Controller Delegate %@", switchStatus];
+  [self showForceCloseAlertWithTitle:alertTitle];
+}
+
+- (IBAction)urlDelegateSwitchChanged:(id)sender {
+  [[NSUserDefaults standardUserDefaults] setBool:self.urlDelegateSwitch.on forKey:SetURLDelegateKey];
+  NSString *switchStatus = (self.urlDelegateSwitch.on) ? @"Set" : @"Unset";
+  NSString *alertTitle = [NSString stringWithFormat:@"URL Delegate %@", switchStatus];
+  [self showForceCloseAlertWithTitle:alertTitle];
 }
 
 /* Location Tracking */
 
 - (IBAction)logSingleLocation:(id)sender {
   [[Appboy sharedInstance].locationManager logSingleLocation];
+}
+
+- (void)showForceCloseAlertWithTitle:(NSString *)title {
+  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:title
+                                                     message:@"Force Close App and Re-Open to Apply"
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+  [theAlert show];
+  theAlert = nil;
 }
 
 @end

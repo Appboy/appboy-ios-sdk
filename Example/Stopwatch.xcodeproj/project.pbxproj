@@ -60,6 +60,7 @@
 		D4139BE01CBD88C100CA3307 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD91CBD88C100CA3307 /* user@2x.png */; };
 		D4139BEC1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */; };
 		D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41D8F731CB70A4600D622EF /* ContainerViewController.m */; };
+		D464B7EC1E523D2900118BA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D464B7EB1E523D2900118BA9 /* GoogleService-Info.plist */; };
 		D4938B991CE3C6CC00450D78 /* appboy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4938B971CE3C6CC00450D78 /* appboy@3x.png */; };
 		D4938B9A1CE3C6CC00450D78 /* appboy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4938B981CE3C6CC00450D78 /* appboy@2x.png */; };
 		D4992FE81CD4126D007CC304 /* bolt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE11CD4126D007CC304 /* bolt@3x.png */; };
@@ -88,6 +89,8 @@
 		E397F41A1CC5BA550095A3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E397F4181CC5BA540095A3ED /* Main.storyboard */; };
 		E397F41C1CC5BA550095A3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397F41B1CC5BA550095A3ED /* Assets.xcassets */; };
 		E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */; };
+		E3C754AA1E7AE9B3004E1CCE /* InAppMessageWithJS.html in Resources */ = {isa = PBXBuildFile; fileRef = E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */; };
+		E3C754AC1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html in Resources */ = {isa = PBXBuildFile; fileRef = E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +234,7 @@
 		D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedAndFeedbackUIViewController.m; sourceTree = "<group>"; };
 		D41D8F701CB7049400D622EF /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		D41D8F731CB70A4600D622EF /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		D464B7EB1E523D2900118BA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4938B971CE3C6CC00450D78 /* appboy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appboy@3x.png"; sourceTree = "<group>"; };
 		D4938B981CE3C6CC00450D78 /* appboy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appboy@2x.png"; sourceTree = "<group>"; };
 		D4992FE11CD4126D007CC304 /* bolt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bolt@3x.png"; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 		E397F41D1CC5BA550095A3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3A8A3621E5E6C07002E8821 /* IDFADelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDFADelegate.h; sourceTree = "<group>"; };
 		E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFADelegate.m; sourceTree = "<group>"; };
+		E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithJS.html; sourceTree = "<group>"; };
+		E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithoutAssetZip.html; sourceTree = "<group>"; };
 		E3ED8D401CE54C0300C23B99 /* AppboyTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyTVOSKit.framework; path = ../Public/AppboyTVOSKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -440,6 +446,7 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
+				D464B7EB1E523D2900118BA9 /* GoogleService-Info.plist */,
 				4E49ECEA19DDE84F00ADC43F /* Images */,
 				4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */,
 				4E3E94E118BD52C60008C815 /* Localizable.strings */,
@@ -499,6 +506,7 @@
 		95EF5113173D5FD600C0D780 /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
+				E3C754A71E7AE970004E1CCE /* InAppMessages */,
 				4E94D76F1743EE8900604EA0 /* AppDelegate.h */,
 				4E94D7701743EE8900604EA0 /* AppDelegate.m */,
 				D41D8F701CB7049400D622EF /* ContainerViewController.h */,
@@ -513,10 +521,6 @@
 				D4139BEA1CBDA4E500CA3307 /* FeedAndFeedbackUIViewController.h */,
 				D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */,
 				4E6D661519DCC18F009983AD /* Images.xcassets */,
-				4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */,
-				4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */,
-				4EABC1981A606D00007259BD /* InAppMessageUIViewController.h */,
-				4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */,
 				95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */,
 				4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */,
 				95EF5114173D5FD600C0D780 /* Supporting Files */,
@@ -608,6 +612,27 @@
 				E397F4101CC5BA540095A3ED /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3C754A71E7AE970004E1CCE /* InAppMessages */ = {
+			isa = PBXGroup;
+			children = (
+				E3C754A81E7AE982004E1CCE /* HTML */,
+				4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */,
+				4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */,
+				4EABC1981A606D00007259BD /* InAppMessageUIViewController.h */,
+				4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */,
+			);
+			name = InAppMessages;
+			sourceTree = "<group>";
+		};
+		E3C754A81E7AE982004E1CCE /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */,
+				E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */,
+			);
+			name = HTML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -783,15 +808,18 @@
 				4E49ED0519DDE84F00ADC43F /* btn-close@2x.png in Resources */,
 				D4938B9A1CE3C6CC00450D78 /* appboy@2x.png in Resources */,
 				D4139BDB1CBD88C100CA3307 /* bubble@2x.png in Resources */,
+				E3C754AA1E7AE9B3004E1CCE /* InAppMessageWithJS.html in Resources */,
 				4E49ED0319DDE84F00ADC43F /* btn-backarrow.png in Resources */,
 				E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */,
 				4E49ED0619DDE84F00ADC43F /* Default-568h@2x.png in Resources */,
 				D4139BDF1CBD88C100CA3307 /* newsfeed@2x.png in Resources */,
 				4E49ED1A19DDE84F00ADC43F /* twitter-icon.png in Resources */,
 				4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */,
+				E3C754AC1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html in Resources */,
 				D4938B991CE3C6CC00450D78 /* appboy@3x.png in Resources */,
 				D4139BDC1CBD88C100CA3307 /* cloud@2x.png in Resources */,
 				95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */,
+				D464B7EC1E523D2900118BA9 /* GoogleService-Info.plist in Resources */,
 				D4139BDD1CBD88C100CA3307 /* IAM@2x.png in Resources */,
 				D4139BE01CBD88C100CA3307 /* user@2x.png in Resources */,
 				4E49ED0919DDE84F00ADC43F /* facebook-icon.png in Resources */,
@@ -1104,7 +1132,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
@@ -1131,7 +1159,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1170,7 +1198,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
@@ -1199,7 +1227,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
@@ -1227,7 +1255,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1256,7 +1284,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
 				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;

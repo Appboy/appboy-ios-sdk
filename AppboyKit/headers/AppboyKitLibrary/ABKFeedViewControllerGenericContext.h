@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  This property allows you to enable or disable the unread indicator on the news feed. The default value is NO, which
  *  will enable the displaying of the unread indicator on cards.
  */
-@property BOOL disableUnreadIndicator;
+@property (nonatomic) BOOL disableUnreadIndicator;
 
 @end
 NS_ASSUME_NONNULL_END

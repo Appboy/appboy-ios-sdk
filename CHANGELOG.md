@@ -28,10 +28,34 @@
  - Removal 1
  - Removal 2
  -->
+## 2.29.0
+
+##### Breaking:
+ - Drops support for iOS 7.
+ - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
+
+##### Added:
+ - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.
+ - Adds a Javascript interface to HTML in-app messages with ability to log custom events, log purchases, set user attributes, navigate users, and close the message.
+ - Adds an `abDeepLink` query field to HTML in-app messages, which defaults to false. To prevent the SDK from opening deep links in a `UIWebView`, specify `abDeepLink=true` in your link (e.g., `https://www.appboy.com?abDeepLink=true`).
+ - Adds the `ABKURLDelegate` protocol for customizing URL handling across channels. Set the `ABKURLDelegate` by passing a delegate object to the `ABKURLDelegateKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`. See our [Stopwatch sample application](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/AppDelegate.m) for a Universal Link implementation sample.
+ - Adds the following utility methods to `ABKPushUtils` for detecting if a push notification was sent by Appboy for internal feature purposes:
+   - `+ (BOOL)isAppboyInternalUserNotification:(UNNotificationResponse *)response;`
+   - `+ (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo;`
+   - `+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;`
+   - `+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response;`
+   - `+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;`
+   - These methods can be used to ensure that your app does not take any undesired or unnecessary actions upon receiving Appboy's internal content-available notifications (e.g., pinging your server for content).
+
+##### Changed:
+ - Deprecates `ABKPushURIDelegate`. If you were previously using `ABKPushURIDelegate`, use `ABKURLDelegate` instead.
+ - Deprecates `userNotificationWasSentFromAppboy:` and `pushNotificationWasSentFromAppboy:` on `Appboy`. Use `isAppboyUserNotification:` and `isAppboyRemoteNotification:` on `ABKPushUtils` instead.
+ - Deprecates `shouldFetchTestTriggersFlagContainedInPayload:` on `ABKPushUtils`.
+
 ## 2.28.0
 
 ##### Breaking:
- - Removes support for watchOS 1, including Appboy WatchKit SDK and all public APIs for watchOS in Appboy iOS SDK. 
+ - Removes support for watchOS 1, including Appboy WatchKit SDK and all public APIs for watchOS in Appboy iOS SDK.
 
 ##### Added:
  - Added `ABKSDWebImageProxy` to access the SDWebImage framework. This will prevent the Core subspec of the SDK from calling any SDWebImage methods directly.
@@ -43,12 +67,12 @@
 
 ##### Added:
  - Added support for registering geofences and messaging on geofence events. Please reach out to success@appboy.com for more information about this feature.
- - Adds Appboy default push categories which can be fetched from `ABKPushUtils`. 
+ - Adds Appboy default push categories which can be fetched from `ABKPushUtils`.
    - To use the Appboy default push categories, you need to manually add the Appboy categories when you register for push. You can get the Appboy categories from `[ABKPushUtils getAppboyUNNotificationCategorySet]` or `[ABKPushUtils getAppboyUIUserNotificationCategorySet]`.
-   - In this version, we add four sets of push action buttons: accept/decline, yes/no, confirm/cancel, more. These will be available as button sets on the dashboard when creating an iOS push campaign. 
+   - In this version, we add four sets of push action buttons: accept/decline, yes/no, confirm/cancel, more. These will be available as button sets on the dashboard when creating an iOS push campaign.
    - All Appboy push action buttons support localization.
  - Adds support for web link and deep link handling of push action buttons.
- 
+
 ##### Fixed:
  - Fixes the issue where the combination of the Core subspec of the SDK and a non-supported version of SDWebImage framework can cause apps to crash.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/104.
@@ -74,7 +98,7 @@
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/68
  - Adds an `unsafeInstance` method that returns a nonoptional `Appboy` instance. If used before calling `startWithApiKey:` an exception will be thrown.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/45.
- - Adds `ABKIDFADelegate` protocol that can be used to create a delegate to pass Appboy the IDFA in `startWithApiKey:` in the `appboyOptions` dictionary under the `ABKIDFADelegateKey` key.  Alternative to existinng `ABKIdentifierForAdvertisingProvider` compile flag solution.
+ - Adds `ABKIDFADelegate` protocol that can be used to create a delegate to pass Appboy the IDFA in `startWithApiKey:` in the `appboyOptions` dictionary under the `ABKIDFADelegateKey` key.  Alternative to existing `ABKIdentifierForAdvertisingProvider` compile flag solution.
 
 ##### Changed:
  - Disables the `-webkit-touch-callout` property on HTML in-app messages. Long presses and 3D Touch on links will no longer display pop-ups with additional link information.

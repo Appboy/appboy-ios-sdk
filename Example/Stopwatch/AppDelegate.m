@@ -6,6 +6,8 @@
 #import "OverrideEndpointDelegate.h"
 #import "IDFADelegate.h"
 #import "ABKThemableFeedNavigationBar.h"
+#import "Branch.h"
+#import <Firebase/Firebase.h>
 
 #ifdef PUSH_DEV
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
@@ -17,11 +19,15 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
 @implementation AppDelegate
 
+# pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
+  
+  NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
 
-  NSString *overrideApiKey = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideApiKeyStorageKey];
-  NSString *overrideEndpoint = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideEndpointStorageKey];
+  NSString *overrideApiKey = [preferences stringForKey:OverrideApiKeyStorageKey];
+  NSString *overrideEndpoint = [preferences stringForKey:OverrideEndpointStorageKey];
   
   OverrideEndpointDelegate* endpointDelegate = nil;
   
@@ -42,9 +48,20 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   appboyOptions[ABKIDFADelegateKey] = idfaDelegate;
 
   // Set ABKInAppMessageControllerDelegate on startup
-  BOOL setInAppDelegate = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
+  BOOL setInAppDelegate = [preferences boolForKey:SetInAppMessageControllerDelegateKey];
   if (setInAppDelegate) {
     appboyOptions[ABKInAppMessageControllerDelegateKey] = self;
+  }
+  
+  // Set ABKURLDelegate on startup
+  BOOL setUrlDelegate = YES; // default value
+  if ([preferences objectForKey:SetURLDelegateKey] != nil) {
+    setUrlDelegate = [preferences boolForKey:SetURLDelegateKey];
+  } else {
+    [preferences setBool:setUrlDelegate forKey:SetURLDelegateKey];
+  }
+  if (setUrlDelegate) {
+    appboyOptions[ABKURLDelegateKey] = self;
   }
 
   // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
@@ -66,7 +83,6 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   if ([Appboy sharedInstance].user.email) {
     [Crittercism setUsername:[Appboy sharedInstance].user.email];
   }
-  [Appboy sharedInstance].appboyPushURIDelegate = self;
 
   // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
   // feedback form and news feed).
@@ -76,9 +92,98 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   [[ABKThemableFeedNavigationBar appearance] setTranslucent:NO];
   [[ABKThemableFeedNavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.25 green:0.81 blue:0.50 alpha:1.0]];
   
+  // Configure Firebase Dynamic Links
+  [FIROptions defaultOptions].deepLinkURLScheme = @"stopwatch";
+  [FIRApp configure];
+  
+  // Define and initialize Branch
+  Branch *branch = [Branch getInstance];
+  [branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
+    if (!error && params) {
+      // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
+      NSLog(@"Calling Branch deep link handler on params: %@", params.description);
+    }
+  }];
+
   [self setUpRemoteNotification];
+
   return YES;
 }
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+  NSLog(@"application:continueUserActivity:restorationHandler called");
+  
+  if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+    NSString *urlString = [[userActivity.webpageURL absoluteString] stringByRemovingPercentEncoding];
+    [self handleUniversalLinkString:urlString withABKURLDelegate:NO];
+  }
+  
+  BOOL handledByFirebase = [[FIRDynamicLinks dynamicLinks] handleUniversalLink:userActivity.webpageURL completion:^(FIRDynamicLink * _Nullable dynamicLink, NSError * _Nullable error) {
+     NSLog(@"Firebase handled Universal Link: %@", userActivity.webpageURL);
+  }];
+  BOOL handledByBranch = [[Branch getInstance] continueUserActivity:userActivity];
+  
+  return handledByBranch || handledByFirebase;
+}
+
+// Pass the deviceToken to Appboy as well
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
+  NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
+  [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
+}
+
+// When a notification is received, pass it to Appboy. If the notification is received when the app
+// is in the background, Appboy will try to fetch the news feed, and call completionHandler after
+// the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+  if ([ABKPushUtils isUninstallTrackingRemoteNotification:userInfo]) {
+    NSLog(@"Got uninstall tracking push from Appboy");
+  } else if ([ABKPushUtils isGeofencesSyncRemoteNotification:userInfo]) {
+    NSLog(@"Got geofences sync push from Appboy");
+  }
+  [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
+  
+  if ([ABKPushUtils isAppboyRemoteNotification:userInfo] && ![ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    NSLog(@"Remote notification was sent from Appboy, clearing badge number.");
+  }
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+  NSLog(@"application:handleActionWithIdentifier:forRemoteNotification:completionHandler: with identifier %@", identifier);
+  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  /*
+   Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+   */
+  NSLog(@"applicationDidBecomeActive:(UIApplication *)application");
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  NSLog(@"Stopwatch got a deep link request: %@", url.absoluteString);
+  
+  // Handle deep linking with scheme beginning with "stopwatch"
+  NSString *urlString = url.absoluteString.stringByRemovingPercentEncoding;
+  [self showAlertWithTitle:@"Deep Linking" andMessage:urlString];
+
+  // Handle Branch deep links
+  [[Branch getInstance] handleDeepLink:url];
+  
+  // Handle Firebase deep links
+  FIRDynamicLink *dynamicLink = [[FIRDynamicLinks dynamicLinks] dynamicLinkFromCustomSchemeURL:url];
+  if (dynamicLink) {
+    NSLog(@"Stopwatch received a Firebase dynamic link: %@", dynamicLink.url);
+  }
+
+  return YES;
+}
+
+# pragma mark - Appboy Push Registration
 
 - (void) setupRemoteNotificationForiOS7 {
   [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
@@ -154,83 +259,7 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   }
 }
 
-/* Send crash event to Appboy upon notification */
-- (void) crashDidOccur:(NSNotification*)notification {
-  NSDictionary *crashInfo = notification.userInfo;
-  
-  [[Appboy sharedInstance] logCustomEvent:@"ApteligentCrashEvent"
-                           withProperties:crashInfo];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashName" andStringValue:crashInfo[@"crashName"]];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashReason" andStringValue:crashInfo[@"crashReason"]];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashDate" andDateValue:crashInfo[@"crashDate"]];
-}
-
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
-  NSLog(@"application:continueUserActivity:restorationHandler called");
-  return NO;
-}
-
-// Pass the deviceToken to Appboy as well
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
-  NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
-  [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
-}
-
-// When a notification is received, pass it to Appboy. If the notification is received when the app
-// is in the background, Appboy will try to fetch the news feed, and call completionHandler after
-// the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-  if ([ABKPushUtils isUninstallTrackingNotification:userInfo]) {
-    NSLog(@"Got uninstall tracking push from Appboy");
-  }
-  [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
-  
-  if ([[Appboy sharedInstance] pushNotificationWasSentFromAppboy:userInfo]) {
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    NSLog(@"User notification was sent from Appboy, clearing badge number.");
-  }
-}
-
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
-   NSLog(@"application:handleActionWithIdentifier:forRemoteNotification:completionHandler: with identifier %@", identifier);
-  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-  /*
-   Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-   */
-  NSLog(@"applicationDidBecomeActive:(UIApplication *)application");
-  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-}
-
-// Here we are trying to handle deep linking with scheme beginning with "stopwatch".
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-  NSLog(@"Stopwatch get a deep link request: %@", url.absoluteString);
-  NSString *urlString = url.absoluteString.stringByRemovingPercentEncoding;
-  UIAlertView *deepLinkAlert = [[UIAlertView alloc] initWithTitle:@"Deep Linking" message:urlString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-  [deepLinkAlert show];
-  deepLinkAlert = nil;
-  return YES;
-}
-
-- (BOOL)handleAppboyPushURI:(NSString *)URIString withNotificationInfo:(NSDictionary *)notificationInfo {
-  NSRange range = [URIString rangeOfString:@"secret"];
-  if (range.location != NSNotFound) {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ssh"
-                                                    message:@"The deep link of the push is a secret."
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:@"OK", nil];
-    [alert show];
-    alert = nil;
-    return YES;
-  } else {
-    return NO;
-  }
-}
+# pragma mark - UNUserNotificationCenterDelegate
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
        willPresentNotification:(UNNotification *)notification
@@ -242,23 +271,62 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
   [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
   NSLog(@"Application delegate method userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: is called with user info: %@", response.notification.request.content.userInfo);
-
-  if ([[Appboy sharedInstance] userNotificationWasSentFromAppboy:response]) {
+  
+  if ([ABKPushUtils isAppboyUserNotification:response] && ![ABKPushUtils isAppboyInternalUserNotification:response]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     NSLog(@"User notification was sent from Appboy, clearing badge number.");
   }
 }
 
-#pragma mark - ABKInAppMessageControllerDelegate methods
+#pragma mark - ABKInAppMessageControllerDelegate
 
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp {
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You've got mail!"
-                                                  message:inAppMessage.message
-                                                 delegate:nil
-                                        cancelButtonTitle:@"Unset this from the Advanced tab"
-                                        otherButtonTitles:nil];
-  [alert show];
+  [self showAlertWithTitle:@"IAM Delegate (Unset on Advanced tab)" andMessage:inAppMessage.message];
   return ABKDiscardInAppMessage;
+}
+
+#pragma mark - ABKURLDelegate
+
+- (BOOL)handleAppboyURL:(NSURL *)url fromChannel:(ABKChannel)channel withExtras:(NSDictionary *)extras {
+  // Use ABKURLDelegate to handle Universal Links
+  BOOL handledByFirebase = [[FIRDynamicLinks dynamicLinks] handleUniversalLink:url completion:^(FIRDynamicLink * _Nullable dynamicLink, NSError * _Nullable error) {
+    NSLog(@"Firebase FIRDynamicLink is %@", dynamicLink.url.absoluteString);
+    [self showAlertWithTitle:@"Firebase Universal Link (ABKURLDelegate)" andMessage:[NSString stringWithFormat:@"%@ -> %@", url.absoluteString, dynamicLink.url.absoluteString]];
+  }];
+  if (handledByFirebase) {
+    return YES;
+  } else if ([[url.host lowercaseString] isEqualToString:@"sweeney.appboy.com"]) {
+    [self handleUniversalLinkString:[[url absoluteString] stringByRemovingPercentEncoding] withABKURLDelegate:YES];
+    return YES;
+  }
+  // Let Appboy handle links otherwise
+  return NO;
+}
+
+#pragma mark - Apteligent/Crittercism
+
+/* Send crash event to Appboy upon notification */
+- (void) crashDidOccur:(NSNotification*)notification {
+  NSDictionary *crashInfo = notification.userInfo;
+  
+  [[Appboy sharedInstance] logCustomEvent:@"ApteligentCrashEvent"
+                           withProperties:crashInfo];
+  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashName" andStringValue:crashInfo[@"crashName"]];
+  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashReason" andStringValue:crashInfo[@"crashReason"]];
+  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashDate" andDateValue:crashInfo[@"crashDate"]];
+}
+
+# pragma mark - Helper methods
+
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+  [alert show];
+  alert = nil;
+}
+
+- (void)handleUniversalLinkString:(NSString *)uriString withABKURLDelegate:(BOOL)withURIDelegate {
+  NSString *alertTitle = withURIDelegate ? @"Universal Link (ABKURLDelegate)" : @"Universal Link (UIApplicationDelegate)";
+  [self showAlertWithTitle:alertTitle andMessage:uriString];
 }
 
 @end

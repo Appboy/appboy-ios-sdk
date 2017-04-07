@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.28.0"
+  s.version      = "2.29.0"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.appboy.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
   s.author       = { "Appboy" => "http://www.appboy.com" }
   s.source       = { :git => 'https://github.com/Appboy/appboy-ios-sdk.git', :tag => s.version.to_s}
   s.platform = :ios
-  s.ios.deployment_target = '7.0'
+  s.ios.deployment_target = '8.0'
   s.requires_arc = true
   s.documentation_url = 'http://documentation.appboy.com/'
   s.exclude_files = 'AppboyKit/**/*.txt'

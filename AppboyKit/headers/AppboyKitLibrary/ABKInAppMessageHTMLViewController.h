@@ -5,7 +5,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageHTMLViewController : ABKInAppMessageViewController <UIWebViewDelegate>
 
-@property (weak) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 NS_ASSUME_NONNULL_END

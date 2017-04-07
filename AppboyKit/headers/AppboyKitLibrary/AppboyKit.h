@@ -4,6 +4,7 @@
 #import "ABKAppboyEndpointDelegate.h"
 #import "ABKFacebookUser.h"
 #import "ABKTwitterUser.h"
+#import "ABKURLDelegate.h"
 
 // Cards
 #import "ABKCard.h"
