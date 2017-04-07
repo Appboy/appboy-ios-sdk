@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sdkflavor',['sdkFlavor',['../interface_appboy.html#a8f1250e12b60aeb65e50011205acb22d',1,'Appboy']]],
   ['serializetodata',['serializeToData',['../interface_a_b_k_in_app_message.html#a98643a60d6d9e2f1d941e2e3803ac43a',1,'ABKInAppMessage']]],
   ['setbuttonclickaction_3awithuri_3a',['setButtonClickAction:withURI:',['../interface_a_b_k_in_app_message_button.html#a0cd27ef36495918a29f3d7dbbcd38c12',1,'ABKInAppMessageButton']]],
   ['setcustomattributearraywithkey_3aarray_3a',['setCustomAttributeArrayWithKey:array:',['../interface_a_b_k_user.html#a55c08db0448e93e0771b0e08af4b1f49',1,'ABKUser']]],
@@ -16,7 +17,7 @@ var searchData=
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3aaltitude_3averticalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:',['../interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a',1,'ABKUser']]],
   ['setpushnotificationsubscriptiontype_3a',['setPushNotificationSubscriptionType:',['../interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3',1,'ABKUser']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#aa62135eada7135024e1e042325f426fa',1,'Appboy']]],
-  ['shouldopenuriexternally',['shouldOpenURIExternally',['../interface_a_b_k_in_app_message.html#a87dd41a097105bc27d0a4881e1119ef8',1,'ABKInAppMessage']]],
+  ['shouldfetchtesttriggersflagcontainedinpayload_3a',['shouldFetchTestTriggersFlagContainedInPayload:',['../interface_a_b_k_push_utils.html#a7b7e481adae71046134b2c6b007c18df',1,'ABKPushUtils']]],
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#afd911d60dfe7e5361afbfb364f5d20f9',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#aa9f1bd9e4a5c082133dd9cc344108b24',1,'Appboy']]],

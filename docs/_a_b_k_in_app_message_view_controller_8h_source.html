@@ -106,9 +106,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_view_controller.html">   23</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> : UIViewController</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@property</span> (strong) <a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *inAppMessage;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> (weak) IBOutlet UIImageView *iconImageView;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">@property</span> (weak) IBOutlet UILabel *iconLabelView;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> (weak) IBOutlet ABKLabel *inAppMessageMessageLabel;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet UIImageView *iconImageView;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet UILabel *iconLabelView;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet ABKLabel *inAppMessageMessageLabel;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * The initWithInAppMessage method may be used to pass the inAppMessage property to any custom view controller that you create.</span></div>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 13 2017 15:54:21 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 13:40:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -74,6 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
+      <li><a href="#index__"><span>_</span></a></li>
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
@@ -107,6 +108,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="contents">
 &#160;
+
+<h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>__deprecated_msg
+: <a class="el" href="interface_appboy.html#ad93d90566b0790c806b59be8afa4c6ff">Appboy</a>
+</li>
+</ul>
+
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>addInAppMessage:
@@ -201,8 +209,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
-<li>handleAppboyPushURI:withNotificationInfo:
-: <a class="el" href="protocol_a_b_k_push_u_r_i_delegate-p.html#a11a87a41f610c575519e56a0dfd482c2">&lt;ABKPushURIDelegate&gt;</a>
+<li>handleAppboyURL:fromChannel:withExtras:
+: <a class="el" href="protocol_a_b_k_u_r_l_delegate-p.html#ae05f082f10ddae824fd6e3afa739e612">&lt;ABKURLDelegate&gt;</a>
 </li>
 <li>hideCurrentInAppMessage:
 : <a class="el" href="interface_a_b_k_in_app_message_controller.html#a233cd2309913c475dedf6d67644521eb">ABKInAppMessageController</a>
@@ -234,6 +242,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>isAdvertisingTrackingEnabled
 : <a class="el" href="protocol_a_b_k_i_d_f_a_delegate-p.html#a76e1bb5e44988baa8acac9c1ddc44177">&lt;ABKIDFADelegate&gt;</a>
+</li>
+<li>isAppboyInternalRemoteNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#afd55ca5f35fb5b2306ae1be6b5deea9f">ABKPushUtils</a>
+</li>
+<li>isAppboyInternalUserNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#a368459b1dc1fd005a0f9203efc060ecf">ABKPushUtils</a>
+</li>
+<li>isAppboyRemoteNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#a9510314a1e1f6cf457872505b2af1599">ABKPushUtils</a>
+</li>
+<li>isAppboyUserNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#a9c5becff6029b503a767fb59d36f31d1">ABKPushUtils</a>
+</li>
+<li>isGeofencesSyncRemoteNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#a125929fe98f20625db1a5a71439301a7">ABKPushUtils</a>
+</li>
+<li>isGeofencesSyncUserNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#ac0c40540a46e425f8e14257b9f709b57">ABKPushUtils</a>
+</li>
+<li>isUninstallTrackingRemoteNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#ad1140db01688f422034c33ee3d8b0c47">ABKPushUtils</a>
+</li>
+<li>isUninstallTrackingUserNotification:
+: <a class="el" href="interface_a_b_k_push_utils.html#a45a70459101f37c2e50cae6b3e329f4c">ABKPushUtils</a>
 </li>
 </ul>
 
@@ -305,7 +337,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interface_appboy.html#afbcf6edbcf47acf6f03fa4fe02168149">Appboy</a>
 </li>
 <li>pushNotificationWasSentFromAppboy:
-: <a class="el" href="interface_appboy.html#a0fa827b56c9afc9f5d7aba9a02b9e9fb">Appboy</a>
+: <a class="el" href="interface_appboy.html#a66a8b218a05d502e07e824396793e99e">Appboy</a>
 </li>
 </ul>
 
@@ -381,6 +413,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>sharedInstance
 : <a class="el" href="interface_appboy.html#aa62135eada7135024e1e042325f426fa">Appboy</a>
 </li>
+<li>shouldFetchTestTriggersFlagContainedInPayload:
+: <a class="el" href="interface_a_b_k_push_utils.html#a7b7e481adae71046134b2c6b007c18df">ABKPushUtils</a>
+</li>
 <li>shutdownServerCommunication
 : <a class="el" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">Appboy</a>
 </li>
@@ -413,13 +448,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interface_appboy.html#a2a4cd6539cc043012b0e34448c901a50">Appboy</a>
 </li>
 <li>userNotificationWasSentFromAppboy:
-: <a class="el" href="interface_appboy.html#a2de7570681980c316114db8c8e06defb">Appboy</a>
+: <a class="el" href="interface_appboy.html#affc41e6cba491c3b6e1ff4a5e97ba381">Appboy</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 13 2017 15:54:21 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 13:40:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

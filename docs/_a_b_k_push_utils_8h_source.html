@@ -81,34 +81,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ABKPushUtils.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#import &lt;UserNotifications/UserNotifications.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">static</span> NSString *<span class="keyword">const</span> ABKAppboyPushNotificationUninstallTrackingKey = <span class="stringliteral">@&quot;appboy_uninstall_tracking&quot;</span>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> NSString *<span class="keyword">const</span> ABKAppboyPushNotificationFetchTestTriggersKey = <span class="stringliteral">@&quot;ab_push_fetch_test_triggers_key&quot;</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Appboy Public API: ABKPushUtils</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="interface_a_b_k_push_utils.html">   14</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_push_utils.html">ABKPushUtils</a> : NSObject</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;+ (BOOL)isUninstallTrackingNotification:(NSDictionary *)userInfo;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;+ (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span>+ (NSSet&lt;UNNotificationCategory *&gt; *)getAppboyUNNotificationCategorySet;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;+ (NSSet&lt;UIUserNotificationCategory *&gt; *)getAppboyUIUserNotificationCategorySet;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#import &lt;UserNotifications/UserNotifications.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Appboy Public API: ABKPushUtils</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="interface_a_b_k_push_utils.html">   11</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_push_utils.html">ABKPushUtils</a> : NSObject</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;+ (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;+ (BOOL)isAppboyRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;+ (BOOL)isAppboyInternalUserNotification:(UNNotificationResponse *)response;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;+ (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;+ (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;+ (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo __deprecated;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;+ (NSSet&lt;UNNotificationCategory *&gt; *)getAppboyUNNotificationCategorySet;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;+ (NSSet&lt;UIUserNotificationCategory *&gt; *)getAppboyUIUserNotificationCategorySet;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 13 2017 15:54:21 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 13:40:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

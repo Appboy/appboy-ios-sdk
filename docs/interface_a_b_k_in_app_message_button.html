@@ -107,6 +107,8 @@ Properties</h2></td></tr>
 <tr class="separator:aff938abb33df633a3473bdd457f210b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f38cd1057b3fb113f55252098ad4527"><td class="memItemLeft" align="right" valign="top">NSURL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_button.html#a5f38cd1057b3fb113f55252098ad4527">buttonClickedURI</a></td></tr>
 <tr class="separator:a5f38cd1057b3fb113f55252098ad4527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2930242cfca77da7f9f978005290da30"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_button.html#a2930242cfca77da7f9f978005290da30">buttonOpenUrlInWebView</a></td></tr>
+<tr class="separator:a2930242cfca77da7f9f978005290da30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a156c7b45dc50181841ac31ab64edde71"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_button.html#a156c7b45dc50181841ac31ab64edde71">buttonID</a></td></tr>
 <tr class="separator:a156c7b45dc50181841ac31ab64edde71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -225,6 +227,28 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2930242cfca77da7f9f978005290da30"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) buttonOpenUrlInWebView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>When the button's buttonClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES, the URI will be opened in a modal UIWebView inside the app. If this property is set to NO, the URI will be opened by the OS and web URIs will be opened in an external web browser app.</p>
+<p>This property defaults to NO. </p>
+
+</div>
+</div>
 <a class="anchor" id="a8bcd16c602f145c8dd52e663ae0fb954"></a>
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +294,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 13 2017 15:54:21 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 13:40:16 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
