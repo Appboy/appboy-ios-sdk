@@ -1,7 +1,7 @@
 <!--
  CHANGELOG format:
 
- ## major.minor.build
+## major.minor.build
 
 ##### Breaking:
  - Breaking change
@@ -28,11 +28,24 @@
  - Removal 1
  - Removal 2
  -->
+## 2.29.1
+##### Added:
+ - Adds a new property `buttonTextFont` to `ABKInAppMessageButton`. It allows clients to set customized fonts on in-app message buttons before the in-app message is displayed.
+ 
+##### Fixed:
+ - Makes class `ABKInAppMessageWindowController.h` public.
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/105.
+ - Fixes an issue where device information was not flushed for a new user when server requests were queued for two or more users.
+
+##### Changed:
+ - Removes the warnings in `ABKSDWebImageProxy`.
+
 ## 2.29.0
 
 ##### Breaking:
  - Drops support for iOS 7.
  - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
+ - Requires XCode 8.3.
 
 ##### Added:
  - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.

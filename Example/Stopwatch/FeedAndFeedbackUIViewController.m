@@ -23,10 +23,10 @@
   self.newsAndFeedbackNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.16 green:0.5 blue:0.73 alpha:1.0];
   self.newsAndFeedbackNavigationController.navigationBar.barStyle = UIBarStyleBlack;
   UIBarButtonItem *feedbackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback", nil)
-                                                                            style:UIBarButtonItemStyleBordered target:self action:@selector(openFeedbackFromNavigationFeed:)];
+                                                                            style:UIBarButtonItemStylePlain target:self action:@selector(openFeedbackFromNavigationFeed:)];
   feedViewController.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
   feedViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.cancel", nil)
-                                                                                         style:UIBarButtonItemStyleBordered
+                                                                                         style:UIBarButtonItemStylePlain
                                                                                         target:self
                                                                                         action:@selector(dismissNewsAndFeedbackModalView:)];
 }
@@ -66,7 +66,7 @@
   // Add Categories button
   UIBarButtonItem *categoriesButton = [[UIBarButtonItem alloc]
                                        initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.button.title", nil)
-                                       style:UIBarButtonItemStyleBordered
+                                       style:UIBarButtonItemStylePlain
                                        target:self
                                        action:@selector(displayCategoriesActionSheet)];
   [newsFeed.navigationItem setRightBarButtonItem:categoriesButton animated:NO];

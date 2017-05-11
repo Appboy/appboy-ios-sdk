@@ -11,7 +11,7 @@
   showActivityIndicator:(BOOL)showActivityIndicator
                 withURL:(nullable NSURL *)imageURL
        imagePlaceHolder:(nullable UIImage *)placeHolder
-              completed:(nullable void (^)(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL))completion {
+              completed:(nullable void (^)(UIImage * _Nullable image, NSError * _Nullable error, NSInteger cacheType, NSURL * _Nullable imageURL))completion {
   [imageView sd_setShowActivityIndicatorView:showActivityIndicator];
   [imageView sd_setImageWithURL:imageURL
                placeholderImage:placeHolder
@@ -23,8 +23,8 @@
 }
 
 + (void)loadImageWithURL:(nullable NSURL *)url
-                 options:(SDWebImageOptions)options
-               completed:(nullable void (^)(UIImage *image, NSData *data, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL))completion {
+                 options:(NSInteger)options
+               completed:(nullable void (^)(UIImage *image, NSData *data, NSError *error, NSInteger cacheType, BOOL finished, NSURL *imageURL))completion {
   [[SDWebImageManager sharedManager] loadImageWithURL:url
                                               options:options
                                              progress:nil

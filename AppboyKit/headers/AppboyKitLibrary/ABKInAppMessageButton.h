@@ -24,6 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nullable) UIColor *buttonTextColor;
 
 /*!
+ * This property defines the button title font in UIControlStateNormal. Please set this property before the in-app message
+ * is displayed, or the displayed in-app message will not apply the font.
+ */
+@property (copy, nullable) UIFont *buttonTextFont;
+
+/*!
  * This property defines the action that will be performed when the button is clicked.
  * See the ABKInAppMessageClickActionType enum documentation in ABKInAppMessage.h offers additional details.
  */

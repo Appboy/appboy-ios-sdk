@@ -185,13 +185,6 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
 # pragma mark - Appboy Push Registration
 
-- (void) setupRemoteNotificationForiOS7 {
-  [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-   (UIRemoteNotificationTypeAlert |
-    UIRemoteNotificationTypeBadge |
-    UIRemoteNotificationTypeSound)];
-}
-
 - (void) setupRemoteNotificationForiOS8And9 {
   UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationAction alloc] init];
   likeAction.identifier = @"LIKE_IDENTIFIER";
@@ -252,10 +245,8 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 - (void) setUpRemoteNotification {
   if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
     [self setupRemoteNotificationForiOS10];
-  } else if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
-    [self setupRemoteNotificationForiOS8And9];
   } else {
-    [self setupRemoteNotificationForiOS7];
+    [self setupRemoteNotificationForiOS8And9];
   }
 }
 

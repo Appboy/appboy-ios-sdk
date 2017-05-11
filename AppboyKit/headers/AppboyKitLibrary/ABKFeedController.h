@@ -27,7 +27,7 @@
  *     BOOL updateIsSuccessful = [notification.userInfo[ABKFeedUpdatedIsSuccessfulKey] boolValue];
  *     < Do something in response to the notification >
  *   }
- * <pre>
+ * </pre>
  */
 NS_ASSUME_NONNULL_BEGIN
 extern NSString *const ABKFeedUpdatedNotification;

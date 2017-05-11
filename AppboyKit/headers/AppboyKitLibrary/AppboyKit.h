@@ -51,6 +51,7 @@
 #import "ABKInAppMessageHTMLViewController.h"
 #import "ABKInAppMessageHTMLFullViewController.h"
 #import "ABKInAppMessageButton.h"
+#import "ABKInAppMessageWindowController.h"
 
 // IDFA
 #import "ABKIdentifierForAdvertisingProvider.h"

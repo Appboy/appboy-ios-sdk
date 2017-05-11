@@ -257,17 +257,17 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
           [self.inAppMessageDictionary removeObjectForKey:ItemButtonTwo];
           if ([[self currentArrayList] indexOfObject:ItemButtonOne] == NSNotFound) {
             [[self currentArrayList] addObject:ItemButtonOne];
-            self.inAppMessageDictionary[ItemButtonOne] = [[ABKInAppMessageButton alloc] init];
+            self.inAppMessageDictionary[ItemButtonOne] = [self getButtonWithFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:13]];
           }
           break;
         case 2:
           if ([[self currentArrayList] indexOfObject:ItemButtonOne] == NSNotFound) {
             [[self currentArrayList] addObject:ItemButtonOne];
-            self.inAppMessageDictionary[ItemButtonOne] = [[ABKInAppMessageButton alloc] init];
+            self.inAppMessageDictionary[ItemButtonOne] = [self getButtonWithFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:13]];
           }
           if ([[self currentArrayList] indexOfObject:ItemButtonTwo] == NSNotFound) {
             [[self currentArrayList] addObject:ItemButtonTwo];
-            self.inAppMessageDictionary[ItemButtonTwo] = [[ABKInAppMessageButton alloc] init];
+            self.inAppMessageDictionary[ItemButtonTwo] = [self getButtonWithFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:13]];
           }
           break;
         default:
@@ -276,6 +276,12 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
       [self.tableView reloadData];
     }
   }
+}
+
+- (ABKInAppMessageButton *)getButtonWithFont:(UIFont *)font {
+  ABKInAppMessageButton *button = [[ABKInAppMessageButton alloc] init];
+  button.buttonTextFont = font;
+  return button;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

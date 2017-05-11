@@ -1,8 +1,6 @@
 //
 //  ABKFeedbackViewControllerPopoverContext.h
 //  AppboySDK
-//
-//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import "ABKFeedbackViewController.h"
 /* ------------------------------------------------------------------------------------------------------

@@ -1,8 +1,6 @@
 //
 //  Appboy.h
 //  AppboySDK
-//
-//  Copyright (c) 2016 Appboy. All rights reserved.
 
 /*!
   \mainpage
@@ -15,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.29.0"
+#define APPBOY_SDK_VERSION @"2.29.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -208,8 +206,8 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 
 /*!
  * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ * @param application the current app
+ * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
  *
  * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
  * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
@@ -222,8 +220,8 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 
 /*!
  * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ * @param application The current app
+ * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
  * @param appboyOptions An optional NSDictionary with startup configuration values for Appboy. This currently supports
  * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
  * for more information.
