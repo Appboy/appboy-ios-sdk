@@ -45,6 +45,7 @@ var searchData=
   ['abkinappmessageslideupviewcontroller',['ABKInAppMessageSlideupViewController',['../interface_a_b_k_in_app_message_slideup_view_controller.html',1,'']]],
   ['abkinappmessageview',['ABKInAppMessageView',['../interface_a_b_k_in_app_message_view.html',1,'']]],
   ['abkinappmessageviewcontroller',['ABKInAppMessageViewController',['../interface_a_b_k_in_app_message_view_controller.html',1,'']]],
+  ['abkinappmessagewindowcontroller',['ABKInAppMessageWindowController',['../interface_a_b_k_in_app_message_window_controller.html',1,'']]],
   ['abklocationmanager',['ABKLocationManager',['../interface_a_b_k_location_manager.html',1,'']]],
   ['abknavigationbar',['ABKNavigationBar',['../interface_a_b_k_navigation_bar.html',1,'']]],
   ['abkpushutils',['ABKPushUtils',['../interface_a_b_k_push_utils.html',1,'']]],
