@@ -19,7 +19,7 @@ Successful marketing automation is essential to the future of your mobile app. A
 
 ## Version Support
 
-The iOS SDK supports iOS 7.0+. 
+The iOS SDK supports iOS 8.0+. 
 
 Integrating the iOS SDK [requires Xcode 8](https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md#2240). Developers requiring Xcode 7 may integrate Appboy iOS SDK version 2.23 and below. 
 
