@@ -31,7 +31,7 @@
 ## 2.29.1
 ##### Added:
  - Adds a new property `buttonTextFont` to `ABKInAppMessageButton`. It allows clients to set customized fonts on in-app message buttons before the in-app message is displayed.
- 
+
 ##### Fixed:
  - Makes class `ABKInAppMessageWindowController.h` public.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/105.
@@ -46,6 +46,9 @@
  - Drops support for iOS 7.
  - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
  - Requires XCode 8.3.
+ - Changes the behavior of the `onCardClicked:feedViewController:` method in `ABKFeedViewControllerDelegate` to let Appboy handle the card click action if the delegate method returns `NO`.
+  - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
+  - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
 
 ##### Added:
  - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.

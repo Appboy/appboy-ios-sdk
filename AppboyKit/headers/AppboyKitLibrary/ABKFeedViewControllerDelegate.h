@@ -9,12 +9,13 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedViewControllerDelegate <NSObject>
 @optional
 /*!
- @param newsFeed The calling news feed context
- @param clickedCard The card that's clicked by user.
- @return A boolean value indicates if Appboy should still try to display the url of the clicked card. If it's YES, Appboy
- will still display the content of the url as default. Otherwise, Appboy won't do anything but stay on the news feed.
- 
- Called when a card on the news feed is clicked.
+ * @param newsFeed The calling News Feed context.
+ * @param clickedCard The card that was clicked by the user.
+ * @return A boolean value that controls whether Appboy will handle opening the URL of the clicked card.
+ *         Returning YES will prevent Appboy from opening the URL.
+ *         Returning NO will cause Appboy to handle opening the URL.
+ *
+ * This delegate method is called whenever a News Feed card is clicked.
  */
 - (BOOL)onCardClicked:(ABKCard *)clickedCard feedViewController:(UIViewController *)newsFeed;
 
