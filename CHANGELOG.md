@@ -47,8 +47,8 @@
  - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
  - Requires XCode 8.3.
  - Changes the behavior of the `onCardClicked:feedViewController:` method in `ABKFeedViewControllerDelegate` to let Appboy handle the card click action if the delegate method returns `NO`.
-  - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
-  - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
+   - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
+   - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
 
 ##### Added:
  - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.
