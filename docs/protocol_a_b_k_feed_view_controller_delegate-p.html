@@ -128,20 +128,20 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newsFeed</td><td>The calling news feed context </td></tr>
-    <tr><td class="paramname">clickedCard</td><td>The card that's clicked by user. </td></tr>
+    <tr><td class="paramname">newsFeed</td><td>The calling News Feed context. </td></tr>
+    <tr><td class="paramname">clickedCard</td><td>The card that was clicked by the user. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A boolean value indicates if <a class="el" href="interface_appboy.html">Appboy</a> should still try to display the url of the clicked card. If it's YES, <a class="el" href="interface_appboy.html">Appboy</a> will still display the content of the url as default. Otherwise, <a class="el" href="interface_appboy.html">Appboy</a> won't do anything but stay on the news feed.</dd></dl>
-<p>Called when a card on the news feed is clicked. </p>
+<dl class="section return"><dt>Returns</dt><dd>A boolean value that controls whether <a class="el" href="interface_appboy.html">Appboy</a> will handle opening the URL of the clicked card. Returning YES will prevent <a class="el" href="interface_appboy.html">Appboy</a> from opening the URL. Returning NO will cause <a class="el" href="interface_appboy.html">Appboy</a> to handle opening the URL.</dd></dl>
+<p>This delegate method is called whenever a News Feed card is clicked. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 14:36:56 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 16 2017 14:33:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
