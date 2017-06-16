@@ -488,6 +488,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
       }
     }
   }
+  inAppMessage.openUrlInWebView = YES;
   [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppMessage];
 }
 

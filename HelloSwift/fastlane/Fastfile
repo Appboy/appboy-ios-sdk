@@ -14,13 +14,17 @@
 fastlane_version "1.99.0"
 
 lane :matchFullAccess do
-   match(type: "development", force_for_new_devices: true)
-   match(type: "adhoc", force_for_new_devices: true)
+   match(type: "development", app_identifier: "Appboy.HelloSwift", force_for_new_devices: true)
+   match(type: "adhoc", app_identifier: "Appboy.HelloSwift", force_for_new_devices: true)
+   match(type: "development", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", force_for_new_devices: true)
+   match(type: "adhoc", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", force_for_new_devices: true)
  end
 
  lane :matchReadOnly do
-   match(type: "development", readonly: true, force_for_new_devices: true)
-   match(type: "adhoc", readonly: true, force_for_new_devices: true)
+   match(type: "development", app_identifier: "Appboy.HelloSwift", readonly: true, force_for_new_devices: true)
+   match(type: "adhoc", app_identifier: "Appboy.HelloSwift", readonly: true, force_for_new_devices: true)
+   match(type: "development", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", readonly:true, force_for_new_devices: true)
+   match(type: "adhoc", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", readonly:true, force_for_new_devices: true)
  end
 
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "2.29.1"
+  s.version      = "2.30.0"
   s.summary      = "This is the Appboy iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.appboy.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -17,20 +17,16 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |sc|
     sc.ios.library = 'z'
-    sc.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreText'
-    sc.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/ABKIdentifierForAdvertisingProvider.m'
+    sc.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreText', 'WebKit'
+    sc.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/ABKIdentifierForAdvertisingProvider.m', 'AppboyKit/ABKModalWebViewController.m', 'AppboyKit/ABKNoConnectionLocalization.m'
     sc.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
     sc.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'StoreKit','UserNotifications'
-    sc.resource = 'AppboyKit/Appboy.bundle'
   end
 
   s.subspec 'UI' do |sui|
-    sui.ios.library = 'z'
-    sui.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreImage', 'CoreText'
     sui.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/*.m'
-    sui.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
-    sui.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'StoreKit','UserNotifications'
     sui.resource = 'AppboyKit/Appboy.bundle'
     sui.dependency 'SDWebImage/GIF', '~>4.0'
+    sui.dependency 'Appboy-iOS-SDK/Core'
   end
 end

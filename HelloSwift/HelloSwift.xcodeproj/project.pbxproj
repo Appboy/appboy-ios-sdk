@@ -12,9 +12,35 @@
 		4E1644F71A04170E0007CA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F51A04170E0007CA5C /* Main.storyboard */; };
 		4E1644F91A04170E0007CA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F81A04170E0007CA5C /* Images.xcassets */; };
 		4E1644FC1A04170E0007CA5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644FA1A04170E0007CA5C /* LaunchScreen.xib */; };
+		C06D5DDE1ED367C200087F72 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D5DDD1ED367C200087F72 /* NotificationService.swift */; };
+		C06D5DE21ED367C200087F72 /* HelloSwiftNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C1E6FB391D83682F0084F8CE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */; };
 		D7999436856B456BD02675FF /* Pods_HelloSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C06D5DE01ED367C200087F72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E1644E41A04170E0007CA5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C06D5DDA1ED367C100087F72;
+			remoteInfo = HelloSwiftNotificationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C06D5DE61ED367C200087F72 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C06D5DE21ED367C200087F72 /* HelloSwiftNotificationExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +53,9 @@
 		4E1644F81A04170E0007CA5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E1644FB1A04170E0007CA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		68DB17C99DFBF44C773C2141 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HelloSwiftNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06D5DDD1ED367C200087F72 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C06D5DDF1ED367C200087F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1E6FB321D835D230084F8CE /* HelloSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloSwift.entitlements; sourceTree = "<group>"; };
 		C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		C1E6FB371D83671A0084F8CE /* AirshipKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AirshipKit.framework; path = ../../../../Downloads/Carthage/Build/iOS/AirshipKit.framework; sourceTree = "<group>"; };
@@ -42,6 +71,13 @@
 			files = (
 				C1E6FB391D83682F0084F8CE /* NotificationCenter.framework in Frameworks */,
 				D7999436856B456BD02675FF /* Pods_HelloSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06D5DD81ED367C100087F72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				4E1644EE1A04170E0007CA5C /* HelloSwift */,
+				C06D5DDC1ED367C200087F72 /* HelloSwiftNotificationExtension */,
 				4E1644ED1A04170E0007CA5C /* Products */,
 				1F2FA88B2578A653CA7CA976 /* Pods */,
 				5C274ADBE04DAF82D572D7B9 /* Frameworks */,
@@ -73,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4E1644EC1A04170E0007CA5C /* HelloSwift.app */,
+				C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +148,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C06D5DDC1ED367C200087F72 /* HelloSwiftNotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C06D5DDD1ED367C200087F72 /* NotificationService.swift */,
+				C06D5DDF1ED367C200087F72 /* Info.plist */,
+			);
+			path = HelloSwiftNotificationExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,15 +170,34 @@
 				4E1644EA1A04170E0007CA5C /* Resources */,
 				39B5362B3CB8F18636630D7B /* [CP] Copy Pods Resources */,
 				67A905DB4C5F541D992B5B21 /* [CP] Embed Pods Frameworks */,
+				C06D5DE61ED367C200087F72 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C06D5DE11ED367C200087F72 /* PBXTargetDependency */,
 			);
 			name = HelloSwift;
 			productName = HelloSwift;
 			productReference = 4E1644EC1A04170E0007CA5C /* HelloSwift.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C06D5DDA1ED367C100087F72 /* HelloSwiftNotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C06D5DE31ED367C200087F72 /* Build configuration list for PBXNativeTarget "HelloSwiftNotificationExtension" */;
+			buildPhases = (
+				C06D5DD71ED367C100087F72 /* Sources */,
+				C06D5DD81ED367C100087F72 /* Frameworks */,
+				C06D5DD91ED367C100087F72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloSwiftNotificationExtension;
+			productName = HelloSwiftNotificationExtension;
+			productReference = C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -139,7 +205,7 @@
 		4E1644E41A04170E0007CA5C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Appboy;
 				TargetAttributes = {
@@ -153,6 +219,11 @@
 								enabled = 1;
 							};
 						};
+					};
+					C06D5DDA1ED367C100087F72 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5GLZKGNWQ3;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -170,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				4E1644EB1A04170E0007CA5C /* HelloSwift */,
+				C06D5DDA1ED367C100087F72 /* HelloSwiftNotificationExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +254,13 @@
 				4E1644F71A04170E0007CA5C /* Main.storyboard in Resources */,
 				4E1644FC1A04170E0007CA5C /* LaunchScreen.xib in Resources */,
 				4E1644F91A04170E0007CA5C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06D5DD91ED367C100087F72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +324,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C06D5DD71ED367C100087F72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06D5DDE1ED367C200087F72 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C06D5DE11ED367C200087F72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C06D5DDA1ED367C100087F72 /* HelloSwiftNotificationExtension */;
+			targetProxy = C06D5DE01ED367C200087F72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E1644F51A04170E0007CA5C /* Main.storyboard */ = {
@@ -359,10 +454,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HelloSwift/HelloSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -380,10 +476,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HelloSwift/HelloSwift.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -393,6 +490,61 @@
 				PROVISIONING_PROFILE = "17eaabef-0d17-4c4a-9798-74b39c01f993";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc Appboy.HelloSwift";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C06D5DE41ED367C200087F72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HelloSwiftNotificationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Appboy.HelloSwift.HelloSwiftNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6e8e2187-b585-43c6-aa55-097391e9c37c";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development Appboy.HelloSwift.HelloSwiftNotificationExtension";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C06D5DE51ED367C200087F72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HelloSwiftNotificationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Appboy.HelloSwift.HelloSwiftNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b1361196-eb93-4f9f-b470-3ef6fba0979a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc Appboy.HelloSwift.HelloSwiftNotificationExtension";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -414,6 +566,15 @@
 			buildConfigurations = (
 				4E16450C1A04170E0007CA5C /* Debug */,
 				4E16450D1A04170E0007CA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C06D5DE31ED367C200087F72 /* Build configuration list for PBXNativeTarget "HelloSwiftNotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C06D5DE41ED367C200087F72 /* Debug */,
+				C06D5DE51ED367C200087F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

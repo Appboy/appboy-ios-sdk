@@ -28,6 +28,15 @@
  - Removal 1
  - Removal 2
  -->
+## 2.30.0
+##### Breaking:
+ - Open sources the `ABKModalWebViewController` class, which is used to display the web URLs from push or in-app message clicks.
+   - Drops NUI customization support for the navigation bar and navigation bar button item on `ABKModalWebViewController`. To customize the UI, create an ABKModalWebViewController category and override the corresponding method(s) exposed.
+ - Open sources the `ABKNoConnectionLocalization` class, which provides Appboy's default localized string for "No Connection" error.
+   - You can customize the localization by adding "Appboy.no-connection.message" as the key in your Localizable.strings files.
+ - Removes the `Appboy.bundle` from the Core subspec of the SDK.
+   - If you use the Core subspec, the in-app messages will not display, and trying to display Appboy's News Feed and Feedback UI will lead to unpredictable behavior.
+
 ## 2.29.1
 ##### Added:
  - Adds a new property `buttonTextFont` to `ABKInAppMessageButton`. It allows clients to set customized fonts on in-app message buttons before the in-app message is displayed.
@@ -47,8 +56,8 @@
  - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
  - Requires XCode 8.3.
  - Changes the behavior of the `onCardClicked:feedViewController:` method in `ABKFeedViewControllerDelegate` to let Appboy handle the card click action if the delegate method returns `NO`.
-   - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
-   - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
+  - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
+  - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
 
 ##### Added:
  - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.

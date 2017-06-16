@@ -145,22 +145,6 @@
 		4E49ED0019DDE84F00ADC43F /* stopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopwatch.png; sourceTree = "<group>"; };
 		4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch@2x.png"; sourceTree = "<group>"; };
 		4E49ED0219DDE84F00ADC43F /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-icon.png"; sourceTree = "<group>"; };
-		4E619A9A1B0E85BC002B396E /* NewsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsInterfaceController.h; sourceTree = "<group>"; };
-		4E619A9B1B0E85BC002B396E /* NewsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsInterfaceController.m; sourceTree = "<group>"; };
-		4E619A9D1B0E85CD002B396E /* AppboyInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppboyInterfaceController.h; sourceTree = "<group>"; };
-		4E619A9E1B0E85CD002B396E /* AppboyInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppboyInterfaceController.m; sourceTree = "<group>"; };
-		4E69E06B1B0AA273003D87FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E69E06C1B0AA273003D87FF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		4E69E06D1B0AA273003D87FF /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		4E69E06E1B0AA273003D87FF /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		4E69E0701B0AA273003D87FF /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		4E69E0711B0AA273003D87FF /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		4E69E0731B0AA273003D87FF /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
-		4E69E0741B0AA273003D87FF /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
-		4E69E0761B0AA273003D87FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E69E0801B0AA274003D87FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E69E0821B0AA274003D87FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		4E69E0841B0AA274003D87FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E6D661519DCC18F009983AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E7D1C7C1A9FE1990087DB64 /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
 		4E7D1C7D1A9FE1990087DB64 /* FacebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookViewController.m; sourceTree = "<group>"; };
@@ -181,7 +165,6 @@
 		4EDB97201B3B6226003BB81D /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		4EE459F65937F47CF69041BB /* Pods-tvOS_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stopwatch.entitlements; sourceTree = "<group>"; };
-		4EEAD0EF1B0FB0B700883707 /* StopwatchDevelop WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "StopwatchDevelop WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		58C62E42E5F2BB8375EA1FBB /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
 		7549A445A7C9F36522E4D338 /* Pods-Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
@@ -378,53 +361,6 @@
 			path = Stopwatch/Images;
 			sourceTree = "<group>";
 		};
-		4E69E0691B0AA273003D87FF /* StopwatchDevelop WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				4EEAD0EF1B0FB0B700883707 /* StopwatchDevelop WatchKit Extension.entitlements */,
-				4E69E06D1B0AA273003D87FF /* InterfaceController.h */,
-				4E69E06E1B0AA273003D87FF /* InterfaceController.m */,
-				4E619A9A1B0E85BC002B396E /* NewsInterfaceController.h */,
-				4E619A9B1B0E85BC002B396E /* NewsInterfaceController.m */,
-				4E619A9D1B0E85CD002B396E /* AppboyInterfaceController.h */,
-				4E619A9E1B0E85CD002B396E /* AppboyInterfaceController.m */,
-				4E69E0701B0AA273003D87FF /* NotificationController.h */,
-				4E69E0711B0AA273003D87FF /* NotificationController.m */,
-				4E69E0731B0AA273003D87FF /* GlanceController.h */,
-				4E69E0741B0AA273003D87FF /* GlanceController.m */,
-				4E69E0761B0AA273003D87FF /* Images.xcassets */,
-				4E69E06A1B0AA273003D87FF /* Supporting Files */,
-			);
-			path = "StopwatchDevelop WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		4E69E06A1B0AA273003D87FF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4E69E06B1B0AA273003D87FF /* Info.plist */,
-				4E69E06C1B0AA273003D87FF /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4E69E07E1B0AA274003D87FF /* StopwatchDevelop WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				4E69E0811B0AA274003D87FF /* Interface.storyboard */,
-				4E69E0841B0AA274003D87FF /* Images.xcassets */,
-				4E69E07F1B0AA274003D87FF /* Supporting Files */,
-			);
-			path = "StopwatchDevelop WatchKit App";
-			sourceTree = "<group>";
-		};
-		4E69E07F1B0AA274003D87FF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4E69E0801B0AA274003D87FF /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		4F0CF3B17114F763B7942B56 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,8 +387,6 @@
 				4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */,
 				4E3E94E118BD52C60008C815 /* Localizable.strings */,
 				95EF5113173D5FD600C0D780 /* Stopwatch */,
-				4E69E0691B0AA273003D87FF /* StopwatchDevelop WatchKit Extension */,
-				4E69E07E1B0AA274003D87FF /* StopwatchDevelop WatchKit App */,
 				E397F40E1CC5BA540095A3ED /* tvOS_Stopwatch */,
 				E32835AE1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */,
 				E330881A1D6BB0B4008935A9 /* StopwatchNotificationService */,
@@ -1069,14 +1003,6 @@
 				C0A45ABC1E66155C0028C5DF /* zh-Hant */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		4E69E0811B0AA274003D87FF /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E69E0821B0AA274003D87FF /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		95EF5116173D5FD600C0D780 /* InfoPlist.strings */ = {

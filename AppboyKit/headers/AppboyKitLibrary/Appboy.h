@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.29.1"
+#define APPBOY_SDK_VERSION @"2.30.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -604,7 +604,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-      withCompletionHandler:(nullable void (^)())completionHandler;
+      withCompletionHandler:(nullable void (^)())completionHandler NS_AVAILABLE_IOS(10_0);
 
 /*!
  * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's 
