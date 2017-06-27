@@ -103,7 +103,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo __deprecated;
 
 + (NSSet<UNNotificationCategory *> *)getAppboyUNNotificationCategorySet;
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 10
 + (NSSet<UIUserNotificationCategory *> *)getAppboyUIUserNotificationCategorySet;
+#endif
 
 @end
 NS_ASSUME_NONNULL_END
