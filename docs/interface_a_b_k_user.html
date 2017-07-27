@@ -94,6 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:a41ba006e2ee9cf18039e38b30a44beee"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a41ba006e2ee9cf18039e38b30a44beee">addAlias:withLabel:</a></td></tr>
+<tr class="separator:a41ba006e2ee9cf18039e38b30a44beee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e261882c7e095c6e0381ab62ceebe40"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40">setGender:</a></td></tr>
 <tr class="separator:a3e261882c7e095c6e0381ab62ceebe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8ef1e78bfafde343974a004ca81bb74"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#ae8ef1e78bfafde343974a004ca81bb74">setEmailNotificationSubscriptionType:</a></td></tr>
@@ -169,6 +171,41 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 <li>The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated. </li>
 </ol>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a41ba006e2ee9cf18039e38b30a44beee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) addAlias: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>alias</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withLabel:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds an an alias for the current user. Individual (alias, label) pairs can exist on one and only one user. If a different user already has this alias or external user id, the alias attempt will be rejected on the server.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alias</td><td>The alias of the current user. </td></tr>
+    <tr><td class="paramname">label</td><td>The label of the alias; used to differentiate it from other aliases for the user. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not the alias and label are valid. Does not guarantee they won't collide with an existing pair. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a92f4b6e8b77baf80a1c9d45c479a59b3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -949,7 +986,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 16 2017 14:33:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 27 2017 13:54:03 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

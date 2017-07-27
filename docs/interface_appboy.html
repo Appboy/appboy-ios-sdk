@@ -125,6 +125,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a06154478e49f48c168232f48455e8173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680549ab7dba8c5971fd9a7fd938b452"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a></td></tr>
 <tr class="separator:a680549ab7dba8c5971fd9a7fd938b452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9abe8a17453b0bac918a51d359f0c27e"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a9abe8a17453b0bac918a51d359f0c27e">getDeviceId</a></td></tr>
+<tr class="separator:a9abe8a17453b0bac918a51d359f0c27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a975f6aa8e673f173361fd9fd2cfe2bd6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a></td></tr>
 <tr class="separator:a975f6aa8e673f173361fd9fd2cfe2bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc41e6cba491c3b6e1ff4a5e97ba381"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#affc41e6cba491c3b6e1ff4a5e97ba381">userNotificationWasSentFromAppboy:</a></td></tr>
@@ -319,6 +321,23 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9abe8a17453b0bac918a51d359f0c27e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) getDeviceId </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the device ID - the IDFV - which will reset if all apps for a given vendor are removed from the device.</p>
+<dl class="section return"><dt>Returns</dt><dd>The device ID. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad80c39e8c96482a77562a5b1a1d387aa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -394,7 +413,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If you're displaying feedback page on your own instead of using <a class="el" href="interface_a_b_k_feedback_view_controller.html">ABKFeedbackViewController</a>, you should still report impressions of the feedback page back to <a class="el" href="interface_appboy.html">Appboy</a> with this method so that your campaign reporting features still work in the dashboard. </p>
+<p>If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report impressions of the feedback page back to <a class="el" href="interface_appboy.html">Appboy</a> with this method so that your campaign reporting features still work in the dashboard. </p>
 
 </div>
 </div>
@@ -1266,7 +1285,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 16 2017 14:33:08 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 27 2017 13:54:03 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
