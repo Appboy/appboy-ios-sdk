@@ -9,7 +9,7 @@
 
   // Add tab bar items to UITabBarController
   NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects:
-                                     [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events"] andTitle:@"User" andImageName:@"user" withFeedAndFlushButtons:YES], // User tab
+                                     [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events", @"Alias"] andTitle:@"User" andImageName:@"user" withFeedAndFlushButtons:YES], // User tab
                                      [self addNavigationControllerWithChildren:@[@"UI", @"Controls"] andTitle:@"IAM" andImageName:@"IAM" withFeedAndFlushButtons:NO], // IAM tab
                                      [self addNavigationControllerWithIdentifier:@"FeedAndFeedbackViewController" withTitle:@"Feed/Feedback" andImageName:@"newsfeed"], // Feed/Feedback tab
                                      [self addNavigationControllerWithChildren:@[@"Misc", @"Social"] andTitle:@"Advanced" andImageName:@"bolt" withFeedAndFlushButtons:NO], // Advanced tab

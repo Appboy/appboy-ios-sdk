@@ -1,0 +1,18 @@
+PODS:
+  - Appboy-iOS-SDK/Core (2.30.0)
+  - Appboy-iOS-SDK/Feedback (2.30.0):
+    - Appboy-iOS-SDK/Core
+
+DEPENDENCIES:
+  - Appboy-iOS-SDK/Feedback (from `./../../../../Appboy-iOS-SDK/`)
+
+EXTERNAL SOURCES:
+  Appboy-iOS-SDK:
+    :path: "./../../../../Appboy-iOS-SDK/"
+
+SPEC CHECKSUMS:
+  Appboy-iOS-SDK: 173faa418ab885ea860d80c6fce1251d479b0061
+
+PODFILE CHECKSUM: 81297c623bef1e053e1b905c40515b4c420f2ebd
+
+COCOAPODS: 1.2.1

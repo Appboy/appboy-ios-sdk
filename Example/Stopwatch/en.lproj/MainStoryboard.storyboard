@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -864,7 +864,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2509" y="-2835"/>
+            <point key="canvasLocation" x="-2854" y="-2090"/>
         </scene>
         <!--In-App Controls-->
         <scene sceneID="0ks-kz-f3B">
@@ -1203,7 +1203,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NaG-XU-lKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2162" y="-2836"/>
+            <point key="canvasLocation" x="-2399" y="-2837"/>
+        </scene>
+        <!--Alias View Controller-->
+        <scene sceneID="mDG-4f-yZD">
+            <objects>
+                <viewController storyboardIdentifier="Alias" id="K0r-e4-kUm" customClass="AliasViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c3T-YD-Gua"/>
+                        <viewControllerLayoutGuide type="bottom" id="GiG-6Q-Mvx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ngA-d0-XaY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02d-GD-PwH">
+                                <rect key="frame" x="137" y="140" width="101" height="30"/>
+                                <state key="normal" title="Add User Alias"/>
+                                <connections>
+                                    <action selector="addUserAliasButtonClick:" destination="K0r-e4-kUm" eventType="touchUpInside" id="UfI-a2-Isq"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alias" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGg-yj-n9K">
+                                <rect key="frame" x="139" y="90" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="yEt-g0-iS3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Label" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="38f-30-eXD">
+                                <rect key="frame" x="139" y="40" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="6n8-aa-tWU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="38f-30-eXD" firstAttribute="centerX" secondItem="ngA-d0-XaY" secondAttribute="centerX" id="6Fi-Xe-lgd"/>
+                            <constraint firstItem="38f-30-eXD" firstAttribute="top" secondItem="c3T-YD-Gua" secondAttribute="bottom" constant="20" id="FVr-VE-mfH"/>
+                            <constraint firstItem="02d-GD-PwH" firstAttribute="top" secondItem="bGg-yj-n9K" secondAttribute="bottom" constant="20" id="Wd0-X2-mSd"/>
+                            <constraint firstItem="bGg-yj-n9K" firstAttribute="top" secondItem="38f-30-eXD" secondAttribute="bottom" constant="20" id="Zwy-3P-wcQ"/>
+                            <constraint firstItem="bGg-yj-n9K" firstAttribute="centerX" secondItem="02d-GD-PwH" secondAttribute="centerX" id="eKH-uS-BE9"/>
+                            <constraint firstItem="02d-GD-PwH" firstAttribute="centerX" secondItem="ngA-d0-XaY" secondAttribute="centerX" id="pD0-cX-xie"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aliasLabelTextField" destination="38f-30-eXD" id="GyK-wN-uJM"/>
+                        <outlet property="aliasTextField" destination="bGg-yj-n9K" id="rkn-jy-2sw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OzN-ZA-6eX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2398.5" y="-2091.5"/>
         </scene>
         <!--In App MessageUI View Controller-->
         <scene sceneID="FKA-a7-sNu">
@@ -1836,10 +1893,10 @@
             </objects>
             <point key="canvasLocation" x="-683" y="-2190"/>
         </scene>
-        <!--Feedback View Controller Navigation Context-->
+        <!--Navigation Feedback View Controller-->
         <scene sceneID="VzZ-Zf-w3N">
             <objects>
-                <viewController id="Dud-jw-0GI" customClass="ABKFeedbackViewControllerNavigationContext" sceneMemberID="viewController">
+                <viewController id="Dud-jw-0GI" customClass="ABKNavigationFeedbackViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MY8-Qm-3YT"/>
                         <viewControllerLayoutGuide type="bottom" id="W6l-2i-H0T"/>

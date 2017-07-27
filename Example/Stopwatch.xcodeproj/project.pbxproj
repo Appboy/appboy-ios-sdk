@@ -89,6 +89,7 @@
 		E397F41A1CC5BA550095A3ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E397F4181CC5BA540095A3ED /* Main.storyboard */; };
 		E397F41C1CC5BA550095A3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397F41B1CC5BA550095A3ED /* Assets.xcassets */; };
 		E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */; };
+		E3C754A41E70DE7D004E1CCE /* AliasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C754A31E70DE7D004E1CCE /* AliasViewController.m */; };
 		E3C754AA1E7AE9B3004E1CCE /* InAppMessageWithJS.html in Resources */ = {isa = PBXBuildFile; fileRef = E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */; };
 		E3C754AC1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html in Resources */ = {isa = PBXBuildFile; fileRef = E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */; };
 /* End PBXBuildFile section */
@@ -261,6 +262,8 @@
 		E397F41D1CC5BA550095A3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3A8A3621E5E6C07002E8821 /* IDFADelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDFADelegate.h; sourceTree = "<group>"; };
 		E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFADelegate.m; sourceTree = "<group>"; };
+		E3C754A21E70DE7D004E1CCE /* AliasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliasViewController.h; sourceTree = "<group>"; };
+		E3C754A31E70DE7D004E1CCE /* AliasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliasViewController.m; sourceTree = "<group>"; };
 		E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithJS.html; sourceTree = "<group>"; };
 		E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithoutAssetZip.html; sourceTree = "<group>"; };
 		E3ED8D401CE54C0300C23B99 /* AppboyTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyTVOSKit.framework; path = ../Public/AppboyTVOSKit.framework; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				E325DF451E29A93300B3E168 /* GeofencesViewController.m */,
 				E3A8A3621E5E6C07002E8821 /* IDFADelegate.h */,
 				E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */,
+				E3C754A21E70DE7D004E1CCE /* AliasViewController.h */,
+				E3C754A31E70DE7D004E1CCE /* AliasViewController.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -938,6 +943,7 @@
 				D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */,
 				D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */,
 				4EA7AA8E185626EC00D2B651 /* MiscViewController.m in Sources */,
+				E3C754A41E70DE7D004E1CCE /* AliasViewController.m in Sources */,
 				4EB014FE1A79D4C900E11E41 /* CustomInAppMessageViewController.m in Sources */,
 				E325DF461E29A93300B3E168 /* GeofencesViewController.m in Sources */,
 				4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */,
@@ -1091,7 +1097,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fbc30420-4ac5-400b-a7e4-7260267c79eb";
+				PROVISIONING_PROFILE = "43df0e9f-30b8-4642-89ab-833d3610a246";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1187,7 +1193,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = StopwatchDevelop;
-				PROVISIONING_PROFILE = "79170da0-b2a3-4b68-a1ca-c6d039ac3bed";
+				PROVISIONING_PROFILE = "c4748d93-9f90-434e-88c7-e5ee76698361";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1216,7 +1222,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "710cc9d2-a3db-4e57-85bf-cb1302fdac6a";
+				PROVISIONING_PROFILE = "e8925011-22fa-4bfe-a3e1-82cf6d9ab66f";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

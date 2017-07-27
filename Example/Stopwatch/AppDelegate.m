@@ -2,7 +2,6 @@
 #import <AppboyKit.h>
 #import "NUISettings.h"
 #import "ABKPushUtils.h"
-#import <Crittercism/Crittercism.h>
 #import "OverrideEndpointDelegate.h"
 #import "IDFADelegate.h"
 #import "ABKThemableFeedNavigationBar.h"
@@ -14,8 +13,6 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 #else
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
 #endif
-static NSString *const CrittercismAppId = @"51b67d141386207417000002";
-static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
 @implementation AppDelegate
 
@@ -70,20 +67,6 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
       withLaunchOptions:launchOptions
       withAppboyOptions:appboyOptions];
   
-  // Sets up Crittercism for crash and error tracking.
-  // Need to initialize Appboy before initializing Crittercism so custom events will be logged in crashDidOccur.
-  // Need to subscribe to crash notifications before initializing Crittercism.
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(crashDidOccur:)
-                                               name:CrittercismObserverName object:nil];
-  
-  [Crittercism enableWithAppID:CrittercismAppId];
-  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"startWithApiKey: %@", AppboyApiKey]];
-
-  if ([Appboy sharedInstance].user.email) {
-    [Crittercism setUsername:[Appboy sharedInstance].user.email];
-  }
-
   // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
   // feedback form and news feed).
   [Appboy sharedInstance].useNUITheming = YES;
@@ -106,6 +89,8 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   }];
 
   [self setUpRemoteNotification];
+  
+  NSLog(@"Appboy device identifier is %@", [[Appboy sharedInstance] getDeviceId]);
 
   return YES;
 }
@@ -128,7 +113,6 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
 
 // Pass the deviceToken to Appboy as well
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@",deviceToken]];
   NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
 }
@@ -292,19 +276,6 @@ static NSString *const CrittercismObserverName = @"CRCrashNotification";
   }
   // Let Appboy handle links otherwise
   return NO;
-}
-
-#pragma mark - Apteligent/Crittercism
-
-/* Send crash event to Appboy upon notification */
-- (void) crashDidOccur:(NSNotification*)notification {
-  NSDictionary *crashInfo = notification.userInfo;
-  
-  [[Appboy sharedInstance] logCustomEvent:@"ApteligentCrashEvent"
-                           withProperties:crashInfo];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashName" andStringValue:crashInfo[@"crashName"]];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashReason" andStringValue:crashInfo[@"crashReason"]];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"lastCrashDate" andDateValue:crashInfo[@"crashDate"]];
 }
 
 # pragma mark - Helper methods

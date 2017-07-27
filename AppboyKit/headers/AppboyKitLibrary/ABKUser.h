@@ -132,6 +132,18 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 @property (strong, nullable) ABKAttributionData *attributionData;
 
 /*!
+ * Adds an an alias for the current user.  Individual (alias, label) pairs can exist on one and only one user.
+ * If a different user already has this alias or external user id, the alias attempt will be rejected
+ * on the server.
+ *
+ * @param alias The alias of the current user.
+ * @param label The label of the alias; used to differentiate it from other aliases for the user.
+ * @return Whether or not the alias and label are valid. Does not guarantee they won't collide with
+ *         an existing pair.
+ */
+- (BOOL)addAlias:(NSString *)alias withLabel:(NSString *)label;
+
+/*!
  * @param gender ABKUserGender enum representing the user's gender.
  * @return YES if the user gender is set properly
  */

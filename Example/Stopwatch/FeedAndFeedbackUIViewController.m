@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "FeedAndFeedbackUIViewController.h"
+#import "ABKNavigationFeedbackViewController.h"
+#import "ABKModalFeedbackViewController.h"
 
 @implementation FeedAndFeedbackViewController
 
@@ -46,7 +48,7 @@
 
 - (void)openFeedbackFromNavigationFeed:(id)sender {
   // Navigation context
-  ABKFeedbackViewControllerNavigationContext *navFeedback = [[ABKFeedbackViewControllerNavigationContext alloc] init];
+  ABKNavigationFeedbackViewController *navFeedback = [[ABKNavigationFeedbackViewController alloc] init];
   [self.newsAndFeedbackNavigationController pushViewController:navFeedback animated:YES];
 }
 
@@ -138,16 +140,8 @@
 
 // An example modal feedback view controller
 - (IBAction)modalFeedbackButtonTapped:(id)sender {
-  ABKFeedbackViewControllerModalContext *modalFeedback = [[ABKFeedbackViewControllerModalContext alloc] init];
-  
-  // Setting the delegate will notify us when either the "Cancel" or "Send" buttons are tapped
-  modalFeedback.feedbackDelegate = self;
+  ABKModalFeedbackViewController *modalFeedback = [[ABKModalFeedbackViewController alloc] init];
   [self presentViewController:modalFeedback animated:YES completion:nil];
-}
-
-// This `ABKFeedbackViewControllerModalContextDelegate` delegate method is called when "Cancel" is tapped
-- (void)feedbackViewControllerModalContextCancelTapped:(ABKFeedbackViewControllerModalContext *)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 # pragma mark Feedback

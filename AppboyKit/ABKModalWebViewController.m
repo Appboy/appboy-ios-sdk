@@ -122,8 +122,8 @@ static NSString *const localizedNoConnectionKey = @"Appboy.no-connection.message
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
 decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-  NSString *URLString = [[navigationAction.request.mainDocumentURL absoluteString] lowercaseString];
-  NSArray *stringComponents = [URLString componentsSeparatedByString:@":"];
+  NSString *urlString = [[navigationAction.request.mainDocumentURL absoluteString] lowercaseString];
+  NSArray *stringComponents = [urlString componentsSeparatedByString:@":"];
   if ([stringComponents[1] hasPrefix:@"//itunes.apple.com"]  ||
       (![stringComponents[0] isEqual:@"http"] &&
        ![stringComponents[0] isEqual:@"https"])) {

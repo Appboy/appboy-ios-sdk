@@ -1,7 +1,6 @@
 #import "UserAttributesViewController.h"
 #import <AppboyKit.h>
 #import "UserCells.h"
-#import <Crittercism/Crittercism.h>
 
 static NSInteger const TextFieldTagNumber = 1000;
 static NSInteger const TotalNumberOfAttributes = 12;
@@ -243,8 +242,6 @@ static NSMutableArray *attributesValuesArray = nil;
     }
   }
 
-  [Crittercism leaveBreadcrumb:@"update appboy user's attributes"];
-
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                       message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
                                                      delegate:nil
@@ -260,7 +257,6 @@ static NSMutableArray *attributesValuesArray = nil;
     if (object && object != [NSNull null]) {
       switch (i) {
         case 0:
-          [Crittercism leaveBreadcrumb:[NSString stringWithFormat:@"change appboy user to %@", object]];
           [[Appboy sharedInstance] changeUser:(NSString *)object];
           continue;
 
@@ -273,7 +269,6 @@ static NSMutableArray *attributesValuesArray = nil;
           continue;
 
         case 3:
-          [Crittercism setUsername:[Appboy sharedInstance].user.email];
           [Appboy sharedInstance].user.email = (NSString *)object;
           continue;
 

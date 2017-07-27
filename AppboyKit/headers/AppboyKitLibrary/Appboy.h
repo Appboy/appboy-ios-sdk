@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.30.0"
+#define APPBOY_SDK_VERSION @"2.31.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -526,6 +526,14 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * or not. For more detail about the ABKFeedUpdatedNotification and the ABKFeedUpdatedIsSuccessfulKey, please check ABKFeedController.
  */
 - (void)requestFeedRefresh;
+
+/*!
+ * Get the device ID - the IDFV - which will reset if all apps for a given vendor are removed from the device.
+ *
+ * @return The device ID.
+ */
+- (NSString *)getDeviceId;
+
 
 #if !TARGET_OS_TV
 /*!

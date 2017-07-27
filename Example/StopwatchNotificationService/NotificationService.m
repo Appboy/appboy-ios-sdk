@@ -12,6 +12,7 @@ static NSString *const AppboyAPNSDictionaryAttachmentTypeKey = @"type";
 @property (nonatomic, strong) UNMutableNotificationContent *bestAttemptContent;
 @property (nonatomic, strong) UNMutableNotificationContent *originalContent;
 @property BOOL abortOnAttachmentFailure;
+@property NSURLSession *session;
 
 @end
 
@@ -71,8 +72,8 @@ static NSString *const AppboyAPNSDictionaryAttachmentTypeKey = @"type";
   // Download, store, and attach the content to the notification
   if (attachmentURLString) {
     NSURL *attachmentURL = [NSURL URLWithString:attachmentURLString];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [[session downloadTaskWithURL:attachmentURL
+    self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    [[self.session downloadTaskWithURL:attachmentURL
                 completionHandler:^(NSURL *temporaryFileLocation, NSURLResponse *response, NSError *error) {
                   if (error != nil) {
                     [self.class logMessage:@"Error fetching attachment, displaying content unaltered: %@", [error localizedDescription]];
@@ -96,6 +97,7 @@ static NSString *const AppboyAPNSDictionaryAttachmentTypeKey = @"type";
                     attachments[0] = attachment;
                     self.bestAttemptContent.attachments = attachments;
                     self.contentHandler(self.bestAttemptContent);
+                    [self.session finishTasksAndInvalidate];
                   }
                 }] resume];
   }
@@ -116,6 +118,7 @@ static NSString *const AppboyAPNSDictionaryAttachmentTypeKey = @"type";
 }
 
 - (void)serviceExtensionTimeWillExpire {
+  [self.session invalidateAndCancel];
   [self.class logMessage:@"Service extension called, displaying original content"];
   // Called just before the extension will be terminated by the system.
   // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.

@@ -104,7 +104,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSSet<UNNotificationCategory *> *)getAppboyUNNotificationCategorySet;
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 10
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_10_0
 + (NSSet<UIUserNotificationCategory *> *)getAppboyUIUserNotificationCategorySet;
 #endif
 

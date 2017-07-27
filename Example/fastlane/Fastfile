@@ -19,6 +19,8 @@ lane :matchFullAccess do
   match(type: "appstore", app_identifier: "com.appboy.stopwatch", force_for_new_devices: true)
   match(type: "development", app_identifier: "com.appboy.stopwatch.StopwatchNotificationService", force_for_new_devices: true)
   match(type: "adhoc", app_identifier: "com.appboy.stopwatch.StopwatchNotificationService", force_for_new_devices: true)
+  match(type: "development", app_identifier: "com.appboy.stopwatch.StopwatchNotificationContentExtension", force_for_new_devices: true)
+  match(type: "adhoc", app_identifier: "com.appboy.stopwatch.StopwatchNotificationContentExtension", force_for_new_devices: true)
 end
 
 lane :matchReadOnly do
@@ -27,6 +29,8 @@ lane :matchReadOnly do
   match(type: "appstore", app_identifier: "com.appboy.stopwatch", readonly: true, force_for_new_devices: true)
   match(type: "development", app_identifier: "com.appboy.stopwatch.StopwatchNotificationService", readonly: true, force_for_new_devices: true)
   match(type: "adhoc", app_identifier: "com.appboy.stopwatch.StopwatchNotificationService", readonly: true, force_for_new_devices: true)
+  match(type: "development", app_identifier: "com.appboy.stopwatch.StopwatchNotificationContentExtension", readonly: true, force_for_new_devices: true)
+  match(type: "adhoc", app_identifier: "com.appboy.stopwatch.StopwatchNotificationContentExtension", readonly: true, force_for_new_devices: true)
 end
 
 # More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md

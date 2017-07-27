@@ -28,6 +28,22 @@
  - Removal 1
  - Removal 2
  -->
+
+## 2.31.0
+##### Breaking:
+ - Open sources the Feedback view controllers and moves them into a new subspec "Feedback".
+   - The "Feedback" subspec has the Appboy Feedback UI and the Core SDK. It will not include in-app messages or News Feed UI.
+   - Removes the popover context for Feedback due to the deprecation of UIPopoverViewController in iOS.
+   - Renames the `ABKFeedbackViewControllerModalContext` and `ABKFeedbackViewControllerNavigationContext` class to `ABKModalFeedbackViewController` and `ABKNavigationFeedbackViewController`.
+   - The open-sourced Feedback view controllers offer backward compatible NUI support, although we recommend using categories or subclassing the Feedback view controllers for customization as NUI library isn't actively maintained any more. See [here](https://github.com/Appboy/appboy-ios-sdk/tree/master/AppboyUI/ABKFeedbackViewController/FeedbackViewController/ABKFeedbackViewController.h) for customization details.
+   - See our [Feedback Sample app](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/Feedback/AppboyFeedbackSample) for sample implementations and customizations.
+
+##### Added:
+- Adds user aliasing capability. Aliases can be used in the API and dashboard to identify users in addition to their ID. See the `addAlias:withLabel:` method on `ABKUser` for more information.
+
+##### Changed:
+ - Updates the `AppboyKit.h` to include all the public header files in the SDK.
+ 
 ## 2.30.0
 ##### Breaking:
  - Open sources the `ABKModalWebViewController` class, which is used to display the web URLs from push or in-app message clicks.
