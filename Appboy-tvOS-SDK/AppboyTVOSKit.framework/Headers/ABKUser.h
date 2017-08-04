@@ -1,8 +1,6 @@
 //
 //  ABKUser.h
 //  AppboySDK
-//
-//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import <Foundation/Foundation.h>
 
@@ -38,30 +36,8 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 
 /*!
  * When setting the custom attributes with custom keys:
- *
- * 1. Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values
- *    for reserved keys, please find and set the corresponding property in this class. The reserved key list is:
- *      email
- *      facebook
- *      twitter
- *      first_name
- *      last_name
- *      dob
- *      external_id
- *      country
- *      home_city
- *      bio
- *      gender
- *      phone
- *      email_subscribe
- *      foursquare_access_token
- *      image_url
- *      push_subscribe
- *      attribution_data
- *
- * 2. The maximum key length is 255 characters; longer keys are truncated.
- *
- * 3. The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated.
+ * 1. The maximum key length is 255 characters; longer keys are truncated.
+ * 2. The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated.
  */
 
 /*
@@ -100,19 +76,9 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 @property (nonatomic, copy, nullable) NSString *homeCity;
 
 /*!
- * The User's bio (String)
- */
-@property (nonatomic, copy, nullable) NSString *bio DEPRECATED_ATTRIBUTE;
-
-/*!
  * The User's phone number (String)
  */
 @property (nonatomic, copy, nullable) NSString *phone;
-
-/*!
- * The User's foursquare access token (String)
- */
-@property (nonatomic, copy, nullable) NSString *foursquareAccessToken;
 
 @property (nonatomic, copy, readonly) NSString *userID;
 
@@ -139,19 +105,22 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 @property (strong, nullable) ABKAttributionData *attributionData;
 
 /*!
+ * Adds an an alias for the current user.  Individual (alias, label) pairs can exist on one and only one user.
+ * If a different user already has this alias or external user id, the alias attempt will be rejected
+ * on the server.
+ *
+ * @param alias The alias of the current user.
+ * @param label The label of the alias; used to differentiate it from other aliases for the user.
+ * @return Whether or not the alias and label are valid. Does not guarantee they won't collide with
+ *         an existing pair.
+ */
+- (BOOL)addAlias:(NSString *)alias withLabel:(NSString *)label;
+
+/*!
  * @param gender ABKUserGender enum representing the user's gender.
  * @return YES if the user gender is set properly
  */
 - (BOOL)setGender:(ABKUserGenderType)gender;
-
-
-/*!
- * Deprecated: Use setEmailNotificationSubscriptionType instead.
- *
- * @param subscribed Whether or not this user should be subscribed to emails
- * @return YES if isSubscribedToEmail is set the same as parameter subscribed
- */
-- (BOOL)setIsSubscribedToEmails:(BOOL)subscribed __deprecated;
 
 /*!
  * Sets whether or not the user should be sent email campaigns. Setting it to unsubscribed opts the user out of

@@ -1,8 +1,6 @@
 //
 //  Appboy.h
 //  AppboySDK
-//
-//  Copyright (c) 2016 Appboy. All rights reserved.
 
 /*!
   \mainpage
@@ -15,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.24.3"
+#define APPBOY_SDK_VERSION @"3.0.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -27,9 +25,12 @@
 @class ABKUser;
 @class ABKFeedController;
 @class ABKLocationManager;
+@class ABKFeedback;
 @protocol ABKInAppMessageControllerDelegate;
+@protocol ABKIDFADelegate;
 @protocol ABKAppboyEndpointDelegate;
 @protocol ABKPushURIDelegate;
+@protocol ABKURLDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 /* ------------------------------------------------------------------------------------------------------
@@ -80,18 +81,32 @@ extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
  */
 extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
 
+/*!
+ * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to to Appboy.
+ */
+extern NSString *const ABKIDFADelegateKey;
 
 /*!
- * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modify or substitute the API and Resource
+ * This key can be set to an instance of a class that conforms to the ABKAppboyEndpointDelegate protocol, which can be used to modify or substitute the API and Resource
  * (e.g. image) URIs used by the Appboy SDK.
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
 
 /*!
- * This key can be set to a class that extends ABKPushURIDelegate which can be used to handle deep linking 
+ * This key can be set to an instance of a class that conforms to the ABKPushURIDelegate protocol, which can be used to handle deep linking
  * in push in a custom way.
  */
-extern NSString *const ABKPushURIDelegateKey;
+extern NSString *const ABKPushURIDelegateKey __deprecated_msg("ABKPushURIDelegate is deprecated, please use the ABKURLDelegate protocol instead.");
+
+/*!
+ * This key can be set to an instance of a class that conforms to the ABKURLDelegate protocol, allowing it to handle URLs in a custom way.
+ */
+extern NSString *const ABKURLDelegateKey;
+
+/*!
+ * This key can be set to an instance of a class that conforms to the ABKInAppMessageControllerDelegate protocol, allowing it to handle in-app messages in a custom way.
+ */
+extern NSString *const ABKInAppMessageControllerDelegateKey;
 
 /*!
  * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
@@ -105,6 +120,11 @@ extern NSString *const ABKSessionTimeoutKey;
  * the minimum time interval elapses. The default value is 30s.
  */
 extern NSString *const ABKMinimumTriggerTimeIntervalKey;
+
+/*!
+ * Key to report the SDK flavor currently being used.  For internal use only.
+ */
+extern NSString *const ABKSDKFlavorKey;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums
@@ -122,22 +142,52 @@ extern NSString *const ABKMinimumTriggerTimeIntervalKey;
  *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
  *   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
  *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
- *        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
- *        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
- *        the screen, for example, in response to a user click.
+ *        network requests. Appboy will make an exception and process requests in the following cases:
+ *        - Feedback requests are made via Appboy::submitFeedback:message:isReportingABug:,
+ *          Appboy::submitFeedback:withCompletionHandler:, or a FeedbackViewController.
+ *        - Feed requests are made via Appboy::requestFeedRefresh or an ABKFeedViewController. The latter typically 
+ *          occurs when an ABKFeedViewController is loaded and displayed on the screen or on a pull to refresh.
+ *        - In-app message requests are made via Appboy::requestInAppMessageRefresh.
+ *        - Network requests are required for internal features, such as templated in-app messages 
+ *          and certain location-based features.
  *        You can direct Appboy to perform an immediate data flush as well as process any other
  *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
  *        This mode is only recommended for advanced use cases. If you're merely trying to
  *        control the background flush behavior, consider using ABKAutomaticRequestProcessing
  *        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
  *
- * Regardless of policy, Appboy will intelligently combine requests on the queue to minimize the total number of
+ * Regardless of policy, Appboy will intelligently combine requests on the request queue to minimize the total number of
  * requests and their combined payload.
  */
 typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
   ABKAutomaticRequestProcessing,
   ABKAutomaticRequestProcessingExceptForDataFlush,
   ABKManualRequestProcessing
+};
+
+/*!
+ * Internal enum used to report the SDK flavor being used.
+ */
+typedef NS_ENUM(NSInteger , ABKSDKFlavor) {
+  UNITY = 1,
+  REACT,
+  CORDOVA,
+  XAMARIN ,
+  SEGMENT,
+  MPARTICLE
+};
+
+/*!
+ * Possible values for the result of submitting feedback:
+ *   ABKInvalidFeedback - The passed-in feedback isn't valid. Please check the validity of the ABKFeedback
+ *        object with instance method `feedbackValidation` before submitting it to Appboy.
+ *   ABKNetworkIssue - The SDK failed to send the feedback due to network issue. 
+ *   ABKFeedbackSentSuccessfully - The feedback is sent to Appboy server successfully.
+ */
+typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
+  ABKInvalidFeedback,
+  ABKNetworkIssue,
+  ABKFeedbackSentSuccessfully
 };
 
 /*
@@ -155,9 +205,14 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 + (nullable Appboy *)sharedInstance;
 
 /*!
+ * Get the Appboy singleton.  Throws an exception if accessed before startWithApiKey: is called.
+ */
++ (nonnull Appboy *)unsafeInstance;
+
+/*!
  * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ * @param application the current app
+ * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
  *
  * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
  * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
@@ -170,8 +225,8 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 
 /*!
  * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ * @param application The current app
+ * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
  * @param appboyOptions An optional NSDictionary with startup configuration values for Appboy. This currently supports
  * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
  * for more information.
@@ -214,10 +269,15 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 
 
 /*!
- * A class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
+ * A class conforming to the ABKAppboyEndpointDelegate protocol can be set to route Appboy API and Resource traffic in a custom way.
  * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
  */
 @property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
+
+/*!
+ * A class extending ABKIDFADelegate can be set to provide the IDFA to Appboy.
+ */
+@property (nonatomic, strong, nullable) id<ABKIDFADelegate> idfaDelegate;
 
 #if !TARGET_OS_TV
 /*!
@@ -253,9 +313,19 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 @property (nonatomic) BOOL useNUITheming;
 
 /*!
- * A class extending ABKPushURIDelegate can be set to handle deep linking in push in a custom way.
+ * A class conforming to the ABKPushURIDelegate protocol can be set to handle deep linking in push in a custom way.
  */
-@property (nonatomic, weak, nullable) id<ABKPushURIDelegate> appboyPushURIDelegate;
+@property (nonatomic, weak, nullable) id<ABKPushURIDelegate> appboyPushURIDelegate __deprecated_msg("Use appboyURLDelegate instead.");
+
+/*!
+ * A class conforming to the ABKURLDelegate protocol can be set to handle URLs in a custom way.
+ */
+@property (nonatomic, weak, nullable) id<ABKURLDelegate> appboyUrlDelegate;
+
+/*!
+ * Property for internal reporting of SDK flavor.
+ */
+@property (nonatomic) ABKSDKFlavor sdkFlavor;
 #endif
 
 /* ------------------------------------------------------------------------------------------------------
@@ -289,7 +359,7 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 - (void)shutdownServerCommunication;
 
 /*!
-* @param userID The new user's ID (from the host application).
+* @param userId The new user's ID (from the host application).
 *
 * @discussion
 * This method changes the user's ID.
@@ -325,7 +395,7 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 *  separately keeping track of the user ID you want to target while logged out and switching back to
 *  that user ID as part of your app's logout process.
 */
-- (void)changeUser:(NSString *)userID;
+- (void)changeUser:(NSString *)userId;
 
 /*!
  * @param eventName The name of the event to log.
@@ -427,6 +497,18 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 - (BOOL)submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 
 /*!
+ * @param feedback The feedback object with feedback message, email, and is-bug flag.
+ * @param completionHandler The block to execute when the feedback sending process is complete. An ABKFeedbackSentResult enum
+ * will be passed to the block indicating if the feedback was sent successfully.
+ *
+ * @discussion Submits a piece of feedback to the Appboy feedback center so that it can be handled in the Appboy dashboard.
+ * The request to submit feedback is made immediately. However, this method does not block and will return as soon as the
+ * feedback request is placed on the network queue.
+ *
+ */
+- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;
+
+/*!
  * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
  * the news feed back to Appboy with this method so that your campaign reporting features still work in the dashboard.
  */
@@ -450,6 +532,14 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
  */
 - (void)requestFeedRefresh;
 
+/*!
+ * Get the device ID - the IDFV - which will reset if all apps for a given vendor are removed from the device.
+ *
+ * @return The device ID.
+ */
+- (NSString *)getDeviceId;
+
+
 #if !TARGET_OS_TV
 /*!
  * Enqueues an in-app message request for the current user. Note that if the queue already contains another request for the
@@ -459,13 +549,20 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
 - (void)requestInAppMessageRefresh;
 
 /*!
+ * @param response The response passed in from userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
+ *
+ * @discussion This method returns whether or not a UNNotification was sent from Appboy's servers.
+ */
+- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response __deprecated_msg("Use [ABKPushUtils isAppboyUserNotification:] instead.");
+
+/*!
  * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or
  * application:didReceiveRemoteNotification in your App Delegate.
  *
  * @discussion
  * Test a push notification to see if it came Appboy's servers.
  */
-- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;
+- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options __deprecated_msg("Use [ABKPushUtils isAppboyRemoteNotification:] instead.");
 
 /*!
  * @param token The device's push token.
@@ -488,9 +585,9 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
  * @param notification An NSDictionary passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  *
- * @discussion This method forwards remote notifications to Appboy. When it's called in the background, Appboy will request
- * a refresh of the news feed and call the completionHandler when the request is finished; If it's called while the app
- * is in the foreground, Appboy won't fetch the news feed, and won't call the completionHandler.
+ * @discussion This method forwards remote notifications to Appboy. If the completionHandler is passed in when
+ * the method is called, Appboy will call the completionHandler. However, if the completionHandler is not passed in,
+ * it is the host app's responsibility to call the completionHandler.
  * Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate.
  */
 - (void)registerApplication:(UIApplication *)application
@@ -507,7 +604,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)getActionWithIdentifier:(NSString *)identifier
           forRemoteNotification:(NSDictionary *)userInfo
-              completionHandler:(nullable void (^)())completionHandler NS_DEPRECATED_IOS(9_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
+              completionHandler:(nullable void (^)())completionHandler NS_DEPRECATED_IOS(8_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
 
 /*!
  * @param center The app's current UNUserNotificationCenter object
@@ -520,7 +617,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-      withCompletionHandler:(nullable void (^)())completionHandler;
+      withCompletionHandler:(nullable void (^)())completionHandler NS_AVAILABLE_IOS(10_0);
 
 /*!
  * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's 
@@ -534,7 +631,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
  */
 - (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;
 
-- (BOOL)handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
 #endif
 
 @end

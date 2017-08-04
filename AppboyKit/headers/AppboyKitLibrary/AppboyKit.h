@@ -3,10 +3,7 @@
 #import "ABKAppboyEndpointDelegate.h"
 #import "ABKFacebookUser.h"
 #import "ABKTwitterUser.h"
-#import "ABKURLDelegate.h"
 #import "ABKAttributionData.h"
-#import "ABKPushURIDelegate.h"
-#import "ABKPushUtils.h"
 
 // Cards
 #import "ABKCard.h"
@@ -59,4 +56,8 @@
 
 // Location
 #import "ABKLocationManager.h"
+
+#import "ABKURLDelegate.h"
+#import "ABKPushURIDelegate.h"
+#import "ABKPushUtils.h"
 #endif

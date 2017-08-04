@@ -17,6 +17,8 @@
   self.endointTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideEndpointStorageKey];
   self.inAppMessageDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
   self.urlDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetURLDelegateKey];
+  self.sessionTimeoutTextField.keyboardType = UIKeyboardTypeNumberPad;
+  self.sessionTimeoutTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:NewSessionTimeoutKey];
 }
 
 /* Data Flush Settings */
@@ -156,6 +158,13 @@
   [[NSUserDefaults standardUserDefaults] setBool:self.urlDelegateSwitch.on forKey:SetURLDelegateKey];
   NSString *switchStatus = (self.urlDelegateSwitch.on) ? @"Set" : @"Unset";
   NSString *alertTitle = [NSString stringWithFormat:@"URL Delegate %@", switchStatus];
+  [self showForceCloseAlertWithTitle:alertTitle];
+}
+
+- (IBAction)setSessionTimeout:(id)sender {
+  NSLog(@"session timeout called");
+  [[NSUserDefaults standardUserDefaults] setObject:self.sessionTimeoutTextField.text forKey:NewSessionTimeoutKey];
+  NSString *alertTitle = [NSString stringWithFormat:@"New Session Timeout: %@", self.sessionTimeoutTextField.text];
   [self showForceCloseAlertWithTitle:alertTitle];
 }
 

@@ -36,30 +36,8 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 
 /*!
  * When setting the custom attributes with custom keys:
- *
- * 1. Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values
- *    for reserved keys, please find and set the corresponding property in this class. The reserved key list is:
- *      email
- *      facebook
- *      twitter
- *      first_name
- *      last_name
- *      dob
- *      external_id
- *      country
- *      home_city
- *      bio
- *      gender
- *      phone
- *      email_subscribe
- *      foursquare_access_token
- *      image_url
- *      push_subscribe
- *      attribution_data
- *
- * 2. The maximum key length is 255 characters; longer keys are truncated.
- *
- * 3. The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated.
+ * 1. The maximum key length is 255 characters; longer keys are truncated.
+ * 2. The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated.
  */
 
 /*
@@ -101,11 +79,6 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * The User's phone number (String)
  */
 @property (nonatomic, copy, nullable) NSString *phone;
-
-/*!
- * The User's foursquare access token (String)
- */
-@property (nonatomic, copy, nullable) NSString *foursquareAccessToken;
 
 @property (nonatomic, copy, readonly) NSString *userID;
 

@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.31.0"
+#define APPBOY_SDK_VERSION @"3.0.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -142,16 +142,21 @@ extern NSString *const ABKSDKFlavorKey;
  *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
  *   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
  *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
- *        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
- *        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
- *        the screen, for example, in response to a user click.
+ *        network requests. Appboy will make an exception and process requests in the following cases:
+ *        - Feedback requests are made via Appboy::submitFeedback:message:isReportingABug:,
+ *          Appboy::submitFeedback:withCompletionHandler:, or a FeedbackViewController.
+ *        - Feed requests are made via Appboy::requestFeedRefresh or an ABKFeedViewController. The latter typically 
+ *          occurs when an ABKFeedViewController is loaded and displayed on the screen or on a pull to refresh.
+ *        - In-app message requests are made via Appboy::requestInAppMessageRefresh.
+ *        - Network requests are required for internal features, such as templated in-app messages 
+ *          and certain location-based features.
  *        You can direct Appboy to perform an immediate data flush as well as process any other
  *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
  *        This mode is only recommended for advanced use cases. If you're merely trying to
  *        control the background flush behavior, consider using ABKAutomaticRequestProcessing
  *        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
  *
- * Regardless of policy, Appboy will intelligently combine requests on the queue to minimize the total number of
+ * Regardless of policy, Appboy will intelligently combine requests on the request queue to minimize the total number of
  * requests and their combined payload.
  */
 typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {

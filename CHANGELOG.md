@@ -29,6 +29,12 @@
  - Removal 2
  -->
 
+## 3.0.0
+##### Breaking:
+- Adds a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
+- Removes the deprecated `foursquareAccessToken` property from `ABKUser`. To associate a Foursquare access token with a user profile, use `setCustomAttributeWithKey:andStringValue:` instead.
+- Note: Appboy iOS SDK version 3.0.0 will **only support downgrading to iOS SDK version 2.31.0**. Downgrading to versions prior to 2.31.0 may result in app crashes.
+
 ## 2.31.0
 ##### Breaking:
  - Open sources the Feedback view controllers and moves them into a new subspec "Feedback".
@@ -43,7 +49,7 @@
 
 ##### Changed:
  - Updates the `AppboyKit.h` to include all the public header files in the SDK.
- 
+
 ## 2.30.0
 ##### Breaking:
  - Open sources the `ABKModalWebViewController` class, which is used to display the web URLs from push or in-app message clicks.

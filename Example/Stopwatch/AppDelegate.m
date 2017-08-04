@@ -43,6 +43,12 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   
   IDFADelegate *idfaDelegate = [[IDFADelegate alloc] init];
   appboyOptions[ABKIDFADelegateKey] = idfaDelegate;
+  
+  // Set custom session timeout
+  id sessionTimeout = [preferences objectForKey:NewSessionTimeoutKey];
+  if (sessionTimeout != nil) {
+    appboyOptions[ABKSessionTimeoutKey] = sessionTimeout;
+  }
 
   // Set ABKInAppMessageControllerDelegate on startup
   BOOL setInAppDelegate = [preferences boolForKey:SetInAppMessageControllerDelegateKey];

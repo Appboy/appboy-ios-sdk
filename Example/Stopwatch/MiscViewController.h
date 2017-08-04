@@ -8,6 +8,7 @@
 @property IBOutlet UIScrollView *scrollView;
 @property IBOutlet UITextField *apiKeyTextField;
 @property IBOutlet UITextField *endointTextField;
+@property IBOutlet UITextField *sessionTimeoutTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *inAppMessageDelegateSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *urlDelegateSwitch;
 
@@ -18,5 +19,6 @@
 - (IBAction)logSingleLocation:(id)sender;
 - (IBAction)setInAppDelegateSwitchChanged:(id)sender;
 - (IBAction)urlDelegateSwitchChanged:(id)sender;
+- (IBAction)setSessionTimeout:(id)sender;
 
 @end

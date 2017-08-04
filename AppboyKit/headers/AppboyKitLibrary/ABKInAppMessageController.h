@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (weak, nullable) id <ABKInAppMessageControllerDelegate> delegate;
 
+#if !TARGET_OS_TV
 /*!
  * supportedOrientationMasks allows you to change which orientation masks the in-app message supports.
  * In-app messages will normally support the orientations specified in the app settings, but the method
@@ -38,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
  * UIInterfaceOrientationLandscapeRight, UIInterfaceOrientationLandscapeLeft and UIInterfaceOrientationPortraitUpsideDown.
  */
 @property UIInterfaceOrientation supportedOrientations;
+#endif
 
 /*!
  * @param delegate The in-app message delegate that implements the ABKInAppMessageControllerDelegate methods. If the delegate is

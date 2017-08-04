@@ -44,8 +44,23 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nullable) NSDictionary *extras;
 
+//Optional:
 /*
- * @param cardDictionary The dictionary for card deserialization.`
+ * The URL string that will be opened after the card is clicked on.
+ */
+@property (copy, nullable) NSString *urlString;
+
+/*!
+ * When the card's urlString is not nil, if the property is set to YES, the URL will be opened in a modal UIWebView
+ * inside the app. If this property is set to NO, the URL will be opened by the OS and web URLs will be opened in
+ * an external web browser app.
+ *
+ * This property defaults to NO.
+ */
+@property BOOL openUrlInWebView;
+
+/*
+ * @param cardDictionary The dictionary for card deserialization.
  *
  * Deserializes the dictionary to a card for use by wrappers such as Appboy's Unity SDK for iOS.
  * When the deserialization isn't successful, this method returns nil; otherwise, it returns the deserialized card.
@@ -65,7 +80,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*
  * Manually log a click to Appboy for the card.
- * * This should only be used for custom news feed view controller. ABKFeedViewController already has card click logging.
+ * This should only be used for custom news feed view controller. ABKFeedViewController already has card click logging.
+ * The SDK will only log a card click when the card has the url property with a valid url.
  */
 - (void)logCardClicked;
 
