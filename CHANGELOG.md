@@ -29,6 +29,10 @@
  - Removal 2
  -->
 
+## 3.0.1
+##### Fixed:
+- Fixes an issue where calling `incrementCustomUserAttribute:` on `ABKUser` could cause a crash.
+
 ## 3.0.0
 ##### Breaking:
 - Adds a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
