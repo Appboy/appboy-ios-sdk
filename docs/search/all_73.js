@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['screenname',['screenName',['../interface_a_b_k_twitter_user.html#a8c17bd119a9a4f01583e265b82ca3903',1,'ABKTwitterUser']]],
   ['sdkflavor',['sdkFlavor',['../interface_appboy.html#a8f1250e12b60aeb65e50011205acb22d',1,'Appboy']]],
   ['serializetodata',['serializeToData',['../interface_a_b_k_in_app_message.html#a98643a60d6d9e2f1d941e2e3803ac43a',1,'ABKInAppMessage']]],
   ['setbuttonclickaction_3awithuri_3a',['setButtonClickAction:withURI:',['../interface_a_b_k_in_app_message_button.html#a0cd27ef36495918a29f3d7dbbcd38c12',1,'ABKInAppMessageButton']]],
@@ -21,6 +22,7 @@ var searchData=
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#afd911d60dfe7e5361afbfb364f5d20f9',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#aa9f1bd9e4a5c082133dd9cc344108b24',1,'Appboy']]],
+  ['statusescount',['statusesCount',['../interface_a_b_k_twitter_user.html#ae07baed61a3b19f713ec40f748f8136e',1,'ABKTwitterUser']]],
   ['submitfeedback_3amessage_3aisreportingabug_3a',['submitFeedback:message:isReportingABug:',['../interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0',1,'Appboy']]],
   ['submitfeedback_3awithcompletionhandler_3a',['submitFeedback:withCompletionHandler:',['../interface_appboy.html#a7f6b6363a366b6bb61420b284167a3e8',1,'Appboy']]],
   ['supportedorientationmasks',['supportedOrientationMasks',['../interface_a_b_k_in_app_message_controller.html#a409b57bcd37168ce8a28cd66544d9f99',1,'ABKInAppMessageController']]],
