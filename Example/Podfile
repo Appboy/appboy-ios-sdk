@@ -9,6 +9,7 @@ target :Stopwatch do
   pod 'KKColorListPicker', :git => 'https://github.com/leoru/KKColorListPicker.git'
   pod 'Firebase/DynamicLinks'
   pod 'Branch'
+  pod 'BuddyBuildSDK'
 end
 
 target :tvOS_Stopwatch do

@@ -29,6 +29,14 @@
  - Removal 2
  -->
 
+## 3.0.2
+##### Added
+- Added the ability to set a custom API endpoint via the Info.plist. 
+   - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.appboy.eu`).
+
+##### Fixed:
+- Fixes an issue where changing the IDFA settings through a third party wrapper could cause a crash.
+
 ## 3.0.1
 ##### Fixed:
 - Fixes an issue where calling `incrementCustomUserAttribute:` on `ABKUser` could cause a crash.
@@ -82,8 +90,8 @@
  - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
  - Requires XCode 8.3.
  - Changes the behavior of the `onCardClicked:feedViewController:` method in `ABKFeedViewControllerDelegate` to let Appboy handle the card click action if the delegate method returns `NO`.
-  - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
-  - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
+   - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
+   - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
 
 ##### Added:
  - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.

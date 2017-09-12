@@ -7,6 +7,7 @@
 #import "ABKThemableFeedNavigationBar.h"
 #import "Branch.h"
 #import <Firebase/Firebase.h>
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 #ifdef PUSH_DEV
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
@@ -20,6 +21,8 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
+  
+  [BuddyBuildSDK setup];
   
   NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
 
