@@ -28,11 +28,15 @@
  - Removal 1
  - Removal 2
  -->
+ 
+## 3.1.0
+#### Breaking:
+- Adds support for iOS 11. Requires Xcode 9.
 
 ## 3.0.2
 ##### Added
-- Added the ability to set a custom API endpoint via the Info.plist. 
-   - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.appboy.eu`).
+- Adds the ability to set a custom API endpoint via the Info.plist. 
+   - Adds the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.appboy.eu`).
 
 ##### Fixed:
 - Fixes an issue where changing the IDFA settings through a third party wrapper could cause a crash.

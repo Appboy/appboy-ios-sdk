@@ -50,9 +50,8 @@
 }
 
 + (BOOL)isSupportedSDWebImageVersion {
-  UIImageView *imageView = [[UIImageView alloc] init];
-  BOOL imageViewMethodsExist = [imageView respondsToSelector:@selector(sd_setShowActivityIndicatorView:)] &&
-                               [imageView respondsToSelector:@selector(sd_setImageWithURL:placeholderImage:completed:)];
+  BOOL imageViewMethodsExist = [UIImageView instancesRespondToSelector:@selector(sd_setShowActivityIndicatorView:)] &&
+                               [UIImageView instancesRespondToSelector:@selector(sd_setImageWithURL:placeholderImage:completed:)];
   
   SDWebImagePrefetcher *prefetcher = [SDWebImagePrefetcher sharedImagePrefetcher];
   BOOL prefetcherMethodsExist = [prefetcher respondsToSelector:@selector(prefetchURLs:)];

@@ -66,7 +66,7 @@ class NotificationService: UNNotificationServiceExtension {
       session.downloadTask(with: attachmentURL,
                            completionHandler: { (temporaryFileLocation, response, error) in
                             if (error != nil || temporaryFileLocation == nil) {
-                              self.displayOriginalContent("Error fetching attachment, displaying content unaltered: \(error?.localizedDescription)")
+                              self.displayOriginalContent("Error fetching attachment, displaying content unaltered: \(String(describing: error?.localizedDescription))")
                               return
                             } else {
                               print("[Appboy] Data fetched from server, processing with temporary file url \(temporaryFileLocation!.absoluteString)")

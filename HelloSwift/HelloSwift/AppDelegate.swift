@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
     // Override point for customization after application launch.
-    Appboy.start(withApiKey: "1fbb9af3-93e0-43a2-920c-c6d867dab72a", in:application, withLaunchOptions:launchOptions)
+    Appboy.start(withApiKey: "5cafd0c6-26da-4773-922a-fd0c3c0d2eea", in:application, withLaunchOptions:launchOptions)
     
     let center = UNUserNotificationCenter.current()
     center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
