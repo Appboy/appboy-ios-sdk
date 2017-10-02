@@ -21,7 +21,7 @@ Successful marketing automation is essential to the future of your mobile app. A
 
 The iOS SDK supports iOS 8.0+. 
 
-Integrating the iOS SDK [requires Xcode 8](https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md#2240). Developers requiring Xcode 7 may integrate Appboy iOS SDK version 2.23 and below. 
+Integrating the iOS SDK [requires Xcode 9](https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md#310). Developers requiring Xcode 8 may integrate Appboy iOS SDK version 3.0.2 and below. 
 
 Appboy uses [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.3.0 for in-app message icons.  Check out the [cheat sheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) to browse available icons.
 
