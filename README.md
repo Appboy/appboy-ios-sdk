@@ -11,6 +11,8 @@ Successful marketing automation is essential to the future of your mobile app. A
 ## Components
 
 - `AppboyKit` - Contains the variant of our SDK.
+- `AppboyUI` - Contains the open-source UI code of our SDK. Not all of the UI code of the SDK is open-source.
+- `Samples` - Contains sample apps for different Appboy features.
 - `Example` - Contains the Stopwatch Sample App which contains integration examples for the iOS SDK.
 	- The Stopwatch Sample App uses our [CocoaPods](http://guides.cocoapods.org/) integration (`Appboy-iOS-SDK`), so you must :
 	  1. [Install CocoaPods](http://guides.cocoapods.org/using/getting-started.html)

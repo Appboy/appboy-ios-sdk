@@ -131,6 +131,7 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     if ([[UIApplication sharedApplication] openURL:navigationAction.request.URL]) {
       decisionHandler(WKNavigationActionPolicyCancel);
       [self dismissViewControllerAnimated:YES completion:nil];
+      return;
     }
   }
   decisionHandler(WKNavigationActionPolicyAllow);

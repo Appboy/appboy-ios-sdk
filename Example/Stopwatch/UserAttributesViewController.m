@@ -3,11 +3,11 @@
 #import "UserCells.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
-static NSInteger const TotalNumberOfAttributes = 12;
-static NSInteger const IndexOfGender = 6;
-static NSInteger const IndexOfBirthday = 8;
-static NSInteger const IndexOfPushSubscriptionState = 10;
-static NSInteger const IndexOfEmailSubscriptionState = 11;
+static NSInteger const TotalNumberOfAttributes = 14;
+static NSInteger const IndexOfGender = 7;
+static NSInteger const IndexOfBirthday = 9;
+static NSInteger const IndexOfPushSubscriptionState = 12;
+static NSInteger const IndexOfEmailSubscriptionState = 13;
 static NSMutableArray *attributesValuesArray = nil;
 
 @implementation UserAttributesViewController
@@ -21,10 +21,12 @@ static NSMutableArray *attributesValuesArray = nil;
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.country", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.home-city", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.language", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.date-of-birth", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil),
+                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-food", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.push-subscription", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email-subscription", nil)];
 
@@ -279,32 +281,40 @@ static NSMutableArray *attributesValuesArray = nil;
         case 5:
           [Appboy sharedInstance].user.homeCity = (NSString *)object;
           continue;
+          
+        case 6:
+          [Appboy sharedInstance].user.language = (NSString *)object;
+          continue;
 
-        case 6:{
+        case 7:{
           BOOL genderIsMale = [(NSString *)object isEqualToString:@"m"];
           ABKUserGenderType userGender = genderIsMale ? ABKUserGenderMale : ABKUserGenderFemale;
           [[Appboy sharedInstance].user setGender:userGender];
           continue;
         }
 
-        case 7:
+        case 8:
           [Appboy sharedInstance].user.phone = (NSString *)object;
           continue;
 
-        case 8:
+        case 9:
           [Appboy sharedInstance].user.dateOfBirth = (NSDate *)object;
           continue;
 
-        case 9:
+        case 10:
           [[Appboy sharedInstance].user setCustomAttributeWithKey:@"favorite_color" andStringValue:(NSString *)object];
           continue;
           
-        case 10:{
+        case 11:
+          [[Appboy sharedInstance].user setCustomAttributeWithKey:@"favorite_food" andStringValue:(NSString *)object];
+          continue;
+          
+        case 12:{
           [[Appboy sharedInstance].user setPushNotificationSubscriptionType:[self getSubscriptionType:object]];
           continue;
         }
           
-        case 11: {
+        case 13: {
           [[Appboy sharedInstance].user setEmailNotificationSubscriptionType:[self getSubscriptionType:object]];
           continue;
         }

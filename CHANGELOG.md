@@ -3,93 +3,114 @@
 
 ## major.minor.build
 
-##### Breaking:
+##### Breaking
  - Breaking change
    - requirements for breaking change
    - detail for breaking change
 
-##### Added:
+##### Added
  - Feature 1
    - detail of feature 1
  - Feature 2
    - detail of feature 2
 
-##### Fixed:
+##### Fixed
  - Bug 1
    - reference to the issue 1
  - Bug 2
    - reference to the issue 2
 
-##### Changed:
+##### Changed
  - Change 1
  - Change 2
 
-##### Removed:
+##### Removed
  - Removal 1
  - Removal 2
  -->
  
+## 3.1.1
+
+##### Added
+- Adds a new property `language` to `ABKUser` to allow explicit control over the user's language in the Appboy dashboard. Note that this is separate and independent from the language settings on the user's device.
+- Adds an Objective-C sample app for the Core subspec of the SDK. See `Samples/Core/ObjCSample`.
+
+##### Fixed
+ - Fixes a bug introduced in version 2.30 where crashes could occur if the SDK was directed to handle a custom scheme deep link inside a WebView.   
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/122.
+ - Fixes a bug introduced in version 3.0 where new custom attributes were not being flushed if custom attributes had been previously flushed in the same foregrounded session.
+ - Fixes a bug introduced in version 3.0 where previously flushed custom attributes were being re-sent.
+ - Fixes an issue where slow image fetching blocked image-only modal in-app messages from displaying.
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/118.
+
 ## 3.1.0
-#### Breaking:
+
+##### Breaking
 - Adds support for iOS 11. Requires Xcode 9.
 
 ## 3.0.2
+
 ##### Added
 - Adds the ability to set a custom API endpoint via the Info.plist. 
-   - Adds the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.appboy.eu`).
+   - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.appboy.eu`).
 
-##### Fixed:
+##### Fixed
 - Fixes an issue where changing the IDFA settings through a third party wrapper could cause a crash.
 
 ## 3.0.1
-##### Fixed:
+
+##### Fixed
 - Fixes an issue where calling `incrementCustomUserAttribute:` on `ABKUser` could cause a crash.
 
 ## 3.0.0
-##### Breaking:
+
+##### Breaking
 - Adds a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
 - Removes the deprecated `foursquareAccessToken` property from `ABKUser`. To associate a Foursquare access token with a user profile, use `setCustomAttributeWithKey:andStringValue:` instead.
 - Note: Appboy iOS SDK version 3.0.0 will **only support downgrading to iOS SDK version 2.31.0**. Downgrading to versions prior to 2.31.0 may result in app crashes.
 
 ## 2.31.0
-##### Breaking:
+
+##### Breaking
  - Open sources the Feedback view controllers and moves them into a new subspec "Feedback".
    - The "Feedback" subspec has the Appboy Feedback UI and the Core SDK. It will not include in-app messages or News Feed UI.
-   - Removes the popover context for Feedback due to the deprecation of UIPopoverViewController in iOS.
+   - Removes the popover context for Feedback due to the deprecation of `UIPopoverViewController` in iOS.
    - Renames the `ABKFeedbackViewControllerModalContext` and `ABKFeedbackViewControllerNavigationContext` class to `ABKModalFeedbackViewController` and `ABKNavigationFeedbackViewController`.
    - The open-sourced Feedback view controllers offer backward compatible NUI support, although we recommend using categories or subclassing the Feedback view controllers for customization as NUI library isn't actively maintained any more. See [here](https://github.com/Appboy/appboy-ios-sdk/tree/master/AppboyUI/ABKFeedbackViewController/FeedbackViewController/ABKFeedbackViewController.h) for customization details.
    - See our [Feedback Sample app](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/Feedback/AppboyFeedbackSample) for sample implementations and customizations.
 
-##### Added:
+##### Added
 - Adds user aliasing capability. Aliases can be used in the API and dashboard to identify users in addition to their ID. See the `addAlias:withLabel:` method on `ABKUser` for more information.
 
-##### Changed:
+##### Changed
  - Updates the `AppboyKit.h` to include all the public header files in the SDK.
 
 ## 2.30.0
-##### Breaking:
+
+##### Breaking
  - Open sources the `ABKModalWebViewController` class, which is used to display the web URLs from push or in-app message clicks.
    - Drops NUI customization support for the navigation bar and navigation bar button item on `ABKModalWebViewController`. To customize the UI, create an ABKModalWebViewController category and override the corresponding method(s) exposed.
  - Open sources the `ABKNoConnectionLocalization` class, which provides Appboy's default localized string for "No Connection" error.
-   - You can customize the localization by adding "Appboy.no-connection.message" as the key in your Localizable.strings files.
+   - You can customize the localization by adding `Appboy.no-connection.message` as the key in your `Localizable.strings` files.
  - Removes the `Appboy.bundle` from the Core subspec of the SDK.
    - If you use the Core subspec, the in-app messages will not display, and trying to display Appboy's News Feed and Feedback UI will lead to unpredictable behavior.
 
 ## 2.29.1
-##### Added:
+
+##### Added
  - Adds a new property `buttonTextFont` to `ABKInAppMessageButton`. It allows clients to set customized fonts on in-app message buttons before the in-app message is displayed.
 
-##### Fixed:
+##### Fixed
  - Makes class `ABKInAppMessageWindowController.h` public.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/105.
  - Fixes an issue where device information was not flushed for a new user when server requests were queued for two or more users.
 
-##### Changed:
+##### Changed
  - Removes the warnings in `ABKSDWebImageProxy`.
 
 ## 2.29.0
 
-##### Breaking:
+##### Breaking
  - Drops support for iOS 7.
  - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
  - Requires XCode 8.3.
@@ -97,7 +118,7 @@
    - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
    - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
 
-##### Added:
+##### Added
  - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.
  - Adds a Javascript interface to HTML in-app messages with ability to log custom events, log purchases, set user attributes, navigate users, and close the message.
  - Adds an `abDeepLink` query field to HTML in-app messages, which defaults to false. To prevent the SDK from opening deep links in a `UIWebView`, specify `abDeepLink=true` in your link (e.g., `https://www.appboy.com?abDeepLink=true`).
@@ -110,7 +131,7 @@
    - `+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;`
    - These methods can be used to ensure that your app does not take any undesired or unnecessary actions upon receiving Appboy's internal content-available notifications (e.g., pinging your server for content).
 
-##### Changed:
+##### Changed
  - Deprecates `ABKPushURIDelegate`. If you were previously using `ABKPushURIDelegate`, use `ABKURLDelegate` instead.
  - Deprecates `userNotificationWasSentFromAppboy:` and `pushNotificationWasSentFromAppboy:` on `Appboy`. Use `isAppboyUserNotification:` and `isAppboyRemoteNotification:` on `ABKPushUtils` instead.
  - Deprecates `shouldFetchTestTriggersFlagContainedInPayload:` on `ABKPushUtils`.
@@ -120,15 +141,15 @@
 ##### Breaking:
  - Removes support for watchOS 1, including Appboy WatchKit SDK and all public APIs for watchOS in Appboy iOS SDK.
 
-##### Added:
+##### Added
  - Added `ABKSDWebImageProxy` to access the SDWebImage framework. This will prevent the Core subspec of the SDK from calling any SDWebImage methods directly.
 
 ## 2.27.0
 
-##### Breaking:
+##### Breaking
  - Removes the following deprecated items:  the `bio` field of `ABKUser`, the `setIsSubscribedToEmails:` method of `ABKUser`, and the `getResourceEndpoint:` method of the `ABKAppboyEndpointDelegate` protocol.
 
-##### Added:
+##### Added
  - Added support for registering geofences and messaging on geofence events. Please reach out to success@appboy.com for more information about this feature.
  - Adds Appboy default push categories which can be fetched from `ABKPushUtils`.
    - To use the Appboy default push categories, you need to manually add the Appboy categories when you register for push. You can get the Appboy categories from `[ABKPushUtils getAppboyUNNotificationCategorySet]` or `[ABKPushUtils getAppboyUIUserNotificationCategorySet]`.
@@ -136,24 +157,24 @@
    - All Appboy push action buttons support localization.
  - Adds support for web link and deep link handling of push action buttons.
 
-##### Fixed:
+##### Fixed
  - Fixes the issue where the combination of the Core subspec of the SDK and a non-supported version of SDWebImage framework can cause apps to crash.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/104.
 
-##### Changed:
+##### Changed
  - HTML in-app messages now log body click analytics on all links that are not `appboy://customEvent` and do not include the `abButtonId` query field. Previously, no body click analytics were logged.
 
-##### Removed:
+##### Removed
  - Removes deprecated method `- (NSString *)getResourceEndpoint:(NSString *)appboyResourceEndpoint` from `ABKAppboyEndpointDelegate`.
  - Removes deprecated property `bio` and deprecated method `- (BOOL)setIsSubscribedToEmails:(BOOL)subscribed` from `ABKUser`.
 
 ## 2.26.0
 
-##### Breaking:
+##### Breaking
  - Adds support for SDWebImage version 4.0.0 with GIF support. SDWebImage version 3.x will not be supported from this version on. Please make sure you are using the correct version of SDWebImage.framework.  Note: SDWebImage 4.0.0 relies on FLAnimatedImage - users integrating in ways besides CocoaPods should ensure they link the FLAnimatedImage framework if they want GIF support.
  - Removes the `url` property from subclasses of `ABKCard`. This property has been renamed to `urlString` and moved onto the `ABKCard` superclass.
 
-##### Added:
+##### Added
  - Adds Cocoapods subspecs "Core" and "UI".
    - The "UI" subspsec has the full feature set of the current SDK. This is the default subspec when no subspec is specified in the Podfile.
    - The "Core" subspec removes the SDWebImage framework dependency. This is for apps who do not use any Appboy UI that leverages images (News Feed, in-app messages). If you use the "Core" subspec, in-app messages with images will not display, and the News Feed will render with plain white images.
@@ -163,12 +184,12 @@
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/45.
  - Adds `ABKIDFADelegate` protocol that can be used to create a delegate to pass Appboy the IDFA in `startWithApiKey:` in the `appboyOptions` dictionary under the `ABKIDFADelegateKey` key.  Alternative to existing `ABKIdentifierForAdvertisingProvider` compile flag solution.
 
-##### Changed:
+##### Changed
  - Disables the `-webkit-touch-callout` property on HTML in-app messages. Long presses and 3D Touch on links will no longer display pop-ups with additional link information.
 
 ## 2.25.0
 
-##### Added:
+##### Added
 - Adds the ability to set the `ABKInAppMessageControllerDelegate` when the SDK starts by passing a delegate object to the `ABKInAppMessageControllerDelegateKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`.
   - This is the recommended way to set the `ABKInAppMessageControllerDelegate` and circumvents a potential race condition where in-app messages can be shown before the delegate has been set.
 - Exposes the ABKFeedback object and adds a new method `- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;` in `Appboy`. The new method accepts a completion handler which receives an ABKFeedbackSentResult enum as feedback sending result.
@@ -176,19 +197,19 @@
 - Adds the utility method `- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response;` to `Appboy`. This method is compatible with the `UserNotifications` framework and returns whether a push notification was sent from Appboy's server.
   - Those using `- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;` who have integrated the `UserNotifications` framework should use this method instead.
 
-##### Fixed:
+##### Fixed
  - Changes the ABKInAppMessageButton from a `UIButton` object to a pure data model class in `NSObject`.
    - This resolves the issue https://github.com/Appboy/appboy-ios-sdk/issues/97.
 
-##### Changed:
+##### Changed
  - Adds more protection around triggered in-app message display.
 
 ## 2.24.5
 
-##### Fixed:
+##### Fixed
  - Fixes an issue where in-app messages triggered off of push clicks wouldn't fire when the push click happened before the in-app message configuration was synced to the device.
 
-##### Changed:
+##### Changed
  - Updates push registration to flush the token to the server immediately.
  - Improves the accessibility of in-app messages and news feed cards.
    - When in voiceOver mode, the SDK auto-focuses on in-app messages when they appear and resets focus on dismissal.  
@@ -197,25 +218,25 @@
 
 ## 2.24.4
 
-##### Added:
+##### Added
  - Adds protection around in-app message UI code to avoid displaying in-app messages with corrupted images.
 
-##### Fixed:
+##### Fixed
  - Fixes the iOS version number in the deprecation warnings in Appboy.h.
 
 ## 2.24.3
 
-##### Breaking:
+##### Breaking
  - Update REQUIRED for apps using Appboy SDK 2.24.0, 2.24.1 or 2.24.2 with UserNotifications.framework
 
-##### Fixed:
+##### Fixed
  - Fixes an issue where a user's foreground push enabled status could erroneously be marked as disabled.
    - This issue can occur when opening the app from suspended mode. At that time, the foreground push enabled status was defaulted to disabled until the UserNotifications.framework returned the user's push authorization status. If the user closed the app within a few seconds, the SDK would not flush the updated push status and the user would mistakenly be marked as "push disabled".
    - This issue only affected apps using UserNotifications.framework to register for push notifications.
    - The updated code stores the push authorization status on disk to fix the issue.
  - Fixes an issue where triggered in-app messages with event property templating did not respect re-eligibility settings.
 
-##### Changed:
+##### Changed
  - Updates the Podspecs for iOS and tvOS SDK.
  - Updates deprecation warnings to specify iOS version.
  - Updates the ABKFeedController with more generic nullability.
@@ -224,63 +245,63 @@
 
 ## 2.24.2
 
-##### Fixed:
+##### Fixed
  - Fixes an issue where HTML in-app messages loaded JavaScript more than once.
  - Fixes the Appboy.inAppMessage.webview.done-button.title string in the French localization file, which was named incorrectly and wasn't being found.
 
 ## 2.24.1
 
-##### Added:
+##### Added
  - Adds nullability annotation for the completionHandler in `userNotificationCenter :didReceiveNotificationResponse:withCompletionHandler`.
 
 ## 2.24.0
 
-##### Breaking:
+##### Breaking
  - Updates the SDK to require XCode 8.
  - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Appboy iOS integrations.  Please see our updated documentation [here](https://www.appboy.com/documentation/iOS/#step-4-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update.
 
-##### Added:
+##### Added
  - Updates the iOS and tvOS SDKs to support iOS 10.
  - Adds a new method `- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler`. This method supports the new delegate method for push notification handling in `UserNotification` framework.
 
-##### Changed:
+##### Changed
  - Deprecates two push delegate methods:
   `- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification` and
   `- (void)getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(nullable void (^)())completionHandler`.
 
 ## 2.23.0
 
-##### Added:
+##### Added
  - Adds support for upgraded in-app messages including image-only messages, improved image sizing/cropping, text scrolling, text alignment, configurable orientation, and configurable frame color.
  - Adds support for in-app messages triggered on custom event properties, purchase properties, and in-app message clicks.
  - Adds support for templating event properties within in-app messages.
 
-##### Removed:
+##### Removed
  - Removes the deprecated method `logSocialShare` from Appboy class.
 
 ## 2.22.1
 
-##### Changed:
+##### Changed
  - Updates tvOS bitcode support, patching an error introduced by an Xcode bug.
 
 ## 2.22.0
 
-##### Added:
+##### Added
  - Adds tvOS support for logging analytics; adds sample applications for tvOS and TVML.
  - Adds Hebrew localization support.
 
 ## 2.21.0
 
-##### Breaking:
+##### Breaking
  - Drops support for iOS 6.
 
-##### Added:
+##### Added
  - Adds support for deep links with non-URL-encoded characters. The SDK will encode unencoded url strings to create valid deep link NSURLs.
 
-##### Fixed:
+##### Fixed
  - Fixes a bug where the background of a slideup in-app message remained transparent when configured with 100% opacity.
 
-##### Changed:
+##### Changed
  - Updates the podspec SDWebImage dependency to fetch the latest version.
  - Replaces SDK usage of NSURLConnection with NSURLSession.
  - Updates the SDK to always call `canOpenURL:` before opening a deep link. After this change, the SDK will only direct deep links whose schemes are whitelisted.
@@ -288,341 +309,341 @@
 
 ## 2.20.1
 
-##### Fixed:
+##### Fixed
  - Fixes an issue where in certain conditions NSUserDefault blocking would cause custom events logged in the main thread to result in UI freezing.
 
-##### Changed:
+##### Changed
  - Implements an optimization in push handling to not prefetch the News Feed when a push arrives and the app is in the background.
 
 ## 2.20.0
 
-##### Added:
+##### Added
  - Adds Carthage support.
 
-##### Fixed:
+##### Fixed
  - Fixes a multithreading issue where logging custom events from different threads would sporadically cause errors.
  - Fixes the issue where a close button's color on modal and full in-app messages didn't respect the opacity value.
  - Fixes an issue where failure to download HTML in-app message assets mid-download resulted in display without assets.
 
-##### Changed:
+##### Changed
  - Now the `onInAppMessageHTMLButtonClicked:clickedURL:buttonID:` delegate method will be called every time a URL is clicked. The method used to be only called when there was a button ID in the URL link.
  - Updates the feedback element to reject messages that contain only whitespace.
  - Updates remote push handling to call the completion handler passed in every time (a code path previously existed that would return without calling it).
 
-##### Removed:
+##### Removed
  - Removed the delegate method `onInAppMessageHTMLButtonClicked:buttonID:` from `ABKInAppMessageControllerDelegate` protocol.
 
 ## 2.19.3
 
-##### Added:
+##### Added
  - Adds a new feature allowing manual control of deep link handling in push notications. To use this, add a `ABKPushURIDelegate` value for the `ABKPushURIDelegate` key in the `appboyOptions` dictionary of `startWithApiKey:inApplication:inApplication:withAppboyOptions:`. Also updates the `ABKPushURIDelegate` integration to be initialized through that integration point.
  - Adds guarding against a possible crash caused by a user's offline state being corrupted and not including an active session when a network request
 occurred.
 
-##### Fixed:
+##### Fixed
  - Fixes an issue where duplicate data could be recorded when a force quit or crash occurs after a network request completed successfully, but before any other activity (such as leaving the app, putting it to sleep, updating an attribute or firing some other event or purchase) occurred.
 
 ## 2.19.2
 
-##### Added:
+##### Added
  - Adds warning when messaging doesn't succeed because SDWebImage is not integrated.
 
-##### Fixed:
+##### Fixed
  - Fixes a bug where users who went from being eligible for triggered messages to not being eligible for any triggered messages didn't see their local triggers configuration get updated.  This has already been fixed with a server-side update for affected versions; this update fixes the issue client-side.
 
-##### Changed:
+##### Changed
  - Updates headers to be compatible with Swift 2.2.
 
 
 ## 2.19.1
 
-##### Added:
+##### Added
  - Adds sample code for a universal link in Stopwatch.
 
-##### Fixed:
+##### Fixed
  - Fixes the benign issue that caused the log message `*** -[NSKeyedUnarchiver initForReadingWithData:]: data is NULL`.
  - Fixes an issue where NULL campaign IDs in push messages (e.g. from a REST API push message without a specified campaign id) resulted in push-clicked triggers for triggered in-app messages not firing.
  - Fixes an issue where calling `changeUser` between identified users caused the read/unread state of the news feed cards of the old user to be set as the new user's read/unread states.
  - Fixes an issue where a user attribute value that had been set to multiple different values created a state that would not let you set the original value again. The bug was introduced in version 2.17.1.
 
-##### Changed:
+##### Changed
  - Analytics are now logged for in-app messages and in-app message buttons with 'ABKInAppMessageNoneClickAction' click actions.  `ABKInAppMessageNoneClickAction` is set when an in-app message on the dashboard has a click action that only closes the in-app message; formerly this did not count as a click.
 
 ## 2.19.0
 
-##### Added:
+##### Added
  - Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events.
 
-##### Changed:
+##### Changed
  - Deprecates the old system of requesting in-app message display, now collectively known as 'original' in-app messaging, where messages were limited to displaying at app start.  
 
 ## 2.18.4
 
-##### Fixed:
+##### Fixed
  - Fixes a Cocoapods issue that emerged during the release of 2.8.13.
 
 ## 2.18.3
 
-##### Changed:
+##### Changed
  - Makes an internal update to provide functionality for SDKs that embed this library.
 
 ## 2.18.2
 
-##### Added:
+##### Added
  - Adds warning logging if `[Appboy sharedInstance]` is called while in an uninitialized state.
 
-##### Changed:
+##### Changed
  - Deprecates the delegate method `getResourceEndpoint:` in ABKAppboyEndpointDelegate. The SDK will no longer call this delegate method.
 
 ## 2.18.1
 
-##### Fixed:
+##### Fixed
  - Fixes the nullability annotation warnings in the public header files.
 
-##### Changed:
+##### Changed
  - Updates HelloSwift sample app to adopt swift 2.0.
 
 ## 2.18
 
-##### Added:
+##### Added
  - Adds nullability annotations to all Appboy public APIs.
  - Adds a new delegate method to support custom push URI handle. For more detail, please see [ABKPushURIDelegate.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/headers/AppboyKitLibrary/ABKPushURIDelegate.h);
 
-##### Changed:
+##### Changed
  - Updates to auto-dismiss the Appboy web view when a user returns to the app after following a link out of the app from an Appboy web view.
 
-##### Removed:
+##### Removed
  - Removes the deprecated method `requestSlideupRefresh` from Appboy class.
 
 ## 2.17.1
 
-##### Fixed:
+##### Fixed
  - Fixes a bug where in certain conditions the SDK would resend user attributes that had already synced with the server.
 
 ## 2.17
 
-##### Added:
+##### Added
  - Adds a new button clicked delegate method for HTML in-app message. The new delegate method also passes the URL of the clicked button.
 
-##### Fixed:
+##### Fixed
  - Fixed the crash caused by inserting a nil object into an NSDictionary when parsing an event object.
 
-##### Changed:
+##### Changed
  - Makes the WebView background for HTML in-app messages transparent.  Ensure HTML in-app messages you send to the device are created expecting a transparent background.
  - Applies the Appboy endpoint delegate methods to in-app messages' resource(zip and image) fetching.
 
-##### Removed:
+##### Removed
  - Removes the Facebook button from Feedback page.
 
 ## 2.16.1
 
-##### Added:
+##### Added
  - Adds the ability to log a custom event from an HTML in-app message. To log a custom event from an HTML in-app message, navigate a user to a url of the form `appboy://customEvent?name=customEventName&p1=v2`, where the `name` URL parameter is the name of the event, and the remaining parameters are logged as String properties on the event.
  - Adds the support for customization of the background color of modal in-app messages.
 
-##### Fixed:
+##### Fixed
  - Fixes an issue where daylight savings changes were not reflected in the user profile timezone.
 
-##### Changed:
+##### Changed
  - Enables users to input text into HTML in-app messages by allowing HTML in-app messages to be displayed with a keyboard on screen. For all other in-app messages, the in-app message will be dismissed when a keyboard is displayed.
 
 ## 2.16
 
-##### Added:
+##### Added
  - Adds HTML In-App Message types.
    - HTML In-App Messages consist of HTML and a url of a zipped archive of assets (e.g. images, css) to download locally which the HTML can reference. See [InAppMessageUIViewController](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/InAppMessageUIViewController.m#213) in our Stopwatch sample app for an example for the callbacks on the actions inside the WebView hosting the HTML In-App Message.
 
-##### Changed:
+##### Changed
  - Deprecates the method `- (void) logSocialShare:(ABKSocialNetwork)socialNetwork` and enum `ABKSocialNetwork` in the `Appboy` class. If you use `logSocialShare:` to track user's social account sharing, you can use `logCustomEvent:` instead.
  - Deprecates the property `bio` in the `ABKUser` class.
 
 ## 2.15.1
 
-##### Fixed:
+##### Fixed
  - Fixes the warning "full bitcode bundle could not be generated because XXX was built only with bitcode marker".
 
 ## 2.15
 
-##### Changed:
+##### Changed
  - Updates the SDK to support iOS 9.  In iOS9, previous versions of the SDK:  1) did not have bitcode support, 2) had a minor UI issue in in-app messages where the slideup messages were not docked on the bottom of the screen if they had one line of text, 3) failed to localize for zh-HK and zh-TW.
 
 ## 2.14
 
-##### Breaking:
+##### Breaking
  - Migrates the SDK to ARC.  If you are using our Apple Watch Extension and not using ARC, you must apply -fobjc-arc to the extension files.
 
-##### Added:
+##### Added
  - Adds configurable session timeout feature.
  - Adds feedbackViewControllerBeforeFeedbackSent method to the feedback delegate protocols, which can be used to modify the feedback message before it's sent to Appboy.
  - Adds a `setAttributionData` method to `ABKUser` that sets an `ABKAttributionData` object for the user.  To be used with attribution provider SDKs when attribution events are fired.
 
 ## 2.13.2
 
-##### Changed:
+##### Changed
  - Increases the number of supported currency codes from 22 to 171. All common currency codes are now supported. The full list of supported codes is available at `Appboy.h`.
 
 ## 2.13.1
 
-##### Changed:
+##### Changed
  - Updates the `isUninstallTrackingNotification` method in `ABKPushUtils` to return the correct value.
 
 ## 2.13
 
-##### Added:
+##### Added
  - Adds an open-source Watch SDK to support data analytics on watchKit apps. You can use the Appboy-WatchKit SDK by downloading and adding the "Appboy-WatchKit" folder in your watchKit extension target. For more detail, please refer to [ABWKUser.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy-WatchKit/ABWKUser.h) and [AppboyWatchKit.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy-WatchKit/AppboyWatchKit.h).
  - Adds an opt-in location service that logs background location events; adds ABKLocationManager with methods for allowing Appboy to request location permission on your behalf and logging the current location.  More information on the background location capabilities will be made available when dashboard support is released.
  - Adds client side blocking of blacklisted attributes and events.
  - Adds ABKPushUtils with method `+ (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;` that can be used to detect if a content-available push is from Appboy uninstall tracking (and shouldn't be acted upon).
  - Adds a new property `expiresAt` in class ABKCard. The property is the unix timestamp of the card's expiration time. For more detail, please refer to ABKCard.h.
 
-##### Changed:
+##### Changed
  - Stops collecting user's Twitter data automatically. You can pass a user's Twitter information to Appboy by initialzing a ABKTwitterUser object with the twitter data, and setting it to [Appboy sharedInstance].user.twitterUser. For more information, please refer to ABKUser.h and ABKTwitterUser.h.
  - Stops logging foreground push as a push open as it is not delivered by the system.
 
-##### Removed:
+##### Removed
  - Removes the feature of prompting a user to connect his/her social account. You can refer to the method `promptUserToConnectTwitterAccountOnDeviceAndFetchAccountData` in [TwitterViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/TwitterViewController.m) to continue prompting the user to connect the Twitter account.
 
 ## 2.12.2
 
-##### Fixed:
+##### Fixed
  - Fixes the slideup in-app message display issue. When the host app sets the launch screen file, slideup in-app message from bottom sometimes didn't dock at the bottom of the screen on iPhone 6 and iPhone 6 Plus.
 
 ## 2.12.1
 
-##### Added:
+##### Added
  - Adds font and font size customization to all in-app message's header and message text through NUI. You can customize in-app message's font by adding `ABKInAppMessageSlideupMessageLabel`, `ABKInAppMessageeModalHeaderLabel`,`ABKInAppMessageModalMessageLabel`, `ABKInAppMessageFullHeaderLabel`, `ABKInAppMessageFullMessageLabel` to your NUI nss style sheet.
 
-##### Fixed:
+##### Fixed
  - Fixes news feed issue where no news feed cards resulted in the loading spinner remaining on screen.
 
-##### Changed:
+##### Changed
  - Cleans up the console logging in Class ABKIdentifierForAdvertisingProvider.
 
 ## 2.12.0
 
-##### Fixed:
+##### Fixed
  - Fixes the incorrect path runtime error for users who integrate our pod as a dynamic framework. For SDK versions before 2.12, when you intergrate Appboy with `use_frameworks!` in the Podfile, the library is integrated as a dynamic framework and the Appboy.bundle is stored in a different path.
 
-##### Changed:
+##### Changed
  - Changes HelloSwift sample app to integrate Appboy SDK as a dynamic framework.
 
-##### Removed:
+##### Removed
  - Removes the subspecs from the podspec. This fixes the duplicate symbol error https://github.com/Appboy/appboy-ios-sdk/issues/24. If you are still using subspec like `pod 'Appboy-iOS-SDK/AppboyKit'` in your podfile, please make sure to change it to `pod 'Appboy-iOS-SDK'`.
 
 ## 2.11.3
 
-##### Added:
+##### Added
  - Adds the ability to send and retrieve extra key-value pairs via a News Feed card.
  - Adds the ability to define custom key-value properties on a custom event or purchase. Property keys are strings and values may be NSString, NSDate, or NSNumber objects.
  - Added the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
 
 ## 2.11.2
 
-##### Changed:
+##### Changed
  - Update the serialize and deserialize methods for in-app message classes. This is for use by wrappers such as Appboy's Unity SDK for iOS.
 
 ## 2.11.1
 
-##### Fixed:
+##### Fixed
  - Fixes a UI issue in modal in-app messages displayed on iPads running iOS 6/7.
 
 ## 2.11
 
-##### Added:
+##### Added
  - Adds support for modal and full screen style in-app messages. Also adds support for including fontawesome icons and images with in-app messages, changing colors on in-app message UI elements, expanded customization options, and message resizing for tablets. Please visit our documentation for more information.
 
-##### Changed:
+##### Changed
  - Updates the completionHandler signature in getActionWithIdentifier:forRemoteNotification:completionHandler: to match the comletionHandler passed by the system in method `- (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler`.
 
 ## 2.10.2
 
-##### Added:
+##### Added
  - Added the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
 
 ## 2.10.1
 
-##### Fixed:
+##### Fixed
  - Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
 
 ## 2.10.0
 
-##### Changed:
+##### Changed
  - Updated the minimum deployment targets of Appboy iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Appboy SDK.
  - Stop collecting user's Facebook data automatically. You can pass a user's Facebook information to Appboy by initialzing a ABKFacebookUser object with the facebook data, and set it to [Appboy sharedInstance].user.facebookUser. For more information, please refer to ABKUser.h and ABKFacebookUser.h.
 
-##### Removed:
+##### Removed
  - Removed Facebook SDK dependent builds.  Now there is a single library - AppboyKit - and a single Pod without functional subspecs - Appboy-iOS-SDK (note we now have both the subspecs pointing at the same library). Please update your Podfile to `pod 'Appboy-iOS-SDK` if you are integrating Appboy with Cocoapods.
  - Removed the feature of prompting a user to connect his/her Facebook account. You can refer to the method `promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData` in [FacebookViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/FacebookViewController.m) to continue prompting the user to connect the Facebook account.
 
 ## 2.9.6
 
-##### Added:
+##### Added
  - Added the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
 
 ## 2.9.5
 
-##### Fixed:
+##### Fixed
  - Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
 
 ## 2.9.4
 
-##### Added:
+##### Added
  - Added a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
  - Added 26 additional languages to localization support for Appboy UI elements.
  - Added support for deep linking from APNS push notification clicks.
  - Added ability to customize the font of Feedback text using NUI with NUI class name `ABKFeedbackTextView`.
 
-##### Fixed:
+##### Fixed
  - Fixed the feedback page UI issues in iOS 8: when the device's orientation is UIInterfaceOrientationPortraitUpsideDown, the contact info bar was off.
  - Fixed in-app messages to display correctly in landscape mode in iOS 8.
 
-##### Changed:
+##### Changed
  - Updated the SDK to adopt the latest SDWebImage protocol methods.
 
-##### Removed:
+##### Removed
  - Removed the "required" labels on the feedback page.
 
 ## 2.9.3
 
-##### Added:
+##### Added
  - Added a new method `- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler` to support push with background fetch. This method should be called in `- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
  - Added a HelloSwift sample app to demo how to use Appboy in a swift app.
  - Added a new NSString property "displayPrice" in ABKCrossPromotionCard to enable server side price localization.
 
-##### Fixed:
+##### Fixed
  - Fixed a bug of when sessions were being created when the app opened in the background.
  - Fixed a bug where requesting the news feed with a news feed open led to card impressions not updating until the next feed refresh.
 
 ## 2.9.2
 
-##### Added:
+##### Added
  - Added the ability to turn off Appboy's automatic location collection by setting the ABKDisableAutomaticLocationCollectionKey boolean in AppboyOptions in startWithApiKey:inApplication:inApplication:withAppboyOptions:.
  - Added the ability to send location tracking events to Appboy manually using setLastKnownLocationWithLatitude:longitude:horizontalAccuracy: and setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy: on the ABKUser. this is intended to be used with ABKDisableAutomaticLocationCollectionKey set to true in the AppboyOptions so that locations are only being recorded from a single source.
 
-##### Fixed:
+##### Fixed
  - Fixed a news feed bug: sometimes the spinner keeps spinning on the screen even after the news feed card image is displayed.
 
-##### Changed:
+##### Changed
  - Updated sample app core location fetching code based on the changes in iOS 8.
 
 ## 2.9.1
 
-##### Fixed:
+##### Fixed
  - Fixes a news feed bug: When a user refreshed the news feed by swiping down, if the total number of cards in the feed was going to be reduced by the refresh, the app would crash.
 
 ## 2.9.0
 
-##### Fixed:
+##### Fixed
  - Fixes an App Store validation error introduced when the App Store started accepting submissions for iOS8. This was done by changing the packaging of the Appboy framework to include a universal binary and a resource bundle (instead of combining them both together in a universal framework). Due to this change, Cocoapod integration is even more highly recommended than before to fully automate integration.
 
 ## 2.8.1
 
-##### Added:
+##### Added
  - Add a new method `- (void) getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo` to collect analytics data for push actions in iOS 8. It should be called in the UIApplication delegate method `- (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
  - New Custom Attribute Data Type (Array): Appboy now supports custom attributes which contain an array of string elements. In addition, we also provide methods for adding or removing an string element from an array type custom attribute. For more information, please refer to [ABKUser.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKUser.h).
  - Users can now pull down on the Appboy Newsfeed to refresh the content on iOS version 6.0 or later.
 
-##### Changed:
+##### Changed
  - Restrict product identifier string to 255 characters for method `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price` and `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity`.
  - News feed card now can update the card height and display a full image based on the image ratio. Card image ratio used to be a fix number and images were aspect stretched to fit in the views.
  - The right and left margins in the news feed are now touchable areas for scrolling.
@@ -630,7 +651,7 @@ occurred.
 
 ## 2.8
 
-##### Breaking:
+##### Breaking
  - Renamed the class names of news feed cards to match the names on dashboard:
 
  | v2.8                    | v2.7 |
@@ -641,13 +662,14 @@ occurred.
  | ABKClassicCard          | ABKCardNews                |
  | ABKTextAnnouncementCard | ABKCardTextAnnouncement    |
 
-##### Added:
+##### Added
  - Added email and push notification subscription types for a user. Subscription types are explicitly opted in, subscribed, and unsubscribed. The previous email boolean subscribe method has been deprecated.
  - Added custom slideup orientation support. You can now ask the slideup to only support certain orientations. For more details on slideup custom orientation support, please refer to [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h).
  - Added quantity parameter as an option when logging purchase. The quanlity should be an unsigned interger greater than 0 and no larger than 100. For more information, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
  - Added a class method in ABKCard to deserialize a given dictionary to a card. This is for use by wrappers such as Appboy's Unity SDK for iOS. Please refer to [ABKCard.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for more information.
 
 ## 2.7
+
 ### News Feed Update
 - Exposed raw card data in ABKFeedController
   - Developers can use the raw card data to creat custom user interfaces for the news feed. For more details on the card data, please refer to ABKFeedController.h.
@@ -677,32 +699,32 @@ occurred.
 
 ## 2.6.3
 
-##### Changed:
+##### Changed
  - Updates the SDK to authenticate with the Twitter API using SSL.
 
 ## 2.6.2
 
-##### Fixed:
+##### Fixed
  - Fixes a news feed card click tracking issue.
 
-##### Changed:
+##### Changed
  - Update data flush time interval.
 
 ## 2.6.1
 
-##### Fixed:
+##### Fixed
  - Fixes a minor display problem that affected news items with no image or link for version 2.6.
 
 ## 2.6
 
-##### Breaking:
+##### Breaking
  - Appboy iOS SDK now supports 64 bit as well. The minimum deployment targets that Appboy iOS SDK supports is iOS 5.1.1.
    - The Appboy iOS SDK will now allow function with 64-bit apps. This version of the SDK only supports iOS 5.1.1+. Legacy iOS apps should continue to use version 2.5 of the SDK.
    - You can install legacy versions of our SDK via [CocoaPods](http://guides.cocoapods.org/) by following changing the [podfile](http://guides.cocoapods.org/syntax/podfile.html) to include something like the following example `pod 'Appboy-iOS-SDK/AppboyKit', '~> 2.5'`.
 
 ## 2.5.1
 
-##### Fixed:
+##### Fixed
  - Fixes a minor display problem that affected news items with no image or link for version 2.5.
 
 ## 2.5

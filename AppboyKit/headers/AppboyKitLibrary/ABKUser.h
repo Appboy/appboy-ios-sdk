@@ -76,6 +76,16 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 @property (nonatomic, copy, nullable) NSString *homeCity;
 
 /*!
+ * The User's language (String)
+ *
+ * Language Strings should be valid ISO 639-1 language codes.
+ * See https://www.loc.gov/standards/iso639-2/php/code_list.php.
+ *
+ * If not set here, user language will be inferred from the device language.
+ */
+@property (nonatomic, copy, nullable) NSString *language;
+
+/*!
  * The User's phone number (String)
  */
 @property (nonatomic, copy, nullable) NSString *phone;

@@ -20,7 +20,6 @@
 		4E49ED1919DDE84F00ADC43F /* stopwatch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */; };
 		4E49ED1A19DDE84F00ADC43F /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0219DDE84F00ADC43F /* twitter-icon.png */; };
 		4E6D661619DCC18F009983AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Images.xcassets */; };
-		4E7D1C7E1A9FE1990087DB64 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D1C7D1A9FE1990087DB64 /* FacebookViewController.m */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
 		4EA0515D18998472007217BD /* CustomInAppMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0515B18998472007217BD /* CustomInAppMessageViewController.xib */; };
 		4EA3EE241745B9A2000E403C /* UserCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserCells.m */; };
@@ -29,7 +28,6 @@
 		4EABC19D1A621B7F007259BD /* InAppMessageUICells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */; };
 		4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */; };
 		4EB014FE1A79D4C900E11E41 /* CustomInAppMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0515A18998472007217BD /* CustomInAppMessageViewController.m */; };
-		4EDB97211B3B6226003BB81D /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB97201B3B6226003BB81D /* TwitterViewController.m */; };
 		874217926D6C6AB7357BE483 /* libPods-tvOS_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF72C75F1355D6E47B32E05 /* libPods-tvOS_Stopwatch.a */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
 		9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */; };
@@ -147,8 +145,6 @@
 		4E49ED0119DDE84F00ADC43F /* stopwatch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopwatch@2x.png"; sourceTree = "<group>"; };
 		4E49ED0219DDE84F00ADC43F /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-icon.png"; sourceTree = "<group>"; };
 		4E6D661519DCC18F009983AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E7D1C7C1A9FE1990087DB64 /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
-		4E7D1C7D1A9FE1990087DB64 /* FacebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookViewController.m; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E94D7701743EE8900604EA0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4EA0515918998472007217BD /* CustomInAppMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInAppMessageViewController.h; sourceTree = "<group>"; };
@@ -162,8 +158,6 @@
 		4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppMessageUIViewController.m; sourceTree = "<group>"; };
 		4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppMessageUICells.h; sourceTree = "<group>"; };
 		4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppMessageUICells.m; sourceTree = "<group>"; };
-		4EDB971F1B3B6226003BB81D /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
-		4EDB97201B3B6226003BB81D /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		4EE459F65937F47CF69041BB /* Pods-tvOS_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stopwatch.entitlements; sourceTree = "<group>"; };
 		56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -453,8 +447,6 @@
 				4E3178751AC49363006C88B4 /* CustomInAppMessageClasses */,
 				D400EBF11CC86A6100550AD8 /* EventsViewController.h */,
 				D400EBF21CC86A6100550AD8 /* EventsViewController.m */,
-				4E7D1C7C1A9FE1990087DB64 /* FacebookViewController.h */,
-				4E7D1C7D1A9FE1990087DB64 /* FacebookViewController.m */,
 				D4139BEA1CBDA4E500CA3307 /* FeedAndFeedbackUIViewController.h */,
 				D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */,
 				4E6D661519DCC18F009983AD /* Images.xcassets */,
@@ -463,8 +455,6 @@
 				95EF5114173D5FD600C0D780 /* Supporting Files */,
 				4EA7AA8C185626EC00D2B651 /* MiscViewController.h */,
 				4EA7AA8D185626EC00D2B651 /* MiscViewController.m */,
-				4EDB971F1B3B6226003BB81D /* TwitterViewController.h */,
-				4EDB97201B3B6226003BB81D /* TwitterViewController.m */,
 				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
 				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
 				D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */,
@@ -1060,10 +1050,8 @@
 				4EABC19D1A621B7F007259BD /* InAppMessageUICells.m in Sources */,
 				D411F3121CD0355200100702 /* CustomTabBarController.m in Sources */,
 				4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */,
-				4E7D1C7E1A9FE1990087DB64 /* FacebookViewController.m in Sources */,
 				E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
-				4EDB97211B3B6226003BB81D /* TwitterViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserCells.m in Sources */,
 				E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */,
 				D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */,
@@ -1190,6 +1178,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
@@ -1286,6 +1275,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
@@ -1315,6 +1305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
