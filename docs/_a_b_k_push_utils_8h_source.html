@@ -97,33 +97,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;+ (BOOL)isAppboyRemoteNotification:(NSDictionary *)userInfo;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;+ (BOOL)isAppboyInternalUserNotification:(UNNotificationResponse *)response;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;+ (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;+ (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;+ (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;+ (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;+ (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo __deprecated;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;+ (NSSet&lt;UNNotificationCategory *&gt; *)getAppboyUNNotificationCategorySet;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#if __IPHONE_OS_VERSION_MIN_REQUIRED &lt; __IPHONE_10_0</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span>+ (NSSet&lt;UIUserNotificationCategory *&gt; *)getAppboyUIUserNotificationCategorySet;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;NS_ASSUME_NONNULL_END</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;+ (BOOL)isPushStoryRemoteNotification:(NSDictionary *)userInfo;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;+ (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo __deprecated;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;+ (NSSet&lt;UNNotificationCategory *&gt; *)getAppboyUNNotificationCategorySet;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#if __IPHONE_OS_VERSION_MIN_REQUIRED &lt; __IPHONE_10_0</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor"></span>+ (NSSet&lt;UIUserNotificationCategory *&gt; *)getAppboyUIUserNotificationCategorySet;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 23 2017 19:30:10 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 3 2017 18:25:34 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -95,8 +95,6 @@ Class Methods</h2></td></tr>
 <tr class="separator:a9c5becff6029b503a767fb59d36f31d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9510314a1e1f6cf457872505b2af1599"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#a9510314a1e1f6cf457872505b2af1599">isAppboyRemoteNotification:</a></td></tr>
 <tr class="separator:a9510314a1e1f6cf457872505b2af1599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a368459b1dc1fd005a0f9203efc060ecf"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#a368459b1dc1fd005a0f9203efc060ecf">isAppboyInternalUserNotification:</a></td></tr>
-<tr class="separator:a368459b1dc1fd005a0f9203efc060ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd55ca5f35fb5b2306ae1be6b5deea9f"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#afd55ca5f35fb5b2306ae1be6b5deea9f">isAppboyInternalRemoteNotification:</a></td></tr>
 <tr class="separator:afd55ca5f35fb5b2306ae1be6b5deea9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45a70459101f37c2e50cae6b3e329f4c"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#a45a70459101f37c2e50cae6b3e329f4c">isUninstallTrackingUserNotification:</a></td></tr>
@@ -107,6 +105,8 @@ Class Methods</h2></td></tr>
 <tr class="separator:ac0c40540a46e425f8e14257b9f709b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a125929fe98f20625db1a5a71439301a7"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#a125929fe98f20625db1a5a71439301a7">isGeofencesSyncRemoteNotification:</a></td></tr>
 <tr class="separator:a125929fe98f20625db1a5a71439301a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac193a6e6a991bd95879eee92c9fae069"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#ac193a6e6a991bd95879eee92c9fae069">isPushStoryRemoteNotification:</a></td></tr>
+<tr class="separator:ac193a6e6a991bd95879eee92c9fae069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b7e481adae71046134b2c6b007c18df"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#a7b7e481adae71046134b2c6b007c18df">shouldFetchTestTriggersFlagContainedInPayload:</a></td></tr>
 <tr class="separator:a7b7e481adae71046134b2c6b007c18df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a267871e02e004788a14475b5bd2d7f69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a267871e02e004788a14475b5bd2d7f69"></a>
@@ -134,30 +134,6 @@ Class Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the push notification was sent by <a class="el" href="interface_appboy.html">Appboy</a> for an internal feature.</dd></dl>
-<p><a class="el" href="interface_appboy.html">Appboy</a> uses content-available silent notifications for internal features. You can use this method to ensure your app doesn't take any undesired or unnecessary actions upon receiving <a class="el" href="interface_appboy.html">Appboy</a>'s internal content-available notifications (e.g., pinging your server for content). </p>
-
-</div>
-</div>
-<a class="anchor" id="a368459b1dc1fd005a0f9203efc060ecf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">+ (BOOL) isAppboyInternalUserNotification: </td>
-          <td></td>
-          <td class="paramtype">(UNNotificationResponse *)&#160;</td>
-          <td class="paramname"><em>response</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">response</td><td>The UNNotificationResponse passed to userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>YES if the user notification was sent by <a class="el" href="interface_appboy.html">Appboy</a> for an internal feature.</dd></dl>
 <p><a class="el" href="interface_appboy.html">Appboy</a> uses content-available silent notifications for internal features. You can use this method to ensure your app doesn't take any undesired or unnecessary actions upon receiving <a class="el" href="interface_appboy.html">Appboy</a>'s internal content-available notifications (e.g., pinging your server for content). </p>
 
 </div>
@@ -256,6 +232,30 @@ Class Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac193a6e6a991bd95879eee92c9fae069"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (BOOL) isPushStoryRemoteNotification: </td>
+          <td></td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramname"><em>userInfo</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userInfo</td><td>The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler: or application:didReceiveRemoteNotification:.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the push notification was sent by <a class="el" href="interface_appboy.html">Appboy</a> for push stories.</dd></dl>
+<p>Push story notifications are content-available silent notifications. You can use this method to ensure your app doesn't take any undesired or unnecessary actions upon receiving <a class="el" href="interface_appboy.html">Appboy</a>'s push story notifications (e.g., pinging your server for content). </p>
+
+</div>
+</div>
 <a class="anchor" id="ad1140db01688f422034c33ee3d8b0c47"></a>
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +330,7 @@ Class Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 23 2017 19:30:10 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 3 2017 18:25:34 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
