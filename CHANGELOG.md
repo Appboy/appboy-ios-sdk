@@ -29,6 +29,11 @@
  - Removal 2
  -->
  
+## 3.2.1
+
+##### Fixed
+- Fixes an issue where Push Story Framework did not support bitcode.
+
 ## 3.2.0
 
 ##### Added

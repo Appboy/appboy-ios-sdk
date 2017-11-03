@@ -46,7 +46,6 @@
 		95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
 		C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
-		C12C80881FAD2388006F098A /* AppboyPushStory.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C12C80871FAD2388006F098A /* AppboyPushStory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
 		C1C53F001F7D7CA700042AA5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
 		C1C53F011F7D7CA700042AA5 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3688B1A1D6BB2DD0032091D /* UserNotificationsUI.framework */; };
@@ -126,16 +125,6 @@
 			files = (
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C12C80861FAD2313006F098A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C12C80881FAD2388006F098A /* AppboyPushStory.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E33088141D6BB09D008935A9 /* Embed App Extensions */ = {
@@ -222,7 +211,6 @@
 		C03E52C51D46574A0065ABD6 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0A45ABC1E66155C0028C5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C12172071D5A3815003B986E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		C12C80871FAD2388006F098A /* AppboyPushStory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppboyPushStory.framework; sourceTree = "<group>"; };
 		C16085C51B964BC600E57F30 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C17BAFC21F7DA64D006B65CE /* StopwatchNotificationContentExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StopwatchNotificationContentExtension.entitlements; sourceTree = "<group>"; };
 		C17BCBCE1F7DCF2C00F65F39 /* AppboyPushStory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyPushStory.framework; path = "../Appboy-Push-Story/Appboy-Push-Story/AppboyPushStory.framework"; sourceTree = "<group>"; };
@@ -427,7 +415,6 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
-				C12C80871FAD2388006F098A /* AppboyPushStory.framework */,
 				D464B7EB1E523D2900118BA9 /* GoogleService-Info.plist */,
 				4E49ECEA19DDE84F00ADC43F /* Images */,
 				4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */,
@@ -666,7 +653,6 @@
 				C1C53EFC1F7D7CA600042AA5 /* Frameworks */,
 				C1C53EFD1F7D7CA600042AA5 /* Resources */,
 				E3BBF315F49813A62D655764 /* [CP] Copy Pods Resources */,
-				C12C80861FAD2313006F098A /* CopyFiles */,
 			);
 			buildRules = (
 			);
