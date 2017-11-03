@@ -69,6 +69,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   if (setUrlDelegate) {
     appboyOptions[ABKURLDelegateKey] = self;
   }
+  appboyOptions[ABKPushStoryAppGroupKey] = @"group.com.appboy.stopwatch";
 
   // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
   [Appboy startWithApiKey:apiKeyToUse
@@ -252,11 +253,11 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   completionHandler(UNNotificationPresentationOptionAlert);
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
   [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
   NSLog(@"Application delegate method userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: is called with user info: %@", response.notification.request.content.userInfo);
   
-  if ([ABKPushUtils isAppboyUserNotification:response] && ![ABKPushUtils isAppboyInternalUserNotification:response]) {
+  if ([ABKPushUtils isAppboyUserNotification:response]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     NSLog(@"User notification was sent from Appboy, clearing badge number.");
   }

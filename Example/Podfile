@@ -21,3 +21,8 @@ target :tvOS_TVML_Stopwatch do
   platform :tvos, '9.0'
   pod 'Appboy-tvOS-SDK'
 end
+
+target :StopwatchNotificationContentExtension do
+  platform :ios, '10.0'
+  pod 'Appboy-Push-Story'
+end

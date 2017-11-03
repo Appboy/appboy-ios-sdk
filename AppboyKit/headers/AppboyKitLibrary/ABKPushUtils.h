@@ -26,17 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isAppboyRemoteNotification:(NSDictionary *)userInfo;
 
 /*!
- * @param response The UNNotificationResponse passed to userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
- *
- * @return YES if the user notification was sent by Appboy for an internal feature.
- *
- * @discussion Appboy uses content-available silent notifications for internal features. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's internal content-available notifications
- *             (e.g., pinging your server for content).
- */
-+ (BOOL)isAppboyInternalUserNotification:(UNNotificationResponse *)response;
-
-/*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
  *                 or application:didReceiveRemoteNotification:.
  *
@@ -93,6 +82,18 @@ NS_ASSUME_NONNULL_BEGIN
  *             (e.g., pinging your server for content).
  */
 + (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;
+
+/*!
+ * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
+ *                 or application:didReceiveRemoteNotification:.
+ *
+ * @return YES if the push notification was sent by Appboy for push stories.
+ *
+ * @discussion Push story notifications are content-available silent notifications. You can use this method to ensure
+ *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's push story notifications
+ *             (e.g., pinging your server for content).
+ */
++ (BOOL)isPushStoryRemoteNotification:(NSDictionary *)userInfo;
 
 /*!
  * @param userInfo The userInfo dictionary payload.

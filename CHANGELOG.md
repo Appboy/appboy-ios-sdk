@@ -29,6 +29,15 @@
  - Removal 2
  -->
  
+## 3.2.0
+
+##### Added
+- Added Push Stories, a new push type that uses UNNotificationContentExtension to display multiple images in a single notification. 
+  - This feature requires iOS 10 and above. 
+
+##### Fixed
+- Fixes an issue where tvOS SDK did not support bitcode.
+
 ## 3.1.1
 
 ##### Added

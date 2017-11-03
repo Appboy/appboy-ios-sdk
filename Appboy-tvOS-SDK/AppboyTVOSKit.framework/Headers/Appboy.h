@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.0.1"
+#define APPBOY_SDK_VERSION @"3.2.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -125,6 +125,13 @@ extern NSString *const ABKMinimumTriggerTimeIntervalKey;
  * Key to report the SDK flavor currently being used.  For internal use only.
  */
 extern NSString *const ABKSDKFlavorKey;
+
+/*!
+ * This key can be set to a string value representing the app group name for the Push Story Notification
+ * Content extension. This is required for the SDK to fetch data from and handle user interactions
+ * with the Push Story app extension.
+ */
+extern NSString *const ABKPushStoryAppGroupKey;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums
@@ -326,6 +333,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * Property for internal reporting of SDK flavor.
  */
 @property (nonatomic) ABKSDKFlavor sdkFlavor;
+
 #endif
 
 /* ------------------------------------------------------------------------------------------------------
@@ -604,7 +612,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)getActionWithIdentifier:(NSString *)identifier
           forRemoteNotification:(NSDictionary *)userInfo
-              completionHandler:(nullable void (^)())completionHandler NS_DEPRECATED_IOS(8_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
+              completionHandler:(nullable void (^)(void))completionHandler NS_DEPRECATED_IOS(8_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
 
 /*!
  * @param center The app's current UNUserNotificationCenter object
@@ -617,7 +625,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-      withCompletionHandler:(nullable void (^)())completionHandler NS_AVAILABLE_IOS(10_0);
+         withCompletionHandler:(nullable void (^)(void))completionHandler NS_AVAILABLE_IOS(10_0);
 
 /*!
  * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's 

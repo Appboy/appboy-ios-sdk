@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D6172CECC41AE4323EA8C76 /* libPods-Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 914AB0E71A05E854027483CD /* libPods-Stopwatch.a */; };
+		18A80E049E9C4EF3CBEFEDC6 /* libPods-Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F249259AC60CD3E5F9147EC /* libPods-Stopwatch.a */; };
+		33A374D093A069BA4E044000 /* libPods-tvOS_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120D81078F772014E4675E3 /* libPods-tvOS_Stopwatch.a */; };
 		4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E94E118BD52C60008C815 /* Localizable.strings */; };
 		4E3E94F218BD5D530008C815 /* StopwatchNUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */; };
 		4E3E94F318BD6AED0008C815 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958071A7173D727000129B89 /* QuartzCore.framework */; };
@@ -28,7 +29,6 @@
 		4EABC19D1A621B7F007259BD /* InAppMessageUICells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */; };
 		4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */; };
 		4EB014FE1A79D4C900E11E41 /* CustomInAppMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0515A18998472007217BD /* CustomInAppMessageViewController.m */; };
-		874217926D6C6AB7357BE483 /* libPods-tvOS_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF72C75F1355D6E47B32E05 /* libPods-tvOS_Stopwatch.a */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
 		9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */; };
 		9580719F173D723400129B89 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514F173D6A6800C0D780 /* AssetsLibrary.framework */; };
@@ -47,6 +47,13 @@
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
 		C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
+		C1C53F001F7D7CA700042AA5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
+		C1C53F011F7D7CA700042AA5 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3688B1A1D6BB2DD0032091D /* UserNotificationsUI.framework */; };
+		C1C53F051F7D7CA700042AA5 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C53F041F7D7CA700042AA5 /* NotificationViewController.m */; };
+		C1C53F081F7D7CA700042AA5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C53F061F7D7CA700042AA5 /* MainInterface.storyboard */; };
+		C1C53F0C1F7D7CA700042AA5 /* StopwatchNotificationContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C1C53EFF1F7D7CA600042AA5 /* StopwatchNotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C1EB09951F747AFB000867F2 /* PushStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EB09941F747AFB000867F2 /* PushStoryViewController.m */; };
+		C8AD7AF1C2D332D35DEA947E /* libPods-tvOS_TVML_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43361D7FDD22C5392EC6F80E /* libPods-tvOS_TVML_Stopwatch.a */; };
 		D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D400EBF21CC86A6100550AD8 /* EventsViewController.m */; };
 		D411F3121CD0355200100702 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D411F3111CD0355200100702 /* CustomTabBarController.m */; };
 		D4139BDA1CBD88C100CA3307 /* bolt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD31CBD88C100CA3307 /* bolt@2x.png */; };
@@ -69,7 +76,7 @@
 		D4992FED1CD4126D007CC304 /* newsfeed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE61CD4126D007CC304 /* newsfeed@3x.png */; };
 		D4992FEE1CD4126D007CC304 /* user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE71CD4126D007CC304 /* user@3x.png */; };
 		D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */; };
-		E02B5BE43671FE0E7550C1CE /* libPods-tvOS_TVML_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6D9C089486F8011F4C9486 /* libPods-tvOS_TVML_Stopwatch.a */; };
+		E056052DE24220E65AE47718 /* libPods-StopwatchNotificationContentExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAB3BEAB093F54DC4C88A8F /* libPods-StopwatchNotificationContentExtension.a */; };
 		E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */; };
 		E325DF461E29A93300B3E168 /* GeofencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E325DF451E29A93300B3E168 /* GeofencesViewController.m */; };
 		E325DF481E2AE5FD00B3E168 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E325DF471E2AE5FD00B3E168 /* MapKit.framework */; };
@@ -93,6 +100,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C1C53F0A1F7D7CA700042AA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95EF5102173D5FD600C0D780 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1C53EFE1F7D7CA600042AA5;
+			remoteInfo = StopwatchNotificationContentExtension;
+		};
 		E330881F1D6BB0B4008935A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95EF5102173D5FD600C0D780 /* Project object */;
@@ -120,6 +134,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				E33088211D6BB0B4008935A9 /* StopwatchNotificationService.appex in Embed App Extensions */,
+				C1C53F0C1F7D7CA700042AA5 /* StopwatchNotificationContentExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,12 +142,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01F620394EDC4EF6A11D6429 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E02BAA74C2A5B8312BEE66A /* Pods-tvOS_Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
-		1CE572AABCA0AC58AE94BBBC /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
-		21DDAA65860D105B25798825 /* Pods-Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
-		3CF72C75F1355D6E47B32E05 /* libPods-tvOS_Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOS_Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D6D9C089486F8011F4C9486 /* libPods-tvOS_TVML_Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOS_TVML_Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21F6413047AA13F4A67FF940 /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
+		2939F8CE24F6BD85EDF23202 /* Pods-tvOS_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
+		2C11560722D83F782DE63459 /* Pods-StopwatchNotificationContentExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopwatchNotificationContentExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StopwatchNotificationContentExtension/Pods-StopwatchNotificationContentExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		2E6CFE87DF9981ED078916B8 /* Pods-Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
+		3F249259AC60CD3E5F9147EC /* libPods-Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43361D7FDD22C5392EC6F80E /* libPods-tvOS_TVML_Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOS_TVML_Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A13A163EFC7528AB511F858 /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		4E3E94E218BD52C60008C815 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E3E94E418BD52CE0008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4E3E94F118BD5D530008C815 /* StopwatchNUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StopwatchNUIStyle.nss; sourceTree = "<group>"; };
@@ -158,13 +174,12 @@
 		4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppMessageUIViewController.m; sourceTree = "<group>"; };
 		4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppMessageUICells.h; sourceTree = "<group>"; };
 		4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppMessageUICells.m; sourceTree = "<group>"; };
-		4EE459F65937F47CF69041BB /* Pods-tvOS_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stopwatch.entitlements; sourceTree = "<group>"; };
-		56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		58C62E42E5F2BB8375EA1FBB /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
-		7549A445A7C9F36522E4D338 /* Pods-Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
-		914AB0E71A05E854027483CD /* libPods-Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9477CB7FA5D1AFF029BEF72F /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
+		5FA9D2138BF035DDA73B49AD /* Pods-tvOS_Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
+		6120D81078F772014E4675E3 /* libPods-tvOS_Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOS_Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CAA2B0DAE2DD26830F19D4B /* Pods-tvOS_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
+		6CAB3BEAB093F54DC4C88A8F /* libPods-StopwatchNotificationContentExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StopwatchNotificationContentExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		897FE5A3FE945E8487CA9BBE /* Pods-StopwatchNotificationContentExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopwatchNotificationContentExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-StopwatchNotificationContentExtension/Pods-StopwatchNotificationContentExtension.release.xcconfig"; sourceTree = "<group>"; };
 		953574A81743F862003A64B3 /* UserAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesViewController.m; sourceTree = "<group>"; };
 		953574A91743F862003A64B3 /* UserAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesViewController.h; sourceTree = "<group>"; };
 		955DE8931741A70700C07A57 /* InAppMessageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppMessageTestViewController.h; sourceTree = "<group>"; };
@@ -192,11 +207,21 @@
 		95EF515B173D6A9800C0D780 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		95EF515D173D6AAA00C0D780 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		95EF515F173D6AB100C0D780 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BD58B9C6267D5D909845B9E7 /* Pods-tvOS_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
+		A2E478A21CAD63AA6C497DB0 /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
 		C03E52C51D46574A0065ABD6 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0A45ABC1E66155C0028C5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C12172071D5A3815003B986E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C16085C51B964BC600E57F30 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C17BAFC21F7DA64D006B65CE /* StopwatchNotificationContentExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StopwatchNotificationContentExtension.entitlements; sourceTree = "<group>"; };
+		C17BCBCE1F7DCF2C00F65F39 /* AppboyPushStory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyPushStory.framework; path = "../Appboy-Push-Story/Appboy-Push-Story/AppboyPushStory.framework"; sourceTree = "<group>"; };
+		C1C53EFF1F7D7CA600042AA5 /* StopwatchNotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StopwatchNotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C53F031F7D7CA700042AA5 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		C1C53F041F7D7CA700042AA5 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		C1C53F071F7D7CA700042AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C1C53F091F7D7CA700042AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1EB09931F747AFB000867F2 /* PushStoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushStoryViewController.h; sourceTree = "<group>"; };
+		C1EB09941F747AFB000867F2 /* PushStoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushStoryViewController.m; sourceTree = "<group>"; };
+		CF26DEACDB1334DE153A964E /* Pods-Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
 		D400EBF11CC86A6100550AD8 /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
 		D400EBF21CC86A6100550AD8 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		D411F3101CD0355200100702 /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
@@ -224,8 +249,7 @@
 		D4992FE71CD4126D007CC304 /* user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@3x.png"; sourceTree = "<group>"; };
 		D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesArrayViewController.m; sourceTree = "<group>"; };
 		D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesArrayViewController.h; sourceTree = "<group>"; };
-		D890D67844E95B1B065140B8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		E240A2DCC40A3A0AC31351E7 /* Pods-Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
+		D6ABEED57B5E362790D2728D /* Pods-Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
 		E31F9E231DEB7D3400EFB62F /* OverrideEndpointDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverrideEndpointDelegate.h; sourceTree = "<group>"; };
 		E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverrideEndpointDelegate.m; sourceTree = "<group>"; };
 		E325DF441E29A93300B3E168 /* GeofencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeofencesViewController.h; sourceTree = "<group>"; };
@@ -261,6 +285,7 @@
 		E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithJS.html; sourceTree = "<group>"; };
 		E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithoutAssetZip.html; sourceTree = "<group>"; };
 		E3ED8D401CE54C0300C23B99 /* AppboyTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyTVOSKit.framework; path = ../Public/AppboyTVOSKit.framework; sourceTree = "<group>"; };
+		FB497A0BD3D68502BB714F22 /* Pods-StopwatchNotificationContentExtension.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopwatchNotificationContentExtension.develop.xcconfig"; path = "Pods/Target Support Files/Pods-StopwatchNotificationContentExtension/Pods-StopwatchNotificationContentExtension.develop.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,7 +309,17 @@
 				95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */,
 				95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */,
 				95EF5112173D5FD600C0D780 /* CoreGraphics.framework in Frameworks */,
-				0D6172CECC41AE4323EA8C76 /* libPods-Stopwatch.a in Frameworks */,
+				18A80E049E9C4EF3CBEFEDC6 /* libPods-Stopwatch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C53EFC1F7D7CA600042AA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C53F011F7D7CA700042AA5 /* UserNotificationsUI.framework in Frameworks */,
+				C1C53F001F7D7CA700042AA5 /* UserNotifications.framework in Frameworks */,
+				E056052DE24220E65AE47718 /* libPods-StopwatchNotificationContentExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +327,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E02B5BE43671FE0E7550C1CE /* libPods-tvOS_TVML_Stopwatch.a in Frameworks */,
+				C8AD7AF1C2D332D35DEA947E /* libPods-tvOS_TVML_Stopwatch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				874217926D6C6AB7357BE483 /* libPods-tvOS_Stopwatch.a in Frameworks */,
+				33A374D093A069BA4E044000 /* libPods-tvOS_Stopwatch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,20 +393,21 @@
 			path = Stopwatch/Images;
 			sourceTree = "<group>";
 		};
-		4F0CF3B17114F763B7942B56 /* Pods */ = {
+		62A03C031FEC321EB9DD3DF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				56A3C142EBEA4F6FEF1BAF49 /* Pods.debug.xcconfig */,
-				D890D67844E95B1B065140B8 /* Pods.release.xcconfig */,
-				BD58B9C6267D5D909845B9E7 /* Pods-tvOS_Stopwatch.debug.xcconfig */,
-				0E02BAA74C2A5B8312BEE66A /* Pods-tvOS_Stopwatch.develop.xcconfig */,
-				4EE459F65937F47CF69041BB /* Pods-tvOS_Stopwatch.release.xcconfig */,
-				58C62E42E5F2BB8375EA1FBB /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */,
-				1CE572AABCA0AC58AE94BBBC /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */,
-				9477CB7FA5D1AFF029BEF72F /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */,
-				21DDAA65860D105B25798825 /* Pods-Stopwatch.debug.xcconfig */,
-				E240A2DCC40A3A0AC31351E7 /* Pods-Stopwatch.develop.xcconfig */,
-				7549A445A7C9F36522E4D338 /* Pods-Stopwatch.release.xcconfig */,
+				D6ABEED57B5E362790D2728D /* Pods-Stopwatch.debug.xcconfig */,
+				CF26DEACDB1334DE153A964E /* Pods-Stopwatch.develop.xcconfig */,
+				2E6CFE87DF9981ED078916B8 /* Pods-Stopwatch.release.xcconfig */,
+				2C11560722D83F782DE63459 /* Pods-StopwatchNotificationContentExtension.debug.xcconfig */,
+				FB497A0BD3D68502BB714F22 /* Pods-StopwatchNotificationContentExtension.develop.xcconfig */,
+				897FE5A3FE945E8487CA9BBE /* Pods-StopwatchNotificationContentExtension.release.xcconfig */,
+				6CAA2B0DAE2DD26830F19D4B /* Pods-tvOS_Stopwatch.debug.xcconfig */,
+				5FA9D2138BF035DDA73B49AD /* Pods-tvOS_Stopwatch.develop.xcconfig */,
+				2939F8CE24F6BD85EDF23202 /* Pods-tvOS_Stopwatch.release.xcconfig */,
+				A2E478A21CAD63AA6C497DB0 /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */,
+				21F6413047AA13F4A67FF940 /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */,
+				4A13A163EFC7528AB511F858 /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -387,9 +423,10 @@
 				E397F40E1CC5BA540095A3ED /* tvOS_Stopwatch */,
 				E32835AE1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */,
 				E330881A1D6BB0B4008935A9 /* StopwatchNotificationService */,
+				C1C53F021F7D7CA700042AA5 /* StopwatchNotificationContentExtension */,
 				95EF510C173D5FD600C0D780 /* Frameworks */,
 				95EF510B173D5FD600C0D780 /* Products */,
-				4F0CF3B17114F763B7942B56 /* Pods */,
+				62A03C031FEC321EB9DD3DF6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -400,6 +437,7 @@
 				E397F40D1CC5BA540095A3ED /* tvOS_Stopwatch.app */,
 				E32835AD1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch.app */,
 				E33088191D6BB0B4008935A9 /* StopwatchNotificationService.appex */,
+				C1C53EFF1F7D7CA600042AA5 /* StopwatchNotificationContentExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,6 +445,7 @@
 		95EF510C173D5FD600C0D780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C17BCBCE1F7DCF2C00F65F39 /* AppboyPushStory.framework */,
 				E325DF471E2AE5FD00B3E168 /* MapKit.framework */,
 				E3688B1A1D6BB2DD0032091D /* UserNotificationsUI.framework */,
 				C12172071D5A3815003B986E /* UserNotifications.framework */,
@@ -426,10 +465,10 @@
 				95EF510D173D5FD600C0D780 /* UIKit.framework */,
 				95EF510F173D5FD600C0D780 /* Foundation.framework */,
 				95EF5111173D5FD600C0D780 /* CoreGraphics.framework */,
-				01F620394EDC4EF6A11D6429 /* libPods.a */,
-				914AB0E71A05E854027483CD /* libPods-Stopwatch.a */,
-				3CF72C75F1355D6E47B32E05 /* libPods-tvOS_Stopwatch.a */,
-				4D6D9C089486F8011F4C9486 /* libPods-tvOS_TVML_Stopwatch.a */,
+				3F249259AC60CD3E5F9147EC /* libPods-Stopwatch.a */,
+				6CAB3BEAB093F54DC4C88A8F /* libPods-StopwatchNotificationContentExtension.a */,
+				6120D81078F772014E4675E3 /* libPods-tvOS_Stopwatch.a */,
+				43361D7FDD22C5392EC6F80E /* libPods-tvOS_TVML_Stopwatch.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -469,6 +508,8 @@
 				E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */,
 				E3C754A21E70DE7D004E1CCE /* AliasViewController.h */,
 				E3C754A31E70DE7D004E1CCE /* AliasViewController.m */,
+				C1EB09931F747AFB000867F2 /* PushStoryViewController.h */,
+				C1EB09941F747AFB000867F2 /* PushStoryViewController.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -485,6 +526,18 @@
 				95EF5123173D5FD600C0D780 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1C53F021F7D7CA700042AA5 /* StopwatchNotificationContentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C17BAFC21F7DA64D006B65CE /* StopwatchNotificationContentExtension.entitlements */,
+				C1C53F031F7D7CA700042AA5 /* NotificationViewController.h */,
+				C1C53F041F7D7CA700042AA5 /* NotificationViewController.m */,
+				C1C53F061F7D7CA700042AA5 /* MainInterface.storyboard */,
+				C1C53F091F7D7CA700042AA5 /* Info.plist */,
+			);
+			path = StopwatchNotificationContentExtension;
 			sourceTree = "<group>";
 		};
 		E32835AE1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */ = {
@@ -571,35 +624,55 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95EF5130173D5FD600C0D780 /* Build configuration list for PBXNativeTarget "Stopwatch" */;
 			buildPhases = (
-				58CD4522874B443180A63587 /* [CP] Check Pods Manifest.lock */,
+				56391E9749263D2D9839FAA0 /* [CP] Check Pods Manifest.lock */,
 				95EF5106173D5FD600C0D780 /* Sources */,
 				95EF5107173D5FD600C0D780 /* Frameworks */,
 				95EF5108173D5FD600C0D780 /* Resources */,
-				3993FFFAF9154BEEBDD5FA87 /* [CP] Copy Pods Resources */,
 				4E321B9519C12246000EE12B /* Embed Frameworks */,
-				1BEF3789CC507F95559EA780 /* [CP] Embed Pods Frameworks */,
 				E33088141D6BB09D008935A9 /* Embed App Extensions */,
+				0E11FBFB40F0E98D086D9993 /* [CP] Embed Pods Frameworks */,
+				2439961CCED464ADD87076DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				E33088201D6BB0B4008935A9 /* PBXTargetDependency */,
+				C1C53F0B1F7D7CA700042AA5 /* PBXTargetDependency */,
 			);
 			name = Stopwatch;
 			productName = Stopwatch;
 			productReference = 95EF510A173D5FD600C0D780 /* StopwatchDevelop.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C1C53EFE1F7D7CA600042AA5 /* StopwatchNotificationContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C53F101F7D7CA700042AA5 /* Build configuration list for PBXNativeTarget "StopwatchNotificationContentExtension" */;
+			buildPhases = (
+				1062C4FBDEC91EE41AED3E9A /* [CP] Check Pods Manifest.lock */,
+				C1C53EFB1F7D7CA600042AA5 /* Sources */,
+				C1C53EFC1F7D7CA600042AA5 /* Frameworks */,
+				C1C53EFD1F7D7CA600042AA5 /* Resources */,
+				E3BBF315F49813A62D655764 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StopwatchNotificationContentExtension;
+			productName = StopwatchNotificationContentExtension;
+			productReference = C1C53EFF1F7D7CA600042AA5 /* StopwatchNotificationContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E32835AC1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E32835BC1CC6C6F200E2C2DE /* Build configuration list for PBXNativeTarget "tvOS_TVML_Stopwatch" */;
 			buildPhases = (
-				B3260FE7AE7E25BF2617BEB1 /* [CP] Check Pods Manifest.lock */,
+				5B1685DC6C4AE298595B9109 /* [CP] Check Pods Manifest.lock */,
 				E32835A91CC6C6F200E2C2DE /* Sources */,
 				E32835AA1CC6C6F200E2C2DE /* Frameworks */,
 				E32835AB1CC6C6F200E2C2DE /* Resources */,
-				E96271117ABF495AC46D9BFF /* [CP] Embed Pods Frameworks */,
-				347BCB4B8F9595C9EBDBEB89 /* [CP] Copy Pods Resources */,
+				42B0C7833850375BBABDBF3F /* [CP] Embed Pods Frameworks */,
+				0C8C693BC261D54B138EC614 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -631,12 +704,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E397F4211CC5BA550095A3ED /* Build configuration list for PBXNativeTarget "tvOS_Stopwatch" */;
 			buildPhases = (
-				F892CACB7EAD31EC656A9DA7 /* [CP] Check Pods Manifest.lock */,
+				E0E774FD2DD369EADF647C2F /* [CP] Check Pods Manifest.lock */,
 				E397F4091CC5BA540095A3ED /* Sources */,
 				E397F40A1CC5BA540095A3ED /* Frameworks */,
 				E397F40B1CC5BA540095A3ED /* Resources */,
-				EB5D2204B8D3C06A5EAE02BE /* [CP] Embed Pods Frameworks */,
-				0378659A3A10EE87F09E0C5F /* [CP] Copy Pods Resources */,
+				CF3726CA79AF824E56650BBB /* [CP] Embed Pods Frameworks */,
+				82105638FB51F52FA6D27AE0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -660,7 +733,7 @@
 						DevelopmentTeam = 5GLZKGNWQ3;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -673,6 +746,22 @@
 							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
+							};
+						};
+					};
+					C1C53EFE1F7D7CA600042AA5 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = 5GLZKGNWQ3;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
 							};
 						};
 					};
@@ -689,6 +778,7 @@
 					E397F40C1CC5BA540095A3ED = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 5GLZKGNWQ3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -712,6 +802,7 @@
 				E397F40C1CC5BA540095A3ED /* tvOS_Stopwatch */,
 				E32835AC1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */,
 				E33088181D6BB0B4008935A9 /* StopwatchNotificationService */,
+				C1C53EFE1F7D7CA600042AA5 /* StopwatchNotificationContentExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -758,6 +849,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C1C53EFD1F7D7CA600042AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C53F081F7D7CA700042AA5 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E32835AB1CC6C6F200E2C2DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -786,37 +885,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0378659A3A10EE87F09E0C5F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1BEF3789CC507F95559EA780 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		347BCB4B8F9595C9EBDBEB89 /* [CP] Copy Pods Resources */ = {
+		0C8C693BC261D54B138EC614 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -831,7 +900,40 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3993FFFAF9154BEEBDD5FA87 /* [CP] Copy Pods Resources */ = {
+		0E11FBFB40F0E98D086D9993 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1062C4FBDEC91EE41AED3E9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StopwatchNotificationContentExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2439961CCED464ADD87076DC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -940,43 +1042,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		58CD4522874B443180A63587 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Stopwatch-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3260FE7AE7E25BF2617BEB1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-tvOS_TVML_Stopwatch-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E96271117ABF495AC46D9BFF /* [CP] Embed Pods Frameworks */ = {
+		42B0C7833850375BBABDBF3F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -994,7 +1060,58 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB5D2204B8D3C06A5EAE02BE /* [CP] Embed Pods Frameworks */ = {
+		56391E9749263D2D9839FAA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stopwatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B1685DC6C4AE298595B9109 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tvOS_TVML_Stopwatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82105638FB51F52FA6D27AE0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF3726CA79AF824E56650BBB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1012,7 +1129,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F892CACB7EAD31EC656A9DA7 /* [CP] Check Pods Manifest.lock */ = {
+		E0E774FD2DD369EADF647C2F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1028,6 +1145,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3BBF315F49813A62D655764 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StopwatchNotificationContentExtension/Pods-StopwatchNotificationContentExtension-resources.sh",
+				"${PODS_ROOT}/../../AppboyKit/AppboyPushStoryFramework/ABKPageView.xib",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StopwatchNotificationContentExtension/Pods-StopwatchNotificationContentExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1052,9 +1187,18 @@
 				4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */,
 				E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
+				C1EB09951F747AFB000867F2 /* PushStoryViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserCells.m in Sources */,
 				E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */,
 				D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C53EFB1F7D7CA600042AA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C53F051F7D7CA700042AA5 /* NotificationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,6 +1233,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C1C53F0B1F7D7CA700042AA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1C53EFE1F7D7CA600042AA5 /* StopwatchNotificationContentExtension */;
+			targetProxy = C1C53F0A1F7D7CA700042AA5 /* PBXContainerItemProxy */;
+		};
 		E33088201D6BB0B4008935A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E33088181D6BB0B4008935A9 /* StopwatchNotificationService */;
@@ -1122,6 +1271,14 @@
 				95EF5126173D5FD600C0D780 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		C1C53F061F7D7CA700042AA5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1C53F071F7D7CA700042AA5 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		E397F4181CC5BA540095A3ED /* Main.storyboard */ = {
@@ -1174,7 +1331,7 @@
 		};
 		4E1C78981AAFA82000663F4B /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E240A2DCC40A3A0AC31351E7 /* Pods-Stopwatch.develop.xcconfig */;
+			baseConfigurationReference = CF26DEACDB1334DE153A964E /* Pods-Stopwatch.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1184,7 +1341,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
@@ -1271,7 +1428,7 @@
 		};
 		95EF5131173D5FD600C0D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21DDAA65860D105B25798825 /* Pods-Stopwatch.debug.xcconfig */;
+			baseConfigurationReference = D6ABEED57B5E362790D2728D /* Pods-Stopwatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1281,7 +1438,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
@@ -1301,7 +1458,7 @@
 		};
 		95EF5132173D5FD600C0D780 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7549A445A7C9F36522E4D338 /* Pods-Stopwatch.release.xcconfig */;
+			baseConfigurationReference = 2E6CFE87DF9981ED078916B8 /* Pods-Stopwatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1311,7 +1468,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
@@ -1329,9 +1486,163 @@
 			};
 			name = Release;
 		};
+		C1C53F0D1F7D7CA700042AA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C11560722D83F782DE63459 /* Pods-StopwatchNotificationContentExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = StopwatchNotificationContentExtension/StopwatchNotificationContentExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = StopwatchNotificationContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0af4ea2e-ca88-4d17-880e-e273d3bfcc04";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch.StopwatchNotificationContentExtension";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1C53F0E1F7D7CA700042AA5 /* Develop */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB497A0BD3D68502BB714F22 /* Pods-StopwatchNotificationContentExtension.develop.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = StopwatchNotificationContentExtension/StopwatchNotificationContentExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = StopwatchNotificationContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0dd393d6-5dfe-4257-9e7a-843a2913deef";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.appboy.stopwatch.StopwatchNotificationContentExtension";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Develop;
+		};
+		C1C53F0F1F7D7CA700042AA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 897FE5A3FE945E8487CA9BBE /* Pods-StopwatchNotificationContentExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = StopwatchNotificationContentExtension/StopwatchNotificationContentExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = StopwatchNotificationContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch.StopwatchNotificationContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0af4ea2e-ca88-4d17-880e-e273d3bfcc04";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.appboy.stopwatch.StopwatchNotificationContentExtension";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E32835B91CC6C6F200E2C2DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58C62E42E5F2BB8375EA1FBB /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */;
+			baseConfigurationReference = A2E478A21CAD63AA6C497DB0 /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1372,7 +1683,7 @@
 		};
 		E32835BA1CC6C6F200E2C2DE /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CE572AABCA0AC58AE94BBBC /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */;
+			baseConfigurationReference = 21F6413047AA13F4A67FF940 /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1414,7 +1725,7 @@
 		};
 		E32835BB1CC6C6F200E2C2DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9477CB7FA5D1AFF029BEF72F /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */;
+			baseConfigurationReference = 4A13A163EFC7528AB511F858 /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1559,7 +1870,7 @@
 		};
 		E397F41E1CC5BA550095A3ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD58B9C6267D5D909845B9E7 /* Pods-tvOS_Stopwatch.debug.xcconfig */;
+			baseConfigurationReference = 6CAA2B0DAE2DD26830F19D4B /* Pods-tvOS_Stopwatch.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
@@ -1572,7 +1883,10 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1592,17 +1906,18 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appboy.tvOS-Stopwatch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f5a4b2b8-51bf-4012-98fc-2c816150fbfd";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		E397F41F1CC5BA550095A3ED /* Develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E02BAA74C2A5B8312BEE66A /* Pods-tvOS_Stopwatch.develop.xcconfig */;
+			baseConfigurationReference = 5FA9D2138BF035DDA73B49AD /* Pods-tvOS_Stopwatch.develop.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
@@ -1615,8 +1930,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1636,17 +1954,18 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appboy.tvOS-Stopwatch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f5a4b2b8-51bf-4012-98fc-2c816150fbfd";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Develop;
 		};
 		E397F4201CC5BA550095A3ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EE459F65937F47CF69041BB /* Pods-tvOS_Stopwatch.release.xcconfig */;
+			baseConfigurationReference = 2939F8CE24F6BD85EDF23202 /* Pods-tvOS_Stopwatch.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
@@ -1659,8 +1978,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1680,10 +2002,11 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appboy.tvOS-Stopwatch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f5a4b2b8-51bf-4012-98fc-2c816150fbfd";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
@@ -1707,6 +2030,16 @@
 				95EF5131173D5FD600C0D780 /* Debug */,
 				4E1C78981AAFA82000663F4B /* Develop */,
 				95EF5132173D5FD600C0D780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C1C53F101F7D7CA700042AA5 /* Build configuration list for PBXNativeTarget "StopwatchNotificationContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C53F0D1F7D7CA700042AA5 /* Debug */,
+				C1C53F0E1F7D7CA700042AA5 /* Develop */,
+				C1C53F0F1F7D7CA700042AA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
