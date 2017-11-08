@@ -29,6 +29,11 @@
  - Removal 2
  -->
  
+## 3.2.2
+
+##### Fixed
+- Fixes an issue where Slideup and Full In-App Message content could be obscured by the notch on iPhone X.
+
 ## 3.2.1
 
 ##### Fixed
