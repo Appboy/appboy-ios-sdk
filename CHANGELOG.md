@@ -29,6 +29,12 @@
  - Removal 2
  -->
  
+## 3.2.3
+
+##### Fixed
+- Fixes an issue introduced in version 3.0.0 which caused detailed device model information to not be collected by the SDK.
+- Fixes an issue where Appboy's Carthage framework did not support simulators.
+
 ## 3.2.2
 
 ##### Fixed
