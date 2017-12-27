@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "ABKInAppMessage.h"
 #import "ABKInAppMessageControllerDelegate.h"
+#import "ABKInAppMessageUIControlling.h"
 
 /*! Note: This class is not thread safe and all class methods should be called from the main thread.*/
 
@@ -17,29 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (weak, nullable) id <ABKInAppMessageControllerDelegate> delegate;
 
-#if !TARGET_OS_TV
 /*!
- * supportedOrientationMasks allows you to change which orientation masks the in-app message supports.
- * In-app messages will normally support the orientations specified in the app settings, but the method
- * supportedInterfaceOrientations may optionally override that. The value of supportedOrientationMasks will be returned
- * in supportedInterfaceOrientations in the in-app message view controller.
- *
- * The default value of supportedOrientationMasks is UIInterfaceOrientationMaskAll.
- *
+ * If you have implemented the IAM subspec, you can use the ABKInAppMessageUIController to control
+ * in-app message behavior. See ABKInAppMessageUIController for more information.
  */
-@property UIInterfaceOrientationMask supportedOrientationMasks;
-
-/*!
- * supportedOrientations allows you to change which orientation the in-app message supports.
- * In-app messages will normally support the orientations specified in the app settings, but method
- * preferredInterfaceOrientationForPresentation may optionally override that. The value of supportedOrientations will be
- * returned in preferredInterfaceOrientationForPresentation in in-app message view controller.
- *
- * The default value of supportedOrientations includes all orientations: UIInterfaceOrientationPortrait,
- * UIInterfaceOrientationLandscapeRight, UIInterfaceOrientationLandscapeLeft and UIInterfaceOrientationPortraitUpsideDown.
- */
-@property UIInterfaceOrientation supportedOrientations;
-#endif
+@property (nullable) id<ABKInAppMessageUIControlling> inAppMessageUIController;
 
 /*!
  * @param delegate The in-app message delegate that implements the ABKInAppMessageControllerDelegate methods. If the delegate is
@@ -75,18 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
  * reflected on the dashboard.
  */
 - (void)addInAppMessage:(ABKInAppMessage *)newInAppMessage;
-
-/*!
- * @param animated If YES, the in-app message will slide off the screen. If NO, the in-app message will disappear immediately without
- * an animation.
- *
- * @discussion If there is a in-app message currently being displayed, calling this method will hide it. The animated parameter
- * controls whether or not the in-app message will be animated away. This method does nothing if no in-app message is currently being
- * displayed.
- *
- * Note: This will not fire the onInAppMessageDismissed: delegate method.
- */
-- (void)hideCurrentInAppMessage:(BOOL)animated;
 
 @end
 NS_ASSUME_NONNULL_END

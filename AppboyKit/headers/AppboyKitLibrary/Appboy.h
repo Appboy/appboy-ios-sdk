@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.2.3"
+#define APPBOY_SDK_VERSION @"3.3.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -154,8 +154,7 @@ extern NSString *const ABKPushStoryAppGroupKey;
  *          Appboy::submitFeedback:withCompletionHandler:, or a FeedbackViewController.
  *        - Feed requests are made via Appboy::requestFeedRefresh or an ABKFeedViewController. The latter typically 
  *          occurs when an ABKFeedViewController is loaded and displayed on the screen or on a pull to refresh.
- *        - In-app message requests are made via Appboy::requestInAppMessageRefresh.
- *        - Network requests are required for internal features, such as templated in-app messages 
+ *        - Network requests are required for internal features, such as templated in-app messages
  *          and certain location-based features.
  *        You can direct Appboy to perform an immediate data flush as well as process any other
  *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
@@ -550,18 +549,11 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 
 #if !TARGET_OS_TV
 /*!
- * Enqueues an in-app message request for the current user. Note that if the queue already contains another request for the
- * current user, that the in-app message request will be merged into the already existing request and only one will execute
- * for that user.
- */
-- (void)requestInAppMessageRefresh;
-
-/*!
  * @param response The response passed in from userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
  *
  * @discussion This method returns whether or not a UNNotification was sent from Appboy's servers.
  */
-- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response __deprecated_msg("Use [ABKPushUtils isAppboyUserNotification:] instead.");
+- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response __deprecated_msg("Use [ABKPushUtils isAppboyUserNotification:] instead.") NS_AVAILABLE_IOS(10.0);
 
 /*!
  * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or

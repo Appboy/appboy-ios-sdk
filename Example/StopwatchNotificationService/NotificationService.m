@@ -104,12 +104,10 @@ static NSString *const AppboyAPNSDictionaryAttachmentTypeKey = @"type";
 }
 
 + (void)logMessage:(NSString *)message, ... {
-#if DEBUG
   va_list args;
   va_start(args, message);
   NSLog(@"%@", [[NSString alloc] initWithFormat:[@"[APPBOY] " stringByAppendingString:message] arguments:args]);
   va_end(args);
-#endif
 }
 
 - (void)displayOriginalContent {

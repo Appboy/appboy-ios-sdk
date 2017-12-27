@@ -39,5 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nullable) UIColor *chevronColor;
 
+- (BOOL)isBeveled;
+
 @end
 NS_ASSUME_NONNULL_END

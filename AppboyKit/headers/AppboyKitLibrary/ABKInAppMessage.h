@@ -52,6 +52,15 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageOrientation) {
   ABKInAppMessageOrientationLandscape
 };
 
+/*!
+ * Default icon and in-app message button background colors.
+ * These are used in the in-app message view controllers.
+ */
+static CGFloat const RedValueOfDefaultIconColorAndButtonBgColor = 0.0f;
+static CGFloat const GreenValueOfDefaultIconColorAndButtonBgColor = 115.0f / 255.0f;
+static CGFloat const BlueValueOfDefaultIconColorAndButtonBgColor = 213.0f / 255.0f;
+static CGFloat const AlphaValueOfDefaultIconColorAndButtonBgColor = 1.0f;
+
 /*
  * Appboy Public API: ABKInAppMessage
  */

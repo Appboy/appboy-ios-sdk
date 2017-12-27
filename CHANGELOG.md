@@ -29,11 +29,32 @@
  - Removal 2
  -->
  
+## 3.3.0
+
+##### Breaking
+ - Open sources the In-App Message UI code and moves it into a new subspec named "InAppMessage".
+   - The "InAppMessage" subspec contains the Braze In-App Message UI and the Core SDK. It does not include Feedback or the News Feed UI.
+   - The "UI" subspec contains all Braze UI and the Core SDK subpsec.
+   - The open-sourced In-App Message view controllers offer backward compatible NUI support, although we recommend using categories or subclassing the In-App Message view controllers for customization as the NUI library isn't actively maintained any more. Support for NUI customization will be removed in a future release.
+   - Most delegate customization methods are moved from ABKInAppMessageControllerDelegate to ABKInAppMessageUIDelegate.
+   - See our [In-App Message Sample app](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/InAppMessage/BrazeInAppMessageSample) for sample implementations and customizations.
+ - Removes support for original in-app messages. Moving forward, triggered in-app messages must be used.
+   - Removes `requestIAMRefresh` method from `Appboy`.
+   
+##### Changed
+ - Removes the current behavior of displaying an in-app message from the stack on app open, if the stack is non-empty
+ 
+##### Fixed
+ - Adds Macros for methods which are only available from iOS 10.
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/128.
+ - Stops using deprecated `openURL:` method when in iOS 10 and above.
+   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/132.
+ 
 ## 3.2.3
 
 ##### Fixed
 - Fixes an issue introduced in version 3.0.0 which caused detailed device model information to not be collected by the SDK.
-- Fixes an issue where Appboy's Carthage framework did not support simulators.
+- Fixes an issue where Braze's Carthage framework did not support simulators.
 
 ## 3.2.2
 
@@ -57,7 +78,7 @@
 ## 3.1.1
 
 ##### Added
-- Adds a new property `language` to `ABKUser` to allow explicit control over the user's language in the Appboy dashboard. Note that this is separate and independent from the language settings on the user's device.
+- Adds a new property `language` to `ABKUser` to allow explicit control over the user's language in the Braze dashboard. Note that this is separate and independent from the language settings on the user's device.
 - Adds an Objective-C sample app for the Core subspec of the SDK. See `Samples/Core/ObjCSample`.
 
 ##### Fixed
@@ -77,7 +98,7 @@
 
 ##### Added
 - Adds the ability to set a custom API endpoint via the Info.plist. 
-   - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.appboy.eu`).
+   - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.braze.eu`).
 
 ##### Fixed
 - Fixes an issue where changing the IDFA settings through a third party wrapper could cause a crash.
@@ -92,13 +113,13 @@
 ##### Breaking
 - Adds a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
 - Removes the deprecated `foursquareAccessToken` property from `ABKUser`. To associate a Foursquare access token with a user profile, use `setCustomAttributeWithKey:andStringValue:` instead.
-- Note: Appboy iOS SDK version 3.0.0 will **only support downgrading to iOS SDK version 2.31.0**. Downgrading to versions prior to 2.31.0 may result in app crashes.
+- Note: Braze iOS SDK version 3.0.0 will **only support downgrading to iOS SDK version 2.31.0**. Downgrading to versions prior to 2.31.0 may result in app crashes.
 
 ## 2.31.0
 
 ##### Breaking
  - Open sources the Feedback view controllers and moves them into a new subspec "Feedback".
-   - The "Feedback" subspec has the Appboy Feedback UI and the Core SDK. It will not include in-app messages or News Feed UI.
+   - The "Feedback" subspec has the Braze Feedback UI and the Core SDK. It will not include in-app messages or News Feed UI.
    - Removes the popover context for Feedback due to the deprecation of `UIPopoverViewController` in iOS.
    - Renames the `ABKFeedbackViewControllerModalContext` and `ABKFeedbackViewControllerNavigationContext` class to `ABKModalFeedbackViewController` and `ABKNavigationFeedbackViewController`.
    - The open-sourced Feedback view controllers offer backward compatible NUI support, although we recommend using categories or subclassing the Feedback view controllers for customization as NUI library isn't actively maintained any more. See [here](https://github.com/Appboy/appboy-ios-sdk/tree/master/AppboyUI/ABKFeedbackViewController/FeedbackViewController/ABKFeedbackViewController.h) for customization details.
@@ -115,10 +136,10 @@
 ##### Breaking
  - Open sources the `ABKModalWebViewController` class, which is used to display the web URLs from push or in-app message clicks.
    - Drops NUI customization support for the navigation bar and navigation bar button item on `ABKModalWebViewController`. To customize the UI, create an ABKModalWebViewController category and override the corresponding method(s) exposed.
- - Open sources the `ABKNoConnectionLocalization` class, which provides Appboy's default localized string for "No Connection" error.
+ - Open sources the `ABKNoConnectionLocalization` class, which provides Braze's default localized string for "No Connection" error.
    - You can customize the localization by adding `Appboy.no-connection.message` as the key in your `Localizable.strings` files.
  - Removes the `Appboy.bundle` from the Core subspec of the SDK.
-   - If you use the Core subspec, the in-app messages will not display, and trying to display Appboy's News Feed and Feedback UI will lead to unpredictable behavior.
+   - If you use the Core subspec, the in-app messages will not display, and trying to display Braze's News Feed and Feedback UI will lead to unpredictable behavior.
 
 ## 2.29.1
 
@@ -139,22 +160,22 @@
  - Drops support for iOS 7.
  - Removes the `shouldOpenURIExternally` field from `ABKInAppMessage`.
  - Requires XCode 8.3.
- - Changes the behavior of the `onCardClicked:feedViewController:` method in `ABKFeedViewControllerDelegate` to let Appboy handle the card click action if the delegate method returns `NO`.
-   - Previously, Appboy would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
+ - Changes the behavior of the `onCardClicked:feedViewController:` method in `ABKFeedViewControllerDelegate` to let Braze handle the card click action if the delegate method returns `NO`.
+   - Previously, Braze would handle the card click action if `onCardClicked:feedViewController:` returned `YES`.
    - This change standardizes delegate behavior with `ABKInAppMessageControllerDelegate` and `ABKURLDelegate`.
 
 ##### Added
  - Adds the property `openUrlInWebView` to `ABKInAppMessage`, `ABKInAppMessageButton` and `ABKCard`. This property determines if the URL associated with the object will be opened in a `UIWebView`.
  - Adds a Javascript interface to HTML in-app messages with ability to log custom events, log purchases, set user attributes, navigate users, and close the message.
- - Adds an `abDeepLink` query field to HTML in-app messages, which defaults to false. To prevent the SDK from opening deep links in a `UIWebView`, specify `abDeepLink=true` in your link (e.g., `https://www.appboy.com?abDeepLink=true`).
+ - Adds an `abDeepLink` query field to HTML in-app messages, which defaults to false. To prevent the SDK from opening deep links in a `UIWebView`, specify `abDeepLink=true` in your link (e.g., `https://www.braze.com?abDeepLink=true`).
  - Adds the `ABKURLDelegate` protocol for customizing URL handling across channels. Set the `ABKURLDelegate` by passing a delegate object to the `ABKURLDelegateKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`. See our [Stopwatch sample application](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/AppDelegate.m) for a Universal Link implementation sample.
- - Adds the following utility methods to `ABKPushUtils` for detecting if a push notification was sent by Appboy for internal feature purposes:
+ - Adds the following utility methods to `ABKPushUtils` for detecting if a push notification was sent by Braze for internal feature purposes:
    - `+ (BOOL)isAppboyInternalUserNotification:(UNNotificationResponse *)response;`
    - `+ (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo;`
    - `+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;`
    - `+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response;`
    - `+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;`
-   - These methods can be used to ensure that your app does not take any undesired or unnecessary actions upon receiving Appboy's internal content-available notifications (e.g., pinging your server for content).
+   - These methods can be used to ensure that your app does not take any undesired or unnecessary actions upon receiving Braze's internal content-available notifications (e.g., pinging your server for content).
 
 ##### Changed
  - Deprecates `ABKPushURIDelegate`. If you were previously using `ABKPushURIDelegate`, use `ABKURLDelegate` instead.
@@ -164,7 +185,7 @@
 ## 2.28.0
 
 ##### Breaking:
- - Removes support for watchOS 1, including Appboy WatchKit SDK and all public APIs for watchOS in Appboy iOS SDK.
+ - Removes support for watchOS 1, including Braze WatchKit SDK and all public APIs for watchOS in Braze iOS SDK.
 
 ##### Added
  - Added `ABKSDWebImageProxy` to access the SDWebImage framework. This will prevent the Core subspec of the SDK from calling any SDWebImage methods directly.
@@ -175,11 +196,11 @@
  - Removes the following deprecated items:  the `bio` field of `ABKUser`, the `setIsSubscribedToEmails:` method of `ABKUser`, and the `getResourceEndpoint:` method of the `ABKAppboyEndpointDelegate` protocol.
 
 ##### Added
- - Added support for registering geofences and messaging on geofence events. Please reach out to success@appboy.com for more information about this feature.
- - Adds Appboy default push categories which can be fetched from `ABKPushUtils`.
-   - To use the Appboy default push categories, you need to manually add the Appboy categories when you register for push. You can get the Appboy categories from `[ABKPushUtils getAppboyUNNotificationCategorySet]` or `[ABKPushUtils getAppboyUIUserNotificationCategorySet]`.
+ - Added support for registering geofences and messaging on geofence events. Please reach out to success@braze.com for more information about this feature.
+ - Adds Braze default push categories which can be fetched from `ABKPushUtils`.
+   - To use the Braze default push categories, you need to manually add the Braze categories when you register for push. You can get the Braze categories from `[ABKPushUtils getAppboyUNNotificationCategorySet]` or `[ABKPushUtils getAppboyUIUserNotificationCategorySet]`.
    - In this version, we add four sets of push action buttons: accept/decline, yes/no, confirm/cancel, more. These will be available as button sets on the dashboard when creating an iOS push campaign.
-   - All Appboy push action buttons support localization.
+   - All Braze push action buttons support localization.
  - Adds support for web link and deep link handling of push action buttons.
 
 ##### Fixed
@@ -202,12 +223,12 @@
 ##### Added
  - Adds Cocoapods subspecs "Core" and "UI".
    - The "UI" subspsec has the full feature set of the current SDK. This is the default subspec when no subspec is specified in the Podfile.
-   - The "Core" subspec removes the SDWebImage framework dependency. This is for apps who do not use any Appboy UI that leverages images (News Feed, in-app messages). If you use the "Core" subspec, in-app messages with images will not display, and the News Feed will render with plain white images.
+   - The "Core" subspec removes the SDWebImage framework dependency. This is for apps who do not use any Braze UI that leverages images (News Feed, in-app messages). If you use the "Core" subspec, in-app messages with images will not display, and the News Feed will render with plain white images.
  - Makes `ABKThemableFeedNavigationBar.h` and `ABKNavigationBar.h` public.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/68
  - Adds an `unsafeInstance` method that returns a nonoptional `Appboy` instance. If used before calling `startWithApiKey:` an exception will be thrown.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/45.
- - Adds `ABKIDFADelegate` protocol that can be used to create a delegate to pass Appboy the IDFA in `startWithApiKey:` in the `appboyOptions` dictionary under the `ABKIDFADelegateKey` key.  Alternative to existing `ABKIdentifierForAdvertisingProvider` compile flag solution.
+ - Adds `ABKIDFADelegate` protocol that can be used to create a delegate to pass Braze the IDFA in `startWithApiKey:` in the `appboyOptions` dictionary under the `ABKIDFADelegateKey` key.  Alternative to existing `ABKIdentifierForAdvertisingProvider` compile flag solution.
 
 ##### Changed
  - Disables the `-webkit-touch-callout` property on HTML in-app messages. Long presses and 3D Touch on links will no longer display pop-ups with additional link information.
@@ -219,7 +240,7 @@
   - This is the recommended way to set the `ABKInAppMessageControllerDelegate` and circumvents a potential race condition where in-app messages can be shown before the delegate has been set.
 - Exposes the ABKFeedback object and adds a new method `- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;` in `Appboy`. The new method accepts a completion handler which receives an ABKFeedbackSentResult enum as feedback sending result.
   - The possible feedback sending results are: invalid feedback object(ABKInvalidFeedback), fail to send feedback(ABKNetworkIssue), and feedback sent successfully(ABKFeedbackSentSuccessfully).
-- Adds the utility method `- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response;` to `Appboy`. This method is compatible with the `UserNotifications` framework and returns whether a push notification was sent from Appboy's server.
+- Adds the utility method `- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response;` to `Appboy`. This method is compatible with the `UserNotifications` framework and returns whether a push notification was sent from Braze's server.
   - Those using `- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;` who have integrated the `UserNotifications` framework should use this method instead.
 
 ##### Fixed
@@ -238,7 +259,7 @@
  - Updates push registration to flush the token to the server immediately.
  - Improves the accessibility of in-app messages and news feed cards.
    - When in voiceOver mode, the SDK auto-focuses on in-app messages when they appear and resets focus on dismissal.  
-   - VoiceOver no longer reads Appboy internal labels.  
+   - VoiceOver no longer reads Braze internal labels.  
    - News feed cards are enhanced to be more accessible.
 
 ## 2.24.4
@@ -252,7 +273,7 @@
 ## 2.24.3
 
 ##### Breaking
- - Update REQUIRED for apps using Appboy SDK 2.24.0, 2.24.1 or 2.24.2 with UserNotifications.framework
+ - Update REQUIRED for apps using Braze SDK 2.24.0, 2.24.1 or 2.24.2 with UserNotifications.framework
 
 ##### Fixed
  - Fixes an issue where a user's foreground push enabled status could erroneously be marked as disabled.
@@ -283,7 +304,7 @@
 
 ##### Breaking
  - Updates the SDK to require XCode 8.
- - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Appboy iOS integrations.  Please see our updated documentation [here](https://www.appboy.com/documentation/iOS/#step-4-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update.
+ - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Braze iOS integrations.  Please see our updated documentation [here](https://www.braze.com/documentation/iOS/#step-4-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update.
 
 ##### Added
  - Updates the iOS and tvOS SDKs to support iOS 10.
@@ -302,7 +323,7 @@
  - Adds support for templating event properties within in-app messages.
 
 ##### Removed
- - Removes the deprecated method `logSocialShare` from Appboy class.
+ - Removes the deprecated method `logSocialShare` from `Appboy` class.
 
 ## 2.22.1
 
@@ -431,14 +452,14 @@ occurred.
 ## 2.18
 
 ##### Added
- - Adds nullability annotations to all Appboy public APIs.
+ - Adds nullability annotations to all Braze public APIs.
  - Adds a new delegate method to support custom push URI handle. For more detail, please see [ABKPushURIDelegate.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/headers/AppboyKitLibrary/ABKPushURIDelegate.h);
 
 ##### Changed
- - Updates to auto-dismiss the Appboy web view when a user returns to the app after following a link out of the app from an Appboy web view.
+ - Updates to auto-dismiss the Braze web view when a user returns to the app after following a link out of the app from an Braze web view.
 
 ##### Removed
- - Removes the deprecated method `requestSlideupRefresh` from Appboy class.
+ - Removes the deprecated method `requestSlideupRefresh` from Braze class.
 
 ## 2.17.1
 
@@ -455,7 +476,7 @@ occurred.
 
 ##### Changed
  - Makes the WebView background for HTML in-app messages transparent.  Ensure HTML in-app messages you send to the device are created expecting a transparent background.
- - Applies the Appboy endpoint delegate methods to in-app messages' resource(zip and image) fetching.
+ - Applies the Braze endpoint delegate methods to in-app messages' resource(zip and image) fetching.
 
 ##### Removed
  - Removes the Facebook button from Feedback page.
@@ -499,7 +520,7 @@ occurred.
 
 ##### Added
  - Adds configurable session timeout feature.
- - Adds feedbackViewControllerBeforeFeedbackSent method to the feedback delegate protocols, which can be used to modify the feedback message before it's sent to Appboy.
+ - Adds feedbackViewControllerBeforeFeedbackSent method to the feedback delegate protocols, which can be used to modify the feedback message before it's sent to Braze.
  - Adds a `setAttributionData` method to `ABKUser` that sets an `ABKAttributionData` object for the user.  To be used with attribution provider SDKs when attribution events are fired.
 
 ## 2.13.2
@@ -516,13 +537,13 @@ occurred.
 
 ##### Added
  - Adds an open-source Watch SDK to support data analytics on watchKit apps. You can use the Appboy-WatchKit SDK by downloading and adding the "Appboy-WatchKit" folder in your watchKit extension target. For more detail, please refer to [ABWKUser.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy-WatchKit/ABWKUser.h) and [AppboyWatchKit.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/Appboy-WatchKit/AppboyWatchKit.h).
- - Adds an opt-in location service that logs background location events; adds ABKLocationManager with methods for allowing Appboy to request location permission on your behalf and logging the current location.  More information on the background location capabilities will be made available when dashboard support is released.
+ - Adds an opt-in location service that logs background location events; adds ABKLocationManager with methods for allowing Braze to request location permission on your behalf and logging the current location.  More information on the background location capabilities will be made available when dashboard support is released.
  - Adds client side blocking of blacklisted attributes and events.
- - Adds ABKPushUtils with method `+ (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;` that can be used to detect if a content-available push is from Appboy uninstall tracking (and shouldn't be acted upon).
+ - Adds ABKPushUtils with method `+ (BOOL) isUninstallTrackingNotification:(NSDictionary *)userInfo;` that can be used to detect if a content-available push is from Braze uninstall tracking (and shouldn't be acted upon).
  - Adds a new property `expiresAt` in class ABKCard. The property is the unix timestamp of the card's expiration time. For more detail, please refer to ABKCard.h.
 
 ##### Changed
- - Stops collecting user's Twitter data automatically. You can pass a user's Twitter information to Appboy by initialzing a ABKTwitterUser object with the twitter data, and setting it to [Appboy sharedInstance].user.twitterUser. For more information, please refer to ABKUser.h and ABKTwitterUser.h.
+ - Stops collecting user's Twitter data automatically. You can pass a user's Twitter information to Braze by initialzing a ABKTwitterUser object with the twitter data, and setting it to [Appboy sharedInstance].user.twitterUser. For more information, please refer to ABKUser.h and ABKTwitterUser.h.
  - Stops logging foreground push as a push open as it is not delivered by the system.
 
 ##### Removed
@@ -547,10 +568,10 @@ occurred.
 ## 2.12.0
 
 ##### Fixed
- - Fixes the incorrect path runtime error for users who integrate our pod as a dynamic framework. For SDK versions before 2.12, when you intergrate Appboy with `use_frameworks!` in the Podfile, the library is integrated as a dynamic framework and the Appboy.bundle is stored in a different path.
+ - Fixes the incorrect path runtime error for users who integrate our pod as a dynamic framework. For SDK versions before 2.12, when you integrate Braze with `use_frameworks!` in the Podfile, the library is integrated as a dynamic framework and the Appboy.bundle is stored in a different path.
 
 ##### Changed
- - Changes HelloSwift sample app to integrate Appboy SDK as a dynamic framework.
+ - Changes HelloSwift sample app to integrate Braze SDK as a dynamic framework.
 
 ##### Removed
  - Removes the subspecs from the podspec. This fixes the duplicate symbol error https://github.com/Appboy/appboy-ios-sdk/issues/24. If you are still using subspec like `pod 'Appboy-iOS-SDK/AppboyKit'` in your podfile, please make sure to change it to `pod 'Appboy-iOS-SDK'`.
@@ -565,7 +586,7 @@ occurred.
 ## 2.11.2
 
 ##### Changed
- - Update the serialize and deserialize methods for in-app message classes. This is for use by wrappers such as Appboy's Unity SDK for iOS.
+ - Update the serialize and deserialize methods for in-app message classes. This is for use by wrappers such as Braze's Unity SDK for iOS.
 
 ## 2.11.1
 
@@ -593,11 +614,11 @@ occurred.
 ## 2.10.0
 
 ##### Changed
- - Updated the minimum deployment targets of Appboy iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Appboy SDK.
- - Stop collecting user's Facebook data automatically. You can pass a user's Facebook information to Appboy by initialzing a ABKFacebookUser object with the facebook data, and set it to [Appboy sharedInstance].user.facebookUser. For more information, please refer to ABKUser.h and ABKFacebookUser.h.
+ - Updated the minimum deployment targets of Braze iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Braze SDK.
+ - Stop collecting user's Facebook data automatically. You can pass a user's Facebook information to Braze by initializing a ABKFacebookUser object with the facebook data, and set it to [Appboy sharedInstance].user.facebookUser. For more information, please refer to ABKUser.h and ABKFacebookUser.h.
 
 ##### Removed
- - Removed Facebook SDK dependent builds.  Now there is a single library - AppboyKit - and a single Pod without functional subspecs - Appboy-iOS-SDK (note we now have both the subspecs pointing at the same library). Please update your Podfile to `pod 'Appboy-iOS-SDK` if you are integrating Appboy with Cocoapods.
+ - Removed Facebook SDK dependent builds.  Now there is a single library - AppboyKit - and a single Pod without functional subspecs - Appboy-iOS-SDK (note we now have both the subspecs pointing at the same library). Please update your Podfile to `pod 'Appboy-iOS-SDK` if you are integrating Braze with Cocoapods.
  - Removed the feature of prompting a user to connect his/her Facebook account. You can refer to the method `promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData` in [FacebookViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/FacebookViewController.m) to continue prompting the user to connect the Facebook account.
 
 ## 2.9.6
@@ -614,7 +635,7 @@ occurred.
 
 ##### Added
  - Added a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
- - Added 26 additional languages to localization support for Appboy UI elements.
+ - Added 26 additional languages to localization support for Braze UI elements.
  - Added support for deep linking from APNS push notification clicks.
  - Added ability to customize the font of Feedback text using NUI with NUI class name `ABKFeedbackTextView`.
 
@@ -632,7 +653,7 @@ occurred.
 
 ##### Added
  - Added a new method `- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler` to support push with background fetch. This method should be called in `- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
- - Added a HelloSwift sample app to demo how to use Appboy in a swift app.
+ - Added a HelloSwift sample app to demo how to use Braze in a swift app.
  - Added a new NSString property "displayPrice" in ABKCrossPromotionCard to enable server side price localization.
 
 ##### Fixed
@@ -642,8 +663,8 @@ occurred.
 ## 2.9.2
 
 ##### Added
- - Added the ability to turn off Appboy's automatic location collection by setting the ABKDisableAutomaticLocationCollectionKey boolean in AppboyOptions in startWithApiKey:inApplication:inApplication:withAppboyOptions:.
- - Added the ability to send location tracking events to Appboy manually using setLastKnownLocationWithLatitude:longitude:horizontalAccuracy: and setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy: on the ABKUser. this is intended to be used with ABKDisableAutomaticLocationCollectionKey set to true in the AppboyOptions so that locations are only being recorded from a single source.
+ - Added the ability to turn off Braze's automatic location collection by setting the ABKDisableAutomaticLocationCollectionKey boolean in AppboyOptions in startWithApiKey:inApplication:inApplication:withAppboyOptions:.
+ - Added the ability to send location tracking events to Braze manually using setLastKnownLocationWithLatitude:longitude:horizontalAccuracy: and setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy: on the ABKUser. this is intended to be used with ABKDisableAutomaticLocationCollectionKey set to true in the AppboyOptions so that locations are only being recorded from a single source.
 
 ##### Fixed
  - Fixed a news feed bug: sometimes the spinner keeps spinning on the screen even after the news feed card image is displayed.
@@ -659,14 +680,14 @@ occurred.
 ## 2.9.0
 
 ##### Fixed
- - Fixes an App Store validation error introduced when the App Store started accepting submissions for iOS8. This was done by changing the packaging of the Appboy framework to include a universal binary and a resource bundle (instead of combining them both together in a universal framework). Due to this change, Cocoapod integration is even more highly recommended than before to fully automate integration.
+ - Fixes an App Store validation error introduced when the App Store started accepting submissions for iOS8. This was done by changing the packaging of the Braze framework to include a universal binary and a resource bundle (instead of combining them both together in a universal framework). Due to this change, Cocoapod integration is even more highly recommended than before to fully automate integration.
 
 ## 2.8.1
 
 ##### Added
  - Add a new method `- (void) getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo` to collect analytics data for push actions in iOS 8. It should be called in the UIApplication delegate method `- (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
- - New Custom Attribute Data Type (Array): Appboy now supports custom attributes which contain an array of string elements. In addition, we also provide methods for adding or removing an string element from an array type custom attribute. For more information, please refer to [ABKUser.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKUser.h).
- - Users can now pull down on the Appboy Newsfeed to refresh the content on iOS version 6.0 or later.
+ - New Custom Attribute Data Type (Array): Braze now supports custom attributes which contain an array of string elements. In addition, we also provide methods for adding or removing an string element from an array type custom attribute. For more information, please refer to [ABKUser.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKUser.h).
+ - Users can now pull down on the Braze Newsfeed to refresh the content on iOS version 6.0 or later.
 
 ##### Changed
  - Restrict product identifier string to 255 characters for method `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price` and `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity`.
@@ -691,7 +712,7 @@ occurred.
  - Added email and push notification subscription types for a user. Subscription types are explicitly opted in, subscribed, and unsubscribed. The previous email boolean subscribe method has been deprecated.
  - Added custom slideup orientation support. You can now ask the slideup to only support certain orientations. For more details on slideup custom orientation support, please refer to [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h).
  - Added quantity parameter as an option when logging purchase. The quanlity should be an unsigned interger greater than 0 and no larger than 100. For more information, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
- - Added a class method in ABKCard to deserialize a given dictionary to a card. This is for use by wrappers such as Appboy's Unity SDK for iOS. Please refer to [ABKCard.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for more information.
+ - Added a class method in ABKCard to deserialize a given dictionary to a card. This is for use by wrappers such as Braze's Unity SDK for iOS. Please refer to [ABKCard.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for more information.
 
 ## 2.7
 
@@ -706,7 +727,7 @@ occurred.
   - The app can customize click actions from the feed and display any card link in their own user interface.
 
 ### Slideup Changes
-- Updated ABKSlideupControllerDelegate method onSlideupClicked to return a BOOL value to indicate if Appboy should continue to execute the click action.
+- Updated ABKSlideupControllerDelegate method onSlideupClicked to return a BOOL value to indicate if Braze should continue to execute the click action.
 - Stopped logging slideup click when the slideup click action is ABKSlideupNoneClickAction.
 
 ### Feedback Changes
@@ -743,8 +764,8 @@ occurred.
 ## 2.6
 
 ##### Breaking
- - Appboy iOS SDK now supports 64 bit as well. The minimum deployment targets that Appboy iOS SDK supports is iOS 5.1.1.
-   - The Appboy iOS SDK will now allow function with 64-bit apps. This version of the SDK only supports iOS 5.1.1+. Legacy iOS apps should continue to use version 2.5 of the SDK.
+ - Braze iOS SDK now supports 64 bit as well. The minimum deployment targets that Braze iOS SDK supports is iOS 5.1.1.
+   - The Braze iOS SDK will now allow function with 64-bit apps. This version of the SDK only supports iOS 5.1.1+. Legacy iOS apps should continue to use version 2.5 of the SDK.
    - You can install legacy versions of our SDK via [CocoaPods](http://guides.cocoapods.org/) by following changing the [podfile](http://guides.cocoapods.org/syntax/podfile.html) to include something like the following example `pod 'Appboy-iOS-SDK/AppboyKit', '~> 2.5'`.
 
 ## 2.5.1
@@ -755,23 +776,23 @@ occurred.
 ## 2.5
 ### Localization
 
-Localization is now supported in version 2.5 of the Appboy SDK. We have provided `.string` files for English, Simplified Chinese and Traditional Chinese. You can also optionally override our Appboy's default `LocalizedAppboyUIString.strings` right within your app's `Localizable.Strings` file in much the same way you would do an override in CSS. To do so, copy the key and string pair into your `Localizable.Strings` file and edit the string as you so desire.
+Localization is now supported in version 2.5 of the Braze SDK. We have provided `.string` files for English, Simplified Chinese and Traditional Chinese. You can also optionally override our Braze's default `LocalizedAppboyUIString.strings` right within your app's `Localizable.Strings` file in much the same way you would do an override in CSS. To do so, copy the key and string pair into your `Localizable.Strings` file and edit the string as you so desire.
 
 For your convenience our CocoaPod integrates the `LocalizedAppboyUIString.strings` files for the three aforementioned languages. If you do not wish to use one or more of these languages, you can feel free to delete these files from your project.
 
 ###  Slideup Upgrade
 
-Appboy version 2.5 provides a substantial upgrade to the slideup code and reorganization for better flexibility moving forward, but at the expense of a number of breaking changes. We've detailed the changes in this changelog and hope that you'll love the added power, increased flexibility, and improved UI that the new Appboy slideup provides. If you have any trouble with these changes, feel free to reach out to success@appboy.com for help, but most migrations to the new code structure should be relatively painless.
+Braze version 2.5 provides a substantial upgrade to the slideup code and reorganization for better flexibility moving forward, but at the expense of a number of breaking changes. We've detailed the changes in this changelog and hope that you'll love the added power, increased flexibility, and improved UI that the new Braze slideup provides. If you have any trouble with these changes, feel free to reach out to success@braze.com for help, but most migrations to the new code structure should be relatively painless.
 
 #### New Slideup Controller
-- The property `slideupController` has been added to the Appboy object. Please see [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for details.
+- The property `slideupController` has been added to the Braze object. Please see [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for details.
   - The `delegate` property allows you to specify a delegate for the slideup.
     - This replaces `slideupDelegate` which has been removed.
   - The `displayNextSlideupWithDelegate:` method displays the next available slideup with the specified delegate.
-    - This replaces `provideSlideupToDelegate:` which has been removed from Appboy.
+    - This replaces `provideSlideupToDelegate:` which has been removed from Braze.
   - The `slideupsRemainingOnStack` method returns the number of slideups that are waiting locally to be displayed.
-  - The `addSlideup:` method allows you to display a slideup object with custom content. This is useful in testing or if you want to use the Appboy slideup's UI/UX with another notification system that you are using.
-    - Clicks and impressions of slideups added by this method will not be collected by Appboy.
+  - The `addSlideup:` method allows you to display a slideup object with custom content. This is useful in testing or if you want to use the Braze slideup's UI/UX with another notification system that you are using.
+    - Clicks and impressions of slideups added by this method will not be collected by Braze.
   - `hideCurrentSlideup:` method will remove any slideup currently on screen, with or without animation.
 
 #### New Slideup Properties and Methods in `ABKSlideup.h`
@@ -779,7 +800,7 @@ The following properties and methods all belong to the `ABKSlideup` object. Plea
 
 ##### New Properties
 
-- The `extras` property carries additional data within key value pairs that have been defined on the dashboard, just like a push notification. Appboy does nothing with the extras property, any additional behavior is at your discretion.
+- The `extras` property carries additional data within key value pairs that have been defined on the dashboard, just like a push notification. Braze does nothing with the extras property, any additional behavior is at your discretion.
 - The `slideupAnchor` property defines whether the slideup originates from the top or the bottom of the screen.
 - The `slideupDismissType` property controls whether the slideup will dismiss automatically after a period of time has lapsed, or if it will wait for interaction with the user before disappearing.
   - The slideup will be dismissed automatically after the number of seconds defined by the newly added `duration` property if the slideup's `slideupDismissType` is `ABKSlideupDismissAutomatically`.
@@ -787,26 +808,26 @@ The following properties and methods all belong to the `ABKSlideup` object. Plea
 - The `uri` property defines the uri string that the slide up will open when the slideupClickActionType is ABKSlideupRedirectToURI. This is a read only property, you can call `setSlideupClickActionToUri:` to change it's value.
 
 ##### New Methods
-- `logSlideupImpression` and `logSlideupClicked` have been added to allow you to report user interactions with the slideup in the case that you've fully customized the slideup experience and Appboy is not handling the interactions.
+- `logSlideupImpression` and `logSlideupClicked` have been added to allow you to report user interactions with the slideup in the case that you've fully customized the slideup experience and Braze is not handling the interactions.
 - `setSlideupClickActionToNewsFeed`, `setSlideupClickActionToUri:` and `setSlideupClickActionToNone` have been added to allow you to change the slideup's click action behavior. `setSlideupClickActionToUri:` accepts a uri string as parameter and required the given uri string is valid.
 
 #### Delegate Method Changes
 
-All former Appboy slideup delegate methods have been depreciated and removed. In their place Appboy has added new slideup delegate methods within [`ABKSlideupControllerDelegate.h`](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupControllerDelegate.h).
+All former Braze slideup delegate methods have been depreciated and removed. In their place Braze has added new slideup delegate methods within [`ABKSlideupControllerDelegate.h`](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupControllerDelegate.h).
 
-- `onSlideupReceived:` is called when slideup objects are received from the Appboy server.
+- `onSlideupReceived:` is called when slideup objects are received from the Braze server.
 - `beforeSlideupDisplayed:withKeyboardIsUp:` is called before slideup objects are displayed, the return value determines whether the slideup will be displayed, queued or discarded.
 - `slideupViewControllerWithSlideup:` This delegate method allows you to specify custom view controllers in which your slideups will be displayed.
   - The custom view controller should be a subclass of `ABKSlideupViewController`.
     - Alternatively, it can also be an instance of `ABKSlideupViewController`.
   - The view of the returned view controller should be an instance of `ABKSlideupView` or its subclass.
-  - For integration examples of a custom slideup view controller, see the `CustomSlideupViewController` class in Appboy's sample app Stopwatch.
+  - For integration examples of a custom slideup view controller, see the `CustomSlideupViewController` class in Braze's sample app Stopwatch.
 - `onSlideupClicked:` is called when a user clicks on a slideup. We recommend that you specify behavior on click via the dashboard, but you can additionally specify behavior on click by defining this delegate method.
 - `onSlideupDismissed:` is called whenever the slideup is dismissed regardless of whether the dismissal occurs automatically or via swipe. This method is not called if the user clicks on the slideup. If the user clicks or taps on the slideup, `onSlideupClicked` is called instead.
 
 #### New Options on the Dashboard
 - Slideup behavior on click can now be set within the dashboard to open a modal news feed, open a URI within a modal, or do nothing.
-- The following properties can be set remotely from the Appboy Dashboard:
+- The following properties can be set remotely from the Braze Dashboard:
   - `extras`
   - `slideupAnchor`
   - `slideupDismissType`
@@ -814,7 +835,7 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
   - `uri`
 
 ### News Feed Changes
-- News feed items are now cached in offline storage, allowing the news feed to render even when no internet connectivity is available. Appboy will still automatically try to pull down a new news feed when a session opens, even if an offline feed is available.
+- News feed items are now cached in offline storage, allowing the news feed to render even when no internet connectivity is available. Braze will still automatically try to pull down a new news feed when a session opens, even if an offline feed is available.
 - Each card now has a maximum height of no more than 2009 points to avoid any performance issues as recommended by iOS developer guidelines.
 - The entirety of captioned image cards are now clickable. Formerly, only the link itself was clickable.
 - When the news feed is brought to the foreground, it will now automatically check for new content if the cached version of the feed was received more than 60 seconds ago.
@@ -825,32 +846,32 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
 
 ## 2.4
 * IDFA Collection is now optional.
-  * By default, IDFA collection is now disabled by the Appboy SDK.
+  * By default, IDFA collection is now disabled by the Braze SDK.
     * There will be no loss of continuity on user profiles or loss of functionality whatsoever as a result of this change.
-    * If you’re using advertising elsewhere in the app or through our in-app news feed, we recommend continuing to collect the IDFA through Appboy. You should be able to do so safely without fear of rejection from the iOS App Store.
-    * The future availability of IDFAs will enable functionality like integrating with other third-party systems, including your own servers, and enabling re-targeting of existing users outside of Appboy. If you continue to record them we will store IDFAs free of charge so you can take advantage of these options immediately when they are released without additional development work.
+    * If you’re using advertising elsewhere in the app or through our in-app news feed, we recommend continuing to collect the IDFA through Braze. You should be able to do so safely without fear of rejection from the iOS App Store.
+    * The future availability of IDFAs will enable functionality like integrating with other third-party systems, including your own servers, and enabling re-targeting of existing users outside of Braze. If you continue to record them we will store IDFAs free of charge so you can take advantage of these options immediately when they are released without additional development work.
   * Necessary Project Changes
     * ABKIdentifierForAdvertisingProvider.m and ABKIdentifierForAdvertisingProvider.h must be added to your project regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod.
-  * Enabling Appboy IDFA Collection
+  * Enabling Braze IDFA Collection
     * IDFA collection can be enabled via adding the following PreProcessor Macro to the Build Settings of your app:
       * `ABK_ENABLE_IDFA_COLLECTION`
 
 ## 2.3.1
-* The Appboy SDK for iOS now has two versions, one for use with apps which incorporate the official Facebook SDK and one for those which do not. In November of 2013, the App Store Validation Process started generating warnings about the usage of isOpen and setActiveSession in the Appboy SDK. These selectors were being sent to instances of classes in the Facebook SDK and are generally able to be used without generating warnings. However because of the way that the classes were initialized in Appboy (a result of building a single Appboy binary to fully support apps with and without the Facebook SDK), the App Store Validation Process started generating warnings the Facebook SDK methods share a name with private selectors elsewhere in iOS. Although none of our customers have been denied App Store approval yet, to protect against potential validation policy changes by Apple, Appboy now provides two versions of its SDK, neither of which generate warnings. Going forward, the appboy-ios-sdk repository will provide both versions of the SDK in the folders 'AppboySDK' (as before) and 'AppboySDKWithoutFacebookSupport'. The 'AppboySDKWithoutFacebookSupport' does not require the host app to include the Facebook SDK, but as a result does not include all of the Appboy features for Facebook data fetching. More information is available here within the [Appboy documentation](http://documentation.appboy.com/sdk-integration-ios.html#ios-basic-sdk-integration).
+* The Braze SDK for iOS now has two versions, one for use with apps which incorporate the official Facebook SDK and one for those which do not. In November of 2013, the App Store Validation Process started generating warnings about the usage of isOpen and setActiveSession in the Braze SDK. These selectors were being sent to instances of classes in the Facebook SDK and are generally able to be used without generating warnings. However because of the way that the classes were initialized in Braze (a result of building a single Braze binary to fully support apps with and without the Facebook SDK), the App Store Validation Process started generating warnings the Facebook SDK methods share a name with private selectors elsewhere in iOS. Although none of our customers have been denied App Store approval yet, to protect against potential validation policy changes by Apple, Braze now provides two versions of its SDK, neither of which generate warnings. Going forward, the appboy-ios-sdk repository will provide both versions of the SDK in the folders 'AppboySDK' (as before) and 'AppboySDKWithoutFacebookSupport'. The 'AppboySDKWithoutFacebookSupport' does not require the host app to include the Facebook SDK, but as a result does not include all of the Braze features for Facebook data fetching. More information is available here within the [Braze documentation](http://documentation.braze.com/sdk-integration-ios.html#ios-basic-sdk-integration).
 * Fixed a bug that repeatedly updated the push token of some users unnecessarily.
 * The "Reporting an Issue?" box within the UI layout of the Feedback Page has been moved to the left side of the label away from the "Send" button. This change was made to reduce the number of misclicks of the "Send" button. The "Reporting an Issue?" label is now clickable as well.
 * Cross Promotion Cards for apps with long titles will now render appropriately in iOS5. Before the title would render abnormally large on these devices.
 * Fixed a bug where view recycling would cause incorrect card images to appear for newly rendered cards (until the image for that card finished downloading). Card images for newly rendered cards will now remain empty until the correct image is downloaded.
 * Internal changes to enable future support for a 64 bit library release.
-* Improvements to the Appboy Sample App.
+* Improvements to the Braze Sample App.
 * Internal code structure and performance improvements including the move of more offline caching to background tasks.
 
 ## 2.3
 * BREAKING CHANGE: The ABKSlideupControllerDelegate interface has been changed to work with ABKSlideup objects instead of simply the slideup message. This provides you with more control over the click actions and display of slideups and is also being made in anticipation of the augmentation of the ABKSlideup object with more data properties in future releases. To access the message previously sent to shouldDisplaySlideup, simply access the message property on the provided ABKSlideup argument.
 * displayNextAvailableSlideup has been deprecated and will be removed in the next minor release, it has been replaced by provideSlideupToDelegate, see Appboy.h documentation for more information.
-* provideSlideupToDelegate has been added to Appboy to allow for more fine grained control over slideup display.
-* Fixes a bug where the slideupDelegate property getter on Appboy would always return nil.
-* Changes the slideupDelegate property on Appboy to be retained, instead of assigned.
+* provideSlideupToDelegate has been added to Braze to allow for more fine grained control over slideup display.
+* Fixes a bug where the slideupDelegate property getter on Braze would always return nil.
+* Changes the slideupDelegate property on Braze to be retained, instead of assigned.
 
 ## 2.2.1
 * Adds a startup option to appboyOptions to control the automatic capture of social network data. See the documentation on ABKSocialAccountAcquisitionPolicy in Appboy.h for more information.
@@ -859,17 +880,17 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
 
 ## 2.2
 * Adds support for new banner and captioned image card types.
-* Adds support for submitting feedback programmatically through an Appboy.h method without using Appboy feedback form. This allows you to create your own feedback form.
+* Adds support for submitting feedback programmatically through an Appboy.h method without using Braze feedback form. This allows you to create your own feedback form.
 * Fixes an issue where the the news feed's web view would display "Connection Error" when a user came back into the app after a card had directed him or her to a protocol URL. Now when users come back from a redirected protocol URL, the feed is properly displayed.
-* Fixes an issue where the SDK might have incorrectly sent both read and write Facebook permissions at the same time, instead preferring to request only those read permissions that Appboy is interested in and have already been requested by the incorporating app.
+* Fixes an issue where the SDK might have incorrectly sent both read and write Facebook permissions at the same time, instead preferring to request only those read permissions that Braze is interested in and have already been requested by the incorporating app.
 * Caught and fixed a corner case where card impressions could be miscounted when the feed view controller is the master view controller of a split view.
 * Makes cards truncate properly at two lines.
 
 ## 2.1.1
-* URGENT BUGFIX: This fixes an issue which exists in all previous versions of the v2 SDK which is causing crashes on the just release iPhone 5c and iPhone 5s. All users of v2 are recommended to upgrade the Appboy SDK to 2.1.1 immediately and re-submit to the app store.
+* URGENT BUGFIX: This fixes an issue which exists in all previous versions of the v2 SDK which is causing crashes on the just release iPhone 5c and iPhone 5s. All users of v2 are recommended to upgrade the Braze SDK to 2.1.1 immediately and re-submit to the app store.
 
 ## 2.1.0
-* Adds support for iOS 7. You will need to use Xcode 5 to use this and future versions of the Appboy iOS SDK.
+* Adds support for iOS 7. You will need to use Xcode 5 to use this and future versions of the Braze iOS SDK.
 * Updates internal usage of NUI. If you're using NUI, please ensure that you are at least using version 0.3.3 (the most up to date as of this writing is 0.3.4).
 * Removes support for iOS 4.3.
 * Optimizes news feed rendering for faster start up times and smoother scrolling of long feeds.
@@ -883,11 +904,11 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
 * Minor fix to orientation change handling in the example app code.
 
 ## 2.0.3
-* Adds the ability to assign a Foursquare access token for each user. Doing so will cause the Appboy backend to make Foursquare data available in user profiles on the dasbhard.
-* Adds more fine grained control options for Appboy's network activity. See Appboy.h for more information.
+* Adds the ability to assign a Foursquare access token for each user. Doing so will cause the Braze backend to make Foursquare data available in user profiles on the dasbhard.
+* Adds more fine grained control options for Braze's network activity. See Appboy.h for more information.
 
 ## 2.0.2
-* Fixes a bug where Appboy might reopen a Facebook read session when a publish session already exists
+* Fixes a bug where Braze might reopen a Facebook read session when a publish session already exists
 
 ## 2.0.1
 * UI Improvements
@@ -900,9 +921,9 @@ All former Appboy slideup delegate methods have been depreciated and removed. In
 * API updates
   * Updated custom user attribute setting methods to return a boolean value indicating if the setting is successful
   * Added methods for incrementing custom user attributes
-  * Added support for device push tokens as NSData when registering the token to Appboy
+  * Added support for device push tokens as NSData when registering the token to Braze
   * More detailed error messages logged in console
-  * Removed the enable/disable Appboy methods from Appboy.h
+  * Removed the enable/disable Braze methods from Appboy.h
 
 ## 2.0
 * Initial release

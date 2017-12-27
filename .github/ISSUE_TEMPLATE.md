@@ -1,12 +1,12 @@
 <!--
-Thank you for opening an issue with Appboy! 
+Thank you for opening an issue with Braze! 
 
-If you are experiencing issues with our product, please consider directing your issue to support@appboy.com, as that is the best channel for solving integration issues. Please see the bottom for more explanation.
+If you are experiencing issues with our product, please consider directing your issue to support@braze.com, as that is the best channel for solving integration issues. Please see the bottom for more explanation.
 
 For other items, like requests for modifications to our SDK or bug reports, please follow the following guidelines while submitting:
 -->
 
-* [ ] I have checked [Appboy's documentation](https://www.appboy.com/documentation/iOS/) and am still experiencing the issue.
+* [ ] I have checked [Braze's documentation](https://www.braze.com/documentation/iOS/) and am still experiencing the issue.
 
 # Report
 
@@ -26,21 +26,21 @@ For other items, like requests for modifications to our SDK or bug reports, plea
 
 <!--
 ℹ Please replace this with what you did.  
-Example: Integrate Appboy through Cocoapods.
+Example: Integrate Braze through Cocoapods.
 -->
 
 ## What did you expect to happen?
 
 <!--
 ℹ Please replace this with what you expected to happen.  
-Example: Appboy SDK is integrated properly and creating sessions.
+Example: Braze SDK is integrated properly and creating sessions.
 -->
 
 ## What happened instead?
 
 <!--
 ℹ Please replace this with what happened instead.  
-Example: Appboy SDK doesn't create any sessions for the test user.
+Example: Braze SDK doesn't create any sessions for the test user.
 -->
 
 ## Steps to reproduce
@@ -72,5 +72,5 @@ Example:
 -->
 
 <!--
-support@appboy.com is our preferred channel for integration issues for several reasons, including: 1) we optimize that channel to solve integration issues so that it is faster and more robust 2) that channel has no risk of leaking sensitive data and integration issues often require logs and other information that could contain private data.
+support@braze.com is our preferred channel for integration issues for several reasons, including: 1) we optimize that channel to solve integration issues so that it is faster and more robust 2) that channel has no risk of leaking sensitive data and integration issues often require logs and other information that could contain private data.
 -->

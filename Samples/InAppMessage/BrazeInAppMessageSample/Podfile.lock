@@ -1,0 +1,26 @@
+PODS:
+  - Appboy-iOS-SDK/Core (3.2.3)
+  - Appboy-iOS-SDK/InAppMessage (3.2.3):
+    - Appboy-iOS-SDK/Core
+    - SDWebImage/GIF (~> 4.0)
+  - FLAnimatedImage (1.0.12)
+  - SDWebImage/Core (4.2.2)
+  - SDWebImage/GIF (4.2.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+
+DEPENDENCIES:
+  - Appboy-iOS-SDK/InAppMessage (from `./../../../../Appboy-iOS-SDK/`)
+
+EXTERNAL SOURCES:
+  Appboy-iOS-SDK:
+    :path: ./../../../../Appboy-iOS-SDK/
+
+SPEC CHECKSUMS:
+  Appboy-iOS-SDK: 599ce396392208c421c7eb1d7ffe83b32975f1ed
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+
+PODFILE CHECKSUM: 275643baa2e55599e6052fe326a5aa9dd64b23ee
+
+COCOAPODS: 1.3.1

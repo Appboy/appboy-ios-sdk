@@ -22,13 +22,11 @@
 		4E49ED1A19DDE84F00ADC43F /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ED0219DDE84F00ADC43F /* twitter-icon.png */; };
 		4E6D661619DCC18F009983AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Images.xcassets */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
-		4EA0515D18998472007217BD /* CustomInAppMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0515B18998472007217BD /* CustomInAppMessageViewController.xib */; };
 		4EA3EE241745B9A2000E403C /* UserCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserCells.m */; };
 		4EA7AA8E185626EC00D2B651 /* MiscViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7AA8D185626EC00D2B651 /* MiscViewController.m */; };
 		4EABC19A1A606D00007259BD /* InAppMessageUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */; };
 		4EABC19D1A621B7F007259BD /* InAppMessageUICells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */; };
 		4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */; };
-		4EB014FE1A79D4C900E11E41 /* CustomInAppMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0515A18998472007217BD /* CustomInAppMessageViewController.m */; };
 		953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953574A81743F862003A64B3 /* UserAttributesViewController.m */; };
 		9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */; };
 		9580719F173D723400129B89 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF514F173D6A6800C0D780 /* AssetsLibrary.framework */; };
@@ -845,7 +843,6 @@
 				4E49ED0919DDE84F00ADC43F /* facebook-icon.png in Resources */,
 				D4139BDE1CBD88C100CA3307 /* location@2x.png in Resources */,
 				4E49ED1819DDE84F00ADC43F /* stopwatch.png in Resources */,
-				4EA0515D18998472007217BD /* CustomInAppMessageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,7 +937,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-resources.sh",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyKit/Appboy.bundle",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/ABKModalFeedbackViewController.xib",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/ABKNavigationFeedbackViewController.xib",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/ar.lproj/AppboyFeedbackLocalizable.strings",
@@ -1019,6 +1015,18 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/zh-HK.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/zh-TW.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/zh.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/ABKInAppMessageFullViewController.xib",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/ABKInAppMessageHTMLFullViewController.xib",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/ABKInAppMessageModalViewController.xib",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/ABKInAppMessageSlideupViewController.xib",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/arrow.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/arrow@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/com_appboy_inapp_close_icon.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/com_appboy_inapp_close_icon@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/com_appboy_inapp_close_icon@3x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/FontAwesome.otf",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/InAppMessage/Resources/SlideupArrow.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyKit/Appboy.bundle",
 				"${PODS_ROOT}/KKColorListPicker/src/KKColorListPicker/Cells/KKColorCell.xib",
 				"${PODS_ROOT}/KKColorListPicker/src/KKColorListPicker/Cells/KKColorsHeaderView.xib",
 				"${PODS_ROOT}/KKColorListPicker/src/KKColorListPicker/Schemes/colors_crayola.plist",
@@ -1049,7 +1057,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+				"${PODS_ROOT}/../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1118,7 +1126,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+				"${PODS_ROOT}/../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1178,7 +1186,6 @@
 				D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */,
 				4EA7AA8E185626EC00D2B651 /* MiscViewController.m in Sources */,
 				E3C754A41E70DE7D004E1CCE /* AliasViewController.m in Sources */,
-				4EB014FE1A79D4C900E11E41 /* CustomInAppMessageViewController.m in Sources */,
 				E325DF461E29A93300B3E168 /* GeofencesViewController.m in Sources */,
 				4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */,
 				4EABC19A1A606D00007259BD /* InAppMessageUIViewController.m in Sources */,
@@ -1479,7 +1486,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "710cc9d2-a3db-4e57-85bf-cb1302fdac6a";
+				PROVISIONING_PROFILE = "7fa442a5-919c-45c9-8201-9be82b7e44f8";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

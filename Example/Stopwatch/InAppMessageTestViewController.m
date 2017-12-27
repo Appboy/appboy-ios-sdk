@@ -1,5 +1,8 @@
 #import "InAppMessageTestViewController.h"
-#import "CustomInAppMessageViewController.h"
+#import "ABKInAppMessageSlideupViewController.h"
+#import "ABKInAppMessageModalViewController.h"
+#import "ABKInAppMessageFullViewController.h"
+#import "ABKInAppMessageViewController.h"
 
 @implementation InAppMessageTestViewController
 
@@ -78,17 +81,12 @@
 // view controller should be a subclass of ABKInAppMessageViewController.
 // Also, the view of the returned view controller should be an instance of ABKInAppMessageView or its subclass.
 - (ABKInAppMessageViewController *)inAppMessageViewControllerWithInAppMessage:(ABKInAppMessage *)inAppMessage {
-  if (self.useCustomViewControllerSwitch.isOn) {
-    return [[CustomInAppMessageViewController alloc] initWithInAppMessage:inAppMessage];
-  } else if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
+  if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
     return [[ABKInAppMessageSlideupViewController alloc] initWithInAppMessage:inAppMessage];
   } else if ([inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
     return [[ABKInAppMessageModalViewController alloc] initWithInAppMessage:inAppMessage];
   } else if ([inAppMessage isKindOfClass:[ABKInAppMessageFull class]]) {
     return [[ABKInAppMessageFullViewController alloc] initWithInAppMessage:inAppMessage];
-  } else {
-    CustomInAppMessageViewController *customInAppMessage = [[CustomInAppMessageViewController alloc] initWithInAppMessage:inAppMessage];
-    return customInAppMessage;
   }
   return nil;
 }
@@ -145,13 +143,8 @@
   [self updateRemainingIAMLabel];
 }
 
-- (IBAction)requestAnInApp:(id)sender {
-  [[Appboy sharedInstance] requestInAppMessageRefresh];
-  [self updateRemainingIAMLabel];
-}
-
 - (IBAction)dismissCurrentSlideup:(id)sender {
-  [[Appboy sharedInstance].inAppMessageController hideCurrentInAppMessage:YES];
+  [[Appboy sharedInstance].inAppMessageController.inAppMessageUIController hideCurrentInAppMessage:YES];
   [self updateRemainingIAMLabel];
 }
 

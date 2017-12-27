@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @return YES if the user notification was sent from Appboy's servers.
  */
-+ (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response;
++ (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetch​Completion​Handler:
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's uninstall tracking notifications
  *             (e.g., pinging your server for content).
  */
-+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;
++ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's geofence sync notifications
  *             (e.g., pinging your server for content).
  */
-+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response;
++ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
@@ -103,11 +103,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo __deprecated;
 
-+ (NSSet<UNNotificationCategory *> *)getAppboyUNNotificationCategorySet;
++ (NSSet<UNNotificationCategory *> *)getAppboyUNNotificationCategorySet NS_AVAILABLE_IOS(10.0);
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_10_0
-+ (NSSet<UIUserNotificationCategory *> *)getAppboyUIUserNotificationCategorySet;
-#endif
++ (NSSet<UIUserNotificationCategory *> *)getAppboyUIUserNotificationCategorySet __deprecated;
 
 @end
 NS_ASSUME_NONNULL_END

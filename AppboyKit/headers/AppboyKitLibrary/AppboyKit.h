@@ -27,17 +27,10 @@
 #import "ABKInAppMessageHTMLFull.h"
 #import "ABKInAppMessageControllerDelegate.h"
 #import "ABKInAppMessageController.h"
-
-#import "ABKInAppMessageView.h"
-#import "ABKInAppMessageViewController.h"
-#import "ABKInAppMessageSlideupViewController.h"
-#import "ABKInAppMessageImmersiveViewController.h"
-#import "ABKInAppMessageModalViewController.h"
-#import "ABKInAppMessageFullViewController.h"
-#import "ABKInAppMessageHTMLViewController.h"
-#import "ABKInAppMessageHTMLFullViewController.h"
 #import "ABKInAppMessageButton.h"
-#import "ABKInAppMessageWindowController.h"
+#import "ABKInAppMessageHTMLJSBridge.h"
+#import "ABKInAppMessageHTMLJSInterface.h"
+#import "ABKInAppMessageUIControlling.h"
 
 // News Feed
 #import "ABKFeedViewController.h"
