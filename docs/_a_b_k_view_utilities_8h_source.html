@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: ABKInAppMessageWindowController Class Reference</title>
+<title>“BrazeiOSSDK: tmp/docs/ABKViewUtilities.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Appboy iOS SDK
+   <div id="projectname">“BrazeiOSSDK
    </div>
-   <div id="projectbrief">Documentation for the Appboy iOS SDK</div>
+   <div id="projectbrief">Documentation for the Braze iOS SDK</div>
   </td>
  </tr>
  </tbody>
@@ -38,7 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,14 +57,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,21 +71,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8af83c0dc83a45a35ca6968cdc29a7af.html">tmp</a></li><li class="navelem"><a class="el" href="dir_0a210242779ad4a14943a572f93f0ce8.html">docs</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ABKInAppMessageWindowController Class Reference</div>  </div>
+<div class="title">ABKViewUtilities.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#import &lt;<a class="el" href="_a_b_k_in_app_message_window_controller_8h_source.html">ABKInAppMessageWindowController.h</a>&gt;</code></p>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="interface_appboy.html">Appboy</a> Public API: <a class="el" href="interface_a_b_k_in_app_message_window_controller.html">ABKInAppMessageWindowController</a></p>
-<p><a class="el" href="interface_a_b_k_in_app_message_window_controller.html">ABKInAppMessageWindowController</a> is the view controller responsible for housing and displaying ABKInAppMessageViewControllers and performing actions after the in-app message is clicked. Instances of <a class="el" href="interface_a_b_k_in_app_message_window_controller.html">ABKInAppMessageWindowController</a> are deallocated after the in-app message is dismissed. </p>
-</div></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="code" href="interface_a_b_k_view_utilities.html">    3</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_view_utilities.html">ABKViewUtilities</a> : NSObject</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;+ (void)setViewOriginY:(UIView *)view originY:(CGFloat)originY;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;+ (void)setViewOriginX:(UIView *)view originX:(CGFloat)originX;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;+ (void)setViewHeight:(UIView *)view height:(CGFloat)aHeight;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;+ (void)setViewWidth:(UIView *)view width:(CGFloat)aWidth;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;+ (void)setViewCenterY:(UIView *)view centerY:(CGFloat)centerY;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;+ (void)setViewCenterX:(UIView *)view centerX:(CGFloat)centerX;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;+ (void)stackViews:(NSArray *)views</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    startYPosition:(CGFloat)startYPosition</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;           padding:(CGFloat)padding</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;           spacing:(CGFloat)spacing</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    maxTotalHeight:(CGFloat)maxTotalHeight;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;+ (UIImage *)fetchImageIfCached:(NSString *)imageUrlString;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">@end</span></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 13 2017 14:56:24 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 26 2017 19:52:39 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

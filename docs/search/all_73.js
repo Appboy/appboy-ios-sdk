@@ -14,17 +14,17 @@ var searchData=
   ['setgender_3a',['setGender:',['../interface_a_b_k_user.html#a3e261882c7e095c6e0381ab62ceebe40',1,'ABKUser']]],
   ['setinappmessagebuttons_3a',['setInAppMessageButtons:',['../interface_a_b_k_in_app_message_immersive.html#aa5248ecdd2e20db9b2461ca491239c5b',1,'ABKInAppMessageImmersive']]],
   ['setinappmessageclickaction_3awithuri_3a',['setInAppMessageClickAction:withURI:',['../interface_a_b_k_in_app_message.html#a8934add7d8cbca7a8bafa1596b4be5c6',1,'ABKInAppMessage']]],
+  ['setinappmessageuidelegate_3a',['setInAppMessageUIDelegate:',['../protocol_a_b_k_in_app_message_u_i_controlling-p.html#af8109b0251c983f6936a075af90753b9',1,'ABKInAppMessageUIControlling-p']]],
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:',['../interface_a_b_k_user.html#a1da5a1245765b2aa3f9d1e2c3322c6bd',1,'ABKUser']]],
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3aaltitude_3averticalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:',['../interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a',1,'ABKUser']]],
   ['setpushnotificationsubscriptiontype_3a',['setPushNotificationSubscriptionType:',['../interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3',1,'ABKUser']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#aa62135eada7135024e1e042325f426fa',1,'Appboy']]],
   ['shouldfetchtesttriggersflagcontainedinpayload_3a',['shouldFetchTestTriggersFlagContainedInPayload:',['../interface_a_b_k_push_utils.html#a7b7e481adae71046134b2c6b007c18df',1,'ABKPushUtils']]],
+  ['showinappmessage_3a',['showInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_controlling-p.html#a0dfcd38adc1fc156dc3f0d4d8129f9c6',1,'ABKInAppMessageUIControlling-p']]],
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#afd911d60dfe7e5361afbfb364f5d20f9',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#aa9f1bd9e4a5c082133dd9cc344108b24',1,'Appboy']]],
   ['statusescount',['statusesCount',['../interface_a_b_k_twitter_user.html#ae07baed61a3b19f713ec40f748f8136e',1,'ABKTwitterUser']]],
   ['submitfeedback_3amessage_3aisreportingabug_3a',['submitFeedback:message:isReportingABug:',['../interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0',1,'Appboy']]],
-  ['submitfeedback_3awithcompletionhandler_3a',['submitFeedback:withCompletionHandler:',['../interface_appboy.html#a7f6b6363a366b6bb61420b284167a3e8',1,'Appboy']]],
-  ['supportedorientationmasks',['supportedOrientationMasks',['../interface_a_b_k_in_app_message_controller.html#a409b57bcd37168ce8a28cd66544d9f99',1,'ABKInAppMessageController']]],
-  ['supportedorientations',['supportedOrientations',['../interface_a_b_k_in_app_message_controller.html#a8d15f9bae17c3b7746e50e8f4da93d9a',1,'ABKInAppMessageController']]]
+  ['submitfeedback_3awithcompletionhandler_3a',['submitFeedback:withCompletionHandler:',['../interface_appboy.html#a7f6b6363a366b6bb61420b284167a3e8',1,'Appboy']]]
 ];

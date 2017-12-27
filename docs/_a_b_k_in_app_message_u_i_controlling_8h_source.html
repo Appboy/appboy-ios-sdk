@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: tmp/docs/ABKInAppMessageWindowController.h Source File</title>
+<title>“BrazeiOSSDK: tmp/docs/ABKInAppMessageUIControlling.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Appboy iOS SDK
+   <div id="projectname">“BrazeiOSSDK
    </div>
-   <div id="projectbrief">Documentation for the Appboy iOS SDK</div>
+   <div id="projectbrief">Documentation for the Braze iOS SDK</div>
   </td>
  </tr>
  </tbody>
@@ -78,19 +78,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ABKInAppMessageWindowController.h</div>  </div>
+<div class="title">ABKInAppMessageUIControlling.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_window_controller.html">   11</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_window_controller.html">ABKInAppMessageWindowController</a> : UIViewController &lt;UIGestureRecognizerDelegate&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">@end</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessage.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessageControllerDelegate.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html">    5</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html">ABKInAppMessageUIControlling</a> &lt;NSObject&gt;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;- (void)setInAppMessageUIDelegate:(<span class="keywordtype">id</span>)uiDelegate;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;- (void)hideCurrentInAppMessage:(BOOL)animated;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;- (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForInAppMessage:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;- (void)showInAppMessage:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;- (BOOL)<a class="code" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html#a2f066d150517f34f161588169dd3f0ed">inAppMessageCurrentlyVisible</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 13 2017 14:56:23 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 26 2017 19:52:39 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

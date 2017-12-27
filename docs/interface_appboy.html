@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: Appboy Class Reference</title>
+<title>“BrazeiOSSDK: Appboy Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Appboy iOS SDK
+   <div id="projectname">“BrazeiOSSDK
    </div>
-   <div id="projectbrief">Documentation for the Appboy iOS SDK</div>
+   <div id="projectbrief">Documentation for the Braze iOS SDK</div>
   </td>
  </tr>
  </tbody>
@@ -127,10 +127,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a680549ab7dba8c5971fd9a7fd938b452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9abe8a17453b0bac918a51d359f0c27e"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a9abe8a17453b0bac918a51d359f0c27e">getDeviceId</a></td></tr>
 <tr class="separator:a9abe8a17453b0bac918a51d359f0c27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a975f6aa8e673f173361fd9fd2cfe2bd6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a975f6aa8e673f173361fd9fd2cfe2bd6">requestInAppMessageRefresh</a></td></tr>
-<tr class="separator:a975f6aa8e673f173361fd9fd2cfe2bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc41e6cba491c3b6e1ff4a5e97ba381"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#affc41e6cba491c3b6e1ff4a5e97ba381">userNotificationWasSentFromAppboy:</a></td></tr>
-<tr class="separator:affc41e6cba491c3b6e1ff4a5e97ba381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03075a89970f6c60df54f8a24a6c227a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a03075a89970f6c60df54f8a24a6c227a">userNotificationWasSentFromAppboy:</a></td></tr>
+<tr class="separator:a03075a89970f6c60df54f8a24a6c227a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66a8b218a05d502e07e824396793e99e"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a66a8b218a05d502e07e824396793e99e">pushNotificationWasSentFromAppboy:</a></td></tr>
 <tr class="separator:a66a8b218a05d502e07e824396793e99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e336e3dec8aa7fb30376e19ce1678e"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a85e336e3dec8aa7fb30376e19ce1678e">registerPushToken:</a></td></tr>
@@ -779,22 +777,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a975f6aa8e673f173361fd9fd2cfe2bd6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) requestInAppMessageRefresh </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Enqueues an in-app message request for the current user. Note that if the queue already contains another request for the current user, that the in-app message request will be merged into the already existing request and only one will execute for that user. </p>
-
-</div>
-</div>
 <a class="anchor" id="aa62135eada7135024e1e042325f426fa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1049,15 +1031,15 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="affc41e6cba491c3b6e1ff4a5e97ba381"></a>
+<a class="anchor" id="a03075a89970f6c60df54f8a24a6c227a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">- (BOOL) userNotificationWasSentFromAppboy: </td>
           <td></td>
-          <td class="paramtype">(&quot;Use  instead.&quot;)&#160;</td>
-          <td class="paramname"><em>__deprecated_msg</em>[ABKPushUtils isAppboyUserNotification:]</td>
+          <td class="paramtype">(10.0)&#160;</td>
+          <td class="paramname"><em>NS_AVAILABLE_IOS</em></td>
           <td></td>
         </tr>
       </table>
@@ -1285,7 +1267,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 13 2017 14:56:24 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 26 2017 19:52:39 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

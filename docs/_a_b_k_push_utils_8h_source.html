@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Appboy iOS SDK: tmp/docs/ABKPushUtils.h Source File</title>
+<title>“BrazeiOSSDK: tmp/docs/ABKPushUtils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Appboy iOS SDK
+   <div id="projectname">“BrazeiOSSDK
    </div>
-   <div id="projectbrief">Documentation for the Appboy iOS SDK</div>
+   <div id="projectbrief">Documentation for the Braze iOS SDK</div>
   </td>
  </tr>
  </tbody>
@@ -93,17 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="interface_a_b_k_push_utils.html">   11</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_push_utils.html">ABKPushUtils</a> : NSObject</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;+ (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;+ (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;+ (BOOL)isAppboyRemoteNotification:(NSDictionary *)userInfo;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;+ (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;+ (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
@@ -111,19 +111,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;+ (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo __deprecated;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;+ (NSSet&lt;UNNotificationCategory *&gt; *)getAppboyUNNotificationCategorySet;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;+ (NSSet&lt;UNNotificationCategory *&gt; *)getAppboyUNNotificationCategorySet NS_AVAILABLE_IOS(10.0);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#if __IPHONE_OS_VERSION_MIN_REQUIRED &lt; __IPHONE_10_0</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor"></span>+ (NSSet&lt;UIUserNotificationCategory *&gt; *)getAppboyUIUserNotificationCategorySet;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;NS_ASSUME_NONNULL_END</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;+ (NSSet&lt;UIUserNotificationCategory *&gt; *)getAppboyUIUserNotificationCategorySet __deprecated;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 13 2017 14:56:23 for Appboy iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 26 2017 19:52:39 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
