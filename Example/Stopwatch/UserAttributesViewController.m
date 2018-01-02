@@ -4,7 +4,6 @@
 
 static NSInteger const TextFieldTagNumber = 1000;
 static NSInteger const TotalNumberOfAttributes = 14;
-static NSInteger const IndexOfGender = 7;
 static NSInteger const IndexOfBirthday = 9;
 static NSInteger const IndexOfPushSubscriptionState = 12;
 static NSInteger const IndexOfEmailSubscriptionState = 13;
@@ -54,28 +53,8 @@ static NSMutableArray *attributesValuesArray = nil;
 #pragma Table View Data Source Delegate Methods
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // Cell with gender segmented control
-  if (indexPath.row == IndexOfGender) {
-    NSString *cellIdentifier = @"gender cell";
-
-    UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-
-    if (cell == nil) {
-      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
-    
-    id object = attributesValuesArray[(NSUInteger)indexPath.row];
-    if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
-      if ([(NSString *)object isEqualToString:@"m"]) {
-        cell.attributeSegmentedControl.selectedSegmentIndex = 0;
-      } else if ([(NSString *)object isEqualToString:@"f"]) {
-        cell.attributeSegmentedControl.selectedSegmentIndex = 1;
-      }
-    }
-    return cell;
-    // Cells with subscription state segmented control
-  } else if (indexPath.row == IndexOfPushSubscriptionState || indexPath.row == IndexOfEmailSubscriptionState) {
+  // Cells with subscription state segmented control
+  if (indexPath.row == IndexOfPushSubscriptionState || indexPath.row == IndexOfEmailSubscriptionState) {
     NSString *cellIdentifier = @"subscription cell";
     
     UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -117,6 +96,11 @@ static NSMutableArray *attributesValuesArray = nil;
       cell.attributeTextField.keyboardType = UIKeyboardTypePhonePad;
     } else {
       cell.attributeTextField.keyboardType = UIKeyboardTypeDefault;
+    }
+    
+    // Preview text
+    if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil)]) {
+      cell.attributeTextField.placeholder = @"Enter 'm', 'f', 'u', 'o', 'n', or 'p'";
     }
 
     cell.attributeTextField.tag = TextFieldTagNumber + indexPath.row; // The text field's tag is 1000 plus the row number
@@ -215,11 +199,6 @@ static NSMutableArray *attributesValuesArray = nil;
   ((UITextField *)[self.view viewWithTag:IndexOfBirthday + TextFieldTagNumber]).text = [self getBirthdayStringFromDate:sender.date];
 }
 
-- (IBAction)setGender:(UISegmentedControl *)sender {
-  NSString *gender = sender.selectedSegmentIndex == 0 ? @"m" : @"f";
-  attributesValuesArray[IndexOfGender] = gender;
-}
-
 - (IBAction)setSubscriptionState:(UISegmentedControl *)sender {
   NSString *subscriptionState;
   if (sender.selectedSegmentIndex == 0) {
@@ -286,10 +265,8 @@ static NSMutableArray *attributesValuesArray = nil;
           [Appboy sharedInstance].user.language = (NSString *)object;
           continue;
 
-        case 7:{
-          BOOL genderIsMale = [(NSString *)object isEqualToString:@"m"];
-          ABKUserGenderType userGender = genderIsMale ? ABKUserGenderMale : ABKUserGenderFemale;
-          [[Appboy sharedInstance].user setGender:userGender];
+        case 7: {
+          [[Appboy sharedInstance].user setGender:[self parseGenderFromString:(NSString *)object]];
           continue;
         }
 
@@ -309,7 +286,7 @@ static NSMutableArray *attributesValuesArray = nil;
           [[Appboy sharedInstance].user setCustomAttributeWithKey:@"favorite_food" andStringValue:(NSString *)object];
           continue;
           
-        case 12:{
+        case 12: {
           [[Appboy sharedInstance].user setPushNotificationSubscriptionType:[self getSubscriptionType:object]];
           continue;
         }
@@ -324,6 +301,27 @@ static NSMutableArray *attributesValuesArray = nil;
       }
     }
   }
+}
+
+- (ABKUserGenderType)parseGenderFromString:(NSString *)string {
+  NSString *lowercaseString = [string lowercaseString];
+  ABKUserGenderType gender;
+  if ([lowercaseString isEqualToString:@"m"]) {
+    gender = ABKUserGenderMale;
+  } else if ([lowercaseString isEqualToString:@"f"]) {
+    gender = ABKUserGenderFemale;
+  } else if ([lowercaseString isEqualToString:@"o"]) {
+    gender = ABKUserGenderOther;
+  } else if ([lowercaseString isEqualToString:@"u"]) {
+    gender = ABKUserGenderUnknown;
+  } else if ([lowercaseString isEqualToString:@"n"]) {
+    gender = ABKUserGenderNotApplicable;
+  } else if ([lowercaseString isEqualToString:@"p"]) {
+    gender = ABKUserGenderPreferNotToSay;
+  } else {
+    gender = ABKUserGenderUnknown;
+  }
+  return gender;
 }
 
 - (ABKNotificationSubscriptionType)getSubscriptionType:(id)object {

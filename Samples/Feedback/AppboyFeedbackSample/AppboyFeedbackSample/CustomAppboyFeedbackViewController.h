@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "ABKModalFeedbackViewController.h"
+#import "AppboyFeedback.h"
 
 @interface CustomAppboyFeedbackViewController : ABKModalFeedbackViewController
 

@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "FeedAndFeedbackUIViewController.h"
-#import "ABKNavigationFeedbackViewController.h"
-#import "ABKModalFeedbackViewController.h"
+#import "AppboyFeedback.h"
 
 @implementation FeedAndFeedbackViewController
 

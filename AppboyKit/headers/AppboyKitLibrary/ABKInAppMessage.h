@@ -187,7 +187,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL animateOut;
 
 /*!
- * If you're handling in-app messages completely on your own (returning YES from onInAppMessageReceived), you should still report
+ * If you're handling in-app messages completely on your own, you should still report
  * impressions and clicks on the in-app message back to Appboy with these methods so that your campaign reporting features
  * still work in the dashboard.
  *

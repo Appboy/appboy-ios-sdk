@@ -425,48 +425,8 @@
                                             <outlet property="attributeTextField" destination="arf-rI-1IH" id="bqW-cV-5bc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="gender cell" id="fj5-4L-WOH" customClass="UserAttributeCell">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fj5-4L-WOH" id="UwX-7L-VZ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-Qg-Ubg">
-                                                    <rect key="frame" x="35" y="16" width="122" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="122" id="06E-7P-ge9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="QLK-7y-iQI">
-                                                    <rect key="frame" x="165" y="11" width="175" height="29"/>
-                                                    <segments>
-                                                        <segment title="Male"/>
-                                                        <segment title="Female"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="setGender:" destination="MCx-rX-d2z" eventType="valueChanged" id="qfE-B1-Smr"/>
-                                                    </connections>
-                                                </segmentedControl>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="jHN-Qg-Ubg" firstAttribute="centerY" secondItem="UwX-7L-VZ3" secondAttribute="centerY" id="6vG-hY-3gM"/>
-                                                <constraint firstItem="jHN-Qg-Ubg" firstAttribute="centerY" secondItem="QLK-7y-iQI" secondAttribute="centerY" id="9oW-tT-UMH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="QLK-7y-iQI" secondAttribute="trailing" constant="20" id="G3R-t9-u7Q"/>
-                                                <constraint firstItem="jHN-Qg-Ubg" firstAttribute="leading" secondItem="UwX-7L-VZ3" secondAttribute="leadingMargin" constant="20" id="MKf-ep-bVZ"/>
-                                                <constraint firstItem="QLK-7y-iQI" firstAttribute="leading" secondItem="jHN-Qg-Ubg" secondAttribute="trailing" constant="8" id="z30-7e-vNq"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="attributeNameLabel" destination="jHN-Qg-Ubg" id="9G2-S4-Hta"/>
-                                            <outlet property="attributeSegmentedControl" destination="QLK-7y-iQI" id="Vfb-yJ-kmO"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="subscription cell" id="NiY-jI-M6X" customClass="UserAttributeCell">
-                                        <rect key="frame" x="0.0" y="122" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NiY-jI-M6X" id="3yd-TG-dnh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>

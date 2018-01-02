@@ -161,9 +161,6 @@
 		4E6D661519DCC18F009983AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E94D7701743EE8900604EA0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4EA0515918998472007217BD /* CustomInAppMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInAppMessageViewController.h; sourceTree = "<group>"; };
-		4EA0515A18998472007217BD /* CustomInAppMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInAppMessageViewController.m; sourceTree = "<group>"; };
-		4EA0515B18998472007217BD /* CustomInAppMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInAppMessageViewController.xib; sourceTree = "<group>"; };
 		4EA3EE221745B9A2000E403C /* UserCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCells.h; sourceTree = "<group>"; };
 		4EA3EE231745B9A2000E403C /* UserCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCells.m; sourceTree = "<group>"; };
 		4EA7AA8C185626EC00D2B651 /* MiscViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiscViewController.h; sourceTree = "<group>"; };
@@ -350,9 +347,6 @@
 		4E3178751AC49363006C88B4 /* CustomInAppMessageClasses */ = {
 			isa = PBXGroup;
 			children = (
-				4EA0515918998472007217BD /* CustomInAppMessageViewController.h */,
-				4EA0515A18998472007217BD /* CustomInAppMessageViewController.m */,
-				4EA0515B18998472007217BD /* CustomInAppMessageViewController.xib */,
 				955DE8931741A70700C07A57 /* InAppMessageTestViewController.h */,
 				955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */,
 			);
@@ -1486,7 +1480,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appboy.stopwatch;
 				PRODUCT_NAME = Stopwatch;
-				PROVISIONING_PROFILE = "7fa442a5-919c-45c9-8201-9be82b7e44f8";
+				PROVISIONING_PROFILE = "710cc9d2-a3db-4e57-85bf-cb1302fdac6a";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.appboy.stopwatch";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

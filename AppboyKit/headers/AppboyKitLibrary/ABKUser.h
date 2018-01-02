@@ -14,11 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 /*!
- * Values representing the gender recognized by the SDK.
+ * Genders recognized by the SDK.
  */
-typedef NS_ENUM(NSInteger , ABKUserGenderType) {
+typedef NS_ENUM(NSInteger, ABKUserGenderType) {
   ABKUserGenderMale,
-  ABKUserGenderFemale
+  ABKUserGenderFemale,
+  ABKUserGenderOther,
+  ABKUserGenderUnknown,
+  ABKUserGenderNotApplicable,
+  ABKUserGenderPreferNotToSay
 };
 
 /*!

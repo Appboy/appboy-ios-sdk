@@ -9,6 +9,5 @@
 @property NSString *userId;
 
 - (IBAction)doneButtonTapped:(id)sender;
-- (IBAction)setGender:(UISegmentedControl *)sender;
 
 @end

@@ -1,9 +1,5 @@
 #import "ViewController.h"
 #import "CustomInAppMessageViewController.h"
-#import "ABKInAppMessageSlideupViewController.h"
-#import "ABKInAppMessageModalViewController.h"
-#import "ABKInAppMessageFullViewController.h"
-#import "ABKInAppMessageHTMLFullViewController.h"
 
 @implementation ViewController
 

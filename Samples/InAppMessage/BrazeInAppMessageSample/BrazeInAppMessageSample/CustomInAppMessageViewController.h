@@ -1,5 +1,5 @@
 #import <AppboyKit.h>
-#import "ABKInAppMessageViewController.h"
+#import "AppboyInAppMessage.h"
 
 @interface CustomInAppMessageViewController : ABKInAppMessageViewController
 

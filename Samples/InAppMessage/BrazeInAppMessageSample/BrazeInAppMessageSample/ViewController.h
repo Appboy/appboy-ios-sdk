@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "ABKInAppMessageUIControlling.h"
-#import "ABKInAppMessageUIDelegate.h"
+#import "AppboyInAppMessage.h"
 #import "Appboy-iOS-SDK/AppboyKit.h"
 
 @interface ViewController : UIViewController <ABKInAppMessageUIControlling, ABKInAppMessageUIDelegate>

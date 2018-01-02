@@ -1,8 +1,5 @@
 #import "InAppMessageTestViewController.h"
-#import "ABKInAppMessageSlideupViewController.h"
-#import "ABKInAppMessageModalViewController.h"
-#import "ABKInAppMessageFullViewController.h"
-#import "ABKInAppMessageViewController.h"
+#import "AppboyInAppMessage.h"
 
 @implementation InAppMessageTestViewController
 
@@ -12,14 +9,6 @@
  */
 
 #pragma mark Appboy In-App Message Delegate methods
-
-// This delegate method is called every time a new in-app message is received from the Appboy server.
-// Implementing this method is OPTIONAL. The default behavior is equivalent to a return of NO from this method. In other
-// words, Appboy will handle the in-app message display automatically if this delegate method is not implemented.
-- (BOOL)onInAppMessageReceived:(ABKInAppMessage *)inAppMessage {
-  //Return NO when you want Appboy to handle the in-app message display.
-  return NO;
-}
 
 /*!
  * This callback method allows you to specify if each in-app message should be displayed. It is called just before each in-app
@@ -34,7 +23,6 @@
  * - If the beforeInAppMessageDisplayed:withKeyboardIsUp: delegate method returned ABKDisplayInAppMessageLater
  *
  * In-app messages are potentially removed from the in-app message stack and displayed when:
- * - Another in-app messages arrives and onInAppMessageReceived: DOES NOT return YES.
  * - The application comes to the foreground after being backgrounded
  * - displayNextInAppMessageWithDelegate is called
  *

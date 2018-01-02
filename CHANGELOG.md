@@ -28,28 +28,37 @@
  - Removal 1
  - Removal 2
  -->
- 
+
+## 3.3.1
+
+##### Added
+- Adds `Other`, `Unknown`, `Not Applicable`, and `Prefer not to Say` options for user gender.
+- Adds umbrella header files `AppboyFeedback.h` and `AppboyInAppMessage.h` for the `Feedback` and `InAppMessage` subspecs.
+
+##### Fixed
+- Fixes an issue where the method `beforeInAppMessageDisplayed:` in class `ABKInAppMessageControllerDelegate` is not called when the host app is using the `Core` subspec.
+
 ## 3.3.0
 
 ##### Breaking
- - Open sources the In-App Message UI code and moves it into a new subspec named "InAppMessage".
-   - The "InAppMessage" subspec contains the Braze In-App Message UI and the Core SDK. It does not include Feedback or the News Feed UI.
-   - The "UI" subspec contains all Braze UI and the Core SDK subpsec.
-   - The open-sourced In-App Message view controllers offer backward compatible NUI support, although we recommend using categories or subclassing the In-App Message view controllers for customization as the NUI library isn't actively maintained any more. Support for NUI customization will be removed in a future release.
-   - Most delegate customization methods are moved from ABKInAppMessageControllerDelegate to ABKInAppMessageUIDelegate.
-   - See our [In-App Message Sample app](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/InAppMessage/BrazeInAppMessageSample) for sample implementations and customizations.
+- Open sources the In-App Message UI code and moves it into a new subspec named "InAppMessage".
+  - The "InAppMessage" subspec contains the Braze In-App Message UI and the Core SDK. It does not include Feedback or the News Feed UI.
+  - The "UI" subspec contains all Braze UI and the Core SDK subpsec.
+  - The open-sourced In-App Message view controllers offer backward compatible NUI support, although we recommend using categories or subclassing the In-App Message view controllers for customization as the NUI library isn't actively maintained any more. Support for NUI customization will be removed in a future release.
+  - Most delegate customization methods are moved from ABKInAppMessageControllerDelegate to ABKInAppMessageUIDelegate.
+  - See our [In-App Message Sample app](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/InAppMessage/BrazeInAppMessageSample) for sample implementations and customizations.
  - Removes support for original in-app messages. Moving forward, triggered in-app messages must be used.
-   - Removes `requestIAMRefresh` method from `Appboy`.
-   
+  - Removes `requestInAppMessageRefresh` method from `Appboy`.
+
 ##### Changed
- - Removes the current behavior of displaying an in-app message from the stack on app open, if the stack is non-empty
- 
+- Removes the current behavior of displaying an in-app message from the stack on app open, if the stack is non-empty
+
 ##### Fixed
- - Adds Macros for methods which are only available from iOS 10.
-   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/128.
- - Stops using deprecated `openURL:` method when in iOS 10 and above.
-   - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/132.
- 
+- Adds Macros for methods which are only available from iOS 10.
+  - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/128.
+- Stops using deprecated `openURL:` method when in iOS 10 and above.
+  - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/132.
+
 ## 3.2.3
 
 ##### Fixed
@@ -69,7 +78,7 @@
 ## 3.2.0
 
 ##### Added
-- Added Push Stories, a new push type that uses UNNotificationContentExtension to display multiple images in a single notification. 
+- Adds Push Stories, a new push type that uses UNNotificationContentExtension to display multiple images in a single notification. 
   - This feature requires iOS 10 and above. 
 
 ##### Fixed
