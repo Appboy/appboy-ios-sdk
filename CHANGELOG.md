@@ -29,6 +29,11 @@
  - Removal 2
  -->
 
+## 3.3.2
+
+##### Changed
+- Updates the SDK with internal, non-functional improvements. 
+
 ## 3.3.1
 
 ##### Added

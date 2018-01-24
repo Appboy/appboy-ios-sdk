@@ -5,7 +5,6 @@
  */
 NS_ASSUME_NONNULL_BEGIN
 
-
 /*
  * The ABKChannel defines the messaging channel from which a URL was served.
  *  ABKPushNotificationChannel - The URL came from a clicked push notification.
