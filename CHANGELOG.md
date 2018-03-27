@@ -47,6 +47,7 @@
 
 ##### Breaking
 - Open sources the In-App Message UI code and moves it into a new subspec named "InAppMessage".
+  - Manual integrators must now add the `AppboyUI` folder of this repository to their projects as a group, in addition to `AppboyKit`.
   - The "InAppMessage" subspec contains the Braze In-App Message UI and the Core SDK. It does not include Feedback or the News Feed UI.
   - The "UI" subspec contains all Braze UI and the Core SDK subpsec.
   - The open-sourced In-App Message view controllers offer backward compatible NUI support, although we recommend using categories or subclassing the In-App Message view controllers for customization as the NUI library isn't actively maintained any more. Support for NUI customization will be removed in a future release.
