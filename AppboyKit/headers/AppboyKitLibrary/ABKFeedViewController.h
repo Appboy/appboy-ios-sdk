@@ -12,7 +12,7 @@
 #import "ABKFeedController.h"
 
 /*
- * Appboy Public API: ABKFeedViewController
+ * Braze Public API: ABKFeedViewController
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,

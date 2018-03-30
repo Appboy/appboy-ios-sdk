@@ -1,33 +1,11 @@
-<!--
- CHANGELOG format:
-
-## major.minor.build
-
-##### Breaking
- - Breaking change
-   - requirements for breaking change
-   - detail for breaking change
+## 3.3.3
 
 ##### Added
- - Feature 1
-   - detail of feature 1
- - Feature 2
-   - detail of feature 2
+- Added `wipeDataAndDisableForAppRun:` on the `Appboy` interface to support wiping all customer data created by the Braze SDK.
+- Added `disableSdk:` and `requestEnableSDKOnNextAppRun:` to the `Appboy` interface to disable and re-enable the Braze SDK.
 
 ##### Fixed
- - Bug 1
-   - reference to the issue 1
- - Bug 2
-   - reference to the issue 2
-
-##### Changed
- - Change 1
- - Change 2
-
-##### Removed
- - Removal 1
- - Removal 2
- -->
+- Fixes an issue where events setting custom attribute arrays to `nil` would persist on the SDK beyond their useful life.
 
 ## 3.3.2
 

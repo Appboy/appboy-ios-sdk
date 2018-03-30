@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * The following conditions can cause a in-app message to be offered to the delegate defined by the delegate property on
  * [Appboy sharedInstance].inAppMessageController:
- * - A in-app message is received from the Appboy server.
+ * - A in-app message is received from the Braze server.
  * - A in-app message is waiting to display when an UIApplicationDidBecomeActiveNotification event occurs.
  * - A in-app message is added by ABKInAppMessageController method addInAppMessage:.
  *
@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
 };
 
 /*!
- * The in-app message delegate allows you to control the display of the Appboy in-app message. For more detailed
+ * The in-app message delegate allows you to control the display of the Braze in-app message. For more detailed
  * information on in-app message behavior, including when and how the delegate is used, see the documentation for the
  * ABKInAppMessageDisplayChoice enum above for more detailed information.
  *
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  */
 
 /*
- * Appboy Public API: ABKInAppMessageControllerDelegate
+ * Braze Public API: ABKInAppMessageControllerDelegate
  */
 @protocol ABKInAppMessageControllerDelegate <NSObject>
 

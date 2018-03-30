@@ -2,10 +2,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSString *const CORE_VERSION_WARNING = @"Attempting to download image but Appboy image utilities not found. Make sure you chose the UI Subspec if you want to use Appboy's UI.";
+static NSString *const CORE_VERSION_WARNING = @"Attempting to download image but Braze image utilities not found. Make sure you chose the UI Subspec if you want to use Braze's UI.";
 
 /*
- * This proxy class gives the Appboy iOS SDK access to the SDWebImage framework.
+ * This proxy class gives the Braze iOS SDK access to the SDWebImage framework.
  * 
  * NOTE:
  * This class requires SDWebImage version 4.0*.
@@ -26,6 +26,7 @@ static NSString *const CORE_VERSION_WARNING = @"Attempting to download image but
 + (nullable NSString *)cacheKeyForURL:(nullable NSURL *)url;
 + (void)removeImageForKey:(nullable NSString *)key;
 + (nullable UIImage *)imageFromCacheForKey:(nullable NSString *)key;
++ (void)clearCache;
 + (BOOL)isSupportedSDWebImageVersion;
 
 @end

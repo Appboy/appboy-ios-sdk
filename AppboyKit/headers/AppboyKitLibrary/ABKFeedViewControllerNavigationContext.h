@@ -28,7 +28,7 @@
  */
 
 /*
- * Appboy Public API: ABKFeedViewControllerNavigationContext
+ * Braze Public API: ABKFeedViewControllerNavigationContext
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewControllerNavigationContext : ABKFeedViewController <UINavigationControllerDelegate>;

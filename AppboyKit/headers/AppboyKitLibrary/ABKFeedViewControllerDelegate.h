@@ -3,7 +3,7 @@
 @class ABKCard;
 
 /*
- * Appboy Public API: ABKFeedViewControllerDelegate
+ * Braze Public API: ABKFeedViewControllerDelegate
  */
 NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedViewControllerDelegate <NSObject>

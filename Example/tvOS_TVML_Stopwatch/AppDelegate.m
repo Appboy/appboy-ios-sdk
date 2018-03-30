@@ -4,7 +4,7 @@
 
 static NSString *tvBaseURL = @"http://localhost:9001/";
 static NSString *tvBootURL = @"http://localhost:9001/application.js";
-static NSString *const AppboyApiKey = @"appboy-sample-ios-tvml";
+static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 
 @interface AppDelegate ()

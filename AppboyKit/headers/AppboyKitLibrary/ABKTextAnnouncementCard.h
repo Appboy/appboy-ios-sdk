@@ -1,7 +1,7 @@
 #import "ABKCard.h"
 
 /*
- * Appboy Public API: ABKTextAnnouncementCard
+ * Braze Public API: ABKTextAnnouncementCard
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKTextAnnouncementCard : ABKCard <NSCoding>

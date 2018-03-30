@@ -6,7 +6,7 @@
 /*! Note: This class is not thread safe and all class methods should be called from the main thread.*/
 
 /*
- * Appboy Public API: ABKInAppMessageController
+ * Braze Public API: ABKInAppMessageController
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageController : NSObject
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @discussion This method allows you to display a custom in-app message. It adds the in-app message object to the top of the in-app message stack
  * and tries to display immediately.
  *
- * Note: Clicks and impressions of in-app messages added by this method will not be collected by Appboy and will not be
+ * Note: Clicks and impressions of in-app messages added by this method will not be collected by Braze and will not be
  * reflected on the dashboard.
  */
 - (void)addInAppMessage:(ABKInAppMessage *)newInAppMessage;

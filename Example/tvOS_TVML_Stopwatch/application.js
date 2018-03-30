@@ -4,7 +4,7 @@
  application.js
  tvOS_TVML_Stopwatch
  
- Copyright (c) 2016 Appboy. All rights reserved.
+ Copyright (c) 2018 Braze. All rights reserved.
 */
 
 /*
@@ -30,7 +30,7 @@
  * the URL that was used to retrieve the application JavaScript.
  */
 App.onLaunch = function(options) {
-    var alert = createAlert("Hello Appboy!", "Welcome to tvOS");
+    var alert = createAlert("Hello Braze!", "Welcome to tvOS");
     alert.getElementById("changeUserButton").addEventListener("select", changeUser);
     alert.getElementById("logEventsAndPurchasesButton").addEventListener("select", logEventsAndPurchases);
     alert.getElementById("logAttributesButton").addEventListener("select", logAttributes);

@@ -23,7 +23,7 @@
 
 /* Data Flush Settings */
 
-// This is the selector of flushAppboyData Button which flushes queued data to the Appboy servers manually on demand.
+// This is the selector of flushAppboyData Button which flushes queued data to the Braze servers manually on demand.
 - (IBAction)flushAppboyData:(id)sender {
   NSLog(@"FlushAppboyData:");
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];

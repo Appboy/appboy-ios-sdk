@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 /*
- * Appboy Public API: ABKNavigationBar
+ * Braze Public API: ABKNavigationBar
  */
 @interface ABKNavigationBar : UINavigationBar
 

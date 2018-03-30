@@ -8,7 +8,7 @@
  * ABKInAppMessageControllerDelegate.h and ABKInAppMessageController.h
  */
 
-#pragma mark Appboy In-App Message Delegate methods
+#pragma mark Braze In-App Message Delegate methods
 
 /*!
  * This callback method allows you to specify if each in-app message should be displayed. It is called just before each in-app
@@ -80,8 +80,8 @@
 }
 
 // This delegate method is notified if the in-app message is tapped.  You can use this to initiate an action
-// in response to the tap.  Note that when the delegate returns NO, Appboy SDK will perform the action sent down from
-// the Appboy Server after the delegate method is executed. If it returns YES, the response to the tap is up to you.
+// in response to the tap.  Note that when the delegate returns NO, Braze SDK will perform the action sent down from
+// the Braze Server after the delegate method is executed. If it returns YES, the response to the tap is up to you.
 - (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
   NSLog(@"In-app message tapped!");
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
@@ -93,7 +93,7 @@
   alertView = nil;
   
   [inAppMessage setInAppMessageClickAction:ABKInAppMessageNoneClickAction withURI:nil];
-  // Returning YES here to prevent Appboy from performing the click action.
+  // Returning YES here to prevent Braze from performing the click action.
   return YES;
 }
 

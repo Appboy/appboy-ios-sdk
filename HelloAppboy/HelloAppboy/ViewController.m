@@ -7,7 +7,7 @@
 }
 
 - (IBAction)logLikeAppboyEvent:(id)sender {
-  [[Appboy sharedInstance] logCustomEvent:@"like Appboy"];
+  [[Appboy sharedInstance] logCustomEvent:@"like Braze"];
 }
 
 - (IBAction)ratingChange:(UISlider *)sender {
@@ -16,7 +16,7 @@
 
 - (void) viewDidDisappear:(BOOL)animated {
   [super viewDidDisappear:animated];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"Appboy love rate" andDoubleValue:(double)self.ratingSlider.value];
+  [[Appboy sharedInstance].user setCustomAttributeWithKey:@"Braze love rate" andDoubleValue:(double)self.ratingSlider.value];
 }
 
 @end

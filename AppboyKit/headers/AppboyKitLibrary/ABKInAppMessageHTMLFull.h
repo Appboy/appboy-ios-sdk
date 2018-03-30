@@ -2,7 +2,7 @@
 #import "ABKInAppMessageHTML.h"
 
 /*
- * Appboy Public API: ABKInAppMessageHTMLFull
+ * Braze Public API: ABKInAppMessageHTMLFull
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageHTMLFull : ABKInAppMessageHTML

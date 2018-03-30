@@ -1,7 +1,7 @@
 #import "ABKInAppMessageImmersive.h"
 
 /*
- * Appboy Public API: ABKInAppMessageModal
+ * Braze Public API: ABKInAppMessageModal
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageModal : ABKInAppMessageImmersive

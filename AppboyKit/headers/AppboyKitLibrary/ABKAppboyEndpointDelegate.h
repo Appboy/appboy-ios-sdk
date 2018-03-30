@@ -1,15 +1,15 @@
 #import <Foundation/Foundation.h>
 
 /*
- * Appboy Public API: ABKAppboyEndpointDelegate
+ * Braze Public API: ABKAppboyEndpointDelegate
  */
 NS_ASSUME_NONNULL_BEGIN
 @protocol ABKAppboyEndpointDelegate <NSObject>
 /*!
- * Given a valid Appboy API endpoint URI string, this method returns a valid endpoint URI string.
+ * Given a valid Braze API endpoint URI string, this method returns a valid endpoint URI string.
  *
- * @param appboyApiEndpoint A URI string for an Appboy API endpoint
- * @return A valid Appboy API endpoint URI
+ * @param appboyApiEndpoint A URI string for an Braze API endpoint
+ * @return A valid Braze API endpoint URI
  */
 - (NSString *)getApiEndpoint:(NSString *)appboyApiEndpoint;
 

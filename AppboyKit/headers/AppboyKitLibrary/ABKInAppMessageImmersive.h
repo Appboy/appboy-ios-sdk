@@ -3,7 +3,7 @@
 @class ABKInAppMessageButton;
 
 /*
- * Appboy Public API: ABKInAppMessageImmersive
+ * Braze Public API: ABKInAppMessageImmersive
  */
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageImmersiveImageStyle) {
 
 /*!
  * header defines the header text of the in-app message.
- * The header will only be displayed in one line on the default Appboy in-app messages. If the header is more than one
+ * The header will only be displayed in one line on the default Braze in-app messages. If the header is more than one
  * line, it will be truncated at the end.
  */
 @property (copy, nullable) NSString *header;
@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageImmersiveImageStyle) {
 /*!
  * @param buttonId The clicked button's button ID for the in-app message. This number can't be negative.
  * If you're handling in-app messages completely on your own, you should still report
- * clicks on the in-app message button back to Appboy with this method so that your campaign reporting features
+ * clicks on the in-app message button back to Braze with this method so that your campaign reporting features
  * still work in the dashboard.
  *
  * Note: Each in-app message can log at most one button click.

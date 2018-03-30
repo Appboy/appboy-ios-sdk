@@ -9,7 +9,7 @@
  */
 
 /*
- * Appboy Public API: ABKFeedViewControllerModalContextDelegate
+ * Braze Public API: ABKFeedViewControllerModalContextDelegate
  */
 NS_ASSUME_NONNULL_BEGIN
 @protocol ABKFeedViewControllerModalContextDelegate;
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 /*
- * Appboy Public API: ABKFeedViewControllerModalContext
+ * Braze Public API: ABKFeedViewControllerModalContext
  */
 @interface ABKFeedViewControllerModalContext : ABKFeedViewControllerGenericContext
 

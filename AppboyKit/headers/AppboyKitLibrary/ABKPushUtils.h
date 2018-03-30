@@ -6,14 +6,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*
- * Appboy Public API: ABKPushUtils
+ * Braze Public API: ABKPushUtils
  */
 @interface ABKPushUtils : NSObject
 
 /*!
  * @param response The UNNotificationResponse passed to userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
  *
- * @return YES if the user notification was sent from Appboy's servers.
+ * @return YES if the user notification was sent from Braze servers.
  */
 + (BOOL)isAppboyUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
 
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetch​Completion​Handler:
  *                 or application:didReceiveRemoteNotification:.
  *
- * @return YES if the push notification was sent from Appboy's servers.
+ * @return YES if the push notification was sent from Braze servers.
  */
 + (BOOL)isAppboyRemoteNotification:(NSDictionary *)userInfo;
 
@@ -29,10 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
  *                 or application:didReceiveRemoteNotification:.
  *
- * @return YES if the push notification was sent by Appboy for an internal feature.
+ * @return YES if the push notification was sent by Braze for an internal feature.
  *
- * @discussion Appboy uses content-available silent notifications for internal features. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's internal content-available notifications
+ * @discussion Braze uses content-available silent notifications for internal features. You can use this method to ensure
+ *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's internal content-available notifications
  *             (e.g., pinging your server for content).
  */
 + (BOOL)isAppboyInternalRemoteNotification:(NSDictionary *)userInfo;
@@ -40,10 +40,10 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * @param response The UNNotificationResponse passed to userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
  *
- * @return YES if the user notification was sent by Appboy for uninstall tracking.
+ * @return YES if the user notification was sent by Braze for uninstall tracking.
  *
  * @discussion Uninstall tracking notifications are content-available silent notifications. You can use this method to ensure 
- *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's uninstall tracking notifications
+ *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's uninstall tracking notifications
  *             (e.g., pinging your server for content).
  */
 + (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
@@ -52,10 +52,10 @@ NS_ASSUME_NONNULL_BEGIN
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
  *                 or application:didReceiveRemoteNotification:.
  *
- * @return YES if the push notification was sent by Appboy for uninstall tracking.
+ * @return YES if the push notification was sent by Braze for uninstall tracking.
  *
  * @discussion Uninstall tracking notifications are content-available silent notifications. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's uninstall tracking notifications
+ *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's uninstall tracking notifications
  *             (e.g., pinging your server for content).
  */
 + (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo;
@@ -63,10 +63,10 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * @param response The UNNotificationResponse passed to userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
  *
- * @return YES if the user notification was sent by Appboy for syncing geofences.
+ * @return YES if the user notification was sent by Braze for syncing geofences.
  *
  * @discussion Geofence sync notifications are content-available silent notifications. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's geofence sync notifications
+ *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's geofence sync notifications
  *             (e.g., pinging your server for content).
  */
 + (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
@@ -75,10 +75,10 @@ NS_ASSUME_NONNULL_BEGIN
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
  *                 or application:didReceiveRemoteNotification:.
  *
- * @return YES if the push notification was sent by Appboy for syncing geofences.
+ * @return YES if the push notification was sent by Braze for syncing geofences.
  *
  * @discussion Geofence sync notifications are content-available silent notifications. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's geofence sync notifications
+ *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's geofence sync notifications
  *             (e.g., pinging your server for content).
  */
 + (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;
@@ -87,10 +87,10 @@ NS_ASSUME_NONNULL_BEGIN
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
  *                 or application:didReceiveRemoteNotification:.
  *
- * @return YES if the push notification was sent by Appboy for push stories.
+ * @return YES if the push notification was sent by Braze for push stories.
  *
  * @discussion Push story notifications are content-available silent notifications. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Appboy's push story notifications
+ *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's push story notifications
  *             (e.g., pinging your server for content).
  */
 + (BOOL)isPushStoryRemoteNotification:(NSDictionary *)userInfo;

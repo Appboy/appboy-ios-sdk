@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageSlideupAnchor) {
 };
 
 /*
- * Appboy Public API: ABKInAppMessageSlideup
+ * Braze Public API: ABKInAppMessageSlideup
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageSlideup : ABKInAppMessage

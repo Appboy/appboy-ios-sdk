@@ -10,7 +10,7 @@
 - (ABKFeedback *)appboyFeedbackFromMessage:(NSString *)message
                                      email:(NSString *)email
                                      isBug:(BOOL)isBug {
-  NSString *updatedMessage = [message stringByAppendingString:@" from Appboy"];
+  NSString *updatedMessage = [message stringByAppendingString:@" from Braze"];
   return [super appboyFeedbackFromMessage:updatedMessage email:email isBug:isBug];
   
 }

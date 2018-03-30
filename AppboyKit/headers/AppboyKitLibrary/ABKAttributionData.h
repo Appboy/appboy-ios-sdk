@@ -2,7 +2,7 @@
 
 
 /*
- * Appboy Public API: ABKAttributionData
+ * Braze Public API: ABKAttributionData
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKAttributionData : NSObject
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param adGroup The attribution adGroup
  * @param creative The attribution creative
  *
- * @discussion: Creates an ABKAttributionData object to send to Appboy's servers.
+ * @discussion: Creates an ABKAttributionData object to send to Braze servers.
  */
 - (instancetype)initWithNetwork:(nullable NSString *)network
                        campaign:(nullable NSString *)campaign

@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 #import <AppboyTVOSKit/AppboyKit.h>
 
-static NSString *const AppboyApiKey = @"appboy-sample-ios-tv";
+static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 @interface AppDelegate ()
 

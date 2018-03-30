@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /*! 
- * Do not call these methods within your code. They are meant for Appboy internal use only. 
+ * Do not call these methods within your code. They are meant for Braze internal use only.
  */
 
 /*!
@@ -10,7 +10,7 @@
  */
 
 /*
- * Appboy Public API: ABKIdentifierForAdvertisingProvider
+ * Braze Public API: ABKIdentifierForAdvertisingProvider
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKIdentifierForAdvertisingProvider : NSObject

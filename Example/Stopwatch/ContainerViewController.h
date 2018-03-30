@@ -32,7 +32,7 @@
 // Open up a modal NewsFeedViewController
 - (IBAction)newsfeedButtonTapped:(id)sender;
 
-// Manually flush data to Appboy
+// Manually flush data to Braze
 - (IBAction)flushDataToAppboy:(id)sender;
 
 @end

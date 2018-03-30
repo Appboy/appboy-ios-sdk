@@ -1,7 +1,7 @@
 #import "ABKInAppMessage.h"
 
 /*
- * Appboy Public API: ABKInAppMessageButton
+ * Braze Public API: ABKInAppMessageButton
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageButton : NSObject

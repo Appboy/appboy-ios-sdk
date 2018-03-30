@@ -138,7 +138,7 @@
 - (void)testCustomModalFeedback_SendFeedback_EmptyFeedback {
   [self.app.buttons[@"Custom Feedback"] tap];
   [self.app.buttons[@"Send"] tap];
-  // The custom feedback appends " from Appboy" to the feedback message, so it shouldn't meet
+  // The custom feedback appends " from Braze" to the feedback message, so it shouldn't meet
   // "Empty Feedback Message" error
   XCTAssert(self.app.staticTexts[@"Invalid Email Address"].exists);
   [self.app.buttons[@"OK"] tap];
@@ -162,7 +162,7 @@
   [self.app.buttons[@"Custom Feedback"] tap];
   [self.app.textViews.element typeText:@"Default Modal Feedback Testing"];
   [self.app.textFields.element tap];
-  [self.app.textFields.element typeText:@"testing@appboy.com"];
+  [self.app.textFields.element typeText:@"testing@braze.com"];
   [self.app.textViews.element tap];
   [self.app.buttons[@"Send"] tap];
   XCTAssert(self.app.buttons[@"Custom Feedback"].exists);

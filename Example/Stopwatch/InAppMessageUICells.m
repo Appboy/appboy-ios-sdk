@@ -41,19 +41,19 @@
 + (NSDictionary *)headerDictionary {
   return @{@"None" : @"",
            @"10 Chars" : @"Hey there#",
-           @"20 Chars" : @"Hey hey from Appboy#",
-           @"30 Chars" : @"Good morning from us @ Appboy#",
-           @"80 Chars" : @"Hello from Appboy! Have a fun day okay. Hello from Appboy! Have a fun day today#"};
+           @"20 Chars" : @"Hey hey from Braze!#",
+           @"30 Chars" : @"Good morning from us @ Braze!#",
+           @"80 Chars" : @"Hello from Braze!! Have a fun day okay. Hello from Braze!! Have a fun day today#"};
 }
 
 + (NSDictionary *)messageDictionary {
-  return @{@"20 Chars" : @"Hey hey from Appboy#",
+  return @{@"20 Chars" : @"Hey hey from Braze!#",
            @"40 Chars" : @"Hello there!  This is an in-app message#",
            @"70 Chars" : @"Hello there! This is an in-app message. Yo, this is an in-app message#",
            @"90 Chars" : @"Hello there! This is an in-app message.  Hello again!  Anyways, this is an in-app message#",
-           @"140 Chars" : @"Welcome to Appboy! Appboy is Marketing Automation for Apps. This is an in-app message - this message is exactly one hundred and forty chars#",
-           @"240 Chars" : @"Welcome to Appboy! Appboy is Marketing Automation for Apps. This is an in-app message - this message is exactly two hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens#",
-           @"640 Chars" : @"Welcome to Appboy! Appboy is Marketing Automation for Apps. This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is a waaaay too long message#"};
+           @"140 Chars" : @"Welcome to Braze!! Braze! is Marketing Automation for Apps. This is an in-app message - this message is exactly one hundred and forty chars#",
+           @"240 Chars" : @"Welcome to Braze!! Braze! is Marketing Automation for Apps. This is an in-app message - this message is exactly two hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens#",
+           @"640 Chars" : @"Welcome to Braze!! Braze! is Marketing Automation for Apps. This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is a waaaay too long message#"};
 }
 
 - (UIAlertController *)getAlertControllerWithIAMDictionary:(NSMutableDictionary *)dictionary {

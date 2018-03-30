@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly) BOOL disableLocationTracking;
 
 /*!
- * Calling this method gives Appboy permission to request WhenInUse authorization on your behalf the next time we attempt to collect
+ * Calling this method gives Braze permission to request WhenInUse authorization on your behalf the next time we attempt to collect
  * location in the foreground.
  */
 - (void)allowRequestWhenInUseLocationPermission;
 
 /*!
- * Calling this method gives Appboy permission to request Always authorization on your behalf the next time we attempt to collect
+ * Calling this method gives Braze permission to request Always authorization on your behalf the next time we attempt to collect
  * significant location changes.
  */
 - (void)allowRequestAlwaysPermission;

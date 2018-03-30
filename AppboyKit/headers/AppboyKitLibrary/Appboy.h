@@ -4,8 +4,8 @@
 
 /*!
   \mainpage
-  This site contains technical documentation for the %Appboy iOS SDK. Click on the "Classes" link above to
-  view the %Appboy public interface classes and start integrating the SDK into your app!
+  This site contains technical documentation for the %Braze iOS SDK. Click on the "Classes" link above to
+  view the %Braze public interface classes and start integrating the SDK into your app!
 */
 
 #import <Foundation/Foundation.h>
@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.3.2"
+#define APPBOY_SDK_VERSION @"3.3.3"
 #endif
 
 #if !TARGET_OS_TV
@@ -34,12 +34,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 /* ------------------------------------------------------------------------------------------------------
- * Keys for Appboy startup options
+ * Keys for Braze startup options
  */
 
 /*!
  * If you want to set the request policy at app startup time (useful for avoiding any automatic data requests made by
- * Appboy at startup if you're looking to have full manual control). You can include one of the
+ * Braze at startup if you're looking to have full manual control). You can include one of the
  * ABKRequestProcessingPolicy enum values as the value for the ABKRequestProcessingPolicyOptionKey in the appboyOptions
  * dictionary.
  */
@@ -53,21 +53,21 @@ extern NSString *const ABKRequestProcessingPolicyOptionKey;
 extern NSString *const ABKFlushIntervalOptionKey;
 
 /*!
- * This key can be set to YES or NO and will configure whether Appboy will automatically collect location (if the user permits).
+ * This key can be set to YES or NO and will configure whether Braze will automatically collect location (if the user permits).
  * If set to YES, location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
- * ABKUser (i.e. you must manually set the location, Appboy will not).  If it is set to NO or omitted, Appboy will collect
+ * ABKUser (i.e. you must manually set the location, Braze will not).  If it is set to NO or omitted, Braze will collect
  * location if authorized.
  */
 extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 
 /*!
- * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location
+ * This key can be set to YES or NO and will configure whether Braze will automatically collect significant change location
  * events.  If this key isn't set and the server doesn't provide a value, it will default to false.
  */
 extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
 
 /*!
- * This key can be set to an integer value that represents the minimum distance in meters between location events logged to Appboy.
+ * This key can be set to an integer value that represents the minimum distance in meters between location events logged to Braze.
  * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
  * change location provider.  The default and minimum value is 50.  Note that significant change location updates shouldn't occur if the user has
  * gone 50 meters or less.
@@ -75,20 +75,20 @@ extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
 extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
 
 /*!
- * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Appboy.
+ * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Braze.
  * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
  * change location provider.  The default value is 3600 (1 hour); the minimum is 300 (5 minutes).
  */
 extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
 
 /*!
- * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to to Appboy.
+ * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to to Braze.
  */
 extern NSString *const ABKIDFADelegateKey;
 
 /*!
  * This key can be set to an instance of a class that conforms to the ABKAppboyEndpointDelegate protocol, which can be used to modify or substitute the API and Resource
- * (e.g. image) URIs used by the Appboy SDK.
+ * (e.g. image) URIs used by the Braze SDK.
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
 
@@ -140,29 +140,29 @@ extern NSString *const ABKPushStoryAppGroupKey;
 /*!
  * Possible values for the SDK's request processing policies:
  *   ABKAutomaticRequestProcessing (default) - All server communication is handled automatically. This includes flushing
- *        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Appboy's
+ *        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Braze's
  *        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
  *        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
  *        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
  *   ABKAutomaticRequestProcessingExceptForDataFlush - The same as ABKAutomaticRequestProcessing, except that updates to
  *        custom attributes and triggering of custom events will not automatically flush to the server. Instead, you
- *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
- *   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
+ *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Braze.
+ *   ABKManualRequestProcessing - Braze will automatically add appropriate network requests (feed updates, user
  *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
- *        network requests. Appboy will make an exception and process requests in the following cases:
+ *        network requests. Braze will make an exception and process requests in the following cases:
  *        - Feedback requests are made via Appboy::submitFeedback:message:isReportingABug:,
  *          Appboy::submitFeedback:withCompletionHandler:, or a FeedbackViewController.
  *        - Feed requests are made via Appboy::requestFeedRefresh or an ABKFeedViewController. The latter typically 
  *          occurs when an ABKFeedViewController is loaded and displayed on the screen or on a pull to refresh.
  *        - Network requests are required for internal features, such as templated in-app messages
  *          and certain location-based features.
- *        You can direct Appboy to perform an immediate data flush as well as process any other
+ *        You can direct Braze to perform an immediate data flush as well as process any other
  *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
  *        This mode is only recommended for advanced use cases. If you're merely trying to
  *        control the background flush behavior, consider using ABKAutomaticRequestProcessing
  *        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
  *
- * Regardless of policy, Appboy will intelligently combine requests on the request queue to minimize the total number of
+ * Regardless of policy, Braze will intelligently combine requests on the request queue to minimize the total number of
  * requests and their combined payload.
  */
 typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
@@ -186,9 +186,9 @@ typedef NS_ENUM(NSInteger , ABKSDKFlavor) {
 /*!
  * Possible values for the result of submitting feedback:
  *   ABKInvalidFeedback - The passed-in feedback isn't valid. Please check the validity of the ABKFeedback
- *        object with instance method `feedbackValidation` before submitting it to Appboy.
+ *        object with instance method `feedbackValidation` before submitting it to Braze.
  *   ABKNetworkIssue - The SDK failed to send the feedback due to network issue. 
- *   ABKFeedbackSentSuccessfully - The feedback is sent to Appboy server successfully.
+ *   ABKFeedbackSentSuccessfully - The feedback is sent to Braze server successfully.
  */
 typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
   ABKInvalidFeedback,
@@ -197,7 +197,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 };
 
 /*
- * Appboy Public API: Appboy
+ * Braze Public API: Appboy
  */
 @interface Appboy : NSObject
 
@@ -220,10 +220,10 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * @param application the current app
  * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
  *
- * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
+ * @discussion Starts up Braze and tells it that your app is done launching. You should call this
  * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
- * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
- * the appboy.com dashboard where you registered your app.
+ * accessing [Appboy sharedInstance] or otherwise rendering Braze view controllers. Your apiKey comes from
+ * the Braze dashboard where you registered your app.
  */
 + (void)startWithApiKey:(NSString *)apiKey
           inApplication:(UIApplication *)application
@@ -233,14 +233,14 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * @param apiKey The app's API key
  * @param application The current app
  * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
- * @param appboyOptions An optional NSDictionary with startup configuration values for Appboy. This currently supports
+ * @param appboyOptions An optional NSDictionary with startup configuration values for Braze. This currently supports
  * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
  * for more information.
  *
- * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
+ * @discussion Starts up Braze and tells it that your app is done launching. You should call this
  * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
- * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
- * the appboy.com dashboard where you registered your app.
+ * accessing [Appboy sharedInstance] or otherwise rendering Braze view controllers. Your apiKey comes from
+ * the Braze dashboard where you registered your app.
  */
 + (void)startWithApiKey:(NSString *)apiKey
           inApplication:(UIApplication *)application
@@ -275,13 +275,13 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 
 
 /*!
- * A class conforming to the ABKAppboyEndpointDelegate protocol can be set to route Appboy API and Resource traffic in a custom way.
- * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
+ * A class conforming to the ABKAppboyEndpointDelegate protocol can be set to route Braze API and Resource traffic in a custom way.
+ * For example, one might proxy Braze image downloads by having the getResourceEndpoint method return a proxy URI.
  */
 @property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
 
 /*!
- * A class extending ABKIDFADelegate can be set to provide the IDFA to Appboy.
+ * A class extending ABKIDFADelegate can be set to provide the IDFA to Braze.
  */
 @property (nonatomic, strong, nullable) id<ABKIDFADelegate> idfaDelegate;
 
@@ -293,7 +293,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 @property (readonly) ABKInAppMessageController *inAppMessageController;
 
 /*!
- * The Appboy location manager provides access to location related functionality in the Appboy SDK.
+ * The Braze location manager provides access to location related functionality in the Braze SDK.
  * See ABKLocationManager.h.
  */
 @property (nonatomic, readonly) ABKLocationManager *locationManager;
@@ -346,7 +346,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  *
  * If you're using ABKManualRequestProcessing, you need to call this after each network related activity in your app.
  * This includes:
- * * Retrieving an updated feed and in-app message after a new session is opened or the user is changed. Appboy will
+ * * Retrieving an updated feed and in-app message after a new session is opened or the user is changed. Braze will
  * automatically add the request for new data to the network queue, you just need to give it permission to execute
  * that request.
  * * Flushing updated user data (custom events, custom attributes, as well as automatically collected data).
@@ -371,7 +371,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 * @discussion
 * This method changes the user's ID.
 *
-* When you first start using Appboy on a device, the user is considered "anonymous". You can use this method to
+* When you first start using Braze on a device, the user is considered "anonymous". You can use this method to
 * optionally identify a user with a unique ID, which enables the following:
 *
 *   - If the same user is identified on another device, their user profile, usage history and event history will
@@ -390,7 +390,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 *   - Note that switching from one an anonymous user to an identified user or from one identified user to another is
 *     a relatively costly operation. When you request the
 *     user switch, the current session for the previous user is automatically closed and a new session is started.
-*     Appboy will also automatically make a data refresh request to get the news feed, in-app message and other information
+*     Braze will also automatically make a data refresh request to get the news feed, in-app message and other information
 *     for the new user.
 *
 *  Note: Once you identify a user, you cannot go back to the "anonymous" profile. The transition from anonymous
@@ -484,7 +484,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  *
  * @discussion Logs a purchase made in the application.
  *
- * Note: Appboy supports purchases in multiple currencies. Purchases that you report in a currency other than USD will
+ * Note: Braze supports purchases in multiple currencies. Purchases that you report in a currency other than USD will
  * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
  *
  */
@@ -496,7 +496,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * @param isReportingABug Flag indicating whether or not the feedback describes a bug, or is merely a suggestion/question.
  * @return a boolean indicating whether or not the feedback item was successfully queued for delivery.
  *
- * @discussion Submits a piece of feedback to the Appboy feedback center so that it can be handled in the Appboy dashboard.
+ * @discussion Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard.
  * The request to submit feedback is made immediately, however, this method does not block and will return as soon as the
  * feedback request is placed on the network queue.
  *
@@ -508,7 +508,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * @param completionHandler The block to execute when the feedback sending process is complete. An ABKFeedbackSentResult enum
  * will be passed to the block indicating if the feedback was sent successfully.
  *
- * @discussion Submits a piece of feedback to the Appboy feedback center so that it can be handled in the Appboy dashboard.
+ * @discussion Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard.
  * The request to submit feedback is made immediately. However, this method does not block and will return as soon as the
  * feedback request is placed on the network queue.
  *
@@ -517,13 +517,13 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 
 /*!
  * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
- * the news feed back to Appboy with this method so that your campaign reporting features still work in the dashboard.
+ * the news feed back to Braze with this method so that your campaign reporting features still work in the dashboard.
  */
 - (void)logFeedDisplayed;
 
 /*!
  * If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report
- * impressions of the feedback page back to Appboy with this method so that your campaign reporting features still work
+ * impressions of the feedback page back to Braze with this method so that your campaign reporting features still work
  * in the dashboard.
  */
 - (void)logFeedbackDisplayed;
@@ -533,7 +533,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * current user, that the new feed request will be merged into the already existing request and only one will execute
  * for that user.
  *
- * When the new cards for news feed return from Appboy server, the SDK will post an ABKFeedUpdatedNotification with an
+ * When the new cards for news feed return from Braze server, the SDK will post an ABKFeedUpdatedNotification with an
  * ABKFeedUpdatedIsSuccessfulKey in the notification's userInfo dictionary to indicate if the news feed request is successful
  * or not. For more detail about the ABKFeedUpdatedNotification and the ABKFeedUpdatedIsSuccessfulKey, please check ABKFeedController.
  */
@@ -551,7 +551,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 /*!
  * @param response The response passed in from userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
  *
- * @discussion This method returns whether or not a UNNotification was sent from Appboy's servers.
+ * @discussion This method returns whether or not a UNNotification was sent from Braze servers.
  */
 - (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response __deprecated_msg("Use [ABKPushUtils isAppboyUserNotification:] instead.") NS_AVAILABLE_IOS(10.0);
 
@@ -560,14 +560,14 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * application:didReceiveRemoteNotification in your App Delegate.
  *
  * @discussion
- * Test a push notification to see if it came Appboy's servers.
+ * Test a push notification to see if it came Braze.
  */
 - (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options __deprecated_msg("Use [ABKPushUtils isAppboyRemoteNotification:] instead.");
 
 /*!
  * @param token The device's push token.
  *
- * @discussion This method posts a token to Appboy's servers to associate the token with the current device.
+ * @discussion This method posts a token to Braze servers to associate the token with the current device.
  */
 - (void)registerPushToken:(NSString *)token;
 
@@ -575,7 +575,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * @param application The app's UIApplication object
  * @param notification An NSDictionary passed in from the didReceiveRemoteNotification call
  *
- * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
+ * @discussion This method forwards remote notifications to Braze. Call it from the application:didReceiveRemoteNotification
  * method of your App Delegate.
  */
 - (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification NS_DEPRECATED_IOS(3_0, 10_0, "`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.");
@@ -585,8 +585,8 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * @param notification An NSDictionary passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  *
- * @discussion This method forwards remote notifications to Appboy. If the completionHandler is passed in when
- * the method is called, Appboy will call the completionHandler. However, if the completionHandler is not passed in,
+ * @discussion This method forwards remote notifications to Braze. If the completionHandler is passed in when
+ * the method is called, Braze will call the completionHandler. However, if the completionHandler is not passed in,
  * it is the host app's responsibility to call the completionHandler.
  * Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate.
  */
@@ -599,7 +599,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * @param userInfo An NSDictionary passed in from the handleActionWithIdentifier:forRemoteNotification: call.
  * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  *
- * @discussion This method forwards remote notifications and the custom action chosen by user to Appboy. Call it from
+ * @discussion This method forwards remote notifications and the custom action chosen by user to Braze. Call it from
  * the application:handleActionWithIdentifier:forRemoteNotification: method of your App Delegate.
  */
 - (void)getActionWithIdentifier:(NSString *)identifier
@@ -609,10 +609,10 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 /*!
  * @param center The app's current UNUserNotificationCenter object
  * @param response The UNNotificationResponse object passed in from the didReceiveNotificationResponse:withCompletionHandler: call
- * @param completionHandler A block passed in from the didReceiveNotificationResponse:withCompletionHandler: call. Appboy will call
- * it at the end of the method if one is passed in. If you prefer to handle the completionHandler youself, please pass nil to Appboy.
+ * @param completionHandler A block passed in from the didReceiveNotificationResponse:withCompletionHandler: call. Braze will call
+ * it at the end of the method if one is passed in. If you prefer to handle the completionHandler youself, please pass nil to Braze.
  *
- * @discussion This method forwards the response of the notification to Appboy after user interacted with the notification.
+ * @discussion This method forwards the response of the notification to Braze after user interacted with the notification.
  * Call it from the userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: method of your App Delegate.
  */
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
@@ -624,7 +624,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
  * requestAuthorizationWithOptions:completionHandler: method, which indicates if the push authorization
  * was granted or not.
  *
- * @discussion This method forwards the push authorization result to Appboy after the user interacts with
+ * @discussion This method forwards the push authorization result to Braze after the user interacts with
  * the notification prompt.
  * Call it from the UNUserNotificationCenter's requestAuthorizationWithOptions:completionHandler: method 
  * when you prompt users to enable push.
@@ -632,6 +632,51 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 - (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;
 
 #endif
+
+/* ------------------------------------------------------------------------------------------------------
+ * Data processing configuration methods.
+ */
+
+/*!
+ * @discussion This method immediately wipes all data from the Braze iOS SDK. After this method is
+ * called, the sharedInstance singleton will be nulled out and Braze functionality will be disabled
+ * until the next call to startWithApiKey:. All references to the previous singleton should be
+ * released.
+ *
+ * The SDK will automatically re-enable itself when startWithApiKey: is next called. There is
+ * no need to call requestEnableSDKOnNextAppRun: to re-enable the SDK. wipeDataAndDisableForAppRun:
+ * may be used at any time, including while the SDK is otherwise disabled.
+ *
+ * Note that if you are using unsafeInstance:, further calls to unsafeInstance: after using this
+ * method will cause an uncaught exception to be thrown. We do not recommend using this method in
+ * concert with unsafeInstance:.
+ */
++ (void)wipeDataAndDisableForAppRun;
+
+/*!
+ * @discussion This method immediately disables the Braze iOS SDK. After this method is called, the
+ * sharedInstance singleton will be nulled out and Braze functionality will be disabled until the
+ * SDK is re-enabled via requestEnableSDKOnNextAppRun: and a subsequent call to startWithApiKey:.
+ * All references to the previous singleton should be released.
+ *
+ * Unlike with wipeDataAndDisableForAppRun:, calling requestEnableSDKOnNextAppRun: is required to
+ * re-enable the SDK after the method is called.
+ *
+ * Note that if you are using unsafeInstance:, further calls to unsafeInstance: after using this
+ * method will cause an exception to be thrown. We do not recommend using this method in concert
+ * with unsafeInstance:.
+ */
++ (void)disableSDK;
+
+/*!
+ * @discussion This method requests the Braze iOS SDK to be re-enabled on the next app run.
+ * After this method is called, the following call to startWithApiKey: will successfully
+ * re-enable the SDK. Braze functionality will remain disabled until that point.
+ *
+ * Note that this method does not re-initialize the Appboy singleton on its own nor re-enable
+ * Braze functionality immediately.
+ */
++ (void)requestEnableSDKOnNextAppRun;
 
 @end
 NS_ASSUME_NONNULL_END

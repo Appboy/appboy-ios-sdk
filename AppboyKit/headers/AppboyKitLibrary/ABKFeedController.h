@@ -50,7 +50,7 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
 };
 
 /*
- * Appboy Public API: ABKFeedController
+ * Braze Public API: ABKFeedController
  */
 @interface ABKFeedController : NSObject
 

@@ -2,7 +2,7 @@
 #import "ABKInAppMessage.h"
 
 /*
- * Appboy Public API: ABKInAppMessageHTML
+ * Braze Public API: ABKInAppMessageHTML
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageHTML : ABKInAppMessage
@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nullable) NSURL *assetsZipRemoteUrl;
 
 /*!
- * This is the local URL of the assets directory for the HTML in-apppp message. Please note that the
- * value of this property can be overridden by Appboy at the time of displaying, so please don't set
+ * This is the local URL of the assets directory for the HTML in-app message. Please note that the
+ * value of this property can be overridden by Braze at the time of displaying, so please don't set
  * it as the value will be discarded.
  */
 @property NSURL *assetsLocalDirectoryPath;

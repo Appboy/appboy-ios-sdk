@@ -35,7 +35,7 @@
  */
 
 /*
- * Appboy Public API: ABKFeedViewControllerPopoverContext
+ * Braze Public API: ABKFeedViewControllerPopoverContext
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKFeedViewControllerPopoverContext : ABKFeedViewControllerGenericContext

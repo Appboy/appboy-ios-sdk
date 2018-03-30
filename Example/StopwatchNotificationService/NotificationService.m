@@ -29,9 +29,9 @@ static NSString *const AppboyAPNSDictionaryAttachmentTypeKey = @"type";
   NSMutableArray *attachments = [NSMutableArray arrayWithCapacity:1];
   NSDictionary *userInfo = request.content.userInfo;
   
-  // Check that the push is from Appboy
+  // Check that the push is from Braze
   if (userInfo == nil || userInfo[AppboyAPNSDictionaryKey] == nil) {
-    [self.class logMessage:@"Push not from Appboy."];
+    [self.class logMessage:@"Push not from Braze."];
     // Note: if you have other push senders and want to handler here, fork your code here to handle
     [self displayOriginalContent];
     return;

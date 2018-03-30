@@ -152,7 +152,7 @@
   
 }
 
-// Tell Appboy to add or remove values from array
+// Tell Braze to add or remove values from array
 - (void)addOrRemoveFromArray:(NSString *)addOrRemove {
   BOOL keyIsValid = [self stringIsNotEmpty:self.attributeKeyTextField.text];
   BOOL valueIsValid = [self stringIsNotEmpty:self.attributeValueTextField.text];
@@ -168,7 +168,7 @@
   }
 }
 
-// Tell Appboy to set array values
+// Tell Braze to set array values
 - (IBAction)setArrayValues:(id)sender {
   BOOL keyIsValid = [self stringIsNotEmpty:self.attributeKeyTextField.text];
   

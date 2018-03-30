@@ -4,7 +4,7 @@
 /*!
  * The ABKInAppMessageClickActionType defines the action that will be performed when the in-app message is clicked.
  *
- *   ABKInAppMessageDisplayNewsFeed - This is the default behavior. It will open a modal view of Appboy news feed.
+ *   ABKInAppMessageDisplayNewsFeed - This is the default behavior. It will open a modal view of Braze news feed.
  *
  *   ABKInAppMessageRedirectToURI - The in-app message will try to redirect to the uri defined by the uri property. Only when the uri
  *    is an HTTP URL, a modal web view will be displayed. If the uri is a protocol uri, the in-app message will redirect to the
@@ -62,7 +62,7 @@ static CGFloat const BlueValueOfDefaultIconColorAndButtonBgColor = 213.0f / 255.
 static CGFloat const AlphaValueOfDefaultIconColorAndButtonBgColor = 1.0f;
 
 /*
- * Appboy Public API: ABKInAppMessage
+ * Braze Public API: ABKInAppMessage
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessage : NSObject
@@ -73,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy) NSString *message;
 
 /*!
- * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
+ * This property carries extra data in the form of an NSDictionary which can be sent down via the Braze Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use-case.
  */
 @property (strong, nullable) NSDictionary *extras;
@@ -124,9 +124,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nullable) UIColor *textColor;
 
 /*!
- * icon defines the font awesome unicode string of the Appboy icon.
- * You can choose to display one of the Appboy icons from Appboy dashboard. When you do so, this property will have the
- * unicode string of font awesome.
+ * icon the unicode string of the Font Awesome icon for this in-app message.
+ *
+ * You may add Font Awesome icons to in-app messages from the Braze dashboard.
  */
 @property (nonatomic, copy, nullable) NSString *icon;
 
@@ -188,7 +188,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  * If you're handling in-app messages completely on your own, you should still report
- * impressions and clicks on the in-app message back to Appboy with these methods so that your campaign reporting features
+ * impressions and clicks on the in-app message back to Braze with these methods so that your campaign reporting features
  * still work in the dashboard.
  *
  * Note: Each in-app message can log at most one impression and at most one click.
@@ -206,7 +206,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setInAppMessageClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
 
 /*!
- * Serializes the in-app message to binary data for use by wrappers such as Appboy's Unity SDK for iOS.
+ * Serializes the in-app message to binary data for use by wrappers such as Braze's Unity SDK for iOS.
  */
 - (nullable NSData *)serializeToData;
 

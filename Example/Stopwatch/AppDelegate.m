@@ -71,7 +71,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   }
   appboyOptions[ABKPushStoryAppGroupKey] = @"group.com.appboy.stopwatch";
 
-  // Starts up Appboy, opening a new session and causing an updated in-app message/feed to be requested.
+  // Starts up Braze, opening a new session and causing an updated in-app message/feed to be requested.
   [Appboy startWithApiKey:apiKeyToUse
           inApplication:application
       withLaunchOptions:launchOptions
@@ -121,27 +121,27 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   return handledByBranch || handledByFirebase;
 }
 
-// Pass the deviceToken to Appboy as well
+// Pass the deviceToken to Braze as well
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
 }
 
-// When a notification is received, pass it to Appboy. If the notification is received when the app
-// is in the background, Appboy will try to fetch the news feed, and call completionHandler after
+// When a notification is received, pass it to Braze. If the notification is received when the app
+// is in the background, Braze will try to fetch the news feed, and call completionHandler after
 // the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   if ([ABKPushUtils isUninstallTrackingRemoteNotification:userInfo]) {
-    NSLog(@"Got uninstall tracking push from Appboy");
+    NSLog(@"Got uninstall tracking push from Braze");
   } else if ([ABKPushUtils isGeofencesSyncRemoteNotification:userInfo]) {
-    NSLog(@"Got geofences sync push from Appboy");
+    NSLog(@"Got geofences sync push from Braze.");
   }
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
   NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
   
   if ([ABKPushUtils isAppboyRemoteNotification:userInfo] && ![ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    NSLog(@"Remote notification was sent from Appboy, clearing badge number.");
+    NSLog(@"Remote notification was sent from Braze, clearing badge number.");
   }
 }
 
@@ -177,7 +177,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   return YES;
 }
 
-# pragma mark - Appboy Push Registration
+# pragma mark - Braze Push Registration
 
 - (void) setupRemoteNotificationForiOS8And9 {
   UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationAction alloc] init];
@@ -202,7 +202,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   likeCategory.identifier = @"LIKE_CATEGORY";
   [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
   
-  // Adding Appboy default categories
+  // Adding Braze default categories
   NSMutableSet *categories = [NSMutableSet setWithSet:[ABKPushUtils getAppboyUIUserNotificationCategorySet]];
   [categories addObject:likeCategory];
   UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
@@ -229,7 +229,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
                                                                                 actions:@[likeAction, unlikeAction]
                                                                       intentIdentifiers:@[]
                                                                                 options:0];
-  // Adding Appboy default categories
+  // Adding Braze default categories
   NSMutableSet *categories = [NSMutableSet setWithSet:[ABKPushUtils getAppboyUNNotificationCategorySet]];
   [categories addObject:likeCategory];
   [center setNotificationCategories:categories];
@@ -259,7 +259,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   
   if ([ABKPushUtils isAppboyUserNotification:response]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    NSLog(@"User notification was sent from Appboy, clearing badge number.");
+    NSLog(@"User notification was sent from Braze, clearing badge number.");
   }
 }
 
@@ -284,7 +284,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     [self handleUniversalLinkString:[[url absoluteString] stringByRemovingPercentEncoding] withABKURLDelegate:YES];
     return YES;
   }
-  // Let Appboy handle links otherwise
+  // Let Braze handle links otherwise
   return NO;
 }
 

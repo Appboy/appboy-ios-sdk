@@ -2,7 +2,7 @@
 #import "ABKFeedController.h"
 
 /*
- * Appboy Public API: ABKCard
+ * Braze Public API: ABKCard
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKCard : NSObject <NSCopying, NSCoding>
@@ -18,12 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL viewed;
 
 /*
- * The property is the unix timestamp of the card's creation time from Appboy dashboard.
+ * The property is the unix timestamp of the card's creation time from Braze dashboard.
  */
 @property (nonatomic, readonly) double created;
 
 /*
- * The property is the unix timestamp of the card's latest update time from Appboy dashboard.
+ * The property is the unix timestamp of the card's latest update time from Braze dashboard.
  */
 @property (nonatomic, readonly) double updated;
 
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly) double expiresAt;
 
 /*!
- * This property carries extra data in the form of an NSDictionary which can be sent down via the Appboy Dashboard.
+ * This property carries extra data in the form of an NSDictionary which can be sent down via the Braze Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use case.
  */
 @property (strong, nullable) NSDictionary *extras;
@@ -62,24 +62,24 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  * @param cardDictionary The dictionary for card deserialization.
  *
- * Deserializes the dictionary to a card for use by wrappers such as Appboy's Unity SDK for iOS.
+ * Deserializes the dictionary to a card for use by wrappers such as Braze's Unity SDK for iOS.
  * When the deserialization isn't successful, this method returns nil; otherwise, it returns the deserialized card.
  */
 + (nullable ABKCard *)deserializeCardFromDictionary:(nullable NSDictionary *)cardDictionary;
 
 /*
- * Serializes the card to binary data for use by wrappers such as Appboy's Unity SDK for iOS.
+ * Serializes the card to binary data for use by wrappers such as Braze's Unity SDK for iOS.
  */
 - (nullable NSData *)serializeToData;
 
 /*
- * Manually log an impression to Appboy for the card.
+ * Manually log an impression to Braze for the card.
  * This should only be used for custom news feed view controller. ABKFeedViewController already has card impression logging.
  */
 - (void)logCardImpression;
 
 /*
- * Manually log a click to Appboy for the card.
+ * Manually log a click to Braze for the card.
  * This should only be used for custom news feed view controller. ABKFeedViewController already has card click logging.
  * The SDK will only log a card click when the card has the url property with a valid url.
  */

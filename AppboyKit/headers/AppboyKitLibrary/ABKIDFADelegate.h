@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /*
- * Appboy Public API: ABKAppboyIDFADelegate
+ * Braze Public API: ABKAppboyIDFADelegate
  */
 NS_ASSUME_NONNULL_BEGIN
 @protocol ABKIDFADelegate <NSObject>

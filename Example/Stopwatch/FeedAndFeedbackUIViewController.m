@@ -43,7 +43,7 @@
 }
 
 #pragma mark News and Feedback Button
-// Example of Appboy in one action: a button that opens the News Feed page, on which there is a Feedback button
+// Example of Braze in one action: a button that opens the News Feed page, on which there is a Feedback button
 
 - (void)openFeedbackFromNavigationFeed:(id)sender {
   // Navigation context

@@ -12,11 +12,11 @@
                                      [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events", @"Alias"] andTitle:@"User" andImageName:@"user" withFeedAndFlushButtons:YES], // User tab
                                      [self addNavigationControllerWithChildren:@[@"UI", @"Controls"] andTitle:@"IAM" andImageName:@"IAM" withFeedAndFlushButtons:NO], // IAM tab
                                      [self addNavigationControllerWithIdentifier:@"FeedAndFeedbackViewController" withTitle:@"Feed/Feedback" andImageName:@"newsfeed"], // Feed/Feedback tab
-                                     [self addNavigationControllerWithChildren:@[@"Misc", @"PushStory"] andTitle:@"Advanced" andImageName:@"bolt" withFeedAndFlushButtons:NO], // Advanced tab
+                                     [self addNavigationControllerWithChildren:@[@"Misc", @"PushStory", @"Data"] andTitle:@"Advanced" andImageName:@"bolt" withFeedAndFlushButtons:NO], // Advanced tab
                                      nil];
   [self setViewControllers:viewControllers];
   
-  // Location Tracking: Let Appboy request location permission on your behalf
+  // Location Tracking: Let Braze request location permission on your behalf
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(requestLocationAuthorization)
                                                name:UIApplicationWillEnterForegroundNotification

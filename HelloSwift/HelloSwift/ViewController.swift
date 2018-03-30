@@ -9,7 +9,7 @@ class ViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    // Display the Appboy user ID in the text field
+    // Display the Braze user ID in the text field
     userIdTextField.text = Appboy.sharedInstance()!.user.userID
   }
   

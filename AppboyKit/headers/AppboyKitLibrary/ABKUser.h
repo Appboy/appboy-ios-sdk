@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  */
 
 /*
- * Appboy Public API: ABKUser
+ * Braze Public API: ABKUser
  */
 @interface ABKUser : NSObject
 
@@ -138,7 +138,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 
 /*!
  * Sets whether or not the user should be sent email campaigns. Setting it to unsubscribed opts the user out of
- * an email campaign that you create through the Appboy dashboard.
+ * an email campaign that you create through the Braze dashboard.
  *
  * @param emailNotificationSubscriptionType enum representing the user's email notifications subscription type.
  * @return YES if the field is set successfully, else NO.
@@ -250,7 +250,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * Sets a string array from a custom attribute specified by the key.
  *
  * @param key The custom attribute key
- * @param valueArray A string array to set as a custom attribute. If this value is nil, then Appboy will unset the custom
+ * @param valueArray A string array to set as a custom attribute. If this value is nil, then Braze will unset the custom
  *        attribute and remove the corresponding array if there is one.
  * @return YES if the operation was successful
  */
@@ -258,7 +258,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 
 /*!
 * Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES
-* when starting Appboy, so that the only locations being set are by the integrating app.  Otherwise, calls to this
+* when starting Braze, so that the only locations being set are by the integrating app.  Otherwise, calls to this
 * method will be contending with automatic location update events.
 *
 * @param latitude The latitude of the User's location in degrees, the number should be in the range of [-90, 90]
@@ -269,7 +269,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 
 /*!
 * Sets the last known location for the user. Intended for use with ABKDisableLocationAutomaticTrackingOptionKey set to YES
-* when starting Appboy, so that the only locations being set are by the integrating app.  Otherwise, calls to this
+* when starting Braze, so that the only locations being set are by the integrating app.  Otherwise, calls to this
 * method will be contending with automatic location update events.
 *
 * @param latitude The latitude of the User's location in degrees, the number should be in the range of [-90, 90]

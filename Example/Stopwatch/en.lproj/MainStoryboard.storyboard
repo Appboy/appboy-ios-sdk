@@ -71,6 +71,50 @@
             </objects>
             <point key="canvasLocation" x="620" y="-4007"/>
         </scene>
+        <!--Data View Controller-->
+        <scene sceneID="TEE-xP-AeY">
+            <objects>
+                <viewController storyboardIdentifier="Data" id="O7G-Pw-GL1" customClass="DataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K7P-a9-Wfu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ISu-dw-jTG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3i5-SB-6f7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRa-7I-fdX">
+                                <rect key="frame" x="23" y="120" width="327" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Wipe Data and Disable"/>
+                                <connections>
+                                    <action selector="wipeDataButton:" destination="O7G-Pw-GL1" eventType="touchUpInside" id="sDj-zm-5yI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmA-G8-V1a">
+                                <rect key="frame" x="55" y="201" width="265" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enable SDK on Next App Run"/>
+                                <connections>
+                                    <action selector="enableSDKButton:" destination="O7G-Pw-GL1" eventType="touchUpInside" id="fEX-8S-UIZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-gG-tny">
+                                <rect key="frame" x="145" y="279" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Disable SDK"/>
+                                <connections>
+                                    <action selector="disableSDKButton:" destination="O7G-Pw-GL1" eventType="touchUpInside" id="2MD-AV-CaU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLA-Wr-tWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.5" y="-4007"/>
+        </scene>
         <!--Misc View Controller-->
         <scene sceneID="WJM-fM-e7F">
             <objects>
@@ -89,17 +133,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fba-Vc-gZu" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="793"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appboy Version:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNO-pV-BHh">
-                                                <rect key="frame" x="80" y="10" width="100" height="38"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Braze Version:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNO-pV-BHh">
+                                                <rect key="frame" x="80" y="10" width="87.333333333333314" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-iv-ktD">
-                                                <rect key="frame" x="80.333333333333314" y="58" width="214" height="38"/>
+                                                <rect key="frame" x="87.333333333333314" y="58" width="200" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                <state key="normal" title="Change Appboy Flush Mode">
+                                                <state key="normal" title="Change Braze Flush Mode">
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <state key="highlighted">
@@ -147,8 +191,8 @@
                                                     <action selector="logSingleLocation:" destination="Lea-J4-vz9" eventType="touchUpInside" id="c6W-Ts-ih8"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appboy Flush Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8J-GY-Dyi">
-                                                <rect key="frame" x="109.33333333333331" y="106" width="158" height="38"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Braze Flush Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8J-GY-Dyi">
+                                                <rect key="frame" x="116.66666666666667" y="106" width="141.66666666666663" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
