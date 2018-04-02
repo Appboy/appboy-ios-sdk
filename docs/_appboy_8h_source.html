@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#import &lt;UserNotifications/UserNotifications.h&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef APPBOY_SDK_VERSION</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;3.3.2&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;3.3.3&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * Keys for Appboy startup options</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * Keys for Braze startup options</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> ABKRequestProcessingPolicyOptionKey;</div>
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;};</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"> * Appboy Public API: Appboy</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"> * Braze Public API: Appboy</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno"><a class="code" href="interface_appboy.html">  202</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_appboy.html">Appboy</a> : NSObject</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
@@ -283,12 +283,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="comment"> * Data processing configuration methods.</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;+ (void)<a class="code" href="interface_appboy.html#ac8d580f60ec0608cd91240a8a3aa23a3">wipeDataAndDisableForAppRun</a>;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a8d3b78a98420713d8590ed63c9172733">disableSDK</a>;</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b">requestEnableSDKOnNextAppRun</a>;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 30 2018 21:02:38 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 2 2018 11:34:24 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
