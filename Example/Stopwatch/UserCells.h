@@ -12,7 +12,6 @@
 
 @property IBOutlet UILabel *eventLabel;
 @property IBOutlet UITextField *eventTextField;
-- (void)initializeTextFieldWithString:(NSString *)string;
 
 @end
 
@@ -26,6 +25,7 @@
 @interface EventButtonCell : UITableViewCell
 
 @property IBOutlet UIButton *eventButton;
+@property (nonatomic, weak) IBOutlet UIView *divView;
 
 @end
 

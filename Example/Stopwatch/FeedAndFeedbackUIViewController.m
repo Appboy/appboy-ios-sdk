@@ -1,6 +1,16 @@
 #import <Foundation/Foundation.h>
 #import "FeedAndFeedbackUIViewController.h"
 #import "AppboyFeedback.h"
+#import "UIViewController+Keyboard.h"
+
+@interface FeedAndFeedbackViewController ()
+
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
+
+- (void)updateScrollViewContentSize;
+
+@end
 
 @implementation FeedAndFeedbackViewController
 
@@ -30,6 +40,18 @@
                                                                                          style:UIBarButtonItemStylePlain
                                                                                         target:self
                                                                                         action:@selector(dismissNewsAndFeedbackModalView:)];
+  [self addDismissGestureForView:self.scrollView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self updateScrollViewContentSize];
+}
+
+#pragma mark - Scroll view settings
+
+- (void)updateScrollViewContentSize {
+  self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.contentViewHeightConstraint.constant);
 }
 
 #pragma mark News Feed Card Count
@@ -165,6 +187,15 @@
       [alertView show];
       alertView = nil;
     });
+  }];
+}
+
+#pragma mark - Transition
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+  // updating content size when interface orientation changes
+  [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {} completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+    [self updateScrollViewContentSize];
   }];
 }
 

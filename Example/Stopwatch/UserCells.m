@@ -6,10 +6,6 @@
 
 @implementation EventTextFieldCell
 
-- (void)initializeTextFieldWithString:(NSString *)string {
-  self.eventTextField.text = string;
-}
-
 @end
 
 @implementation EventSwitchCell

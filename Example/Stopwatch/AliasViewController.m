@@ -1,14 +1,12 @@
 #import "AliasViewController.h"
 #import "AppboyKit.h"
+#import "UIViewController+Keyboard.h"
 
 @implementation AliasViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+  [super viewDidLoad];
+  [self addDismissGestureForView:self.view];
 }
 
 - (IBAction)addUserAliasButtonClick:(id)sender {  

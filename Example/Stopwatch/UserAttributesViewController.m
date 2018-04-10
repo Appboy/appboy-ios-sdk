@@ -1,6 +1,7 @@
 #import "UserAttributesViewController.h"
 #import <AppboyKit.h>
 #import "UserCells.h"
+#import "UIViewController+Keyboard.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
 static NSInteger const TotalNumberOfAttributes = 14;
@@ -101,14 +102,15 @@ static NSMutableArray *attributesValuesArray = nil;
     // Preview text
     if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil)]) {
       cell.attributeTextField.placeholder = @"Enter 'm', 'f', 'u', 'o', 'n', or 'p'";
+    } else {
+      cell.attributeTextField.placeholder = @"";
     }
 
     cell.attributeTextField.tag = TextFieldTagNumber + indexPath.row; // The text field's tag is 1000 plus the row number
     id object = attributesValuesArray[(NSUInteger)indexPath.row];
     if ([object isKindOfClass:[NSString class]]) {
       cell.attributeTextField.text = (NSString *)object;
-    }
-    else if ([object isKindOfClass:[NSDate class]]) {
+    } else if ([object isKindOfClass:[NSDate class]]) {
       cell.attributeTextField.text = [self getBirthdayStringFromDate:(NSDate *)object];
     } else {
       cell.attributeTextField.text = nil;
@@ -200,6 +202,7 @@ static NSMutableArray *attributesValuesArray = nil;
 }
 
 - (IBAction)setSubscriptionState:(UISegmentedControl *)sender {
+  [self dismissKeyboard];
   NSString *subscriptionState;
   if (sender.selectedSegmentIndex == 0) {
     subscriptionState = @"u"; // unsubscribed
@@ -214,6 +217,7 @@ static NSMutableArray *attributesValuesArray = nil;
 
 // Set user attributes and/or change the current userId.  See Appboy.h for a discussion about changing the userId.
 - (IBAction)doneButtonTapped:(id)sender {
+  [self dismissKeyboard];
   if (self.currentEditingTextField && self.currentEditingTextField.tag != IndexOfBirthday + TextFieldTagNumber) {
     if (self.currentEditingTextField.text.length > 0) {
       attributesValuesArray[(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber] = self.currentEditingTextField.text;

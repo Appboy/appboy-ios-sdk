@@ -4,6 +4,15 @@
 #import "ABKLocationManager.h"
 #import "AppDelegate.h"
 
+@interface MiscViewController ()
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
+
+- (void)updateScrollViewContentSize;
+- (void)setViewBottomSpace:(CGFloat)bottomSpace;
+
+@end
+
 @implementation MiscViewController
 
 - (void)viewDidLoad{
@@ -19,6 +28,35 @@
   self.urlDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetURLDelegateKey];
   self.sessionTimeoutTextField.keyboardType = UIKeyboardTypeNumberPad;
   self.sessionTimeoutTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:NewSessionTimeoutKey];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self updateScrollViewContentSize];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewDidUnload {
+  [self setFlushModeLabel:nil];
+  [super viewDidUnload];
+}
+
+#pragma mark - Scroll view settings
+
+- (void)updateScrollViewContentSize {
+  self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.contentViewHeightConstraint.constant);
+}
+
+- (void)setViewBottomSpace:(CGFloat)bottomSpace {
+  self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, bottomSpace, 0.0);
 }
 
 /* Data Flush Settings */
@@ -69,29 +107,6 @@
       break;
   }
   [self.flushModeLabel setNeedsDisplay];
-}
-
-- (void)viewDidUnload {
-  [self setFlushModeLabel:nil];
-  [super viewDidUnload];
-}
-
-- (void)keyboardDidShow:(NSNotification *)notification {
-  NSDictionary *info = [notification userInfo];
-  CGRect keyboardRect = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-  keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
-  
-  UIEdgeInsets contentInset = self.scrollView.contentInset;
-  contentInset.bottom = keyboardRect.size.height;
-  self.scrollView.contentInset = contentInset;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
 }
 
 /* Logging Attribution Data */
@@ -182,6 +197,28 @@
                                            otherButtonTitles:nil];
   [theAlert show];
   theAlert = nil;
+}
+
+
+#pragma mark - Keyboard
+
+- (void)keyboardDidShow:(NSNotification *)notification {
+  CGSize keyboardSize = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  CGFloat keyboardHeight = MIN(keyboardSize.width, keyboardSize.height);
+  [self setViewBottomSpace:keyboardHeight];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+  [self setViewBottomSpace:0.0];
+}
+
+#pragma mark - Transition
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+  // updating content size when interface orientation changes
+  [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {} completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+    [self updateScrollViewContentSize];
+  }];
 }
 
 @end

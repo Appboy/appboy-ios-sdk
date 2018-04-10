@@ -86,19 +86,15 @@ static NSString *const SwitchCell = @"switch cell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *label = [self labelForIndexPath:indexPath];
   NSInteger row = indexPath.row;
-  NSString *label;
-  if (indexPath.section == 0) {
-    label = self.labelsArraySection1[row];
-  } else if (indexPath.section == 1) {
-    label = self.labelsArraySection2[row];
-  }
-  
   UITableViewCell *cell = nil;
   if ([label isEqualToString:LogEvent] || [label isEqualToString:LogPurchase]) {
     // EventButtonCell
     cell = [self createCellWithIdentifier:ButtonCell withClass:[EventButtonCell class]];
-    [((EventButtonCell*) cell).eventButton setTitle:label forState:UIControlStateNormal];
+    EventButtonCell *buttonCell = (EventButtonCell *)cell;
+    [buttonCell.eventButton setTitle:label forState:UIControlStateNormal];
+    buttonCell.divView.hidden = ![label isEqualToString:LogPurchase];
   } else if ([label isEqualToString:Name]
              || [label isEqualToString:ProductId]
              || [label isEqualToString:CurrencyCode]
@@ -139,9 +135,6 @@ static NSString *const SwitchCell = @"switch cell";
 
 - (UITableViewCell *)createCellWithIdentifier:(NSString *)identifier withClass:(Class)class {
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
-  if (cell == nil && [class isKindOfClass:[UITableViewCell class]]) {
-    cell = (UITableViewCell *)[[class alloc] init];
-  }
   return cell;
 }
 
@@ -151,6 +144,24 @@ static NSString *const SwitchCell = @"switch cell";
   } else {
     return self.labelsArraySection2.count;
   }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *label = [self labelForIndexPath:indexPath];
+  if ([label isEqualToString:LogEvent] || [label isEqualToString:LogPurchase]) {
+    return TableViewTopY + 22.0;
+  }
+  return TableViewTopY;
+}
+
+- (NSString *)labelForIndexPath:(NSIndexPath *)indexPath {
+  NSString *label = @"";
+  if (indexPath.section == 0) {
+    label = self.labelsArraySection1[indexPath.row];
+  } else if (indexPath.section == 1) {
+    label = self.labelsArraySection2[indexPath.row];
+  }
+  return label;
 }
 
 #pragma mark UITextFieldDelegate

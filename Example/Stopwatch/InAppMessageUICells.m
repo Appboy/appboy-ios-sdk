@@ -82,6 +82,7 @@
     }];
     [actionSheet addAction:action];
   }
+  [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
   return actionSheet;
 }
 

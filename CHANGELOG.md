@@ -1,3 +1,9 @@
+## 3.3.4
+
+##### Added
+- Added the ability to view verbose logs from the SDK for debugging.
+  - To enable verbose logging, add a dictionary named `Appboy` to your `Info.plist` file. Inside the `Appboy` Dictionary, add the `LogLevel` String subentry and set the value to "0".
+
 ## 3.3.3
 
 ##### Added
@@ -297,7 +303,7 @@
 
 ##### Breaking
  - Updates the SDK to require XCode 8.
- - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Braze iOS integrations.  Please see our updated documentation [here](https://www.braze.com/documentation/iOS/#step-4-update-application-code); if you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update.
+ - iOS 10 changes behavior of `application:didReceiveRemoteNotification:fetchCompletionHandler` and subsequently breaks open tracking and deep link handling on most existing Braze iOS integrations. If you don't currently implement `application:didReceiveRemoteNotification:` you need to modify your integration, and we recommend that all users update.
 
 ##### Added
  - Updates the iOS and tvOS SDKs to support iOS 10.

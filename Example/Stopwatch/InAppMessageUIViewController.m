@@ -1,8 +1,9 @@
 #import "InAppMessageUIViewController.h"
 #import "InAppMessageUICells.h"
+#import "InAppMessageHTMLComposerViewController.h"
 #import "AppboyKit.h"
+#import "UIViewController+Keyboard.h"
 
-static const int TableViewTopY = 44;
 static const NSInteger textFieldTagNumber = 50;
 static const CGFloat ButtonTableViewCellHeight = 176.0f;
 static const CGFloat NormalTableViewCellHeight = 44.0f;
@@ -10,12 +11,19 @@ static const CGFloat ColorTableViewCellHeight = 88.0f;
 
 static const int CustomInAppMessageDuration = 5;
 
-static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOPWATCH.zip";
-
 @interface InAppMessageUIViewController()
 
-@property (nonatomic) NSString *htmlWithJS;
-@property (nonatomic) NSString *htmlWithoutAssetZip;
+@property (nonatomic, weak) IBOutlet UIView *HTMLComposerView;
+
+@property (nonatomic, strong) InAppMessageHTMLComposerViewController *htmlComposerVC;
+@property (nonatomic, assign) BOOL keyboardIsShown;
+@property (nonatomic, assign) BOOL inAppMessagePending;
+
+- (void)loadHTMLComposer;
+- (void)setHTMLHidden:(BOOL)hidden;
+- (void)setViewBottomSpace:(CGFloat)bottomSpace;
+- (void)keyboardDidShow:(NSNotification *)notification;
+- (void)keyboardWillHide:(NSNotification *)notification;
 
 @end
 
@@ -23,6 +31,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   self.inAppMessageDictionary = [NSMutableDictionary dictionaryWithCapacity:3];
   self.inAppSlideupList = [NSMutableArray arrayWithArray:
     @[ItemIcon, ItemIconBackgroundColor, ItemImageURL, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemHideChevron,
@@ -36,50 +45,42 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
     @[ItemImageURL, ItemHeader, ItemHeaderColor, ItemMessage, ItemBodyColor, ItemBackgroundColor, ItemCloseButtonColor, ItemModalFrameColor,
       ItemClickAction, ItemClickActionURL, ItemDismissType, ItemDuration, ItemOrientation, ItemImageGraphic, ItemMessageAlignment, ItemHeaderAlignment, ItemImageContentMode, ItemButtonNumber]];
   self.inAppMessageDictionary[ItemImageURL] = @"https://appboy-images.com/appboy/communication/marketing/slide_up/slide_up_message_parameters/images/55e0c42664617307440c0000/147326cf775c7ce6f24ad5ad731254f040ed97f7/original.?1440793642";
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
   
-  self.htmlWithJS = [self getHTMLStringFromFile:@"InAppMessageWithJS"];
-  self.htmlWithoutAssetZip = [self getHTMLStringFromFile:@"InAppMessageWithoutAssetZip"];
-
-  self.HTMLInAppTextView.text = self.htmlWithJS;
+  [self loadHTMLComposer];
+  
+  NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+  [notificationCenter addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+  [notificationCenter addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+  [notificationCenter addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
-- (NSString *)getHTMLStringFromFile:(NSString *)filePath {
-  NSString *filepath = [[NSBundle mainBundle] pathForResource:filePath ofType:@"html"];
-  NSError *error;
-  return [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
+#pragma mark - Child VC
+
+- (void)loadHTMLComposer {
+  self.htmlComposerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InAppMessageHTMLComposerViewController"];
+  self.htmlComposerVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+  [self addChildViewController:self.htmlComposerVC];
+
+  [self.HTMLComposerView addSubview:self.htmlComposerVC.view];
+  [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[v]-0-|" options:0 metrics:nil views:@{ @"v": self.htmlComposerVC.view }]];
+  [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[v]-0-|" options:0 metrics:nil views:@{ @"v": self.htmlComposerVC.view }]];
+  
+  [self.htmlComposerVC didMoveToParentViewController:self];
 }
 
 - (IBAction)inAppMessageTypeChanged:(id)sender {
+  [self dismissKeyboard];
   if (self.inAppMessageTypeSegment.selectedSegmentIndex == 3) {
-    self.HTMLComposerView.hidden = NO;
+    [self setHTMLHidden:NO];
     return;
   }
-  [self.HTMLInAppTextView resignFirstResponder];
-  self.HTMLComposerView.hidden = YES;
+  [self.htmlComposerVC dismissKeyboard];
+  [self setHTMLHidden:YES];
   [self.tableView reloadData];
-}
-
-- (IBAction)HTMLTypeChanged:(id)sender {
-  switch (self.HTMLTypeSegment.selectedSegmentIndex) {
-    case 0:
-      self.zipRemoteURLTextField.text = HTMLAssetsZip;
-      self.HTMLInAppTextView.text = self.htmlWithJS;
-      break;
-    case 1:
-      self.zipRemoteURLTextField.text = @"";
-      self.HTMLInAppTextView.text = self.htmlWithoutAssetZip;
-      break;
-  }
 }
 
 - (void)dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self currentArrayList].count;
 }
 
 - (NSMutableArray *)currentArrayList {
@@ -94,6 +95,12 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
       return self.inAppSlideupList;
   }
   return nil;
+}
+
+#pragma mark - Table view datasource & delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [self currentArrayList].count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -188,6 +195,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
 }
 
 - (IBAction)ChangeTextFieldContent:(UIButton *)sender {
+  [self dismissKeyboard];
   UIView *cell = sender.superview;
   while (![cell isKindOfClass:[ButtonLabelCell class]] && cell.superview != nil) {
     cell = cell.superview;
@@ -206,6 +214,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
 }
 
 - (IBAction)changeColor:(UIButton *)sender {
+  [self dismissKeyboard];
   UIView *cell = sender.superview;
   while (![cell isKindOfClass:[ColorCell class]] && cell.superview != nil) {
     cell = cell.superview;
@@ -229,6 +238,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
 }
 
 - (IBAction)hideChevronChanged:(UISwitch *)sender {
+  [self dismissKeyboard];
   self.inAppMessageDictionary[ItemHideChevron] = @(sender.on);
   
   UIView *cell = sender.superview;
@@ -239,6 +249,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
 }
 
 - (IBAction)buttonSegmentChanged:(UISegmentedControl *)sender {
+  [self dismissKeyboard];
   UIView *cell = sender.superview;
   while (![cell isKindOfClass:[SegmentCell class]] && cell.superview != nil) {
     cell = cell.superview;
@@ -307,6 +318,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
 }
 
 - (IBAction)opacitySliderValueChanged:(UISlider *)slider {
+  [self dismissKeyboard];
   UIView *cell = slider.superview;
   while (![cell isKindOfClass:[ColorCell class]] && cell.superview != nil) {
     cell = cell.superview;
@@ -317,17 +329,13 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
   }
 }
 
-- (IBAction)displayInAppMessage:(id)sender {
-  [self.currentTextField resignFirstResponder];
+- (void)displayInAppMessage {
   ABKInAppMessage *inAppMessage = nil;
   switch (self.inAppMessageTypeSegment.selectedSegmentIndex) {
     case 3: {
-      [self.HTMLInAppTextView resignFirstResponder];
       ABKInAppMessageHTMLFull *inAppHTMLFull = [[ABKInAppMessageHTMLFull alloc] init];
-      if (self.zipRemoteURLTextField.text != nil && ![self.zipRemoteURLTextField.text isEqualToString:@""]) {
-        inAppHTMLFull.assetsZipRemoteUrl = [NSURL URLWithString:self.zipRemoteURLTextField.text];
-      }
-      inAppHTMLFull.message = self.HTMLInAppTextView.text;
+      inAppHTMLFull.assetsZipRemoteUrl = [self.htmlComposerVC remoteURL];
+      inAppHTMLFull.message = [self.htmlComposerVC inAppText];
       [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppHTMLFull];
       return;
     }
@@ -375,7 +383,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
       ABKInAppMessageClickActionType clickAction;
       switch ([self.inAppMessageDictionary[key] integerValue]) {
         case 0:
-       default:
+        default:
           clickAction = ABKInAppMessageDisplayNewsFeed;
           break;
         case 1:
@@ -431,7 +439,7 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
           break;
       }
     }
-
+    
     if ([inAppMessage isKindOfClass:[ABKInAppMessageSlideup class]]) {
       ABKInAppMessageSlideup *inAppSlideup = (ABKInAppMessageSlideup *) inAppMessage;
       if ([key isEqualToString:ItemHideChevron]) {
@@ -492,30 +500,56 @@ static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOP
   [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppMessage];
 }
 
-- (void)keyboardDidShow:(NSNotification *)notification {
-  NSDictionary *info = [notification userInfo];
-  CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-  CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
-  if (!self.HTMLComposerView.hidden) {
-    [self setTableViewOrHTMLComposerHeight:self.HTMLComposerView.frame.size.height - keyboardHeight];
+- (IBAction)displayInAppMessage:(id)sender {
+  if (self.keyboardIsShown) {
+    self.inAppMessagePending = YES;
+    [self dismissKeyboard];
   } else {
-    [self setTableViewOrHTMLComposerHeight:self.view.bounds.size.height - keyboardHeight - TableViewTopY];
+    [self displayInAppMessage];
   }
+}
+
+#pragma mark - Keyboard
+
+- (void)keyboardDidShow:(NSNotification *)notification {
+  self.keyboardIsShown = YES;
+  CGSize keyboardSize = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  CGFloat keyboardHeight = MIN(keyboardSize.width, keyboardSize.height);
+  [self setViewBottomSpace:keyboardHeight];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-  [self.view setNeedsUpdateConstraints];
-  [self.HTMLInAppTextView layoutIfNeeded];
+  [self setViewBottomSpace:0.0];
 }
 
-- (void)setTableViewOrHTMLComposerHeight:(CGFloat)height {
-  BOOL isHTMLComposer = !self.HTMLComposerView.hidden;
-  CGRect aRect = isHTMLComposer ? self.HTMLComposerView.frame : self.tableView.frame;
-  aRect.size.height = height;
-  if (isHTMLComposer) {
-    self.HTMLInAppTextView.frame = aRect;
-  } else {
-    self.tableView.frame = aRect;
+- (void)keyboardDidHide:(NSNotification *)notification {
+  self.keyboardIsShown = NO;
+  if (self.inAppMessagePending) {
+    self.inAppMessagePending = NO;
+    [self displayInAppMessage];
   }
 }
+
+#pragma mark - UI
+
+- (void)setHTMLHidden:(BOOL)hidden {
+  if (hidden) {
+    [self.htmlComposerVC dismissKeyboard];
+  }
+  self.HTMLComposerView.hidden = hidden;
+  self.tableView.userInteractionEnabled = hidden;
+}
+
+- (void)setViewBottomSpace:(CGFloat)bottomSpace {
+  self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, bottomSpace, 0.0);
+  if (bottomSpace > 0.0) {
+    [self.htmlComposerVC setHTMLComposerBottomSpace:bottomSpace];
+  } else {
+    [self.htmlComposerVC setHTMLComposerBottomSpace:10.0];
+  }
+  [self.view invalidateIntrinsicContentSize];
+  [self.view setNeedsLayout];
+  [self.view layoutIfNeeded];
+}
+
 @end

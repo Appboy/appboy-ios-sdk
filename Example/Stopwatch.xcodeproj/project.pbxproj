@@ -44,6 +44,9 @@
 		95EF511A173D5FD600C0D780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5119173D5FD600C0D780 /* main.m */; };
 		95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
+		ADC332E12076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC332E02076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m */; };
+		ADC332E42077A43E00D688E3 /* UIViewController+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */; };
+		ADC332E82077AB4200D688E3 /* ScrollContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC332E72077AB4200D688E3 /* ScrollContentView.m */; };
 		C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
 		C1C53F001F7D7CA700042AA5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
@@ -206,6 +209,12 @@
 		95EF515D173D6AAA00C0D780 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		95EF515F173D6AB100C0D780 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A2E478A21CAD63AA6C497DB0 /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
+		ADC332DF2076A56F00D688E3 /* InAppMessageHTMLComposerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppMessageHTMLComposerViewController.h; sourceTree = "<group>"; };
+		ADC332E02076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InAppMessageHTMLComposerViewController.m; sourceTree = "<group>"; };
+		ADC332E22077A43E00D688E3 /* UIViewController+Keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Keyboard.h"; sourceTree = "<group>"; };
+		ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Keyboard.m"; sourceTree = "<group>"; };
+		ADC332E62077AB4200D688E3 /* ScrollContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollContentView.h; sourceTree = "<group>"; };
+		ADC332E72077AB4200D688E3 /* ScrollContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollContentView.m; sourceTree = "<group>"; };
 		C03E52C51D46574A0065ABD6 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0A45ABC1E66155C0028C5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C12172071D5A3815003B986E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -471,6 +480,7 @@
 		95EF5113173D5FD600C0D780 /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
+				ADC332E52077AB2500D688E3 /* ScrollContentView */,
 				E3C754A71E7AE970004E1CCE /* InAppMessages */,
 				4E94D76F1743EE8900604EA0 /* AppDelegate.h */,
 				4E94D7701743EE8900604EA0 /* AppDelegate.m */,
@@ -479,10 +489,10 @@
 				D411F3101CD0355200100702 /* CustomTabBarController.h */,
 				D411F3111CD0355200100702 /* CustomTabBarController.m */,
 				4E3178751AC49363006C88B4 /* CustomInAppMessageClasses */,
-				D400EBF11CC86A6100550AD8 /* EventsViewController.h */,
-				D400EBF21CC86A6100550AD8 /* EventsViewController.m */,
 				D4139BEA1CBDA4E500CA3307 /* FeedAndFeedbackUIViewController.h */,
 				D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */,
+				D400EBF11CC86A6100550AD8 /* EventsViewController.h */,
+				D400EBF21CC86A6100550AD8 /* EventsViewController.m */,
 				4E6D661519DCC18F009983AD /* Images.xcassets */,
 				95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */,
 				4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */,
@@ -507,6 +517,8 @@
 				C1EB09941F747AFB000867F2 /* PushStoryViewController.m */,
 				7F825DE9205C810100150F07 /* DataViewController.m */,
 				7F825DE8205C80D300150F07 /* DataViewController.h */,
+				ADC332E22077A43E00D688E3 /* UIViewController+Keyboard.h */,
+				ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -523,6 +535,15 @@
 				95EF5123173D5FD600C0D780 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADC332E52077AB2500D688E3 /* ScrollContentView */ = {
+			isa = PBXGroup;
+			children = (
+				ADC332E62077AB4200D688E3 /* ScrollContentView.h */,
+				ADC332E72077AB4200D688E3 /* ScrollContentView.m */,
+			);
+			name = ScrollContentView;
 			sourceTree = "<group>";
 		};
 		C1C53F021F7D7CA700042AA5 /* StopwatchNotificationContentExtension */ = {
@@ -601,6 +622,8 @@
 				4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */,
 				4EABC1981A606D00007259BD /* InAppMessageUIViewController.h */,
 				4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */,
+				ADC332DF2076A56F00D688E3 /* InAppMessageHTMLComposerViewController.h */,
+				ADC332E02076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m */,
 			);
 			name = InAppMessages;
 			sourceTree = "<group>";
@@ -1056,7 +1079,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1125,7 +1148,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1165,7 +1188,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKPageView.nib",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1184,6 +1207,7 @@
 				D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */,
 				D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */,
 				4EA7AA8E185626EC00D2B651 /* MiscViewController.m in Sources */,
+				ADC332E42077A43E00D688E3 /* UIViewController+Keyboard.m in Sources */,
 				E3C754A41E70DE7D004E1CCE /* AliasViewController.m in Sources */,
 				E325DF461E29A93300B3E168 /* GeofencesViewController.m in Sources */,
 				4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */,
@@ -1195,6 +1219,8 @@
 				E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */,
 				953574AB1743F862003A64B3 /* UserAttributesViewController.m in Sources */,
 				C1EB09951F747AFB000867F2 /* PushStoryViewController.m in Sources */,
+				ADC332E82077AB4200D688E3 /* ScrollContentView.m in Sources */,
+				ADC332E12076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserCells.m in Sources */,
 				E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */,
 				D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */,
