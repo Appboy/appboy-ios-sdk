@@ -35,16 +35,16 @@ static NSString *const SwitchCell = @"switch cell";
   self.eventPropertyType = 0;
   self.purchasePropertyType = 0;
   
-  self.labelsArraySection1 = [NSMutableArray arrayWithArray:@[LogEvent,
-                                                      Name,
-                                                      EventSwitch]];
+  self.labelsArraySection1 = [NSMutableArray arrayWithArray:@[Name,
+                                                              EventSwitch,
+                                                              LogEvent]];
   
-  self.labelsArraySection2 = [NSMutableArray arrayWithArray:@[LogPurchase,
-                                                              ProductId,
+  self.labelsArraySection2 = [NSMutableArray arrayWithArray:@[ProductId,
                                                               CurrencyCode,
                                                               Price,
                                                               Quantity,
-                                                              PurchaseSwitch]];
+                                                              PurchaseSwitch,
+                                                              LogPurchase]];
   
   self.valuesDictionary = [NSMutableDictionary dictionaryWithDictionary:@{
                                                                           Name : @"",
@@ -94,7 +94,6 @@ static NSString *const SwitchCell = @"switch cell";
     cell = [self createCellWithIdentifier:ButtonCell withClass:[EventButtonCell class]];
     EventButtonCell *buttonCell = (EventButtonCell *)cell;
     [buttonCell.eventButton setTitle:label forState:UIControlStateNormal];
-    buttonCell.divView.hidden = ![label isEqualToString:LogPurchase];
   } else if ([label isEqualToString:Name]
              || [label isEqualToString:ProductId]
              || [label isEqualToString:CurrencyCode]
@@ -148,8 +147,15 @@ static NSString *const SwitchCell = @"switch cell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSString *label = [self labelForIndexPath:indexPath];
-  if ([label isEqualToString:LogEvent] || [label isEqualToString:LogPurchase]) {
+  if ([label isEqualToString:LogEvent] ||
+      [label isEqualToString:LogPurchase]) {
     return TableViewTopY + 22.0;
+  } else if ([label isEqualToString:Name] ||
+             [label isEqualToString:ProductId] ||
+             [label isEqualToString:CurrencyCode] ||
+             [label isEqualToString:Price] ||
+             [label isEqualToString:Quantity]) {
+    return TableViewTopY + 6.0;
   }
   return TableViewTopY;
 }
@@ -230,7 +236,7 @@ static NSString *const SwitchCell = @"switch cell";
   [self.view endEditing:YES];
 }
 
-- (void) setUpPropertyKeyTextFieldWithSwitchIndexPath:(NSIndexPath *)indexPath {
+- (void)setUpPropertyKeyTextFieldWithSwitchIndexPath:(NSIndexPath *)indexPath {
   NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
   EventTextFieldCell *textFieldCell = [self.tableView cellForRowAtIndexPath:newIndexPath];
   UITextField *textField = textFieldCell.eventTextField;

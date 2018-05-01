@@ -11,9 +11,8 @@
 
 - (instancetype)init {
   if (self = [super init]) {
-    _supportedOrientationMasks = UIInterfaceOrientationMaskAll;
-    _supportedOrientations = UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeRight |
-    UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationPortraitUpsideDown;
+    _supportedOrientationMask = UIInterfaceOrientationMaskAll;
+    _preferredOrientation = UIInterfaceOrientationUnknown;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveKeyboardWasShownNotification:)
@@ -92,8 +91,8 @@
                                                          initWithInAppMessage:inAppMessage
                                                    inAppMessageViewController:inAppMessageViewController
                                                          inAppMessageDelegate:self.uiDelegate];
-    windowController.supportedOrientationMasks = self.supportedOrientationMasks;
-    windowController.supportedOrientations = self.supportedOrientations;
+    windowController.supportedOrientationMask = self.supportedOrientationMask;
+    windowController.preferredOrientation = self.preferredOrientation;
     self.inAppMessageWindowController = windowController;
     [self.inAppMessageWindowController displayInAppMessageViewWithAnimation:inAppMessage.animateIn];
   }

@@ -15,6 +15,7 @@
   [imageView sd_setShowActivityIndicatorView:showActivityIndicator];
   [imageView sd_setImageWithURL:imageURL
                placeholderImage:placeHolder
+                        options: (SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync)
                       completed:completion];
 }
 

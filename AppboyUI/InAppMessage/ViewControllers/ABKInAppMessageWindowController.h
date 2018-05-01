@@ -81,16 +81,16 @@ static NSString * const ABKNotificationInAppMessageWindowDismissed = @"inAppMess
 @property CGPoint inAppMessagePreviousPanPosition;
 
 /*!
- * The orientation masks that the in-app message supports.
+ * The orientation mask that the in-app message supports.
  * The default value is UIInterfaceOrientationMaskAll
  */
-@property UIInterfaceOrientationMask supportedOrientationMasks;
+@property UIInterfaceOrientationMask supportedOrientationMask;
 
 /*!
- * The orientations that the in-app message suppports.
- * The default includes all orientations.
+ * The preferred orientation for in-app message display.
+ * The default is unknown, which means the orientation would be set as Status Bar current orientation.
  */
-@property UIInterfaceOrientation supportedOrientations;
+@property UIInterfaceOrientation preferredOrientation;
 
 /*!
  * The UIWindow of the host app.

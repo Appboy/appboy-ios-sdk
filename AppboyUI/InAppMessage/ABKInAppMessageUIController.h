@@ -6,25 +6,25 @@
 @interface ABKInAppMessageUIController : NSObject <ABKInAppMessageUIControlling>
 
 /*!
- * supportedOrientationMasks allows you to change which orientation masks the in-app message supports.
+ * supportedOrientationMask allows you to change which orientation mask the in-app message supports.
  * In-app messages will normally support the orientations specified in the app settings, but the method
- * supportedInterfaceOrientations may optionally override that. The value of supportedOrientationMasks will be returned
+ * supportedInterfaceOrientations may optionally override that. The value of supportedOrientationMask will be returned
  * in supportedInterfaceOrientations in the in-app message view controller.
  *
- * The default value of supportedOrientationMasks is UIInterfaceOrientationMaskAll.
+ * The default value of supportedOrientationMask is UIInterfaceOrientationMaskAll.
  */
-@property UIInterfaceOrientationMask supportedOrientationMasks;
+@property UIInterfaceOrientationMask supportedOrientationMask;
 
 /*!
- * supportedOrientations allows you to change which orientation the in-app message supports.
- * In-app messages will normally support the orientations specified in the app settings, but method
- * preferredInterfaceOrientationForPresentation may optionally override that. The value of supportedOrientations will be
- * returned in preferredInterfaceOrientationForPresentation in in-app message view controller.
+ * preferredOrientation allows you to select which orientation should be preferred if multiple orientations are supported by the view controller.
+ * If set to a value other than UIInterfaceOrientationUnknown, the value of preferredOrientation will be returned by
+ * preferredInterfaceOrientationForPresentation in the in-app message view controller.
+ * Otherwise, the current status bar orientation will be returned.
  *
- * The default value of supportedOrientations includes all orientations: UIInterfaceOrientationPortrait,
- * UIInterfaceOrientationLandscapeRight, UIInterfaceOrientationLandscapeLeft and UIInterfaceOrientationPortraitUpsideDown.
+ * The default value of preferredOrientation is UIInterfaceOrientationUnknown, which means status bar orientation should be set
+ * for in-app message orientation.
  */
-@property UIInterfaceOrientation supportedOrientations;
+@property UIInterfaceOrientation preferredOrientation;
 
 /*!
  * keyboardVisible will have the value YES when the keyboard is shown.

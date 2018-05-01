@@ -1,18 +1,18 @@
 PODS:
-  - Appboy-iOS-SDK/Core (2.30.0)
-  - Appboy-iOS-SDK/Feedback (2.30.0):
+  - Appboy-iOS-SDK/Core (3.3.4)
+  - Appboy-iOS-SDK/Feedback (3.3.4):
     - Appboy-iOS-SDK/Core
 
 DEPENDENCIES:
-  - Appboy-iOS-SDK/Feedback (from `./../../../../Appboy-iOS-SDK/`)
+  - Appboy-iOS-SDK/Feedback
 
-EXTERNAL SOURCES:
-  Appboy-iOS-SDK:
-    :path: "./../../../../Appboy-iOS-SDK/"
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Appboy-iOS-SDK
 
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: 173faa418ab885ea860d80c6fce1251d479b0061
+  Appboy-iOS-SDK: 6a91c9668b9d11b9408fa4f4356795eb282a6403
 
-PODFILE CHECKSUM: 81297c623bef1e053e1b905c40515b4c420f2ebd
+PODFILE CHECKSUM: 8596bec76ba654174619dddb22323af0f1b405e9
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

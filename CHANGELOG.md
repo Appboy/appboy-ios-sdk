@@ -1,3 +1,13 @@
+## 3.4.0
+
+##### Breaking
+- Added `preferredOrientation` to `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
+- Removed `supportedOrientations` from `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
+- Renamed `supportedOrientationMasks` to `supportedOrientationMask` in `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
+
+##### Fixed
+- Fixed an issue that caused GIFs to not animate on SDWebImage versions above or equal to 4.3.0
+
 ## 3.3.4
 
 ##### Added
@@ -16,7 +26,7 @@
 ## 3.3.2
 
 ##### Changed
-- Updates the SDK with internal, non-functional improvements. 
+- Updates the SDK with internal, non-functional improvements.
 
 ## 3.3.1
 
@@ -68,8 +78,8 @@
 ## 3.2.0
 
 ##### Added
-- Adds Push Stories, a new push type that uses UNNotificationContentExtension to display multiple images in a single notification. 
-  - This feature requires iOS 10 and above. 
+- Adds Push Stories, a new push type that uses UNNotificationContentExtension to display multiple images in a single notification.
+  - This feature requires iOS 10 and above.
 
 ##### Fixed
 - Fixes an issue where tvOS SDK did not support bitcode.
@@ -96,7 +106,7 @@
 ## 3.0.2
 
 ##### Added
-- Adds the ability to set a custom API endpoint via the Info.plist. 
+- Adds the ability to set a custom API endpoint via the Info.plist.
    - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `Endpoint` String subentry and set the value to your custom endpoint (e.g., `sdk.api.braze.eu`).
 
 ##### Fixed
@@ -110,9 +120,11 @@
 ## 3.0.0
 
 ##### Breaking
-- Adds a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
 - Removes the deprecated `foursquareAccessToken` property from `ABKUser`. To associate a Foursquare access token with a user profile, use `setCustomAttributeWithKey:andStringValue:` instead.
 - Note: Braze iOS SDK version 3.0.0 will **only support downgrading to iOS SDK version 2.31.0**. Downgrading to versions prior to 2.31.0 may result in app crashes.
+
+##### Added
+- Adds a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
 
 ## 2.31.0
 

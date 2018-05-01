@@ -74,14 +74,10 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   [self.view addSubview:self.inAppMessageViewController.view];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-}
-
 #pragma mark - Rotation
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-  return self.supportedOrientationMasks;
+  return self.supportedOrientationMask;
 }
 
 - (BOOL)shouldAutorotate {
@@ -95,14 +91,10 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-  if (self.inAppMessage.orientation == ABKInAppMessageOrientationPortrait) {
-    return self.supportedOrientations & (UIInterfaceOrientationPortrait |
-                                         UIInterfaceOrientationPortraitUpsideDown);
-  } else if (self.inAppMessage.orientation == ABKInAppMessageOrientationLandscape) {
-    return self.supportedOrientations & (UIInterfaceOrientationLandscapeLeft |
-                                         UIInterfaceOrientationLandscapeRight);
+  if (self.preferredOrientation != UIInterfaceOrientationUnknown) {
+    return self.preferredOrientation;
   }
-  return self.supportedOrientations;
+  return [UIApplication sharedApplication].statusBarOrientation;;
 }
 
 #pragma mark - Gesture Recognizers

@@ -2,11 +2,10 @@
 
 @interface UserAttributesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property NSArray *attributesLabelsArray;
-@property IBOutlet UINavigationBar *modalNavBar;
-@property IBOutlet UITableView *attributesTableView;
-@property (weak) UITextField *currentEditingTextField;
-@property NSString *userId;
+@property (nonatomic, strong) NSArray *attributesLabelsArray;
+@property (nonatomic, weak) IBOutlet UINavigationBar *modalNavBar;
+@property (nonatomic, weak) IBOutlet UITableView *attributesTableView;
+@property (nonatomic, strong) NSString *userId;
 
 - (IBAction)doneButtonTapped:(id)sender;
 

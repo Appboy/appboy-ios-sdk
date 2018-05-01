@@ -2,13 +2,28 @@
 #import <AppboyKit.h>
 #import "UserCells.h"
 #import "UIViewController+Keyboard.h"
+#import "UserCustomAttribute.h"
+#import "UserCustomAttributeCell.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
-static NSInteger const TotalNumberOfAttributes = 14;
+static NSInteger const TotalNumberOfAttributes = 12;
 static NSInteger const IndexOfBirthday = 9;
 static NSInteger const IndexOfPushSubscriptionState = 12;
 static NSInteger const IndexOfEmailSubscriptionState = 13;
 static NSMutableArray *attributesValuesArray = nil;
+
+@interface UserAttributesViewController ()
+
+@property (nonatomic, strong) NSMutableArray<UserCustomAttribute *> *userCustomAttributes;
+
+- (UITableViewCell *)setupTableView:(UITableView *)tableView subscriptionCellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)setupTableView:(UITableView *)tableView textFieldCellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)showAttributesSetAlert;
+- (NSIndexPath *)indexPathFromTextFieldTag:(NSInteger)tag;
+
+- (IBAction)addCustomAttributeTapped:(id)sender;
+
+@end
 
 @implementation UserAttributesViewController
 
@@ -25,8 +40,6 @@ static NSMutableArray *attributesValuesArray = nil;
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.date-of-birth", nil),
-                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-color", nil),
-                                 NSLocalizedString(@"Appboy.Stopwatch.user-attributes.favorite-food", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.push-subscription", nil),
                                  NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email-subscription", nil)];
 
@@ -36,6 +49,17 @@ static NSMutableArray *attributesValuesArray = nil;
       [attributesValuesArray addObject:[NSNull null]];
     }
   }
+  self.userCustomAttributes = [NSMutableArray array];
+}
+
+- (void)viewDidUnload {
+  [self setAttributesTableView:nil];
+  [self setModalNavBar:nil];
+  [super viewDidUnload];
+}
+
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self.modalNavBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,101 +75,184 @@ static NSMutableArray *attributesValuesArray = nil;
   }
 }
 
-#pragma Table View Data Source Delegate Methods
+- (void)viewWillDisappear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+#pragma mark - Table view cells setup methods
+
+- (UITableViewCell *)setupTableView:(UITableView *)tableView subscriptionCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *cellIdentifier = @"subscription cell";
+  
+  UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
+  [cell.attributeSegmentedControl setTag:(TextFieldTagNumber + indexPath.row)]; // Segmented control's tag is 1000 + row number
+  
+  id object = attributesValuesArray[(NSUInteger)indexPath.row];
+  if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
+    if ([(NSString *)object isEqualToString:@"u"]) {
+      cell.attributeSegmentedControl.selectedSegmentIndex = 0;
+    } else if ([(NSString *)object isEqualToString:@"s"]) {
+      cell.attributeSegmentedControl.selectedSegmentIndex = 1;
+    } else {
+      cell.attributeSegmentedControl.selectedSegmentIndex = 2;
+    }
+  }
+  return cell;
+}
+
+- (UITableViewCell *)setupTableView:(UITableView *)tableView textFieldCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"text field cell";
+  
+  UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
+  
+  // Keyboard typing
+  cell.attributeTextField.inputView = nil;
+  if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email", nil)]) {
+    // Email keyboard
+    cell.attributeTextField.keyboardType = UIKeyboardTypeEmailAddress;
+  } else if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil)]) {
+    // Phone keyboard
+    cell.attributeTextField.keyboardType = UIKeyboardTypePhonePad;
+  } else {
+    cell.attributeTextField.keyboardType = UIKeyboardTypeDefault;
+  }
+  
+  // Preview text
+  if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil)]) {
+    cell.attributeTextField.placeholder = @"Enter 'm', 'f', 'u', 'o', 'n', or 'p'";
+  } else {
+    cell.attributeTextField.placeholder = @"";
+  }
+  
+  cell.attributeTextField.tag = TextFieldTagNumber + indexPath.row; // The text field's tag is 1000 plus the row number
+  id object = attributesValuesArray[(NSUInteger)indexPath.row];
+  if ([object isKindOfClass:[NSString class]]) {
+    cell.attributeTextField.text = (NSString *)object;
+  } else if ([object isKindOfClass:[NSDate class]]) {
+    cell.attributeTextField.text = [self getBirthdayStringFromDate:(NSDate *)object];
+  } else {
+    cell.attributeTextField.text = nil;
+  }
+  
+  return cell;
+}
+
+- (UITableViewCell *)setupTableView:(UITableView *)tableView customAttributeCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UserCustomAttributeCell *cell = (UserCustomAttributeCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomAttributeCell" forIndexPath:indexPath];
+  UserCustomAttribute *attribute = self.userCustomAttributes[indexPath.row - 1];
+  __weak typeof(self) weakSelf = self;
+  [cell setUserCustomAttribute:attribute selectNextCellBlock:^(UITableViewCell *cell){
+    NSIndexPath *indexPath = [weakSelf.attributesTableView indexPathForCell:cell];
+    if (indexPath && (weakSelf.userCustomAttributes.count > indexPath.row)) {
+      // we can pick next cell since it exists
+      UserCustomAttributeCell *nextCell = [weakSelf.attributesTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(indexPath.row + 1) inSection:indexPath.section]];
+      [nextCell.keyTextField becomeFirstResponder];
+    }
+  } textFieldShouldBeginEditingBlock:^(UITableViewCell *cell) {
+    NSIndexPath *indexPath = [weakSelf.attributesTableView indexPathForCell:cell];
+    if (indexPath) {
+      [weakSelf.attributesTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+  }];
+  return cell;
+}
+
+#pragma TableView DataSource & Delegate Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return 2;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // Cells with subscription state segmented control
-  if (indexPath.row == IndexOfPushSubscriptionState || indexPath.row == IndexOfEmailSubscriptionState) {
-    NSString *cellIdentifier = @"subscription cell";
-    
-    UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (cell == nil) {
-      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
-    [cell.attributeSegmentedControl setTag:(TextFieldTagNumber + indexPath.row)]; // Segmented control's tag is 1000 + row number
-    
-    id object = attributesValuesArray[(NSUInteger)indexPath.row];
-    if ([object isKindOfClass:[NSString class]] && ((NSString *)object).length == 1) {
-      if ([(NSString *)object isEqualToString:@"u"]) {
-        cell.attributeSegmentedControl.selectedSegmentIndex = 0;
-      } else if ([(NSString *)object isEqualToString:@"s"]) {
-        cell.attributeSegmentedControl.selectedSegmentIndex = 1;
+  switch (indexPath.section) {
+    case 0: {
+      // default user attributes
+      if (indexPath.row == IndexOfPushSubscriptionState || indexPath.row == IndexOfEmailSubscriptionState) {
+        // Cells with subscription state segmented control
+        return [self setupTableView:tableView subscriptionCellForRowAtIndexPath:indexPath];
       } else {
-        cell.attributeSegmentedControl.selectedSegmentIndex = 2;
+        // Cell with text field
+        return [self setupTableView:tableView textFieldCellForRowAtIndexPath:indexPath];
       }
     }
-    return cell;
-  } else {
-    // Cell with text field
-    static NSString *CellIdentifier = @"text field cell";
-
-    UserAttributeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-      cell = [[UserAttributeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+      
+    case 1: {
+      // custom user attributes
+      if (indexPath.row == 0) {
+        return [tableView dequeueReusableCellWithIdentifier:@"AddAttributeCell" forIndexPath:indexPath];
+      } else {
+        return [self setupTableView:tableView customAttributeCellForRowAtIndexPath:indexPath];
+      }
     }
-    cell.attributeNameLabel.text = self.attributesLabelsArray[(NSUInteger)indexPath.row];
-    
-    // Keyboard typing
-    cell.attributeTextField.inputView = nil;
-    if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.email", nil)]) {
-      // Email keyboard
-      cell.attributeTextField.keyboardType = UIKeyboardTypeEmailAddress;
-    } else if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.phone", nil)]) {
-      // Phone keyboard
-      cell.attributeTextField.keyboardType = UIKeyboardTypePhonePad;
-    } else {
-      cell.attributeTextField.keyboardType = UIKeyboardTypeDefault;
-    }
-    
-    // Preview text
-    if ([cell.attributeNameLabel.text isEqualToString:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.gender", nil)]) {
-      cell.attributeTextField.placeholder = @"Enter 'm', 'f', 'u', 'o', 'n', or 'p'";
-    } else {
-      cell.attributeTextField.placeholder = @"";
-    }
-
-    cell.attributeTextField.tag = TextFieldTagNumber + indexPath.row; // The text field's tag is 1000 plus the row number
-    id object = attributesValuesArray[(NSUInteger)indexPath.row];
-    if ([object isKindOfClass:[NSString class]]) {
-      cell.attributeTextField.text = (NSString *)object;
-    } else if ([object isKindOfClass:[NSDate class]]) {
-      cell.attributeTextField.text = [self getBirthdayStringFromDate:(NSDate *)object];
-    } else {
-      cell.attributeTextField.text = nil;
-    }
-
-    return cell;
+      
+    default:
+      return [UITableViewCell new];
   }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return TotalNumberOfAttributes;
+  switch (section) {
+    case 0:
+      // default attributes
+      return TotalNumberOfAttributes;
+      
+    case 1:
+      // 'add attribute' button + custom attributes
+      return 1 + self.userCustomAttributes.count;
+      
+    default:
+      return 0;
+  }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  switch (section) {
+    case 0:
+      // default attributes
+      return NSLocalizedString(@"Default Attributes", @"");
+      
+    case 1:
+      // 'add attribute' button + custom attributes
+      return NSLocalizedString(@"Custom Attributes", @"");;
+      
+    default:
+      return @"";
+  }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+  // we can remove custom attributes
+  return (indexPath.section == 1 && indexPath.row > 0);
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+  [self.userCustomAttributes removeObjectAtIndex:(indexPath.row - 1)]; // since 0th row in the table view is button, not array element
+  [self.attributesTableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma Text Field Delegate Methods
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
   NSInteger nextTag = textField.tag + 1;
   // Try to find next responder
   UIResponder *nextResponder = [self.view viewWithTag:nextTag];
-  if (nextResponder) {
-    // Found next responder, so set it.
-    [nextResponder becomeFirstResponder];
-  }
+  [nextResponder becomeFirstResponder];
   return YES;
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-  // keep track of the current editing text field, so we can save the value of the last text field
-  // user edited right before he/she click the "Done" button
-  self.currentEditingTextField = textField;
-
   // Scroll the table view to make the text field visible
-  NSIndexPath *index = [NSIndexPath indexPathForRow:textField.tag - TextFieldTagNumber inSection:0];
-  [self.attributesTableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionTop animated:YES];
-
+  NSIndexPath *indexPath = [self indexPathFromTextFieldTag:textField.tag];
+  [self.attributesTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+  
   // If it is the text field for birthday, change the keyboard to date picker
   if (textField.tag == IndexOfBirthday + TextFieldTagNumber) {
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
@@ -163,6 +270,26 @@ static NSMutableArray *attributesValuesArray = nil;
   return YES;
 }
 
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+  // When it's the date of birth text field get edited, we don't want to save the text in text field
+  // but the date object. Ignore the input of text filled here.
+  if (textField.tag == IndexOfBirthday + TextFieldTagNumber) {
+    return YES;
+  }
+  
+  NSIndexPath *indexPath = [self indexPathFromTextFieldTag:textField.tag];
+  if (textField.text.length > 0) {
+    attributesValuesArray[indexPath.row] = textField.text;
+  } else {
+    attributesValuesArray[indexPath.row] = [NSNull null];
+  }
+  return YES;
+}
+
+- (NSIndexPath *)indexPathFromTextFieldTag:(NSInteger)tag {
+  return [NSIndexPath indexPathForRow:(tag - TextFieldTagNumber) inSection:0];
+}
+
 - (NSString *)getBirthdayStringFromDate:(NSDate *)date {
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   dateFormatter.dateFormat = @"MM/dd/yyyy";
@@ -177,21 +304,7 @@ static NSMutableArray *attributesValuesArray = nil;
   return date;
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-  // When it's the date of birth text field get edited, we don't want to save the text in text field
-  // but the date object. Ignore the input of text filed here.
-  if (textField.tag == IndexOfBirthday + TextFieldTagNumber) {
-    return YES;
-  }
-  // Save the input of text field, including the cases of valid text and empty input
-  if (textField.text.length > 0) {
-    attributesValuesArray[(NSUInteger)textField.tag - TextFieldTagNumber] = textField.text;
-  }
-  else {
-    attributesValuesArray[(NSUInteger)textField.tag - TextFieldTagNumber] = [NSNull null];
-  }
-  return YES;
-}
+#pragma mark - Buttons actions
 
 - (void)datePickerValueChanged:(UIDatePicker *)sender {
   // Save the date value
@@ -215,94 +328,84 @@ static NSMutableArray *attributesValuesArray = nil;
   attributesValuesArray[sender.tag - TextFieldTagNumber] = subscriptionState;
 }
 
+- (IBAction)addCustomAttributeTapped:(id)sender {
+  [self.userCustomAttributes addObject:[UserCustomAttribute new]];
+  NSIndexPath *addedIndexPath = [NSIndexPath indexPathForRow:self.userCustomAttributes.count inSection:1];
+  [self.attributesTableView insertRowsAtIndexPaths:@[ addedIndexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
+  [self.attributesTableView scrollToRowAtIndexPath:addedIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
+
 // Set user attributes and/or change the current userId.  See Appboy.h for a discussion about changing the userId.
 - (IBAction)doneButtonTapped:(id)sender {
   [self dismissKeyboard];
-  if (self.currentEditingTextField && self.currentEditingTextField.tag != IndexOfBirthday + TextFieldTagNumber) {
-    if (self.currentEditingTextField.text.length > 0) {
-      attributesValuesArray[(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber] = self.currentEditingTextField.text;
-    }
-    else {
-      attributesValuesArray[(NSUInteger)self.currentEditingTextField.tag - TextFieldTagNumber] = [NSNull null];
-    }
-  }
 
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                      message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                            otherButtonTitles:nil];
-  [alertView show];
-  alertView = nil;
-  
-  [self dismissViewControllerAnimated:YES completion:nil];
+  [self showAttributesSetAlert];
 
+  Appboy *appboyInstance = [Appboy sharedInstance];
   for (NSUInteger i = 0; i < TotalNumberOfAttributes; i ++) {
     id object = attributesValuesArray[i];
     if (object && object != [NSNull null]) {
       switch (i) {
         case 0:
-          [[Appboy sharedInstance] changeUser:(NSString *)object];
+          [appboyInstance changeUser:(NSString *)object];
           continue;
 
         case 1:
-          [Appboy sharedInstance].user.firstName = (NSString *)object;
+          appboyInstance.user.firstName = (NSString *)object;
           continue;
 
         case 2:
-          [Appboy sharedInstance].user.lastName = (NSString *)object;
+          appboyInstance.user.lastName = (NSString *)object;
           continue;
 
         case 3:
-          [Appboy sharedInstance].user.email = (NSString *)object;
+          appboyInstance.user.email = (NSString *)object;
           continue;
 
         case 4:
-          [Appboy sharedInstance].user.country = (NSString *)object;
+          appboyInstance.user.country = (NSString *)object;
           continue;
 
         case 5:
-          [Appboy sharedInstance].user.homeCity = (NSString *)object;
+          appboyInstance.user.homeCity = (NSString *)object;
           continue;
           
         case 6:
-          [Appboy sharedInstance].user.language = (NSString *)object;
+          appboyInstance.user.language = (NSString *)object;
           continue;
 
         case 7: {
-          [[Appboy sharedInstance].user setGender:[self parseGenderFromString:(NSString *)object]];
+          [appboyInstance.user setGender:[self parseGenderFromString:(NSString *)object]];
           continue;
         }
 
         case 8:
-          [Appboy sharedInstance].user.phone = (NSString *)object;
+          appboyInstance.user.phone = (NSString *)object;
           continue;
 
         case 9:
-          [Appboy sharedInstance].user.dateOfBirth = (NSDate *)object;
-          continue;
-
-        case 10:
-          [[Appboy sharedInstance].user setCustomAttributeWithKey:@"favorite_color" andStringValue:(NSString *)object];
+          appboyInstance.user.dateOfBirth = (NSDate *)object;
           continue;
           
-        case 11:
-          [[Appboy sharedInstance].user setCustomAttributeWithKey:@"favorite_food" andStringValue:(NSString *)object];
-          continue;
-          
-        case 12: {
-          [[Appboy sharedInstance].user setPushNotificationSubscriptionType:[self getSubscriptionType:object]];
+        case 10: {
+          [appboyInstance.user setPushNotificationSubscriptionType:[self getSubscriptionType:object]];
           continue;
         }
           
-        case 13: {
-          [[Appboy sharedInstance].user setEmailNotificationSubscriptionType:[self getSubscriptionType:object]];
+        case 11: {
+          [appboyInstance.user setEmailNotificationSubscriptionType:[self getSubscriptionType:object]];
           continue;
         }
 
         default:
           break;
       }
+    }
+  }
+  
+  for (UserCustomAttribute *attribute in self.userCustomAttributes) {
+    if (![attribute.attributeKey isEqualToString:@""] && ![attribute.attributeValue isEqualToString:@""]) {
+      [appboyInstance.user setCustomAttributeWithKey:attribute.attributeKey andStringValue:attribute.attributeValue];
     }
   }
 }
@@ -341,27 +444,27 @@ static NSMutableArray *attributesValuesArray = nil;
   return subscriptionType;
 }
 
+#pragma mark - Keyboard
+
 - (void)keyboardDidShow:(NSNotification *)notification {
-  NSDictionary *info = [notification userInfo];
-  CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-  CGFloat keyboardHeight = keyboardSize.height < keyboardSize.width ? keyboardSize.height : keyboardSize.width;
-  CGRect aRect = self.attributesTableView.frame;
-  aRect.size.height = self.view.bounds.size.height - keyboardHeight;
-  self.attributesTableView.frame = aRect;
+  CGSize keyboardSize = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  CGFloat keyboardHeight = MIN(keyboardSize.height, keyboardSize.width);
+  self.attributesTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0);
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-  [self.attributesTableView setNeedsUpdateConstraints];
+  self.attributesTableView.contentInset = UIEdgeInsetsZero;
 }
 
-- (void)viewDidUnload {
-  [self setAttributesTableView:nil];
-  [self setModalNavBar:nil];
-  [super viewDidUnload];
-}
+#pragma mark - UI
 
-- (void)dealloc {
-  [[NSNotificationCenter defaultCenter] removeObserver:self.modalNavBar];
+- (void)showAttributesSetAlert {
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                      message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
+                                                     delegate:nil
+                                            cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
+                                            otherButtonTitles:nil];
+  [alertView show];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -373,11 +476,6 @@ static NSMutableArray *attributesValuesArray = nil;
     return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
   }
   return toInterfaceOrientation == UIInterfaceOrientationPortrait;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 @end
