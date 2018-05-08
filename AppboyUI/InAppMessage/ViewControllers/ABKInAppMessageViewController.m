@@ -3,6 +3,7 @@
 #import "ABKInAppMessageView.h"
 #import "ABKInAppMessageWindowController.h"
 #import "ABKUIUtils.h"
+#import "ABKUIURLUtils.h"
 
 static const float InAppMessageIconLabelCornerRadius_iPhone = 10.0f;
 static const float InAppMessageIconLabelCornerRadius_iPad = 15.0f;
@@ -47,6 +48,13 @@ static NSString *const FontAwesomeName = @"FontAwesome";
   [super viewDidDisappear:animated];
   UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification,
                                   nil);
+}
+
+#pragma mark - Status Bar
+
+-(BOOL) prefersStatusBarHidden {
+    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    return [[ABKUIURLUtils topmostViewControllerWithRootViewController:rootViewController] prefersStatusBarHidden];
 }
 
 #pragma mark - UIViewController Methods
