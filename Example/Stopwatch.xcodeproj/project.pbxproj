@@ -704,7 +704,7 @@
 				E32835A91CC6C6F200E2C2DE /* Sources */,
 				E32835AA1CC6C6F200E2C2DE /* Frameworks */,
 				E32835AB1CC6C6F200E2C2DE /* Resources */,
-				8154B3BEB24353C5ABFA9374 /* [CP] Embed Pods Frameworks */,
+				21841196AD1A6F3E32527D84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -740,7 +740,7 @@
 				E397F4091CC5BA540095A3ED /* Sources */,
 				E397F40A1CC5BA540095A3ED /* Frameworks */,
 				E397F40B1CC5BA540095A3ED /* Resources */,
-				D05760EF187F51796D80DB19 /* [CP] Embed Pods Frameworks */,
+				399B8A0CF86B4D5CE358B1FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -930,6 +930,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21841196AD1A6F3E32527D84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2439961CCED464ADD87076DC /* [CP] Copy Pods Resources */ = {
@@ -1220,6 +1238,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		399B8A0CF86B4D5CE358B1FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		56391E9749263D2D9839FAA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1254,42 +1290,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8154B3BEB24353C5ABFA9374 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D05760EF187F51796D80DB19 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0E774FD2DD369EADF647C2F /* [CP] Check Pods Manifest.lock */ = {

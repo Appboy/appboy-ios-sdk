@@ -1,3 +1,8 @@
+## 3.5.1
+
+##### Fixed
+- Fixes an issue with integrating the NewsFeed subspec in Swift projects via Cocoapods.
+
 ## 3.5.0
 
 ##### Breaking

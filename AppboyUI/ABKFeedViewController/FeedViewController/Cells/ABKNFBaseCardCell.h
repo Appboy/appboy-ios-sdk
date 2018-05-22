@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "FLAnimatedImageVIew.h"
+#import <FLAnimatedImage/FLAnimatedImageView.h>
 #import "ABKCard.h"
 
 @interface ABKNFBaseCardCell : UITableViewCell
