@@ -93,9 +93,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:ad93d90566b0790c806b59be8afa4c6ff"><td class="memItemLeft" align="right" valign="top">(id&lt; ABKPushURIDelegate &gt;<br class="typebreak"/>
- appboyPushURIDelegate)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ad93d90566b0790c806b59be8afa4c6ff">__deprecated_msg</a></td></tr>
-<tr class="separator:ad93d90566b0790c806b59be8afa4c6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746fa87363a1530ba655498b4c36a0dd"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a746fa87363a1530ba655498b4c36a0dd">flushDataAndProcessRequestQueue</a></td></tr>
 <tr class="separator:a746fa87363a1530ba655498b4c36a0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26dfb2739d4f78b8a98e69b340ecdaf8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a></td></tr>
@@ -133,8 +130,6 @@ Properties</h2></td></tr>
 <tr class="separator:aa3225751b163e9dca3efe040eed3d2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a942e878042066fc6c3762b98c6e7569a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_location_manager.html">ABKLocationManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a942e878042066fc6c3762b98c6e7569a">locationManager</a></td></tr>
 <tr class="separator:a942e878042066fc6c3762b98c6e7569a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2559b9e425866a5c34ad23ab2274d410"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a2559b9e425866a5c34ad23ab2274d410">useNUITheming</a></td></tr>
-<tr class="separator:a2559b9e425866a5c34ad23ab2274d410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba673cda72bad3e386dad6a24236d104"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_a_b_k_u_r_l_delegate-p.html">ABKURLDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#aba673cda72bad3e386dad6a24236d104">appboyUrlDelegate</a></td></tr>
 <tr class="separator:aba673cda72bad3e386dad6a24236d104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f1250e12b60aeb65e50011205acb22d"><td class="memItemLeft" align="right" valign="top">ABKSDKFlavor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a8f1250e12b60aeb65e50011205acb22d">sdkFlavor</a></td></tr>
@@ -185,23 +180,6 @@ Properties</h2></td></tr>
 <tr class="separator:afbcf6edbcf47acf6f03fa4fe02168149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="ad93d90566b0790c806b59be8afa4c6ff"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id&lt;ABKPushURIDelegate&gt; appboyPushURIDelegate) __deprecated_msg </td>
-          <td></td>
-          <td class="paramtype">(&quot;Use appboyURLDelegate instead.&quot;)&#160;</td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>A class conforming to the ABKPushURIDelegate protocol can be set to handle deep linking in push in a custom way. </p>
-
-</div>
-</div>
 <a class="anchor" id="ac8b369b40e15860b0ec18c0f4b46ac69"></a>
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +428,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If you're displaying cards on your own instead of using <a class="el" href="interface_a_b_k_feed_view_controller.html">ABKFeedViewController</a>, you should still report impressions of the news feed back to Braze with this method so that your campaign reporting features still work in the dashboard. </p>
+<p>If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of the news feed back to Braze with this method so that your campaign reporting features still work in the dashboard. </p>
 
 </div>
 </div>
@@ -1264,43 +1242,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2559b9e425866a5c34ad23ab2274d410"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) useNUITheming</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p><a class="el" href="interface_appboy.html">Appboy</a> UI elements can be themed using the NUI framework. See <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a> and the <a class="el" href="interface_appboy.html">Appboy</a> docs. To enable NUI, take the following steps:</p>
-<ul>
-<li>If your app uses ARC: Get NUI from <a href="https://github.com/tombenner/nui">https://github.com/tombenner/nui</a></li>
-</ul>
-<ul>
-<li>If your app does not use ARC: Get NUI from <a href="https://github.com/Appboy/nui">https://github.com/Appboy/nui</a> which is our fork of NUI that manages its own memory</li>
-</ul>
-<ul>
-<li>Follow the instructions in either repo above to integrate NUI</li>
-</ul>
-<ul>
-<li>Create a style sheet called NUIStyle.nss</li>
-</ul>
-<ul>
-<li>Set the property below to YES</li>
-</ul>
-<p>If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app. Note that you can theme your app and <a class="el" href="interface_appboy.html">Appboy</a> differently &ndash; <a class="el" href="interface_appboy.html">Appboy</a> uses NUI independently of your app's use of NUI. </p>
-
-</div>
-</div>
 <a class="anchor" id="a7cf722b9aba835565b96e5cf1bdd67b1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1325,7 +1266,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 10 2018 14:29:48 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 22 2018 14:20:08 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
