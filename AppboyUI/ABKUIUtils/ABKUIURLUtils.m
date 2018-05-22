@@ -70,4 +70,19 @@
   [topmostViewController presentViewController:webViewController animated:YES completion:nil];
 }
 
++ (NSURL *)getEncodedURIFromString:(NSString *)uriString {
+  if (![ABKUIUtils objectIsValidAndNotEmpty:uriString]) {
+    return nil;
+  }
+  uriString = [uriString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+  NSURL *parsedUrl = [NSURL URLWithString:uriString];
+  // If the uriString is an invalid uri, e.g. an uri with unicode, URLWithString: will return nil.
+  if (!parsedUrl) {
+    // When the uriString has unicode, we have to escape those characters
+    uriString = [uriString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    parsedUrl = [NSURL URLWithString:uriString];
+  }
+  return parsedUrl;
+}
+
 @end

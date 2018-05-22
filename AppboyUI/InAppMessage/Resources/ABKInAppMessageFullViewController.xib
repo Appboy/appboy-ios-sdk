@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,18 +53,12 @@
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="19"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKInAppMessageFullHeaderLabel"/>
-                            </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="20" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8e-sy-Bhj">
                             <rect key="frame" x="0.0" y="40" width="335" height="20"/>
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKInAppMessageFullMessageLabel"/>
-                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <constraints>
@@ -79,7 +73,7 @@
                         <constraint firstItem="ThZ-Tl-ewt" firstAttribute="top" secondItem="z23-Sg-7Xr" secondAttribute="top" id="yPf-dk-Qwa"/>
                     </constraints>
                 </scrollView>
-                <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmQ-gu-wor" customClass="ABKButton">
+                <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmQ-gu-wor">
                     <rect key="frame" x="340" y="10" width="25" height="25"/>
                     <accessibility key="accessibilityConfiguration" label="Close In App Message"/>
                     <constraints>
@@ -94,16 +88,6 @@
                         <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="M95-RZ-cAa"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-RJ-G5m" customClass="ABKInAppMessageUIButton">
-                    <rect key="frame" x="20" y="602" width="162.5" height="45"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="uLZ-Yo-2BF"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="H0b-kj-Bkx"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZR-LG-Ie5" customClass="ABKInAppMessageUIButton">
                     <rect key="frame" x="192.5" y="602" width="162.5" height="45"/>
                     <constraints>
@@ -112,6 +96,16 @@
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="1iK-m1-P29"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-RJ-G5m" customClass="ABKInAppMessageUIButton">
+                    <rect key="frame" x="20" y="602" width="162.5" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="uLZ-Yo-2BF"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="H0b-kj-Bkx"/>
                     </connections>
                 </button>
             </subviews>

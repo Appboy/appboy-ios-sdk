@@ -13,10 +13,7 @@ static NSString *const FeedbackBottomConstraintID = @"FeedbackBottomConstraint";
                                                                   style:UIBarButtonItemStylePlain
                                                                  target:self
                                                                  action:@selector(sendButtonTapped:)];
-
-  if ([sendButton respondsToSelector:@selector(nuiClass)]){
-    [sendButton performSelector:@selector(setNuiClass:) withObject:@"ABKFeedbackSendBarButtonItem"];
-  }
+  
   [self.navigationItem setRightBarButtonItem:sendButton];
   
   // Don't display the feedback view underneath the navigation bar.

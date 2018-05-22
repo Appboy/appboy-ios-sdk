@@ -2,6 +2,8 @@
 #import "FeedAndFeedbackUIViewController.h"
 #import "AppboyFeedback.h"
 #import "UIViewController+Keyboard.h"
+#import "ABKNewsFeedTableViewController.h"
+#import "ABKNewsFeedViewController.h"
 
 @interface FeedAndFeedbackViewController ()
 
@@ -27,19 +29,6 @@
                                                name:ABKFeedUpdatedNotification
                                              object:nil];
   
-  // Prepare News and Feedback UIButton, plus related properties and functions
-  ABKFeedViewControllerNavigationContext *feedViewController = [[ABKFeedViewControllerNavigationContext alloc] init];
-  self.newsAndFeedbackNavigationController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
-  self.newsAndFeedbackNavigationController.delegate = self;
-  self.newsAndFeedbackNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.16 green:0.5 blue:0.73 alpha:1.0];
-  self.newsAndFeedbackNavigationController.navigationBar.barStyle = UIBarStyleBlack;
-  UIBarButtonItem *feedbackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.feedback", nil)
-                                                                            style:UIBarButtonItemStylePlain target:self action:@selector(openFeedbackFromNavigationFeed:)];
-  feedViewController.navigationItem.rightBarButtonItem = feedbackBarButtonItem;
-  feedViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.cancel", nil)
-                                                                                         style:UIBarButtonItemStylePlain
-                                                                                        target:self
-                                                                                        action:@selector(dismissNewsAndFeedbackModalView:)];
   [self addDismissGestureForView:self.scrollView];
 }
 
@@ -57,10 +46,13 @@
 #pragma mark News Feed Card Count
 
 - (void)feedUpdated:(NSNotification *)notification {
-  self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Feed Cards: %ld / %ld", [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll], [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll]];
+  self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Feed Cards: %ld / %ld",
+                               [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll],
+                               [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll]];
   
   // Update the application icon badge count to reflect the number of unread news feed cards
-  [UIApplication sharedApplication].applicationIconBadgeNumber = [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll];
+  [UIApplication sharedApplication].applicationIconBadgeNumber =
+    [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll];
   [self.view setNeedsDisplay];
 }
 
@@ -84,7 +76,7 @@
 #pragma mark Categoried News
 
 - (IBAction)displayCategoriedNews:(id)sender {
-  ABKFeedViewControllerNavigationContext *newsFeed = [[ABKFeedViewControllerNavigationContext alloc] init];
+  ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
   newsFeed.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   // Add Categories button
   UIBarButtonItem *categoriesButton = [[UIBarButtonItem alloc]
@@ -112,7 +104,7 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-  ABKFeedViewControllerNavigationContext *newsFeed = (ABKFeedViewControllerNavigationContext *)self.navigationController.topViewController;
+  ABKNewsFeedTableViewController *newsFeed = (ABKNewsFeedTableViewController *)self.navigationController.topViewController;
   switch (buttonIndex) {
     case 0:
       [newsFeed setCategories:ABKCardCategoryAll];
@@ -143,26 +135,17 @@
   }
 }
 
-#pragma mark Modal Contexts
+#pragma mark Feed
 
 // An example modal news feed view controller
 - (IBAction)modalNewsFeedButtonTapped:(id)sender {
-  ABKFeedViewControllerModalContext *modalFeed = [[ABKFeedViewControllerModalContext alloc] init];
-  modalFeed.navigationBarTitle = @"News And Updates";
-  
-  // Setting the delegate will notify us when the "Done" button is tapped
-  modalFeed.closeButtonDelegate = self;
-  [self presentViewController:modalFeed animated:YES completion:nil];
+  ABKNewsFeedViewController *newsFeed = [[ABKNewsFeedViewController alloc] init];
+  [self.navigationController presentViewController:newsFeed animated:YES completion:nil];
 }
 
-- (void)feedViewControllerModalContextCloseTapped:(ABKFeedViewControllerModalContext *)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-// An example modal feedback view controller
-- (IBAction)modalFeedbackButtonTapped:(id)sender {
-  ABKModalFeedbackViewController *modalFeedback = [[ABKModalFeedbackViewController alloc] init];
-  [self presentViewController:modalFeedback animated:YES completion:nil];
+- (IBAction)navigationNewsFeedButtonTapped:(id)sender {
+  ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
+  [self.navigationController pushViewController:newsFeed animated:YES];
 }
 
 # pragma mark Feedback
@@ -188,6 +171,12 @@
       alertView = nil;
     });
   }];
+}
+
+// An example modal feedback view controller
+- (IBAction)modalFeedbackButtonTapped:(id)sender {
+  ABKModalFeedbackViewController *modalFeedback = [[ABKModalFeedbackViewController alloc] init];
+  [self presentViewController:modalFeedback animated:YES completion:nil];
 }
 
 #pragma mark - Transition

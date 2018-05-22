@@ -27,10 +27,16 @@
   
   // Add Feed and Flush navigation bar items
   if (self.hasFeedAndFlushButtons) {
-    self.modalFeedViewController = [[ABKFeedViewControllerModalContext alloc] init];
+    self.modalFeedViewController = [[ABKNewsFeedViewController alloc] init];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"newsfeed"] style:UIBarButtonItemStylePlain target:self action:@selector(newsfeedButtonTapped:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"appboy"] style:UIBarButtonItemStylePlain target:self action:@selector(flushDataToAppboy:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"newsfeed"]
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(newsfeedButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"appboy"]
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                             action:@selector(flushDataToAppboy:)];
   }
 }
 

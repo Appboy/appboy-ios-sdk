@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Qp-Oy-HIX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJR-WD-Ox6">
+                                <rect key="frame" x="21" y="64" width="123" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6dR-D3-M5r"/>
+                                </constraints>
+                                <state key="normal" title="Modal News Feed"/>
+                                <connections>
+                                    <action selector="displayModalNewsFeed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ME-8b-Kcq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPk-sy-tfB">
+                                <rect key="frame" x="21" y="140" width="134" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SNQ-E2-YZC"/>
+                                </constraints>
+                                <state key="normal" title="Custom News Feed"/>
+                                <connections>
+                                    <action selector="displayCustomNewsFeed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ei-YY-xHZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ei5-sX-Ra5">
+                                <rect key="frame" x="21" y="102" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KHJ-w6-VP0"/>
+                                </constraints>
+                                <state key="normal" title="Navigation News Feed"/>
+                                <connections>
+                                    <action selector="displayNavigationNewsFeed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0i-6q-2Ca"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Unread Indicator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6N-1m-xbR">
+                                <rect key="frame" x="175" y="72" width="184" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mCr-Vd-Aqp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-m2-fSw">
+                                <rect key="frame" x="310" y="101" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QKf-m2-fSw" secondAttribute="trailing" constant="16" id="3wc-Ul-mTu"/>
+                            <constraint firstItem="ei5-sX-Ra5" firstAttribute="top" secondItem="WJR-WD-Ox6" secondAttribute="bottom" constant="8" id="7OQ-ZA-wdm"/>
+                            <constraint firstItem="YPk-sy-tfB" firstAttribute="top" secondItem="ei5-sX-Ra5" secondAttribute="bottom" constant="8" id="7Ow-ou-GAr"/>
+                            <constraint firstItem="YPk-sy-tfB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="7mg-3X-BOJ"/>
+                            <constraint firstItem="ei5-sX-Ra5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="8Ju-vh-JGQ"/>
+                            <constraint firstItem="WJR-WD-Ox6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ASL-tE-RRQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ei5-sX-Ra5" secondAttribute="trailing" constant="20" symbolic="YES" id="BKL-XT-mMS"/>
+                            <constraint firstItem="WJR-WD-Ox6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="W4J-EY-nPb"/>
+                            <constraint firstItem="QKf-m2-fSw" firstAttribute="top" secondItem="A6N-1m-xbR" secondAttribute="bottom" constant="8" id="Wbx-xr-3mX"/>
+                            <constraint firstItem="A6N-1m-xbR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="bbn-bi-wsx"/>
+                            <constraint firstItem="A6N-1m-xbR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bwn-I2-2co"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YPk-sy-tfB" secondAttribute="trailing" constant="20" symbolic="YES" id="kSE-ML-ZbZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A6N-1m-xbR" secondAttribute="trailing" constant="16" id="rOZ-YM-6S0"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WJR-WD-Ox6" secondAttribute="trailing" constant="20" symbolic="YES" id="vs9-mm-Z8b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qEv-rt-mQX"/>
+                    <connections>
+                        <outlet property="unreadIndicatorSwitch" destination="QKf-m2-fSw" id="mSu-AE-etN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598" y="-225"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bRD-ZD-MHq">
+            <objects>
+                <navigationController id="9Qp-Oy-HIX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F5b-Hn-PGJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PnR-BX-8hB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLu-ee-fWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="-233"/>
+        </scene>
+    </scenes>
+</document>

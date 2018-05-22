@@ -12,5 +12,5 @@
 + (UIViewController *)topmostViewControllerWithRootViewController:(UIViewController *)viewController;
 + (void)displayModalWebViewWithURL:(NSURL *)url
              topmostViewController:(UIViewController *)topmostViewController;
-
++ (NSURL *)getEncodedURIFromString:(NSString *)uriString;
 @end

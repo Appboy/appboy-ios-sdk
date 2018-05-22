@@ -342,15 +342,14 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 }
 
 #pragma mark - Display News Feed
-
 - (void)displayModalFeedView {
   Class ModalFeedViewControllerClass = [ABKUIUtils getModalFeedViewControllerClass];
   if (ModalFeedViewControllerClass != nil) {
-    ABKFeedViewControllerModalContext *feedViewController = [[ModalFeedViewControllerClass alloc] init];
-    feedViewController.modalPresentationStyle = UIModalPresentationFormSheet;
     UIViewController *keyWindowTopmostViewController =
       [ABKUIURLUtils topmostViewControllerWithRootViewController:self.appWindow.rootViewController];
-    [keyWindowTopmostViewController presentViewController:feedViewController animated:YES completion:nil];
+    [keyWindowTopmostViewController presentViewController:[[ModalFeedViewControllerClass alloc] init]
+                                                 animated:YES
+                                               completion:nil];
   }
 }
 

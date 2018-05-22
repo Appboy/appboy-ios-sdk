@@ -48,12 +48,6 @@ The Advanced tab holds examples of [fine network traffic control](https://docume
 - `AppDelegate.m` shows how to authorize Braze to request location authorization on your behalf, and `MiscViewController.m` gives an example of logging location data.
 - View `FacebookViewController` and `TwitterViewController` for examples of how to integrate social data tracking into your application.
 
-## Theming Braze
-You can enable and disable [NUI theming](https://github.com/tombenner/nui) in the `AppDelegate.m` file. Try turning it on and off via `[Braze sharedInstance].useNUITheming` to see the changes in the Feedback form and News Feed, from standard iOS controls to something different.
-
-![](Screenshots/feed-no-nui.png)
-![](Screenshots/feed-nui.png)
-
 ## Next Steps
 Finally, look around for other examples of how to use the methods employed throughout Stopwatch.
 

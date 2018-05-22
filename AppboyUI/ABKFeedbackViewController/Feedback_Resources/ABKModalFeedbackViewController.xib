@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -62,17 +62,11 @@
                     <items>
                         <navigationItem title="Feedback" id="2n1-mq-C88">
                             <barButtonItem key="leftBarButtonItem" title="Cancel" id="mhY-Ci-iWj">
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackCancelBarButtonItem"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="cancelButtonTapped:" destination="-1" id="c6I-J6-HfF"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" title="Send" id="DnY-6c-mqo">
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackSendBarButtonItem"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sendButtonTapped:" destination="-1" id="b8e-CP-OBb"/>
                                 </connections>
@@ -81,7 +75,6 @@
                     </items>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="translatesAutoresizingMaskIntoConstraints" value="NO"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackNavigationBar"/>
                     </userDefinedRuntimeAttributes>
                 </navigationBar>
                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="556" translatesAutoresizingMaskIntoConstraints="NO" id="Lgq-bz-7Fo">
@@ -94,9 +87,6 @@
                             <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackTextView"/>
-                            </userDefinedRuntimeAttributes>
                         </textView>
                         <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="999" text="Reporting an Issue?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-cB-QVj">
                             <rect key="frame" x="246" y="10" width="124" height="15.5"/>
@@ -108,9 +98,6 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                             <color key="textColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackIssueLabel"/>
-                            </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtX-qi-NNJ">
                             <rect key="frame" x="211" y="5" width="25" height="26"/>
@@ -129,9 +116,6 @@
                             <state key="highlighted">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackIssueButton"/>
-                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="issueButtonTapped:" destination="-1" eventType="touchUpInside" id="M0u-UN-TGC"/>
                             </connections>
@@ -148,9 +132,6 @@
                             <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackTextField"/>
-                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="fhd-q4-d1m"/>
                             </connections>
@@ -170,9 +151,6 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackMessageLabel"/>
-                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,7 +174,6 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="translatesAutoresizingMaskIntoConstraints" value="NO"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="nuiClass" value="ABKFeedbackBackgroundView"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>

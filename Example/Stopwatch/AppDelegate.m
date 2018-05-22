@@ -1,10 +1,8 @@
 #import "AppDelegate.h"
 #import <AppboyKit.h>
-#import "NUISettings.h"
 #import "ABKPushUtils.h"
 #import "OverrideEndpointDelegate.h"
 #import "IDFADelegate.h"
-#import "ABKThemableFeedNavigationBar.h"
 #import "Branch.h"
 #import <Firebase/Firebase.h>
 #import <BuddyBuildSDK/BuddyBuildSDK.h>
@@ -76,15 +74,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
           inApplication:application
       withLaunchOptions:launchOptions
       withAppboyOptions:appboyOptions];
-  
-  // Enable/disable Appboy to use NUI theming. Try turning it on and off to see the results!  (Look at the Appboy
-  // feedback form and news feed).
-  [Appboy sharedInstance].useNUITheming = YES;
-  
-  // Set feed navigation bar to opaque green
-  [[ABKThemableFeedNavigationBar appearance] setTranslucent:NO];
-  [[ABKThemableFeedNavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.25 green:0.81 blue:0.50 alpha:1.0]];
-  
+
   // Configure Firebase Dynamic Links
   [FIROptions defaultOptions].deepLinkURLScheme = @"stopwatch";
   [FIRApp configure];
@@ -117,7 +107,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
      NSLog(@"Firebase handled Universal Link: %@", userActivity.webpageURL);
   }];
   BOOL handledByBranch = [[Branch getInstance] continueUserActivity:userActivity];
-  
+
   return handledByBranch || handledByFirebase;
 }
 
@@ -167,7 +157,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
   // Handle Branch deep links
   [[Branch getInstance] handleDeepLink:url];
-  
+
   // Handle Firebase deep links
   FIRDynamicLink *dynamicLink = [[FIRDynamicLinks dynamicLinks] dynamicLinkFromCustomSchemeURL:url];
   if (dynamicLink) {

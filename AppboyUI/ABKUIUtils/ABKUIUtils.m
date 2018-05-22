@@ -76,11 +76,19 @@ static NSUInteger const iPhoneXHeight = 2436.0;
 }
 
 + (Class)getModalFeedViewControllerClass {
-  return NSClassFromString(@"ABKFeedViewControllerModalContext");
+  return NSClassFromString(@"ABKNewsFeedViewController");
 }
 
 + (BOOL)isiPhoneX {
   return [[UIScreen mainScreen] nativeBounds].size.height == iPhoneXHeight;
+}
+
++ (UIImage *)getImageWithName:(NSString *)name
+                         type:(NSString *)type
+               inAppboyBundle:(NSBundle *)appboyBundle {
+  NSString *imagePath = [appboyBundle pathForResource:name ofType:type];
+  UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+  return image;
 }
 
 @end

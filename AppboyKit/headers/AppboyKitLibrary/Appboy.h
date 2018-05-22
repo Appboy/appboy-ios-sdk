@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.4.0"
+#define APPBOY_SDK_VERSION @"3.5.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -29,7 +29,6 @@
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKIDFADelegate;
 @protocol ABKAppboyEndpointDelegate;
-@protocol ABKPushURIDelegate;
 @protocol ABKURLDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -91,12 +90,6 @@ extern NSString *const ABKIDFADelegateKey;
  * (e.g. image) URIs used by the Braze SDK.
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
-
-/*!
- * This key can be set to an instance of a class that conforms to the ABKPushURIDelegate protocol, which can be used to handle deep linking
- * in push in a custom way.
- */
-extern NSString *const ABKPushURIDelegateKey __deprecated_msg("ABKPushURIDelegate is deprecated, please use the ABKURLDelegate protocol instead.");
 
 /*!
  * This key can be set to an instance of a class that conforms to the ABKURLDelegate protocol, allowing it to handle URLs in a custom way.
@@ -297,31 +290,6 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * See ABKLocationManager.h.
  */
 @property (nonatomic, readonly) ABKLocationManager *locationManager;
-
-/*!
- * Appboy UI elements can be themed using the NUI framework. See https://github.com/tombenner/nui and the Appboy docs.
- * To enable NUI, take the following steps:
- *
- * - If your app uses ARC: Get NUI from https://github.com/tombenner/nui
- *
- * - If your app does not use ARC: Get NUI from https://github.com/Appboy/nui which is our fork of NUI that manages its
- *   own memory
- *
- * - Follow the instructions in either repo above to integrate NUI
- *
- * - Create a style sheet called NUIStyle.nss
- *
- * - Set the property below to YES
- *
- * If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app.  Note that
- * you can theme your app and Appboy differently -- Appboy uses NUI independently of your app's use of NUI.
- */
-@property (nonatomic) BOOL useNUITheming;
-
-/*!
- * A class conforming to the ABKPushURIDelegate protocol can be set to handle deep linking in push in a custom way.
- */
-@property (nonatomic, weak, nullable) id<ABKPushURIDelegate> appboyPushURIDelegate __deprecated_msg("Use appboyURLDelegate instead.");
 
 /*!
  * A class conforming to the ABKURLDelegate protocol can be set to handle URLs in a custom way.

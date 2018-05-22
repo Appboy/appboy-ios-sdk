@@ -1,3 +1,27 @@
+## 3.5.0
+
+##### Breaking
+- Open sources the News Feed UI code and moves it into a new subspec named "NewsFeed".
+  - Manual integrators must now add the `AppboyUI` folder of this repository to their projects as a group, in addition to `AppboyKit`.
+  - The "NewsFeed" subspec contains the Braze News Feed UI and the Core SDK. It does not include the Feedback or In-App Message UI.
+  - The "UI" subspec contains all Braze UI and the Core SDK subpsec.
+  - `ABKFeedViewControllerDelegate` was removed.
+  - To integrate a navigation context News Feed, use the following code:
+  ```
+  ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
+  [self.navigationController pushViewController:newsFeed animated:YES];
+  ```
+  - To integrate a modal context News Feed, use the following code:
+  ```
+  ABKNewsFeedViewController *newsFeed = [[ABKNewsFeedViewController alloc] init];
+  [self.navigationController presentViewController:newsFeed animated:YES completion:nil];
+  ```
+  - See our [News Feed Sample app](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/NewsFeed/BrazeNewsFeedSample) for sample implementations and customizations.
+- Removes NUI support for Feedback, In-App Messages, and the News Feed.
+  - All customization can now be done by using categories or by extending our open sourced view controllers.  
+- Removes deprecated `ABKPushURIDelegate` from the SDK. Use `ABKURLDelegate` instead.
+
+
 ## 3.4.0
 
 ##### Breaking

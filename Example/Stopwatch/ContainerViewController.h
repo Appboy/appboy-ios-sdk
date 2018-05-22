@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <AppboyKit.h>
+#import "ABKNewsFeedViewController.h"
 
 /**
  * ContainerViewController is a custom container view controller that switches child views based on the
@@ -17,8 +18,7 @@
 @property BOOL hasFeedAndFlushButtons;
 @property NSMutableArray *childViewControllers;
 @property NSArray *segmentIndexToViewControllerId;
-
-@property ABKFeedViewControllerModalContext *modalFeedViewController;
+@property ABKNewsFeedViewController *modalFeedViewController;
 
 // This method fills in the data for switching between child view controllers and must be called before the view controller is presented
 - (void)initWithArray:(NSArray *)segmentIndexToViewControllerId andTitle:(NSString *)title andImageName:(NSString *)imageName withFeedAndFlushButtons:(BOOL)hasButtons;

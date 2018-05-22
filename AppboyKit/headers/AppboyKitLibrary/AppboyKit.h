@@ -33,11 +33,6 @@
 #import "ABKInAppMessageUIControlling.h"
 
 // News Feed
-#import "ABKFeedViewController.h"
-#import "ABKFeedViewControllerGenericContext.h"
-#import "ABKFeedViewControllerModalContext.h"
-#import "ABKFeedViewControllerNavigationContext.h"
-#import "ABKFeedViewControllerPopoverContext.h"
 #import "ABKFeedController.h"
 
 // IDFA
@@ -51,6 +46,5 @@
 #import "ABKLocationManager.h"
 
 #import "ABKURLDelegate.h"
-#import "ABKPushURIDelegate.h"
 #import "ABKPushUtils.h"
 #endif
