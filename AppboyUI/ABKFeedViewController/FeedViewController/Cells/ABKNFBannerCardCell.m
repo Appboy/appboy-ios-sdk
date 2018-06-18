@@ -33,12 +33,17 @@
                                        CGFloat newRatio = image.size.width / image.size.height;
                                        if (fabs(newRatio - weakSelf.imageRatioConstraint.multiplier) > 0.1f) {
                                          [weakSelf updateImageRatioConstraintToRatio:newRatio];
+                                         [weakSelf setNeedsUpdateConstraints];
+                                         [weakSelf setNeedsDisplay];
+                                         if (weakSelf.onCellHeightUpdateBlock) {
+                                           weakSelf.onCellHeightUpdateBlock();
+                                         }
                                        }
-                                       [weakSelf setNeedsUpdateConstraints];
-                                       [weakSelf setNeedsDisplay];
                                      });
                                    } else {
-                                     weakSelf.bannerImageView.image = [weakSelf getPlaceHolderImage];
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                       weakSelf.bannerImageView.image = [weakSelf getPlaceHolderImage];
+                                     });
                                    }
                                  }];
 }

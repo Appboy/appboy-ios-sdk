@@ -29,7 +29,8 @@
   BOOL shouldHideLink = captionedImageCard.domain == nil || captionedImageCard.domain.length == 0;
   [self hideLinkLabel:shouldHideLink];
   
-  self.imageHeightContraint.constant = self.captionedImageView.frame.size.width / captionedImageCard.imageAspectRatio;
+  CGFloat currImageHeightConstraint = self.captionedImageView.frame.size.width / captionedImageCard.imageAspectRatio;
+  self.imageHeightContraint.constant = currImageHeightConstraint;
   [self setNeedsUpdateConstraints];
   [self setNeedsDisplay];
   __weak typeof(self) weakSelf = self;
@@ -42,12 +43,20 @@
                                       }
                                       if (image) {
                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                          weakSelf.imageHeightContraint.constant = weakSelf.captionedImageView.frame.size.width * image.size.height / image.size.width;
-                                          [weakSelf setNeedsUpdateConstraints];
-                                          [weakSelf setNeedsDisplay];
+                                          CGFloat newImageHeightConstraint = weakSelf.captionedImageView.frame.size.width * image.size.height / image.size.width;
+                                          if (fabs(newImageHeightConstraint - currImageHeightConstraint) > 5e-1) {
+                                            weakSelf.imageHeightContraint.constant = newImageHeightConstraint;
+                                            [weakSelf setNeedsUpdateConstraints];
+                                            [weakSelf setNeedsDisplay];
+                                            if (weakSelf.onCellHeightUpdateBlock) {
+                                              weakSelf.onCellHeightUpdateBlock();
+                                            }
+                                          }
                                         });
                                       } else {
-                                        weakSelf.captionedImageView.image = [weakSelf getPlaceHolderImage];
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                          weakSelf.captionedImageView.image = [weakSelf getPlaceHolderImage];
+                                        });
                                       }
                                     }];
 }

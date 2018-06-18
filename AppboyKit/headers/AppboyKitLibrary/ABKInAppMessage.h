@@ -95,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * This property can be a HTTP URI or a protocol URI.
  */
-@property (readonly, nullable) NSURL *uri;
+@property (readonly, copy, nullable) NSURL *uri;
 
 /*!
  * When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES, 

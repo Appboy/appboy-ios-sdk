@@ -42,7 +42,7 @@
   return [[SDWebImageManager sharedManager] cacheKeyForURL:url];
 }
 
-+ (void)removeImageForKey:(nullable NSString *)key {
++ (void)removeSDWebImageForKey:(nullable NSString *)key {
   [[SDImageCache sharedImageCache] removeImageForKey:key withCompletion:nil];
 }
 
@@ -50,7 +50,7 @@
   return [[SDImageCache sharedImageCache] imageFromCacheForKey:key];
 }
 
-+ (void)clearCache {
++ (void)clearSDWebImageCache {
   [[SDImageCache sharedImageCache] clearMemory];
   [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
 }

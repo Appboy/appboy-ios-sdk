@@ -66,6 +66,11 @@ static NSString *const SwitchCell = @"switch cell";
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 - (void)keyboardDidShow:(NSNotification *)notification {
   NSDictionary *info = [notification userInfo];
   CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -113,7 +118,7 @@ static NSString *const SwitchCell = @"switch cell";
     }
   } else if ([label isEqualToString:CustomEventPropertyType] || [label isEqualToString:PurchasePropertyType]) {
     // EventSegmentedControlCell
-    cell =  [self createCellWithIdentifier:SegmentedControlCell withClass:[EventSegmentedControlCell class]];
+    cell = [self createCellWithIdentifier:SegmentedControlCell withClass:[EventSegmentedControlCell class]];
     if (indexPath.section == 0) {
       ((EventSegmentedControlCell *)cell).customEventPropertyTypeSegment.selectedSegmentIndex = self.eventPropertyType;
     } else if (indexPath.section == 1) {
@@ -237,7 +242,7 @@ static NSString *const SwitchCell = @"switch cell";
 }
 
 - (void)setUpPropertyKeyTextFieldWithSwitchIndexPath:(NSIndexPath *)indexPath {
-  NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+  NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section];
   EventTextFieldCell *textFieldCell = [self.tableView cellForRowAtIndexPath:newIndexPath];
   UITextField *textField = textFieldCell.eventTextField;
   textField.keyboardType = UIKeyboardTypeDefault;
@@ -372,6 +377,17 @@ static NSString *const SwitchCell = @"switch cell";
       }
     }
   }
+  // restoring NSNumber/NSDate values back to NSString
+  NSMutableDictionary *updatedValues = [NSMutableDictionary dictionary];
+  for (NSString *key in self.valuesDictionary) {
+    id value = self.valuesDictionary[key];
+    if ([value isKindOfClass:[NSNumber class]]) {
+      updatedValues[key] = [NSString stringWithFormat:@"%@", value];
+    } else if ([value isKindOfClass:[NSDate class]]) {
+      updatedValues[key] = [self getStringFromDate:value];
+    }
+  }
+  [self.valuesDictionary addEntriesFromDictionary:updatedValues];
 }
 
 - (BOOL)validateAndStorePropertyWithKey: (NSString *)key andValue:(NSString *)value withPropertyType:(NSInteger)propertyType {
@@ -454,11 +470,6 @@ static NSString *const SwitchCell = @"switch cell";
   dateFormatter.dateFormat = @"MM/dd/yyyy";
   NSDate *date = [dateFormatter dateFromString:birthdayString];
   return date;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-  [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 @end

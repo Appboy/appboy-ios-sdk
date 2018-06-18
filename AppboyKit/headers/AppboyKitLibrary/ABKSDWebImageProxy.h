@@ -24,9 +24,9 @@ static NSString *const CORE_VERSION_WARNING = @"Attempting to download image but
 + (void)diskImageExistsForURL:(nullable NSURL *)url
                    completed:(nullable void (^)(BOOL isInCache))completion;
 + (nullable NSString *)cacheKeyForURL:(nullable NSURL *)url;
-+ (void)removeImageForKey:(nullable NSString *)key;
++ (void)removeSDWebImageForKey:(nullable NSString *)key;
 + (nullable UIImage *)imageFromCacheForKey:(nullable NSString *)key;
-+ (void)clearCache;
++ (void)clearSDWebImageCache;
 + (BOOL)isSupportedSDWebImageVersion;
 
 @end

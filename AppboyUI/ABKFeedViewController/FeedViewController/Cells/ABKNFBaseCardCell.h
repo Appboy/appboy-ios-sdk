@@ -2,6 +2,8 @@
 #import <FLAnimatedImage/FLAnimatedImageView.h>
 #import "ABKCard.h"
 
+typedef void (^ABKOnCellHeightUpdateBlock)(void);
+
 @interface ABKNFBaseCardCell : UITableViewCell
 
 /*!
@@ -23,6 +25,11 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewTrailingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewBottomConstraint;
+
+/*!
+ * This is a callback being called on height constraint change, so tableView can reload its UI state accordingly.
+ */
+@property (nonatomic, copy) ABKOnCellHeightUpdateBlock onCellHeightUpdateBlock;
 
 /*!
  * These are basic UI configuration for the News Feed. They are set to the default value in `setUp`

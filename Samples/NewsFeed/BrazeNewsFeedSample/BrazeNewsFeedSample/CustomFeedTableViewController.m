@@ -1,12 +1,6 @@
 #import "CustomFeedTableViewController.h"
 #include <objc/runtime.h>
 
-@interface ABKNewsFeedTableViewController(subclass)
-
-- (void)handleCardClick:(ABKCard *)card;
-
-@end
-
 @implementation CustomFeedTableViewController
 
 - (instancetype)init {

@@ -1,3 +1,12 @@
+## 3.6.0
+
+##### Breaking
+- In `ABKSDWebImageProxy.h`, renames `removeImageForKey` to `removeSDWebImageForKey` and `clearCache` to `clearSDWebImageCache` to avoid conflicts with internal Apple API.
+
+##### Added
+- Exposes `handleCardClick` on `ABKNewsFeedTableViewController.h` to enable custom handling via subclassing.
+- Improves News Feed image handling on iPad.
+
 ## 3.5.1
 
 ##### Fixed

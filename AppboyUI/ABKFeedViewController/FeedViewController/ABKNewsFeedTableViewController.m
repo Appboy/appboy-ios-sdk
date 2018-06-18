@@ -71,7 +71,9 @@
 - (void)viewWillTransitionToSize:(CGSize)size
        withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
   [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-  [self.tableView reloadData];
+  [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+    [self.tableView reloadData];
+  }];
 }
 
 - (void)dealloc {
@@ -168,6 +170,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   if ([cell isKindOfClass:[ABKNFCrossPromotionCardCell class]]) {
     ((ABKNFCrossPromotionCardCell *)cell).actionDelegate = self;
   }
+  __weak typeof(self) weakSelf = self;
+  cell.onCellHeightUpdateBlock = ^{
+    BOOL animationsEnabled = UIView.areAnimationsEnabled;
+    [UIView setAnimationsEnabled:NO];
+    [weakSelf.tableView beginUpdates];
+    [weakSelf.tableView endUpdates];
+    [UIView setAnimationsEnabled:animationsEnabled];
+  };
   return cell;
 }
 

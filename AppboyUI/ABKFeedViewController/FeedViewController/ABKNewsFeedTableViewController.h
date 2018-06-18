@@ -57,4 +57,13 @@
  */
 - (NSString *)localizedAppboyFeedString:(NSString *)key;
 
+/*!
+ * @discussion This method handles the user's click on the card.
+ *
+ * To do custom handling with the card clicks, you can override this method in a
+ * subclass. You also need to call [card logCardClicked] manually inside of your new method
+ * to send the click event to the Braze server.
+ */
+- (void)handleCardClick:(ABKCard *)card;
+
 @end
