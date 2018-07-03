@@ -112,6 +112,15 @@
   return inAppMessageDisplayChoice;
 }
 
+- (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForControlInAppMessage:(ABKInAppMessage *)controlInAppMessage {
+  ABKInAppMessageDisplayChoice inAppMessageDisplayChoice = self.keyboardVisible ? ABKDisplayInAppMessageLater : ABKDisplayInAppMessageNow;
+  if ([[Appboy sharedInstance].inAppMessageController.delegate
+              respondsToSelector:@selector(beforeControlMessageImpressionLogged:)]) {
+    inAppMessageDisplayChoice = [Appboy.sharedInstance.inAppMessageController.delegate beforeControlMessageImpressionLogged:controlInAppMessage];
+  }
+  return inAppMessageDisplayChoice;
+}
+
 - (BOOL)inAppMessageCurrentlyVisible {
   if (self.inAppMessageWindowController) {
     return YES;

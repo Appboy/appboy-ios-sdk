@@ -1,3 +1,15 @@
+## 3.7.0
+
+#### Breaking
+- In `ABKInAppMessageUIControlling` protocol, `getCurrentDisplayChoiceForControlInAppMessage` method is added to define whether the control in-app message impression should be logged now, later or discarded.
+- In `ABKInAppMessageControllerDelegate` protocol, `beforeControlMessageImpressionLogged` method is added to define whether the control in-app message impression should be logged now, later or discarded.
+
+##### Added
+- `CLLocationManager` authorization requests can now be prevented from compiling by setting a Preprocessor flag `ABK_DISABLE_LOCATION_SERVICES`.
+
+##### Fixed
+- Fixes an issue where in-app messages triggered on session start could potentially be templated with the old user's attributes.
+
 ## 3.6.0
 
 ##### Breaking
@@ -734,7 +746,7 @@ occurred.
 ## 2.8.1
 
 ##### Added
- - Add a new method `- (void) getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo` to collect analytics data for push actions in iOS 8. It should be called in the UIApplication delegate method `- (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
+ - Adds a new method `- (void) getActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo` to collect analytics data for push actions in iOS 8. It should be called in the UIApplication delegate method `- (void) application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
  - New Custom Attribute Data Type (Array): Braze now supports custom attributes which contain an array of string elements. In addition, we also provide methods for adding or removing an string element from an array type custom attribute. For more information, please refer to [ABKUser.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKUser.h).
  - Users can now pull down on the Braze Newsfeed to refresh the content on iOS version 6.0 or later.
 

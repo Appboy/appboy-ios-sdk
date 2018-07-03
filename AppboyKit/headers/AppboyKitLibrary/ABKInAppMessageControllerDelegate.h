@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
 
 /*!
  * @param inAppMessage The in-app message object being offered to the delegate method.
- * @return ABKInAppMessageDisplayChoice for details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice
+ * @return ABKInAppMessageDisplayChoice The in-app message display choice. For details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice
  * above.
  *
  * This delegate method defines whether the in-app message will be displayed now, displayed later, or discarded.
@@ -50,6 +50,20 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
  * game or on a loading screen), you can use this delegate to delay or discard pending in-app message messages.
  */
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage;
+
+/*!
+* @param inAppMessage The control in-app message object being offered to the delegate method.
+* @return ABKInAppMessageDisplayChoice The control in-app message impression logging choice.
+* For details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice above.
+* Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.
+*
+* This delegate method defines the timing of when the control in-app message impression event should be logged: now, later, or discarded.
+* Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.
+*
+* If there are situations where you would not want the control in-app message impression to be logged, you can use this delegate to delay
+* or discard it.
+*/
+- (ABKInAppMessageDisplayChoice)beforeControlMessageImpressionLogged:(ABKInAppMessage *)inAppMessage;
 
 @end
 NS_ASSUME_NONNULL_END

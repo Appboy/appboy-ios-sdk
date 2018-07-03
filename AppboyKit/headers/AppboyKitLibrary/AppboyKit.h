@@ -25,6 +25,7 @@
 #import "ABKInAppMessageFull.h"
 #import "ABKInAppMessageHTML.h"
 #import "ABKInAppMessageHTMLFull.h"
+#import "ABKInAppMessageControl.h"
 #import "ABKInAppMessageControllerDelegate.h"
 #import "ABKInAppMessageController.h"
 #import "ABKInAppMessageButton.h"
@@ -44,6 +45,7 @@
 
 // Location
 #import "ABKLocationManager.h"
+#import "ABKLocationManagerProvider.h"
 
 #import "ABKURLDelegate.h"
 #import "ABKPushUtils.h"

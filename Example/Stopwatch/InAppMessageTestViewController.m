@@ -65,6 +65,52 @@
   }
 }
 
+/*!
+ * This callback method allows you to specify if each control in-app message should be logged. It is called just before each control in-app
+ * message is logged. Please check ABKInAppMessageControllerDelegate.h for more about the return value ABKInAppMessageDisplayChoice
+ *
+ * In-app message queuing:
+ *
+ * Arriving control in-app messages are stacked when they can't be logged for one of these reasons:
+ * - Another non-control in-app message is visible
+ * - If the keyboard is being displayed currently.
+ *
+ * Control in-app messages are potentially removed from the in-app message stack and logged when:
+ * - The application comes to the foreground after being backgrounded
+ * - displayNextInAppMessageWithDelegate is called
+ *
+ * If one of these events occurs and the control in-app message can't be logged, it remains in the stack.
+ *
+ * Note that if you unset the delegate after some control in-app messages have been stacked, the accumulated stacked control in-app messages
+ * will be logged according to the above scheme.
+ */
+- (ABKInAppMessageDisplayChoice)beforeControlMessageImpressionLogged:(ABKInAppMessage *)inAppMessage {
+  NSLog(@"Received in-app message with message: %@", inAppMessage.message);
+  
+  [self updateRemainingIAMLabel];
+  
+  // /Check if the delegate is called by a click on the "Display Next Available In-App Message" button.
+  if (self.shouldDisplayInAppMessage && self.segmentedControlForInAppMode.selectedSegmentIndex == 1) {
+    // If the in-app message mode is ABKDisplayInAppMessageLater and the user has clicked the "Display Next Available In-App Message"
+    // button, this will log the next available control in-app message.
+    return ABKDisplayInAppMessageNow;
+  } else {
+    switch (self.segmentedControlForInAppMode.selectedSegmentIndex) {
+      case 0:
+        return ABKDisplayInAppMessageNow;
+        
+      case 1:
+        return ABKDisplayInAppMessageLater;
+        
+      case 2:
+        return ABKDiscardInAppMessage;
+        
+      default:
+        return ABKDisplayInAppMessageNow;
+    }
+  }
+}
+
 // This delegate method asks if there is any custom in-app message view controller that developers want to pass in. The returned
 // view controller should be a subclass of ABKInAppMessageViewController.
 // Also, the view of the returned view controller should be an instance of ABKInAppMessageView or its subclass.

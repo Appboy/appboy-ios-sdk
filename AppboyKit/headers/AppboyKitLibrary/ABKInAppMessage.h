@@ -187,6 +187,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL animateOut;
 
 /*!
+ * isControl defines whether this in-app message is a control. Control in-app messages should not be displayed to users.
+ */
+@property BOOL isControl;
+
+/*!
  * If you're handling in-app messages completely on your own, you should still report
  * impressions and clicks on the in-app message back to Braze with these methods so that your campaign reporting features
  * still work in the dashboard.

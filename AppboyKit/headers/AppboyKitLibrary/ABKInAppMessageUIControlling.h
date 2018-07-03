@@ -37,6 +37,14 @@
 - (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForInAppMessage:(ABKInAppMessage *)inAppMessage;
 
 /*!
+ * @discussion This method will return the ABKInAppMessageDisplayChoice (see ABKInAppMessageControllerDelegate
+ *             for more information) based on whether or not the keyboard is showing.
+ *
+ * For customization, please use a subclass or category to override this method.
+ */
+- (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForControlInAppMessage:(ABKInAppMessage *)controlInAppMessage;
+
+/*!
  * @discussion This method displays the in-app message. We call it when the in-app message has no
  *             image URL, or there is an image URL, and it has already been downloaded. If you call
  *             this method directly and the image hasn't been downloaded, there will be a spinner
