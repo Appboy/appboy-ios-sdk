@@ -11,5 +11,6 @@ var searchData=
   ['inappmessagecontroller',['inAppMessageController',['../interface_appboy.html#aa3225751b163e9dca3efe040eed3d2c3',1,'Appboy']]],
   ['inappmessagedismisstype',['inAppMessageDismissType',['../interface_a_b_k_in_app_message.html#aa607c4e109e5853db1abc5c4a66c5a65',1,'ABKInAppMessage']]],
   ['inappmessageslideupanchor',['inAppMessageSlideupAnchor',['../interface_a_b_k_in_app_message_slideup.html#a656ca209031c39917e179679346026f5',1,'ABKInAppMessageSlideup']]],
-  ['inappmessageuicontroller',['inAppMessageUIController',['../interface_a_b_k_in_app_message_controller.html#af89e21829e313a8111dc337dd8b25755',1,'ABKInAppMessageController']]]
+  ['inappmessageuicontroller',['inAppMessageUIController',['../interface_a_b_k_in_app_message_controller.html#af89e21829e313a8111dc337dd8b25755',1,'ABKInAppMessageController']]],
+  ['iscontrol',['isControl',['../interface_a_b_k_in_app_message.html#a2b718dcc018145b379e58cf7ffff13c3',1,'ABKInAppMessage']]]
 ];

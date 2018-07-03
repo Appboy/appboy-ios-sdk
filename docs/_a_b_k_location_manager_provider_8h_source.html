@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>“BrazeiOSSDK: Member List</title>
+<title>“BrazeiOSSDK: tmp/docs/ABKLocationManagerProvider.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,7 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,14 +57,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,21 +71,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8af83c0dc83a45a35ca6968cdc29a7af.html">tmp</a></li><li class="navelem"><a class="el" href="dir_0a210242779ad4a14943a572f93f0ce8.html">docs</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ABKFeedController Member List</div>  </div>
+<div class="title">ABKLocationManagerProvider.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="interface_a_b_k_feed_controller.html">ABKFeedController</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_a_b_k_feed_controller.html#af5353b979aeb75bf37ed6239087117b5">cardCountForCategories:</a></td><td class="entry"><a class="el" href="interface_a_b_k_feed_controller.html">ABKFeedController</a></td><td class="entry"></td></tr>
-  <tr><td class="entry">-&#160;</td><td><a class="el" href="interface_a_b_k_feed_controller.html#ac114e5996cfdde7643a3a6f056538382">getCardsInCategories:</a></td><td class="entry"><a class="el" href="interface_a_b_k_feed_controller.html">ABKFeedController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"></td><td class="entry"><a class="el" href="interface_a_b_k_feed_controller.html#ac73559d03f1ad8081f66c34ba8504781">lastUpdate</a></td><td class="entry"><a class="el" href="interface_a_b_k_feed_controller.html">ABKFeedController</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"></td><td class="entry"><a class="el" href="interface_a_b_k_feed_controller.html#a0961da8d9ba3663c889c2661ec6dd794">newsFeedCards</a></td><td class="entry"><a class="el" href="interface_a_b_k_feed_controller.html">ABKFeedController</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry">-&#160;</td><td><a class="el" href="interface_a_b_k_feed_controller.html#a5d3db07ebf01d83aed7ff50de5904dc8">unreadCardCountForCategories:</a></td><td class="entry"><a class="el" href="interface_a_b_k_feed_controller.html">ABKFeedController</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Braze Public API: ABKLocationManagerProvider</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">@class</span> CLLocationManager;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="interface_a_b_k_location_manager_provider.html">   19</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_location_manager_provider.html">ABKLocationManagerProvider</a> : NSObject</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;+ (BOOL)locationServicesEnabled;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;+ (BOOL)requestLocationManagerAlwaysAuthorizationIfAppropriate:(CLLocationManager *)locationManager;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;+ (BOOL)requestLocationManagerWhenInUseAuthorizationIfAppropriate:(CLLocationManager *)locationManager;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;NS_ASSUME_NONNULL_END</div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Tue Jul 3 2018 13:36:38 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">

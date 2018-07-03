@@ -97,12 +97,40 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a6feb23255f96672c0f495a2b84c2d656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addc3de3fec4dce8ff6d136114cdc0b48"><td class="memItemLeft" align="right" valign="top">(ABKInAppMessageDisplayChoice)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html#addc3de3fec4dce8ff6d136114cdc0b48">getCurrentDisplayChoiceForInAppMessage:</a></td></tr>
 <tr class="separator:addc3de3fec4dce8ff6d136114cdc0b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd29326e0d63c22283a7397c5fbd4d1e"><td class="memItemLeft" align="right" valign="top">(ABKInAppMessageDisplayChoice)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html#acd29326e0d63c22283a7397c5fbd4d1e">getCurrentDisplayChoiceForControlInAppMessage:</a></td></tr>
+<tr class="separator:acd29326e0d63c22283a7397c5fbd4d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dfcd38adc1fc156dc3f0d4d8129f9c6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html#a0dfcd38adc1fc156dc3f0d4d8129f9c6">showInAppMessage:</a></td></tr>
 <tr class="separator:a0dfcd38adc1fc156dc3f0d4d8129f9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f066d150517f34f161588169dd3f0ed"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html#a2f066d150517f34f161588169dd3f0ed">inAppMessageCurrentlyVisible</a></td></tr>
 <tr class="separator:a2f066d150517f34f161588169dd3f0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="acd29326e0d63c22283a7397c5fbd4d1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (ABKInAppMessageDisplayChoice) getCurrentDisplayChoiceForControlInAppMessage: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)&#160;</td>
+          <td class="paramname"><em>controlInAppMessage</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method will return the ABKInAppMessageDisplayChoice (see <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> for more information) based on whether or not the keyboard is showing.</p>
+<p>For customization, please use a subclass or category to override this method. </p>
+
+</div>
+</div>
 <a class="anchor" id="addc3de3fec4dce8ff6d136114cdc0b48"></a>
 <div class="memitem">
 <div class="memproto">
@@ -236,7 +264,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 18 2018 14:24:54 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 3 2018 13:36:38 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

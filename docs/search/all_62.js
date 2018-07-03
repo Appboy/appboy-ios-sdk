@@ -1,6 +1,7 @@
 var searchData=
 [
   ['backgroundcolor',['backgroundColor',['../interface_a_b_k_in_app_message.html#aadcbc0aac4cce6e40c58f7b035a9139e',1,'ABKInAppMessage']]],
+  ['beforecontrolmessageimpressionlogged_3a',['beforeControlMessageImpressionLogged:',['../protocol_a_b_k_in_app_message_controller_delegate-p.html#a0e8cc58099bb0798b38af02c7049a789',1,'ABKInAppMessageControllerDelegate-p']]],
   ['beforeinappmessagedisplayed_3a',['beforeInAppMessageDisplayed:',['../protocol_a_b_k_in_app_message_controller_delegate-p.html#a829bd5ba5ca7ce9ec671bf112c030b95',1,'ABKInAppMessageControllerDelegate-p']]],
   ['buttonbackgroundcolor',['buttonBackgroundColor',['../interface_a_b_k_in_app_message_button.html#a631dcbc3fc2014539892b5bea7b72b5b',1,'ABKInAppMessageButton']]],
   ['buttonclickactiontype',['buttonClickActionType',['../interface_a_b_k_in_app_message_button.html#aff938abb33df633a3473bdd457f210b0',1,'ABKInAppMessageButton']]],

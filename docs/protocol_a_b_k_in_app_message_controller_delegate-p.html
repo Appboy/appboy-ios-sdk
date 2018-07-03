@@ -95,11 +95,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Instance Methods</h2></td></tr>
 <tr class="memitem:a829bd5ba5ca7ce9ec671bf112c030b95"><td class="memItemLeft" align="right" valign="top">(ABKInAppMessageDisplayChoice)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html#a829bd5ba5ca7ce9ec671bf112c030b95">beforeInAppMessageDisplayed:</a></td></tr>
 <tr class="separator:a829bd5ba5ca7ce9ec671bf112c030b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8cc58099bb0798b38af02c7049a789"><td class="memItemLeft" align="right" valign="top">(ABKInAppMessageDisplayChoice)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html#a0e8cc58099bb0798b38af02c7049a789">beforeControlMessageImpressionLogged:</a></td></tr>
+<tr class="separator:a0e8cc58099bb0798b38af02c7049a789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The in-app message delegate allows you to control the display of the Braze in-app message. For more detailed information on in-app message behavior, including when and how the delegate is used, see the documentation for the ABKInAppMessageDisplayChoice enum above for more detailed information.</p>
 <p>This delegate is for those who are using the Core subspec and not integrating the IAM subspec. If you are using the IAM subspec, please use ABKInAppMessageUIDelegate. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a0e8cc58099bb0798b38af02c7049a789"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (ABKInAppMessageDisplayChoice) beforeControlMessageImpressionLogged: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)&#160;</td>
+          <td class="paramname"><em>inAppMessage</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inAppMessage</td><td>The control in-app message object being offered to the delegate method. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ABKInAppMessageDisplayChoice The control in-app message impression logging choice. For details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice above. Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.</dd></dl>
+<p>This delegate method defines the timing of when the control in-app message impression event should be logged: now, later, or discarded. Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.</p>
+<p>If there are situations where you would not want the control in-app message impression to be logged, you can use this delegate to delay or discard it. </p>
+
+</div>
+</div>
 <a class="anchor" id="a829bd5ba5ca7ce9ec671bf112c030b95"></a>
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +162,7 @@ Instance Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ABKInAppMessageDisplayChoice for details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice above.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ABKInAppMessageDisplayChoice The in-app message display choice. For details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice above.</dd></dl>
 <p>This delegate method defines whether the in-app message will be displayed now, displayed later, or discarded.</p>
 <p>If there are situations where you would not want the in-app message to appear (such as during a full screen game or on a loading screen), you can use this delegate to delay or discard pending in-app message messages. </p>
 
@@ -136,7 +171,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 18 2018 14:24:54 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 3 2018 13:36:38 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
