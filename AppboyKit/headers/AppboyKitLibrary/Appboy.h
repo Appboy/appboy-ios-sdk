@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.7.0"
+#define APPBOY_SDK_VERSION @"3.7.1"
 #endif
 
 #if !TARGET_OS_TV

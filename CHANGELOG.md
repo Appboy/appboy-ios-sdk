@@ -1,3 +1,8 @@
+## 3.7.1
+
+##### Changed
+- Improves data handling immediately following a user change to bring behavioral parity with the Android and Web SDKs.
+
 ## 3.7.0
 
 #### Breaking
