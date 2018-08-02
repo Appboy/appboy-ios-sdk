@@ -18,7 +18,7 @@
 ## 3.6.0
 
 ##### Breaking
-- In `ABKSDWebImageProxy.h`, renames `removeImageForKey` to `removeSDWebImageForKey` and `clearCache` to `clearSDWebImageCache` to avoid conflicts with internal Apple API.
+- In `ABKSDWebImageProxy.h`, renames `removeImageForKey` to `removeSDWebImageForKey` and `clearCache` to `clearSDWebImageCache` to avoid conflicts with internal Apple API. **Important:** We have received reports of sporadic App Store rejection stemming from Apple's static checks mistaking our APIs for an invalid usage of the internal Apple API. We recommend new App Store submissions integrating the Braze iOS SDK ship with this version or above to decrease the likelihood of rejection.
 
 ##### Added
 - Exposes `handleCardClick` on `ABKNewsFeedTableViewController.h` to enable custom handling via subclassing.
