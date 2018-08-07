@@ -115,6 +115,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>addInAppMessage:
 : <a class="el" href="interface_a_b_k_in_app_message_controller.html#a31784ecb1f1589d76879157f3530da86">ABKInAppMessageController</a>
 </li>
+<li>addLocationCustomAttributeWithKey:latitude:longitude:
+: <a class="el" href="interface_a_b_k_user.html#a2398a28d3f324c60b0e7bf38105e8116">ABKUser</a>
+</li>
 <li>addToCustomAttributeArrayWithKey:value:
 : <a class="el" href="interface_a_b_k_user.html#a92f4b6e8b77baf80a1c9d45c479a59b3">ABKUser</a>
 </li>
@@ -147,10 +150,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>changeUser:
 : <a class="el" href="interface_appboy.html#ac8b369b40e15860b0ec18c0f4b46ac69">Appboy</a>
 </li>
+<li>contentCardCount
+: <a class="el" href="interface_a_b_k_content_cards_controller.html#a245919366ee020cf6db87de187240bd8">ABKContentCardsController</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>deserializeCardFromDictionary:
+: <a class="el" href="interface_a_b_k_content_card.html#a9a4b6fd9b48f2724f1a2e7b9b62497b4">ABKContentCard</a>
+</li>
 <li>disableSDK
 : <a class="el" href="interface_appboy.html#a8d3b78a98420713d8590ed63c9172733">Appboy</a>
 </li>
@@ -252,6 +261,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>logContentCardClicked
+: <a class="el" href="interface_a_b_k_content_card.html#aaecf1a0f9a08a09793cca12ecd5a3d19">ABKContentCard</a>
+</li>
+<li>logContentCardControlImpression
+: <a class="el" href="interface_a_b_k_content_card.html#acc2a2e054e0d5443c1ce8a2fef1aa704">ABKContentCard</a>
+</li>
+<li>logContentCardDismissed
+: <a class="el" href="interface_a_b_k_content_card.html#a6a65b26625defe0f62f19c9de9a67e8e">ABKContentCard</a>
+</li>
+<li>logContentCardImpression
+: <a class="el" href="interface_a_b_k_content_card.html#aa68cd71bf14024c21f404f3f16bdb2c3">ABKContentCard</a>
+</li>
+<li>logContentCardsDisplayed
+: <a class="el" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">Appboy</a>
+</li>
 <li>logCustomEvent:
 : <a class="el" href="interface_appboy.html#ad80c39e8c96482a77562a5b1a1d387aa">Appboy</a>
 </li>
@@ -314,6 +338,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>removeFromCustomAttributeArrayWithKey:value:
 : <a class="el" href="interface_a_b_k_user.html#ade60374cb566bd3b7ec789d15059c3ae">ABKUser</a>
 </li>
+<li>removeLocationCustomAttributeWithKey:
+: <a class="el" href="interface_a_b_k_user.html#a01db7758665fd9fa6c82eac9911a1101">ABKUser</a>
+</li>
+<li>requestContentCardsRefresh
+: <a class="el" href="interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82">Appboy</a>
+</li>
 <li>requestEnableSDKOnNextAppRun
 : <a class="el" href="interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b">Appboy</a>
 </li>
@@ -325,7 +355,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>serializeToData
-: <a class="el" href="interface_a_b_k_in_app_message.html#a98643a60d6d9e2f1d941e2e3803ac43a">ABKInAppMessage</a>
+: <a class="el" href="interface_a_b_k_content_card.html#ae6f199fb4f7f0673d3a7e1da59e55e66">ABKContentCard</a>
+, <a class="el" href="interface_a_b_k_in_app_message.html#a98643a60d6d9e2f1d941e2e3803ac43a">ABKInAppMessage</a>
 </li>
 <li>setButtonClickAction:withURI:
 : <a class="el" href="interface_a_b_k_in_app_message_button.html#a0cd27ef36495918a29f3d7dbbcd38c12">ABKInAppMessageButton</a>
@@ -409,6 +440,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>unsetCustomAttributeWithKey:
 : <a class="el" href="interface_a_b_k_user.html#ac7e013d77cb3db42b29e17755c11b91d">ABKUser</a>
 </li>
+<li>unviewedContentCardCount
+: <a class="el" href="interface_a_b_k_content_cards_controller.html#a20ad7fe02d63a586a2dd7bd97a7691a7">ABKContentCardsController</a>
+</li>
 <li>userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:
 : <a class="el" href="interface_appboy.html#a73beef1563a3d0d70184a4ceefb331f4">Appboy</a>
 </li>
@@ -426,7 +460,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 3 2018 13:36:38 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 7 2018 11:25:28 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

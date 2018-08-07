@@ -128,6 +128,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a1da5a1245765b2aa3f9d1e2c3322c6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fc175e2db49ef60e49ad0929f35632a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a">setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:</a></td></tr>
 <tr class="separator:a3fc175e2db49ef60e49ad0929f35632a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2398a28d3f324c60b0e7bf38105e8116"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a2398a28d3f324c60b0e7bf38105e8116">addLocationCustomAttributeWithKey:latitude:longitude:</a></td></tr>
+<tr class="separator:a2398a28d3f324c60b0e7bf38105e8116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01db7758665fd9fa6c82eac9911a1101"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a01db7758665fd9fa6c82eac9911a1101">removeLocationCustomAttributeWithKey:</a></td></tr>
+<tr class="separator:a01db7758665fd9fa6c82eac9911a1101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -198,6 +202,47 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether or not the alias and label are valid. Does not guarantee they won't collide with an existing pair. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2398a28d3f324c60b0e7bf38105e8116"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) addLocationCustomAttributeWithKey: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>key</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">latitude:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>latitude</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">longitude:</td>
+          <td></td>
+          <td class="paramtype">(double)&#160;</td>
+          <td class="paramname"><em>longitude</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds the location custom attribute for the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The custom attribute key </td></tr>
+    <tr><td class="paramname">latitude</td><td>The latitude of the location in degrees, the number should be in the range of [-90, 90] </td></tr>
+    <tr><td class="paramname">longitude</td><td>The longitude of the location in degrees, the number should be in the range of [-180, 180] </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -327,6 +372,29 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the operation was successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a01db7758665fd9fa6c82eac9911a1101"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) removeLocationCustomAttributeWithKey: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>key</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes the location custom attribute for the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The custom attribute key </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -983,7 +1051,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 3 2018 13:36:38 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 7 2018 11:25:28 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

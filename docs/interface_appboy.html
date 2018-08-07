@@ -120,6 +120,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a7ce8cbb08ee64b78b24fde540cd98957"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ce8cbb08ee64b78b24fde540cd98957"></a>
 <a class="el" href="interface_a_b_k_feed_controller.html">ABKFeedController</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>feedController</b></td></tr>
 <tr class="separator:a7ce8cbb08ee64b78b24fde540cd98957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b7b8185eb9fa9c5a0e7dc40169de77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7b7b8185eb9fa9c5a0e7dc40169de77"></a>
+<a class="el" href="interface_a_b_k_content_cards_controller.html">ABKContentCardsController</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>contentCardsController</b></td></tr>
+<tr class="separator:ad7b7b8185eb9fa9c5a0e7dc40169de77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81cdd59419d76738927c123f1d06fc1a"><td class="memItemLeft" align="right" valign="top">ABKRequestProcessingPolicy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">requestProcessingPolicy</a></td></tr>
 <tr class="separator:a81cdd59419d76738927c123f1d06fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a248ba35c0be127d4a05b3e1cda7feafe"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a248ba35c0be127d4a05b3e1cda7feafe">appboyEndpointDelegate</a></td></tr>
@@ -158,8 +161,12 @@ Properties</h2></td></tr>
 <tr class="separator:a90f5b55cdf6b2f18511f23f4bd3ce8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06154478e49f48c168232f48455e8173"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a06154478e49f48c168232f48455e8173">logFeedbackDisplayed</a></td></tr>
 <tr class="separator:a06154478e49f48c168232f48455e8173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe28cb65d1d31a2211c0bc528c4ccb5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">logContentCardsDisplayed</a></td></tr>
+<tr class="separator:aebe28cb65d1d31a2211c0bc528c4ccb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680549ab7dba8c5971fd9a7fd938b452"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a></td></tr>
 <tr class="separator:a680549ab7dba8c5971fd9a7fd938b452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a3450fc8d971a16a977d8c5f47dd82"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82">requestContentCardsRefresh</a></td></tr>
+<tr class="separator:a89a3450fc8d971a16a977d8c5f47dd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9abe8a17453b0bac918a51d359f0c27e"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a9abe8a17453b0bac918a51d359f0c27e">getDeviceId</a></td></tr>
 <tr class="separator:a9abe8a17453b0bac918a51d359f0c27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03075a89970f6c60df54f8a24a6c227a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a03075a89970f6c60df54f8a24a6c227a">userNotificationWasSentFromAppboy:</a></td></tr>
@@ -334,6 +341,22 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the device ID - the IDFV - which will reset if all apps for a given vendor are removed from the device.</p>
 <dl class="section return"><dt>Returns</dt><dd>The device ID. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aebe28cb65d1d31a2211c0bc528c4ccb5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) logContentCardsDisplayed </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If you're displaying content cards on your own instead of using ABKContentCardsViewController, you should still report impressions of the content cards back to Braze with this method so that your campaign reporting features still work in the dashboard. </p>
 
 </div>
 </div>
@@ -758,6 +781,22 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <p>This method posts a token to Braze servers to associate the token with the current device. </p>
+
+</div>
+</div>
+<a class="anchor" id="a89a3450fc8d971a16a977d8c5f47dd82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) requestContentCardsRefresh </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enqueues a content cards request for the current user. </p>
 
 </div>
 </div>
@@ -1266,7 +1305,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 3 2018 13:36:38 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 7 2018 11:25:28 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

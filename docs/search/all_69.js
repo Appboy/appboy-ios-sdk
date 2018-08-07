@@ -4,6 +4,7 @@ var searchData=
   ['iconbackgroundcolor',['iconBackgroundColor',['../interface_a_b_k_in_app_message.html#ada532e142b9f000581813c53f96e9e3d',1,'ABKInAppMessage']]],
   ['iconcolor',['iconColor',['../interface_a_b_k_in_app_message.html#a14025866ce5bddf0f0b20d2f1baeec13',1,'ABKInAppMessage']]],
   ['idfadelegate',['idfaDelegate',['../interface_appboy.html#abf9f0355099652da6068eaa40dec669d',1,'Appboy']]],
+  ['idstring',['idString',['../interface_a_b_k_content_card.html#af70f56e9d7d01bed34feeb774454fb68',1,'ABKContentCard']]],
   ['imagecontentmode',['imageContentMode',['../interface_a_b_k_in_app_message.html#a27f44917d3a7d6a8671c40d873965cb4',1,'ABKInAppMessage']]],
   ['imagestyle',['imageStyle',['../interface_a_b_k_in_app_message_immersive.html#aa5645c31a73781ee00b575fed118abbf',1,'ABKInAppMessageImmersive']]],
   ['imageuri',['imageURI',['../interface_a_b_k_in_app_message.html#ad4d9d9d8615a6dcad9d684e4d6a37022',1,'ABKInAppMessage']]],

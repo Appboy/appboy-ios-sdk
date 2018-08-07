@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['serializetodata',['serializeToData',['../interface_a_b_k_in_app_message.html#a98643a60d6d9e2f1d941e2e3803ac43a',1,'ABKInAppMessage']]],
+  ['serializetodata',['serializeToData',['../interface_a_b_k_content_card.html#ae6f199fb4f7f0673d3a7e1da59e55e66',1,'ABKContentCard::serializeToData()'],['../interface_a_b_k_in_app_message.html#a98643a60d6d9e2f1d941e2e3803ac43a',1,'ABKInAppMessage::serializeToData()']]],
   ['setbuttonclickaction_3awithuri_3a',['setButtonClickAction:withURI:',['../interface_a_b_k_in_app_message_button.html#a0cd27ef36495918a29f3d7dbbcd38c12',1,'ABKInAppMessageButton']]],
   ['setcustomattributearraywithkey_3aarray_3a',['setCustomAttributeArrayWithKey:array:',['../interface_a_b_k_user.html#a55c08db0448e93e0771b0e08af4b1f49',1,'ABKUser']]],
   ['setcustomattributewithkey_3aandboolvalue_3a',['setCustomAttributeWithKey:andBOOLValue:',['../interface_a_b_k_user.html#aafb4fa3dd31b091338caa7c3ddcafe26',1,'ABKUser']]],
