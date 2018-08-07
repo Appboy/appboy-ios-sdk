@@ -1,3 +1,8 @@
+## 3.8.1
+
+##### Fixed
+- **Important**: Fixes an issue with Content Cards syncing. Please use this version if integrating Content Cards.
+
 ## 3.8.0
 
 ##### Added
