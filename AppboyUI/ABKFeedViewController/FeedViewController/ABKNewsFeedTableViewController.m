@@ -63,6 +63,11 @@
   [[NSUserDefaults standardUserDefaults] setValue:@(NO) forKey:@"_UIConstraintBasedLayoutLogUnsatisfiable"];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [[Appboy sharedInstance] logFeedDisplayed];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
   [[NSUserDefaults standardUserDefaults] setValue:self.constraintWarningValue forKey:@"_UIConstraintBasedLayoutLogUnsatisfiable"];
@@ -170,7 +175,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   if ([cell isKindOfClass:[ABKNFCrossPromotionCardCell class]]) {
     ((ABKNFCrossPromotionCardCell *)cell).actionDelegate = self;
   }
-  __weak typeof(self) weakSelf = self;
+  typeof(self) __weak weakSelf = self;
   cell.onCellHeightUpdateBlock = ^{
     BOOL animationsEnabled = UIView.areAnimationsEnabled;
     [UIView setAnimationsEnabled:NO];

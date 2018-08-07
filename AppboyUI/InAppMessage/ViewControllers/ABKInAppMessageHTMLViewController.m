@@ -162,14 +162,13 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
 #pragma mark - Utility Methods
 
 - (NSMutableDictionary *)queryParameterDictionaryFromURL:(NSURL *)url {
-  __autoreleasing NSMutableDictionary *queryDict = [[NSMutableDictionary alloc] init];
+  NSMutableDictionary *queryDict = [[NSMutableDictionary alloc] init];
   NSString *urlQueryUnescaped = [url.query stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   for (NSString *param in [urlQueryUnescaped componentsSeparatedByString:@"&"]) {
     NSArray *elts = [param componentsSeparatedByString:@"="];
-    if([elts count] < 2) {
-      continue;
+    if (elts.count > 1) {
+      queryDict[elts[0]] = elts[1];
     }
-    queryDict[elts[0]] = elts[1];
   }
   return queryDict;
 }

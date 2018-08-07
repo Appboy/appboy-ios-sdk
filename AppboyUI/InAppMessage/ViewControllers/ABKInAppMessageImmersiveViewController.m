@@ -10,31 +10,35 @@ static NSInteger const CloseButtonTag = 50;
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  
   self.view.translatesAutoresizingMaskIntoConstraints = NO;
-  self.inAppMessageHeaderLabel.text = [self getInAppMessage].header;
-  self.inAppMessageHeaderLabel.textAlignment = [self getInAppMessage].headerTextAlignment;
+  ABKInAppMessageImmersive *inAppMessage = [self getInAppMessage];
+  
+  self.inAppMessageHeaderLabel.text = inAppMessage.header;
+  self.inAppMessageHeaderLabel.textAlignment = inAppMessage.headerTextAlignment;
   self.graphicImageView.contentMode = self.inAppMessage.imageContentMode;
   
-  if ([self getInAppMessage].headerTextColor != nil) {
-    [self.inAppMessageHeaderLabel setTextColor:[self getInAppMessage].headerTextColor];
+  if (inAppMessage.headerTextColor != nil) {
+    [self.inAppMessageHeaderLabel setTextColor:inAppMessage.headerTextColor];
   }
   [self changeCloseButtonColor];
   
-  if ([self getInAppMessage].imageStyle == ABKInAppMessageGraphic) {
+  if (inAppMessage.imageStyle == ABKInAppMessageGraphic) {
     [self setupLayoutForGraphic];
   } else {
     [self setupLayoutForTopImage];
   }
   [self setupButtons];
-  if ([self getInAppMessage].frameColor != nil) {
-    self.view.superview.backgroundColor = [self getInAppMessage].frameColor;
-  } else {
-    self.view.superview.backgroundColor = [UIColor colorWithRed:0.19
-                                                          green:0.19
-                                                           blue:0.19
-                                                          alpha:0.75];
+  if (![inAppMessage isKindOfClass:[ABKInAppMessageFull class]]) {
+    if (inAppMessage.frameColor != nil) {
+      self.view.superview.backgroundColor = inAppMessage.frameColor;
+    } else {
+      self.view.superview.backgroundColor = [UIColor colorWithRed:0.19
+                                                            green:0.19
+                                                             blue:0.19
+                                                            alpha:0.75];
+    }
   }
-  
   self.view.superview.accessibilityViewIsModal = YES;
   
   NSLayoutConstraint *centerYConstraint = [NSLayoutConstraint constraintWithItem:self.view

@@ -239,7 +239,6 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
                                                            selector:@selector(inAppMessageTimerFired:)
                                                            userInfo:nil repeats:NO];
     }
-
     [self.view layoutIfNeeded];
     [self.inAppMessageViewController beforeMoveInAppMessageViewOnScreen];
     if (withAnimation) {

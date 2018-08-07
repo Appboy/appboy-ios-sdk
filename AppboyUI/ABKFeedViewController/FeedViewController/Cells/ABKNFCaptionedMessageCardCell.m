@@ -33,7 +33,7 @@
   self.imageHeightContraint.constant = currImageHeightConstraint;
   [self setNeedsUpdateConstraints];
   [self setNeedsDisplay];
-  __weak typeof(self) weakSelf = self;
+  typeof(self) __weak weakSelf = self;
   [self.captionedImageView sd_setImageWithURL:[NSURL URLWithString:captionedImageCard.image]
                              placeholderImage:nil
                                       options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync)

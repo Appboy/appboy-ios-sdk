@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.7.1"
+#define APPBOY_SDK_VERSION @"3.8.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -24,6 +24,7 @@
 
 @class ABKUser;
 @class ABKFeedController;
+@class ABKContentCardsController;
 @class ABKLocationManager;
 @class ABKFeedback;
 @protocol ABKInAppMessageControllerDelegate;
@@ -251,6 +252,8 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 @property (readonly) ABKUser *user;
 
 @property (readonly) ABKFeedController *feedController;
+
+@property (readonly) ABKContentCardsController *contentCardsController;
 
 /*!
 * The policy regarding processing of network requests by the SDK. See the enumeration values for more information on
@@ -497,6 +500,13 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 - (void)logFeedbackDisplayed;
 
 /*!
+ * If you're displaying content cards on your own instead of using ABKContentCardsViewController, you should still report
+ * impressions of the content cards back to Braze with this method so that your campaign reporting features still work
+ * in the dashboard.
+ */
+- (void)logContentCardsDisplayed;
+
+/*!
  * Enqueues a news feed request for the current user. Note that if the queue already contains another request for the
  * current user, that the new feed request will be merged into the already existing request and only one will execute
  * for that user.
@@ -506,6 +516,11 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * or not. For more detail about the ABKFeedUpdatedNotification and the ABKFeedUpdatedIsSuccessfulKey, please check ABKFeedController.
  */
 - (void)requestFeedRefresh;
+
+/*!
+ * Enqueues a content cards request for the current user.
+ */
+- (void)requestContentCardsRefresh;
 
 /*!
  * Get the device ID - the IDFV - which will reset if all apps for a given vendor are removed from the device.

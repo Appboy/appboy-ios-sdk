@@ -5,6 +5,8 @@
 #import "ABKNewsFeedTableViewController.h"
 #import "ABKNewsFeedViewController.h"
 
+#import "ABKContentCardsViewController.h"
+
 @interface FeedAndFeedbackViewController ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
@@ -135,7 +137,7 @@
   }
 }
 
-#pragma mark Feed
+# pragma mark Feed
 
 // An example modal news feed view controller
 - (IBAction)modalNewsFeedButtonTapped:(id)sender {
@@ -146,6 +148,20 @@
 - (IBAction)navigationNewsFeedButtonTapped:(id)sender {
   ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
   [self.navigationController pushViewController:newsFeed animated:YES];
+}
+
+# pragma mark Content Cards
+
+- (IBAction)modalContentCardsButtonTapped:(id)sender {
+  ABKContentCardsViewController *contentCardsVC = [ABKContentCardsViewController new];
+  contentCardsVC.contentCardsViewController.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  [self.navigationController presentViewController:contentCardsVC animated:YES completion:nil];
+}
+
+- (IBAction)navigationContentCardsButtonTapped:(id)sender {
+  ABKContentCardsTableViewController *contentCards = [ABKContentCardsTableViewController getNavigationContentCardsViewController];
+  contentCards.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  [self.navigationController pushViewController:contentCards animated:YES];
 }
 
 # pragma mark Feedback

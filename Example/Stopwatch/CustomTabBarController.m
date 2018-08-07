@@ -11,7 +11,7 @@
   NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects:
                                      [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events", @"Alias"] andTitle:@"User" andImageName:@"user" withFeedAndFlushButtons:YES], // User tab
                                      [self addNavigationControllerWithChildren:@[@"UI", @"Controls"] andTitle:@"IAM" andImageName:@"IAM" withFeedAndFlushButtons:NO], // IAM tab
-                                     [self addNavigationControllerWithIdentifier:@"FeedAndFeedbackViewController" withTitle:@"Feed/Feedback" andImageName:@"newsfeed"], // Feed/Feedback tab
+                                     [self addNavigationControllerWithIdentifier:@"FeedAndFeedbackViewController" withTitle:@"Braze UI" andImageName:@"newsfeed"], // UI tab
                                      [self addNavigationControllerWithChildren:@[@"Misc", @"PushStory", @"Data"] andTitle:@"Advanced" andImageName:@"bolt" withFeedAndFlushButtons:NO], // Advanced tab
                                      nil];
   [self setViewControllers:viewControllers];

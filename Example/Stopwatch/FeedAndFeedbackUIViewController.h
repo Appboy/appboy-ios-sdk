@@ -13,5 +13,7 @@
 - (IBAction)modalNewsFeedButtonTapped:(id)sender;
 - (IBAction)modalFeedbackButtonTapped:(id)sender;
 - (IBAction)submitInstantFeedback:(id)sender;
+- (IBAction)modalContentCardsButtonTapped:(id)sender;
+- (IBAction)navigationContentCardsButtonTapped:(id)sender;
 
 @end

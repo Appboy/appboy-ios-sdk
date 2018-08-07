@@ -4,7 +4,6 @@
 #import "OverrideEndpointDelegate.h"
 #import "IDFADelegate.h"
 #import "Branch.h"
-#import <Firebase/Firebase.h>
 #import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 #ifdef PUSH_DEV
@@ -74,10 +73,6 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
           inApplication:application
       withLaunchOptions:launchOptions
       withAppboyOptions:appboyOptions];
-
-  // Configure Firebase Dynamic Links
-  [FIROptions defaultOptions].deepLinkURLScheme = @"stopwatch";
-  [FIRApp configure];
   
   // Define and initialize Branch
   Branch *branch = [Branch getInstance];
@@ -102,13 +97,8 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     NSString *urlString = [[userActivity.webpageURL absoluteString] stringByRemovingPercentEncoding];
     [self handleUniversalLinkString:urlString withABKURLDelegate:NO];
   }
-  
-  BOOL handledByFirebase = [[FIRDynamicLinks dynamicLinks] handleUniversalLink:userActivity.webpageURL completion:^(FIRDynamicLink * _Nullable dynamicLink, NSError * _Nullable error) {
-     NSLog(@"Firebase handled Universal Link: %@", userActivity.webpageURL);
-  }];
-  BOOL handledByBranch = [[Branch getInstance] continueUserActivity:userActivity];
 
-  return handledByBranch || handledByFirebase;
+  return [[Branch getInstance] continueUserActivity:userActivity];
 }
 
 // Pass the deviceToken to Braze as well
@@ -157,12 +147,6 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
   // Handle Branch deep links
   [[Branch getInstance] handleDeepLink:url];
-
-  // Handle Firebase deep links
-  FIRDynamicLink *dynamicLink = [[FIRDynamicLinks dynamicLinks] dynamicLinkFromCustomSchemeURL:url];
-  if (dynamicLink) {
-    NSLog(@"Stopwatch received a Firebase dynamic link: %@", dynamicLink.url);
-  }
 
   return YES;
 }
@@ -264,13 +248,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 - (BOOL)handleAppboyURL:(NSURL *)url fromChannel:(ABKChannel)channel withExtras:(NSDictionary *)extras {
   // Use ABKURLDelegate to handle Universal Links
-  BOOL handledByFirebase = [[FIRDynamicLinks dynamicLinks] handleUniversalLink:url completion:^(FIRDynamicLink * _Nullable dynamicLink, NSError * _Nullable error) {
-    NSLog(@"Firebase FIRDynamicLink is %@", dynamicLink.url.absoluteString);
-    [self showAlertWithTitle:@"Firebase Universal Link (ABKURLDelegate)" andMessage:[NSString stringWithFormat:@"%@ -> %@", url.absoluteString, dynamicLink.url.absoluteString]];
-  }];
-  if (handledByFirebase) {
-    return YES;
-  } else if ([[url.host lowercaseString] isEqualToString:@"sweeney.appboy.com"]) {
+  if ([[url.host lowercaseString] isEqualToString:@"sweeney.appboy.com"]) {
     [self handleUniversalLinkString:[[url absoluteString] stringByRemovingPercentEncoding] withABKURLDelegate:YES];
     return YES;
   }

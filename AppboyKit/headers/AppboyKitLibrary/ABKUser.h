@@ -284,5 +284,23 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
                                 altitude:(double)altitude
                         verticalAccuracy:(double)verticalAccuracy;
 
+/*!
+ * Adds the location custom attribute for the user.
+ *
+ * @param key The custom attribute key
+ * @param latitude The latitude of the location in degrees, the number should be in the range of [-90, 90]
+ * @param longitude The longitude of the location in degrees, the number should be in the range of [-180, 180]
+ */
+- (BOOL)addLocationCustomAttributeWithKey:(NSString *)key
+                                 latitude:(double)latitude
+                                longitude:(double)longitude;
+
+/*!
+ * Removes the location custom attribute for the user.
+ *
+ * @param key The custom attribute key
+ */
+- (BOOL)removeLocationCustomAttributeWithKey:(NSString *)key;
+
 @end
 NS_ASSUME_NONNULL_END

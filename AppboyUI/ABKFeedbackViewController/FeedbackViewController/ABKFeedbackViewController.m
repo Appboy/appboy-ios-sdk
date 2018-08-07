@@ -82,7 +82,7 @@ static NSString *const FeedbackBottomConstraintID = @"FeedbackBottomConstraint";
 - (ABKFeedback *)appboyFeedbackFromMessage:(NSString *)message
                                      email:(NSString *)email
                                      isBug:(BOOL)isBug {
-  __autoreleasing ABKFeedback *feedback = [[ABKFeedback alloc] init];
+  ABKFeedback *feedback = [[ABKFeedback alloc] init];
   feedback.email = email;
   feedback.isBug = isBug;
   feedback.message = message;
@@ -104,10 +104,12 @@ static NSString *const FeedbackBottomConstraintID = @"FeedbackBottomConstraint";
   NSTimeInterval duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
   UIViewAnimationCurve curve = (UIViewAnimationCurve)[userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
   
-  __block CGRect keyboardRect = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+  CGRect keyboardRect = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
   keyboardRect = [self.view convertRect:keyboardRect toView:nil];
-  __block CGPoint bottomPoint = CGPointMake(0, self.view.frame.size.height);
+  CGPoint bottomPoint = CGPointMake(0, self.view.frame.size.height);
   bottomPoint = [self.view convertPoint:bottomPoint toView:nil];
+  double bottomDistance = [UIScreen mainScreen].bounds.size.height - bottomPoint.y;
+  CGFloat newConstraintConstant = keyboardRect.size.height - bottomDistance;
   
   [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | curve << 16 animations:^{
     for (NSLayoutConstraint *constraint in self.view.constraints) {
@@ -115,8 +117,7 @@ static NSString *const FeedbackBottomConstraintID = @"FeedbackBottomConstraint";
         // Here we are caculating the distance between the bottom of the feedback view and the bottom
         // of the screen. In some cases, e.g. within a tab bar, the bottom of the feedback view and
         // the screen do not align.
-        double bottomDistance = [UIScreen mainScreen].bounds.size.height - bottomPoint.y;
-        constraint.constant = keyboardRect.size.height - bottomDistance;
+        constraint.constant = newConstraintConstant;
         [self.view layoutIfNeeded];
         break;
       }

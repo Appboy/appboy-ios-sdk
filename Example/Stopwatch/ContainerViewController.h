@@ -12,7 +12,6 @@
 @interface ContainerViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UINavigationItem *navigationItem;
 @property (weak, nonatomic) IBOutlet UIViewController *currentViewController;
 @property UISegmentedControl *segmentedControl;
 @property BOOL hasFeedAndFlushButtons;

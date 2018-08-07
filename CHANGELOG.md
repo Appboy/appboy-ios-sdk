@@ -1,3 +1,12 @@
+## 3.8.0
+
+##### Added
+- In `ABKUser` class, `addLocationCustomAttributeWithKey:latitude:longitude:` and `removeLocationCustomAttributeWithKey:` methods are added to manage location custom attributes.
+- Introduced support for the upcoming Content Cards feature, which will eventually replace the existing News Feed feature and adds significant capability. This feature is currently in closed beta testing; if you're interested in joining the beta, please reach out to your Customer Success Manager or Account Manager.
+
+##### Changed
+- Status bar is not obscured when displaying a full screen in-app message.
+
 ## 3.7.1
 
 ##### Changed

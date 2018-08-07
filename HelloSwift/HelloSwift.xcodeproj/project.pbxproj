@@ -1,524 +1,610 @@
-{ "classes" = {  };
-"objectVersion" = "46";
-"archiveVersion" = "1";
-"objects" = { "4E1644E31A04170E0007CA5C" = { "isa" = "PBXGroup";
-"sourceTree" = "<group>";
-"children" = ( "4E1644EE1A04170E0007CA5C","C06D5DDC1ED367C200087F72","4E1644ED1A04170E0007CA5C","1F2FA88B2578A653CA7CA976","5C274ADBE04DAF82D572D7B9" );
- };
-"4E16450A1A04170E0007CA5C" = { "isa" = "XCBuildConfiguration";
-"buildSettings" = { "CLANG_WARN_SUSPICIOUS_MOVE" = "YES";
-"IPHONEOS_DEPLOYMENT_TARGET" = "8.1";
-"CLANG_ENABLE_OBJC_ARC" = "YES";
-"CLANG_WARN_DIRECT_OBJC_ISA_USAGE" = "YES_ERROR";
-"GCC_WARN_UNDECLARED_SELECTOR" = "YES";
-"CLANG_WARN__DUPLICATE_METHOD_MATCH" = "YES";
-"CLANG_WARN_INFINITE_RECURSION" = "YES";
-"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"SWIFT_OBJC_BRIDGING_HEADER" = "HelloSwift/HelloSwift-Bridging-Header.h";
-"SDKROOT" = "iphoneos";
-"CLANG_CXX_LANGUAGE_STANDARD" = "gnu++0x";
-"CODE_SIGN_IDENTITY" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"CLANG_WARN_BOOL_CONVERSION" = "YES";
-"CLANG_WARN_UNREACHABLE_CODE" = "YES";
-"ENABLE_STRICT_OBJC_MSGSEND" = "YES";
-"CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING" = "YES";
-"CLANG_WARN_STRICT_PROTOTYPES" = "YES";
-"CLANG_WARN_ENUM_CONVERSION" = "YES";
-"GCC_WARN_64_TO_32_BIT_CONVERSION" = "YES";
-"PROVISIONING_PROFILE_SPECIFIER" = "match Development Appboy.HelloSwift";
-"GCC_WARN_UNINITIALIZED_AUTOS" = "YES_AGGRESSIVE";
-"CLANG_WARN_EMPTY_BODY" = "YES";
-"GCC_WARN_ABOUT_RETURN_TYPE" = "YES_ERROR";
-"CLANG_WARN_COMMA" = "YES";
-"GCC_C_LANGUAGE_STANDARD" = "gnu99";
-"GCC_WARN_UNUSED_VARIABLE" = "YES";
-"CLANG_WARN_RANGE_LOOP_ANALYSIS" = "YES";
-"CLANG_ENABLE_MODULES" = "YES";
-"GCC_NO_COMMON_BLOCKS" = "YES";
-"CLANG_WARN_INT_CONVERSION" = "YES";
-"ALWAYS_SEARCH_USER_PATHS" = "NO";
-"CLANG_WARN_OBJC_ROOT_CLASS" = "YES_ERROR";
-"COPY_PHASE_STRIP" = "YES";
-"CLANG_WARN_CONSTANT_CONVERSION" = "YES";
-"MTL_ENABLE_DEBUG_INFO" = "NO";
-"SWIFT_OPTIMIZATION_LEVEL" = "-Owholemodule";
-"TARGETED_DEVICE_FAMILY" = "1,2";
-"CLANG_WARN_NON_LITERAL_NULL_CONVERSION" = "YES";
-"VALIDATE_PRODUCT" = "YES";
-"PROVISIONING_PROFILE" = "$(sigh_Appboy.HelloSwift_development)";
-"GCC_WARN_UNUSED_FUNCTION" = "YES";
-"ENABLE_NS_ASSERTIONS" = "NO";
-"CLANG_WARN_OBJC_LITERAL_CONVERSION" = "YES";
-"CLANG_CXX_LIBRARY" = "libc++";
- };
-"name" = "Release";
- };
-"4E1644F31A04170E0007CA5C" = { "path" = "ViewController.swift";
-"isa" = "PBXFileReference";
-"lastKnownFileType" = "sourcecode.swift";
-"sourceTree" = "<group>";
- };
-"FD2DEB2A95BEB5EA28A525D0" = { "path" = "Pods/Target Support Files/Pods/Pods.debug.xcconfig";
-"isa" = "PBXFileReference";
-"includeInIndex" = "1";
-"name" = "Pods.debug.xcconfig";
-"lastKnownFileType" = "text.xcconfig";
-"sourceTree" = "<group>";
- };
-"D16084DD3DE533703D4D40BB" = { "path" = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.debug.xcconfig";
-"isa" = "PBXFileReference";
-"includeInIndex" = "1";
-"name" = "Pods-HelloSwift.debug.xcconfig";
-"lastKnownFileType" = "text.xcconfig";
-"sourceTree" = "<group>";
- };
-"446901049F7C1F60144D6DC2" = { "path" = "Pods.framework";
-"isa" = "PBXFileReference";
-"includeInIndex" = "0";
-"explicitFileType" = "wrapper.framework";
-"sourceTree" = "BUILT_PRODUCTS_DIR";
- };
-"C06D5DE41ED367C200087F72" = { "isa" = "XCBuildConfiguration";
-"buildSettings" = { "PROVISIONING_PROFILE" = "6e8e2187-b585-43c6-aa55-097391e9c37c";
-"DEVELOPMENT_TEAM" = "5GLZKGNWQ3";
-"PRODUCT_BUNDLE_IDENTIFIER" = "Appboy.HelloSwift.HelloSwiftNotificationExtension";
-"GCC_NO_COMMON_BLOCKS" = "YES";
-"PROVISIONING_PROFILE_SPECIFIER" = "match Development Appboy.HelloSwift.HelloSwiftNotificationExtension";
-"SWIFT_SWIFT3_OBJC_INFERENCE" = "Default";
-"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG";
-"DEBUG_INFORMATION_FORMAT" = "dwarf";
-"CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION" = "YES_AGGRESSIVE";
-"CLANG_WARN_INFINITE_RECURSION" = "YES";
-"LD_RUNPATH_SEARCH_PATHS" = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-"CLANG_WARN_DOCUMENTATION_COMMENTS" = "YES";
-"PRODUCT_NAME" = "$(TARGET_NAME)";
-"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"CODE_SIGN_IDENTITY" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"SKIP_INSTALL" = "YES";
-"CLANG_ANALYZER_NONNULL" = "YES";
-"IPHONEOS_DEPLOYMENT_TARGET" = "10.0";
-"CLANG_WARN_SUSPICIOUS_MOVE" = "YES";
-"SWIFT_OBJC_BRIDGING_HEADER" = "";
-"SWIFT_VERSION" = "4.0";
-"INFOPLIST_FILE" = "HelloSwiftNotificationExtension/Info.plist";
- };
-"name" = "Debug";
- };
-"1F2FA88B2578A653CA7CA976" = { "isa" = "PBXGroup";
-"name" = "Pods";
-"children" = ( "FD2DEB2A95BEB5EA28A525D0","68DB17C99DFBF44C773C2141","D16084DD3DE533703D4D40BB","CA3221C7D1BB492DAD146EE9" );
-"sourceTree" = "<group>";
- };
-"4E1644ED1A04170E0007CA5C" = { "isa" = "PBXGroup";
-"name" = "Products";
-"children" = ( "4E1644EC1A04170E0007CA5C","C06D5DDB1ED367C100087F72" );
-"sourceTree" = "<group>";
- };
-"C1E6FB371D83671A0084F8CE" = { "path" = "../../../../Downloads/Carthage/Build/iOS/AirshipKit.framework";
-"isa" = "PBXFileReference";
-"name" = "AirshipKit.framework";
-"lastKnownFileType" = "wrapper.framework";
-"sourceTree" = "<group>";
- };
-"C06D5DD81ED367C100087F72" = { "isa" = "PBXFrameworksBuildPhase";
-"buildActionMask" = "2147483647";
-"files" = (  );
-"runOnlyForDeploymentPostprocessing" = "0";
- };
-"4E1644F01A04170E0007CA5C" = { "path" = "Info.plist";
-"isa" = "PBXFileReference";
-"lastKnownFileType" = "text.plist.xml";
-"sourceTree" = "<group>";
- };
-"C06D5DDB1ED367C100087F72" = { "path" = "HelloSwiftNotificationExtension.appex";
-"isa" = "PBXFileReference";
-"includeInIndex" = "0";
-"explicitFileType" = "wrapper.app-extension";
-"sourceTree" = "BUILT_PRODUCTS_DIR";
- };
-"5C274ADBE04DAF82D572D7B9" = { "isa" = "PBXGroup";
-"name" = "Frameworks";
-"children" = ( "C1E6FB371D83671A0084F8CE","C1E6FB331D835D5C0084F8CE","446901049F7C1F60144D6DC2","0174F70FAE31265EA00C5A40" );
-"sourceTree" = "<group>";
- };
-"C06D5DDE1ED367C200087F72" = { "isa" = "PBXBuildFile";
-"fileRef" = "C06D5DDD1ED367C200087F72";
- };
-"C06D5DE11ED367C200087F72" = { "isa" = "PBXTargetDependency";
-"target" = "C06D5DDA1ED367C100087F72";
-"targetProxy" = "C06D5DE01ED367C200087F72";
- };
-"4E1644EA1A04170E0007CA5C" = { "isa" = "PBXResourcesBuildPhase";
-"buildActionMask" = "2147483647";
-"files" = ( "4E1644F71A04170E0007CA5C","4E1644FC1A04170E0007CA5C","4E1644F91A04170E0007CA5C" );
-"runOnlyForDeploymentPostprocessing" = "0";
- };
-"4E1644E71A04170E0007CA5C" = { "isa" = "XCConfigurationList";
-"defaultConfigurationIsVisible" = "0";
-"defaultConfigurationName" = "Release";
-"buildConfigurations" = ( "4E1645091A04170E0007CA5C","4E16450A1A04170E0007CA5C" );
- };
-"4E1644FA1A04170E0007CA5C" = { "isa" = "PBXVariantGroup";
-"name" = "LaunchScreen.xib";
-"children" = ( "4E1644FB1A04170E0007CA5C" );
-"sourceTree" = "<group>";
- };
-"4E1644F71A04170E0007CA5C" = { "isa" = "PBXBuildFile";
-"fileRef" = "4E1644F51A04170E0007CA5C";
- };
-"4E16450B1A04170E0007CA5C" = { "isa" = "XCConfigurationList";
-"defaultConfigurationIsVisible" = "0";
-"defaultConfigurationName" = "Release";
-"buildConfigurations" = ( "4E16450C1A04170E0007CA5C","4E16450D1A04170E0007CA5C" );
- };
-"4E1644E41A04170E0007CA5C" = { "buildConfigurationList" = "4E1644E71A04170E0007CA5C";
-"targets" = ( "4E1644EB1A04170E0007CA5C","C06D5DDA1ED367C100087F72" );
-"developmentRegion" = "English";
-"knownRegions" = ( "en","Base" );
-"isa" = "PBXProject";
-"compatibilityVersion" = "Xcode 3.2";
-"productRefGroup" = "4E1644ED1A04170E0007CA5C";
-"projectDirPath" = "";
-"attributes" = { "LastSwiftUpdateCheck" = "0830";
-"LastUpgradeCheck" = "0900";
-"ORGANIZATIONNAME" = "Appboy";
-"TargetAttributes" = { "C06D5DDA1ED367C100087F72" = { "ProvisioningStyle" = "Manual";
-"LastSwiftMigration" = "0900";
-"DevelopmentTeam" = "5GLZKGNWQ3";
-"CreatedOnToolsVersion" = "8.3.2";
- };
-"4E1644EB1A04170E0007CA5C" = { "SystemCapabilities" = { "com.apple.Push" = { "enabled" = "1";
- };
- };
-"ProvisioningStyle" = "Manual";
-"DevelopmentTeam" = "5GLZKGNWQ3";
-"LastSwiftMigration" = "0900";
-"CreatedOnToolsVersion" = "6.1";
- };
- };
- };
-"hasScannedForEncodings" = "0";
-"projectRoot" = "";
-"mainGroup" = "4E1644E31A04170E0007CA5C";
- };
-"4E1644F41A04170E0007CA5C" = { "isa" = "PBXBuildFile";
-"fileRef" = "4E1644F31A04170E0007CA5C";
- };
-"C1E6FB331D835D5C0084F8CE" = { "path" = "System/Library/Frameworks/NotificationCenter.framework";
-"isa" = "PBXFileReference";
-"name" = "NotificationCenter.framework";
-"lastKnownFileType" = "wrapper.framework";
-"sourceTree" = "SDKROOT";
- };
-"0174F70FAE31265EA00C5A40" = { "path" = "Pods_HelloSwift.framework";
-"isa" = "PBXFileReference";
-"includeInIndex" = "0";
-"explicitFileType" = "wrapper.framework";
-"sourceTree" = "BUILT_PRODUCTS_DIR";
- };
-"C06D5DE51ED367C200087F72" = { "isa" = "XCBuildConfiguration";
-"buildSettings" = { "PROVISIONING_PROFILE" = "b1361196-eb93-4f9f-b470-3ef6fba0979a";
-"DEVELOPMENT_TEAM" = "5GLZKGNWQ3";
-"PRODUCT_BUNDLE_IDENTIFIER" = "Appboy.HelloSwift.HelloSwiftNotificationExtension";
-"GCC_NO_COMMON_BLOCKS" = "YES";
-"PROVISIONING_PROFILE_SPECIFIER" = "match AdHoc Appboy.HelloSwift.HelloSwiftNotificationExtension";
-"SWIFT_SWIFT3_OBJC_INFERENCE" = "Default";
-"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
-"CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION" = "YES_AGGRESSIVE";
-"SWIFT_OPTIMIZATION_LEVEL" = "-Owholemodule";
-"CLANG_WARN_INFINITE_RECURSION" = "YES";
-"COPY_PHASE_STRIP" = "NO";
-"LD_RUNPATH_SEARCH_PATHS" = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-"CLANG_WARN_DOCUMENTATION_COMMENTS" = "YES";
-"PRODUCT_NAME" = "$(TARGET_NAME)";
-"IPHONEOS_DEPLOYMENT_TARGET" = "10.0";
-"CODE_SIGN_IDENTITY" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-"SKIP_INSTALL" = "YES";
-"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-"CLANG_ANALYZER_NONNULL" = "YES";
-"CLANG_WARN_SUSPICIOUS_MOVE" = "YES";
-"SWIFT_OBJC_BRIDGING_HEADER" = "";
-"SWIFT_VERSION" = "4.0";
-"INFOPLIST_FILE" = "HelloSwiftNotificationExtension/Info.plist";
- };
-"name" = "Release";
- };
-"CA3221C7D1BB492DAD146EE9" = { "path" = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.release.xcconfig";
-"isa" = "PBXFileReference";
-"includeInIndex" = "1";
-"name" = "Pods-HelloSwift.release.xcconfig";
-"lastKnownFileType" = "text.xcconfig";
-"sourceTree" = "<group>";
- };
-"4E1644EE1A04170E0007CA5C" = { "path" = "HelloSwift";
-"isa" = "PBXGroup";
-"children" = ( "C1E6FB321D835D230084F8CE","4E1644F11A04170E0007CA5C","4E1644F31A04170E0007CA5C","4E1644F51A04170E0007CA5C","4E1644F81A04170E0007CA5C","4E1644FA1A04170E0007CA5C","4E1644EF1A04170E0007CA5C" );
-"sourceTree" = "<group>";
- };
-"4E1644F11A04170E0007CA5C" = { "path" = "AppDelegate.swift";
-"isa" = "PBXFileReference";
-"lastKnownFileType" = "sourcecode.swift";
-"sourceTree" = "<group>";
- };
-"C06D5DD91ED367C100087F72" = { "isa" = "PBXResourcesBuildPhase";
-"buildActionMask" = "2147483647";
-"files" = (  );
-"runOnlyForDeploymentPostprocessing" = "0";
- };
-"C06D5DDF1ED367C200087F72" = { "path" = "Info.plist";
-"isa" = "PBXFileReference";
-"lastKnownFileType" = "text.plist.xml";
-"sourceTree" = "<group>";
- };
-"C06D5DE21ED367C200087F72" = { "isa" = "PBXBuildFile";
-"fileRef" = "C06D5DDB1ED367C100087F72";
-"settings" = { "ATTRIBUTES" = ( "RemoveHeadersOnCopy" );
- };
- };
-"4E1644E81A04170E0007CA5C" = { "isa" = "PBXSourcesBuildPhase";
-"buildActionMask" = "2147483647";
-"files" = ( "4E1644F41A04170E0007CA5C","4E1644F21A04170E0007CA5C" );
-"runOnlyForDeploymentPostprocessing" = "0";
- };
-"4E1644FB1A04170E0007CA5C" = { "path" = "Base.lproj/LaunchScreen.xib";
-"isa" = "PBXFileReference";
-"name" = "Base";
-"lastKnownFileType" = "file.xib";
-"sourceTree" = "<group>";
- };
-"4E1644F81A04170E0007CA5C" = { "path" = "Images.xcassets";
-"isa" = "PBXFileReference";
-"lastKnownFileType" = "folder.assetcatalog";
-"sourceTree" = "<group>";
- };
-"4E1644EB1A04170E0007CA5C" = { "productType" = "com.apple.product-type.application";
-"productReference" = "4E1644EC1A04170E0007CA5C";
-"buildConfigurationList" = "4E16450B1A04170E0007CA5C";
-"productName" = "HelloSwift";
-"isa" = "PBXNativeTarget";
-"buildPhases" = ( "FD6070489574B6E0BA1CD4DD","4E1644E81A04170E0007CA5C","4E1644E91A04170E0007CA5C","4E1644EA1A04170E0007CA5C","67A905DB4C5F541D992B5B21","C06D5DE61ED367C200087F72" );
-"dependencies" = ( "C06D5DE11ED367C200087F72" );
-"name" = "HelloSwift";
-"buildRules" = (  );
- };
-"C06D5DDC1ED367C200087F72" = { "path" = "HelloSwiftNotificationExtension";
-"isa" = "PBXGroup";
-"children" = ( "C06D5DDD1ED367C200087F72","C06D5DDF1ED367C200087F72" );
-"sourceTree" = "<group>";
- };
-"68DB17C99DFBF44C773C2141" = { "path" = "Pods/Target Support Files/Pods/Pods.release.xcconfig";
-"isa" = "PBXFileReference";
-"includeInIndex" = "1";
-"name" = "Pods.release.xcconfig";
-"lastKnownFileType" = "text.xcconfig";
-"sourceTree" = "<group>";
- };
-"C1E6FB321D835D230084F8CE" = { "path" = "HelloSwift.entitlements";
-"isa" = "PBXFileReference";
-"lastKnownFileType" = "text.plist.entitlements";
-"sourceTree" = "<group>";
- };
-"4E1645091A04170E0007CA5C" = { "isa" = "XCBuildConfiguration";
-"buildSettings" = { "CLANG_WARN_SUSPICIOUS_MOVE" = "YES";
-"GCC_WARN_UNDECLARED_SELECTOR" = "YES";
-"CLANG_ENABLE_OBJC_ARC" = "YES";
-"CLANG_WARN_DIRECT_OBJC_ISA_USAGE" = "YES_ERROR";
-"CLANG_WARN__DUPLICATE_METHOD_MATCH" = "YES";
-"CLANG_WARN_INFINITE_RECURSION" = "YES";
-"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"SWIFT_OBJC_BRIDGING_HEADER" = "HelloSwift/HelloSwift-Bridging-Header.h";
-"SDKROOT" = "iphoneos";
-"CLANG_CXX_LANGUAGE_STANDARD" = "gnu++0x";
-"ENABLE_TESTABILITY" = "YES";
-"CLANG_WARN_BOOL_CONVERSION" = "YES";
-"CODE_SIGN_IDENTITY" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"CLANG_WARN_UNREACHABLE_CODE" = "YES";
-"GCC_SYMBOLS_PRIVATE_EXTERN" = "NO";
-"ENABLE_STRICT_OBJC_MSGSEND" = "YES";
-"CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING" = "YES";
-"GCC_PREPROCESSOR_DEFINITIONS" = ( "DEBUG=1","$(inherited)" );
-"CLANG_WARN_ENUM_CONVERSION" = "YES";
-"CLANG_WARN_STRICT_PROTOTYPES" = "YES";
-"PROVISIONING_PROFILE_SPECIFIER" = "match Development Appboy.HelloSwift";
-"GCC_WARN_64_TO_32_BIT_CONVERSION" = "YES";
-"GCC_WARN_UNINITIALIZED_AUTOS" = "YES_AGGRESSIVE";
-"CLANG_WARN_EMPTY_BODY" = "YES";
-"GCC_WARN_ABOUT_RETURN_TYPE" = "YES_ERROR";
-"CLANG_WARN_COMMA" = "YES";
-"GCC_DYNAMIC_NO_PIC" = "NO";
-"GCC_C_LANGUAGE_STANDARD" = "gnu99";
-"GCC_WARN_UNUSED_VARIABLE" = "YES";
-"CLANG_WARN_RANGE_LOOP_ANALYSIS" = "YES";
-"CLANG_ENABLE_MODULES" = "YES";
-"GCC_NO_COMMON_BLOCKS" = "YES";
-"CLANG_WARN_INT_CONVERSION" = "YES";
-"ALWAYS_SEARCH_USER_PATHS" = "NO";
-"CLANG_WARN_OBJC_ROOT_CLASS" = "YES_ERROR";
-"GCC_OPTIMIZATION_LEVEL" = "0";
-"CLANG_WARN_CONSTANT_CONVERSION" = "YES";
-"COPY_PHASE_STRIP" = "NO";
-"MTL_ENABLE_DEBUG_INFO" = "YES";
-"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
-"ONLY_ACTIVE_ARCH" = "YES";
-"TARGETED_DEVICE_FAMILY" = "1,2";
-"CLANG_WARN_NON_LITERAL_NULL_CONVERSION" = "YES";
-"PROVISIONING_PROFILE" = "$(sigh_Appboy.HelloSwift_development)";
-"GCC_WARN_UNUSED_FUNCTION" = "YES";
-"CLANG_WARN_OBJC_LITERAL_CONVERSION" = "YES";
-"IPHONEOS_DEPLOYMENT_TARGET" = "8.1";
-"CLANG_CXX_LIBRARY" = "libc++";
- };
-"name" = "Debug";
- };
-"4E16450C1A04170E0007CA5C" = { "baseConfigurationReference" = "D16084DD3DE533703D4D40BB";
-"isa" = "XCBuildConfiguration";
-"buildSettings" = { "ONLY_ACTIVE_ARCH" = "NO";
-"LD_RUNPATH_SEARCH_PATHS" = "$(inherited) @executable_path/Frameworks";
-"SWIFT_SWIFT3_OBJC_INFERENCE" = "Default";
-"DEVELOPMENT_TEAM" = "5GLZKGNWQ3";
-"PRODUCT_BUNDLE_IDENTIFIER" = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
-"INFOPLIST_FILE" = "HelloSwift/Info.plist";
-"CODE_SIGN_IDENTITY" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"PROVISIONING_PROFILE_SPECIFIER" = "match Development Appboy.HelloSwift";
-"ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES" = "YES";
-"SWIFT_OBJC_BRIDGING_HEADER" = "";
-"CODE_SIGN_ENTITLEMENTS" = "HelloSwift/HelloSwift.entitlements";
-"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
-"SWIFT_VERSION" = "4.0";
-"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
-"PRODUCT_NAME" = "$(TARGET_NAME)";
-"IPHONEOS_DEPLOYMENT_TARGET" = "10.0";
-"PROVISIONING_PROFILE" = "7393f161-f6b9-4108-be43-fcca30ea5b95";
-"ARCHS" = ( "$(ARCHS_STANDARD)" );
- };
-"name" = "Debug";
- };
-"4E1644F51A04170E0007CA5C" = { "isa" = "PBXVariantGroup";
-"name" = "Main.storyboard";
-"children" = ( "4E1644F61A04170E0007CA5C" );
-"sourceTree" = "<group>";
- };
-"D7999436856B456BD02675FF" = { "isa" = "PBXBuildFile";
-"fileRef" = "0174F70FAE31265EA00C5A40";
- };
-"FD6070489574B6E0BA1CD4DD" = { "inputPaths" = ( "${PODS_PODFILE_DIR_PATH}/Podfile.lock","${PODS_ROOT}/Manifest.lock" );
-"buildActionMask" = "2147483647";
-"shellPath" = "/bin/sh";
-"showEnvVarsInLog" = "0";
-"isa" = "PBXShellScriptBuildPhase";
-"outputPaths" = ( "$(DERIVED_FILE_DIR)/Pods-HelloSwift-checkManifestLockResult.txt" );
-"runOnlyForDeploymentPostprocessing" = "0";
-"shellScript" = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-"files" = (  );
-"name" = "[CP] Check Pods Manifest.lock";
- };
-"C06D5DE61ED367C200087F72" = { "buildActionMask" = "2147483647";
-"dstSubfolderSpec" = "13";
-"isa" = "PBXCopyFilesBuildPhase";
-"runOnlyForDeploymentPostprocessing" = "0";
-"dstPath" = "";
-"files" = ( "C06D5DE21ED367C200087F72" );
-"name" = "Embed App Extensions";
- };
-"4E1644EF1A04170E0007CA5C" = { "isa" = "PBXGroup";
-"name" = "Supporting Files";
-"children" = ( "4E1644F01A04170E0007CA5C" );
-"sourceTree" = "<group>";
- };
-"4E1644F21A04170E0007CA5C" = { "isa" = "PBXBuildFile";
-"fileRef" = "4E1644F11A04170E0007CA5C";
- };
-"C1E6FB391D83682F0084F8CE" = { "isa" = "PBXBuildFile";
-"fileRef" = "C1E6FB331D835D5C0084F8CE";
- };
-"C06D5DE31ED367C200087F72" = { "isa" = "XCConfigurationList";
-"defaultConfigurationIsVisible" = "0";
-"defaultConfigurationName" = "Release";
-"buildConfigurations" = ( "C06D5DE41ED367C200087F72","C06D5DE51ED367C200087F72" );
- };
-"4E1644EC1A04170E0007CA5C" = { "path" = "HelloSwift.app";
-"isa" = "PBXFileReference";
-"includeInIndex" = "0";
-"explicitFileType" = "wrapper.application";
-"sourceTree" = "BUILT_PRODUCTS_DIR";
- };
-"4E1644E91A04170E0007CA5C" = { "isa" = "PBXFrameworksBuildPhase";
-"buildActionMask" = "2147483647";
-"files" = ( "C1E6FB391D83682F0084F8CE","D7999436856B456BD02675FF" );
-"runOnlyForDeploymentPostprocessing" = "0";
- };
-"4E1644FC1A04170E0007CA5C" = { "isa" = "PBXBuildFile";
-"fileRef" = "4E1644FA1A04170E0007CA5C";
- };
-"67A905DB4C5F541D992B5B21" = { "inputPaths" = ( "${SRCROOT}/Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift-frameworks.sh","${BUILT_PRODUCTS_DIR}/Appboy-iOS-SDK/Appboy_iOS_SDK.framework","${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework","${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework" );
-"buildActionMask" = "2147483647";
-"shellPath" = "/bin/sh";
-"showEnvVarsInLog" = "0";
-"isa" = "PBXShellScriptBuildPhase";
-"outputPaths" = ( "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Appboy_iOS_SDK.framework","${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework","${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework" );
-"runOnlyForDeploymentPostprocessing" = "0";
-"shellScript" = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift-frameworks.sh\"\n";
-"files" = (  );
-"name" = "[CP] Embed Pods Frameworks";
- };
-"4E1644F91A04170E0007CA5C" = { "isa" = "PBXBuildFile";
-"fileRef" = "4E1644F81A04170E0007CA5C";
- };
-"C06D5DDA1ED367C100087F72" = { "productType" = "com.apple.product-type.app-extension";
-"productReference" = "C06D5DDB1ED367C100087F72";
-"buildConfigurationList" = "C06D5DE31ED367C200087F72";
-"productName" = "HelloSwiftNotificationExtension";
-"isa" = "PBXNativeTarget";
-"buildPhases" = ( "C06D5DD71ED367C100087F72","C06D5DD81ED367C100087F72","C06D5DD91ED367C100087F72" );
-"dependencies" = (  );
-"name" = "HelloSwiftNotificationExtension";
-"buildRules" = (  );
- };
-"C06D5DD71ED367C100087F72" = { "isa" = "PBXSourcesBuildPhase";
-"buildActionMask" = "2147483647";
-"files" = ( "C06D5DDE1ED367C200087F72" );
-"runOnlyForDeploymentPostprocessing" = "0";
- };
-"C06D5DDD1ED367C200087F72" = { "path" = "NotificationService.swift";
-"isa" = "PBXFileReference";
-"lastKnownFileType" = "sourcecode.swift";
-"sourceTree" = "<group>";
- };
-"C06D5DE01ED367C200087F72" = { "isa" = "PBXContainerItemProxy";
-"containerPortal" = "4E1644E41A04170E0007CA5C";
-"remoteGlobalIDString" = "C06D5DDA1ED367C100087F72";
-"remoteInfo" = "HelloSwiftNotificationExtension";
-"proxyType" = "1";
- };
-"4E16450D1A04170E0007CA5C" = { "baseConfigurationReference" = "CA3221C7D1BB492DAD146EE9";
-"isa" = "XCBuildConfiguration";
-"buildSettings" = { "ONLY_ACTIVE_ARCH" = "NO";
-"LD_RUNPATH_SEARCH_PATHS" = "$(inherited) @executable_path/Frameworks";
-"SWIFT_SWIFT3_OBJC_INFERENCE" = "Default";
-"DEVELOPMENT_TEAM" = "5GLZKGNWQ3";
-"PRODUCT_BUNDLE_IDENTIFIER" = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
-"INFOPLIST_FILE" = "HelloSwift/Info.plist";
-"CODE_SIGN_IDENTITY" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-"PROVISIONING_PROFILE_SPECIFIER" = "match AdHoc Appboy.HelloSwift";
-"ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES" = "YES";
-"SWIFT_OBJC_BRIDGING_HEADER" = "";
-"CODE_SIGN_ENTITLEMENTS" = "HelloSwift/HelloSwift.entitlements";
-"ASSETCATALOG_COMPILER_APPICON_NAME" = "AppIcon";
-"SWIFT_VERSION" = "4.0";
-"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
-"PRODUCT_NAME" = "$(TARGET_NAME)";
-"IPHONEOS_DEPLOYMENT_TARGET" = "10.0";
-"PROVISIONING_PROFILE" = "17eaabef-0d17-4c4a-9798-74b39c01f993";
-"ARCHS" = ( "$(ARCHS_STANDARD)" );
- };
-"name" = "Release";
- };
-"4E1644F61A04170E0007CA5C" = { "path" = "Base.lproj/Main.storyboard";
-"isa" = "PBXFileReference";
-"name" = "Base";
-"lastKnownFileType" = "file.storyboard";
-"sourceTree" = "<group>";
- };
- };
-"rootObject" = "4E1644E41A04170E0007CA5C";
- }
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E1644F21A04170E0007CA5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1644F11A04170E0007CA5C /* AppDelegate.swift */; };
+		4E1644F41A04170E0007CA5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1644F31A04170E0007CA5C /* ViewController.swift */; };
+		4E1644F71A04170E0007CA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F51A04170E0007CA5C /* Main.storyboard */; };
+		4E1644F91A04170E0007CA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644F81A04170E0007CA5C /* Images.xcassets */; };
+		4E1644FC1A04170E0007CA5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1644FA1A04170E0007CA5C /* LaunchScreen.xib */; };
+		C06D5DDE1ED367C200087F72 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D5DDD1ED367C200087F72 /* NotificationService.swift */; };
+		C06D5DE21ED367C200087F72 /* HelloSwiftNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C1E6FB391D83682F0084F8CE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */; };
+		D7999436856B456BD02675FF /* Pods_HelloSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C06D5DE01ED367C200087F72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E1644E41A04170E0007CA5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C06D5DDA1ED367C100087F72;
+			remoteInfo = HelloSwiftNotificationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C06D5DE61ED367C200087F72 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C06D5DE21ED367C200087F72 /* HelloSwiftNotificationExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		446901049F7C1F60144D6DC2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1644EC1A04170E0007CA5C /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1644F01A04170E0007CA5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E1644F11A04170E0007CA5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E1644F31A04170E0007CA5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E1644F61A04170E0007CA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E1644F81A04170E0007CA5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4E1644FB1A04170E0007CA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		68DB17C99DFBF44C773C2141 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HelloSwiftNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06D5DDD1ED367C200087F72 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C06D5DDF1ED367C200087F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1E6FB321D835D230084F8CE /* HelloSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloSwift.entitlements; sourceTree = "<group>"; };
+		C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C1E6FB371D83671A0084F8CE /* AirshipKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AirshipKit.framework; path = ../../../../Downloads/Carthage/Build/iOS/AirshipKit.framework; sourceTree = "<group>"; };
+		CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.release.xcconfig"; sourceTree = "<group>"; };
+		D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		FD2DEB2A95BEB5EA28A525D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E1644E91A04170E0007CA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1E6FB391D83682F0084F8CE /* NotificationCenter.framework in Frameworks */,
+				D7999436856B456BD02675FF /* Pods_HelloSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06D5DD81ED367C100087F72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F2FA88B2578A653CA7CA976 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD2DEB2A95BEB5EA28A525D0 /* Pods.debug.xcconfig */,
+				68DB17C99DFBF44C773C2141 /* Pods.release.xcconfig */,
+				D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */,
+				CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E1644E31A04170E0007CA5C = {
+			isa = PBXGroup;
+			children = (
+				4E1644EE1A04170E0007CA5C /* HelloSwift */,
+				C06D5DDC1ED367C200087F72 /* HelloSwiftNotificationExtension */,
+				4E1644ED1A04170E0007CA5C /* Products */,
+				1F2FA88B2578A653CA7CA976 /* Pods */,
+				5C274ADBE04DAF82D572D7B9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4E1644ED1A04170E0007CA5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E1644EC1A04170E0007CA5C /* HelloSwift.app */,
+				C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E1644EE1A04170E0007CA5C /* HelloSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C1E6FB321D835D230084F8CE /* HelloSwift.entitlements */,
+				4E1644F11A04170E0007CA5C /* AppDelegate.swift */,
+				4E1644F31A04170E0007CA5C /* ViewController.swift */,
+				4E1644F51A04170E0007CA5C /* Main.storyboard */,
+				4E1644F81A04170E0007CA5C /* Images.xcassets */,
+				4E1644FA1A04170E0007CA5C /* LaunchScreen.xib */,
+				4E1644EF1A04170E0007CA5C /* Supporting Files */,
+			);
+			path = HelloSwift;
+			sourceTree = "<group>";
+		};
+		4E1644EF1A04170E0007CA5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E1644F01A04170E0007CA5C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C274ADBE04DAF82D572D7B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1E6FB371D83671A0084F8CE /* AirshipKit.framework */,
+				C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */,
+				446901049F7C1F60144D6DC2 /* Pods.framework */,
+				0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C06D5DDC1ED367C200087F72 /* HelloSwiftNotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C06D5DDD1ED367C200087F72 /* NotificationService.swift */,
+				C06D5DDF1ED367C200087F72 /* Info.plist */,
+			);
+			path = HelloSwiftNotificationExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E1644EB1A04170E0007CA5C /* HelloSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E16450B1A04170E0007CA5C /* Build configuration list for PBXNativeTarget "HelloSwift" */;
+			buildPhases = (
+				FD6070489574B6E0BA1CD4DD /* [CP] Check Pods Manifest.lock */,
+				4E1644E81A04170E0007CA5C /* Sources */,
+				4E1644E91A04170E0007CA5C /* Frameworks */,
+				4E1644EA1A04170E0007CA5C /* Resources */,
+				67A905DB4C5F541D992B5B21 /* [CP] Embed Pods Frameworks */,
+				C06D5DE61ED367C200087F72 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C06D5DE11ED367C200087F72 /* PBXTargetDependency */,
+			);
+			name = HelloSwift;
+			productName = HelloSwift;
+			productReference = 4E1644EC1A04170E0007CA5C /* HelloSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C06D5DDA1ED367C100087F72 /* HelloSwiftNotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C06D5DE31ED367C200087F72 /* Build configuration list for PBXNativeTarget "HelloSwiftNotificationExtension" */;
+			buildPhases = (
+				C06D5DD71ED367C100087F72 /* Sources */,
+				C06D5DD81ED367C100087F72 /* Frameworks */,
+				C06D5DD91ED367C100087F72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloSwiftNotificationExtension;
+			productName = HelloSwiftNotificationExtension;
+			productReference = C06D5DDB1ED367C100087F72 /* HelloSwiftNotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E1644E41A04170E0007CA5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Appboy;
+				TargetAttributes = {
+					4E1644EB1A04170E0007CA5C = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 5GLZKGNWQ3;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					C06D5DDA1ED367C100087F72 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5GLZKGNWQ3;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 4E1644E71A04170E0007CA5C /* Build configuration list for PBXProject "HelloSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E1644E31A04170E0007CA5C;
+			productRefGroup = 4E1644ED1A04170E0007CA5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E1644EB1A04170E0007CA5C /* HelloSwift */,
+				C06D5DDA1ED367C100087F72 /* HelloSwiftNotificationExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E1644EA1A04170E0007CA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1644F71A04170E0007CA5C /* Main.storyboard in Resources */,
+				4E1644FC1A04170E0007CA5C /* LaunchScreen.xib in Resources */,
+				4E1644F91A04170E0007CA5C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06D5DD91ED367C100087F72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67A905DB4C5F541D992B5B21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Appboy-iOS-SDK/Appboy_iOS_SDK.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Appboy_iOS_SDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD6070489574B6E0BA1CD4DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelloSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E1644E81A04170E0007CA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1644F41A04170E0007CA5C /* ViewController.swift in Sources */,
+				4E1644F21A04170E0007CA5C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06D5DD71ED367C100087F72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06D5DDE1ED367C200087F72 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C06D5DE11ED367C200087F72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C06D5DDA1ED367C100087F72 /* HelloSwiftNotificationExtension */;
+			targetProxy = C06D5DE01ED367C200087F72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4E1644F51A04170E0007CA5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E1644F61A04170E0007CA5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E1644FA1A04170E0007CA5C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E1644FB1A04170E0007CA5C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E1645091A04170E0007CA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "$(sigh_Appboy.HelloSwift_development)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development Appboy.HelloSwift";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloSwift/HelloSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E16450A1A04170E0007CA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "$(sigh_Appboy.HelloSwift_development)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development Appboy.HelloSwift";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloSwift/HelloSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E16450C1A04170E0007CA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloSwift/HelloSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				INFOPLIST_FILE = HelloSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7393f161-f6b9-4108-be43-fcca30ea5b95";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development Appboy.HelloSwift";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		4E16450D1A04170E0007CA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HelloSwift/HelloSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				INFOPLIST_FILE = HelloSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Appboy.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "17eaabef-0d17-4c4a-9798-74b39c01f993";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc Appboy.HelloSwift";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		C06D5DE41ED367C200087F72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HelloSwiftNotificationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Appboy.HelloSwift.HelloSwiftNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6e8e2187-b585-43c6-aa55-097391e9c37c";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development Appboy.HelloSwift.HelloSwiftNotificationExtension";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		C06D5DE51ED367C200087F72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HelloSwiftNotificationExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Appboy.HelloSwift.HelloSwiftNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b1361196-eb93-4f9f-b470-3ef6fba0979a";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc Appboy.HelloSwift.HelloSwiftNotificationExtension";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E1644E71A04170E0007CA5C /* Build configuration list for PBXProject "HelloSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E1645091A04170E0007CA5C /* Debug */,
+				4E16450A1A04170E0007CA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E16450B1A04170E0007CA5C /* Build configuration list for PBXNativeTarget "HelloSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E16450C1A04170E0007CA5C /* Debug */,
+				4E16450D1A04170E0007CA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C06D5DE31ED367C200087F72 /* Build configuration list for PBXNativeTarget "HelloSwiftNotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C06D5DE41ED367C200087F72 /* Debug */,
+				C06D5DE51ED367C200087F72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E1644E41A04170E0007CA5C /* Project object */;
+}

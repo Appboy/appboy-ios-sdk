@@ -4,7 +4,6 @@ target :Stopwatch do
   platform :ios, '8.0'
   pod 'Appboy-iOS-SDK'
   pod 'KKColorListPicker', :git => 'https://github.com/leoru/KKColorListPicker.git'
-  pod 'Firebase/DynamicLinks'
   pod 'Branch'
   pod 'BuddyBuildSDK'
 end

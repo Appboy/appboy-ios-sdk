@@ -95,6 +95,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)isPushStoryRemoteNotification:(NSDictionary *)userInfo;
 
++ (BOOL)notificationContainsContentCard:(NSDictionary *)userInfo;
+
 /*!
  * @param userInfo The userInfo dictionary payload.
  *

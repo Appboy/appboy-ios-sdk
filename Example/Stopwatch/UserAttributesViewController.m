@@ -22,6 +22,7 @@ static NSMutableArray *attributesValuesArray = nil;
 - (NSIndexPath *)indexPathFromTextFieldTag:(NSInteger)tag;
 
 - (IBAction)addCustomAttributeTapped:(id)sender;
+- (IBAction)locationCustomAttributeTapped:(id)sender;
 
 @end
 
@@ -143,7 +144,7 @@ static NSMutableArray *attributesValuesArray = nil;
 - (UITableViewCell *)setupTableView:(UITableView *)tableView customAttributeCellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UserCustomAttributeCell *cell = (UserCustomAttributeCell *)[tableView dequeueReusableCellWithIdentifier:@"CustomAttributeCell" forIndexPath:indexPath];
   UserCustomAttribute *attribute = self.userCustomAttributes[indexPath.row - 1];
-  __weak typeof(self) weakSelf = self;
+  typeof(self) __weak weakSelf = self;
   [cell setUserCustomAttribute:attribute selectNextCellBlock:^(UITableViewCell *cell){
     NSIndexPath *indexPath = [weakSelf.attributesTableView indexPathForCell:cell];
     if (indexPath && (weakSelf.userCustomAttributes.count > indexPath.row)) {
@@ -163,7 +164,7 @@ static NSMutableArray *attributesValuesArray = nil;
 #pragma TableView DataSource & Delegate Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 2;
+  return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -181,6 +182,10 @@ static NSMutableArray *attributesValuesArray = nil;
     }
       
     case 1: {
+      return [tableView dequeueReusableCellWithIdentifier:@"LocationAttributeCell" forIndexPath:indexPath];
+    }
+      
+    case 2: {
       // custom user attributes
       if (indexPath.row == 0) {
         return [tableView dequeueReusableCellWithIdentifier:@"AddAttributeCell" forIndexPath:indexPath];
@@ -201,6 +206,10 @@ static NSMutableArray *attributesValuesArray = nil;
       return TotalNumberOfAttributes;
       
     case 1:
+      // location custom attribute
+      return 1;
+      
+    case 2:
       // 'add attribute' button + custom attributes
       return 1 + self.userCustomAttributes.count;
       
@@ -216,6 +225,10 @@ static NSMutableArray *attributesValuesArray = nil;
       return NSLocalizedString(@"Default Attributes", @"");
       
     case 1:
+      // 'location custom attribute' button
+      return NSLocalizedString(@"Location Custom Attribute", @"");
+      
+    case 2:
       // 'add attribute' button + custom attributes
       return NSLocalizedString(@"Custom Attributes", @"");;
       
@@ -226,7 +239,7 @@ static NSMutableArray *attributesValuesArray = nil;
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
   // we can remove custom attributes
-  return (indexPath.section == 1 && indexPath.row > 0);
+  return (indexPath.section == 2 && indexPath.row > 0);
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -333,6 +346,12 @@ static NSMutableArray *attributesValuesArray = nil;
   NSIndexPath *addedIndexPath = [NSIndexPath indexPathForRow:self.userCustomAttributes.count inSection:1];
   [self.attributesTableView insertRowsAtIndexPaths:@[ addedIndexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
   [self.attributesTableView scrollToRowAtIndexPath:addedIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
+
+- (IBAction)locationCustomAttributeTapped:(id)sender {
+  UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocationCustomAttributeViewController"];
+  [self.navigationController pushViewController:vc animated:YES];
+  return;
 }
 
 // Set user attributes and/or change the current userId.  See Appboy.h for a discussion about changing the userId.

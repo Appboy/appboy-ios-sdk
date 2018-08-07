@@ -19,7 +19,7 @@
   [self updateImageRatioConstraintToRatio:bannerCard.imageAspectRatio];
   [self setNeedsUpdateConstraints];
   [self setNeedsDisplay];
-  __weak typeof(self) weakSelf = self;
+  typeof(self) __weak weakSelf = self;
   [self.bannerImageView sd_setImageWithURL:[NSURL URLWithString:bannerCard.image]
                           placeholderImage:nil
                                    options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync) 

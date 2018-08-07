@@ -13,6 +13,12 @@
 #import "ABKClassicCard.h"
 #import "ABKTextAnnouncementCard.h"
 
+// Content Card
+#import "ABKContentCard.h"
+#import "ABKBannerContentCard.h"
+#import "ABKCaptionedImageContentCard.h"
+#import "ABKClassicContentCard.h"
+
 // Feedback
 #import "ABKFeedback.h"
 
@@ -35,6 +41,9 @@
 
 // News Feed
 #import "ABKFeedController.h"
+
+// Content Cards Feed
+#import "ABKContentCardsController.h"
 
 // IDFA
 #import "ABKIdentifierForAdvertisingProvider.h"

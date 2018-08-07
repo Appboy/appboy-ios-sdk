@@ -43,11 +43,14 @@
 		95EF511A173D5FD600C0D780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5119173D5FD600C0D780 /* main.m */; };
 		95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
+		AD26107C20FE3E5000023BCD /* StopwatchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AD26107B20FE3E5000023BCD /* StopwatchButton.m */; };
 		AD884BF52081289900DA304A /* UserCustomAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = AD884BF42081289900DA304A /* UserCustomAttribute.m */; };
 		AD884BF820813F1B00DA304A /* UserCustomAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD884BF720813F1B00DA304A /* UserCustomAttributeCell.m */; };
 		ADC332E12076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC332E02076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m */; };
 		ADC332E42077A43E00D688E3 /* UIViewController+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */; };
 		ADC332E82077AB4200D688E3 /* ScrollContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC332E72077AB4200D688E3 /* ScrollContentView.m */; };
+		ADDAFB8E2107BAA30061C96E /* LocationCustomAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDAFB8D2107BAA30061C96E /* LocationCustomAttributeViewController.m */; };
+		ADDAFB912107C2080061C96E /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDAFB902107C2080061C96E /* LocationAnnotation.m */; };
 		C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
 		C1C53F001F7D7CA700042AA5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
@@ -68,7 +71,6 @@
 		D4139BE01CBD88C100CA3307 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD91CBD88C100CA3307 /* user@2x.png */; };
 		D4139BEC1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */; };
 		D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41D8F731CB70A4600D622EF /* ContainerViewController.m */; };
-		D464B7EC1E523D2900118BA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D464B7EB1E523D2900118BA9 /* GoogleService-Info.plist */; };
 		D4938B991CE3C6CC00450D78 /* appboy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4938B971CE3C6CC00450D78 /* appboy@3x.png */; };
 		D4938B9A1CE3C6CC00450D78 /* appboy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4938B981CE3C6CC00450D78 /* appboy@2x.png */; };
 		D4992FE81CD4126D007CC304 /* bolt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE11CD4126D007CC304 /* bolt@3x.png */; };
@@ -209,6 +211,8 @@
 		95EF515D173D6AAA00C0D780 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		95EF515F173D6AB100C0D780 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A2E478A21CAD63AA6C497DB0 /* Pods-tvOS_TVML_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
+		AD26107A20FE3E5000023BCD /* StopwatchButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StopwatchButton.h; sourceTree = "<group>"; };
+		AD26107B20FE3E5000023BCD /* StopwatchButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopwatchButton.m; sourceTree = "<group>"; };
 		AD884BF32081289900DA304A /* UserCustomAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCustomAttribute.h; sourceTree = "<group>"; };
 		AD884BF42081289900DA304A /* UserCustomAttribute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCustomAttribute.m; sourceTree = "<group>"; };
 		AD884BF620813F1B00DA304A /* UserCustomAttributeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCustomAttributeCell.h; sourceTree = "<group>"; };
@@ -219,6 +223,10 @@
 		ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Keyboard.m"; sourceTree = "<group>"; };
 		ADC332E62077AB4200D688E3 /* ScrollContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollContentView.h; sourceTree = "<group>"; };
 		ADC332E72077AB4200D688E3 /* ScrollContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollContentView.m; sourceTree = "<group>"; };
+		ADDAFB8C2107BAA30061C96E /* LocationCustomAttributeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationCustomAttributeViewController.h; sourceTree = "<group>"; };
+		ADDAFB8D2107BAA30061C96E /* LocationCustomAttributeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationCustomAttributeViewController.m; sourceTree = "<group>"; };
+		ADDAFB8F2107C2080061C96E /* LocationAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
+		ADDAFB902107C2080061C96E /* LocationAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 		C03E52C51D46574A0065ABD6 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0A45ABC1E66155C0028C5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C12172071D5A3815003B986E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -248,7 +256,6 @@
 		D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedAndFeedbackUIViewController.m; sourceTree = "<group>"; };
 		D41D8F701CB7049400D622EF /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		D41D8F731CB70A4600D622EF /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
-		D464B7EB1E523D2900118BA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4938B971CE3C6CC00450D78 /* appboy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appboy@3x.png"; sourceTree = "<group>"; };
 		D4938B981CE3C6CC00450D78 /* appboy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appboy@2x.png"; sourceTree = "<group>"; };
 		D4992FE11CD4126D007CC304 /* bolt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bolt@3x.png"; sourceTree = "<group>"; };
@@ -423,7 +430,6 @@
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
-				D464B7EB1E523D2900118BA9 /* GoogleService-Info.plist */,
 				4E49ECEA19DDE84F00ADC43F /* Images */,
 				4E3E94E118BD52C60008C815 /* Localizable.strings */,
 				95EF5113173D5FD600C0D780 /* Stopwatch */,
@@ -483,6 +489,7 @@
 		95EF5113173D5FD600C0D780 /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
+				AD26107920FE3E3C00023BCD /* Button */,
 				ADB1FAB62081285A009F108A /* User Custom Attribute */,
 				ADC332E52077AB2500D688E3 /* ScrollContentView */,
 				E3C754A71E7AE970004E1CCE /* InAppMessages */,
@@ -525,6 +532,7 @@
 				ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */,
 				AD884BF620813F1B00DA304A /* UserCustomAttributeCell.h */,
 				AD884BF720813F1B00DA304A /* UserCustomAttributeCell.m */,
+				ADDAFB922107C7130061C96E /* Location Custom Attribute */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -543,6 +551,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AD26107920FE3E3C00023BCD /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				AD26107A20FE3E5000023BCD /* StopwatchButton.h */,
+				AD26107B20FE3E5000023BCD /* StopwatchButton.m */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
 		ADB1FAB62081285A009F108A /* User Custom Attribute */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +576,17 @@
 				ADC332E72077AB4200D688E3 /* ScrollContentView.m */,
 			);
 			name = ScrollContentView;
+			sourceTree = "<group>";
+		};
+		ADDAFB922107C7130061C96E /* Location Custom Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				ADDAFB8C2107BAA30061C96E /* LocationCustomAttributeViewController.h */,
+				ADDAFB8D2107BAA30061C96E /* LocationCustomAttributeViewController.m */,
+				ADDAFB8F2107C2080061C96E /* LocationAnnotation.h */,
+				ADDAFB902107C2080061C96E /* LocationAnnotation.m */,
+			);
+			name = "Location Custom Attribute";
 			sourceTree = "<group>";
 		};
 		C1C53F021F7D7CA700042AA5 /* StopwatchNotificationContentExtension */ = {
@@ -704,7 +732,7 @@
 				E32835A91CC6C6F200E2C2DE /* Sources */,
 				E32835AA1CC6C6F200E2C2DE /* Frameworks */,
 				E32835AB1CC6C6F200E2C2DE /* Resources */,
-				1AECD8ED1F11C59AF8005B87 /* [CP] Embed Pods Frameworks */,
+				CE69BE6AB10C47A80D1A6BF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -740,7 +768,7 @@
 				E397F4091CC5BA540095A3ED /* Sources */,
 				E397F40A1CC5BA540095A3ED /* Frameworks */,
 				E397F40B1CC5BA540095A3ED /* Resources */,
-				63E8D60DC1AF18D8EEC97123 /* [CP] Embed Pods Frameworks */,
+				AF545953D54736EB21D95D57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -869,7 +897,6 @@
 				D4938B991CE3C6CC00450D78 /* appboy@3x.png in Resources */,
 				D4139BDC1CBD88C100CA3307 /* cloud@2x.png in Resources */,
 				95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */,
-				D464B7EC1E523D2900118BA9 /* GoogleService-Info.plist in Resources */,
 				D4139BDD1CBD88C100CA3307 /* IAM@2x.png in Resources */,
 				D4139BE01CBD88C100CA3307 /* user@2x.png in Resources */,
 				4E49ED0919DDE84F00ADC43F /* facebook-icon.png in Resources */,
@@ -932,24 +959,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1AECD8ED1F11C59AF8005B87 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2439961CCED464ADD87076DC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -957,6 +966,104 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-resources.sh",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ABKContentCardsStoryboard.storyboard",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ar.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/Base.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/da.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/de.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/en.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/es-419.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/es-MX.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/es.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/et.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/fi.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/fil.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/fr.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/he.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/hi.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/id.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/btn-app-purchase-disabled.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/btn-app-purchase-disabled@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/btn-app-purchase-highlighted.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/btn-app-purchase-highlighted@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/btn-app-purchase-normal.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/btn-app-purchase-normal@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/Icons_Read.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/Icons_Read@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/Icons_Unread.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/Icons_Unread@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/icon_pinned.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/icon_pinned@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/icon_pinned@3x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-noimage-lrg.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-noimage-lrg@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-noimage-sm.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-noimage-sm@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-recommended-tab.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-recommended-tab@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-star-empty.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-star-empty@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-star-filled.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-star-filled@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-star-half.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/images/img-star-half@2x.png",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/it.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ja.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/km.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ko.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/lo.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ms.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/my.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/nb.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/nl.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/pl.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/pt-PT.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/pt.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ru.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/sv.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/th.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/vi.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-Hans.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-Hant.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-HK.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-TW.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ar.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/Base.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/da.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/de.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/en.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/es-419.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/es-MX.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/es.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/et.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/fi.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/fil.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/fr.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/he.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/hi.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/id.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/it.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ja.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/km.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ko.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/lo.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ms.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/my.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/nb.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/nl.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/pl.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/pt-PT.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/pt.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/ru.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/sv.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/th.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/vi.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-Hans.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-Hant.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-HK.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh-TW.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCardsViewController/ContentCards_Resources/zh.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyKit/Appboy.bundle",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/ABKModalFeedbackViewController.xib",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedbackViewController/Feedback_Resources/ABKNavigationFeedbackViewController.xib",
@@ -1149,14 +1256,33 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Appboy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKModalFeedbackViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKNavigationFeedbackViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppboyFeedbackLocalizable.strings",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark-bg.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark-bg@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKContentCardsStoryboard.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppboyContentCardsLocalizable.strings",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-disabled.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-disabled@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-highlighted.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-highlighted@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-normal.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-normal@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Read.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Read@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Unread.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Unread@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_pinned.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_pinned@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_pinned@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-lrg.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-lrg@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-sm.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-sm@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-recommended-tab.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-recommended-tab@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-empty.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-empty@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-filled.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-filled@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-half.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-half@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ar.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Base.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/da.lproj",
@@ -1193,6 +1319,14 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-HK.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-TW.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Appboy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKModalFeedbackViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKNavigationFeedbackViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppboyFeedbackLocalizable.strings",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark-bg.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark-bg@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKInAppMessageFullViewController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKInAppMessageHTMLFullViewController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKInAppMessageModalViewController.nib",
@@ -1206,28 +1340,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SlideupArrow.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKNewsFeedCardStoryboard.storyboardc",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppboyFeedLocalizable.strings",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-disabled.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-disabled@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-highlighted.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-highlighted@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-normal.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn-app-purchase-normal@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Read.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Read@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Unread.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Unread@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-lrg.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-lrg@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-sm.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-sm@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-recommended-tab.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-recommended-tab@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-empty.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-empty@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-filled.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-filled@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-half.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-half@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KKColorCell.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KKColorsHeaderView.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/colors_crayola.plist",
@@ -1274,7 +1386,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		63E8D60DC1AF18D8EEC97123 /* [CP] Embed Pods Frameworks */ = {
+		AF545953D54736EB21D95D57 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1290,6 +1402,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE69BE6AB10C47A80D1A6BF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0E774FD2DD369EADF647C2F /* [CP] Check Pods Manifest.lock */ = {
@@ -1321,6 +1451,7 @@
 				D4139BEC1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m in Sources */,
 				D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */,
 				D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */,
+				ADDAFB912107C2080061C96E /* LocationAnnotation.m in Sources */,
 				4EA7AA8E185626EC00D2B651 /* MiscViewController.m in Sources */,
 				ADC332E42077A43E00D688E3 /* UIViewController+Keyboard.m in Sources */,
 				E3C754A41E70DE7D004E1CCE /* AliasViewController.m in Sources */,
@@ -1338,9 +1469,11 @@
 				AD884BF820813F1B00DA304A /* UserCustomAttributeCell.m in Sources */,
 				ADC332E82077AB4200D688E3 /* ScrollContentView.m in Sources */,
 				ADC332E12076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m in Sources */,
+				ADDAFB8E2107BAA30061C96E /* LocationCustomAttributeViewController.m in Sources */,
 				4EA3EE241745B9A2000E403C /* UserCells.m in Sources */,
 				E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */,
 				D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */,
+				AD26107C20FE3E5000023BCD /* StopwatchButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
