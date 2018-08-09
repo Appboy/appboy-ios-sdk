@@ -9,10 +9,11 @@
 @property (weak, nonatomic) IBOutlet UIView *TitleBackgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *linkLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeightContraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bodyAndLinkConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *linkBottomConstraint;
 
 /*!
- * This method adjusts the bodyAndLinkConstraint and hides or shows the link label.
+ * This method adjusts the constraints and hides or shows the link label.
  */
 - (void)hideLinkLabel:(BOOL)hide;
 

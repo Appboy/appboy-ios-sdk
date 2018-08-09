@@ -95,14 +95,15 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
   [self requestNewCardsIfTimeout];
   [self updateAndDisplayCardsFromCache];
   [self cacheAllCardImages];
+  
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self.tableView reloadData];
+  });
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   [[Appboy sharedInstance] logContentCardsDisplayed];
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    [self.tableView reloadData];
-  });
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

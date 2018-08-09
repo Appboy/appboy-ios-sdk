@@ -1,7 +1,15 @@
+## 3.8.2
+
+##### Fixed
+- Fixes an issue with possible build failure when using Content Cards related to duplicate image names in Content Cards and News Feed pods. Please use this version if integrating Content Cards.
+
+##### Changed
+- Updates the Content Cards UI with minor layout improvements.
+
 ## 3.8.1
 
 ##### Fixed
-- **Important**: Fixes an issue with Content Cards syncing. Please use this version if integrating Content Cards.
+- **Important**: Fixes an issue with Content Cards syncing. Note: As additional fixes were added in later versions, please use Braze iOS SDK version 3.8.2 or above if integrating Content Cards.
 
 ## 3.8.0
 

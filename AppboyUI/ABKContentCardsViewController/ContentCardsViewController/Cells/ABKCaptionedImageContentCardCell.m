@@ -10,8 +10,21 @@
 
 - (void)hideLinkLabel:(BOOL)hide {
   self.linkLabel.hidden = hide;
-  self.bodyAndLinkConstraint.constant = hide ? 0 : 13;
-  [self setNeedsLayout];
+  if (hide) {
+    if ((self.linkBottomConstraint.priority != UILayoutPriorityDefaultLow)
+        || (self.descriptionBottomConstraint.priority != UILayoutPriorityDefaultHigh)) {
+      self.linkBottomConstraint.priority = UILayoutPriorityDefaultLow;
+      self.descriptionBottomConstraint.priority = UILayoutPriorityDefaultHigh;
+      [self setNeedsLayout];
+    }
+  } else {
+    if ((self.linkBottomConstraint.priority != UILayoutPriorityDefaultHigh)
+        || (self.descriptionBottomConstraint.priority != UILayoutPriorityDefaultLow)) {
+      self.linkBottomConstraint.priority = UILayoutPriorityDefaultHigh;
+      self.descriptionBottomConstraint.priority = UILayoutPriorityDefaultLow;
+      [self setNeedsLayout];
+    }
+  }
 }
 
 - (void)applyCard:(ABKCaptionedImageContentCard *)captionedImageCard {
@@ -21,10 +34,11 @@
   
   [super applyCard:captionedImageCard];
   
-  self.titleLabel.text = captionedImageCard.title;
-  self.descriptionLabel.text = captionedImageCard.cardDescription;
-  self.linkLabel.text = captionedImageCard.domain;
-  BOOL shouldHideLink = (captionedImageCard.domain == nil) || (captionedImageCard.domain.length == 0);
+  [self applyAppboyAttributedTextStyleFrom:captionedImageCard.title forLabel:self.titleLabel];
+  [self applyAppboyAttributedTextStyleFrom:captionedImageCard.cardDescription forLabel:self.descriptionLabel];
+  [self applyAppboyAttributedTextStyleFrom:captionedImageCard.domain forLabel:self.linkLabel];
+  
+  BOOL shouldHideLink = (captionedImageCard.domain.length == 0);
   [self hideLinkLabel:shouldHideLink];
   
   CGFloat currImageHeightConstraint = self.captionedImageView.frame.size.width / captionedImageCard.imageAspectRatio;

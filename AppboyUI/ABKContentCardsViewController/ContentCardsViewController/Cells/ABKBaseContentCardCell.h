@@ -51,4 +51,9 @@
  */
 - (UIImage *)getPlaceHolderImage;
 
+/*!
+ * @discussion This is a utility method to make text styled.
+ */
+- (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label;
+
 @end

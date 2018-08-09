@@ -3,9 +3,13 @@
 #import "ABKUIUtils.h"
 
 static CGFloat AppboyCardSidePadding = 10.0;
-static CGFloat AppboyCardSpacing = 20.0;
+static CGFloat AppboyCardSpacing = 32.0;
 static CGFloat AppboyCardBorderWidth = 0.5;
 static CGFloat AppboyCardCornerRadius = 3.0;
+static CGFloat AppboyCardShadowXOffset = 0.0;
+static CGFloat AppboyCardShadowYOffset = -2.0;
+static CGFloat AppboyCardShadowOpacity = 0.5;
+static CGFloat AppboyCardLineSpacing = 1.2;
 
 @implementation ABKBaseContentCardCell
 
@@ -43,15 +47,18 @@ static CGFloat AppboyCardCornerRadius = 3.0;
   self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
   
   CALayer *rootLayer = self.rootView.layer;
-  rootLayer.cornerRadius = AppboyCardCornerRadius;
   rootLayer.masksToBounds = YES;
-  rootLayer.borderColor = [UIColor colorWithWhite:0.75f alpha:1.0].CGColor;
+  rootLayer.cornerRadius = AppboyCardCornerRadius;
+  rootLayer.borderColor = [UIColor colorWithRed:(224.0 / 255.0) green:(224.0 / 255.0) blue:(224.0 / 255.0) alpha:1.0].CGColor;
   rootLayer.borderWidth = AppboyCardBorderWidth;
+  rootLayer.shadowColor = [UIColor colorWithRed:(178.0 / 255.0) green:(178.0 / 255.0) blue:(178.0 / 255.0) alpha:1.0].CGColor;
+  rootLayer.shadowOffset =  CGSizeMake(AppboyCardShadowXOffset, AppboyCardShadowYOffset);
+  rootLayer.shadowOpacity = AppboyCardShadowOpacity;
   
-  self.rootViewTopConstraint.constant = AppboyCardSpacing / 2.0;
-  self.rootViewBottomConstraint.constant = AppboyCardSpacing / 2.0;
-  self.rootViewLeadingConstraint.constant = AppboyCardSidePadding;
-  self.rootViewTrailingConstraint.constant = AppboyCardSidePadding;
+  self.rootViewTopConstraint.constant = self.cardSpacing / 2.0;
+  self.rootViewBottomConstraint.constant = self.cardSpacing / 2.0;
+  self.rootViewLeadingConstraint.constant = self.cardSidePadding;
+  self.rootViewTrailingConstraint.constant = self.cardSidePadding;
 }
 
 # pragma mark - Cell UI Configuration
@@ -80,9 +87,20 @@ static CGFloat AppboyCardCornerRadius = 3.0;
 #pragma mark - Utiliy Methods
 
 - (UIImage *)getPlaceHolderImage {
-  return [ABKUIUtils getImageWithName:@"img-noimage-lrg"
+  return [ABKUIUtils getImageWithName:@"appboy_cc_noimage_lrg"
                                  type:@"png"
                        inAppboyBundle:[NSBundle bundleForClass:[ABKBaseContentCardCell class]]];
+}
+
+- (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label {
+  UIColor *color = label.textColor;
+  NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+  paragraphStyle.lineSpacing = AppboyCardLineSpacing;
+  UIFont *font = label.font;
+  NSDictionary *attributes = @{NSFontAttributeName: font,
+                               NSForegroundColorAttributeName: color,
+                               NSParagraphStyleAttributeName: paragraphStyle};
+  label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];;
 }
 
 @end

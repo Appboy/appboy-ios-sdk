@@ -11,5 +11,4 @@
 
 - (void)applyCard:(ABKClassicContentCard *)classicCard;
 
-
 @end

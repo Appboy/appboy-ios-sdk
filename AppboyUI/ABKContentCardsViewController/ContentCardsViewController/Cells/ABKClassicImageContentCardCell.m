@@ -3,6 +3,14 @@
 
 @implementation ABKClassicImageContentCardCell
 
+- (void)awakeFromNib {
+  [super awakeFromNib];
+  
+  CALayer *imageLayer = self.classicImageView.layer;
+  imageLayer.cornerRadius = 3.0;
+  imageLayer.masksToBounds = YES;
+}
+
 - (void)prepareForReuse {
   [super prepareForReuse];
   [self.classicImageView sd_cancelCurrentAnimationImagesLoad];
