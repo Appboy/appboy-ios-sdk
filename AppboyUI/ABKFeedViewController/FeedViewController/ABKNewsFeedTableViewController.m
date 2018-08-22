@@ -158,11 +158,12 @@
     return self.cards.count;
 }
 
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath {
-  ABKCard *card = self.cards[indexPath.row];
-  [card logCardImpression];
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  BOOL cellVisible = [[tableView indexPathsForVisibleRows] containsObject:indexPath];
+  if (cellVisible) {
+    ABKCard *card = self.cards[indexPath.row];
+    [card logCardImpression];
+  }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

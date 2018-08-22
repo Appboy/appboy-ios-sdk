@@ -343,7 +343,7 @@ static NSMutableArray *attributesValuesArray = nil;
 
 - (IBAction)addCustomAttributeTapped:(id)sender {
   [self.userCustomAttributes addObject:[UserCustomAttribute new]];
-  NSIndexPath *addedIndexPath = [NSIndexPath indexPathForRow:self.userCustomAttributes.count inSection:1];
+  NSIndexPath *addedIndexPath = [NSIndexPath indexPathForRow:self.userCustomAttributes.count inSection:2];
   [self.attributesTableView insertRowsAtIndexPaths:@[ addedIndexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
   [self.attributesTableView scrollToRowAtIndexPath:addedIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }

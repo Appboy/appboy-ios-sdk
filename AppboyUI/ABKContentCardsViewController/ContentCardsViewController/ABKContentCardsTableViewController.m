@@ -31,10 +31,11 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
 @property (nonatomic) NSMutableSet<NSString *> *cardImpressions;
 
 /*!
- * This set stores IDs for the content cards that are being read now.
+ * This set stores IDs for the content cards that are unviewed and on the screen right now.
  */
-@property (nonatomic) NSMutableSet<NSString *> *readCards;
+@property (nonatomic) NSMutableSet<NSString *> *unviewedOnScreenCards;
 
+- (void)logCardImpressionIfNeeded:(ABKContentCard *)card;
 - (void)requestContentCardsRefresh;
 - (void)populateContentCards;
 - (void)contentCardsUpdated:(NSNotification *)notification;
@@ -69,7 +70,7 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
 - (void)setUp {
   _cacheTimeout = ABKContentCardsCacheTimeout;
   _cardImpressions = [NSMutableSet set];
-  _readCards = [NSMutableSet set];
+  _unviewedOnScreenCards = [NSMutableSet set];
   
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(contentCardsUpdated:)
@@ -162,6 +163,23 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
   [self.tableView reloadData];
 }
 
+- (void)logCardImpressionIfNeeded:(ABKContentCard *)card {
+  if ([self.cardImpressions containsObject:card.idString]) {
+    // do nothing if we have already logged an impression
+    return;
+  }
+  
+  if ([card isControlCard]) {
+    [card logContentCardControlImpression];
+  } else {
+    if (card.viewed == NO) {
+      [self.unviewedOnScreenCards addObject:card.idString];
+    }
+    [card logContentCardImpression];
+  }
+  [self.cardImpressions addObject:card.idString];
+}
+
 #pragma mark - Table view header view
 
 - (void)hideTableViewAndShowViewInHeader:(UIView *)view {
@@ -199,25 +217,26 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
     return self.cards.count;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  BOOL cellVisible = [[tableView indexPathsForVisibleRows] containsObject:indexPath];
+  if (cellVisible) {
+    ABKContentCard *card = self.cards[indexPath.row];
+    [self logCardImpressionIfNeeded:card];
+  }
+}
+
 - (void)tableView:(UITableView *)tableView
-      willDisplayCell:(UITableViewCell *)cell
-    forRowAtIndexPath:(NSIndexPath *)indexPath {
-  ABKContentCard *card = self.cards[indexPath.row];
-  
-  if ([self.cardImpressions containsObject:card.idString]) {
-    // do nothing if we have already logged an impression
-    return;
+    didEndDisplayingCell:(UITableViewCell *)cell
+       forRowAtIndexPath:(NSIndexPath *)indexPath {
+  // We mark a cell as read only if it's not visible already.
+  // But this method might be called for visible cells too because of dynamic heights.
+  BOOL cellIsVisible = [[tableView indexPathsForVisibleRows] containsObject:indexPath];
+  if (!cellIsVisible && indexPath.row < self.cards.count) {
+    // indexPath.row is out of bounds if the card did end displaying due to its deletion
+    
+    ABKContentCard *card = self.cards[indexPath.row];
+    [self.unviewedOnScreenCards removeObject:card.idString];
   }
-  
-  if ([card isControlCard]) {
-    [card logContentCardControlImpression];
-  } else {
-    if (card.viewed == NO) {
-      [self.readCards addObject:card.idString];
-    }
-    [card logContentCardImpression];
-  }
-  [self.cardImpressions addObject:card.idString];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -226,7 +245,7 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
                                                                                  forIndexPath:indexPath
                                                                                       forCard:card];
   BOOL viewedSetting = card.viewed;
-  if ([self.readCards containsObject:card.idString]) {
+  if ([self.unviewedOnScreenCards containsObject:card.idString]) {
     card.viewed = NO;
   }
   [cell applyCard:card];

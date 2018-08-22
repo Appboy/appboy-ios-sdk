@@ -1,3 +1,11 @@
+## 3.8.3
+
+##### Fixed
+- Fixes an issue where `ABKContentCardsController unviewedContentCardCount` would always return 0.
+
+##### Changed
+- Updates the Content Cards UI with minor layout improvements.
+
 ## 3.8.2
 
 ##### Fixed
