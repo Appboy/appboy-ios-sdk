@@ -1,6 +1,5 @@
 #import "ABKNewsFeedTableViewController.h"
 #import "ABKNFBannerCardCell.h"
-#import "UIImageView+WebCache.h"
 #import "ABKNFCaptionedMessageCardCell.h"
 #import "ABKNFClassicCardCell.h"
 #import "ABKNFCrossPromotionCardCell.h"
@@ -8,6 +7,7 @@
 #import "ABKFeedWebViewController.h"
 #import "ABKUIURLUtils.h"
 #import <SDWebImage/SDWebImagePrefetcher.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation ABKNewsFeedTableViewController
 

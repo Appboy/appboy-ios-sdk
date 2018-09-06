@@ -1,3 +1,8 @@
+## 3.8.4
+
+##### Fixed
+- Fixed a regression introduced in version 3.8.3 that caused background tasks to extend beyond execution time.
+
 ## 3.8.3
 
 ##### Fixed

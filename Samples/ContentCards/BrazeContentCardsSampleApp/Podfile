@@ -3,5 +3,5 @@ platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'BrazeContentCardsSampleApp' do
-pod 'Appboy-iOS-SDK/ContentCards', :path => './../../../../Appboy-iOS-SDK/'
+pod 'Appboy-iOS-SDK/ContentCards'
 end
