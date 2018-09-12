@@ -92,7 +92,7 @@
 }
 
 - (void)requestNewCardsIfTimeout {
-  NSTimeInterval passedTime = [[Appboy sharedInstance].feedController.lastUpdate timeIntervalSinceNow];
+  NSTimeInterval passedTime = fabs([[Appboy sharedInstance].feedController.lastUpdate timeIntervalSinceNow]);
   if (passedTime > self.cacheTimeout) {
     [[Appboy sharedInstance] requestFeedRefresh];
   }
