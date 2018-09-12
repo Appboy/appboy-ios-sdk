@@ -114,7 +114,7 @@ static const CGFloat MaxModalViewGraphicSize = 290.0f;
 }
 
 - (void)viewDidLayoutSubviews {
-  if ([self isMemberOfClass:[ABKInAppMessageModalViewController class]]) {
+  if ([self isKindOfClass:[ABKInAppMessageModalViewController class]]) {
     if (self.textsView && !self.textsViewWidthConstraint) {
       [self.view layoutIfNeeded];
       NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textsView
