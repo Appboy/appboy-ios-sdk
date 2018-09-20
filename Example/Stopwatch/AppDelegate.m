@@ -186,7 +186,11 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 - (void) setupRemoteNotificationForiOS10 {
   UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-  [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge)
+  UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
+  if (@available(iOS 12.0, *)) {
+    options = options | UNAuthorizationOptionProvisional;
+  }
+  [center requestAuthorizationWithOptions:(options)
                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
                           NSLog(@"Permission granted.");
                           [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];

@@ -1,3 +1,12 @@
+## 3.9.0
+
+##### Breaking
+- Adds support for iOS 12. Requires Xcode 10.
+
+##### Fixed
+- Fixed minor issues with subclassing `ABKInAppMessageModalViewController` and News Feed request timeouts.
+  - Thanks @datkinnguyen for your contribution.
+
 ## 3.8.4
 
 ##### Fixed
@@ -1024,7 +1033,7 @@ All former Braze slideup delegate methods have been depreciated and removed. In 
   * Added methods for incrementing custom user attributes
   * Added support for device push tokens as NSData when registering the token to Braze
   * More detailed error messages logged in console
-  * Removed the enable/disable Braze methods from Appboy.h
+  * Removed the enable/disable Braze methods from `Appboy.h`
 
 ## 2.0
 * Initial release
