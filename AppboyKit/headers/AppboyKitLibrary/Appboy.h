@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.9.0"
+#define APPBOY_SDK_VERSION @"3.10.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -61,27 +61,6 @@ extern NSString *const ABKFlushIntervalOptionKey;
 extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 
 /*!
- * This key can be set to YES or NO and will configure whether Braze will automatically collect significant change location
- * events.  If this key isn't set and the server doesn't provide a value, it will default to false.
- */
-extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
-
-/*!
- * This key can be set to an integer value that represents the minimum distance in meters between location events logged to Braze.
- * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
- * change location provider.  The default and minimum value is 50.  Note that significant change location updates shouldn't occur if the user has
- * gone 50 meters or less.
- */
-extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
-
-/*!
- * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Braze.
- * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
- * change location provider.  The default value is 3600 (1 hour); the minimum is 300 (5 minutes).
- */
-extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
-
-/*!
  * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to to Braze.
  */
 extern NSString *const ABKIDFADelegateKey;
@@ -119,6 +98,15 @@ extern NSString *const ABKMinimumTriggerTimeIntervalKey;
  * Key to report the SDK flavor currently being used.  For internal use only.
  */
 extern NSString *const ABKSDKFlavorKey;
+
+/*!
+ * Key to specify a whitelist for device fields that are collected by the Braze SDK.
+ *
+ * To specify whitelisted device fields, assign the bitwise `OR` of desired fields to this key. Fields are defined
+ * in `ABKDeviceOptions`. To turn off all fields, set the value of this key to `ABKDeviceOptionNone`. By default,
+ * all fields are collected.
+ */
+extern NSString *const ABKDeviceWhitelistKey;
 
 /*!
  * This key can be set to a string value representing the app group name for the Push Story Notification
@@ -188,6 +176,22 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
   ABKInvalidFeedback,
   ABKNetworkIssue,
   ABKFeedbackSentSuccessfully
+};
+
+typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
+  ABKDeviceOptionNone = 0,
+  ABKDeviceOptionResolution = (1 << 0),
+  ABKDeviceOptionCarrier = (1 << 1),
+  ABKDeviceOptionLocale = (1 << 2),
+  ABKDeviceOptionModel = (1 << 3),
+  ABKDeviceOptionOSVersion = (1 << 4),
+  ABKDeviceOptionIDFV = (1 << 5),
+  ABKDeviceOptionIDFA = (1 << 6),
+  ABKDeviceOptionPushEnabled = (1 << 7),
+  ABKDeviceOptionTimezone = (1 << 8),
+  ABKDeviceOptionPushAuthStatus = (1 << 9),
+  ABKDeviceOptionAdTrackingEnabled = (1 << 10),
+  ABKDeviceOptionAll = ~ABKDeviceOptionNone
 };
 
 /*

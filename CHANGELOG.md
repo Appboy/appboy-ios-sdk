@@ -1,3 +1,23 @@
+## 3.10.0
+
+##### Added
+- Added the ability to specify a whitelist for device fields that are collected by the Braze SDK.
+  - Configurable device fields are defined in the `ABKDeviceOptions` enum.
+  - To specify whitelisted device fields, assign the bitwise `OR` of desired fields to `ABKDeviceWhitelistKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`.
+    - For example, to specify timezone and locale collection to be whitelisted, set `appboyOptions[ABKDeviceWhitelistKey] = @(ABKDeviceOptionTimezone | ABKDeviceOptionLocale);`.
+  - To turn off all fields, set `appboyOptions[ABKDeviceWhitelistKey] = @(ABKDeviceOptionNone);`.
+  - By default, all fields are enabled.
+- Added the `clicked` property to `ABKContentCard`. Clicks made through `[ABKContentCard logContentCardClicked` are now saved locally on the device.
+
+##### Breaking
+- Removes `ABKSignificantChangeCollectionEnabledOptionKey`, `ABKSignificantChangeCollectionDistanceFilterOptionKey`, and `ABKSignificantChangeCollectionTimeFilterOptionKey` from the `Appboy` interface.
+
+##### Removed
+- Removed the ability to optionally track locations in the background.
+
+##### Fixed
+- Fixes an issue where Slideup and Full In-App Message content could be obscured by the notch on iPhone XR and iPhone XS Max.
+
 ## 3.9.0
 
 ##### Breaking

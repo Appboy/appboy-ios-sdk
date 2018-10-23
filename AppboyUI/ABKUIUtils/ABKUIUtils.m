@@ -3,6 +3,9 @@
 
 static NSString *const LocalizedAppboyStringNotFound = @"not found";
 static NSUInteger const iPhoneXHeight = 2436.0;
+static NSUInteger const iPhoneXRHeight = 1792.0;
+static NSUInteger const iPhoneXSMaxHeight = 2688.0;
+static NSUInteger const iPhoneXRScaledHeight = 1624.0;
 
 @implementation ABKUIUtils
 
@@ -80,7 +83,10 @@ static NSUInteger const iPhoneXHeight = 2436.0;
 }
 
 + (BOOL)isiPhoneX {
-  return [[UIScreen mainScreen] nativeBounds].size.height == iPhoneXHeight;
+  return ([[UIScreen mainScreen] nativeBounds].size.height == iPhoneXHeight ||
+          [[UIScreen mainScreen] nativeBounds].size.height == iPhoneXRHeight ||
+          [[UIScreen mainScreen] nativeBounds].size.height == iPhoneXSMaxHeight ||
+          [[UIScreen mainScreen] nativeBounds].size.height == iPhoneXRScaledHeight);
 }
 
 + (UIImage *)getImageWithName:(NSString *)name

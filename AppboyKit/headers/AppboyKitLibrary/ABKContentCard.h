@@ -42,6 +42,11 @@
 @property (nonatomic) BOOL dismissed;
 
 /*!
+ * This property reflects if the card has been clicked.
+ */
+@property (nonatomic) BOOL clicked;
+
+/*!
  * This property carries extra data in the form of an NSDictionary which can be sent down via the Braze Dashboard.
  * You may want to design and implement a custom handler to access this data depending on your use case.
  */

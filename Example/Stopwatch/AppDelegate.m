@@ -179,7 +179,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   // Adding Braze default categories
   NSMutableSet *categories = [NSMutableSet setWithSet:[ABKPushUtils getAppboyUIUserNotificationCategorySet]];
   [categories addObject:likeCategory];
-  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
+  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
   [[UIApplication sharedApplication] registerForRemoteNotifications];
   [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
