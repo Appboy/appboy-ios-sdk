@@ -23,7 +23,7 @@ Successful marketing automation is essential to the future of your mobile app. B
 
 The iOS SDK supports iOS 8.0+. 
 
-Integrating the iOS SDK [requires Xcode 10](https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md#390). Developers requiring Xcode 8 may integrate Braze iOS SDK version 3.0.2 and below.
+Integrating the iOS SDK [requires Xcode 10](https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md#390).
 
 Braze uses [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.3.0 for in-app message icons.  Check out the [cheat sheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) to browse available icons.
 
