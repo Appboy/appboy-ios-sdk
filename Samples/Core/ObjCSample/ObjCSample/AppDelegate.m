@@ -1,11 +1,12 @@
 #import "AppDelegate.h"
-#import "Appboy-iOS-SDK/AppboyKit.h"
+
+@import Appboy_iOS_SDK.AppboyKit;
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [Appboy startWithApiKey:@"5294005f-b436-4f51-b408-5784fffb97ef"
+  [Appboy startWithApiKey:@"3ab12872-4962-4927-8a21-5a6cdf896d2c"
             inApplication:application
         withLaunchOptions:launchOptions];
       

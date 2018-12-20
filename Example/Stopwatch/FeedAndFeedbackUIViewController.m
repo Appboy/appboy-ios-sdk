@@ -23,6 +23,7 @@
   
   // Set number of unread and total news feed cards
   [self feedUpdated:nil];
+  [self contentCardsUpdated:nil];
   
   // The ABKFeedUpdatedNotification is posted whenever the news feed changes.  We'll listen to it
   // so we know when to update the card count display.
@@ -30,7 +31,12 @@
                                            selector:@selector(feedUpdated:)
                                                name:ABKFeedUpdatedNotification
                                              object:nil];
-  
+
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(contentCardsUpdated:)
+                                               name:ABKContentCardsProcessedNotification
+                                             object:nil];
+
   [self addDismissGestureForView:self.scrollView];
 }
 
@@ -45,7 +51,7 @@
   self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.contentViewHeightConstraint.constant);
 }
 
-#pragma mark News Feed Card Count
+#pragma mark - Notification updates
 
 - (void)feedUpdated:(NSNotification *)notification {
   self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Feed Cards: %ld / %ld",
@@ -58,7 +64,14 @@
   [self.view setNeedsDisplay];
 }
 
-#pragma mark News and Feedback Button
+- (void)contentCardsUpdated:(NSNotification *)notification {
+  self.unreadContentCardLabel.text = [NSString stringWithFormat:@"Unread Content Cards: %ld / %ld",
+                                      [Appboy sharedInstance].contentCardsController.unviewedContentCardCount,
+                                      [Appboy sharedInstance].contentCardsController.contentCardCount];
+  [self.view setNeedsDisplay];
+}
+
+#pragma mark - News and Feedback Button
 // Example of Braze in one action: a button that opens the News Feed page, on which there is a Feedback button
 
 - (void)openFeedbackFromNavigationFeed:(id)sender {
@@ -75,7 +88,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark Categoried News
+#pragma mark - Categoried News
 
 - (IBAction)displayCategoriedNews:(id)sender {
   ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
@@ -137,7 +150,7 @@
   }
 }
 
-# pragma mark Feed
+# pragma mark - Feed
 
 // An example modal news feed view controller
 - (IBAction)modalNewsFeedButtonTapped:(id)sender {
@@ -150,7 +163,7 @@
   [self.navigationController pushViewController:newsFeed animated:YES];
 }
 
-# pragma mark Content Cards
+# pragma mark - Content Cards
 
 - (IBAction)modalContentCardsButtonTapped:(id)sender {
   ABKContentCardsViewController *contentCardsVC = [ABKContentCardsViewController new];
@@ -164,7 +177,7 @@
   [self.navigationController pushViewController:contentCards animated:YES];
 }
 
-# pragma mark Feedback
+# pragma mark - Feedback
 
 - (IBAction)submitInstantFeedback:(id)sender {
   ABKFeedback* feedback = [[ABKFeedback alloc] initWithFeedbackMessage:@"Submitting feedback"

@@ -9,10 +9,10 @@
 
   // Add tab bar items to UITabBarController
   NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects:
-                                     [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events", @"Alias"] andTitle:@"User" andImageName:@"user" withFeedAndFlushButtons:YES], // User tab
-                                     [self addNavigationControllerWithChildren:@[@"UI", @"Controls"] andTitle:@"IAM" andImageName:@"IAM" withFeedAndFlushButtons:NO], // IAM tab
+                                     [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events", @"Alias"] andTitle:@"User" andImageName:@"user" withFlushButton:YES], // User tab
+                                     [self addNavigationControllerWithChildren:@[@"UI", @"Controls"] andTitle:@"IAM" andImageName:@"IAM" withFlushButton:NO], // IAM tab
                                      [self addNavigationControllerWithIdentifier:@"FeedAndFeedbackViewController" withTitle:@"Braze UI" andImageName:@"newsfeed"], // UI tab
-                                     [self addNavigationControllerWithChildren:@[@"Misc", @"PushStory", @"Data"] andTitle:@"Advanced" andImageName:@"bolt" withFeedAndFlushButtons:NO], // Advanced tab
+                                     [self addNavigationControllerWithChildren:@[@"Misc", @"PushStory", @"Data"] andTitle:@"Advanced" andImageName:@"bolt" withFlushButton:NO], // Advanced tab
                                      nil];
   [self setViewControllers:viewControllers];
   
@@ -30,9 +30,9 @@
 /* Helper methods for adding tab bar items to the root UITabBarController */
 
 // Initializes and returns a ContainerViewController nested inside a UINavigationController
-- (UINavigationController *)addNavigationControllerWithChildren:(NSArray *)childViewContainers andTitle:(NSString *)title andImageName:(NSString *)imageName withFeedAndFlushButtons:(BOOL)hasButtons {
+- (UINavigationController *)addNavigationControllerWithChildren:(NSArray *)childViewContainers andTitle:(NSString *)title andImageName:(NSString *)imageName withFlushButton:(BOOL)hasFlushButton {
   UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContainerNavigationController"];
-  [(ContainerViewController *)navigationController.viewControllers[0] initWithArray:childViewContainers andTitle:title andImageName:imageName withFeedAndFlushButtons:hasButtons];
+  [(ContainerViewController *)navigationController.viewControllers[0] initWithArray:childViewContainers andTitle:title andImageName:imageName withFlushButton:hasFlushButton];
   return navigationController;
 }
 

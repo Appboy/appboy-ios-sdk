@@ -3,6 +3,7 @@ import Appboy_iOS_SDK
 
 class ViewController: UIViewController {
   @IBOutlet weak var userIdTextField: UITextField!
+  @IBOutlet weak var customEventNameTextField: UITextField!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -14,7 +15,10 @@ class ViewController: UIViewController {
   }
   
   @IBAction func logCustomEventButtonTapped(sender: AnyObject) {
-    Appboy.sharedInstance()!.logCustomEvent("Swift Custom Event")
+    let customEventName:String! = customEventNameTextField.text
+    if (customEventName.count > 0) {
+      Appboy.sharedInstance()!.logCustomEvent(customEventName!)
+    }
   }
   
   @IBAction func updateUserId(sender: AnyObject) {
@@ -22,4 +26,3 @@ class ViewController: UIViewController {
     Appboy.sharedInstance()!.changeUser(userIdTextField.text!)
   }
 }
-

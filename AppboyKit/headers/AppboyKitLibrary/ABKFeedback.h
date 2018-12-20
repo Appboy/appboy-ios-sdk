@@ -13,7 +13,7 @@ typedef enum {
 @property (copy) NSString *email;
 @property BOOL isBug;
 
-- (instancetype)initWithFeedbackMessage:(NSString *)message email:(NSString *)email isBug:(BOOL)isBug;
+- (instancetype)initWithFeedbackMessage:(NSString *)message email:(NSString *)email isBug:(BOOL)isBug __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
 
 /*!
  * This method checks the validation of the feedback object and returns the result.
@@ -24,7 +24,7 @@ typedef enum {
  * - feedback message isn't empty;
  * - the email is a valid email address.
 */
-- (ABKFeedbackValidation)feedbackValidation;
+- (ABKFeedbackValidation)feedbackValidation __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
 
 @end
 NS_ASSUME_NONNULL_END

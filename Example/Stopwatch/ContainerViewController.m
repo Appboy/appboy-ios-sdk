@@ -6,11 +6,11 @@
  @param segmentIndexToViewControllerId  An array where indices represent UISegmentedControl segment indices and values are the child UIViewController storyboard restoration IDs (NSString*) associated with that segment index. Restoration IDs also double as UISegmentedControl titles for a given segment.
  @param title The UITabBarItem title for this tab in the root UITabBarController
  @param imageName The image filename associated with the UITabBarItem image for this tab
- @param withNavigationButtons A boolean indicating whether this ContainerViewController will have News Feed and Data Flush UIBarButtonItems in the UINavigationBar
+ @param withFlushButton A boolean for whether this ContainerViewController will have a Data Flush UIBarButtonItem in the UINavigationBar
  */
-- (void)initWithArray:(NSArray *)segmentIndexToViewControllerId andTitle:(NSString *)title andImageName:(NSString *)imageName withFeedAndFlushButtons:(BOOL)hasButtons {
+- (void)initWithArray:(NSArray *)segmentIndexToViewControllerId andTitle:(NSString *)title andImageName:(NSString *)imageName withFlushButton:(BOOL)hasFlushButton {
   self.segmentIndexToViewControllerId = segmentIndexToViewControllerId;
-  self.hasFeedAndFlushButtons = hasButtons;
+  self.hasFlushButton = hasFlushButton;
   
   self.tabBarItem.title = title;
   self.tabBarItem.image = [UIImage imageNamed:imageName];
@@ -25,14 +25,8 @@
   [self.navigationItem setTitleView:self.segmentedControl];
   [self displayViewForSegmentAtIndex:[self.segmentedControl selectedSegmentIndex]];
   
-  // Add Feed and Flush navigation bar items
-  if (self.hasFeedAndFlushButtons) {
-    self.modalFeedViewController = [[ABKNewsFeedViewController alloc] init];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"newsfeed"]
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(newsfeedButtonTapped:)];
+  // Add Flush navigation bar item
+  if (self.hasFlushButton) {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"appboy"]
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
@@ -87,11 +81,6 @@
   
   // Display new view controller
   [self displayViewForSegmentAtIndex:[sender selectedSegmentIndex]];
-}
-
-// Open up modal news feed view controller when feed button is tapped
-- (IBAction)newsfeedButtonTapped:(id)sender {
-  [self presentViewController:self.modalFeedViewController animated:YES completion:nil];
 }
 
 - (IBAction)flushDataToAppboy:(id)sender {

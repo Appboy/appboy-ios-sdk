@@ -7,6 +7,7 @@
 @property IBOutlet UILabel *unreadCardLabel;
 @property IBOutlet UILabel *totalCardsLabel;
 @property IBOutlet UISwitch *unReadIndicatorSwitch;
+@property IBOutlet UILabel *unreadContentCardLabel;
 
 - (IBAction)newsAndFeedbackButtonTapped:(id)sender;
 - (IBAction)displayCategoriedNews:(id)sender;

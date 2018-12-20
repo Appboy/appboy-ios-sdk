@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5281BCCC45F1495DA41EF88 /* libPods-ObjCSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 488391DA424E0F04CE489F93 /* libPods-ObjCSample.a */; };
+		B33D49AC80F8A3E878309DBC /* Pods_ObjCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE9B09B77026D5FBDF9D824 /* Pods_ObjCSample.framework */; };
 		C0FC8B1D1F95196B00841660 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FC8B1C1F95196B00841660 /* AppDelegate.m */; };
 		C0FC8B201F95196B00841660 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FC8B1F1F95196B00841660 /* ViewController.m */; };
 		C0FC8B231F95196B00841660 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0FC8B211F95196B00841660 /* Main.storyboard */; };
@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		07A5857A61D2D72D7CFB575B /* Pods-ObjCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCSample/Pods-ObjCSample.release.xcconfig"; sourceTree = "<group>"; };
-		488391DA424E0F04CE489F93 /* libPods-ObjCSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjCSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CE9B09B77026D5FBDF9D824 /* Pods_ObjCSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjCSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E52418B4967B608BD6BC4DB /* Pods-ObjCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjCSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjCSample/Pods-ObjCSample.debug.xcconfig"; sourceTree = "<group>"; };
 		C0FC8B181F95196B00841660 /* ObjCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0FC8B1B1F95196B00841660 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FC8B351F9527A300841660 /* UserNotifications.framework in Frameworks */,
-				B5281BCCC45F1495DA41EF88 /* libPods-ObjCSample.a in Frameworks */,
+				B33D49AC80F8A3E878309DBC /* Pods_ObjCSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				C0FC8B341F9527A300841660 /* UserNotifications.framework */,
-				488391DA424E0F04CE489F93 /* libPods-ObjCSample.a */,
+				1CE9B09B77026D5FBDF9D824 /* Pods_ObjCSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +115,7 @@
 				C0FC8B141F95196B00841660 /* Sources */,
 				C0FC8B151F95196B00841660 /* Frameworks */,
 				C0FC8B161F95196B00841660 /* Resources */,
+				9465F6A2B567CF4F767501FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +198,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9465F6A2B567CF4F767501FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ObjCSample/Pods-ObjCSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Appboy-iOS-SDK/Appboy_iOS_SDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Appboy_iOS_SDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjCSample/Pods-ObjCSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

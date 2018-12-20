@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKF-Tb-uuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151.5" y="-3626.5"/>
+            <point key="canvasLocation" x="242.40000000000001" y="-3262.2188905547227"/>
         </scene>
         <!--Push Story View Controller-->
         <scene sceneID="leq-rW-CCP">
@@ -71,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gv-nH-Acl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="-4007"/>
+            <point key="canvasLocation" x="992" y="-3604.4977511244379"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="TEE-xP-AeY">
@@ -128,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLA-Wr-tWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024.5" y="-4007.5"/>
+            <point key="canvasLocation" x="1639.2" y="-3604.9475262368819"/>
         </scene>
         <!--Misc View Controller-->
         <scene sceneID="WJM-fM-e7F">
@@ -178,7 +177,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-qJ-HE9">
-                                                        <rect key="frame" x="171.5" y="86" width="32" height="38"/>
+                                                        <rect key="frame" x="171.5" y="86" width="32.5" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -198,7 +197,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H5-ee-dQb" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="230.5" width="343" height="38.5"/>
+                                                        <rect key="frame" x="16" y="230.5" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Log Attribution Data">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -208,7 +207,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLG-60-Vzq" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="279" width="343" height="38"/>
+                                                        <rect key="frame" x="16" y="278.5" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Log Single Location"/>
                                                         <connections>
@@ -216,13 +215,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Braze Flush Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8J-GY-Dyi">
-                                                        <rect key="frame" x="124.5" y="48" width="127" height="38"/>
+                                                        <rect key="frame" x="124" y="48" width="127" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg7-JD-KCe" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="327" width="343" height="38.5"/>
+                                                        <rect key="frame" x="16" y="326.5" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Show Caches Dir Files"/>
                                                         <connections>
@@ -230,7 +229,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQB-sU-MHh" userLabel="Environment View">
-                                                        <rect key="frame" x="0.0" y="375.5" width="375" height="160"/>
+                                                        <rect key="frame" x="0.0" y="374.5" width="375" height="160"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-9o-2Lo" customClass="StopwatchButton">
                                                                 <rect key="frame" x="16" y="97" width="343" height="38"/>
@@ -293,25 +292,25 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set IAM Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz4-x6-sYU">
-                                                        <rect key="frame" x="16" y="545.5" width="180.5" height="18"/>
+                                                        <rect key="frame" x="16" y="544.5" width="180.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-D6-9YS">
-                                                        <rect key="frame" x="310" y="539.5" width="51" height="31"/>
+                                                        <rect key="frame" x="310" y="538" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="setInAppDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="bFy-lY-zOS"/>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set URI Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C67-Hk-uo5">
-                                                        <rect key="frame" x="16" y="585" width="178" height="18"/>
+                                                        <rect key="frame" x="16" y="583.5" width="178" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBd-3z-vDi" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="619.5" width="343" height="38.5"/>
+                                                        <rect key="frame" x="16" y="618" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="See Registered Geofences"/>
                                                         <connections>
@@ -319,25 +318,25 @@
                                                         </connections>
                                                     </button>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-w2-7ZR">
-                                                        <rect key="frame" x="310" y="578.5" width="51" height="31"/>
+                                                        <rect key="frame" x="310" y="577" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="urlDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="M7p-S2-OFB"/>
                                                         </connections>
                                                     </switch>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdT-oh-jh2">
-                                                        <rect key="frame" x="149.5" y="682.5" width="209.5" height="30"/>
+                                                        <rect key="frame" x="149.5" y="680" width="209.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Timeout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-lu-E9l">
-                                                        <rect key="frame" x="16" y="678" width="113.5" height="38"/>
+                                                        <rect key="frame" x="16" y="676" width="113.5" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-6Q-use" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="722.5" width="344" height="38"/>
+                                                        <rect key="frame" x="16" y="720" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Set Session Timeout"/>
                                                         <connections>
@@ -352,21 +351,21 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghk-t6-03W">
-                                                        <rect key="frame" x="16" y="375.5" width="343" height="1"/>
+                                                        <rect key="frame" x="16" y="374.5" width="343" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="GCs-Ee-l7j"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-Yr-JLj">
-                                                        <rect key="frame" x="16" y="527.5" width="343" height="1"/>
+                                                        <rect key="frame" x="16" y="526.5" width="343" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="qa3-PG-jYr"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzO-3u-7cG">
-                                                        <rect key="frame" x="16" y="671.5" width="343" height="1"/>
+                                                        <rect key="frame" x="16" y="669" width="343" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="mZe-m7-3PS"/>
@@ -494,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7V-Aw-QGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159.5" y="-2841.5"/>
+            <point key="canvasLocation" x="255.19999999999999" y="-2556.0719640179914"/>
         </scene>
         <!--User Attributes View Controller-->
         <scene sceneID="xov-Ox-xcT">
@@ -734,7 +733,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GG3-KO-e3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2853.5" y="-2836.5"/>
+            <point key="canvasLocation" x="-4565.6000000000004" y="-2551.5742128935535"/>
         </scene>
         <!--User Attributes Array View Controller-->
         <scene sceneID="vIs-D3-3a4">
@@ -803,7 +802,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXO-Ci-Wfc" customClass="StopwatchButton">
-                                <rect key="frame" x="259" y="324.5" width="100" height="38"/>
+                                <rect key="frame" x="259" y="325" width="100" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -911,7 +910,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="leE-0c-Z1g">
-                                <rect key="frame" x="125" y="112" width="234" height="30"/>
+                                <rect key="frame" x="124.5" y="112" width="234.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
@@ -1007,7 +1006,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2854.5" y="-2090.5"/>
+            <point key="canvasLocation" x="-4567.1999999999998" y="-1880.5097451274364"/>
         </scene>
         <!--Location Custom Attribute View Controller-->
         <scene sceneID="49o-Yk-YUc">
@@ -1034,13 +1033,13 @@
                                         <rect key="frame" x="0.0" y="40" width="375" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slC-eJ-Q3f">
-                                                <rect key="frame" x="8" y="18" width="28.5" height="20.5"/>
+                                                <rect key="frame" x="8" y="18.5" width="28.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAd-hg-AaR">
-                                                <rect key="frame" x="116.5" y="14" width="250" height="30"/>
+                                                <rect key="frame" x="116.5" y="13.5" width="250" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                                 <connections>
@@ -1068,7 +1067,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7u1-Jd-Njo">
-                                                <rect key="frame" x="116.5" y="14" width="250" height="30"/>
+                                                <rect key="frame" x="116.5" y="13.5" width="250" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                 <connections>
@@ -1095,7 +1094,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kJS-Fy-I31">
-                                                <rect key="frame" x="116.5" y="14" width="250" height="30"/>
+                                                <rect key="frame" x="116.5" y="13.5" width="250" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                 <connections>
@@ -1116,7 +1115,7 @@
                                         <rect key="frame" x="0.0" y="211" width="375" height="69"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QG-wJ-3GI" customClass="StopwatchButton">
-                                                <rect key="frame" x="267" y="15" width="100" height="38"/>
+                                                <rect key="frame" x="267" y="15.5" width="100" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="3Kr-Oi-Be2"/>
                                                     <constraint firstAttribute="width" constant="100" id="3W2-jb-scL"/>
@@ -1132,7 +1131,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoP-LF-u3r" customClass="StopwatchButton">
-                                                <rect key="frame" x="8" y="15" width="100" height="38"/>
+                                                <rect key="frame" x="8" y="15.5" width="100" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="5nc-oY-5fd"/>
                                                     <constraint firstAttribute="width" constant="100" id="91X-AO-MLS"/>
@@ -1218,7 +1217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARa-5d-j1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2855.5" y="-1257.5"/>
+            <point key="canvasLocation" x="-4568.8000000000002" y="-1131.1844077961021"/>
         </scene>
         <!--In-App Controls-->
         <scene sceneID="0ks-kz-f3B">
@@ -1348,7 +1347,7 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-1110" y="-2842"/>
+            <point key="canvasLocation" x="-1776" y="-2556.521739130435"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="EK0-V0-req">
@@ -1364,7 +1363,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnh-FL-noV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-913" y="-4387"/>
+            <point key="canvasLocation" x="-1460.8" y="-3946.3268365817094"/>
         </scene>
         <!--Events-->
         <scene sceneID="aqZ-0a-DSn">
@@ -1476,7 +1475,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AmU-CV-rMf">
-                                                    <rect key="frame" x="310" y="7" width="51" height="31"/>
+                                                    <rect key="frame" x="310" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchChangedValue:" destination="kug-bN-j3b" eventType="valueChanged" id="wYn-Lf-v6y"/>
                                                     </connections>
@@ -1550,7 +1549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NaG-XU-lKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2399.5" y="-2837.5"/>
+            <point key="canvasLocation" x="-3839.1999999999998" y="-2552.4737631184412"/>
         </scene>
         <!--Alias View Controller-->
         <scene sceneID="mDG-4f-yZD">
@@ -1608,7 +1607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzN-ZA-6eX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2398.5" y="-2091.5"/>
+            <point key="canvasLocation" x="-3837.5999999999999" y="-1881.4092953523241"/>
         </scene>
         <!--In App MessageHTML Composer View Controller-->
         <scene sceneID="Pka-Xx-iBd">
@@ -1699,7 +1698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mar-yI-YVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1581" y="-2007"/>
+            <point key="canvasLocation" x="-2529.5999999999999" y="-1805.3973013493255"/>
         </scene>
         <!--In App MessageUI View Controller-->
         <scene sceneID="FKA-a7-sNu">
@@ -1773,7 +1772,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z3-nz-V54">
-                                                    <rect key="frame" x="16" y="13.5" width="122" height="18"/>
+                                                    <rect key="frame" x="16" y="13" width="122" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="122" id="E0q-r7-C1K"/>
                                                     </constraints>
@@ -1802,7 +1801,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-D4-JuJ">
-                                                    <rect key="frame" x="16" y="13.5" width="122" height="18"/>
+                                                    <rect key="frame" x="16" y="13" width="122" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="122" id="FPS-3C-juv"/>
                                                     </constraints>
@@ -1836,7 +1835,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-9z-EQ7">
-                                                    <rect key="frame" x="16" y="10.5" width="122" height="18"/>
+                                                    <rect key="frame" x="16" y="10" width="122" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="122" id="jV2-1y-hd3"/>
                                                     </constraints>
@@ -1852,7 +1851,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-nm-JMW">
-                                                    <rect key="frame" x="16" y="54" width="50" height="17"/>
+                                                    <rect key="frame" x="16" y="53.5" width="50" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1893,13 +1892,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="R5c-r9-Sw3">
-                                                    <rect key="frame" x="310" y="7" width="51" height="31"/>
+                                                    <rect key="frame" x="310" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="hideChevronChanged:" destination="mDO-W3-fC2" eventType="valueChanged" id="wpq-9P-gJa"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide Chevron:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-89-O60">
-                                                    <rect key="frame" x="16" y="13.5" width="98" height="18"/>
+                                                    <rect key="frame" x="16" y="13" width="98" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1924,7 +1923,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPw-4L-dSZ">
-                                                    <rect key="frame" x="153" y="19.5" width="74" height="18"/>
+                                                    <rect key="frame" x="153" y="19" width="74" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1939,7 +1938,7 @@
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ft5-Jy-lb7">
-                                                    <rect key="frame" x="16" y="45.5" width="122" height="30"/>
+                                                    <rect key="frame" x="16" y="45" width="122" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="122" id="fH2-Yx-lWq"/>
                                                     </constraints>
@@ -1950,7 +1949,7 @@
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt4-vh-smc">
-                                                    <rect key="frame" x="16" y="19.5" width="122" height="18"/>
+                                                    <rect key="frame" x="16" y="19" width="122" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1965,7 +1964,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BG Color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9u-s1-Hqh">
-                                                    <rect key="frame" x="153" y="58.5" width="66" height="18"/>
+                                                    <rect key="frame" x="153" y="58" width="66" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1987,7 +1986,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URI:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSs-d8-7pg">
-                                                    <rect key="frame" x="153" y="154.5" width="28.5" height="18"/>
+                                                    <rect key="frame" x="153" y="154" width="28.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2056,7 +2055,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-tT-35I">
-                                        <rect key="frame" x="16" y="66" width="342" height="29"/>
+                                        <rect key="frame" x="16" y="66" width="343" height="29"/>
                                         <segments>
                                             <segment title="Slideup"/>
                                             <segment title="Modal"/>
@@ -2121,7 +2120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezC-nR-x8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1589" y="-2838"/>
+            <point key="canvasLocation" x="-2542.4000000000001" y="-2552.9235382308848"/>
         </scene>
         <!--Braze UI-->
         <scene sceneID="UdB-8R-NiI">
@@ -2139,13 +2138,13 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cn3-sJ-J46">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-GN-ctJ" userLabel="Content View">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="517"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="650"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-0t-ELk" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="207" width="343" height="38"/>
+                                                        <rect key="frame" x="16" y="314" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Modal News Feed"/>
                                                         <connections>
@@ -2153,38 +2152,24 @@
                                                         </connections>
                                                     </button>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgt-SU-GU8">
-                                                        <rect key="frame" x="309" y="67" width="51" height="31"/>
+                                                        <rect key="frame" x="310" y="193.5" width="51" height="31"/>
                                                     </switch>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFl-Ga-Ugb" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="361" width="344" height="38"/>
+                                                        <rect key="frame" x="16" y="127" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Navigation Feedback Form"/>
                                                         <connections>
                                                             <segue destination="Dud-jw-0GI" kind="push" id="XuP-M3-QpG"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With Unread Indicator: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abl-Vy-tyH">
-                                                        <rect key="frame" x="16" y="73" width="213" height="18"/>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="With Unread Indicator: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abl-Vy-tyH">
+                                                        <rect key="frame" x="16" y="200" width="214" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36C-Qv-kSf" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="20" width="342" height="38"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="38" id="zZx-um-6ja"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                        <state key="normal" title="Categoried News">
-                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="displayCategoriedNews:" destination="u60-7s-wwM" eventType="touchUpInside" id="5hC-e1-Gib"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxP-of-Mtr" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="313" width="343" height="38"/>
+                                                        <rect key="frame" x="16" y="79" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Modal Feedback Form"/>
                                                         <connections>
@@ -2192,7 +2177,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjf-jA-cZc" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="255" width="343" height="38"/>
+                                                        <rect key="frame" x="16" y="362" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Navigation News Feed"/>
                                                         <connections>
@@ -2200,7 +2185,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXq-y8-C6i" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="149" width="343" height="38"/>
+                                                        <rect key="frame" x="16" y="20" width="343" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Submit Instant Feedback"/>
                                                         <connections>
@@ -2208,92 +2193,104 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unread cards:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-VP-eHp">
-                                                        <rect key="frame" x="137" y="111" width="101" height="18"/>
+                                                        <rect key="frame" x="137" y="238" width="101" height="18"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-nV-ube">
-                                                        <rect key="frame" x="15" y="409" width="344" height="1"/>
+                                                        <rect key="frame" x="15" y="415" width="345" height="1"/>
                                                         <color key="backgroundColor" red="0.90517729922279788" green="0.90517729922279788" blue="0.90517729922279788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="OR2-vN-RhT"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U93-jR-T7Z">
-                                                        <rect key="frame" x="15" y="138" width="343" height="1"/>
-                                                        <color key="backgroundColor" red="0.91721988341968907" green="0.91721988341968907" blue="0.91721988341968907" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="pGi-dD-KZT"/>
-                                                        </constraints>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bnn-YE-cBV">
-                                                        <rect key="frame" x="15" y="196" width="343" height="1"/>
+                                                        <rect key="frame" x="15" y="68" width="344" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="9FF-JM-wfP"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Un9-U7-Ovi">
-                                                        <rect key="frame" x="15" y="303" width="343" height="1"/>
+                                                        <rect key="frame" x="15" y="180" width="344" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="8cf-mu-Sye"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYj-Qx-l8M" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="420" width="343" height="38"/>
+                                                        <rect key="frame" x="16" y="454" width="343" height="38"/>
                                                         <state key="normal" title="Modal Content Cards"/>
                                                         <connections>
                                                             <action selector="modalContentCardsButtonTapped:" destination="u60-7s-wwM" eventType="touchUpInside" id="e7O-s4-Ws0"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu5-Oc-gER" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="468" width="343" height="38"/>
+                                                        <rect key="frame" x="16" y="502" width="343" height="38"/>
                                                         <state key="normal" title="Navigation Content Cards"/>
                                                         <connections>
                                                             <action selector="navigationContentCardsButtonTapped:" destination="u60-7s-wwM" eventType="touchUpInside" id="dxJ-hU-tXF"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unread content cards:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-Df-X4h" userLabel="Unread Content Card Label">
+                                                        <rect key="frame" x="107.5" y="426" width="160" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                        <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36C-Qv-kSf" customClass="StopwatchButton">
+                                                        <rect key="frame" x="16" y="266" width="343" height="38"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="38" id="zZx-um-6ja"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" title="Categoried News Feed">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="displayCategoriedNews:" destination="u60-7s-wwM" eventType="touchUpInside" id="5hC-e1-Gib"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="abl-Vy-tyH" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="14g-73-7A2"/>
-                                                    <constraint firstItem="bxP-of-Mtr" firstAttribute="top" secondItem="bjf-jA-cZc" secondAttribute="bottom" constant="20" id="1WG-Wq-z2e"/>
+                                                    <constraint firstItem="bxP-of-Mtr" firstAttribute="top" secondItem="Bnn-YE-cBV" secondAttribute="bottom" constant="10" id="1WG-Wq-z2e"/>
                                                     <constraint firstAttribute="trailing" secondItem="36C-Qv-kSf" secondAttribute="trailing" constant="16" id="2oZ-kp-yb5"/>
-                                                    <constraint firstItem="RR4-nV-ube" firstAttribute="top" secondItem="xFl-Ga-Ugb" secondAttribute="bottom" constant="10" id="3ze-IP-PLz"/>
-                                                    <constraint firstAttribute="height" constant="517" id="5bB-GN-wDU"/>
-                                                    <constraint firstItem="36C-Qv-kSf" firstAttribute="top" secondItem="Itm-GN-ctJ" secondAttribute="top" constant="20" id="7Py-aM-PXO"/>
+                                                    <constraint firstItem="RR4-nV-ube" firstAttribute="top" secondItem="bjf-jA-cZc" secondAttribute="bottom" constant="15" id="3ze-IP-PLz"/>
+                                                    <constraint firstAttribute="height" constant="650" id="5bB-GN-wDU"/>
+                                                    <constraint firstItem="36C-Qv-kSf" firstAttribute="top" secondItem="h9S-VP-eHp" secondAttribute="bottom" constant="10" id="7Py-aM-PXO"/>
                                                     <constraint firstItem="AYj-Qx-l8M" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="7kE-9f-Zi9"/>
                                                     <constraint firstItem="zu5-Oc-gER" firstAttribute="top" secondItem="AYj-Qx-l8M" secondAttribute="bottom" constant="10" id="81i-Cg-dB4"/>
+                                                    <constraint firstItem="Bnn-YE-cBV" firstAttribute="top" secondItem="RXq-y8-C6i" secondAttribute="bottom" constant="10" id="9YH-cg-PSV"/>
+                                                    <constraint firstItem="RXq-y8-C6i" firstAttribute="top" secondItem="Itm-GN-ctJ" secondAttribute="top" constant="20" id="9oX-W6-aX1"/>
                                                     <constraint firstAttribute="trailing" secondItem="Lgt-SU-GU8" secondAttribute="trailing" constant="16" id="Aoi-nB-28K"/>
-                                                    <constraint firstItem="Un9-U7-Ovi" firstAttribute="top" secondItem="bjf-jA-cZc" secondAttribute="bottom" constant="10" id="BUf-pf-y8g"/>
+                                                    <constraint firstItem="Un9-U7-Ovi" firstAttribute="top" secondItem="xFl-Ga-Ugb" secondAttribute="bottom" constant="15" id="BUf-pf-y8g"/>
+                                                    <constraint firstItem="Oit-Df-X4h" firstAttribute="top" secondItem="RR4-nV-ube" secondAttribute="bottom" constant="10" id="CN1-zX-6RJ"/>
                                                     <constraint firstItem="xFl-Ga-Ugb" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="Ce1-2R-8Os"/>
                                                     <constraint firstItem="Bnn-YE-cBV" firstAttribute="leading" secondItem="Itm-GN-ctJ" secondAttribute="leading" constant="15" id="DlO-j4-KoK"/>
-                                                    <constraint firstItem="RXq-y8-C6i" firstAttribute="top" secondItem="U93-jR-T7Z" secondAttribute="bottom" constant="10" id="GET-sC-1Aa"/>
+                                                    <constraint firstItem="abl-Vy-tyH" firstAttribute="top" secondItem="Un9-U7-Ovi" secondAttribute="top" constant="20" id="EEz-3U-Wab"/>
                                                     <constraint firstItem="bjf-jA-cZc" firstAttribute="top" secondItem="eYG-0t-ELk" secondAttribute="bottom" constant="10" id="Gbu-Po-mNM"/>
                                                     <constraint firstItem="eYG-0t-ELk" firstAttribute="centerX" secondItem="RXq-y8-C6i" secondAttribute="centerX" id="Gob-VJ-X4u"/>
                                                     <constraint firstItem="xFl-Ga-Ugb" firstAttribute="height" secondItem="36C-Qv-kSf" secondAttribute="height" id="Gxu-W7-df0"/>
-                                                    <constraint firstItem="eYG-0t-ELk" firstAttribute="top" secondItem="RXq-y8-C6i" secondAttribute="bottom" constant="20" id="HlU-aI-fbf"/>
                                                     <constraint firstAttribute="trailing" secondItem="Un9-U7-Ovi" secondAttribute="trailing" constant="16" id="IWL-mH-qoo"/>
                                                     <constraint firstItem="eYG-0t-ELk" firstAttribute="height" secondItem="36C-Qv-kSf" secondAttribute="height" id="JDH-Q1-lri"/>
                                                     <constraint firstAttribute="trailing" secondItem="Bnn-YE-cBV" secondAttribute="trailing" constant="16" id="K8E-if-Vam"/>
                                                     <constraint firstItem="bjf-jA-cZc" firstAttribute="height" secondItem="36C-Qv-kSf" secondAttribute="height" id="Lda-QT-Wez"/>
                                                     <constraint firstItem="zu5-Oc-gER" firstAttribute="height" secondItem="36C-Qv-kSf" secondAttribute="height" id="Lrk-rK-uI4"/>
-                                                    <constraint firstItem="h9S-VP-eHp" firstAttribute="top" secondItem="abl-Vy-tyH" secondAttribute="bottom" constant="20" id="Oh9-KJ-AG5"/>
                                                     <constraint firstItem="AYj-Qx-l8M" firstAttribute="height" secondItem="36C-Qv-kSf" secondAttribute="height" id="Qyv-ij-IAg"/>
                                                     <constraint firstItem="bjf-jA-cZc" firstAttribute="centerX" secondItem="RXq-y8-C6i" secondAttribute="centerX" id="S5q-Op-iyH"/>
-                                                    <constraint firstItem="U93-jR-T7Z" firstAttribute="leading" secondItem="Itm-GN-ctJ" secondAttribute="leading" constant="15" id="V8H-F8-DUw"/>
-                                                    <constraint firstItem="abl-Vy-tyH" firstAttribute="top" secondItem="36C-Qv-kSf" secondAttribute="bottom" constant="15" id="XHb-Ev-Q53"/>
                                                     <constraint firstItem="RXq-y8-C6i" firstAttribute="centerX" secondItem="Itm-GN-ctJ" secondAttribute="centerX" id="Z07-kX-2dD"/>
                                                     <constraint firstItem="xFl-Ga-Ugb" firstAttribute="centerX" secondItem="RXq-y8-C6i" secondAttribute="centerX" id="ZMh-Oy-Tfl"/>
                                                     <constraint firstItem="Lgt-SU-GU8" firstAttribute="leading" secondItem="abl-Vy-tyH" secondAttribute="trailing" constant="80" id="aie-Ja-tlk"/>
                                                     <constraint firstItem="zu5-Oc-gER" firstAttribute="centerX" secondItem="RXq-y8-C6i" secondAttribute="centerX" id="bEo-bf-xD5"/>
-                                                    <constraint firstItem="RXq-y8-C6i" firstAttribute="top" secondItem="h9S-VP-eHp" secondAttribute="bottom" constant="20" id="cb4-IA-kh4"/>
+                                                    <constraint firstItem="h9S-VP-eHp" firstAttribute="top" secondItem="abl-Vy-tyH" secondAttribute="bottom" constant="20" id="cPT-nm-OBm"/>
                                                     <constraint firstItem="RR4-nV-ube" firstAttribute="leading" secondItem="Itm-GN-ctJ" secondAttribute="leading" constant="15" id="fb6-U0-zb4"/>
                                                     <constraint firstItem="bxP-of-Mtr" firstAttribute="height" secondItem="36C-Qv-kSf" secondAttribute="height" id="gL0-KX-imJ"/>
-                                                    <constraint firstItem="eYG-0t-ELk" firstAttribute="top" secondItem="Bnn-YE-cBV" secondAttribute="bottom" constant="10" id="hri-mw-sji"/>
                                                     <constraint firstItem="bxP-of-Mtr" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="hy7-Z7-NPZ"/>
                                                     <constraint firstItem="xFl-Ga-Ugb" firstAttribute="top" secondItem="bxP-of-Mtr" secondAttribute="bottom" constant="10" id="jK1-Na-qdy"/>
+                                                    <constraint firstItem="Oit-Df-X4h" firstAttribute="centerX" secondItem="h9S-VP-eHp" secondAttribute="centerX" id="kRs-sG-cgd"/>
                                                     <constraint firstItem="zu5-Oc-gER" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="lTe-O8-ACw"/>
                                                     <constraint firstAttribute="trailing" secondItem="RR4-nV-ube" secondAttribute="trailing" constant="15" id="mzH-IQ-tgC"/>
                                                     <constraint firstItem="h9S-VP-eHp" firstAttribute="centerX" secondItem="RXq-y8-C6i" secondAttribute="centerX" id="n06-7b-dM0"/>
@@ -2302,10 +2299,10 @@
                                                     <constraint firstItem="RXq-y8-C6i" firstAttribute="height" secondItem="36C-Qv-kSf" secondAttribute="height" id="o7f-ak-Mwx"/>
                                                     <constraint firstItem="bxP-of-Mtr" firstAttribute="centerX" secondItem="RXq-y8-C6i" secondAttribute="centerX" id="paD-to-4fm"/>
                                                     <constraint firstItem="AYj-Qx-l8M" firstAttribute="centerX" secondItem="RXq-y8-C6i" secondAttribute="centerX" id="ru7-p6-9RD"/>
-                                                    <constraint firstItem="AYj-Qx-l8M" firstAttribute="top" secondItem="RR4-nV-ube" secondAttribute="bottom" constant="10" id="sD1-ZS-nQ6"/>
+                                                    <constraint firstItem="AYj-Qx-l8M" firstAttribute="top" secondItem="Oit-Df-X4h" secondAttribute="bottom" constant="10" id="sD1-ZS-nQ6"/>
                                                     <constraint firstItem="RXq-y8-C6i" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="t4h-3d-9UT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="U93-jR-T7Z" secondAttribute="trailing" constant="16" id="v2k-Hr-lPH"/>
                                                     <constraint firstItem="bjf-jA-cZc" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="wB8-ub-eeg"/>
+                                                    <constraint firstItem="eYG-0t-ELk" firstAttribute="top" secondItem="36C-Qv-kSf" secondAttribute="bottom" constant="10" id="xUV-m3-knv"/>
                                                     <constraint firstItem="eYG-0t-ELk" firstAttribute="leading" secondItem="36C-Qv-kSf" secondAttribute="leading" id="xn6-nF-zaI"/>
                                                     <constraint firstItem="Un9-U7-Ovi" firstAttribute="leading" secondItem="Itm-GN-ctJ" secondAttribute="leading" constant="15" id="xo0-Fa-3E9"/>
                                                 </constraints>
@@ -2344,11 +2341,12 @@
                         <outlet property="scrollView" destination="Ti9-D5-sHs" id="DQz-Kn-0nx"/>
                         <outlet property="unReadIndicatorSwitch" destination="Lgt-SU-GU8" id="99N-7I-dOL"/>
                         <outlet property="unreadCardLabel" destination="h9S-VP-eHp" id="03s-XD-Rrz"/>
+                        <outlet property="unreadContentCardLabel" destination="Oit-Df-X4h" id="4AS-Nn-MOX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dE2-8Z-bEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468.5" y="-2837.5"/>
+            <point key="canvasLocation" x="-749.60000000000002" y="-2552.4737631184412"/>
         </scene>
         <!--Navigation Feedback View Controller-->
         <scene sceneID="VzZ-Zf-w3N">
@@ -2367,7 +2365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WC1-lZ-Qkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-248" y="-1953"/>
+            <point key="canvasLocation" x="-396.80000000000001" y="-1756.8215892053975"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="On6-c2-BFI">
@@ -2403,7 +2401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELc-Q7-Yju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-712.5" y="-3639.5"/>
+            <point key="canvasLocation" x="-1140" y="-3273.913043478261"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nNA-h2-A3W">
@@ -2432,7 +2430,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBK-mq-h1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1200" y="-3640"/>
+            <point key="canvasLocation" x="-1920" y="-3274.362818590705"/>
         </scene>
     </scenes>
     <resources>

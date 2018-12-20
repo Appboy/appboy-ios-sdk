@@ -1,5 +1,6 @@
 #import "ViewController.h"
-#import "Appboy-iOS-SDK/AppboyKit.h"
+
+@import Appboy_iOS_SDK.AppboyKit;
 
 @implementation ViewController
 

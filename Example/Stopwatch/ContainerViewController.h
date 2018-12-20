@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import <AppboyKit.h>
-#import "ABKNewsFeedViewController.h"
 
 /**
  * ContainerViewController is a custom container view controller that switches child views based on the
@@ -14,22 +13,18 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIViewController *currentViewController;
 @property UISegmentedControl *segmentedControl;
-@property BOOL hasFeedAndFlushButtons;
+@property BOOL hasFlushButton;
 @property NSMutableArray *childViewControllers;
 @property NSArray *segmentIndexToViewControllerId;
-@property ABKNewsFeedViewController *modalFeedViewController;
 
 // This method fills in the data for switching between child view controllers and must be called before the view controller is presented
-- (void)initWithArray:(NSArray *)segmentIndexToViewControllerId andTitle:(NSString *)title andImageName:(NSString *)imageName withFeedAndFlushButtons:(BOOL)hasButtons;
+- (void)initWithArray:(NSArray *)segmentIndexToViewControllerId andTitle:(NSString *)title andImageName:(NSString *)imageName withFlushButton:(BOOL)hasFlushButton;
 
 // Displays view controller for the selected segment index
 - (void)displayViewForSegmentAtIndex:(NSUInteger)index;
 
 // Switches between children view controllers
 - (IBAction)changeViewController:(id)sender;
-
-// Open up a modal NewsFeedViewController
-- (IBAction)newsfeedButtonTapped:(id)sender;
 
 // Manually flush data to Braze
 - (IBAction)flushDataToAppboy:(id)sender;

@@ -45,7 +45,7 @@
       <div class="relativeTopRight">
         <a href="appboy://close">X</a>
       </div>
-      
+
       <a class="firstLink" href="https://www.appboy.com?abExternalOpen=false&abButtonId=1">Appboy.com</a>
       <a onClick="document.body.style.backgroundColor = 'rgba(232, 125, 232, .75)'">Make more transparent</a>
       <a href="stopwatch://blah">Deep Link</a>
@@ -71,8 +71,10 @@
       <a onClick="appboyBridge.getUser().incrementCustomUserAttribute('abInc')" />ab: incrementCustomUserAttribute</a>
       <a onClick="appboyBridge.getUser().setDateOfBirth(1960, 11, 11)" />ab: setDateOfBirth</a>
       <a onClick="appboyBridge.getUser().setCountry('USA')" />ab: setCountry</a>
-      <a onClick="appboyBridge.getUser().setPhoneNumber('9084894848')" />ab: setPhone</a>
-      <a onClick="setCustomAttributes()" />ab: setCustomAttribute</a>
+      <a onClick="appboyBridge.getUser().setPhoneNumber('9084894848')" />ab: setPhoneNumber</a>
+      <a onClick="setCustomAttributes()" />ab: setCustomAttributes</a>
+      <a onClick="appboyBridge.getUser().addLocationCustomAttribute('abLocationAttribute', 10.1, 20.2)" />ab: addLocationCustomAttribute</a>
+      <a onClick="appboyBridge.getUser().removeLocationCustomAttribute('abLocationAttribute')" />ab: removeLocationCustomAttribute</a>
       <a onClick="appboyBridge.getUser().setGender('m')" />ab: setGender Male</a>
       <a onClick="appboyBridge.getUser().setGender('f')" />ab: setGender Female</a>
       <a onClick="appboyBridge.getUser().setGender('o')" />ab: setGender Other</a>

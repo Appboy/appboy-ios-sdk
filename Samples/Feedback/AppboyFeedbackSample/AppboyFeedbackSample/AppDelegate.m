@@ -6,7 +6,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-  [Appboy startWithApiKey:@"9e77f9b6-ed48-44aa-86a3-cce29a5f9eff"
+  [Appboy startWithApiKey:@"a7cb146d-f45c-4d47-9ef9-da00da4cd6be"
             inApplication:application
         withLaunchOptions:launchOptions];
   return YES;

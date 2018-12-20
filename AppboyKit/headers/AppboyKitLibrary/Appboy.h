@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.10.0"
+#define APPBOY_SDK_VERSION @"3.11.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -413,21 +413,18 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties: with a quantity of 1 and nil properties.
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
- *
  */
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
 
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with a quantity of 1.
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
- *
  */
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;
 
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with nil properties.
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
- *
  */
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;
 
@@ -461,7 +458,6 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
  *
  * Note: Braze supports purchases in multiple currencies. Purchases that you report in a currency other than USD will
  * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
- *
  */
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
 
@@ -474,9 +470,8 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
  * @discussion Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard.
  * The request to submit feedback is made immediately, however, this method does not block and will return as soon as the
  * feedback request is placed on the network queue.
- *
  */
-- (BOOL)submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
+- (BOOL)submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
 
 /*!
  * @param feedback The feedback object with feedback message, email, and is-bug flag.
@@ -486,9 +481,8 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
  * @discussion Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard.
  * The request to submit feedback is made immediately. However, this method does not block and will return as soon as the
  * feedback request is placed on the network queue.
- *
  */
-- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler;
+- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
 
 /*!
  * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
@@ -501,7 +495,7 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
  * impressions of the feedback page back to Braze with this method so that your campaign reporting features still work
  * in the dashboard.
  */
-- (void)logFeedbackDisplayed;
+- (void)logFeedbackDisplayed __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
 
 /*!
  * If you're displaying content cards on your own instead of using ABKContentCardsViewController, you should still report

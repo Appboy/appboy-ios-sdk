@@ -9,7 +9,7 @@
   appboyOptions[ABKMinimumTriggerTimeIntervalKey] = @(5);
   appboyOptions[ABKInAppMessageControllerDelegateKey] = self;
   
-  [Appboy startWithApiKey:@"cb9b6ff1-7e79-47d4-88b0-f2a9df6fc411"
+  [Appboy startWithApiKey:@"1be9b83a-58bd-4237-b794-7713e393a3f5"
             inApplication:application
         withLaunchOptions:launchOptions
         withAppboyOptions:appboyOptions];

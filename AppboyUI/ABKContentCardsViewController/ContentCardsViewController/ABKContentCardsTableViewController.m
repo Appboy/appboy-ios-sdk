@@ -169,14 +169,12 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
     return;
   }
   
-  if ([card isControlCard]) {
-    [card logContentCardControlImpression];
-  } else {
+  if (![card isControlCard]) {
     if (card.viewed == NO) {
       [self.unviewedOnScreenCards addObject:card.idString];
     }
-    [card logContentCardImpression];
   }
+  [card logContentCardImpression];
   [self.cardImpressions addObject:card.idString];
 }
 

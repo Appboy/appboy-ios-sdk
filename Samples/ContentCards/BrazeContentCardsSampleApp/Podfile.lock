@@ -1,8 +1,8 @@
 PODS:
-  - Appboy-iOS-SDK/ContentCards (3.7.1):
+  - Appboy-iOS-SDK/ContentCards (3.10.0):
     - Appboy-iOS-SDK/Core
     - SDWebImage/GIF (~> 4.0)
-  - Appboy-iOS-SDK/Core (3.7.1)
+  - Appboy-iOS-SDK/Core (3.10.0)
   - FLAnimatedImage (1.0.12)
   - SDWebImage/Core (4.4.2)
   - SDWebImage/GIF (4.4.2):
@@ -10,22 +10,19 @@ PODS:
     - SDWebImage/Core
 
 DEPENDENCIES:
-  - Appboy-iOS-SDK/ContentCards (from `./../../../../Appboy-iOS-SDK/`)
+  - Appboy-iOS-SDK/ContentCards
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - Appboy-iOS-SDK
     - FLAnimatedImage
     - SDWebImage
 
-EXTERNAL SOURCES:
-  Appboy-iOS-SDK:
-    :path: "./../../../../Appboy-iOS-SDK/"
-
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: 43eafe0ab2b20c89431bda04536eaf473fcf775a
+  Appboy-iOS-SDK: 2c1135d321280dadbdc3f88ba68bbd87023cd03e
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 6394e228b0b82e878007239303c4747102e4b3e1
+PODFILE CHECKSUM: b7d190386e3111da3ca73d0e03b7024d606a789f
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0
