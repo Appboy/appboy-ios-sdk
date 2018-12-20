@@ -153,14 +153,17 @@ Properties</h2></td></tr>
 <tr class="separator:aa4c66ed060890c68690fd629a62ebfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50403068be47c0acba9943583e259fa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ab50403068be47c0acba9943583e259fa">logPurchase:inCurrency:atPrice:withQuantity:andProperties:</a></td></tr>
 <tr class="separator:ab50403068be47c0acba9943583e259fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97232c008d1e5ee9eccb71d874fc91e0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a97232c008d1e5ee9eccb71d874fc91e0">submitFeedback:message:isReportingABug:</a></td></tr>
-<tr class="separator:a97232c008d1e5ee9eccb71d874fc91e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f6b6363a366b6bb61420b284167a3e8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a7f6b6363a366b6bb61420b284167a3e8">submitFeedback:withCompletionHandler:</a></td></tr>
-<tr class="separator:a7f6b6363a366b6bb61420b284167a3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade15df68ebbb56e7b92de8969b496b18"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ade15df68ebbb56e7b92de8969b496b18">submitFeedback:message:isReportingABug:</a></td></tr>
+<tr class="separator:ade15df68ebbb56e7b92de8969b496b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4484c2f83fa592697a9a0559b2337a86"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a4484c2f83fa592697a9a0559b2337a86">submitFeedback:withCompletionHandler:</a></td></tr>
+<tr class="separator:a4484c2f83fa592697a9a0559b2337a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f5b55cdf6b2f18511f23f4bd3ce8f2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a></td></tr>
 <tr class="separator:a90f5b55cdf6b2f18511f23f4bd3ce8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06154478e49f48c168232f48455e8173"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a06154478e49f48c168232f48455e8173">logFeedbackDisplayed</a></td></tr>
-<tr class="separator:a06154478e49f48c168232f48455e8173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b27b28d7fa2feaa12fd178777b4a54"><td class="memItemLeft" align="right" valign="top">(&quot;The feedback feature is <br class="typebreak"/>
+disabled for new accounts, and <br class="typebreak"/>
+will be removed in a future <br class="typebreak"/>
+SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ab1b27b28d7fa2feaa12fd178777b4a54">__deprecated_msg</a></td></tr>
+<tr class="separator:ab1b27b28d7fa2feaa12fd178777b4a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebe28cb65d1d31a2211c0bc528c4ccb5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">logContentCardsDisplayed</a></td></tr>
 <tr class="separator:aebe28cb65d1d31a2211c0bc528c4ccb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680549ab7dba8c5971fd9a7fd938b452"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a></td></tr>
@@ -187,6 +190,22 @@ Properties</h2></td></tr>
 <tr class="separator:afbcf6edbcf47acf6f03fa4fe02168149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="ab1b27b28d7fa2feaa12fd178777b4a54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (&quot;The feedback feature is disabled for new accounts, and will be removed in a future SDK release.&quot;) __deprecated_msg </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report impressions of the feedback page back to Braze with this method so that your campaign reporting features still work in the dashboard. </p>
+
+</div>
+</div>
 <a class="anchor" id="ac8b369b40e15860b0ec18c0f4b46ac69"></a>
 <div class="memitem">
 <div class="memproto">
@@ -421,22 +440,6 @@ Properties</h2></td></tr>
 <pre>
 [[<a class="el" href="interface_appboy.html">Appboy</a> sharedInstance] logCustomEvent:"clicked_button" properties:@"key1":@"val"}];
 </pre> 
-</div>
-</div>
-<a class="anchor" id="a06154478e49f48c168232f48455e8173"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) logFeedbackDisplayed </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report impressions of the feedback page back to Braze with this method so that your campaign reporting features still work in the dashboard. </p>
-
 </div>
 </div>
 <a class="anchor" id="a90f5b55cdf6b2f18511f23f4bd3ce8f2"></a>
@@ -955,7 +958,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a97232c008d1e5ee9eccb71d874fc91e0"></a>
+<a class="anchor" id="ade15df68ebbb56e7b92de8969b496b18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -974,8 +977,14 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey">isReportingABug:</td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>isReportingABug</em>&#160;</td>
+          <td class="paramtype">(&quot;The feedback feature is disabled for new)&#160;</td>
+          <td class="paramname"><em>accounts</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(and will be removed in a future SDK release.&quot;)&#160;</td>
+          <td class="paramname"><em>__deprecated_msg</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -997,7 +1006,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7f6b6363a366b6bb61420b284167a3e8"></a>
+<a class="anchor" id="a4484c2f83fa592697a9a0559b2337a86"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1010,8 +1019,14 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey">withCompletionHandler:</td>
           <td></td>
-          <td class="paramtype">(ABKFeedbackSentResult feedbackSentResult)&#160;</td>
-          <td class="paramname"><em>completionHandler</em>&#160;</td>
+          <td class="paramtype">(&quot;The feedback feature is disabled for new)&#160;</td>
+          <td class="paramname"><em>accounts</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(and will be removed in a future SDK release.&quot;)&#160;</td>
+          <td class="paramname"><em>__deprecated_msg</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1305,7 +1320,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 23 2018 14:34:03 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 20 2018 14:44:28 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
