@@ -3,6 +3,7 @@
 ##### Added
 - Adds the ability to set or remove custom location attributes for a specific user from within HTML IAMs.
 - Updates the SDK to report users who disable banner notifications but are still opted-in to push notifications as push enabled. Note this change does not affect provisionally authorized users on iOS 12, who were considered push enabled before this release regardless of their banner notification settings.
+- Adds Carthage Core support which allows for integration with the core Braze SDK without any UI components. To implement the core SDK, add `binary "https://raw.githubusercontent.com/Appboy/appboy-ios-sdk/master/appboy_ios_sdk_core.json"` to your `Cartfile`.
 
 ##### Changed
 - Deprecates the Feedback feature.
