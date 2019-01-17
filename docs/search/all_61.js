@@ -11,7 +11,6 @@ var searchData=
   ['abkclassiccontentcard',['ABKClassicContentCard',['../interface_a_b_k_classic_content_card.html',1,'']]],
   ['abkcontentcard',['ABKContentCard',['../interface_a_b_k_content_card.html',1,'']]],
   ['abkcontentcardscontroller',['ABKContentCardsController',['../interface_a_b_k_content_cards_controller.html',1,'']]],
-  ['abkcrosspromotioncard',['ABKCrossPromotionCard',['../interface_a_b_k_cross_promotion_card.html',1,'']]],
   ['abkfacebookuser',['ABKFacebookUser',['../interface_a_b_k_facebook_user.html',1,'']]],
   ['abkfeedback',['ABKFeedback',['../interface_a_b_k_feedback.html',1,'']]],
   ['abkfeedcontroller',['ABKFeedController',['../interface_a_b_k_feed_controller.html',1,'']]],
