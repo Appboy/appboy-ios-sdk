@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Black</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ABKInAppMessageFullViewController">
+            <connections>
+                <outlet property="graphicImageView" destination="aoE-zy-xb4" id="eHe-jv-srI"/>
+                <outlet property="headerBodySpaceConstraint" destination="A0C-MF-Wjh" id="Idh-cg-shL"/>
+                <outlet property="headerLeadingConstraint" destination="1AI-DV-xQW" id="fYT-Vl-7Ys"/>
+                <outlet property="headerTrailingConstraint" destination="pQA-jk-HxO" id="zSh-X5-oLL"/>
+                <outlet property="iconImageView" destination="1sk-El-iBS" id="4d6-YI-68y"/>
+                <outlet property="inAppMessageHeaderLabel" destination="ThZ-Tl-ewt" id="135-Rq-I9d"/>
+                <outlet property="inAppMessageMessageLabel" destination="i8e-sy-Bhj" id="pG6-nS-qRI"/>
+                <outlet property="leftInAppMessageButton" destination="22x-RJ-G5m" id="9MW-BH-4pD"/>
+                <outlet property="messageLeadingConstraint" destination="m7D-S8-20X" id="N6o-2H-zH9"/>
+                <outlet property="messageTrailingConstraint" destination="8bC-hW-sQ6" id="0El-J8-idv"/>
+                <outlet property="rightInAppMessageButton" destination="MZR-LG-Ie5" id="w9s-EY-gLd"/>
+                <outlet property="textsView" destination="z23-Sg-7Xr" id="DHp-Eh-wR6"/>
+                <outlet property="textsViewLeadingConstraint" destination="MLg-0f-qis" id="2R4-5r-BSz"/>
+                <outlet property="textsViewTrailingConstraint" destination="1BU-h4-VSn" id="HSi-8m-c3C"/>
+                <outlet property="view" destination="j6O-5v-jBn" id="fAw-bQ-dOG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" id="j6O-5v-jBn" customClass="ABKInAppMessageView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aoE-zy-xb4" customClass="FLAnimatedImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="284" translatesAutoresizingMaskIntoConstraints="NO" id="1sk-El-iBS" customClass="FLAnimatedImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z23-Sg-7Xr">
+                    <rect key="frame" x="20" y="354" width="335" height="238"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="26" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-Tl-ewt">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="26"/>
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="19"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="20" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8e-sy-Bhj">
+                            <rect key="frame" x="0.0" y="40" width="335" height="20"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="i8e-sy-Bhj" secondAttribute="trailing" id="5Kt-af-JPP"/>
+                        <constraint firstItem="i8e-sy-Bhj" firstAttribute="top" secondItem="ThZ-Tl-ewt" secondAttribute="bottom" constant="14" id="A0C-MF-Wjh"/>
+                        <constraint firstAttribute="trailing" secondItem="ThZ-Tl-ewt" secondAttribute="trailing" id="Bjm-MB-iRW"/>
+                        <constraint firstItem="i8e-sy-Bhj" firstAttribute="leading" secondItem="z23-Sg-7Xr" secondAttribute="leading" id="EBV-b2-ctD"/>
+                        <constraint firstItem="ThZ-Tl-ewt" firstAttribute="centerX" secondItem="z23-Sg-7Xr" secondAttribute="centerX" id="FK5-kp-YTx"/>
+                        <constraint firstItem="ThZ-Tl-ewt" firstAttribute="leading" secondItem="z23-Sg-7Xr" secondAttribute="leading" id="S6a-BT-ngp"/>
+                        <constraint firstItem="i8e-sy-Bhj" firstAttribute="centerX" secondItem="z23-Sg-7Xr" secondAttribute="centerX" id="gb6-mA-vAJ"/>
+                        <constraint firstAttribute="bottom" secondItem="i8e-sy-Bhj" secondAttribute="bottom" id="qJg-XH-Hzg"/>
+                        <constraint firstItem="ThZ-Tl-ewt" firstAttribute="top" secondItem="z23-Sg-7Xr" secondAttribute="top" id="yPf-dk-Qwa"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmQ-gu-wor">
+                    <rect key="frame" x="340" y="10" width="25" height="25"/>
+                    <accessibility key="accessibilityConfiguration" label="Close In App Message"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="87o-uR-lPh"/>
+                        <constraint firstAttribute="width" constant="25" id="DXr-Aa-sBG"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="com_appboy_inapp_close_icon.png">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="M95-RZ-cAa"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZR-LG-Ie5" customClass="ABKInAppMessageUIButton">
+                    <rect key="frame" x="192.5" y="602" width="162.5" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="TDS-6r-ZN2"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="1iK-m1-P29"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-RJ-G5m" customClass="ABKInAppMessageUIButton">
+                    <rect key="frame" x="20" y="602" width="162.5" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="uLZ-Yo-2BF"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="H0b-kj-Bkx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ThZ-Tl-ewt" firstAttribute="leading" secondItem="j6O-5v-jBn" secondAttribute="leading" constant="20" id="1AI-DV-xQW"/>
+                <constraint firstAttribute="trailing" secondItem="z23-Sg-7Xr" secondAttribute="trailing" constant="20" id="1BU-h4-VSn"/>
+                <constraint firstAttribute="trailing" secondItem="dmQ-gu-wor" secondAttribute="trailing" constant="10" id="8OM-Hq-hsx"/>
+                <constraint firstAttribute="trailing" secondItem="i8e-sy-Bhj" secondAttribute="trailing" constant="20" id="8bC-hW-sQ6"/>
+                <constraint firstItem="1sk-El-iBS" firstAttribute="height" secondItem="j6O-5v-jBn" secondAttribute="height" multiplier="0.5" id="Ajs-ma-RTE"/>
+                <constraint firstItem="22x-RJ-G5m" firstAttribute="leading" secondItem="j6O-5v-jBn" secondAttribute="leading" constant="20" id="As0-a8-UYK"/>
+                <constraint firstItem="z23-Sg-7Xr" firstAttribute="leading" secondItem="j6O-5v-jBn" secondAttribute="leading" constant="20" id="MLg-0f-qis"/>
+                <constraint firstItem="1sk-El-iBS" firstAttribute="top" secondItem="j6O-5v-jBn" secondAttribute="top" id="PIA-mR-nzy"/>
+                <constraint firstItem="22x-RJ-G5m" firstAttribute="width" secondItem="MZR-LG-Ie5" secondAttribute="width" id="R6l-kW-ZV8"/>
+                <constraint firstAttribute="trailing" secondItem="aoE-zy-xb4" secondAttribute="trailing" id="Ujh-Kj-Laa"/>
+                <constraint firstItem="1sk-El-iBS" firstAttribute="leading" secondItem="j6O-5v-jBn" secondAttribute="leading" id="XUY-G2-bDm"/>
+                <constraint firstAttribute="bottom" secondItem="aoE-zy-xb4" secondAttribute="bottom" id="Xza-Eq-sJK"/>
+                <constraint firstItem="z23-Sg-7Xr" firstAttribute="top" secondItem="1sk-El-iBS" secondAttribute="bottom" constant="20" id="ckf-aj-6it"/>
+                <constraint firstItem="aoE-zy-xb4" firstAttribute="top" secondItem="j6O-5v-jBn" secondAttribute="top" id="e7l-MN-n0s"/>
+                <constraint firstItem="MZR-LG-Ie5" firstAttribute="leading" secondItem="22x-RJ-G5m" secondAttribute="trailing" constant="10" id="ezt-Qp-POS"/>
+                <constraint firstItem="aoE-zy-xb4" firstAttribute="leading" secondItem="j6O-5v-jBn" secondAttribute="leading" id="hBb-7t-5uR"/>
+                <constraint firstAttribute="bottom" secondItem="22x-RJ-G5m" secondAttribute="bottom" constant="20" id="i2w-pt-SHh"/>
+                <constraint firstItem="i8e-sy-Bhj" firstAttribute="leading" secondItem="j6O-5v-jBn" secondAttribute="leading" constant="20" id="m7D-S8-20X"/>
+                <constraint firstItem="dmQ-gu-wor" firstAttribute="top" secondItem="j6O-5v-jBn" secondAttribute="top" constant="10" id="mE4-Br-iud"/>
+                <constraint firstAttribute="trailing" secondItem="1sk-El-iBS" secondAttribute="trailing" id="mIF-dJ-aSL"/>
+                <constraint firstItem="22x-RJ-G5m" firstAttribute="top" secondItem="z23-Sg-7Xr" secondAttribute="bottom" constant="10" id="o2o-mq-biG"/>
+                <constraint firstAttribute="trailing" secondItem="ThZ-Tl-ewt" secondAttribute="trailing" constant="20" id="pQA-jk-HxO"/>
+                <constraint firstAttribute="trailing" secondItem="MZR-LG-Ie5" secondAttribute="trailing" constant="20" id="x3r-Pl-Bin"/>
+                <constraint firstItem="22x-RJ-G5m" firstAttribute="centerY" secondItem="MZR-LG-Ie5" secondAttribute="centerY" id="x9l-KZ-wik"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="364" y="265"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="com_appboy_inapp_close_icon.png" width="20" height="20"/>
+    </resources>
+</document>

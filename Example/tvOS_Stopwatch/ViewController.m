@@ -36,8 +36,6 @@
       NSLog(@"Card with value: %@", ((ABKCaptionedImageCard *)card).title);
     } else if ([card isKindOfClass:[ABKTextAnnouncementCard class]]) {
       NSLog(@"Card with value: %@", ((ABKTextAnnouncementCard *)card).title);
-    } else if ([card isKindOfClass:[ABKCrossPromotionCard class]]) {
-      NSLog(@"Card with value: %@", ((ABKCrossPromotionCard *)card).title);
     }
   }
 }

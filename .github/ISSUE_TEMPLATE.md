@@ -16,10 +16,10 @@ For other items, like requests for modifications to our SDK or bug reports, plea
  Info                    | Value                               |
 -------------------------|-------------------------------------|
  Platform Name           | e.g. ios / tvos
- Platform Version        | e.g. 8.0
- SDK Version             | e.g. 3.7.6
+ Platform Version        | e.g. 12.1
+ SDK Version             | e.g. 3.10.0
  Integration Method      | e.g. carthage / cocoapods / manually
- Xcode Version           | e.g. Xcode 7.3
+ Xcode Version           | e.g. Xcode 10.1
  Repro rate              | e.g. all the time (100%) / sometimes x% / only once
  
 ## What did you do?

@@ -201,16 +201,11 @@ static const int CustomInAppMessageDuration = 5;
     cell = cell.superview;
   }
   
-  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
-    UIAlertController *actionSheet = [(ButtonLabelCell *)cell getAlertControllerWithIAMDictionary:self.inAppMessageDictionary];
-    actionSheet.popoverPresentationController.sourceView = sender;
-    actionSheet.popoverPresentationController.sourceRect = sender.bounds;
+  UIAlertController *actionSheet = [(ButtonLabelCell *)cell getAlertControllerWithIAMDictionary:self.inAppMessageDictionary];
+  actionSheet.popoverPresentationController.sourceView = sender;
+  actionSheet.popoverPresentationController.sourceRect = sender.bounds;
 
-    [self presentViewController:actionSheet animated:YES completion:nil];
-  } else {
-    UIActionSheet *actionSheet = [(ButtonLabelCell *)cell getActionSheetWithIAMDictionary:self.inAppMessageDictionary];
-    [actionSheet showInView:self.view];
-  }
+  [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 - (IBAction)changeColor:(UIButton *)sender {

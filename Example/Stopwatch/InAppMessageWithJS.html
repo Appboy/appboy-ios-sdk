@@ -38,6 +38,12 @@
       clear: right;
     }
     </style>
+    <script type="text/javascript">
+      function logStartEvent() {
+        appboyBridge.logCustomEvent('Logging start event for HTML IAM tester');
+      }
+      window.addEventListener('ab.BridgeReady', logStartEvent, false);
+    </script>
   </head>
   
   <body>

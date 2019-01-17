@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-Push-Story"
-  s.version      = "3.11.0"
+  s.version      = "3.12.0"
   s.summary      = "This is the Braze Push Story SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}

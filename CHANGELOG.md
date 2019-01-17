@@ -1,3 +1,32 @@
+## 3.12.0
+
+##### Breaking
+- Drops support for iOS 8.
+- Adds support for arm64e architecture. Requires Xcode 10.1.
+
+##### Fixed
+- Fixes bitcode support for the Push Story framework when using Xcode 10.
+- Improves triggered in-app message re-eligibility logic to better handle templating failures.
+
+##### Changed
+- Changes the behavior of News Feed so that only one impression is logged for each card per News Feed open.
+
+##### Added
+- Adds HTML IAM `appboyBridge` ready event to know precisely when the `appboyBridge` has finished loading.
+  - Example below:
+    ```javascript
+     <script type="text/javascript">
+       function logMyCustomEvent() {
+         appboyBridge.logCustomEvent('My Custom Event');
+       }
+       window.addEventListener('ab.BridgeReady', logMyCustomEvent, false);
+     </script>
+    ```
+
+##### Removed
+- Removes Cross-Promotion cards from the News Feed.
+  - Cross-Promotion cards have also been removed as a card model and will thus no longer be returned.
+
 ## 3.11.0
 
 ##### Added
@@ -20,7 +49,7 @@
     - For example, to specify timezone and locale collection to be whitelisted, set `appboyOptions[ABKDeviceWhitelistKey] = @(ABKDeviceOptionTimezone | ABKDeviceOptionLocale);`.
   - To turn off all fields, set `appboyOptions[ABKDeviceWhitelistKey] = @(ABKDeviceOptionNone);`.
   - By default, all fields are enabled.
-- Added the `clicked` property to `ABKContentCard`. Clicks made through `[ABKContentCard logContentCardClicked` are now saved locally on the device.
+- Added the `clicked` property to `ABKContentCard`. Clicks made through `[ABKContentCard logContentCardClicked]` are now saved locally on the device.
 
 ##### Breaking
 - Removes `ABKSignificantChangeCollectionEnabledOptionKey`, `ABKSignificantChangeCollectionDistanceFilterOptionKey`, and `ABKSignificantChangeCollectionTimeFilterOptionKey` from the `Appboy` interface.

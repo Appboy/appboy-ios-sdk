@@ -13,8 +13,8 @@
 @implementation ABKIdentifierForAdvertisingProvider
 
 /*!
- * @discussion Returns the identifier for advertising if AdSupport framework is available (i.e., iOS >= 6.0) and
- *   the identifier for advertising is enabled.
+ * @discussion Returns the identifier for advertising if AdSupport framework is available and the identifier for
+ *   advertising is enabled.
  *
  *  If you’re using advertising elsewhere in the app or through our in-app News Feed, we recommend continuing to collect
  * the IDFA through Braze. You should be able to do so safely without fear of rejection from the iOS App Store.
@@ -39,9 +39,8 @@
 
 /*!
  * @discussion Returns the NSNumber object with IsAdvertisingTrackingEnabled if AdSupport framework is available
- *   (i.e., iOS >= 6.0) and the user has not disallowed advertising tracking. Note that you can still retrieve the IFA
- *   in the case that the user has not enabled advertising tracking, but rather the rules surrounding its use become
- *   more strict.
+ *   and the user has not disallowed advertising tracking. Note that you can still retrieve the IFA in the case that
+ *   the user has not enabled advertising tracking, but rather the rules surrounding its use become more strict.
  */
 + (NSNumber *)getIsAdvertisingTrackingEnabledAsNSNumber {
 #ifdef ABK_ENABLE_IDFA_COLLECTION
@@ -55,7 +54,7 @@
 
 #ifdef ABK_ENABLE_IDFA_COLLECTION
 /*!
- * @discussion Returns the [ASIdentifierManager sharedManager] if it is available (i.e., iOS >= 6.0 and app is linked
+ * @discussion Returns the [ASIdentifierManager sharedManager] if it is available (i.e. if the app is linked
  *   against AdSupport framework).
  */
 + (ASIdentifierManager *)getASIdentifierManager {

@@ -9,7 +9,6 @@
 #import "ABKCard.h"
 #import "ABKBannerCard.h"
 #import "ABKCaptionedImageCard.h"
-#import "ABKCrossPromotionCard.h"
 #import "ABKClassicCard.h"
 #import "ABKTextAnnouncementCard.h"
 
