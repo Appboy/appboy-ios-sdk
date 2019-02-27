@@ -4,6 +4,7 @@
 #import "UIViewController+Keyboard.h"
 #import "UserCustomAttribute.h"
 #import "UserCustomAttributeCell.h"
+#import "AlertControllerUtils.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
 static NSInteger const TotalNumberOfAttributes = 12;
@@ -478,12 +479,9 @@ static NSMutableArray *attributesValuesArray = nil;
 #pragma mark - UI
 
 - (void)showAttributesSetAlert {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                      message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                            otherButtonTitles:nil];
-  [alertView show];
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
+                                                 message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
+                                            presentingVC:self];
 }
 
 - (BOOL)prefersStatusBarHidden {

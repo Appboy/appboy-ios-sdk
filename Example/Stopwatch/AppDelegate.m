@@ -1,10 +1,12 @@
-#import "AppDelegate.h"
 #import <AppboyKit.h>
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
+
+#import "AppDelegate.h"
 #import "ABKPushUtils.h"
 #import "OverrideEndpointDelegate.h"
 #import "IDFADelegate.h"
 #import "Branch.h"
-#import <BuddyBuildSDK/BuddyBuildSDK.h>
+#import "AlertControllerUtils.h"
 
 #ifdef PUSH_DEV
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
@@ -143,7 +145,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   
   // Handle deep linking with scheme beginning with "stopwatch"
   NSString *urlString = url.absoluteString.stringByRemovingPercentEncoding;
-  [self showAlertWithTitle:@"Deep Linking" andMessage:urlString];
+  [self showAlertWithTitle:@"Deep Linking" message:urlString];
 
   // Handle Branch deep links
   [[Branch getInstance] handleDeepLink:url];
@@ -244,7 +246,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 #pragma mark - ABKInAppMessageControllerDelegate
 
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp {
-  [self showAlertWithTitle:@"IAM Delegate (Unset on Advanced tab)" andMessage:inAppMessage.message];
+  [self showAlertWithTitle:@"IAM Delegate (Unset on Advanced tab)" message:inAppMessage.message];
   return ABKDiscardInAppMessage;
 }
 
@@ -262,15 +264,15 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 # pragma mark - Helper methods
 
-- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-  [alert show];
-  alert = nil;
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:title
+                                                 message:message
+                                            presentingVC:self.window.rootViewController];
 }
 
 - (void)handleUniversalLinkString:(NSString *)uriString withABKURLDelegate:(BOOL)withURIDelegate {
   NSString *alertTitle = withURIDelegate ? @"Universal Link (ABKURLDelegate)" : @"Universal Link (UIApplicationDelegate)";
-  [self showAlertWithTitle:alertTitle andMessage:uriString];
+  [self showAlertWithTitle:alertTitle message:uriString];
 }
 
 @end

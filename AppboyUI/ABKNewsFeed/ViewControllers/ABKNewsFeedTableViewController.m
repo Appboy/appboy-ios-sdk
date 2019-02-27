@@ -187,8 +187,6 @@
   cell.onCellHeightUpdateBlock = ^{
     BOOL animationsEnabled = UIView.areAnimationsEnabled;
     [UIView setAnimationsEnabled:NO];
-    [weakSelf.tableView beginUpdates];
-    [weakSelf.tableView endUpdates];
     [UIView setAnimationsEnabled:animationsEnabled];
   };
   return cell;

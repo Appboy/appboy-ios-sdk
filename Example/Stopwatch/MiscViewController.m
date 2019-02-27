@@ -3,6 +3,7 @@
 #import "ABKAttributionData.h"
 #import "ABKLocationManager.h"
 #import "AppDelegate.h"
+#import "AlertControllerUtils.h"
 
 @interface MiscViewController ()
 
@@ -129,12 +130,9 @@
   NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
   NSArray *allFiles = [self getDirectoryContentsWithPath:cachePath];
   NSString *fileString = [allFiles componentsJoinedByString:@"\n"];
-  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Cache Files"
-                                                     message:fileString
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-  [theAlert show];
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:@"Cache Files"
+                                                 message:fileString
+                                            presentingVC:self];
 }
 
 - (IBAction)rebootAndApplyEnvironment:(id)sender {
@@ -190,13 +188,9 @@
 }
 
 - (void)showForceCloseAlertWithTitle:(NSString *)title {
-  UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:title
-                                                     message:@"Force Close App and Re-Open to Apply"
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-  [theAlert show];
-  theAlert = nil;
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:title
+                                                 message:@"Force Close App and Re-Open to Apply"
+                                            presentingVC:self];
 }
 
 

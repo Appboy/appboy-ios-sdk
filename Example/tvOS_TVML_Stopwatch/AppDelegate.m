@@ -105,7 +105,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     
     NSString *title = @"Error Launching Application";
     NSString *message = error.localizedDescription;
-    UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     [self.appController.navigationController presentViewController:alertController animated:YES completion: ^() {
         // ...
     }];

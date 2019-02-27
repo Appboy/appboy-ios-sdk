@@ -1,5 +1,6 @@
 #import "EventsViewController.h"
 #import <AppboyKit.h>
+#import "AlertControllerUtils.h"
 #import "UserCells.h"
 
 /*
@@ -292,13 +293,9 @@ static NSString *const SwitchCell = @"switch cell";
 }
 
 - (void)showAlertWithMessage:(NSString *)message {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: nil
-                                                      message:message
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                            otherButtonTitles:nil];
-  [alertView show];
-  alertView = nil;
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
+                                                 message:message
+                                            presentingVC:self];
 }
 
 - (BOOL)checkIfFieldIsEmpty:(NSString *)field {

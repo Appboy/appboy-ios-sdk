@@ -81,6 +81,7 @@
 		D4992FED1CD4126D007CC304 /* newsfeed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE61CD4126D007CC304 /* newsfeed@3x.png */; };
 		D4992FEE1CD4126D007CC304 /* user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE71CD4126D007CC304 /* user@3x.png */; };
 		D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */; };
+		D5405F0D22162FD600E2958C /* AlertControllerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D5405F0C22162FD600E2958C /* AlertControllerUtils.m */; };
 		E056052DE24220E65AE47718 /* libPods-StopwatchNotificationContentExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAB3BEAB093F54DC4C88A8F /* libPods-StopwatchNotificationContentExtension.a */; };
 		E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */; };
 		E325DF461E29A93300B3E168 /* GeofencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E325DF451E29A93300B3E168 /* GeofencesViewController.m */; };
@@ -267,6 +268,8 @@
 		D4992FE71CD4126D007CC304 /* user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@3x.png"; sourceTree = "<group>"; };
 		D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesArrayViewController.m; sourceTree = "<group>"; };
 		D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesArrayViewController.h; sourceTree = "<group>"; };
+		D5405F0B22162FD600E2958C /* AlertControllerUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertControllerUtils.h; sourceTree = "<group>"; };
+		D5405F0C22162FD600E2958C /* AlertControllerUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertControllerUtils.m; sourceTree = "<group>"; };
 		D6ABEED57B5E362790D2728D /* Pods-Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
 		E31F9E231DEB7D3400EFB62F /* OverrideEndpointDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverrideEndpointDelegate.h; sourceTree = "<group>"; };
 		E31F9E241DEB7D3400EFB62F /* OverrideEndpointDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverrideEndpointDelegate.m; sourceTree = "<group>"; };
@@ -540,6 +543,8 @@
 		95EF5114173D5FD600C0D780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D5405F0B22162FD600E2958C /* AlertControllerUtils.h */,
+				D5405F0C22162FD600E2958C /* AlertControllerUtils.m */,
 				95EF5115173D5FD600C0D780 /* Stopwatch-Info.plist */,
 				95EF5116173D5FD600C0D780 /* InfoPlist.strings */,
 				95EF5119173D5FD600C0D780 /* main.m */,
@@ -728,7 +733,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E32835BC1CC6C6F200E2C2DE /* Build configuration list for PBXNativeTarget "tvOS_TVML_Stopwatch" */;
 			buildPhases = (
-				20DE4BE47BADC1B10691D404 /* [CP] Check Pods Manifest.lock */,
+				900526782047A1F9CA756AF9 /* [CP] Check Pods Manifest.lock */,
 				E32835A91CC6C6F200E2C2DE /* Sources */,
 				E32835AA1CC6C6F200E2C2DE /* Frameworks */,
 				E32835AB1CC6C6F200E2C2DE /* Resources */,
@@ -764,11 +769,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E397F4211CC5BA550095A3ED /* Build configuration list for PBXNativeTarget "tvOS_Stopwatch" */;
 			buildPhases = (
-				4F9626F1433FD36703EABB21 /* [CP] Check Pods Manifest.lock */,
+				CCA6610EC11C9A514381C499 /* [CP] Check Pods Manifest.lock */,
 				E397F4091CC5BA540095A3ED /* Sources */,
 				E397F40A1CC5BA540095A3ED /* Frameworks */,
 				E397F40B1CC5BA540095A3ED /* Resources */,
-				C629DEA8703623EE6DD930F0 /* [CP] Embed Pods Frameworks */,
+				3E61FAD18965664FD8E4150C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -975,28 +980,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-StopwatchNotificationContentExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		20DE4BE47BADC1B10691D404 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-tvOS_TVML_Stopwatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1364,7 +1347,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4F9626F1433FD36703EABB21 /* [CP] Check Pods Manifest.lock */ = {
+		3E61FAD18965664FD8E4150C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1372,18 +1355,18 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-tvOS_Stopwatch-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		56391E9749263D2D9839FAA0 /* [CP] Check Pods Manifest.lock */ = {
@@ -1404,7 +1387,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C629DEA8703623EE6DD930F0 /* [CP] Embed Pods Frameworks */ = {
+		900526782047A1F9CA756AF9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1412,18 +1395,40 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
+				"$(DERIVED_FILE_DIR)/Pods-tvOS_TVML_Stopwatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCA6610EC11C9A514381C499 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tvOS_Stopwatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1459,6 +1464,7 @@
 				4EA3EE241745B9A2000E403C /* UserCells.m in Sources */,
 				E31F9E251DEB7D3400EFB62F /* OverrideEndpointDelegate.m in Sources */,
 				D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */,
+				D5405F0D22162FD600E2958C /* AlertControllerUtils.m in Sources */,
 				AD26107C20FE3E5000023BCD /* StopwatchButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

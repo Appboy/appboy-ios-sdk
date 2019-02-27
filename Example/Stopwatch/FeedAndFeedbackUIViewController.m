@@ -4,7 +4,7 @@
 #import "UIViewController+Keyboard.h"
 #import "ABKNewsFeedTableViewController.h"
 #import "ABKNewsFeedViewController.h"
-
+#import "AlertControllerUtils.h"
 #import "ABKContentCardsViewController.h"
 
 @interface FeedAndFeedbackViewController ()
@@ -191,13 +191,9 @@
       feedbackAlertMessage = NSLocalizedString(@"Feedback submitted", nil);
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-      UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                          message:feedbackAlertMessage
-                                                         delegate:nil
-                                                cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                                otherButtonTitles:nil];
-      [alertView show];
-      alertView = nil;
+      [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
+                                                     message:feedbackAlertMessage
+                                                presentingVC:self];
     });
   }];
 }

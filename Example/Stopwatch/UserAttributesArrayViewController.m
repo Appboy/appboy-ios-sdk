@@ -2,6 +2,7 @@
 #import "UserCells.h"
 #import <AppboyKit.h>
 #import "UIViewController+Keyboard.h"
+#import "AlertControllerUtils.h"
 
 @interface UserAttributesArrayViewController ()
 
@@ -74,13 +75,9 @@
 }
 
 - (void)sendAlertWithMessage:(NSString*)message {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: nil
-                                                      message:message
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                            otherButtonTitles:nil];
-  [alertView show];
-  alertView = nil;
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
+                                                 message:message
+                                            presentingVC:self];
 }
 
 - (BOOL)stringIsNotEmpty:(NSString *)string {

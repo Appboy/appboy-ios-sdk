@@ -1,3 +1,13 @@
+## 3.13.0
+
+##### Breaking
+- Upgrades the delivery mechanism of Push Stories to allow delivery even after a user’s app has been force closed..
+  - ***Required:*** Please change your integration to use `ab_cat_push_story_v2` instead of `ab_cat_push_story` for the `UNNotificationExtensionCategory` in your content extension. See [documentation for more details.](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_story/#step-8-set-the-notification-content-extension-plist)
+
+##### Changed
+- Improves in-app message triggering logic to fall back to lower priority messages when the Braze server aborts templating (e.g. from a Connected Content abort in the message body, or because the user is no longer in the correct Segment for the message).
+- Updates German translations to improve formatting.
+
 ## 3.12.0
 
 ##### Breaking
@@ -43,7 +53,7 @@
 ## 3.10.0
 
 ##### Added
-- Added the ability to specify a whitelist for device fields that are collected by the Braze SDK.
+- Adds the ability to specify a whitelist for device fields that are collected by the Braze SDK.
   - Configurable device fields are defined in the `ABKDeviceOptions` enum.
   - To specify whitelisted device fields, assign the bitwise `OR` of desired fields to `ABKDeviceWhitelistKey` in the `appboyOptions` of `startWithApiKey:inApplication:withAppboyOptions:`.
     - For example, to specify timezone and locale collection to be whitelisted, set `appboyOptions[ABKDeviceWhitelistKey] = @(ABKDeviceOptionTimezone | ABKDeviceOptionLocale);`.
@@ -55,7 +65,7 @@
 - Removes `ABKSignificantChangeCollectionEnabledOptionKey`, `ABKSignificantChangeCollectionDistanceFilterOptionKey`, and `ABKSignificantChangeCollectionTimeFilterOptionKey` from the `Appboy` interface.
 
 ##### Removed
-- Removed the ability to optionally track locations in the background.
+- Removes the ability to optionally track locations in the background.
 
 ##### Fixed
 - Fixes an issue where Slideup and Full In-App Message content could be obscured by the notch on iPhone XR and iPhone XS Max.
@@ -66,13 +76,13 @@
 - Adds support for iOS 12. Requires Xcode 10.
 
 ##### Fixed
-- Fixed minor issues with subclassing `ABKInAppMessageModalViewController` and News Feed request timeouts.
+- Fixes minor issues with subclassing `ABKInAppMessageModalViewController` and News Feed request timeouts.
   - Thanks @datkinnguyen for your contribution.
 
 ## 3.8.4
 
 ##### Fixed
-- Fixed a regression introduced in version 3.8.3 that caused background tasks to extend beyond execution time.
+- Fixes a regression introduced in version 3.8.3 that caused background tasks to extend beyond execution time.
 
 ## 3.8.3
 
@@ -99,7 +109,7 @@
 
 ##### Added
 - In `ABKUser` class, `addLocationCustomAttributeWithKey:latitude:longitude:` and `removeLocationCustomAttributeWithKey:` methods are added to manage location custom attributes.
-- Introduced support for the upcoming Content Cards feature, which will eventually replace the existing News Feed feature and adds significant capability. This feature is currently in closed beta testing; if you're interested in joining the beta, please reach out to your Customer Success Manager or Account Manager.
+- Introduces support for the upcoming Content Cards feature, which will eventually replace the existing News Feed feature and adds significant capability. This feature is currently in closed beta testing; if you're interested in joining the beta, please reach out to your Customer Success Manager or Account Manager.
 
 ##### Changed
 - Status bar is not obscured when displaying a full screen in-app message.
@@ -162,24 +172,24 @@
 ## 3.4.0
 
 ##### Breaking
-- Added `preferredOrientation` to `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
-- Removed `supportedOrientations` from `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
-- Renamed `supportedOrientationMasks` to `supportedOrientationMask` in `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
+- Adds `preferredOrientation` to `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
+- Removes `supportedOrientations` from `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
+- Renames `supportedOrientationMasks` to `supportedOrientationMask` in `ABKInAppMessageUIController` and `ABKInAppMessageWindowController`.
 
 ##### Fixed
-- Fixed an issue that caused GIFs to not animate on SDWebImage versions above or equal to 4.3.0
+- Fixes an issue that caused GIFs to not animate on SDWebImage versions above or equal to 4.3.0
 
 ## 3.3.4
 
 ##### Added
-- Added the ability to view verbose logs from the SDK for debugging.
+- Adds the ability to view verbose logs from the SDK for debugging.
   - To enable verbose logging, add a dictionary named `Appboy` to your `Info.plist` file. Inside the `Appboy` Dictionary, add the `LogLevel` String subentry and set the value to "0".
 
 ## 3.3.3
 
 ##### Added
-- Added `wipeDataAndDisableForAppRun:` on the `Appboy` interface to support wiping all customer data created by the Braze SDK.
-- Added `disableSDK:` and `requestEnableSDKOnNextAppRun:` to the `Appboy` interface to disable and re-enable the Braze SDK.
+- Adds `wipeDataAndDisableForAppRun:` on the `Appboy` interface to support wiping all customer data created by the Braze SDK.
+- Adds `disableSDK:` and `requestEnableSDKOnNextAppRun:` to the `Appboy` interface to disable and re-enable the Braze SDK.
 
 ##### Fixed
 - Fixes an issue where events setting custom attribute arrays to `nil` would persist on the SDK beyond their useful life.
@@ -360,7 +370,7 @@
  - Removes support for watchOS 1, including Braze WatchKit SDK and all public APIs for watchOS in Braze iOS SDK.
 
 ##### Added
- - Added `ABKSDWebImageProxy` to access the SDWebImage framework. This will prevent the Core subspec of the SDK from calling any SDWebImage methods directly.
+ - Adds `ABKSDWebImageProxy` to access the SDWebImage framework. This will prevent the Core subspec of the SDK from calling any SDWebImage methods directly.
 
 ## 2.27.0
 
@@ -368,7 +378,7 @@
  - Removes the following deprecated items:  the `bio` field of `ABKUser`, the `setIsSubscribedToEmails:` method of `ABKUser`, and the `getResourceEndpoint:` method of the `ABKAppboyEndpointDelegate` protocol.
 
 ##### Added
- - Added support for registering geofences and messaging on geofence events. Please reach out to success@braze.com for more information about this feature.
+ - Adds support for registering geofences and messaging on geofence events. Please reach out to success@braze.com for more information about this feature.
  - Adds Braze default push categories which can be fetched from `ABKPushUtils`.
    - To use the Braze default push categories, you need to manually add the Braze categories when you register for push. You can get the Braze categories from `[ABKPushUtils getAppboyUNNotificationCategorySet]` or `[ABKPushUtils getAppboyUIUserNotificationCategorySet]`.
    - In this version, we add four sets of push action buttons: accept/decline, yes/no, confirm/cancel, more. These will be available as button sets on the dashboard when creating an iOS push campaign.
@@ -549,7 +559,7 @@
  - Updates remote push handling to call the completion handler passed in every time (a code path previously existed that would return without calling it).
 
 ##### Removed
- - Removed the delegate method `onInAppMessageHTMLButtonClicked:buttonID:` from `ABKInAppMessageControllerDelegate` protocol.
+ - Removes the delegate method `onInAppMessageHTMLButtonClicked:buttonID:` from `ABKInAppMessageControllerDelegate` protocol.
 
 ## 2.19.3
 
@@ -644,7 +654,7 @@ occurred.
  - Adds a new button clicked delegate method for HTML in-app message. The new delegate method also passes the URL of the clicked button.
 
 ##### Fixed
- - Fixed the crash caused by inserting a nil object into an NSDictionary when parsing an event object.
+ - Fixes the crash caused by inserting a nil object into an NSDictionary when parsing an event object.
 
 ##### Changed
  - Makes the WebView background for HTML in-app messages transparent.  Ensure HTML in-app messages you send to the device are created expecting a transparent background.
@@ -758,7 +768,7 @@ occurred.
 ## 2.11.2
 
 ##### Changed
- - Update the serialize and deserialize methods for in-app message classes. This is for use by wrappers such as Braze's Unity SDK for iOS.
+ - Updates the serialize and deserialize methods for in-app message classes. This is for use by wrappers such as Braze's Unity SDK for iOS.
 
 ## 2.11.1
 
@@ -776,73 +786,73 @@ occurred.
 ## 2.10.2
 
 ##### Added
- - Added the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
+ - Adds the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
 
 ## 2.10.1
 
 ##### Fixed
- - Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
+ - Fixes a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.10.0 and 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
 
 ## 2.10.0
 
 ##### Changed
- - Updated the minimum deployment targets of Braze iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Braze SDK.
- - Stop collecting user's Facebook data automatically. You can pass a user's Facebook information to Braze by initializing a ABKFacebookUser object with the facebook data, and set it to [Appboy sharedInstance].user.facebookUser. For more information, please refer to ABKUser.h and ABKFacebookUser.h.
+ - Updates the minimum deployment targets of Braze iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Braze SDK.
+ - Stops collecting user's Facebook data automatically. You can pass a user's Facebook information to Braze by initializing a ABKFacebookUser object with the facebook data, and set it to [Appboy sharedInstance].user.facebookUser. For more information, please refer to ABKUser.h and ABKFacebookUser.h.
 
 ##### Removed
- - Removed Facebook SDK dependent builds.  Now there is a single library - AppboyKit - and a single Pod without functional subspecs - Appboy-iOS-SDK (note we now have both the subspecs pointing at the same library). Please update your Podfile to `pod 'Appboy-iOS-SDK` if you are integrating Braze with Cocoapods.
- - Removed the feature of prompting a user to connect his/her Facebook account. You can refer to the method `promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData` in [FacebookViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/FacebookViewController.m) to continue prompting the user to connect the Facebook account.
+ - Removes Facebook SDK dependent builds.  Now there is a single library - AppboyKit - and a single Pod without functional subspecs - Appboy-iOS-SDK (note we now have both the subspecs pointing at the same library). Please update your Podfile to `pod 'Appboy-iOS-SDK` if you are integrating Braze with Cocoapods.
+ - Removes the feature of prompting a user to connect his/her Facebook account. You can refer to the method `promptUserToConnectFacebookAccountOnDeviceAndFetchAccountData` in [FacebookViewController.m](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/FacebookViewController.m) to continue prompting the user to connect the Facebook account.
 
 ## 2.9.6
 
 ##### Added
- - Added the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
+ - Adds the fix for an edge case when there are extra UIWindows at the time in-app message is going to display, the in-app message would have issue during dismissing.
 
 ## 2.9.5
 
 ##### Fixed
- - Corrected a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
+ - Fixes a bug which would cause the host app to crash when a deep link was launched from a push notification. In versions 2.9.4, if the host app used `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification:];` instead of `[[Appboy sharedInstance] registerApplication: didReceiveRemoteNotification: fetchCompletionHandler:];`, opening a push with a deep link would crash the host app in some circumstances.
 
 ## 2.9.4
 
 ##### Added
- - Added a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
- - Added 26 additional languages to localization support for Braze UI elements.
- - Added support for deep linking from APNS push notification clicks.
- - Added ability to customize the font of Feedback text using NUI with NUI class name `ABKFeedbackTextView`.
+ - Adds a major performance upgrade that reduces CPU usage, memory footprint, and network traffic.
+ - Adds 26 additional languages to localization support for Braze UI elements.
+ - Adds support for deep linking from APNS push notification clicks.
+ - Adds ability to customize the font of Feedback text using NUI with NUI class name `ABKFeedbackTextView`.
 
 ##### Fixed
- - Fixed the feedback page UI issues in iOS 8: when the device's orientation is UIInterfaceOrientationPortraitUpsideDown, the contact info bar was off.
- - Fixed in-app messages to display correctly in landscape mode in iOS 8.
+ - Fixes the feedback page UI issues in iOS 8: when the device's orientation is UIInterfaceOrientationPortraitUpsideDown, the contact info bar was off.
+ - Fixes in-app messages to display correctly in landscape mode in iOS 8.
 
 ##### Changed
- - Updated the SDK to adopt the latest SDWebImage protocol methods.
+ - Updates the SDK to adopt the latest SDWebImage protocol methods.
 
 ##### Removed
- - Removed the "required" labels on the feedback page.
+ - Removes the "required" labels on the feedback page.
 
 ## 2.9.3
 
 ##### Added
- - Added a new method `- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler` to support push with background fetch. This method should be called in `- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
- - Added a HelloSwift sample app to demo how to use Braze in a swift app.
- - Added a new NSString property "displayPrice" in ABKCrossPromotionCard to enable server side price localization.
+ - Adds a new method `- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler` to support push with background fetch. This method should be called in `- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler`. For more details, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
+ - Adds a HelloSwift sample app to demo how to use Braze in a swift app.
+ - Adds a new NSString property "displayPrice" in ABKCrossPromotionCard to enable server side price localization.
 
 ##### Fixed
- - Fixed a bug of when sessions were being created when the app opened in the background.
- - Fixed a bug where requesting the news feed with a news feed open led to card impressions not updating until the next feed refresh.
+ - Fixes a bug of when sessions were being created when the app opened in the background.
+ - Fixes a bug where requesting the news feed with a news feed open led to card impressions not updating until the next feed refresh.
 
 ## 2.9.2
 
 ##### Added
- - Added the ability to turn off Braze's automatic location collection by setting the ABKDisableAutomaticLocationCollectionKey boolean in AppboyOptions in startWithApiKey:inApplication:inApplication:withAppboyOptions:.
- - Added the ability to send location tracking events to Braze manually using setLastKnownLocationWithLatitude:longitude:horizontalAccuracy: and setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy: on the ABKUser. this is intended to be used with ABKDisableAutomaticLocationCollectionKey set to true in the AppboyOptions so that locations are only being recorded from a single source.
+ - Adds the ability to turn off Braze's automatic location collection by setting the ABKDisableAutomaticLocationCollectionKey boolean in AppboyOptions in startWithApiKey:inApplication:inApplication:withAppboyOptions:.
+ - Adds the ability to send location tracking events to Braze manually using setLastKnownLocationWithLatitude:longitude:horizontalAccuracy: and setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy: on the ABKUser. this is intended to be used with ABKDisableAutomaticLocationCollectionKey set to true in the AppboyOptions so that locations are only being recorded from a single source.
 
 ##### Fixed
- - Fixed a news feed bug: sometimes the spinner keeps spinning on the screen even after the news feed card image is displayed.
+ - Fixes a news feed bug: sometimes the spinner keeps spinning on the screen even after the news feed card image is displayed.
 
 ##### Changed
- - Updated sample app core location fetching code based on the changes in iOS 8.
+ - Updates sample app core location fetching code based on the changes in iOS 8.
 
 ## 2.9.1
 
@@ -862,7 +872,7 @@ occurred.
  - Users can now pull down on the Braze Newsfeed to refresh the content on iOS version 6.0 or later.
 
 ##### Changed
- - Restrict product identifier string to 255 characters for method `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price` and `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity`.
+ - Restricts product identifier string to 255 characters for method `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price` and `- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity`.
  - News feed card now can update the card height and display a full image based on the image ratio. Card image ratio used to be a fix number and images were aspect stretched to fit in the views.
  - The right and left margins in the news feed are now touchable areas for scrolling.
  - Card titles have been improved and will now truncate with "..." when they are more than 2 lines.
@@ -870,7 +880,7 @@ occurred.
 ## 2.8
 
 ##### Breaking
- - Renamed the class names of news feed cards to match the names on dashboard:
+ - Renames the class names of news feed cards to match the names on dashboard:
 
  | v2.8                    | v2.7 |
  | ------------------------| ---------------------------|
@@ -881,39 +891,39 @@ occurred.
  | ABKTextAnnouncementCard | ABKCardTextAnnouncement    |
 
 ##### Added
- - Added email and push notification subscription types for a user. Subscription types are explicitly opted in, subscribed, and unsubscribed. The previous email boolean subscribe method has been deprecated.
- - Added custom slideup orientation support. You can now ask the slideup to only support certain orientations. For more details on slideup custom orientation support, please refer to [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h).
- - Added quantity parameter as an option when logging purchase. The quanlity should be an unsigned interger greater than 0 and no larger than 100. For more information, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
- - Added a class method in ABKCard to deserialize a given dictionary to a card. This is for use by wrappers such as Braze's Unity SDK for iOS. Please refer to [ABKCard.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for more information.
+ - Adds email and push notification subscription types for a user. Subscription types are explicitly opted in, subscribed, and unsubscribed. The previous email boolean subscribe method has been deprecated.
+ - Adds custom slideup orientation support. You can now ask the slideup to only support certain orientations. For more details on slideup custom orientation support, please refer to [ABKSlideupController.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h).
+ - Adds quantity parameter as an option when logging purchase. The quanlity should be an unsigned interger greater than 0 and no larger than 100. For more information, please refer to [Appboy.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/Appboy.h).
+ - Adds a class method in ABKCard to deserialize a given dictionary to a card. This is for use by wrappers such as Braze's Unity SDK for iOS. Please refer to [ABKCard.h](https://github.com/Appboy/appboy-ios-sdk/blob/master/AppboyKit/AppboyKit.framework/Headers/ABKSlideupController.h) for more information.
 
 ## 2.7
 
 ### News Feed Update
-- Exposed raw card data in ABKFeedController
+- Exposes raw card data in ABKFeedController
   - Developers can use the raw card data to creat custom user interfaces for the news feed. For more details on the card data, please refer to ABKFeedController.h.
-- Added support for categories on cards and news feed view controllers.
+- Addes support for categories on cards and news feed view controllers.
   - Categories include Announcement, Advertising, Social, News and No Category. You can get cards of certain categories from ABKFeedController, or you can make ABKFeedViewController only display certain categories of cards.
-- Used SDWebImage to handle images downloading and caching in the news feed, display a spinner while downloading images and show a default image when no image available.
-  - Added support for asynchronous image downloading in the news feed, asynchronous memory and disk image caching with automatic cache expiration handling.
-- Added news feed view controller delegate to support custom handling of card clicks on news feed.
+- Uses SDWebImage to handle images downloading and caching in the news feed, display a spinner while downloading images and show a default image when no image available.
+  - Adds support for asynchronous image downloading in the news feed, asynchronous memory and disk image caching with automatic cache expiration handling.
+- Adds news feed view controller delegate to support custom handling of card clicks on news feed.
   - The app can customize click actions from the feed and display any card link in their own user interface.
 
 ### Slideup Changes
-- Updated ABKSlideupControllerDelegate method onSlideupClicked to return a BOOL value to indicate if Braze should continue to execute the click action.
-- Stopped logging slideup click when the slideup click action is ABKSlideupNoneClickAction.
+- Updates ABKSlideupControllerDelegate method onSlideupClicked to return a BOOL value to indicate if Braze should continue to execute the click action.
+- Stops logging slideup click when the slideup click action is ABKSlideupNoneClickAction.
 
 ### Feedback Changes
-- Updated the ABKFeedbackViewControllerPopoverContext so now it should be used in all cases where the feedback page displayed in a popover, including the case that the feedback is push on a navigation controller in a popover.
-- Fixed the ABKFeedbackVIewControllerModalContext cancel button delegate issue.
-- Fixed the form sheet style ABKFeedbackViewControllerModalContext layout issue.
+- Updates the ABKFeedbackViewControllerPopoverContext so now it should be used in all cases where the feedback page displayed in a popover, including the case that the feedback is push on a navigation controller in a popover.
+- Fixes the ABKFeedbackVIewControllerModalContext cancel button delegate issue.
+- Fixes the form sheet style ABKFeedbackViewControllerModalContext layout issue.
 
 ### Other Changes
-- Added API to request feed and slideup refresh.
-- Added API to log news feed displayed and feedback displayed.
+- Adds API to request feed and slideup refresh.
+- Adds API to log news feed displayed and feedback displayed.
   - Allows updating analytics data even using customized news feed or feedback user interfaces.
-- Updated badge count policy to only update when app is foreground.
-- Added clearTwitterDataWhenNoDataOfTwitterIdentifier to ABKUser, allowing developer to clear user data when a user disconnectes their twitter accounts.
-- Updated custom key and string value for custom attributes to automatically trim.
+- Updates badge count policy to only update when app is foreground.
+- Adds clearTwitterDataWhenNoDataOfTwitterIdentifier to ABKUser, allowing developer to clear user data when a user disconnectes their twitter accounts.
+- Updates custom key and string value for custom attributes to automatically trim.
 
 ## 2.6.3
 
@@ -926,7 +936,7 @@ occurred.
  - Fixes a news feed card click tracking issue.
 
 ##### Changed
- - Update data flush time interval.
+ - Updates data flush time interval.
 
 ## 2.6.1
 
@@ -1055,7 +1065,7 @@ All former Braze slideup delegate methods have been depreciated and removed. In 
 * Adds support for submitting feedback programmatically through an Appboy.h method without using Braze feedback form. This allows you to create your own feedback form.
 * Fixes an issue where the the news feed's web view would display "Connection Error" when a user came back into the app after a card had directed him or her to a protocol URL. Now when users come back from a redirected protocol URL, the feed is properly displayed.
 * Fixes an issue where the SDK might have incorrectly sent both read and write Facebook permissions at the same time, instead preferring to request only those read permissions that Braze is interested in and have already been requested by the incorporating app.
-* Caught and fixed a corner case where card impressions could be miscounted when the feed view controller is the master view controller of a split view.
+* Fixes a corner case where card impressions could be miscounted when the feed view controller is the master view controller of a split view.
 * Makes cards truncate properly at two lines.
 
 ## 2.1.1

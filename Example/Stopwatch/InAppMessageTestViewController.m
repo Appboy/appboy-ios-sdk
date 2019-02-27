@@ -1,5 +1,6 @@
 #import "InAppMessageTestViewController.h"
 #import "AppboyInAppMessage.h"
+#import "AlertControllerUtils.h"
 
 @implementation InAppMessageTestViewController
 
@@ -130,14 +131,10 @@
 // the Braze Server after the delegate method is executed. If it returns YES, the response to the tap is up to you.
 - (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
   NSLog(@"In-app message tapped!");
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
-                                                      message:NSLocalizedString(@"Appboy.Stowpatch.slideup-test.slideup-is-tap", nil)
-                                                     delegate:nil
-                                            cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.alert.cancel-button.title", nil)
-                                            otherButtonTitles:nil];
-  [alertView show];
-  alertView = nil;
-  
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
+                                                 message:NSLocalizedString(@"Appboy.Stowpatch.slideup-test.slideup-is-tap", nil)
+                                            presentingVC:self];
+
   [inAppMessage setInAppMessageClickAction:ABKInAppMessageNoneClickAction withURI:nil];
   // Returning YES here to prevent Braze from performing the click action.
   return YES;
