@@ -97,6 +97,12 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   return [UIApplication sharedApplication].statusBarOrientation;;
 }
 
+#pragma mark - StatusBar
+
+-(UIViewController *) childViewControllerForStatusBarHidden {
+    return self.inAppMessageViewController;
+}
+
 #pragma mark - Gesture Recognizers
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
