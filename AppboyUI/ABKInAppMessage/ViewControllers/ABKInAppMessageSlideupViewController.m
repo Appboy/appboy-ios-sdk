@@ -3,21 +3,44 @@
 #import "ABKUIUtils.h"
 #import <QuartzCore/QuartzCore.h>
 
-static CGFloat const SidePaddingForBeveledSlideup = 15.0f;
-static CGFloat const RightMargin = 15.0f;
-static CGFloat const LeftMargin = 10.0f;
-static CGFloat const BeveledShadowOpacity = 0.2f;
-static CGFloat const BeveledShadowRadius = 5;
-static CGFloat const BeveledViewRadius = 15;
-static CGFloat const BevelLandscapeTopSafeAreaHeight = 10.0f;
-static CGFloat const BevelLandscapeBottomSafeAreaHeight = 21.0f;
+static CGFloat const SlideupAssetRightMargin = 20.0f;
+static CGFloat const SlideupAssetLeftMargin = 20.0f;
 
-static CGFloat const BeveliPhoneXPortraitTopSafeAreaHeight = 44.0f;
-static CGFloat const BeveliPhoneXPortraitBottomSafeAreaHeight = 34.0f;
+static CGFloat const BevelViewRadius = 15.0f;
+static CGFloat const BevelDefaultVerticalMarginHeight = 10.0f;
+static CGFloat const BevelDefaultSideMarginWidth = 15.0f;
+static CGFloat const BevelNotchedPhoneLandscapeBottomMarginHeight = 21.0f;
+static CGFloat const BevelNotchedPhoneLandscapeSideMarginWidth = 44.0f;
+static CGFloat const BevelNotchedPhonePortraitTopMarginHeight = 44.0f;
+static CGFloat const BevelNotchedPhonePortraitBottomMarginHeight = 34.0f;
 
-static CGFloat const BevelPortraitTopSafeAreaHeightForNormalRectScreen = 22.0f;
+static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel";
+
+@interface ABKInAppMessageSlideupViewController()
+
+@property (strong, nonatomic) NSLayoutConstraint *leadConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *trailConstraint;
+
+@end
 
 @implementation ABKInAppMessageSlideupViewController
+
+- (void)loadView {
+  [[NSBundle bundleForClass:[ABKInAppMessageSlideupViewController class]] loadNibNamed:@"ABKInAppMessageSlideupViewController"
+                                                                                 owner:self
+                                                                               options:nil];
+  self.inAppMessageMessageLabel.font = MessageLabelDefaultFont;
+  if (self.inAppMessage.message) {
+    NSMutableAttributedString *attributedStringMessage = [[NSMutableAttributedString alloc] initWithString:self.inAppMessage.message];
+    NSMutableParagraphStyle *messageStyle = [[NSMutableParagraphStyle alloc] init];
+    [messageStyle setLineSpacing:2];
+    [messageStyle setLineBreakMode:NSLineBreakByTruncatingTail];
+    [attributedStringMessage addAttribute:NSParagraphStyleAttributeName
+                                    value:messageStyle
+                                    range:NSMakeRange(0, self.inAppMessage.message.length)];
+    self.inAppMessageMessageLabel.attributedText = attributedStringMessage;
+  }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
@@ -26,28 +49,56 @@ static CGFloat const BevelPortraitTopSafeAreaHeightForNormalRectScreen = 22.0f;
   [self setupChevron];
   [self setupImageOrLabelView];
   [self setupConstraintsWithSuperView];
-  
-  if ([ABKUIUtils isiPhoneX] || [(ABKInAppMessageSlideup *)self.inAppMessage isBeveled]) {
-    self.view.layer.cornerRadius = BeveledViewRadius;
-    self.view.layer.masksToBounds = NO;
-  }
+
+  self.view.layer.cornerRadius = BevelViewRadius;
+  self.view.layer.masksToBounds = NO;
 }
+
+- (void)viewDidLayoutSubviews {
+  [super viewDidLayoutSubviews];
+
+  // Redraw the shadow when the layout is changed.
+  UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds cornerRadius:BevelViewRadius];
+  self.view.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:InAppMessageShadowOpacity].CGColor;
+  self.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+  self.view.layer.shadowRadius = InAppMessageShadowBlurRadius;
+  self.view.layer.shadowPath = shadowPath.CGPath;
+
+  // Make opacity of shadow match opacity of the IAM background
+  CGFloat alpha = 0;
+  [self.view.backgroundColor getRed:nil green:nil blue:nil alpha:&alpha];
+  self.view.layer.shadowOpacity = alpha;
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+  [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+
+  CGFloat sidePadding = [self sideMarginsForPhoneAndOrientation];
+  self.leadConstraint.constant = sidePadding;
+  self.trailConstraint.constant = sidePadding;
+}
+
+#pragma mark - Private methods
 
 - (void)setupChevron {
   if (((ABKInAppMessageSlideup *)self.inAppMessage).hideChevron) {
     [self.arrowImage removeFromSuperview];
     self.arrowImage = nil;
-    NSDictionary *inAppMessageLabelDictionary = @{@"inAppMessageMessageLabel":self.inAppMessageMessageLabel};
+    NSDictionary *inAppMessageLabelDictionary = @{ InAppMessageSlideupLabelKey : self.inAppMessageMessageLabel };
     NSArray *inAppMessageLabelTrailingConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[inAppMessageMessageLabel]-RightMargin-|"
                                                                                            options:0
-                                                                                           metrics:@{@"RightMargin" : @(RightMargin)}
+                                                                                           metrics:@{@"RightMargin" : @(SlideupAssetRightMargin)}
                                                                                              views:inAppMessageLabelDictionary];
     [self.view addConstraints:inAppMessageLabelTrailingConstraint];
   } else {
     if (((ABKInAppMessageSlideup *)self.inAppMessage).chevronColor != nil) {
-      UIImage *newImage = [ABKUIUtils maskImage:self.arrowImage.image
-                                        toColor:((ABKInAppMessageSlideup *) self.inAppMessage).chevronColor];
-      self.arrowImage.image = newImage;
+      UIColor *arrowColor = ((ABKInAppMessageSlideup *)self.inAppMessage).chevronColor;
+      self.arrowImage.image = [self.arrowImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+      self.arrowImage.tintColor = arrowColor;
+    } else {
+      UIColor *defaultArrowColor = [UIColor colorWithRed:(155.0/255.0) green:(155.0/255.0) blue:(155.0/255.0) alpha:1.0];
+      self.arrowImage.image = [self.arrowImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+      self.arrowImage.tintColor = defaultArrowColor;
     }
   }
 }
@@ -56,14 +107,14 @@ static CGFloat const BevelPortraitTopSafeAreaHeightForNormalRectScreen = 22.0f;
   if (![super applyImageToImageView:self.iconImageView]) {
     [self.iconImageView removeFromSuperview];
     self.iconImageView = nil;
-    
+
     if (![super applyIconToLabelView:self.iconLabelView]) {
       [self.iconLabelView removeFromSuperview];
       self.iconLabelView = nil;
-      NSDictionary *inAppMessageLabelDictionary = @{@"inAppMessageMessageLabel":self.inAppMessageMessageLabel};
+      NSDictionary *inAppMessageLabelDictionary = @{ InAppMessageSlideupLabelKey : self.inAppMessageMessageLabel };
       NSArray *inAppMessageLabelLeadingConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-LeftMargin-[inAppMessageMessageLabel]"
                                                                                             options:0
-                                                                                            metrics:@{@"LeftMargin" : @(LeftMargin)}
+                                                                                            metrics:@{@"LeftMargin" : @(SlideupAssetLeftMargin)}
                                                                                               views:inAppMessageLabelDictionary];
       [self.view addConstraints:inAppMessageLabelLeadingConstraint];
     }
@@ -71,26 +122,22 @@ static CGFloat const BevelPortraitTopSafeAreaHeightForNormalRectScreen = 22.0f;
 }
 
 - (void)setupConstraintsWithSuperView {
-  CGFloat sidePadding = 0.0;
-  if ([ABKUIUtils isiPhoneX] || [(ABKInAppMessageSlideup *)self.inAppMessage isBeveled]) {
-    sidePadding = SidePaddingForBeveledSlideup;
-  }
-  
-  NSLayoutConstraint *leadConstraint = [NSLayoutConstraint constraintWithItem:self.view
-                                                                    attribute:NSLayoutAttributeLeading
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self.view.superview
-                                                                    attribute:NSLayoutAttributeLeading
-                                                                   multiplier:1
-                                                                     constant:sidePadding];
-  NSLayoutConstraint *trailConstraint = [NSLayoutConstraint constraintWithItem:self.view.superview
-                                                                     attribute:NSLayoutAttributeTrailing
-                                                                     relatedBy:NSLayoutRelationEqual
-                                                                        toItem:self.view
-                                                                     attribute:NSLayoutAttributeTrailing
-                                                                    multiplier:1
-                                                                      constant:sidePadding];
-  
+  CGFloat sidePadding = [self sideMarginsForPhoneAndOrientation];
+  self.leadConstraint = [NSLayoutConstraint constraintWithItem:self.view
+                                                     attribute:NSLayoutAttributeLeading
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self.view.superview
+                                                     attribute:NSLayoutAttributeLeading
+                                                    multiplier:1
+                                                      constant:sidePadding];
+  self.trailConstraint = [NSLayoutConstraint constraintWithItem:self.view.superview
+                                                      attribute:NSLayoutAttributeTrailing
+                                                      relatedBy:NSLayoutRelationEqual
+                                                         toItem:self.view
+                                                      attribute:NSLayoutAttributeTrailing
+                                                     multiplier:1
+                                                       constant:sidePadding];
+
   NSLayoutConstraint *slideConstraint = nil;
   if (((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop) {
     slideConstraint = [NSLayoutConstraint constraintWithItem:self.view
@@ -110,50 +157,32 @@ static CGFloat const BevelPortraitTopSafeAreaHeightForNormalRectScreen = 22.0f;
                                                      constant:- self.view.frame.size.height];
   }
   self.slideConstraint = slideConstraint;
-  [self.view.superview addConstraints:@[leadConstraint, trailConstraint, slideConstraint]];
+  [self.view.superview addConstraints:@[self.leadConstraint, self.trailConstraint, slideConstraint]];
 }
 
-- (void)viewDidLayoutSubviews {
-  [super viewDidLayoutSubviews];
-  
-  // Redraw the shadow when the layout is changed.
-  if ([ABKUIUtils isiPhoneX] || [(ABKInAppMessageSlideup *)self.inAppMessage isBeveled]) {
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.view.bounds];
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.view.layer.shadowOffset = CGSizeMake(0, 5);
-    self.view.layer.shadowPath = shadowPath.CGPath;
-    self.view.layer.shadowOpacity = BeveledShadowOpacity;
-    self.view.layer.shadowRadius = BeveledShadowRadius;
+- (CGFloat)sideMarginsForPhoneAndOrientation {
+  if ([ABKUIUtils isNotchedPhone] && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+    return BevelNotchedPhoneLandscapeSideMarginWidth;
   }
+  return BevelDefaultSideMarginWidth;
 }
 
-- (void)loadView {
-  [[NSBundle bundleForClass:[ABKInAppMessageSlideupViewController class]] loadNibNamed:@"ABKInAppMessageSlideupViewController"
-                                                                               owner:self
-                                                                             options:nil];
-  self.inAppMessageMessageLabel.font = MessageLabelDefaultFont;
-}
+#pragma mark - Superclass methods
 
 - (void)beforeMoveInAppMessageViewOnScreen {
-  self.slideConstraint.constant = 0;
-  UIInterfaceOrientation statusBarOrientation = [UIApplication sharedApplication].statusBarOrientation;
-  if (((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop) {
-    if ([ABKUIUtils isiPhoneX]) {
-      self.slideConstraint.constant = statusBarOrientation == UIInterfaceOrientationPortrait ?
-                                      BeveliPhoneXPortraitTopSafeAreaHeight : BevelLandscapeTopSafeAreaHeight;
-    } else if ([(ABKInAppMessageSlideup *)self.inAppMessage isBeveled]) {
-      self.slideConstraint.constant = statusBarOrientation == UIInterfaceOrientationPortrait ?
-                                      BevelPortraitTopSafeAreaHeightForNormalRectScreen : BevelLandscapeTopSafeAreaHeight;
-    }
-  } else {
-    if ([ABKUIUtils isiPhoneX]) {
-      if (UIInterfaceOrientationIsPortrait(statusBarOrientation)) {
-        self.slideConstraint.constant = BeveliPhoneXPortraitBottomSafeAreaHeight;
+  self.slideConstraint.constant = BevelDefaultVerticalMarginHeight;
+
+  if ([ABKUIUtils isNotchedPhone]) {
+    BOOL animatesFromTop = ((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop;
+    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
+      if (animatesFromTop) {
+        self.slideConstraint.constant = BevelNotchedPhonePortraitTopMarginHeight;
       } else {
-        self.slideConstraint.constant = BevelLandscapeBottomSafeAreaHeight;
+        self.slideConstraint.constant = BevelNotchedPhonePortraitBottomMarginHeight;
       }
-    } else if ([(ABKInAppMessageSlideup *)self.inAppMessage isBeveled]) {
-      self.slideConstraint.constant = BevelLandscapeBottomSafeAreaHeight;
+    } else if (!animatesFromTop) {
+      // Is landscape and animates from bottom
+      self.slideConstraint.constant = BevelNotchedPhoneLandscapeBottomMarginHeight;
     }
   }
 }
@@ -175,6 +204,12 @@ static CGFloat const BevelPortraitTopSafeAreaHeightForNormalRectScreen = 22.0f;
     super.inAppMessage = inAppMessage;
   } else {
     NSLog(@"ABKInAppMessageSlideupViewController only accepts in-app message with type ABKInAppMessageSlideup. Setting in-app message fails.");
+  }
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  if (self.inAppMessage.inAppMessageClickActionType != ABKInAppMessageNoneClickAction) {
+    self.view.alpha = .8;
   }
 }
 

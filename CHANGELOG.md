@@ -1,3 +1,8 @@
+## 3.14.0
+
+##### Added
+- Improved the look and feel of In-App Messages to adhere to the latest UX and UI best practices. Changes affect font sizes, padding, and responsiveness across all message types. Now supports button border styling.
+
 ## 3.13.0
 
 ##### Breaking

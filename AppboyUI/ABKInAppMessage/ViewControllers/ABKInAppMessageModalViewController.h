@@ -11,5 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (retain, nonatomic) IBOutlet NSLayoutConstraint *textsViewWidthConstraint;
 
+@property (strong, nonatomic) IBOutlet UIView *iconImageContainerView;
+@property (strong, nonatomic) IBOutlet UIView *graphicImageContainerView;
+
 @end
 NS_ASSUME_NONNULL_END

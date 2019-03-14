@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nullable) UIColor *buttonBackgroundColor;
 
 /*!
+ * This property defines the button's border color.
+ * If this property is not sent from the server, the background color is used.
+ */
+@property (strong, nullable) UIColor *buttonBorderColor;
+
+/*!
  * This property defines the button's title color in UIControlStateNormal. Setting this property will also change the
  * button title color.
  */

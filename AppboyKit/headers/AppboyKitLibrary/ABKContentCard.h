@@ -3,6 +3,7 @@
 /*
  * Braze Public API: ABKContentCard
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKContentCard : NSObject <NSCopying, NSCoding>
 
 /*!
@@ -103,3 +104,4 @@
 - (BOOL)hasSameId:(ABKContentCard *)card;
 
 @end
+NS_ASSUME_NONNULL_END

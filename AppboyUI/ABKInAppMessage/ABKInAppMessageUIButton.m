@@ -2,10 +2,14 @@
 #import "ABKUIUtils.h"
 
 static CGFloat const ButtonCornerRadius = 5.0f;
-static NSString *const DefaultTitleFont = @"Avenir-Black";
-static CGFloat const DefaultTitleSize_iPhone = 12.0f;
-static CGFloat const DefaultTitleSize_iPad = 18.0f;
-static CGFloat const ButtonTitleSidePadding = 10.0;
+static CGFloat const DefaultTitleSize = 14.0f;
+static CGFloat const ButtonTitleSidePadding = 12.0;
+
+@interface ABKInAppMessageUIButton ()
+
+@property (copy) UIColor *originalBackgroundColor;
+
+@end
 
 @implementation ABKInAppMessageUIButton
 
@@ -31,16 +35,10 @@ static CGFloat const ButtonTitleSidePadding = 10.0;
 }
 
 - (void)setUp {
-  CGFloat titleFontSize = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ?
-                          DefaultTitleSize_iPad : DefaultTitleSize_iPhone;
-  self.titleLabel.font = [UIFont fontWithName:DefaultTitleFont size:titleFontSize];
+  self.titleLabel.font = [UIFont boldSystemFontOfSize:DefaultTitleSize];
   self.titleLabel.textAlignment = NSTextAlignmentCenter;
   self.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-  self.backgroundColor = [UIColor colorWithRed:RedValueOfDefaultIconColorAndButtonBgColor
-                                         green:GreenValueOfDefaultIconColorAndButtonBgColor
-                                          blue:BlueValueOfDefaultIconColorAndButtonBgColor
-                                         alpha:AlphaValueOfDefaultIconColorAndButtonBgColor];
-  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+  self.originalBackgroundColor = self.backgroundColor;
 }
 
 - (void)layoutSubviews {
@@ -62,9 +60,27 @@ static CGFloat const ButtonTitleSidePadding = 10.0;
     self.backgroundColor = self.inAppButtonModel.buttonBackgroundColor;
   }
   
+  if ([ABKUIUtils objectIsValidAndNotEmpty:self.inAppButtonModel.buttonBorderColor]) {
+    self.layer.borderColor = [self.inAppButtonModel.buttonBorderColor CGColor];
+  } else if ([ABKUIUtils objectIsValidAndNotEmpty:self.inAppButtonModel.buttonBackgroundColor]) {
+    self.layer.borderColor = [self.inAppButtonModel.buttonBackgroundColor CGColor];
+  } else {
+    self.layer.borderColor = [[UIColor colorWithRed:(27.0/255.0) green:(120.0/255.0) blue:(207.0)/(255.0) alpha:1.0] CGColor];
+  }
+  
   self.layer.cornerRadius = ButtonCornerRadius;
   self.titleLabel.frame = CGRectMake(ButtonTitleSidePadding, 0,
                              self.bounds.size.width - ButtonTitleSidePadding * 2, self.bounds.size.height);
+}
+
+- (void)setHighlighted:(BOOL)highlighted {
+  [super setHighlighted:highlighted];
+  
+  if (highlighted) {
+    [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.08]];
+  } else {
+    self.backgroundColor = self.originalBackgroundColor;
+  }
 }
 
 @end

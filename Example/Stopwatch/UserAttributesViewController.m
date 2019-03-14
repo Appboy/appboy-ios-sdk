@@ -488,11 +488,4 @@ static NSMutableArray *attributesValuesArray = nil;
   return YES;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-    return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-  }
-  return toInterfaceOrientation == UIInterfaceOrientationPortrait;
-}
-
 @end

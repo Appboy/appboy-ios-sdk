@@ -3,11 +3,12 @@
 #import "ABKInAppMessageImmersive.h"
 #import "ABKUIUtils.h"
 
-static const CGFloat FullViewInIPadCornerRadius = 10.0f;
-static const CGFloat MaxLongEdge = 768.0f;
-static const CGFloat MaxShortEdge = 480.0f;
-static const CGFloat TextPaddingForNormalRectScreen = 20.0f;
-static const CGFloat TextPaddingForLandscapeiPhoneX = 45.0f;
+static const CGFloat FullViewInIPadCornerRadius = 8.0f;
+static const CGFloat MaxLongEdge = 720.0f;
+static const CGFloat MaxShortEdge = 450.0f;
+static const CGFloat TextPaddingForNormalRectScreen = 25.0f;
+static const CGFloat TextPaddingForLandscapeNotchedPhone = 45.0f;
+static const CGFloat CloseXTrailingPaddingLandscapeNotchedPhone = 15.0f;
 
 @implementation ABKInAppMessageFullViewController
 
@@ -96,16 +97,20 @@ static const CGFloat TextPaddingForLandscapeiPhoneX = 45.0f;
 
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
-  if ([ABKUIUtils isiPhoneX] && self.textsView != nil) {
+  if ([ABKUIUtils isNotchedPhone]) {
     UIInterfaceOrientation statusBarOrientation = [UIApplication sharedApplication].statusBarOrientation;
-    CGFloat textPadding = UIInterfaceOrientationIsPortrait(statusBarOrientation) ?
-                          TextPaddingForNormalRectScreen : TextPaddingForLandscapeiPhoneX;
-    self.textsViewLeadingConstraint.constant = textPadding;
-    self.textsViewTrailingConstraint.constant = textPadding;
-    self.headerLeadingConstraint.constant = textPadding;
-    self.headerTrailingConstraint.constant = textPadding;
-    self.messageLeadingConstraint.constant = textPadding;
-    self.messageTrailingConstraint.constant = textPadding;
+    if (self.textsView != nil) {
+      CGFloat textPadding = UIInterfaceOrientationIsPortrait(statusBarOrientation) ?
+                            TextPaddingForNormalRectScreen : TextPaddingForLandscapeNotchedPhone;
+      self.textsViewLeadingConstraint.constant = textPadding;
+      self.textsViewTrailingConstraint.constant = textPadding;
+      self.headerLeadingConstraint.constant = textPadding;
+      self.headerTrailingConstraint.constant = textPadding;
+      self.messageLeadingConstraint.constant = textPadding;
+      self.messageTrailingConstraint.constant = textPadding;
+    }
+    self.closeXButtonTrailingConstraint.constant = UIInterfaceOrientationIsLandscape(statusBarOrientation) ?
+                                                   CloseXTrailingPaddingLandscapeNotchedPhone : 0;
   }
 }
 
@@ -124,6 +129,27 @@ static const CGFloat TextPaddingForLandscapeiPhoneX = 45.0f;
                                                                              options:nil];
   self.inAppMessageHeaderLabel.font = HeaderLabelDefaultFont;
   self.inAppMessageMessageLabel.font = MessageLabelDefaultFont;
+  
+  if (self.inAppMessage.message) {
+    NSMutableAttributedString *attributedStringMessage = [[NSMutableAttributedString alloc] initWithString:self.inAppMessage.message];
+    NSMutableParagraphStyle *messageStyle = [[NSMutableParagraphStyle alloc] init];
+    [messageStyle setLineSpacing:2];
+    [attributedStringMessage addAttribute:NSParagraphStyleAttributeName
+                                    value:messageStyle
+                                    range:NSMakeRange(0, self.inAppMessage.message.length)];
+    self.inAppMessageMessageLabel.attributedText = attributedStringMessage;
+  }
+  if ([self.inAppMessage isKindOfClass:[ABKInAppMessageImmersive class]]) {
+    if (((ABKInAppMessageImmersive *)self.inAppMessage).header) {
+      NSMutableAttributedString *attributedStringHeader = [[NSMutableAttributedString alloc] initWithString:((ABKInAppMessageImmersive *)self.inAppMessage).header];
+      NSMutableParagraphStyle *headerStyle = [[NSMutableParagraphStyle alloc] init];
+      [headerStyle setLineSpacing:2];
+      [attributedStringHeader addAttribute:NSParagraphStyleAttributeName
+                                     value:headerStyle
+                                     range:NSMakeRange(0, ((ABKInAppMessageImmersive *)self.inAppMessage).header.length)];
+      self.inAppMessageMessageLabel.attributedText = attributedStringHeader;
+    }
+  }
 }
 
 @end

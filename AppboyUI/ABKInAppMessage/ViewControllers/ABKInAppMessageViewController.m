@@ -51,16 +51,11 @@ static NSString *const FontAwesomeName = @"FontAwesome";
 
 #pragma mark - UIViewController Methods
 
-// Inherit whether or not to autorotate from the topmost, currently visible view controller (the one
-// immediately under the in-app message window).  If it doesn't rotate, the in-app message won't either.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+// Inherit the supported orientations from the topmost, currently visible view controller (the one
+// immediately under the in-app message window)
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
   UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-  return [topController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size
-       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-  [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+  return [topController supportedInterfaceOrientations];
 }
 
 #pragma mark - In-app Message Initialization

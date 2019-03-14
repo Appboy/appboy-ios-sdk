@@ -1,5 +1,6 @@
 #import "ABKContentCard.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @interface ABKClassicContentCard : ABKContentCard <NSCoding>
 
 /*
@@ -24,3 +25,4 @@
 @property (copy, nullable) NSString *domain;
 
 @end
+NS_ASSUME_NONNULL_END

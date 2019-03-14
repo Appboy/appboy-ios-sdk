@@ -33,10 +33,7 @@ static NSInteger const CloseButtonTag = 50;
     if (inAppMessage.frameColor != nil) {
       self.view.superview.backgroundColor = inAppMessage.frameColor;
     } else {
-      self.view.superview.backgroundColor = [UIColor colorWithRed:0.19
-                                                            green:0.19
-                                                             blue:0.19
-                                                            alpha:0.75];
+      self.view.superview.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.3];
     }
   }
   self.view.superview.accessibilityViewIsModal = YES;
@@ -66,11 +63,18 @@ static NSInteger const CloseButtonTag = 50;
   UIView *buttonView = [self.view viewWithTag:CloseButtonTag];
   if ([buttonView isKindOfClass:[UIButton class]]) {
     UIColor *closeButtonColor = [self getInAppMessage].closeButtonColor ?
-      [self getInAppMessage].closeButtonColor : [UIColor blackColor];
+      [self getInAppMessage].closeButtonColor :
+      [UIColor colorWithRed:(155.0/255.0) green:(155.0/255.0) blue:(155.0/255.0) alpha:1.0];
     UIButton *closeButton = (UIButton *)buttonView;
-    UIImage *closeButtonImage = closeButton.currentImage;
-    UIImage *newImage = [ABKUIUtils maskImage:closeButtonImage toColor:closeButtonColor];
-    [closeButton setImage:newImage forState:UIControlStateNormal];
+    UIImageView *closeButtonImageView = closeButton.imageView;
+    closeButtonImageView.image = [closeButtonImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    closeButtonImageView.tintColor = closeButtonColor;
+    [closeButton setImage:closeButtonImageView.image forState:UIControlStateNormal];
+
+    UIImageView *closeButtonSelectedImageView = closeButton.imageView;
+    closeButtonSelectedImageView.image = [closeButtonSelectedImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    closeButtonSelectedImageView.tintColor = [closeButtonColor colorWithAlphaComponent:.8];
+    [closeButton setImage:closeButtonSelectedImageView.image forState:UIControlStateSelected];
   }
 }
 
@@ -92,7 +96,7 @@ static NSInteger const CloseButtonTag = 50;
     if ([self getInAppMessage].imageStyle != ABKInAppMessageGraphic) {
       UIView *bottomView = [self bottomViewWithNoButton];
       if ([ABKUIUtils objectIsValidAndNotEmpty:bottomView]) {
-        NSArray *bottomConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view]-20-|"
+        NSArray *bottomConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view]-30-|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:@{@"view" : bottomView}];
@@ -100,14 +104,17 @@ static NSInteger const CloseButtonTag = 50;
       }
     }
   } else if (buttons.count == 1) {
-    [self.rightInAppMessageButton removeFromSuperview];
-    self.rightInAppMessageButton = nil;
-    self.leftInAppMessageButton.inAppButtonModel = buttons[0];
-    NSArray *tailConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[button]-20-|"
-                                                                       options:0
-                                                                       metrics:nil
-                                                                         views:@{@"button" : self.leftInAppMessageButton}];
-    [self.view addConstraints:tailConstraints];
+    [self.leftInAppMessageButton removeFromSuperview];
+    self.leftInAppMessageButton = nil;
+    self.rightInAppMessageButton.inAppButtonModel = buttons[0];
+    NSLayoutConstraint *constraintHorizontal = [NSLayoutConstraint constraintWithItem:self.rightInAppMessageButton
+                                                                            attribute:NSLayoutAttributeCenterX
+                                                                            relatedBy:NSLayoutRelationEqual
+                                                                               toItem:self.view
+                                                                            attribute:NSLayoutAttributeCenterX
+                                                                           multiplier:1.0f
+                                                                             constant:0.0f];
+    [self.view addConstraint:constraintHorizontal];
   } else {
     self.leftInAppMessageButton.inAppButtonModel = buttons[0];
     self.rightInAppMessageButton.inAppButtonModel = buttons[1];

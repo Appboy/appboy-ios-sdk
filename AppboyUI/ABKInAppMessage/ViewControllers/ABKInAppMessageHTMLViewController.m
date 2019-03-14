@@ -32,7 +32,7 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   self.webView.delegate = self;
   self.webView.scrollView.bounces = NO;
   if (@available(iOS 11.0, *)) {
-    if (![ABKUIUtils isiPhoneX]) {
+    if (![ABKUIUtils isNotchedPhone]) {
       [self.webView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
   }

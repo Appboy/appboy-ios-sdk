@@ -4,8 +4,10 @@
 #import "ABKInAppMessageImmersive.h"
 #import "ABKSDWebImageProxy.h"
 
-static const CGFloat ModalViewCornerRadius = 10.0f;
-static const CGFloat MaxModalViewGraphicSize = 290.0f;
+static const CGFloat ModalViewCornerRadius = 8.0f;
+static const CGFloat MaxModalViewWidth = 450.0f;
+static const CGFloat MinModalViewWidth = 320.0f;
+static const CGFloat MaxModalViewHeight = 720.0f;
 
 @implementation ABKInAppMessageModalViewController
 
@@ -13,7 +15,11 @@ static const CGFloat MaxModalViewGraphicSize = 290.0f;
   [super viewWillAppear:animated];
   
   if (((ABKInAppMessageImmersive *)self.inAppMessage).imageStyle == ABKInAppMessageTopImage) {
-    [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[view]-(>=0)-|"
+    [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=15)-[view]-(>=15)-|"
+                                                                                options:0
+                                                                                metrics:nil
+                                                                                  views:@{@"view" : self.view}]];
+    [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=15)-[view]-(>=15)-|"
                                                                                 options:0
                                                                                 metrics:nil
                                                                                   views:@{@"view" : self.view}]];
@@ -37,16 +43,25 @@ static const CGFloat MaxModalViewGraphicSize = 290.0f;
                                                                    multiplier:imageAspectRatio
                                                                      constant:0];
       [self.graphicImageView addConstraint:constraint];
-      NSArray *widthConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(<=max)]"
+      NSArray *maxWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(<=max)]"
                                                                           options:0
-                                                                          metrics:@{@"max" : @(MaxModalViewGraphicSize)}
+                                                                          metrics:@{@"max" : @(MaxModalViewWidth)}
                                                                             views:@{@"view" : self.graphicImageView}];
-      NSArray *heightConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(<=max)]"
+      NSArray *maxHeightConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(<=max)]"
                                                                            options:0
-                                                                           metrics:@{@"max" : @(MaxModalViewGraphicSize)}
+                                                                           metrics:@{@"max" : @(MaxModalViewHeight)}
                                                                              views:@{@"view" : self.graphicImageView}];
-      [self.graphicImageView addConstraints:widthConstraints];
-      [self.graphicImageView addConstraints:heightConstraints];
+      [self.graphicImageView addConstraints:maxWidthConstraint];
+      [self.graphicImageView addConstraints:maxHeightConstraint];
+      
+      [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=15)-[view]-(>=15)-|"
+                                                                                  options:0
+                                                                                  metrics:nil
+                                                                                    views:@{@"view" : self.view}]];
+      [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(>=15)-[view]-(>=15)-|"
+                                                                                  options:0
+                                                                                  metrics:nil
+                                                                                    views:@{@"view" : self.view}]];
     } @catch (NSException *exception) {
       NSLog(@"Braze cannot display this message because it has a height or width of 0. The graphic image has width %f and height %f and image URI %@.",
             self.graphicImageView.image.size.width, self.graphicImageView.image.size.height,
@@ -58,7 +73,10 @@ static const CGFloat MaxModalViewGraphicSize = 290.0f;
 
 - (void)setupLayoutForGraphic {
   [super applyImageToImageView:self.graphicImageView];
+  self.graphicImageContainerView.layer.cornerRadius = self.view.layer.cornerRadius;
+
   [self.iconImageView removeFromSuperview];
+  [self.iconImageContainerView removeFromSuperview];
   [self.iconLabelView removeFromSuperview];
   [self.textsView removeFromSuperview];
   self.iconImageView = nil;
@@ -70,17 +88,37 @@ static const CGFloat MaxModalViewGraphicSize = 290.0f;
 
 - (void)setupLayoutForTopImage {
   self.textsView.translatesAutoresizingMaskIntoConstraints = NO;
-  [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(==max)]"
-                                                                    options:0
-                                                                    metrics:@{@"max" : @(MaxModalViewGraphicSize)}
-                                                                      views:@{@"view" : self.view}]];
   [self.graphicImageView removeFromSuperview];
+  [self.graphicImageContainerView removeFromSuperview];
   self.graphicImageView = nil;
-  
+
   // Set up the icon image/label view
   if ([super applyImageToImageView:self.iconImageView]) {
     [self.iconLabelView removeFromSuperview];
     self.iconLabelView = nil;
+    
+    @try {
+      Class SDWebImageProxyClass = [ABKUIUtils getSDWebImageProxyClass];
+      NSString *imageKey = [SDWebImageProxyClass cacheKeyForURL:self.inAppMessage.imageURI];
+      UIImage *inAppImage = [SDWebImageProxyClass imageFromCacheForKey:imageKey];
+      CGFloat imageAspectRatio = 1.0;
+      if (inAppImage != nil) {
+        imageAspectRatio = inAppImage.size.width / inAppImage.size.height;
+      }
+      NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.iconImageView
+                                                                    attribute:NSLayoutAttributeWidth
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.iconImageView
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:imageAspectRatio
+                                                                     constant:0];
+      [self.iconImageView addConstraint:constraint];
+    } @catch (NSException *exception) {
+      NSLog(@"Braze cannot display this message because the image has a height or width of 0. The image has width %f and height %f and image URI %@.",
+            self.iconImageView.image.size.width, self.iconImageView.image.size.height,
+            self.inAppMessage.imageURI.absoluteString);
+      [self hideInAppMessage:NO];
+    }
   } else {
     self.iconImageView.hidden = YES;
     self.iconImageHeightConstraint.constant = self.iconLabelView.frame.size.height + 20.0f;
@@ -102,6 +140,22 @@ static const CGFloat MaxModalViewGraphicSize = 290.0f;
     }
     self.headerBodySpaceConstraint.constant = 0.0f;
   }
+  
+  NSArray *maxWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(<=max)]"
+                                                                        options:0
+                                                                        metrics:@{@"max" : @(MaxModalViewWidth)}
+                                                                          views:@{@"view" : self.view}];
+  NSArray *minWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(>=min)]"
+                                                                        options:0
+                                                                        metrics:@{@"min" : @(MinModalViewWidth)}
+                                                                          views:@{@"view" : self.view}];
+  NSArray *maxHeightConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(<=max)]"
+                                                                         options:0
+                                                                         metrics:@{@"max" : @(MaxModalViewHeight)}
+                                                                           views:@{@"view" : self.view}];
+  [self.view addConstraints:maxWidthConstraint];
+  [self.view addConstraints:minWidthConstraint];
+  [self.view addConstraints:maxHeightConstraint];
 }
 
 - (UIView *)bottomViewWithNoButton {
@@ -114,40 +168,98 @@ static const CGFloat MaxModalViewGraphicSize = 290.0f;
 }
 
 - (void)viewDidLayoutSubviews {
-  if ([self isKindOfClass:[ABKInAppMessageModalViewController class]]) {
-    if (self.textsView && !self.textsViewWidthConstraint) {
-      [self.view layoutIfNeeded];
-      NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textsView
-                                                                         attribute:NSLayoutAttributeWidth
-                                                                         relatedBy:NSLayoutRelationEqual
-                                                                            toItem:nil
-                                                                         attribute:NSLayoutAttributeNotAnAttribute
-                                                                        multiplier:1
-                                                                          constant:self.textsView.contentSize.width];
-      self.textsViewWidthConstraint = widthConstraint;
-      NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:self.textsView
-                                                                          attribute:NSLayoutAttributeHeight
-                                                                          relatedBy:NSLayoutRelationEqual
-                                                                             toItem:nil
-                                                                          attribute:NSLayoutAttributeNotAnAttribute
-                                                                         multiplier:1
-                                                                           constant:self.textsView.contentSize.height];
-      widthConstraint.priority = 999;
-      heightConstraint.priority = 999;
-      [self.textsView addConstraint:widthConstraint];
-      [self.textsView addConstraint:heightConstraint];
-    }
-    [self.view layoutIfNeeded];
+  [super viewDidLayoutSubviews];
+  if (![self isKindOfClass:[ABKInAppMessageModalViewController class]]) {
+    return;
   }
+
+  [self drawShadows];
+  if (self.iconImageView) {
+    // Clips the top corners if the image is wide enough in the VC
+    CAShapeLayer * maskLayer = [CAShapeLayer layer];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds
+                                                   byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight)
+                                                         cornerRadii:CGSizeMake(ModalViewCornerRadius, ModalViewCornerRadius)];
+    maskLayer.path = maskPath.CGPath;
+    self.iconImageContainerView.layer.mask = maskLayer;
+    self.iconImageContainerView.clipsToBounds = YES;
+  }
+
+  if (self.textsView && !self.textsViewWidthConstraint) {
+    [self addTextViewConstraints];
+  }
+  [self.view layoutIfNeeded];
 }
 
 - (void)loadView {
-  [[NSBundle bundleForClass:[ABKInAppMessageModalViewController class]] loadNibNamed:@"ABKInAppMessageModalViewController"
-                                                                               owner:self
-                                                                             options:nil];
+  [[NSBundle bundleForClass:[ABKInAppMessageModalViewController class]]
+               loadNibNamed:@"ABKInAppMessageModalViewController"
+                      owner:self
+                    options:nil];
   self.view.layer.cornerRadius = ModalViewCornerRadius;
   self.inAppMessageHeaderLabel.font = HeaderLabelDefaultFont;
   self.inAppMessageMessageLabel.font = MessageLabelDefaultFont;
+  
+  if (self.inAppMessage.message) {
+    NSMutableAttributedString *attributedStringMessage = [[NSMutableAttributedString alloc] initWithString:self.inAppMessage.message];
+    NSMutableParagraphStyle *messageStyle = [[NSMutableParagraphStyle alloc] init];
+    [messageStyle setLineSpacing:2];
+    [attributedStringMessage addAttribute:NSParagraphStyleAttributeName
+                                    value:messageStyle
+                                    range:NSMakeRange(0, self.inAppMessage.message.length)];
+    self.inAppMessageMessageLabel.attributedText = attributedStringMessage;
+  }
+  if ([self.inAppMessage isKindOfClass:[ABKInAppMessageImmersive class]]) {
+    if (((ABKInAppMessageImmersive *)self.inAppMessage).header) {
+      NSMutableAttributedString *attributedStringHeader = [[NSMutableAttributedString alloc] initWithString:((ABKInAppMessageImmersive *)self.inAppMessage).header];
+      NSMutableParagraphStyle *headerStyle = [[NSMutableParagraphStyle alloc] init];
+      [headerStyle setLineSpacing:2];
+      [attributedStringHeader addAttribute:NSParagraphStyleAttributeName
+                                     value:headerStyle
+                                     range:NSMakeRange(0, ((ABKInAppMessageImmersive *)self.inAppMessage).header.length)];
+      self.inAppMessageMessageLabel.attributedText = attributedStringHeader;
+    }
+  }
+}
+
+#pragma mark - Private methods
+
+- (void)drawShadows {
+  UIBezierPath *dropShadowPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds
+                                                            cornerRadius:self.view.layer.cornerRadius];
+  self.view.layer.masksToBounds = NO;
+  self.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+  self.view.layer.shadowRadius = InAppMessageShadowBlurRadius;
+  self.view.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:InAppMessageShadowOpacity].CGColor;
+  self.view.layer.shadowPath = dropShadowPath.CGPath;
+
+  // Make opacity of shadow match opacity of the IAM background
+  CGFloat alpha = 0;
+  [self.view.backgroundColor getRed:nil green:nil blue:nil alpha:&alpha];
+  self.view.layer.shadowOpacity = alpha;
+}
+
+- (void)addTextViewConstraints {
+  [self.view layoutIfNeeded];
+  NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.textsView
+                                                                     attribute:NSLayoutAttributeWidth
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:nil
+                                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                                    multiplier:1
+                                                                      constant:self.textsView.contentSize.width];
+  self.textsViewWidthConstraint = widthConstraint;
+  NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:self.textsView
+                                                                      attribute:NSLayoutAttributeHeight
+                                                                      relatedBy:NSLayoutRelationEqual
+                                                                         toItem:nil
+                                                                      attribute:NSLayoutAttributeNotAnAttribute
+                                                                     multiplier:1
+                                                                       constant:self.textsView.contentSize.height];
+  widthConstraint.priority = 999;
+  heightConstraint.priority = 999;
+  [self.textsView addConstraint:widthConstraint];
+  [self.textsView addConstraint:heightConstraint];
 }
 
 @end

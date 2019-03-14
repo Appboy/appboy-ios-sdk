@@ -51,20 +51,6 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
   return NO;
 }
 
-// This method casts the given color on the image
-+ (UIImage *)maskImage:(UIImage *)image toColor:(UIColor*)color {
-  CGRect bounds = CGRectMake(0, 0, image.size.width * image.scale, image.size.height * image.scale);
-  UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.0f);
-  CGContextClipToMask(UIGraphicsGetCurrentContext(), bounds, image.CGImage);
-  [color setFill];
-  UIRectFill(bounds);
-  [image drawInRect:bounds blendMode:kCGBlendModeMultiply alpha:CGColorGetAlpha(color.CGColor)];
-  UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  
-  return tintedImage;
-}
-
 + (Class)getSDWebImageProxyClass {
   Class SDWebImageProxyClass = NSClassFromString(@"ABKSDWebImageProxy");
   if (SDWebImageProxyClass == nil) {
@@ -82,7 +68,7 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
   return NSClassFromString(@"ABKNewsFeedViewController");
 }
 
-+ (BOOL)isiPhoneX {
++ (BOOL)isNotchedPhone {
   return ([[UIScreen mainScreen] nativeBounds].size.height == iPhoneXHeight ||
           [[UIScreen mainScreen] nativeBounds].size.height == iPhoneXRHeight ||
           [[UIScreen mainScreen] nativeBounds].size.height == iPhoneXSMaxHeight ||
