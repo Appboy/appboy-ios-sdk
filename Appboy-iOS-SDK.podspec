@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |sc|
     sc.ios.library = 'z'
-    sc.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreText', 'WebKit'
+    sc.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreText', 'WebKit', 'CoreTelephony'
     sc.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/ABKIdentifierForAdvertisingProvider.m', 'AppboyKit/ABKModalWebViewController.m', 'AppboyKit/ABKNoConnectionLocalization.m', 'AppboyKit/ABKLocationManagerProvider.m'
     sc.resource = 'AppboyKit/Appboy.bundle'
     sc.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
-    sc.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'UserNotifications'
+    sc.weak_framework = 'Social', 'Accounts', 'AdSupport', 'UserNotifications'
   end
 
   s.subspec 'UI' do |sui|
