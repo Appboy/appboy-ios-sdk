@@ -201,7 +201,7 @@ static const int CustomInAppMessageDuration = 5;
     cell = cell.superview;
   }
   
-  UIAlertController *actionSheet = [(ButtonLabelCell *)cell getAlertControllerWithIAMDictionary:self.inAppMessageDictionary];
+  UIAlertController *actionSheet = [(ButtonLabelCell *)cell getAlertControllerWithInAppMessageDictionary:self.inAppMessageDictionary];
   actionSheet.popoverPresentationController.sourceView = sender;
   actionSheet.popoverPresentationController.sourceRect = sender.bounds;
 

@@ -52,7 +52,7 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   NSURL *url = request.URL;
   if ([ABKInAppMessageHTMLJSBridge isBridgeURL:url]) {
     [self.javascriptInterface handleBridgeCallWithURL:url appboyInstance:[Appboy sharedInstance]];
-    // No bridge methods in handleBridgeCallWithURL currently close the IAM
+    // No bridge methods in handleBridgeCallWithURL currently close the In-App Message
     return NO;
   }
   

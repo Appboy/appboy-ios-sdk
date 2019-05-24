@@ -100,7 +100,9 @@ static CGFloat AppboyCardLineSpacing = 1.2;
   NSDictionary *attributes = @{NSFontAttributeName: font,
                                NSForegroundColorAttributeName: color,
                                NSParagraphStyleAttributeName: paragraphStyle};
-  label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];;
+  // Convert to empty string to fail gracefully if given null from backend
+  text = text ?: @"";
+  label.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
 
 @end

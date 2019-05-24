@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.14.0"
+#define APPBOY_SDK_VERSION @"3.14.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -191,6 +191,7 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
   ABKDeviceOptionTimezone = (1 << 8),
   ABKDeviceOptionPushAuthStatus = (1 << 9),
   ABKDeviceOptionAdTrackingEnabled = (1 << 10),
+  ABKDeviceOptionPushDisplayOptions = (1 << 11),
   ABKDeviceOptionAll = ~ABKDeviceOptionNone
 };
 

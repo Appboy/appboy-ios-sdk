@@ -1183,16 +1183,6 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/Icons_Unread@2x.png",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-noimage-lrg.png",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-noimage-lrg@2x.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-noimage-sm.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-noimage-sm@2x.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-recommended-tab.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-recommended-tab@2x.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-star-empty.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-star-empty@2x.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-star-filled.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-star-filled@2x.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-star-half.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/images/img-star-half@2x.png",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/it.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/ja.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/km.lproj/AppboyFeedLocalizable.strings",
@@ -1327,16 +1317,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Icons_Unread@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-lrg.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-lrg@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-sm.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-noimage-sm@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-recommended-tab.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-recommended-tab@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-empty.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-empty@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-filled.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-filled@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-half.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/img-star-half@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KKColorCell.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KKColorsHeaderView.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/colors_crayola.plist",
@@ -1594,7 +1574,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
@@ -1662,7 +1642,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";
@@ -1692,7 +1672,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "$(sigh_com.appboy.stopwatch_development)";

@@ -17,14 +17,6 @@ static NSMutableArray *attributesValuesArray = nil;
 
 @property (nonatomic, strong) NSMutableArray<UserCustomAttribute *> *userCustomAttributes;
 
-- (UITableViewCell *)setupTableView:(UITableView *)tableView subscriptionCellForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (UITableViewCell *)setupTableView:(UITableView *)tableView textFieldCellForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void)showAttributesSetAlert;
-- (NSIndexPath *)indexPathFromTextFieldTag:(NSInteger)tag;
-
-- (IBAction)addCustomAttributeTapped:(id)sender;
-- (IBAction)locationCustomAttributeTapped:(id)sender;
-
 @end
 
 @implementation UserAttributesViewController
@@ -162,7 +154,7 @@ static NSMutableArray *attributesValuesArray = nil;
   return cell;
 }
 
-#pragma TableView DataSource & Delegate Methods
+#pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   return 3;
@@ -231,7 +223,7 @@ static NSMutableArray *attributesValuesArray = nil;
       
     case 2:
       // 'add attribute' button + custom attributes
-      return NSLocalizedString(@"Custom Attributes", @"");;
+      return NSLocalizedString(@"Custom Attributes", @"");
       
     default:
       return @"";
@@ -252,7 +244,7 @@ static NSMutableArray *attributesValuesArray = nil;
   [self.attributesTableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-#pragma Text Field Delegate Methods
+#pragma mark - Text Field Delegate Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   NSInteger nextTag = textField.tag + 1;
@@ -298,24 +290,6 @@ static NSMutableArray *attributesValuesArray = nil;
     attributesValuesArray[indexPath.row] = [NSNull null];
   }
   return YES;
-}
-
-- (NSIndexPath *)indexPathFromTextFieldTag:(NSInteger)tag {
-  return [NSIndexPath indexPathForRow:(tag - TextFieldTagNumber) inSection:0];
-}
-
-- (NSString *)getBirthdayStringFromDate:(NSDate *)date {
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  dateFormatter.dateFormat = @"MM/dd/yyyy";
-  NSString *dateString = [dateFormatter stringFromDate:date];
-  return dateString;
-}
-
-- (NSDate *)getDateFromBirthdayString:(NSString *)birthdayString {
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  dateFormatter.dateFormat = @"MM/dd/yyyy";
-  NSDate *date = [dateFormatter dateFromString:birthdayString];
-  return date;
 }
 
 #pragma mark - Buttons actions
@@ -425,9 +399,58 @@ static NSMutableArray *attributesValuesArray = nil;
   
   for (UserCustomAttribute *attribute in self.userCustomAttributes) {
     if (![attribute.attributeKey isEqualToString:@""] && ![attribute.attributeValue isEqualToString:@""]) {
-      [appboyInstance.user setCustomAttributeWithKey:attribute.attributeKey andStringValue:attribute.attributeValue];
+      if ([self stringIsADouble:attribute.attributeValue]) {
+        [appboyInstance.user setCustomAttributeWithKey:attribute.attributeKey
+                                        andDoubleValue:[attribute.attributeValue doubleValue]];
+      } else {
+        [appboyInstance.user setCustomAttributeWithKey:attribute.attributeKey andStringValue:attribute.attributeValue];
+      }
     }
   }
+}
+
+#pragma mark - Keyboard
+
+- (void)keyboardDidShow:(NSNotification *)notification {
+  CGSize keyboardSize = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+  CGFloat keyboardHeight = MIN(keyboardSize.height, keyboardSize.width);
+  self.attributesTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0);
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+  self.attributesTableView.contentInset = UIEdgeInsetsZero;
+}
+
+#pragma mark - UI
+
+- (void)showAttributesSetAlert {
+  [AlertControllerUtils presentTemporaryAlertWithTitle:nil
+                                                 message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
+                                            presentingVC:self];
+}
+
+- (BOOL)prefersStatusBarHidden {
+  return YES;
+}
+
+#pragma mark - Private methods
+
+- (NSIndexPath *)indexPathFromTextFieldTag:(NSInteger)tag {
+  return [NSIndexPath indexPathForRow:(tag - TextFieldTagNumber) inSection:0];
+}
+
+- (NSString *)getBirthdayStringFromDate:(NSDate *)date {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateFormat = @"MM/dd/yyyy";
+  NSString *dateString = [dateFormatter stringFromDate:date];
+  return dateString;
+}
+
+- (NSDate *)getDateFromBirthdayString:(NSString *)birthdayString {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  dateFormatter.dateFormat = @"MM/dd/yyyy";
+  NSDate *date = [dateFormatter dateFromString:birthdayString];
+  return date;
 }
 
 - (ABKUserGenderType)parseGenderFromString:(NSString *)string {
@@ -464,28 +487,11 @@ static NSMutableArray *attributesValuesArray = nil;
   return subscriptionType;
 }
 
-#pragma mark - Keyboard
-
-- (void)keyboardDidShow:(NSNotification *)notification {
-  CGSize keyboardSize = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-  CGFloat keyboardHeight = MIN(keyboardSize.height, keyboardSize.width);
-  self.attributesTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0);
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-  self.attributesTableView.contentInset = UIEdgeInsetsZero;
-}
-
-#pragma mark - UI
-
-- (void)showAttributesSetAlert {
-  [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
-                                                 message:NSLocalizedString(@"Appboy.Stopwatch.user-attributes.updated-message", nil)
-                                            presentingVC:self];
-}
-
-- (BOOL)prefersStatusBarHidden {
-  return YES;
+// Returns YES if it is a valid double. In the case where there are letters
+// in the string, [string doubleValue] will return a valid number if it begins with
+// a numeric character or "-"
+- (BOOL)stringIsADouble:(NSString *)string {
+  return [string doubleValue] != 0 || [string isEqualToString:@"0"];
 }
 
 @end

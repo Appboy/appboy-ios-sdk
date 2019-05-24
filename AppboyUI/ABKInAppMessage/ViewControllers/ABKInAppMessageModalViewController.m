@@ -233,7 +233,7 @@ static const CGFloat MaxModalViewHeight = 720.0f;
   self.view.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:InAppMessageShadowOpacity].CGColor;
   self.view.layer.shadowPath = dropShadowPath.CGPath;
 
-  // Make opacity of shadow match opacity of the IAM background
+  // Make opacity of shadow match opacity of the In-App Message background
   CGFloat alpha = 0;
   [self.view.backgroundColor getRed:nil green:nil blue:nil alpha:&alpha];
   self.view.layer.shadowOpacity = alpha;

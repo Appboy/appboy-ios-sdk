@@ -56,7 +56,7 @@
            @"640 Chars" : @"Welcome to Braze!! Braze! is Marketing Automation for Apps. This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is an in-app message - this message is exactly six hundred and forty chars!  We don\'t recommend making in-app messages longer than 140 characters due to variations in screens.  This is a waaaay too long message#"};
 }
 
-- (UIAlertController *)getAlertControllerWithIAMDictionary:(NSMutableDictionary *)dictionary {
+- (UIAlertController *)getAlertControllerWithInAppMessageDictionary:(NSMutableDictionary *)dictionary {
   NSString *buttonTitle = self.titleButton.titleLabel.text;
   NSDictionary *optionDictionary;
   if ([buttonTitle isEqualToString:ItemImageURL]) {
@@ -86,7 +86,7 @@
   return actionSheet;
 }
 
-- (UIActionSheet *)getActionSheetWithIAMDictionary:(NSMutableDictionary *)dictionary {
+- (UIActionSheet *)getActionSheetWithInAppMessageDictionary:(NSMutableDictionary *)dictionary {
   NSString *buttonTitle = self.titleButton.titleLabel.text;
   NSDictionary *optionDictionary;
   if ([buttonTitle isEqualToString:ItemImageURL]) {

@@ -155,11 +155,15 @@
 // An example modal news feed view controller
 - (IBAction)modalNewsFeedButtonTapped:(id)sender {
   ABKNewsFeedViewController *newsFeed = [[ABKNewsFeedViewController alloc] init];
+  newsFeed.newsFeed.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  newsFeed.newsFeed.navigationItem.title = @"Stopwatch Modal Feed";
   [self.navigationController presentViewController:newsFeed animated:YES completion:nil];
 }
 
 - (IBAction)navigationNewsFeedButtonTapped:(id)sender {
   ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
+  newsFeed.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  newsFeed.navigationItem.title = @"Stopwatch Navigation Feed";
   [self.navigationController pushViewController:newsFeed animated:YES];
 }
 
@@ -168,12 +172,14 @@
 - (IBAction)modalContentCardsButtonTapped:(id)sender {
   ABKContentCardsViewController *contentCardsVC = [ABKContentCardsViewController new];
   contentCardsVC.contentCardsViewController.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  contentCardsVC.contentCardsViewController.navigationItem.title = @"Stopwatch Modal Cards";
   [self.navigationController presentViewController:contentCardsVC animated:YES completion:nil];
 }
 
 - (IBAction)navigationContentCardsButtonTapped:(id)sender {
   ABKContentCardsTableViewController *contentCards = [ABKContentCardsTableViewController getNavigationContentCardsViewController];
   contentCards.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  contentCards.navigationItem.title = @"Stopwatch Navigation Cards";
   [self.navigationController pushViewController:contentCards animated:YES];
 }
 
@@ -191,7 +197,7 @@
       feedbackAlertMessage = NSLocalizedString(@"Feedback submitted", nil);
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-      [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
+      [AlertControllerUtils presentTemporaryAlertWithTitle:nil
                                                      message:feedbackAlertMessage
                                                 presentingVC:self];
     });

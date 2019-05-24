@@ -35,9 +35,6 @@
                                          [weakSelf updateImageRatioConstraintToRatio:newRatio];
                                          [weakSelf setNeedsUpdateConstraints];
                                          [weakSelf setNeedsDisplay];
-                                         if (weakSelf.onCellHeightUpdateBlock) {
-                                           weakSelf.onCellHeightUpdateBlock();
-                                         }
                                        }
                                      });
                                    } else {

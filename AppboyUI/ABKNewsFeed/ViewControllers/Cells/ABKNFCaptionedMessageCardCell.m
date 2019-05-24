@@ -48,9 +48,6 @@
                                             weakSelf.imageHeightContraint.constant = newImageHeightConstraint;
                                             [weakSelf setNeedsUpdateConstraints];
                                             [weakSelf setNeedsDisplay];
-                                            if (weakSelf.onCellHeightUpdateBlock) {
-                                              weakSelf.onCellHeightUpdateBlock();
-                                            }
                                           }
                                         });
                                       } else {

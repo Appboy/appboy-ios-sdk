@@ -14,9 +14,10 @@
 #import <SDWebImage/SDWebImagePrefetcher.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
+static double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
+static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 
-@interface ABKContentCardsTableViewController ()
+@interface ABKContentCardsTableViewController () <ABKBaseContentCardCellDelegate>
 
 /*!
  * This property shows the cards displayed in the Content Cards feed. Please note that this view
@@ -34,6 +35,12 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
  * This set stores IDs for the content cards that are unviewed and on the screen right now.
  */
 @property (nonatomic) NSMutableSet<NSString *> *unviewedOnScreenCards;
+
+/*!
+ * Stores the cell heights to provide for a smooth scrolling experience when cells need
+ * to resize themselves as you scroll through the ViewController
+ */
+@property (nonatomic) NSMutableDictionary<NSIndexPath *, NSNumber *> *cellHeights;
 
 - (void)logCardImpressionIfNeeded:(ABKContentCard *)card;
 - (void)requestContentCardsRefresh;
@@ -71,6 +78,7 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
   _cacheTimeout = ABKContentCardsCacheTimeout;
   _cardImpressions = [NSMutableSet set];
   _unviewedOnScreenCards = [NSMutableSet set];
+  _cellHeights = [NSMutableDictionary dictionary];
   
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(contentCardsUpdated:)
@@ -215,7 +223,19 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
     return self.cards.count;
 }
 
+// Overrides the storyboard to get accurate cell height estimates to prevent from having
+// the scrollView jump if a cell needs to resize itself
+- (CGFloat)tableView:(UITableView *)tableView
+estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+  NSNumber *height = self.cellHeights[indexPath];
+  if (height) {
+    return [height floatValue];
+  }
+  return ABKContentCardsCellEstimatedHeight;
+}
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  self.cellHeights[indexPath] = @(cell.frame.size.height);
   BOOL cellVisible = [[tableView indexPathsForVisibleRows] containsObject:indexPath];
   if (cellVisible) {
     ABKContentCard *card = self.cards[indexPath.row];
@@ -246,6 +266,7 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
   if ([self.unviewedOnScreenCards containsObject:card.idString]) {
     card.viewed = NO;
   }
+  cell.delegate = self;
   [cell applyCard:card];
   card.viewed = viewedSetting;
   cell.hideUnreadIndicator = self.disableUnreadIndicator;
@@ -358,6 +379,15 @@ double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
   return [ABKUIUtils getLocalizedString:key
                          inAppboyBundle:[NSBundle bundleForClass:[ABKContentCardsTableViewController class]]
                                   table:@"AppboyContentCardsLocalizable"];
+}
+
+#pragma mark - ABKBaseContentCardCellDelegate
+
+- (void)refreshTableViewCellHeights {
+  [UIView performWithoutAnimation:^{
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+  }];
 }
 
 @end

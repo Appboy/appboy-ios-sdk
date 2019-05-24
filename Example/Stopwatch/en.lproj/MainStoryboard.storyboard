@@ -291,8 +291,8 @@
                                                             <constraint firstItem="txv-U8-fmm" firstAttribute="top" secondItem="vQB-sU-MHh" secondAttribute="top" constant="10" id="zCt-yd-zgy"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set IAM Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz4-x6-sYU">
-                                                        <rect key="frame" x="16" y="544.5" width="180.5" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set In-App Message Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz4-x6-sYU">
+                                                        <rect key="frame" x="16" y="544.5" width="266" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1262,8 +1262,8 @@
                                     <action selector="displayNextAvailableInAppPressed:" destination="xc2-Om-yCX" eventType="touchUpInside" id="zvM-UC-HQx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IAMs Remaining in Stack:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxs-cn-U60">
-                                <rect key="frame" x="101.5" y="118" width="172.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In-App Messages Remaining in Stack:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxs-cn-U60" userLabel="Remaining In-App Message Label">
+                                <rect key="frame" x="58.5" y="118" width="258.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1288,7 +1288,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="In-App Controls" id="unm-L1-MbZ"/>
                     <connections>
-                        <outlet property="remainingIAMLabel" destination="dxs-cn-U60" id="bcr-AU-MiI"/>
+                        <outlet property="remainingIAMLabel" destination="dxs-cn-U60" id="e32-Y0-xvd"/>
                         <outlet property="segmentedControlForInAppMode" destination="ve6-vb-qDW" id="HHg-BV-OVH"/>
                     </connections>
                 </viewController>

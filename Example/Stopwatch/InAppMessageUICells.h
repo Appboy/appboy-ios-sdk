@@ -57,8 +57,8 @@ static NSString *const CellIdentifierButtonLabel = @"ButtonLabelCellIdentifier";
 + (NSDictionary *)imageDictionary;
 + (NSDictionary *)messageDictionary;
 + (NSDictionary *)headerDictionary;
-- (UIAlertController *)getAlertControllerWithIAMDictionary:(NSMutableDictionary *)dictionary;
-- (UIActionSheet *)getActionSheetWithIAMDictionary:(NSMutableDictionary *)dictionary;
+- (UIAlertController *)getAlertControllerWithInAppMessageDictionary:(NSMutableDictionary *)dictionary;
+- (UIActionSheet *)getActionSheetWithInAppMessageDictionary:(NSMutableDictionary *)dictionary;
 
 @end
 

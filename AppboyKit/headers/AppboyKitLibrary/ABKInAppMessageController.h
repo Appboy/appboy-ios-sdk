@@ -16,13 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
  * Your app can set the delegate to override the default behavior of the ABKInAppMessageController. See
  * ABKInAppMessageControllerDelegate.h for more information.
  */
-@property (weak, nullable) id <ABKInAppMessageControllerDelegate> delegate;
+@property (weak, nonatomic, nullable) id <ABKInAppMessageControllerDelegate> delegate;
 
 /*!
- * If you have implemented the IAM subspec, you can use the ABKInAppMessageUIController to control
+ * If you have implemented the In-App Message subspec, you can use the ABKInAppMessageUIController to control
  * in-app message behavior. See ABKInAppMessageUIController for more information.
  */
-@property (nullable) id<ABKInAppMessageUIControlling> inAppMessageUIController;
+@property (strong, nonatomic, nullable) id<ABKInAppMessageUIControlling> inAppMessageUIController;
 
 /*!
  * @param delegate The in-app message delegate that implements the ABKInAppMessageControllerDelegate methods. If the delegate is

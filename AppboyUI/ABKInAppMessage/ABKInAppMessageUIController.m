@@ -50,14 +50,14 @@
   }
   
   if ([inAppMessage isKindOfClass:[ABKInAppMessageImmersive class]]) {
-    ABKInAppMessageImmersive *immersiveIAM = (ABKInAppMessageImmersive *)inAppMessage;
-    if (immersiveIAM.imageStyle == ABKInAppMessageGraphic &&
-        ![ABKUIUtils objectIsValidAndNotEmpty:immersiveIAM.imageURI]) {
+    ABKInAppMessageImmersive *immersiveInAppMessage = (ABKInAppMessageImmersive *)inAppMessage;
+    if (immersiveInAppMessage.imageStyle == ABKInAppMessageGraphic &&
+        ![ABKUIUtils objectIsValidAndNotEmpty:immersiveInAppMessage.imageURI]) {
       NSLog(@"The in-app message has graphic image style but no image, discard this in-app message.");
       return;
     }
-    if ([immersiveIAM isKindOfClass:[ABKInAppMessageFull class]] &&
-        ![ABKUIUtils objectIsValidAndNotEmpty:immersiveIAM.imageURI]) {
+    if ([immersiveInAppMessage isKindOfClass:[ABKInAppMessageFull class]] &&
+        ![ABKUIUtils objectIsValidAndNotEmpty:immersiveInAppMessage.imageURI]) {
       NSLog(@"The in-app message is a full in-app message without an image, discard this in-app message.");
       return;
     }
@@ -101,6 +101,9 @@
 - (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForInAppMessage:(ABKInAppMessage *)inAppMessage {
   ABKInAppMessageDisplayChoice inAppMessageDisplayChoice = self.keyboardVisible ?
     ABKDisplayInAppMessageLater : ABKDisplayInAppMessageNow;
+  if (inAppMessageDisplayChoice == ABKDisplayInAppMessageLater) {
+    NSLog(@"Initially setting in-app message display choice to ABKDisplayInAppMessageLater due to visible keyboard.");
+  }
   if ([self.uiDelegate respondsToSelector:@selector(beforeInAppMessageDisplayed:withKeyboardIsUp:)]) {
     inAppMessageDisplayChoice = [self.uiDelegate beforeInAppMessageDisplayed:inAppMessage
                                                             withKeyboardIsUp:self.keyboardVisible];
@@ -114,6 +117,9 @@
 
 - (ABKInAppMessageDisplayChoice)getCurrentDisplayChoiceForControlInAppMessage:(ABKInAppMessage *)controlInAppMessage {
   ABKInAppMessageDisplayChoice inAppMessageDisplayChoice = self.keyboardVisible ? ABKDisplayInAppMessageLater : ABKDisplayInAppMessageNow;
+  if (inAppMessageDisplayChoice == ABKDisplayInAppMessageLater) {
+    NSLog(@"Initially setting in-app message display choice to ABKDisplayInAppMessageLater due to visible keyboard.");
+  }
   if ([[Appboy sharedInstance].inAppMessageController.delegate
               respondsToSelector:@selector(beforeControlMessageImpressionLogged:)]) {
     inAppMessageDisplayChoice = [Appboy.sharedInstance.inAppMessageController.delegate beforeControlMessageImpressionLogged:controlInAppMessage];

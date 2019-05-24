@@ -130,7 +130,7 @@
   NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
   NSArray *allFiles = [self getDirectoryContentsWithPath:cachePath];
   NSString *fileString = [allFiles componentsJoinedByString:@"\n"];
-  [AlertControllerUtils presentAlertWithOKButtonForTitle:@"Cache Files"
+  [AlertControllerUtils presentTemporaryAlertWithTitle:@"Cache Files"
                                                  message:fileString
                                             presentingVC:self];
 }
@@ -188,7 +188,7 @@
 }
 
 - (void)showForceCloseAlertWithTitle:(NSString *)title {
-  [AlertControllerUtils presentAlertWithOKButtonForTitle:title
+  [AlertControllerUtils presentTemporaryAlertWithTitle:title
                                                  message:@"Force Close App and Re-Open to Apply"
                                             presentingVC:self];
 }

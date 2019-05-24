@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +12,7 @@
         <scene sceneID="DtF-fl-vuP">
             <objects>
                 <tableViewController storyboardIdentifier="ABKContentCardsTableViewController" id="pNw-1d-kzS" customClass="ABKContentCardsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" id="QfY-bo-EsO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QfY-bo-EsO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,7 +32,7 @@
                                                     <rect key="frame" x="0.0" y="223" width="355" height="137"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appboy_cc_icon_pinned.png" translatesAutoresizingMaskIntoConstraints="NO" id="nFM-dS-rg2">
-                                                            <rect key="frame" x="334.5" y="0.0" width="20" height="20"/>
+                                                            <rect key="frame" x="335" y="0.0" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="ij5-J0-4li"/>
                                                                 <constraint firstAttribute="height" constant="20" id="uxr-Kf-wzO"/>
@@ -301,11 +300,11 @@
                                 <rect key="frame" x="0.0" y="638" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gzx-in-eIA" id="KMu-I3-bAv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-jd-ndj" userLabel="Root View">
-                                            <rect key="frame" x="10" y="10" width="355" height="139"/>
+                                            <rect key="frame" x="10" y="10" width="355" height="139.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appboy_cc_icon_pinned.png" translatesAutoresizingMaskIntoConstraints="NO" id="lIm-rR-Mrk">
                                                     <rect key="frame" x="335" y="0.0" width="20" height="20"/>
@@ -333,7 +332,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Link" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBh-6s-twj">
-                                                    <rect key="frame" x="94.5" y="97.5" width="235.5" height="16"/>
+                                                    <rect key="frame" x="94.5" y="98.5" width="235.5" height="16"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" link="YES" staticText="YES"/>
                                                         <bool key="isElement" value="YES"/>
@@ -343,7 +342,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reu-jL-oVA">
-                                                    <rect key="frame" x="0.0" y="130.5" width="355" height="8"/>
+                                                    <rect key="frame" x="0.0" y="131.5" width="355" height="8"/>
                                                     <color key="backgroundColor" red="0.086274509799999996" green="0.46274509800000002" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="8" id="UMI-Xs-qJT"/>
@@ -462,7 +461,7 @@ Please try again later. </string>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-hy-26y">
-                            <rect key="frame" x="-24" y="58" width="289" height="41"/>
+                            <rect key="frame" x="-24.5" y="58.5" width="289" height="41"/>
                             <string key="text">Cannot establish network connection.
 Please try again later. </string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>

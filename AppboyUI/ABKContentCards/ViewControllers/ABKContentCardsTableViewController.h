@@ -8,13 +8,13 @@
  * UI elements which are used in the Content Cards table view. You can find them in the Content Cards Storyboard.
  */
 @property (strong, nonatomic) IBOutlet UIView *emptyFeedView;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *emptyFeedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emptyFeedLabel;
 
 /*!
  *  This property allows you to enable or disable the unread indicator on the cards. The default
  *  value is NO, which will enable the displaying of the unread indicator on cards.
  */
-@property (nonatomic) BOOL disableUnreadIndicator;
+@property (assign, nonatomic) BOOL disableUnreadIndicator;
 
 /*!
  * This property defines the timeout for stored Content Cards in the Braze SDK. If the cards in the

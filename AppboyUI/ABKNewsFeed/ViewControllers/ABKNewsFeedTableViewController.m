@@ -183,12 +183,6 @@
                                                                 forCard:card];
   [cell applyCard:card];
   cell.hideUnreadIndicator = self.disableUnreadIndicator;
-  typeof(self) __weak weakSelf = self;
-  cell.onCellHeightUpdateBlock = ^{
-    BOOL animationsEnabled = UIView.areAnimationsEnabled;
-    [UIView setAnimationsEnabled:NO];
-    [UIView setAnimationsEnabled:animationsEnabled];
-  };
   return cell;
 }
 

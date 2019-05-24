@@ -1,14 +1,11 @@
-//
-//  AlertControllerUtils.h
-//  Stopwatch
-//
-//  Created by Daniel Hok on 2/14/19.
-//  Copyright © 2019 Appboy. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface AlertControllerUtils : NSObject
+
+// Alerts presented with this method will have a duration of 500ms.
++ (void)presentTemporaryAlertWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                            presentingVC:(UIViewController *)presentingVC;
 
 + (void)presentAlertWithOKButtonForTitle:(NSString *)title
                                  message:(NSString *)message

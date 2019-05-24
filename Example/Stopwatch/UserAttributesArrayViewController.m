@@ -75,7 +75,7 @@
 }
 
 - (void)sendAlertWithMessage:(NSString*)message {
-  [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
+  [AlertControllerUtils presentTemporaryAlertWithTitle:nil
                                                  message:message
                                             presentingVC:self];
 }

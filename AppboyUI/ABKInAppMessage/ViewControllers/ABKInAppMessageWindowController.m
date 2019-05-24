@@ -94,7 +94,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   if (self.preferredOrientation != UIInterfaceOrientationUnknown) {
     return self.preferredOrientation;
   }
-  return [UIApplication sharedApplication].statusBarOrientation;;
+  return [UIApplication sharedApplication].statusBarOrientation;
 }
 
 #pragma mark - Gesture Recognizers

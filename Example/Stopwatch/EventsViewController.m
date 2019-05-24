@@ -293,7 +293,7 @@ static NSString *const SwitchCell = @"switch cell";
 }
 
 - (void)showAlertWithMessage:(NSString *)message {
-  [AlertControllerUtils presentAlertWithOKButtonForTitle:nil
+  [AlertControllerUtils presentTemporaryAlertWithTitle:nil
                                                  message:message
                                             presentingVC:self];
 }

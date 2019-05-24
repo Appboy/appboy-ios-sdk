@@ -88,10 +88,6 @@ NS_ASSUME_NONNULL_BEGIN
  *                 or application:didReceiveRemoteNotification:.
  *
  * @return YES if the push notification was sent by Braze for push stories.
- *
- * @discussion Push story notifications are content-available silent notifications. You can use this method to ensure
- *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's push story notifications
- *             (e.g., pinging your server for content).
  */
 + (BOOL)isPushStoryRemoteNotification:(NSDictionary *)userInfo;
 

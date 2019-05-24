@@ -40,6 +40,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   appboyOptions[ABKRequestProcessingPolicyOptionKey] = @(ABKAutomaticRequestProcessing);
   appboyOptions[ABKMinimumTriggerTimeIntervalKey] = @(5);
   if (endpointDelegate != nil) {
+    NSLog(@"Setting ABKAppboyEndpointDelegate for app run.");
     appboyOptions[ABKAppboyEndpointDelegateKey] = endpointDelegate;
   }
   
@@ -55,6 +56,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   // Set ABKInAppMessageControllerDelegate on startup
   BOOL setInAppDelegate = [preferences boolForKey:SetInAppMessageControllerDelegateKey];
   if (setInAppDelegate) {
+    NSLog(@"Setting ABKInAppMessageControllerDelegate for app run.");
     appboyOptions[ABKInAppMessageControllerDelegateKey] = self;
   }
   
@@ -66,6 +68,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     [preferences setBool:setUrlDelegate forKey:SetURLDelegateKey];
   }
   if (setUrlDelegate) {
+    NSLog(@"Setting ABKURLDelegateKey for app run.");
     appboyOptions[ABKURLDelegateKey] = self;
   }
   appboyOptions[ABKPushStoryAppGroupKey] = @"group.com.appboy.stopwatch";
@@ -113,13 +116,11 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 // is in the background, Braze will try to fetch the news feed, and call completionHandler after
 // the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-  if ([ABKPushUtils isUninstallTrackingRemoteNotification:userInfo]) {
-    NSLog(@"Got uninstall tracking push from Braze");
-  } else if ([ABKPushUtils isGeofencesSyncRemoteNotification:userInfo]) {
-    NSLog(@"Got geofences sync push from Braze.");
+  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
+  if ([ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
+    NSLog(@"Detected Braze internal push in didReceiveRemoteNotification:fetchCompletionHandler:.");
   }
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
   
   if ([ABKPushUtils isAppboyRemoteNotification:userInfo] && ![ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
@@ -145,7 +146,9 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   
   // Handle deep linking with scheme beginning with "stopwatch"
   NSString *urlString = url.absoluteString.stringByRemovingPercentEncoding;
-  [self showAlertWithTitle:@"Deep Linking" message:urlString];
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:@"Deep Linking"
+                                                 message:urlString
+                                            presentingVC:self.window.rootViewController];
 
   // Handle Branch deep links
   [[Branch getInstance] handleDeepLink:url];
@@ -245,9 +248,9 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 #pragma mark - ABKInAppMessageControllerDelegate
 
-- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp {
-  [self showAlertWithTitle:@"IAM Delegate (Unset on Advanced tab)" message:inAppMessage.message];
-  return ABKDiscardInAppMessage;
+- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
+  NSLog(@"beforeInAppMessageDisplayed: delegate called in Stopwatch. Returning ABKDisplayInAppMessageNow.");
+  return ABKDisplayInAppMessageNow;
 }
 
 #pragma mark - ABKURLDelegate
@@ -264,15 +267,11 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 # pragma mark - Helper methods
 
-- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
-  [AlertControllerUtils presentAlertWithOKButtonForTitle:title
-                                                 message:message
-                                            presentingVC:self.window.rootViewController];
-}
-
 - (void)handleUniversalLinkString:(NSString *)uriString withABKURLDelegate:(BOOL)withURIDelegate {
   NSString *alertTitle = withURIDelegate ? @"Universal Link (ABKURLDelegate)" : @"Universal Link (UIApplicationDelegate)";
-  [self showAlertWithTitle:alertTitle message:uriString];
+  [AlertControllerUtils presentAlertWithOKButtonForTitle:alertTitle
+                                                 message:uriString
+                                            presentingVC:self.window.rootViewController];
 }
 
 @end

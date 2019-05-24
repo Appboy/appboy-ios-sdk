@@ -64,7 +64,7 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
   self.view.layer.shadowRadius = InAppMessageShadowBlurRadius;
   self.view.layer.shadowPath = shadowPath.CGPath;
 
-  // Make opacity of shadow match opacity of the IAM background
+  // Make opacity of shadow match opacity of the In-App Message background
   CGFloat alpha = 0;
   [self.view.backgroundColor getRed:nil green:nil blue:nil alpha:&alpha];
   self.view.layer.shadowOpacity = alpha;

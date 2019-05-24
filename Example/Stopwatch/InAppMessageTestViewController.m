@@ -42,7 +42,7 @@
     ((ABKInAppMessageSlideup *)inAppMessage).inAppMessageSlideupAnchor = ABKInAppMessageSlideupFromTop;
   }
   
-  [self updateRemainingIAMLabel];
+  [self updateRemainingInAppMessageLabel];
 
   // /Check if the delegate is called by a click on the "Display Next Available In-App Message" button.
   if (self.shouldDisplayInAppMessage && self.segmentedControlForInAppMode.selectedSegmentIndex == 1) {
@@ -88,7 +88,7 @@
 - (ABKInAppMessageDisplayChoice)beforeControlMessageImpressionLogged:(ABKInAppMessage *)inAppMessage {
   NSLog(@"Received in-app message with message: %@", inAppMessage.message);
   
-  [self updateRemainingIAMLabel];
+  [self updateRemainingInAppMessageLabel];
   
   // /Check if the delegate is called by a click on the "Display Next Available In-App Message" button.
   if (self.shouldDisplayInAppMessage && self.segmentedControlForInAppMode.selectedSegmentIndex == 1) {
@@ -131,7 +131,7 @@
 // the Braze Server after the delegate method is executed. If it returns YES, the response to the tap is up to you.
 - (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
   NSLog(@"In-app message tapped!");
-  [AlertControllerUtils presentAlertWithOKButtonForTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
+  [AlertControllerUtils presentTemporaryAlertWithTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
                                                  message:NSLocalizedString(@"Appboy.Stowpatch.slideup-test.slideup-is-tap", nil)
                                             presentingVC:self];
 
@@ -152,7 +152,7 @@
   // Here we set self as the in-app message controller delegate to enable in-app message customization on this page.
   [Appboy sharedInstance].inAppMessageController.delegate = self;
   
-  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %ld", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
+  self.remainingIAMLabel.text = [NSString stringWithFormat:@"In-App Messages Remaining in Stack: %ld", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -165,16 +165,16 @@
   self.shouldDisplayInAppMessage = YES;
   [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:self];
   self.shouldDisplayInAppMessage = NO;
-  [self updateRemainingIAMLabel];
+  [self updateRemainingInAppMessageLabel];
 }
 
 - (IBAction)dismissCurrentSlideup:(id)sender {
   [[Appboy sharedInstance].inAppMessageController.inAppMessageUIController hideCurrentInAppMessage:YES];
-  [self updateRemainingIAMLabel];
+  [self updateRemainingInAppMessageLabel];
 }
 
-- (void)updateRemainingIAMLabel {
-  self.remainingIAMLabel.text = [NSString stringWithFormat:@"IAMs Remaining in Stack: %ld", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
+- (void)updateRemainingInAppMessageLabel {
+  self.remainingIAMLabel.text = [NSString stringWithFormat:@"In-App Messages Remaining in Stack: %ld", [[Appboy sharedInstance].inAppMessageController inAppMessagesRemainingOnStack]];
 }
 
 @end

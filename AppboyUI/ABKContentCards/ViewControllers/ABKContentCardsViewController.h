@@ -7,6 +7,6 @@
  * This property is the table view controller which displays all the content cards. It's also the root view
  * controller.
  */
-@property (unsafe_unretained, nonatomic) ABKContentCardsTableViewController *contentCardsViewController;
+@property (weak, nonatomic) ABKContentCardsTableViewController *contentCardsViewController;
 
 @end

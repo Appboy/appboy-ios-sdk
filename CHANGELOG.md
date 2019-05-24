@@ -1,7 +1,24 @@
+## 3.14.1
+
+##### Changed
+- Changed in-app message trigger behavior to not perform custom event triggering after session start until after any pending server trigger sync requests have finished.
+
+##### Fixed
+- Fixed a serialization issue that could cause improper type conversions for certain decimal values.
+- Fixed a behavior introduced in 3.12.0 which caused in-app messages to not be considered triggered locally if `ABKDiscardInAppMessage` was returned by the host app in `beforeInAppMessageDisplayed:`.
+
+##### Added
+- Added the ability to set the session timeout via the Info.plist.
+  - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `SessionTimeout` Number subentry and set the value to your session timeout.
+- Added the ability to disable location tracking via the Info.plist.
+  - Add the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` Dictionary, add the `DisableAutomaticLocation` Boolean subentry and set the value to `YES`.
+- Added dynamic cell resizing for Content Cards cells with templated images in our default Content Cards UI.
+- Added validation to the local filename's canonical path during zip file extraction.
+
 ## 3.14.0
 
 ##### Added
-- Improved the look and feel of In-App Messages to adhere to the latest UX and UI best practices. Changes affect font sizes, padding, and responsiveness across all message types. Now supports button border styling.
+- Improves the look and feel of In-App Messages to adhere to the latest UX and UI best practices. Changes affect font sizes, padding, and responsiveness across all message types. Now supports button border styling.
 
 ## 3.13.0
 

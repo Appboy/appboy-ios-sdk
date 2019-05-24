@@ -1,6 +1,8 @@
 #import "ABKCaptionedImageContentCardCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+static const CGFloat ImageMinResizingDifference = 5e-1;
+
 @implementation ABKCaptionedImageContentCardCell
 
 - (void)prepareForReuse {
@@ -42,7 +44,9 @@
   [self hideLinkLabel:shouldHideLink];
   
   CGFloat currImageHeightConstraint = self.captionedImageView.frame.size.width / captionedImageCard.imageAspectRatio;
-  [self updateImageConstraintsWithNewConstant:currImageHeightConstraint];
+  if ([self shouldResizeImageWithNewConstant:currImageHeightConstraint]) {
+    [self updateImageConstraintsWithNewConstant:currImageHeightConstraint];
+  }
   
   typeof(self) __weak weakSelf = self;
   [self.captionedImageView sd_setImageWithURL:[NSURL URLWithString:captionedImageCard.image] placeholderImage:nil options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync) completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
@@ -51,8 +55,14 @@
     }
     if (image && image.size.width > 0.0) {
       dispatch_async(dispatch_get_main_queue(), ^{
-        CGFloat newImageHeightConstraint = weakSelf.captionedImageView.frame.size.width * image.size.height / image.size.width;
-        [weakSelf updateImageConstraintsWithNewConstant:newImageHeightConstraint];
+        CGFloat newImageAspectRatio = image.size.width / image.size.height;
+        CGFloat newImageHeightConstraint = weakSelf.captionedImageView.frame.size.width / newImageAspectRatio;
+        if ([self shouldResizeImageWithNewConstant:newImageHeightConstraint]) {
+          // Update image size based on actual downloaded image
+          [weakSelf updateImageConstraintsWithNewConstant:newImageHeightConstraint];
+          [weakSelf.delegate refreshTableViewCellHeights];
+          captionedImageCard.imageAspectRatio = newImageAspectRatio;
+        }
       });
     } else {
       dispatch_async(dispatch_get_main_queue(), ^{
@@ -61,13 +71,17 @@
     }
   }];
 }
- 
+
 - (void)updateImageConstraintsWithNewConstant:(CGFloat)newConstant {
-  if (fabs(newConstant - self.imageHeightContraint.constant) < 5e-1) {
-    return;
-  }
   self.imageHeightContraint.constant = newConstant;
   [self setNeedsLayout];
+}
+
+#pragma mark - Private methods
+
+- (BOOL)shouldResizeImageWithNewConstant:(CGFloat)newConstant {
+  return self.imageHeightContraint &&
+      fabs(newConstant - self.imageHeightContraint.constant) > ImageMinResizingDifference;
 }
 
 @end
