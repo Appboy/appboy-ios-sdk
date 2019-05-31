@@ -3,11 +3,6 @@
 
 @implementation ABKNFCaptionedMessageCardCell
 
-- (void)prepareForReuse {
-  [super prepareForReuse];
-  [self.captionedImageView sd_cancelCurrentAnimationImagesLoad];
-}
-
 - (void)hideLinkLabel:(BOOL)hide {
   self.linkLabel.hidden = hide;
   self.bodyAndLinkConstraint.constant = hide ? 0 : 13;
@@ -30,13 +25,14 @@
   [self hideLinkLabel:shouldHideLink];
   
   CGFloat currImageHeightConstraint = self.captionedImageView.frame.size.width / captionedImageCard.imageAspectRatio;
+  
   self.imageHeightContraint.constant = currImageHeightConstraint;
   [self setNeedsUpdateConstraints];
   [self setNeedsDisplay];
   typeof(self) __weak weakSelf = self;
   [self.captionedImageView sd_setImageWithURL:[NSURL URLWithString:captionedImageCard.image]
                              placeholderImage:nil
-                                      options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync)
+                                      options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync)
                                     completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                                       if (weakSelf == nil) {
                                         return;
@@ -48,6 +44,8 @@
                                             weakSelf.imageHeightContraint.constant = newImageHeightConstraint;
                                             [weakSelf setNeedsUpdateConstraints];
                                             [weakSelf setNeedsDisplay];
+                                            // Force a redraw, as SDWebImage 5+ consistently gets the original constraint wrong.
+                                            [weakSelf.delegate refreshTableViewCellHeights];
                                           }
                                         });
                                       } else {

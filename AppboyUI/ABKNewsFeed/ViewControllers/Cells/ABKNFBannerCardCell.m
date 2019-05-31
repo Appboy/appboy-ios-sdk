@@ -3,11 +3,6 @@
 
 @implementation ABKNFBannerCardCell
 
-- (void)prepareForReuse {
-  [super prepareForReuse];
-  [self.bannerImageView sd_cancelCurrentAnimationImagesLoad];
-}
-
 - (void)applyCard:(ABKCard *)card {
   if (![card isKindOfClass:[ABKBannerCard class]]) {
     return;
@@ -22,7 +17,7 @@
   typeof(self) __weak weakSelf = self;
   [self.bannerImageView sd_setImageWithURL:[NSURL URLWithString:bannerCard.image]
                           placeholderImage:nil
-                                   options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync) 
+                                   options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync) 
                                  completed:^(UIImage * _Nullable image, NSError * _Nullable error,
                                              SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                                    if (weakSelf == nil) {

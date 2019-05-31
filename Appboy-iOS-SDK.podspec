@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "3.14.1"
+  s.version      = "3.15.0"
   s.summary      = "This is the Braze iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -42,20 +42,20 @@ Pod::Spec.new do |s|
     snf.source_files = 'AppboyUI/ABKNewsFeed/*.*', 'AppboyUI/ABKNewsFeed/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     snf.resource = 'AppboyUI/ABKNewsFeed/Resources/**/*.*'
     snf.dependency 'Appboy-iOS-SDK/Core'
-    snf.dependency 'SDWebImage/GIF', '~>4.0'
+    snf.dependency 'SDWebImage', '~>5.0'
   end
 
   s.subspec 'InAppMessage' do |siam|
     siam.source_files = 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyUI/ABKInAppMessage/*.*', 'AppboyUI/ABKInAppMessage/ViewControllers/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     siam.resource = 'AppboyUI/ABKInAppMessage/Resources/*.*'
     siam.dependency 'Appboy-iOS-SDK/Core'
-    siam.dependency 'SDWebImage/GIF', '~>4.0'
+    siam.dependency 'SDWebImage', '~>5.0'
   end
 
   s.subspec 'ContentCards' do |scc|
     scc.source_files = 'AppboyUI/ABKContentCards/*.*', 'AppboyUI/ABKContentCards/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     scc.resource = 'AppboyUI/ABKContentCards/Resources/**/*.*'
     scc.dependency 'Appboy-iOS-SDK/Core'
-    scc.dependency 'SDWebImage/GIF', '~>4.0'
+    scc.dependency 'SDWebImage', '~>5.0'
   end
 end

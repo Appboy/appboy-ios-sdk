@@ -182,6 +182,7 @@
                                                            forIndexPath:indexPath
                                                                 forCard:card];
   [cell applyCard:card];
+  cell.delegate = self;
   cell.hideUnreadIndicator = self.disableUnreadIndicator;
   return cell;
 }
@@ -240,6 +241,15 @@
   return [ABKUIUtils getLocalizedString:key
                          inAppboyBundle:[NSBundle bundleForClass:[ABKNewsFeedTableViewController class]]
                                   table:@"AppboyFeedLocalizable"];
+}
+
+# pragma mark - ABKBaseNewsFeedCellDelegate
+
+- (void)refreshTableViewCellHeights {
+  [UIView performWithoutAnimation:^{
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+  }];
 }
 
 @end

@@ -5,11 +5,6 @@ static const CGFloat ImageMinResizingDifference = 5e-1;
 
 @implementation ABKCaptionedImageContentCardCell
 
-- (void)prepareForReuse {
-  [super prepareForReuse];
-  [self.captionedImageView sd_cancelCurrentAnimationImagesLoad];
-}
-
 - (void)hideLinkLabel:(BOOL)hide {
   self.linkLabel.hidden = hide;
   if (hide) {
@@ -49,7 +44,7 @@ static const CGFloat ImageMinResizingDifference = 5e-1;
   }
   
   typeof(self) __weak weakSelf = self;
-  [self.captionedImageView sd_setImageWithURL:[NSURL URLWithString:captionedImageCard.image] placeholderImage:nil options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync) completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+  [self.captionedImageView sd_setImageWithURL:[NSURL URLWithString:captionedImageCard.image] placeholderImage:nil options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync) completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
     if (weakSelf == nil) {
       return;
     }

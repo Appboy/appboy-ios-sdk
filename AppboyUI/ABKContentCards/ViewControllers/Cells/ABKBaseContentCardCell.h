@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <FLAnimatedImage/FLAnimatedImageView.h>
 #import "ABKContentCard.h"
 
 @protocol ABKBaseContentCardCellDelegate <NSObject>

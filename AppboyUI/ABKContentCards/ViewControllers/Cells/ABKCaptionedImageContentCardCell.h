@@ -1,9 +1,10 @@
 #import "ABKBaseContentCardCell.h"
 #import "ABKCaptionedImageContentCard.h"
+#import <SDWebImage/SDAnimatedImageView+WebCache.h>
 
 @interface ABKCaptionedImageContentCardCell : ABKBaseContentCardCell
 
-@property (weak, nonatomic) IBOutlet FLAnimatedImageView *captionedImageView;
+@property (weak, nonatomic) IBOutlet SDAnimatedImageView *captionedImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIView *TitleBackgroundView;

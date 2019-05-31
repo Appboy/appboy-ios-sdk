@@ -12,10 +12,12 @@
                 withURL:(nullable NSURL *)imageURL
        imagePlaceHolder:(nullable UIImage *)placeHolder
               completed:(nullable void (^)(UIImage * _Nullable image, NSError * _Nullable error, NSInteger cacheType, NSURL * _Nullable imageURL))completion {
-  [imageView sd_setShowActivityIndicatorView:showActivityIndicator];
+  if (showActivityIndicator) {
+    imageView.sd_imageIndicator = SDWebImageActivityIndicator.grayIndicator;
+  }
   [imageView sd_setImageWithURL:imageURL
                placeholderImage:placeHolder
-                        options: (SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync)
+                        options: (SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync)
                       completed:completion];
 }
 
@@ -34,8 +36,9 @@
 
 + (void)diskImageExistsForURL:(nullable NSURL *)url
                     completed:(nullable void (^)(BOOL isInCache))completion{
-  [[SDWebImageManager sharedManager] diskImageExistsForURL:url
-                                                completion:completion];
+  if (url != nil) {
+    [[SDImageCache sharedImageCache] diskImageExistsWithKey:url.absoluteString completion:completion];
+  }
 }
 
 + (nullable NSString *)cacheKeyForURL:(nullable NSURL *)url {
@@ -56,7 +59,7 @@
 }
 
 + (BOOL)isSupportedSDWebImageVersion {
-  BOOL imageViewMethodsExist = [UIImageView instancesRespondToSelector:@selector(sd_setShowActivityIndicatorView:)] &&
+  BOOL imageViewMethodsExist = [UIImageView instancesRespondToSelector:@selector(setSd_imageIndicator:)] &&
                                [UIImageView instancesRespondToSelector:@selector(sd_setImageWithURL:placeholderImage:completed:)];
   
   SDWebImagePrefetcher *prefetcher = [SDWebImagePrefetcher sharedImagePrefetcher];
@@ -64,12 +67,12 @@
   
   SDWebImageManager *imageManager = [SDWebImageManager sharedManager];
   BOOL managerMethodsExist = [imageManager respondsToSelector:@selector(loadImageWithURL:options:progress:completed:)] &&
-                             [imageManager respondsToSelector:@selector(diskImageExistsForURL:completion:)] &&
                              [imageManager respondsToSelector:@selector(cacheKeyForURL:)];
   
   SDImageCache *imageCache = [SDImageCache sharedImageCache];
   BOOL imageCacheMethodsExist = [imageCache respondsToSelector:@selector(removeImageForKey:withCompletion:)] &&
                                 [imageCache respondsToSelector:@selector(clearDiskOnCompletion:)] &&
+                                [imageCache respondsToSelector:@selector(diskImageExistsWithKey:completion:)] &&
                                 [imageCache respondsToSelector:@selector(clearMemory)] &&
                                 [imageCache respondsToSelector:@selector(imageFromCacheForKey:)];
   

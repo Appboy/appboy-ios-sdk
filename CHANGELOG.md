@@ -1,7 +1,13 @@
+## 3.15.0
+
+##### Breaking
+- Adds support for SDWebImage version 5.0.
+  - Note that upgrading to SDWebImage 5.0 also removed the FLAnimatedImage transitive dependency from the SDK.
+
 ## 3.14.1
 
 ##### Changed
-- Changed in-app message trigger behavior to not perform custom event triggering after session start until after any pending server trigger sync requests have finished.
+- Changed in-app message trigger behavior to not perform trigger events until after any pending trigger sync requests to the server have finished.
 
 ##### Fixed
 - Fixed a serialization issue that could cause improper type conversions for certain decimal values.
@@ -34,7 +40,7 @@
 
 ##### Breaking
 - Drops support for iOS 8.
-- Adds support for arm64e architecture. Requires Xcode 10.1.
+- Adds support for the arm64e architecture when building with Cocoapods. Requires Xcode 10.1.
 
 ##### Fixed
 - Fixes bitcode support for the Push Story framework when using Xcode 10.

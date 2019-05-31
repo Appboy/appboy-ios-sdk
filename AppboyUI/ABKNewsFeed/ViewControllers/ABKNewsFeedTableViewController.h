@@ -1,7 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "AppboyKit.h"
+#import "ABKNFBaseCardCell.h"
 
-@interface ABKNewsFeedTableViewController : UITableViewController
+@interface ABKNewsFeedTableViewController : UITableViewController <ABKBaseNewsFeedCellDelegate>
 
 /*!
  * UI elements which are used in the News Feed table view. You can find them in the News Feed Card Storyboard.

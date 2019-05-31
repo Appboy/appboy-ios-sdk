@@ -74,7 +74,7 @@
                                                         <constraint firstItem="UGC-fY-DfN" firstAttribute="leading" secondItem="dBF-6R-JPA" secondAttribute="leading" id="utg-Wd-EfY"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="vE3-pM-vca" customClass="FLAnimatedImageView">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="vE3-pM-vca" customClass="SDAnimatedImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="223"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -144,7 +144,7 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcn-iU-dPb">
                                             <rect key="frame" x="10" y="10" width="355" height="80"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="MX9-Bb-S0W" customClass="FLAnimatedImageView">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="MX9-Bb-S0W" customClass="SDAnimatedImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="80"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -313,7 +313,7 @@
                                                         <constraint firstAttribute="width" constant="20" id="jdj-sM-GyY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oEA-BV-ssv" customClass="FLAnimatedImageView">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oEA-BV-ssv" customClass="SDAnimatedImageView">
                                                     <rect key="frame" x="25" y="20" width="57.5" height="57.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>

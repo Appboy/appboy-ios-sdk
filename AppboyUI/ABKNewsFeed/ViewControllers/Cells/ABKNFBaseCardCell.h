@@ -1,6 +1,12 @@
 #import <UIKit/UIKit.h>
-#import <FLAnimatedImage/FLAnimatedImageView.h>
+#import <SDWebImage/SDAnimatedImageView+WebCache.h>
 #import "ABKCard.h"
+
+@protocol ABKBaseNewsFeedCellDelegate <NSObject>
+
+- (void)refreshTableViewCellHeights;
+
+@end
 
 @interface ABKNFBaseCardCell : UITableViewCell
 
@@ -15,6 +21,8 @@
  * This is the triangle image which shows if a card has been viewed by the user.
  */
 @property (weak, nonatomic) IBOutlet UIImageView *unreadIndicatorView;
+
+@property (weak, nonatomic) id <ABKBaseNewsFeedCellDelegate> delegate;
 
 /*!
  * Card root view related constraints

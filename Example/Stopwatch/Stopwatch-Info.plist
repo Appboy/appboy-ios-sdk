@@ -24,7 +24,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.14.1</string>
+	<string>3.15.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -42,8 +42,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>FacebookAppID</key>
-	<string>631617900200059</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationCategoryType</key>
@@ -59,9 +57,11 @@
 	<key>NSExceptionDomains</key>
 	<string/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow Stopwatch to access location information at all times and while in use.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow Stopwatch to access location information at all times.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow Stopwatch to access location information while running in the foreground and otherwise in use.</string>
+	<string>Allow Stopwatch to access location information while in use.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

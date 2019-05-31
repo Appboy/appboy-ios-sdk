@@ -4,7 +4,7 @@
 
 @interface ABKNFCaptionedMessageCardCell : ABKNFBaseCardCell
 
-@property (weak, nonatomic) IBOutlet FLAnimatedImageView *captionedImageView;
+@property (weak, nonatomic) IBOutlet SDAnimatedImageView *captionedImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIView *TitleBackgroundView;

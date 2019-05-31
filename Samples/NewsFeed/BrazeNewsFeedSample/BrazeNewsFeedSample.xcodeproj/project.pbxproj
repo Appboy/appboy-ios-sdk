@@ -193,7 +193,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BrazeNewsFeedSample/Pods-BrazeNewsFeedSample-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BrazeNewsFeedSample/Pods-BrazeNewsFeedSample-resources.sh",
 				"${PODS_ROOT}/Appboy-iOS-SDK/AppboyKit/Appboy.bundle",
 				"${PODS_ROOT}/Appboy-iOS-SDK/AppboyUI/ABKFeedViewController/Feed_Resources/ABKNewsFeedCardStoryboard.storyboard",
 				"${PODS_ROOT}/Appboy-iOS-SDK/AppboyUI/ABKFeedViewController/Feed_Resources/ar.lproj/AppboyFeedLocalizable.strings",
@@ -357,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrazeNewsFeedSample/Pods-BrazeNewsFeedSample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrazeNewsFeedSample/Pods-BrazeNewsFeedSample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

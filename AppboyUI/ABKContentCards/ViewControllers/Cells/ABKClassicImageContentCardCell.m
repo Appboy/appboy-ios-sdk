@@ -11,11 +11,6 @@
   imageLayer.masksToBounds = YES;
 }
 
-- (void)prepareForReuse {
-  [super prepareForReuse];
-  [self.classicImageView sd_cancelCurrentAnimationImagesLoad];
-}
-
 - (void)applyCard:(ABKClassicContentCard *)card {
   if (![card isKindOfClass:[ABKClassicContentCard class]]) {
     return;
@@ -23,7 +18,7 @@
   [super applyCard:card];
   [self.classicImageView sd_setImageWithURL:[NSURL URLWithString:card.image]
                            placeholderImage:[self getPlaceHolderImage]
-                                    options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync)];
+                                    options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync)];
 }
 
 @end

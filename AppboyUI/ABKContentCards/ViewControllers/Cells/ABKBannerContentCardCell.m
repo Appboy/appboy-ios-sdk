@@ -6,11 +6,6 @@ static const CGFloat ImageMinResizingMultiplier = 0.1f;
 
 @implementation ABKBannerContentCardCell
 
-- (void)prepareForReuse {
-  [super prepareForReuse];
-  [self.bannerImageView sd_cancelCurrentAnimationImagesLoad];
-}
-
 - (void)applyCard:(ABKBannerContentCard *)card {
   if (![card isKindOfClass:[ABKBannerContentCard class]]) {
     return;
@@ -22,7 +17,7 @@ static const CGFloat ImageMinResizingMultiplier = 0.1f;
   }
   
   typeof(self) __weak weakSelf = self;
-  [self.bannerImageView sd_setImageWithURL:[NSURL URLWithString:card.image] placeholderImage:nil options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync) completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+  [self.bannerImageView sd_setImageWithURL:[NSURL URLWithString:card.image] placeholderImage:nil options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync) completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
     if (weakSelf == nil) {
       return;
     }

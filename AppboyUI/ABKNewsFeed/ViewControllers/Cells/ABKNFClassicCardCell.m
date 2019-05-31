@@ -3,11 +3,6 @@
 
 @implementation ABKNFClassicCardCell
 
-- (void)prepareForReuse {
-  [super prepareForReuse];
-  [self.classicImageView sd_cancelCurrentAnimationImagesLoad];
-}
-
 - (void)applyCard:(ABKCard *)card {
   [super applyCard:card];
   if (![card isKindOfClass:[ABKClassicCard class]]) {
@@ -20,7 +15,7 @@
   
   [self.classicImageView sd_setImageWithURL:[NSURL URLWithString:classicCard.image]
                            placeholderImage:[self getPlaceHolderImage]
-                                    options:(SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync)];
+                                    options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync)];
 }
 
 @end
