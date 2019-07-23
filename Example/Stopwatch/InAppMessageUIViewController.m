@@ -3,6 +3,7 @@
 #import "InAppMessageHTMLComposerViewController.h"
 #import "AppboyKit.h"
 #import "UIViewController+Keyboard.h"
+#import "ColorUtils.h"
 
 static const NSInteger textFieldTagNumber = 50;
 static const CGFloat ButtonTableViewCellHeight = 176.0f;
@@ -172,6 +173,7 @@ static const int CustomInAppMessageDuration = 5;
     ((ColorCell *)cell).titleLabel.text = item;
     [(ColorCell *) cell setColor:self.inAppMessageDictionary[item]];
     ((ColorCell *)cell).opacitySlider.value = 1.0;
+    ((ColorCell *)cell).opacitySlider.tintColor = [ColorUtils stopwatchBlueColor];
     ((ColorCell *)cell).colorButton.backgroundColor = [((ColorCell *) cell).colorButton.backgroundColor colorWithAlphaComponent:1.0];
   } else if ([item isEqualToString:ItemHideChevron] ||
              [item isEqualToString:ItemImageGraphic]) {

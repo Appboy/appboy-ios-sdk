@@ -37,41 +37,6 @@
             </objects>
             <point key="canvasLocation" x="242.40000000000001" y="-3262.2188905547227"/>
         </scene>
-        <!--Push Story View Controller-->
-        <scene sceneID="leq-rW-CCP">
-            <objects>
-                <viewController storyboardIdentifier="PushStory" id="50P-Kq-v99" customClass="PushStoryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Um4-oR-mee"/>
-                        <viewControllerLayoutGuide type="bottom" id="wbi-mN-FXI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GU5-H8-6Ax">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmd-uY-4I1" customClass="StopwatchButton">
-                                <rect key="frame" x="16" y="120" width="343" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="tvJ-mp-Va5"/>
-                                </constraints>
-                                <state key="normal" title="Sample Push Stories"/>
-                                <connections>
-                                    <action selector="showSamplePushStories:" destination="50P-Kq-v99" eventType="touchUpInside" id="vsL-mt-DYR"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Kmd-uY-4I1" firstAttribute="leading" secondItem="GU5-H8-6Ax" secondAttribute="leading" constant="16" id="NRm-Gx-rpf"/>
-                            <constraint firstAttribute="trailing" secondItem="Kmd-uY-4I1" secondAttribute="trailing" constant="16" id="oQo-J0-AKl"/>
-                            <constraint firstItem="Kmd-uY-4I1" firstAttribute="top" secondItem="Um4-oR-mee" secondAttribute="bottom" constant="100" id="uMd-IH-eQa"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4gv-nH-Acl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="992" y="-3604.4977511244379"/>
-        </scene>
         <!--Data View Controller-->
         <scene sceneID="TEE-xP-AeY">
             <objects>
@@ -587,7 +552,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="BN2-RQ-eY4">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="BN2-RQ-eY4" customClass="StopwatchSegmentedControl">
                                                     <rect key="frame" x="146" y="11" width="213" height="29"/>
                                                     <segments>
                                                         <segment title="U"/>
@@ -871,7 +836,7 @@
                                     <outlet property="delegate" destination="btP-Yl-eqq" id="anS-3w-qmo"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dto-Lp-2n1">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dto-Lp-2n1" customClass="StopwatchSegmentedControl">
                                 <rect key="frame" x="209" y="266" width="150" height="39"/>
                                 <segments>
                                     <segment title="Values"/>
@@ -1242,7 +1207,7 @@
                                     <action selector="dismissCurrentSlideup:" destination="xc2-Om-yCX" eventType="touchUpInside" id="8wI-qZ-ChG"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ve6-vb-qDW">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ve6-vb-qDW" customClass="StopwatchSegmentedControl">
                                 <rect key="frame" x="16" y="40" width="343" height="29"/>
                                 <segments>
                                     <segment title="Immediate"/>
@@ -1501,7 +1466,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-9U-yBh">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ABs-9U-yBh" customClass="StopwatchSegmentedControl">
                                                     <rect key="frame" x="16" y="14" width="343" height="17"/>
                                                     <segments>
                                                         <segment title="String"/>
@@ -1624,7 +1589,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ws-G6-b99">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-Rz-1Xx">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-Rz-1Xx" customClass="StopwatchSegmentedControl">
                                         <rect key="frame" x="16" y="10" width="343" height="29"/>
                                         <segments>
                                             <segment title="Zip"/>
@@ -2054,7 +2019,7 @@
                                             <action selector="displayInAppMessage:" destination="mDO-W3-fC2" eventType="touchUpInside" id="wJy-GZ-bi3"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-tT-35I">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-tT-35I" customClass="StopwatchSegmentedControl">
                                         <rect key="frame" x="16" y="66" width="343" height="29"/>
                                         <segments>
                                             <segment title="Slideup"/>

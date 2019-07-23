@@ -163,7 +163,7 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
 
 - (NSMutableDictionary *)queryParameterDictionaryFromURL:(NSURL *)url {
   NSMutableDictionary *queryDict = [[NSMutableDictionary alloc] init];
-  NSString *urlQueryUnescaped = [url.query stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  NSString *urlQueryUnescaped = [url.query stringByRemovingPercentEncoding];
   for (NSString *param in [urlQueryUnescaped componentsSeparatedByString:@"&"]) {
     NSArray *elts = [param componentsSeparatedByString:@"="];
     if (elts.count > 1) {

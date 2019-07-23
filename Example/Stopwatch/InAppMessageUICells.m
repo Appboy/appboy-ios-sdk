@@ -1,4 +1,5 @@
 #import "InAppMessageUICells.h"
+#import "ColorUtils.h"
 
 @implementation SegmentCell
 
@@ -16,6 +17,7 @@
   NSArray *segmentList = segmentDictionary[item];
   [self.segmentControl removeAllSegments];
   for (int i = 0; i < segmentList.count; i ++) {
+    self.segmentControl.tintColor = [ColorUtils stopwatchBlueColor];
     [self.segmentControl insertSegmentWithTitle:segmentList[i] atIndex:i animated:NO];
   }
 }

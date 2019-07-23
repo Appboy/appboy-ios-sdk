@@ -1,6 +1,7 @@
 #import "CustomTabBarController.h"
 #import "ContainerViewController.h"
 #import "ABKLocationManager.h"
+#import "ColorUtils.h"
 
 @implementation CustomTabBarController
 
@@ -12,19 +13,20 @@
                                      [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events", @"Alias"] andTitle:@"User" andImageName:@"user" withFlushButton:YES], // User tab
                                      [self addNavigationControllerWithChildren:@[@"UI", @"Controls"] andTitle:@"IAM" andImageName:@"IAM" withFlushButton:NO], // IAM tab
                                      [self addNavigationControllerWithIdentifier:@"FeedAndFeedbackViewController" withTitle:@"Braze UI" andImageName:@"newsfeed"], // UI tab
-                                     [self addNavigationControllerWithChildren:@[@"Misc", @"PushStory", @"Data"] andTitle:@"Advanced" andImageName:@"bolt" withFlushButton:NO], // Advanced tab
+                                     [self addNavigationControllerWithChildren:@[@"Misc", @"Data"] andTitle:@"Advanced" andImageName:@"bolt" withFlushButton:NO], // Advanced tab
                                      nil];
   [self setViewControllers:viewControllers];
   
-  // Location Tracking: Let Braze request location permission on your behalf
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(requestLocationAuthorization)
                                                name:UIApplicationWillEnterForegroundNotification
                                              object:nil];
+  
+  self.locationManager = [[CLLocationManager alloc] init];
 }
 
 - (void)requestLocationAuthorization {
-  [[Appboy sharedInstance].locationManager allowRequestAlwaysPermission];
+  [self.locationManager requestAlwaysAuthorization];
 }
 
 /* Helper methods for adding tab bar items to the root UITabBarController */
@@ -33,6 +35,8 @@
 - (UINavigationController *)addNavigationControllerWithChildren:(NSArray *)childViewContainers andTitle:(NSString *)title andImageName:(NSString *)imageName withFlushButton:(BOOL)hasFlushButton {
   UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"ContainerNavigationController"];
   [(ContainerViewController *)navigationController.viewControllers[0] initWithArray:childViewContainers andTitle:title andImageName:imageName withFlushButton:hasFlushButton];
+  navigationController.navigationBar.tintColor = [ColorUtils stopwatchBlueColor];
+
   return navigationController;
 }
 

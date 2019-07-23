@@ -80,6 +80,7 @@ static CGFloat const ButtonTitleSidePadding = 12.0;
     [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.08]];
   } else {
     self.backgroundColor = self.originalBackgroundColor;
+    [self setNeedsLayout];
   }
 }
 

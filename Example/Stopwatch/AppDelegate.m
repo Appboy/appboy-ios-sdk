@@ -7,6 +7,7 @@
 #import "IDFADelegate.h"
 #import "Branch.h"
 #import "AlertControllerUtils.h"
+#import <CoreLocation/CoreLocation.h>
 
 #ifdef PUSH_DEV
 static NSString *const AppboyApiKey = @"appboy-sample-ios";

@@ -71,96 +71,6 @@ static const CGFloat MaxModalViewHeight = 720.0f;
   }
 }
 
-- (void)setupLayoutForGraphic {
-  [super applyImageToImageView:self.graphicImageView];
-  self.graphicImageContainerView.layer.cornerRadius = self.view.layer.cornerRadius;
-
-  [self.iconImageView removeFromSuperview];
-  [self.iconImageContainerView removeFromSuperview];
-  [self.iconLabelView removeFromSuperview];
-  [self.textsView removeFromSuperview];
-  self.iconImageView = nil;
-  self.iconLabelView = nil;
-  self.inAppMessageHeaderLabel = nil;
-  self.inAppMessageMessageLabel = nil;
-  self.textsView = nil;
-}
-
-- (void)setupLayoutForTopImage {
-  self.textsView.translatesAutoresizingMaskIntoConstraints = NO;
-  [self.graphicImageView removeFromSuperview];
-  [self.graphicImageContainerView removeFromSuperview];
-  self.graphicImageView = nil;
-
-  // Set up the icon image/label view
-  if ([super applyImageToImageView:self.iconImageView]) {
-    [self.iconLabelView removeFromSuperview];
-    self.iconLabelView = nil;
-    
-    @try {
-      Class SDWebImageProxyClass = [ABKUIUtils getSDWebImageProxyClass];
-      NSString *imageKey = [SDWebImageProxyClass cacheKeyForURL:self.inAppMessage.imageURI];
-      UIImage *inAppImage = [SDWebImageProxyClass imageFromCacheForKey:imageKey];
-      CGFloat imageAspectRatio = 1.0;
-      if (inAppImage != nil) {
-        imageAspectRatio = inAppImage.size.width / inAppImage.size.height;
-      }
-      NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.iconImageView
-                                                                    attribute:NSLayoutAttributeWidth
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self.iconImageView
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:imageAspectRatio
-                                                                     constant:0];
-      [self.iconImageView addConstraint:constraint];
-    } @catch (NSException *exception) {
-      NSLog(@"Braze cannot display this message because the image has a height or width of 0. The image has width %f and height %f and image URI %@.",
-            self.iconImageView.image.size.width, self.iconImageView.image.size.height,
-            self.inAppMessage.imageURI.absoluteString);
-      [self hideInAppMessage:NO];
-    }
-  } else {
-    self.iconImageView.hidden = YES;
-    self.iconImageHeightConstraint.constant = self.iconLabelView.frame.size.height + 20.0f;
-    
-    if (![super applyIconToLabelView:self.iconLabelView]) {
-      // When there is no image or icon, remove the iconLabelView to free up the space of the image view
-      [self.iconLabelView removeFromSuperview];
-      self.iconLabelView = nil;
-      self.iconImageHeightConstraint.constant = 20.0f;
-    }
-  }
-  
-  if (![ABKUIUtils objectIsValidAndNotEmpty:((ABKInAppMessageImmersive *)self.inAppMessage).header]) {
-    for (NSLayoutConstraint *constraint in self.inAppMessageHeaderLabel.constraints) {
-      if (constraint.firstAttribute == NSLayoutAttributeHeight) {
-        constraint.constant = 0.0f;
-        break;
-      }
-    }
-    self.headerBodySpaceConstraint.constant = 0.0f;
-  }
-  
-  NSArray *maxWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(<=max)]"
-                                                                        options:0
-                                                                        metrics:@{@"max" : @(MaxModalViewWidth)}
-                                                                          views:@{@"view" : self.view}];
-  NSArray *minWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(>=min)]"
-                                                                        options:0
-                                                                        metrics:@{@"min" : @(MinModalViewWidth)}
-                                                                          views:@{@"view" : self.view}];
-  NSArray *maxHeightConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(<=max)]"
-                                                                         options:0
-                                                                         metrics:@{@"max" : @(MaxModalViewHeight)}
-                                                                           views:@{@"view" : self.view}];
-  [self.view addConstraints:maxWidthConstraint];
-  [self.view addConstraints:minWidthConstraint];
-  [self.view addConstraints:maxHeightConstraint];
-}
-
-- (UIView *)bottomViewWithNoButton {
-  return self.textsView;
-}
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
@@ -260,6 +170,99 @@ static const CGFloat MaxModalViewHeight = 720.0f;
   heightConstraint.priority = 999;
   [self.textsView addConstraint:widthConstraint];
   [self.textsView addConstraint:heightConstraint];
+}
+
+#pragma mark - Superclass methods
+
+- (UIView *)bottomViewWithNoButton {
+  return self.textsView;
+}
+
+- (void)setupLayoutForGraphic {
+  [super applyImageToImageView:self.graphicImageView];
+  self.graphicImageContainerView.layer.cornerRadius = self.view.layer.cornerRadius;
+  
+  [self.iconImageView removeFromSuperview];
+  [self.iconImageContainerView removeFromSuperview];
+  [self.iconLabelView removeFromSuperview];
+  [self.textsView removeFromSuperview];
+  self.iconImageView = nil;
+  self.iconLabelView = nil;
+  self.inAppMessageHeaderLabel = nil;
+  self.inAppMessageMessageLabel = nil;
+  self.textsView = nil;
+}
+
+- (void)setupLayoutForTopImage {
+  self.textsView.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.graphicImageView removeFromSuperview];
+  [self.graphicImageContainerView removeFromSuperview];
+  self.graphicImageView = nil;
+  
+  // Set up the icon image/label view
+  if ([super applyImageToImageView:self.iconImageView]) {
+    [self.iconLabelView removeFromSuperview];
+    self.iconLabelView = nil;
+    
+    @try {
+      Class SDWebImageProxyClass = [ABKUIUtils getSDWebImageProxyClass];
+      NSString *imageKey = [SDWebImageProxyClass cacheKeyForURL:self.inAppMessage.imageURI];
+      UIImage *inAppImage = [SDWebImageProxyClass imageFromCacheForKey:imageKey];
+      CGFloat imageAspectRatio = 1.0;
+      if (inAppImage != nil) {
+        imageAspectRatio = inAppImage.size.width / inAppImage.size.height;
+      }
+      NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.iconImageView
+                                                                    attribute:NSLayoutAttributeWidth
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.iconImageView
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:imageAspectRatio
+                                                                     constant:0];
+      [self.iconImageView addConstraint:constraint];
+    } @catch (NSException *exception) {
+      NSLog(@"Braze cannot display this message because the image has a height or width of 0. The image has width %f and height %f and image URI %@.",
+            self.iconImageView.image.size.width, self.iconImageView.image.size.height,
+            self.inAppMessage.imageURI.absoluteString);
+      [self hideInAppMessage:NO];
+    }
+  } else {
+    self.iconImageView.hidden = YES;
+    self.iconImageHeightConstraint.constant = self.iconLabelView.frame.size.height + 20.0f;
+    
+    if (![super applyIconToLabelView:self.iconLabelView]) {
+      // When there is no image or icon, remove the iconLabelView to free up the space of the image view
+      [self.iconLabelView removeFromSuperview];
+      self.iconLabelView = nil;
+      self.iconImageHeightConstraint.constant = 20.0f;
+    }
+  }
+  
+  if (![ABKUIUtils objectIsValidAndNotEmpty:((ABKInAppMessageImmersive *)self.inAppMessage).header]) {
+    for (NSLayoutConstraint *constraint in self.inAppMessageHeaderLabel.constraints) {
+      if (constraint.firstAttribute == NSLayoutAttributeHeight) {
+        constraint.constant = 0.0f;
+        break;
+      }
+    }
+    self.headerBodySpaceConstraint.constant = 0.0f;
+  }
+  
+  NSArray *maxWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(<=max)]"
+                                                                        options:0
+                                                                        metrics:@{@"max" : @(MaxModalViewWidth)}
+                                                                          views:@{@"view" : self.view}];
+  NSArray *minWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(>=min)]"
+                                                                        options:0
+                                                                        metrics:@{@"min" : @(MinModalViewWidth)}
+                                                                          views:@{@"view" : self.view}];
+  NSArray *maxHeightConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(<=max)]"
+                                                                         options:0
+                                                                         metrics:@{@"max" : @(MaxModalViewHeight)}
+                                                                           views:@{@"view" : self.view}];
+  [self.view addConstraints:maxWidthConstraint];
+  [self.view addConstraints:minWidthConstraint];
+  [self.view addConstraints:maxHeightConstraint];
 }
 
 @end

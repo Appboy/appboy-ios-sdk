@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.15.0"
+#define APPBOY_SDK_VERSION @"3.16.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -126,31 +126,20 @@ extern NSString *const ABKPushStoryAppGroupKey;
  *        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
  *        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
  *        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
- *   ABKAutomaticRequestProcessingExceptForDataFlush - The same as ABKAutomaticRequestProcessing, except that updates to
+ *   ABKAutomaticRequestProcessingExceptForDataFlush - Deprecated. Use ABKManualRequestProcessing.
+ *   ABKManualRequestProcessing - The same as ABKAutomaticRequestProcessing, except that updates to
  *        custom attributes and triggering of custom events will not automatically flush to the server. Instead, you
- *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Braze.
- *   ABKManualRequestProcessing - Braze will automatically add appropriate network requests (feed updates, user
- *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
- *        network requests. Braze will make an exception and process requests in the following cases:
- *        - Feedback requests are made via Appboy::submitFeedback:message:isReportingABug:,
- *          Appboy::submitFeedback:withCompletionHandler:, or a FeedbackViewController.
- *        - Feed requests are made via Appboy::requestFeedRefresh or an ABKFeedViewController. The latter typically 
- *          occurs when an ABKFeedViewController is loaded and displayed on the screen or on a pull to refresh.
- *        - Network requests are required for internal features, such as templated in-app messages
- *          and certain location-based features.
- *        You can direct Braze to perform an immediate data flush as well as process any other
- *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
- *        This mode is only recommended for advanced use cases. If you're merely trying to
- *        control the background flush behavior, consider using ABKAutomaticRequestProcessing
- *        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
+ *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Braze. Note that
+ *        the configuration does not turn off all networking, i.e. requests important to the proper functionality of the Braze
+ *        SDK will still occur.
  *
  * Regardless of policy, Braze will intelligently combine requests on the request queue to minimize the total number of
  * requests and their combined payload.
  */
 typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
   ABKAutomaticRequestProcessing,
-  ABKAutomaticRequestProcessingExceptForDataFlush,
-  ABKManualRequestProcessing
+  ABKManualRequestProcessing,
+  ABKAutomaticRequestProcessingExceptForDataFlush __deprecated_enum_msg("ABKAutomaticRequestProcessingExceptForDataFlush is deprecated. Use ManualRequestProcessing.") = ABKManualRequestProcessing
 };
 
 /*!
@@ -320,15 +309,7 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
  * the queue already contains another request for the current user, that the new data flush request
  * will be merged into the already existing request and only one will execute for that user.
  *
- * If you're using ABKManualRequestProcessing, you need to call this after each network related activity in your app.
- * This includes:
- * * Retrieving an updated feed and in-app message after a new session is opened or the user is changed. Braze will
- * automatically add the request for new data to the network queue, you just need to give it permission to execute
- * that request.
- * * Flushing updated user data (custom events, custom attributes, as well as automatically collected data).
- * * Flushing automatic analytics events such as starting and ending sessions.
- *
- * If you're using ABKAutomaticRequestProcessingExceptForDataFlush, you only need to call this when you want to force
+ * If you're using ABKManualRequestProcessing, you only need to call this when you want to force
  * an immediate flush of updated user data.
  */
 - (void)flushDataAndProcessRequestQueue;

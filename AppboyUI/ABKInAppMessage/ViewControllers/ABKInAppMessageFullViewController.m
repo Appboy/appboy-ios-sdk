@@ -65,36 +65,6 @@ static const CGFloat CloseXTrailingPaddingLandscapeNotchedPhone = 15.0f;
   [self.view.superview addConstraints:heightConstraints];
 }
 
-- (void)setupLayoutForGraphic {
-  [super applyImageToImageView:self.graphicImageView];
-  [self.iconImageView removeFromSuperview];
-  [self.textsView removeFromSuperview];
-  self.iconImageView = nil;
-  self.textsView = nil;
-}
-
-- (void)setupLayoutForTopImage {
-  [self.graphicImageView removeFromSuperview];
-  self.graphicImageView = nil;
-  self.inAppMessageMessageLabel.translatesAutoresizingMaskIntoConstraints = NO;
-  self.textsView.translatesAutoresizingMaskIntoConstraints = NO;
-  
-  // When there is no header, we set following two things to 0:
-  // (1) the header label's height
-  // (2) the constraint's height between header label and the message label
-  // so that the space is collapsed.
-  if (![ABKUIUtils objectIsValidAndNotEmpty:((ABKInAppMessageImmersive *)self.inAppMessage).header]) {
-    for (NSLayoutConstraint *constraint in self.inAppMessageHeaderLabel.constraints) {
-      if (constraint.firstAttribute == NSLayoutAttributeHeight) {
-        constraint.constant = 0.0f;
-        break;
-      }
-    }
-    self.headerBodySpaceConstraint.constant = 0.0f;
-  }
-  [super applyImageToImageView:self.iconImageView];
-}
-
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
   if ([ABKUIUtils isNotchedPhone]) {
@@ -114,9 +84,6 @@ static const CGFloat CloseXTrailingPaddingLandscapeNotchedPhone = 15.0f;
   }
 }
 
-- (UIView *)bottomViewWithNoButton {
-  return self.textsView;
-}
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
@@ -150,6 +117,42 @@ static const CGFloat CloseXTrailingPaddingLandscapeNotchedPhone = 15.0f;
       self.inAppMessageMessageLabel.attributedText = attributedStringHeader;
     }
   }
+}
+
+#pragma mark - Superclass methods
+
+- (UIView *)bottomViewWithNoButton {
+  return self.textsView;
+}
+
+- (void)setupLayoutForGraphic {
+  [super applyImageToImageView:self.graphicImageView];
+  [self.iconImageView removeFromSuperview];
+  [self.textsView removeFromSuperview];
+  self.iconImageView = nil;
+  self.textsView = nil;
+}
+
+- (void)setupLayoutForTopImage {
+  [self.graphicImageView removeFromSuperview];
+  self.graphicImageView = nil;
+  self.inAppMessageMessageLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  self.textsView.translatesAutoresizingMaskIntoConstraints = NO;
+  
+  // When there is no header, we set following two things to 0:
+  // (1) the header label's height
+  // (2) the constraint's height between header label and the message label
+  // so that the space is collapsed.
+  if (![ABKUIUtils objectIsValidAndNotEmpty:((ABKInAppMessageImmersive *)self.inAppMessage).header]) {
+    for (NSLayoutConstraint *constraint in self.inAppMessageHeaderLabel.constraints) {
+      if (constraint.firstAttribute == NSLayoutAttributeHeight) {
+        constraint.constant = 0.0f;
+        break;
+      }
+    }
+    self.headerBodySpaceConstraint.constant = 0.0f;
+  }
+  [super applyImageToImageView:self.iconImageView];
 }
 
 @end

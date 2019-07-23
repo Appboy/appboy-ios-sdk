@@ -19,8 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ABKLocationManagerProvider : NSObject
 
 + (BOOL)locationServicesEnabled;
-+ (BOOL)requestLocationManagerAlwaysAuthorizationIfAppropriate:(CLLocationManager *)locationManager;
-+ (BOOL)requestLocationManagerWhenInUseAuthorizationIfAppropriate:(CLLocationManager *)locationManager;
 
 @end
 NS_ASSUME_NONNULL_END

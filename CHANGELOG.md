@@ -1,3 +1,25 @@
+## 3.16.0
+
+##### Breaking
+- Removes the methods: `allowRequestWhenInUseLocationPermission` and `allowRequestAlwaysPermission` from `ABKLocationManager`.
+  - To request when in use location permission, use the following code:
+  ```
+  CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+  [locationManager requestWhenInUseAuthorization];
+  ```
+  - To request always location permission, use the following code:
+  ```
+  CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+  [locationManager requestAlwaysAuthorization];
+  ```
+  - The preprocessor macro `ABK_DISABLE_LOCATION_SERVICES` is no longer needed.
+  - __Important:__ Configuring geofences to request always location permissions remotely from the Braze dashboard is no longer supported. If you are using Geofences, you will need to ensure that your app requests always location permission from your users manually.
+- `ABKAutomaticRequestProcessingExceptForDataFlush` is deprecated. Users using `ABKAutomaticRequestProcessingExceptForDataFlush` should switch to `ABKManualRequestProcessing`, as the new behavior of `ABKManualRequestProcessing` is identical to the previous behavior of `ABKAutomaticRequestProcessingExceptForDataFlush`
+ 
+##### Changed
+- Deprecates the push utility methods: `isUninstallTrackingUserNotification:`, `isUninstallTrackingRemoteNotification:`, `isGeofencesSyncUserNotification:`, `isGeofencesSyncRemoteNotification:`, and `isPushStoryRemoteNotification:` from `ABKPushUtils`. Please use the function `isAppboyInternalRemoteNotification:`.
+- Minor changes to the logic of `ABKManualRequestProcessing`. The original `ABKManualRequestProcessing` had specific exceptions and behaved more like `ABKAutomaticRequestProcessingExceptForDataFlush` in practice. As a result, the two policies have been merged into `ABKManualRequestProcessing`. Note that the new definition of `ABKManualRequestProcessing` is that periodic automatic data flushes are disabled. Other requests important to basic Braze functionality will still occur.
+
 ## 3.15.0
 
 ##### Breaking

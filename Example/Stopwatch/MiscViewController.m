@@ -72,10 +72,6 @@
   NSLog(@"changeAppboyFlushMode:");
   switch ([Appboy sharedInstance].requestProcessingPolicy) {
     case ABKAutomaticRequestProcessing:
-      [Appboy sharedInstance].requestProcessingPolicy = ABKAutomaticRequestProcessingExceptForDataFlush;
-      break;
-      
-    case ABKAutomaticRequestProcessingExceptForDataFlush:
       [Appboy sharedInstance].requestProcessingPolicy = ABKManualRequestProcessing;
       break;
       
@@ -94,10 +90,6 @@
   switch (requestPolicy) {
     case ABKAutomaticRequestProcessing:
       self.flushModeLabel.text = @"ABKAutomaticRequestProcessing";
-      break;
-      
-    case ABKAutomaticRequestProcessingExceptForDataFlush:
-      self.flushModeLabel.text = @"ABKAutomaticRequestProcessingExceptForDataFlush";
       break;
       
     case ABKManualRequestProcessing:
