@@ -32,7 +32,7 @@
 
 ## 3.14.1
 
-**Important:** If you are using `ABKAppboyEndpointDelegate`, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.
+- **Important:** If you are using `ABKAppboyEndpointDelegate`, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.
 
 ##### Changed
 - Changed in-app message trigger behavior to not perform trigger events until after any pending trigger sync requests to the server have finished.
