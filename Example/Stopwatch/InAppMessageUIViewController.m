@@ -138,15 +138,21 @@ static const int CustomInAppMessageDuration = 5;
     if (self.inAppMessageDictionary[item]) {
       ((SegmentCell *)cell).segmentControl.selectedSegmentIndex = [self.inAppMessageDictionary[item] integerValue];
     } else if (((SegmentCell *)cell).titleLabel != nil) {
-      self.inAppMessageDictionary[((SegmentCell *)cell).titleLabel.text] =  @(0);
+      NSString *cellText = ((SegmentCell *)cell).titleLabel.text;
+      self.inAppMessageDictionary[cellText] =  @(0);
+      // Keep the default image content as "fill" for Full IAMs
+      if (self.inAppMessageTypeSegment.selectedSegmentIndex == 2 && [cellText isEqualToString:ItemImageContentMode]) {
+        self.inAppMessageDictionary[cellText] =  @(1);
+      }
     }
   } else if ([item isEqualToString:ItemMessage] ||
              [item isEqualToString:ItemHeader] ||
              [item isEqualToString:ItemImageURL]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierButtonLabel withClass:[ButtonLabelCell class] tableView:tableView];
-    [((ButtonLabelCell *) cell).titleButton setTitle:item forState:UIControlStateNormal];
-    ((ButtonLabelCell *) cell).textField.text = self.inAppMessageDictionary[item];
-    ((ButtonLabelCell *) cell).textField.delegate = self;
+    ButtonLabelCell *buttonLabelCell = ((ButtonLabelCell *) cell);
+    [buttonLabelCell.titleButton setTitle:item forState:UIControlStateNormal];
+    buttonLabelCell.textField.text = self.inAppMessageDictionary[item];
+    buttonLabelCell.textField.delegate = self;
   } else if ([item isEqualToString:ItemIcon] ||
     [item isEqualToString:ItemClickActionURL] ||
     [item isEqualToString:ItemDuration]) {
@@ -157,10 +163,11 @@ static const int CustomInAppMessageDuration = 5;
       self.inAppMessageDictionary[item] = @"Testing";
     }
     
-    ((TextFieldCell *)cell).titleLabel.text = item;
-    ((TextFieldCell *)cell).textField.text = self.inAppMessageDictionary[item];
-    ((TextFieldCell *)cell).textField.delegate = self;
-    ((TextFieldCell *)cell).textField.tag = [item isEqualToString:ItemIcon] ? textFieldTagNumber : 0;
+    TextFieldCell *textFieldCell = ((TextFieldCell *)cell);
+    textFieldCell.titleLabel.text = item;
+    textFieldCell.textField.text = self.inAppMessageDictionary[item];
+    textFieldCell.textField.delegate = self;
+    textFieldCell.textField.tag = [item isEqualToString:ItemIcon] ? textFieldTagNumber : 0;
   } else if ([item isEqualToString:ItemHeaderColor] ||
              [item isEqualToString:ItemBodyColor] ||
              [item isEqualToString:ItemBackgroundColor] ||
@@ -170,16 +177,18 @@ static const int CustomInAppMessageDuration = 5;
              [item isEqualToString:ItemChevronColor] ||
              [item isEqualToString:ItemCloseButtonColor]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierColor withClass:[ColorCell class] tableView:tableView];
-    ((ColorCell *)cell).titleLabel.text = item;
-    [(ColorCell *) cell setColor:self.inAppMessageDictionary[item]];
-    ((ColorCell *)cell).opacitySlider.value = 1.0;
-    ((ColorCell *)cell).opacitySlider.tintColor = [ColorUtils stopwatchBlueColor];
-    ((ColorCell *)cell).colorButton.backgroundColor = [((ColorCell *) cell).colorButton.backgroundColor colorWithAlphaComponent:1.0];
+    ColorCell *colorCell = ((ColorCell *)cell);
+    colorCell.titleLabel.text = item;
+    [colorCell setColor:self.inAppMessageDictionary[item]];
+    colorCell.opacitySlider.value = 1.0;
+    colorCell.opacitySlider.tintColor = [ColorUtils stopwatchBlueColor];
+    colorCell.colorButton.backgroundColor = [((ColorCell *) cell).colorButton.backgroundColor colorWithAlphaComponent:1.0];
   } else if ([item isEqualToString:ItemHideChevron] ||
              [item isEqualToString:ItemImageGraphic]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierChevron withClass:[SwitchCell class] tableView:tableView];
-    ((SwitchCell *)cell).titleLabel.text = item;
-    ((SwitchCell *) cell).hideChevronSwitch.on = [self.inAppMessageDictionary[item] boolValue];
+    SwitchCell *switchCell = ((SwitchCell *)cell);
+    switchCell.titleLabel.text = item;
+    switchCell.hideChevronSwitch.on = [self.inAppMessageDictionary[item] boolValue];
   } else if ([item isEqualToString:ItemButtonOne] ||
              [item isEqualToString:ItemButtonTwo]) {
     cell = [self createCellWithCellIdentifier:CellIdentifierButton withClass:[InAppMessageButtonCell class] tableView:tableView];

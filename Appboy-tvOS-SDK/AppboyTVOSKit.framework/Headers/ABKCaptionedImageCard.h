@@ -1,7 +1,7 @@
 #import "ABKCard.h"
 
 /*
- * Appboy Public API: ABKCaptionedImageCard
+ * Braze Public API: ABKCaptionedImageCard
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKCaptionedImageCard : ABKCard <NSCoding>

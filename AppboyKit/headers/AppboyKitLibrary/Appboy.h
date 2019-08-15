@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.16.0"
+#define APPBOY_SDK_VERSION @"3.17.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -29,7 +29,6 @@
 @class ABKFeedback;
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKIDFADelegate;
-@protocol ABKAppboyEndpointDelegate;
 @protocol ABKURLDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -66,10 +65,9 @@ extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 extern NSString *const ABKIDFADelegateKey;
 
 /*!
- * This key can be set to an instance of a class that conforms to the ABKAppboyEndpointDelegate protocol, which can be used to modify or substitute the API and Resource
- * (e.g. image) URIs used by the Braze SDK.
+ * This key can be set to a custom API endpoint. This gets sent in the format sdk.api.braze.eu.
  */
-extern NSString *const ABKAppboyEndpointDelegateKey;
+extern NSString *const ABKEndpointKey;
 
 /*!
  * This key can be set to an instance of a class that conforms to the ABKURLDelegate protocol, allowing it to handle URLs in a custom way.
@@ -149,7 +147,8 @@ typedef NS_ENUM(NSInteger , ABKSDKFlavor) {
   UNITY = 1,
   REACT,
   CORDOVA,
-  XAMARIN ,
+  XAMARIN,
+  FLUTTER,
   SEGMENT,
   MPARTICLE
 };
@@ -262,13 +261,6 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
 * policy, invoke <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue]</pre>.
 */
 @property ABKRequestProcessingPolicy requestProcessingPolicy;
-
-
-/*!
- * A class conforming to the ABKAppboyEndpointDelegate protocol can be set to route Braze API and Resource traffic in a custom way.
- * For example, one might proxy Braze image downloads by having the getResourceEndpoint method return a proxy URI.
- */
-@property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
 
 /*!
  * A class extending ABKIDFADelegate can be set to provide the IDFA to Braze.

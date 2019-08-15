@@ -1,7 +1,7 @@
 #import "ABKCard.h"
 
 /*
- * Appboy Public API: ABKCrossPromotionCard
+ * Braze Public API: ABKCrossPromotionCard
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKCrossPromotionCard : ABKCard <NSCoding>

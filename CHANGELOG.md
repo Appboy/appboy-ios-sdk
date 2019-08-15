@@ -1,3 +1,11 @@
+- **Important:** If you are upgrading to `3.14.1`, `3.15.0`, or `3.16.0` and using `ABKAppboyEndpointDelegate`, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.
+
+## 3.17.0
+
+##### Breaking
+- Removes `ABKAppboyEndpointDelegate`. 
+  - You can now set the endpoint at runtime by setting the value of `ABKEndpointKey` in `appboyOptions` to your custom endpoint (ex. `sdk.api.braze.eu`) at initialization.
+
 ## 3.16.0
 
 - **Important:** If you are using `ABKAppboyEndpointDelegate`, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.

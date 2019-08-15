@@ -1,6 +1,5 @@
 #import "Appboy.h"
 #import "ABKUser.h"
-#import "ABKAppboyEndpointDelegate.h"
 #import "ABKFacebookUser.h"
 #import "ABKTwitterUser.h"
 #import "ABKAttributionData.h"
@@ -9,9 +8,14 @@
 #import "ABKCard.h"
 #import "ABKBannerCard.h"
 #import "ABKCaptionedImageCard.h"
-#import "ABKCrossPromotionCard.h"
 #import "ABKClassicCard.h"
 #import "ABKTextAnnouncementCard.h"
+
+// Content Card
+#import "ABKContentCard.h"
+#import "ABKBannerContentCard.h"
+#import "ABKCaptionedImageContentCard.h"
+#import "ABKClassicContentCard.h"
 
 // Feedback
 #import "ABKFeedback.h"
@@ -25,27 +29,19 @@
 #import "ABKInAppMessageFull.h"
 #import "ABKInAppMessageHTML.h"
 #import "ABKInAppMessageHTMLFull.h"
+#import "ABKInAppMessageControl.h"
 #import "ABKInAppMessageControllerDelegate.h"
 #import "ABKInAppMessageController.h"
-
-#import "ABKInAppMessageView.h"
-#import "ABKInAppMessageViewController.h"
-#import "ABKInAppMessageSlideupViewController.h"
-#import "ABKInAppMessageImmersiveViewController.h"
-#import "ABKInAppMessageModalViewController.h"
-#import "ABKInAppMessageFullViewController.h"
-#import "ABKInAppMessageHTMLViewController.h"
-#import "ABKInAppMessageHTMLFullViewController.h"
 #import "ABKInAppMessageButton.h"
-#import "ABKInAppMessageWindowController.h"
+#import "ABKInAppMessageHTMLJSBridge.h"
+#import "ABKInAppMessageHTMLJSInterface.h"
+#import "ABKInAppMessageUIControlling.h"
 
 // News Feed
-#import "ABKFeedViewController.h"
-#import "ABKFeedViewControllerGenericContext.h"
-#import "ABKFeedViewControllerModalContext.h"
-#import "ABKFeedViewControllerNavigationContext.h"
-#import "ABKFeedViewControllerPopoverContext.h"
 #import "ABKFeedController.h"
+
+// Content Cards Feed
+#import "ABKContentCardsController.h"
 
 // IDFA
 #import "ABKIdentifierForAdvertisingProvider.h"
@@ -56,8 +52,8 @@
 
 // Location
 #import "ABKLocationManager.h"
+#import "ABKLocationManagerProvider.h"
 
 #import "ABKURLDelegate.h"
-#import "ABKPushURIDelegate.h"
 #import "ABKPushUtils.h"
 #endif

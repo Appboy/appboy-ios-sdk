@@ -3,7 +3,6 @@
 
 #import "AppDelegate.h"
 #import "ABKPushUtils.h"
-#import "OverrideEndpointDelegate.h"
 #import "IDFADelegate.h"
 #import "Branch.h"
 #import "AlertControllerUtils.h"
@@ -28,21 +27,16 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
   NSString *overrideApiKey = [preferences stringForKey:OverrideApiKeyStorageKey];
   NSString *overrideEndpoint = [preferences stringForKey:OverrideEndpointStorageKey];
-  
-  OverrideEndpointDelegate* endpointDelegate = nil;
-  
-  if (overrideEndpoint != nil && overrideEndpoint.length != 0) {
-    endpointDelegate = [[OverrideEndpointDelegate alloc] initWithEndpoint:overrideEndpoint];
-  }
 
   NSString *apiKeyToUse = (overrideApiKey != nil && overrideApiKey.length != 0) ? overrideApiKey : AppboyApiKey;
   
   NSMutableDictionary *appboyOptions = [NSMutableDictionary dictionary];
   appboyOptions[ABKRequestProcessingPolicyOptionKey] = @(ABKAutomaticRequestProcessing);
   appboyOptions[ABKMinimumTriggerTimeIntervalKey] = @(5);
-  if (endpointDelegate != nil) {
-    NSLog(@"Setting ABKAppboyEndpointDelegate for app run.");
-    appboyOptions[ABKAppboyEndpointDelegateKey] = endpointDelegate;
+  if (overrideEndpoint != nil) {
+    appboyOptions[ABKEndpointKey] = overrideEndpoint;
+  } else {
+    appboyOptions[ABKEndpointKey] = @"sondheim.appboy.com";
   }
   
   IDFADelegate *idfaDelegate = [[IDFADelegate alloc] init];

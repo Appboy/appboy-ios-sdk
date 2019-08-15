@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 /*
- * Appboy Public API: ABKTwitterUser
+ * Braze Public API: ABKTwitterUser
  */
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKTwitterUser : NSObject
