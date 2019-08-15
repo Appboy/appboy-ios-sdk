@@ -1,5 +1,7 @@
 ## 3.16.0
 
+- **Important:** If you are using `ABKAppboyEndpointDelegate`, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.
+
 ##### Breaking
 - Removes the methods: `allowRequestWhenInUseLocationPermission` and `allowRequestAlwaysPermission` from `ABKLocationManager`.
   - To request when in use location permission, use the following code:
@@ -21,6 +23,8 @@
 - Minor changes to the logic of `ABKManualRequestProcessing`. The original `ABKManualRequestProcessing` had specific exceptions and behaved more like `ABKAutomaticRequestProcessingExceptForDataFlush` in practice. As a result, the two policies have been merged into `ABKManualRequestProcessing`. Note that the new definition of `ABKManualRequestProcessing` is that periodic automatic data flushes are disabled. Other requests important to basic Braze functionality will still occur.
 
 ## 3.15.0
+
+- **Important:** If you are using `ABKAppboyEndpointDelegate`, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.
 
 ##### Breaking
 - Adds support for SDWebImage version 5.0.
