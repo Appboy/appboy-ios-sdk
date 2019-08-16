@@ -125,8 +125,6 @@ Properties</h2></td></tr>
 <tr class="separator:ad7b7b8185eb9fa9c5a0e7dc40169de77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81cdd59419d76738927c123f1d06fc1a"><td class="memItemLeft" align="right" valign="top">ABKRequestProcessingPolicy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">requestProcessingPolicy</a></td></tr>
 <tr class="separator:a81cdd59419d76738927c123f1d06fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a248ba35c0be127d4a05b3e1cda7feafe"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#a248ba35c0be127d4a05b3e1cda7feafe">appboyEndpointDelegate</a></td></tr>
-<tr class="separator:a248ba35c0be127d4a05b3e1cda7feafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf9f0355099652da6068eaa40dec669d"><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_a_b_k_i_d_f_a_delegate-p.html">ABKIDFADelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#abf9f0355099652da6068eaa40dec669d">idfaDelegate</a></td></tr>
 <tr class="separator:abf9f0355099652da6068eaa40dec669d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3225751b163e9dca3efe040eed3d2c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_appboy.html#aa3225751b163e9dca3efe040eed3d2c3">inAppMessageController</a></td></tr>
@@ -277,13 +275,7 @@ SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a clas
       </table>
 </div><div class="memdoc">
 <p>Enqueues a data flush request for the current user and immediately starts processing the network queue. Note that if the queue already contains another request for the current user, that the new data flush request will be merged into the already existing request and only one will execute for that user.</p>
-<p>If you're using ABKManualRequestProcessing, you need to call this after each network related activity in your app. This includes:</p>
-<ul>
-<li>Retrieving an updated feed and in-app message after a new session is opened or the user is changed. Braze will automatically add the request for new data to the network queue, you just need to give it permission to execute that request.</li>
-<li>Flushing updated user data (custom events, custom attributes, as well as automatically collected data).</li>
-<li>Flushing automatic analytics events such as starting and ending sessions.</li>
-</ul>
-<p>If you're using ABKAutomaticRequestProcessingExceptForDataFlush, you only need to call this when you want to force an immediate flush of updated user data. </p>
+<p>If you're using ABKManualRequestProcessing, you only need to call this when you want to force an immediate flush of updated user data. </p>
 
 </div>
 </div>
@@ -1145,27 +1137,6 @@ SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a clas
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a248ba35c0be127d4a05b3e1cda7feafe"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id&lt;<a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a>&gt;) appboyEndpointDelegate</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">weak</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>A class conforming to the <a class="el" href="protocol_a_b_k_appboy_endpoint_delegate-p.html">ABKAppboyEndpointDelegate</a> protocol can be set to route Braze API and Resource traffic in a custom way. For example, one might proxy Braze image downloads by having the getResourceEndpoint method return a proxy URI. </p>
-
-</div>
-</div>
 <a class="anchor" id="aba673cda72bad3e386dad6a24236d104"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1320,7 +1291,7 @@ SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 23 2019 14:04:54 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 15 2019 21:37:03 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

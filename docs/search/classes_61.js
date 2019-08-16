@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['abkappboyendpointdelegate_2dp',['ABKAppboyEndpointDelegate-p',['../protocol_a_b_k_appboy_endpoint_delegate-p.html',1,'']]],
   ['abkattributiondata',['ABKAttributionData',['../interface_a_b_k_attribution_data.html',1,'']]],
   ['abkbannercard',['ABKBannerCard',['../interface_a_b_k_banner_card.html',1,'']]],
   ['abkbannercontentcard',['ABKBannerContentCard',['../interface_a_b_k_banner_content_card.html',1,'']]],

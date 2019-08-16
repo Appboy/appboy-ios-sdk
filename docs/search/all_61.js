@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['abkappboyendpointdelegate_2dp',['ABKAppboyEndpointDelegate-p',['../protocol_a_b_k_appboy_endpoint_delegate-p.html',1,'']]],
   ['abkattributiondata',['ABKAttributionData',['../interface_a_b_k_attribution_data.html',1,'']]],
   ['abkbannercard',['ABKBannerCard',['../interface_a_b_k_banner_card.html',1,'']]],
   ['abkbannercontentcard',['ABKBannerContentCard',['../interface_a_b_k_banner_content_card.html',1,'']]],
@@ -45,10 +44,7 @@ var searchData=
   ['addlocationcustomattributewithkey_3alatitude_3alongitude_3a',['addLocationCustomAttributeWithKey:latitude:longitude:',['../interface_a_b_k_user.html#a2398a28d3f324c60b0e7bf38105e8116',1,'ABKUser']]],
   ['addtocustomattributearraywithkey_3avalue_3a',['addToCustomAttributeArrayWithKey:value:',['../interface_a_b_k_user.html#a92f4b6e8b77baf80a1c9d45c479a59b3',1,'ABKUser']]],
   ['advertisingidentifierstring',['advertisingIdentifierString',['../protocol_a_b_k_i_d_f_a_delegate-p.html#a45d45ee03c023d4768bfbecc89f6154f',1,'ABKIDFADelegate-p']]],
-  ['allowrequestalwayspermission',['allowRequestAlwaysPermission',['../interface_a_b_k_location_manager.html#ade02eaa6bd5d1be79e5c4edc4cd3805f',1,'ABKLocationManager']]],
-  ['allowrequestwheninuselocationpermission',['allowRequestWhenInUseLocationPermission',['../interface_a_b_k_location_manager.html#ae2d4e1f21c6f11b21d435f1809126197',1,'ABKLocationManager']]],
   ['appboy',['Appboy',['../interface_appboy.html',1,'']]],
-  ['appboyendpointdelegate',['appboyEndpointDelegate',['../interface_appboy.html#a248ba35c0be127d4a05b3e1cda7feafe',1,'Appboy']]],
   ['appboyurldelegate',['appboyUrlDelegate',['../interface_appboy.html#aba673cda72bad3e386dad6a24236d104',1,'Appboy']]],
   ['assetslocaldirectorypath',['assetsLocalDirectoryPath',['../interface_a_b_k_in_app_message_h_t_m_l.html#a9fa754d784c64b5f18f01b3b2a5da787',1,'ABKInAppMessageHTML']]],
   ['assetszipremoteurl',['assetsZipRemoteUrl',['../interface_a_b_k_in_app_message_h_t_m_l.html#abd7837a68cc883e2ceb05d082f95674b',1,'ABKInAppMessageHTML']]],
