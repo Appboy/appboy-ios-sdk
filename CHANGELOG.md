@@ -59,6 +59,8 @@
 
 ## 3.14.0
 
+- **Important:** If you are using `ABKAppboyEndpointDelegate` and plan to upgrade to 3.14.1, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.
+
 ##### Added
 - Improves the look and feel of In-App Messages to adhere to the latest UX and UI best practices. Changes affect font sizes, padding, and responsiveness across all message types. Now supports button border styling.
 
