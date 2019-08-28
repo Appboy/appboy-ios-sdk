@@ -11,7 +11,6 @@ var searchData=
   ['abkcontentcard',['ABKContentCard',['../interface_a_b_k_content_card.html',1,'']]],
   ['abkcontentcardscontroller',['ABKContentCardsController',['../interface_a_b_k_content_cards_controller.html',1,'']]],
   ['abkfacebookuser',['ABKFacebookUser',['../interface_a_b_k_facebook_user.html',1,'']]],
-  ['abkfeedback',['ABKFeedback',['../interface_a_b_k_feedback.html',1,'']]],
   ['abkfeedcontroller',['ABKFeedController',['../interface_a_b_k_feed_controller.html',1,'']]],
   ['abkidentifierforadvertisingprovider',['ABKIdentifierForAdvertisingProvider',['../interface_a_b_k_identifier_for_advertising_provider.html',1,'']]],
   ['abkidfadelegate_2dp',['ABKIDFADelegate-p',['../protocol_a_b_k_i_d_f_a_delegate-p.html',1,'']]],

@@ -151,17 +151,8 @@ Properties</h2></td></tr>
 <tr class="separator:aa4c66ed060890c68690fd629a62ebfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50403068be47c0acba9943583e259fa"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ab50403068be47c0acba9943583e259fa">logPurchase:inCurrency:atPrice:withQuantity:andProperties:</a></td></tr>
 <tr class="separator:ab50403068be47c0acba9943583e259fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade15df68ebbb56e7b92de8969b496b18"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ade15df68ebbb56e7b92de8969b496b18">submitFeedback:message:isReportingABug:</a></td></tr>
-<tr class="separator:ade15df68ebbb56e7b92de8969b496b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4484c2f83fa592697a9a0559b2337a86"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a4484c2f83fa592697a9a0559b2337a86">submitFeedback:withCompletionHandler:</a></td></tr>
-<tr class="separator:a4484c2f83fa592697a9a0559b2337a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f5b55cdf6b2f18511f23f4bd3ce8f2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a></td></tr>
 <tr class="separator:a90f5b55cdf6b2f18511f23f4bd3ce8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1b27b28d7fa2feaa12fd178777b4a54"><td class="memItemLeft" align="right" valign="top">(&quot;The feedback feature is <br class="typebreak"/>
-disabled for new accounts, and <br class="typebreak"/>
-will be removed in a future <br class="typebreak"/>
-SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#ab1b27b28d7fa2feaa12fd178777b4a54">__deprecated_msg</a></td></tr>
-<tr class="separator:ab1b27b28d7fa2feaa12fd178777b4a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebe28cb65d1d31a2211c0bc528c4ccb5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">logContentCardsDisplayed</a></td></tr>
 <tr class="separator:aebe28cb65d1d31a2211c0bc528c4ccb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680549ab7dba8c5971fd9a7fd938b452"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a></td></tr>
@@ -188,22 +179,6 @@ SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a clas
 <tr class="separator:afbcf6edbcf47acf6f03fa4fe02168149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="ab1b27b28d7fa2feaa12fd178777b4a54"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (&quot;The feedback feature is disabled for new accounts, and will be removed in a future SDK release.&quot;) __deprecated_msg </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report impressions of the feedback page back to Braze with this method so that your campaign reporting features still work in the dashboard. </p>
-
-</div>
-</div>
 <a class="anchor" id="ac8b369b40e15860b0ec18c0f4b46ac69"></a>
 <div class="memitem">
 <div class="memproto">
@@ -950,94 +925,6 @@ SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a clas
 
 </div>
 </div>
-<a class="anchor" id="ade15df68ebbb56e7b92de8969b496b18"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) submitFeedback: </td>
-          <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
-          <td class="paramname"><em>replyToEmail</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">message:</td>
-          <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
-          <td class="paramname"><em>message</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">isReportingABug:</td>
-          <td></td>
-          <td class="paramtype">(&quot;The feedback feature is disabled for new)&#160;</td>
-          <td class="paramname"><em>accounts</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">(and will be removed in a future SDK release.&quot;)&#160;</td>
-          <td class="paramname"><em>__deprecated_msg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">replyToEmail</td><td>The email address to send feedback replies to. </td></tr>
-    <tr><td class="paramname">message</td><td>The message input by the user. Must be non-null and non-empty. </td></tr>
-    <tr><td class="paramname">isReportingABug</td><td>Flag indicating whether or not the feedback describes a bug, or is merely a suggestion/question. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a boolean indicating whether or not the feedback item was successfully queued for delivery.</dd></dl>
-<p>Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard. The request to submit feedback is made immediately, however, this method does not block and will return as soon as the feedback request is placed on the network queue. </p>
-
-</div>
-</div>
-<a class="anchor" id="a4484c2f83fa592697a9a0559b2337a86"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) submitFeedback: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_a_b_k_feedback.html">ABKFeedback</a> *)&#160;</td>
-          <td class="paramname"><em>feedback</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">withCompletionHandler:</td>
-          <td></td>
-          <td class="paramtype">(&quot;The feedback feature is disabled for new)&#160;</td>
-          <td class="paramname"><em>accounts</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">(and will be removed in a future SDK release.&quot;)&#160;</td>
-          <td class="paramname"><em>__deprecated_msg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">feedback</td><td>The feedback object with feedback message, email, and is-bug flag. </td></tr>
-    <tr><td class="paramname">completionHandler</td><td>The block to execute when the feedback sending process is complete. An ABKFeedbackSentResult enum will be passed to the block indicating if the feedback was sent successfully.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard. The request to submit feedback is made immediately. However, this method does not block and will return as soon as the feedback request is placed on the network queue. </p>
-
-</div>
-</div>
 <a class="anchor" id="aa5a1fccaae11905e6dc2d3fab26879ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1291,7 +1178,7 @@ SDK release.&quot;)&#160;</td><td class="memItemRight" valign="bottom">- <a clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 15 2019 21:37:03 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 28 2019 14:02:40 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
