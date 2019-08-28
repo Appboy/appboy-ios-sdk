@@ -21,10 +21,6 @@
   [[Appboy sharedInstance].user setCustomAttributeWithKey:@"tvCustomAttribute" andBOOLValue:YES];
 }
 
-- (IBAction)feedbackClick:(id)sender {
-  [[Appboy sharedInstance] submitFeedback:@"tvuser@tv.com" message:@"great tvos app!" isReportingABug:NO];
-}
-
 - (IBAction)feedCardsClick:(id)sender {
   NSArray *feedCards =  [[Appboy sharedInstance].feedController getNewsFeedCards];
   for (ABKCard *card in feedCards) {

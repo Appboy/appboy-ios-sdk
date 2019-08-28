@@ -5,7 +5,6 @@
 - (void)changeUser:(NSString *)userId;
 - (void)logCustomEventsAndPurchases;
 - (void)logAttributes;
-- (void)submitFeedback;
 @end
 
 @interface AppboyBridge : NSObject <AppboyBridgeExport>
@@ -13,5 +12,4 @@
 - (void)changeUser:(NSString *)userId;
 - (void)logCustomEventsAndPurchases;
 - (void)logAttributes;
-- (void)submitFeedback;
 @end

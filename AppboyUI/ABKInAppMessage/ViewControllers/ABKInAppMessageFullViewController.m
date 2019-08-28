@@ -6,9 +6,7 @@
 static const CGFloat FullViewInIPadCornerRadius = 8.0f;
 static const CGFloat MaxLongEdge = 720.0f;
 static const CGFloat MaxShortEdge = 450.0f;
-static const CGFloat TextPaddingForNormalRectScreen = 25.0f;
-static const CGFloat TextPaddingForLandscapeNotchedPhone = 45.0f;
-static const CGFloat CloseXTrailingPaddingLandscapeNotchedPhone = 15.0f;
+static const CGFloat CloseXPadding = 15.0f;
 
 @implementation ABKInAppMessageFullViewController
 
@@ -57,7 +55,7 @@ static const CGFloat CloseXTrailingPaddingLandscapeNotchedPhone = 15.0f;
     [self.view.superview addConstraints:@[leadConstraint, trailConstraint]];
   }
   
-  NSString *heightVisualFormat = self.isiPad? @"V:|-(>=0)-[view]-(>=0)-|" : @"V:|-[view]-|";
+  NSString *heightVisualFormat = self.isiPad? @"V:|-(>=0)-[view]-(>=0)-|" : @"V:|[view]|";
   NSArray *heightConstraints = [NSLayoutConstraint constraintsWithVisualFormat:heightVisualFormat
                                                                        options:0
                                                                        metrics:nil
@@ -67,23 +65,18 @@ static const CGFloat CloseXTrailingPaddingLandscapeNotchedPhone = 15.0f;
 
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
-  if ([ABKUIUtils isNotchedPhone]) {
-    UIInterfaceOrientation statusBarOrientation = [UIApplication sharedApplication].statusBarOrientation;
-    if (self.textsView != nil) {
-      CGFloat textPadding = UIInterfaceOrientationIsPortrait(statusBarOrientation) ?
-                            TextPaddingForNormalRectScreen : TextPaddingForLandscapeNotchedPhone;
-      self.textsViewLeadingConstraint.constant = textPadding;
-      self.textsViewTrailingConstraint.constant = textPadding;
-      self.headerLeadingConstraint.constant = textPadding;
-      self.headerTrailingConstraint.constant = textPadding;
-      self.messageLeadingConstraint.constant = textPadding;
-      self.messageTrailingConstraint.constant = textPadding;
+  // Close X should be equidistant from top and right in notched phones despite presence of (hidden) status bar
+  if (![ABKUIUtils isNotchedPhone]) {
+    if (!self.isiPad) {
+      CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
+      self.closeXButtonTopConstraint.constant = CloseXPadding - statusBarSize.height;
     }
-    self.closeXButtonTrailingConstraint.constant = UIInterfaceOrientationIsLandscape(statusBarOrientation) ?
-                                                   CloseXTrailingPaddingLandscapeNotchedPhone : 0;
+  } else {
+    // Move close x button slightly higher for notched phones in portrait
+    BOOL isPortrait = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
+    self.closeXButtonTopConstraint.constant = isPortrait ? 0.0f : CloseXPadding;
   }
 }
-
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];

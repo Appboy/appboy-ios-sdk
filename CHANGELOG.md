@@ -1,4 +1,18 @@
-- **Important:** If you are upgrading to `3.14.1`, `3.15.0`, or `3.16.0` and using `ABKAppboyEndpointDelegate`, you will need to replace `dev.appboy.com` with `sdk.iad-01.braze.com` in the `getApiEndpoint` method.
+## 3.18.0
+
+##### Breaking
+- Automatic Braze location collection is now disabled by default. If you choose to use our location collection, you must explicitly enable location collection.
+  - You can do this in the plist by adding the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` dictionary, add the `EnableAutomaticLocationCollection` boolean subentry and set the value to `YES`.
+  - You can also enable location at runtime by setting `ABKEnableAutomaticLocationCollectionKey` to `YES` in `appboyOptions`.
+- Removes the Feedback feature from the SDK. The `Feedback` subspec and all Feedback methods on the SDK, including `[[Appboy sharedInstance] submitFeedback]` and `[[Appboy sharedInstance] logFeedbackDisplayed]`, are removed.
+
+##### Changed
+- Improves support for in-app messages on “notched” devices (for example, iPhone X, Pixel 3XL). Full-screen messages now expand to fill the entire screen of any phone, while covering the status bar.
+
+##### Added
+- Adds the ability to enable Braze Geofences without enabling Braze location collection. You can set this in the plist by adding the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` dictionary, add the `EnableGeofences` boolean subentry and set the value to `YES` to enable Braze Geofences. You can also enable geofences at runtime by setting `ABKEnableGeofencesKey` to `YES` in `appboyOptions`.
+  - If this key is not set, it will default to the status of automatic location collection (see breaking change above).
+  - Note that Braze Geofences will continue to work on existing integrations if location collection is enabled and this new configuration is not present. This new configuration is intended for integrations that want Braze Geofences, but not location collection enabled as well.
 
 ## 3.17.0
 

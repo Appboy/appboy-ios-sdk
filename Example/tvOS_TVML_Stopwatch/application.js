@@ -34,7 +34,6 @@ App.onLaunch = function(options) {
     alert.getElementById("changeUserButton").addEventListener("select", changeUser);
     alert.getElementById("logEventsAndPurchasesButton").addEventListener("select", logEventsAndPurchases);
     alert.getElementById("logAttributesButton").addEventListener("select", logAttributes);
-    alert.getElementById("submitFeedbackButton").addEventListener("select", submitFeedback);
     navigationDocument.pushDocument(alert);
 }
 
@@ -66,9 +65,6 @@ var logEventsAndPurchases = function() {
 var logAttributes = function() {
   AppboyBridge.logAttributes();
 }
-var submitFeedback = function() {
-  AppboyBridge.submitFeedback();
-}
 
 /**
  * This convenience funnction returns an alert template, which can be used to present errors to the user.
@@ -87,9 +83,6 @@ var createAlert = function(title, description) {
               </button>
               <button id="logAttributesButton">
                 <text>Log Attributes</text>
-              </button>
-              <button id="submitFeedbackButton">
-                <text>Submit Feedback</text>
               </button>
           </alertTemplate>
         </document>`

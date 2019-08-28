@@ -1,13 +1,12 @@
 #import <Foundation/Foundation.h>
-#import "FeedAndFeedbackUIViewController.h"
-#import "AppboyFeedback.h"
+#import "FeedUIViewController.h"
 #import "UIViewController+Keyboard.h"
 #import "ABKNewsFeedTableViewController.h"
 #import "ABKNewsFeedViewController.h"
 #import "AlertControllerUtils.h"
 #import "ABKContentCardsViewController.h"
 
-@interface FeedAndFeedbackViewController ()
+@interface FeedUIViewController ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
@@ -16,7 +15,7 @@
 
 @end
 
-@implementation FeedAndFeedbackViewController
+@implementation FeedUIViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -69,23 +68,6 @@
                                       [Appboy sharedInstance].contentCardsController.unviewedContentCardCount,
                                       [Appboy sharedInstance].contentCardsController.contentCardCount];
   [self.view setNeedsDisplay];
-}
-
-#pragma mark - News and Feedback Button
-// Example of Braze in one action: a button that opens the News Feed page, on which there is a Feedback button
-
-- (void)openFeedbackFromNavigationFeed:(id)sender {
-  // Navigation context
-  ABKNavigationFeedbackViewController *navFeedback = [[ABKNavigationFeedbackViewController alloc] init];
-  [self.newsAndFeedbackNavigationController pushViewController:navFeedback animated:YES];
-}
-
-- (IBAction)newsAndFeedbackButtonTapped:(id)sender {
-  [self presentViewController:self.newsAndFeedbackNavigationController animated:YES completion:nil];
-}
-
-- (void)dismissNewsAndFeedbackModalView:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Categoried News
@@ -181,33 +163,6 @@
   contentCards.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   contentCards.navigationItem.title = @"Stopwatch Navigation Cards";
   [self.navigationController pushViewController:contentCards animated:YES];
-}
-
-# pragma mark - Feedback
-
-- (IBAction)submitInstantFeedback:(id)sender {
-  ABKFeedback* feedback = [[ABKFeedback alloc] initWithFeedbackMessage:@"Submitting feedback"
-                                                                email:@"test@mail.com"
-                                                                isBug:NO];
-  [[Appboy sharedInstance] submitFeedback:feedback withCompletionHandler:^(ABKFeedbackSentResult feedbackSentResult) {
-    NSString *feedbackAlertMessage = nil;
-    if (feedbackSentResult != ABKFeedbackSentSuccessfully) {
-      feedbackAlertMessage = NSLocalizedString(@"Appboy.Stopwatch.feedback.fail", nil);
-    } else {
-      feedbackAlertMessage = NSLocalizedString(@"Feedback submitted", nil);
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [AlertControllerUtils presentTemporaryAlertWithTitle:nil
-                                                     message:feedbackAlertMessage
-                                                presentingVC:self];
-    });
-  }];
-}
-
-// An example modal feedback view controller
-- (IBAction)modalFeedbackButtonTapped:(id)sender {
-  ABKModalFeedbackViewController *modalFeedback = [[ABKModalFeedbackViewController alloc] init];
-  [self presentViewController:modalFeedback animated:YES completion:nil];
 }
 
 #pragma mark - Transition

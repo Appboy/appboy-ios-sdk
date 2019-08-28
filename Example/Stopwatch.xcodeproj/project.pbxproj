@@ -60,7 +60,7 @@
 		D4139BDD1CBD88C100CA3307 /* IAM@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD61CBD88C100CA3307 /* IAM@2x.png */; };
 		D4139BDF1CBD88C100CA3307 /* newsfeed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD81CBD88C100CA3307 /* newsfeed@2x.png */; };
 		D4139BE01CBD88C100CA3307 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD91CBD88C100CA3307 /* user@2x.png */; };
-		D4139BEC1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */; };
+		D4139BEC1CBDA4F200CA3307 /* FeedUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */; };
 		D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41D8F731CB70A4600D622EF /* ContainerViewController.m */; };
 		D4992FE81CD4126D007CC304 /* bolt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE11CD4126D007CC304 /* bolt@3x.png */; };
 		D4992FEB1CD4126D007CC304 /* IAM@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE41CD4126D007CC304 /* IAM@3x.png */; };
@@ -230,8 +230,8 @@
 		D4139BD61CBD88C100CA3307 /* IAM@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IAM@2x.png"; sourceTree = "<group>"; };
 		D4139BD81CBD88C100CA3307 /* newsfeed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsfeed@2x.png"; sourceTree = "<group>"; };
 		D4139BD91CBD88C100CA3307 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
-		D4139BEA1CBDA4E500CA3307 /* FeedAndFeedbackUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedAndFeedbackUIViewController.h; sourceTree = "<group>"; };
-		D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedAndFeedbackUIViewController.m; sourceTree = "<group>"; };
+		D4139BEA1CBDA4E500CA3307 /* FeedUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedUIViewController.h; sourceTree = "<group>"; };
+		D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedUIViewController.m; sourceTree = "<group>"; };
 		D41D8F701CB7049400D622EF /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		D41D8F731CB70A4600D622EF /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		D4992FE11CD4126D007CC304 /* bolt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bolt@3x.png"; sourceTree = "<group>"; };
@@ -458,8 +458,8 @@
 				D411F3101CD0355200100702 /* CustomTabBarController.h */,
 				D411F3111CD0355200100702 /* CustomTabBarController.m */,
 				4E3178751AC49363006C88B4 /* CustomInAppMessageClasses */,
-				D4139BEA1CBDA4E500CA3307 /* FeedAndFeedbackUIViewController.h */,
-				D4139BEB1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m */,
+				D4139BEA1CBDA4E500CA3307 /* FeedUIViewController.h */,
+				D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */,
 				D400EBF11CC86A6100550AD8 /* EventsViewController.h */,
 				D400EBF21CC86A6100550AD8 /* EventsViewController.m */,
 				4E6D661519DCC18F009983AD /* Images.xcassets */,
@@ -692,7 +692,7 @@
 				E32835A91CC6C6F200E2C2DE /* Sources */,
 				E32835AA1CC6C6F200E2C2DE /* Frameworks */,
 				E32835AB1CC6C6F200E2C2DE /* Resources */,
-				844AFB99532805F8EB8670E6 /* [CP] Embed Pods Frameworks */,
+				EFE0908D64B66A476837A322 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -728,7 +728,7 @@
 				E397F4091CC5BA540095A3ED /* Sources */,
 				E397F40A1CC5BA540095A3ED /* Frameworks */,
 				E397F40B1CC5BA540095A3ED /* Resources */,
-				B19A64417CAFEFED4727775F /* [CP] Embed Pods Frameworks */,
+				EBD201D681FAD3BCE256EBB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -991,84 +991,6 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/zh-TW.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/zh.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyKit/Appboy.bundle",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ABKModalFeedbackViewController.xib",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ABKNavigationFeedbackViewController.xib",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ar.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/Base.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/da.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/de.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/en.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/es-419.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/es-MX.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/es.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/et.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/fi.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/fil.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/fr.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/he.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/hi.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/id.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/images/checkmark-bg.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/images/checkmark-bg@2x.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/images/checkmark.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/images/checkmark@2x.png",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/it.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ja.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/km.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ko.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/lo.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ms.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/my.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/nb.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/nl.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/pl.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/pt-PT.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/pt.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ru.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/sv.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/th.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/vi.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-Hans.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-Hant.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-HK.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-TW.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh.lproj/AppboyFeedbackLocalizable.strings",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ar.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/Base.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/da.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/de.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/en.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/es-419.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/es-MX.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/es.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/et.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/fi.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/fil.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/fr.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/he.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/hi.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/id.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/it.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ja.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/km.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ko.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/lo.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ms.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/my.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/nb.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/nl.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/pl.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/pt-PT.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/pt.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/ru.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/sv.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/th.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/vi.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-Hans.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-Hant.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-HK.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh-TW.lproj",
-				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKFeedback/Resources/zh.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKInAppMessage/Resources/ABKInAppMessageFullViewController.xib",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKInAppMessage/Resources/ABKInAppMessageHTMLFullViewController.xib",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKInAppMessage/Resources/ABKInAppMessageModalViewController.xib",
@@ -1210,13 +1132,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-TW.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Appboy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKModalFeedbackViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKNavigationFeedbackViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppboyFeedbackLocalizable.strings",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark-bg.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark-bg@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/checkmark@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKInAppMessageFullViewController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKInAppMessageHTMLFullViewController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ABKInAppMessageModalViewController.nib",
@@ -1264,24 +1179,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		844AFB99532805F8EB8670E6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		900526782047A1F9CA756AF9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1302,24 +1199,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B19A64417CAFEFED4727775F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
-				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCA6610EC11C9A514381C499 /* [CP] Check Pods Manifest.lock */ = {
@@ -1344,6 +1223,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EBD201D681FAD3BCE256EBB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFE0908D64B66A476837A322 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh",
+				"${PODS_ROOT}/../../../Appboy-tvOS-SDK/Appboy-tvOS-SDK/AppboyTVOSKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppboyTVOSKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1352,7 +1267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95EF511A173D5FD600C0D780 /* main.m in Sources */,
-				D4139BEC1CBDA4F200CA3307 /* FeedAndFeedbackUIViewController.m in Sources */,
+				D4139BEC1CBDA4F200CA3307 /* FeedUIViewController.m in Sources */,
 				D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */,
 				D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */,
 				ADDAFB912107C2080061C96E /* LocationAnnotation.m in Sources */,

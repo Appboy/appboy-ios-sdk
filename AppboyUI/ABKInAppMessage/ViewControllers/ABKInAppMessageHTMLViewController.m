@@ -32,9 +32,8 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   self.webView.delegate = self;
   self.webView.scrollView.bounces = NO;
   if (@available(iOS 11.0, *)) {
-    if (![ABKUIUtils isNotchedPhone]) {
-      [self.webView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-    }
+    // Cover status bar when showing HTML IAMs
+    [self.webView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
   }
   if (((ABKInAppMessageHTML *)self.inAppMessage).assetsLocalDirectoryPath != nil) {
     NSString *localPath = [((ABKInAppMessageHTML *)self.inAppMessage).assetsLocalDirectoryPath absoluteString];

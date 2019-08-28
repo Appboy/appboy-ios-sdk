@@ -16,7 +16,4 @@
 - (void)logAttributes {
   [[Appboy sharedInstance].user setLastName:@"West"];
 }
-- (void)submitFeedback {
-  [[Appboy sharedInstance] submitFeedback:@"tvosuser@appboy.com" message:@"Change the channel!" isReportingABug:YES];
-}
 @end
