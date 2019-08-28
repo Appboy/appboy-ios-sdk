@@ -26,16 +26,9 @@ Pod::Spec.new do |s|
 
   s.subspec 'UI' do |sui|
     sui.dependency 'Appboy-iOS-SDK/NewsFeed'
-    sui.dependency 'Appboy-iOS-SDK/Feedback'
     sui.dependency 'Appboy-iOS-SDK/InAppMessage'
     sui.dependency 'Appboy-iOS-SDK/ContentCards'
     sui.dependency 'Appboy-iOS-SDK/Core'
-  end
-
-  s.subspec 'Feedback' do |sfb|
-    sfb.source_files = 'AppboyUI/ABKFeedback/ViewControllers/*.*', 'AppboyUI/ABKFeedback/AppboyFeedback.h', 'AppboyUI/ABKUIUtils/**/*.*'
-    sfb.resource = 'AppboyUI/ABKFeedback/Resources/**/*.*'
-    sfb.dependency 'Appboy-iOS-SDK/Core'
   end
 
   s.subspec 'NewsFeed' do |snf|
