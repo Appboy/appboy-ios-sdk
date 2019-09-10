@@ -1,18 +1,16 @@
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import "ABKInAppMessageViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@interface ABKInAppMessageHTMLViewController : ABKInAppMessageViewController <UIWebViewDelegate>
+static NSString *const ABKInAppMessageHTMLFileName = @"message.html";
+
+@interface ABKInAppMessageHTMLViewController : ABKInAppMessageViewController <WKNavigationDelegate, WKUIDelegate>
 
 /*!
- * The UIWebView used to parse and display the HTML.
+ * The WKWebView used to parse and display the HTML.
  */
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
-
-#pragma clang diagnostic pop
+@property (nonatomic) WKWebView *webView;
 
 @end
 NS_ASSUME_NONNULL_END

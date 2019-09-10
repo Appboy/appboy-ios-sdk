@@ -1,3 +1,11 @@
+## 3.19.0
+
+##### Breaking
+- Replaces UIWebView with WKWebView for HTML in-app messages.
+  - If you are utilizing customization for HTML in-app messages, you should test to make sure your in-app messages still display and function as intended.
+  - If you are using ATS in your app, add the `NSAppTransportSecurity` dictionary to your Info.plist file. Inside the dictionary, add the `NSAllowsArbitraryLoads` boolean subentry and set the value to `YES`.
+  - The following javascript methods are now no-ops in HTML in-app messages: alert, confirm, prompt.
+
 ## 3.18.0
 
 ##### Breaking

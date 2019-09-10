@@ -2,12 +2,6 @@
 
 @implementation ABKInAppMessageHTMLFullViewController
 
-- (void)loadView {
-  [[NSBundle bundleForClass:[ABKInAppMessageHTMLFullViewController class]] loadNibNamed:@"ABKInAppMessageHTMLFullViewController"
-                                                                               owner:self
-                                                                             options:nil];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   self.view.translatesAutoresizingMaskIntoConstraints = NO;

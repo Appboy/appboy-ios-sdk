@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  * When the in-app message's inAppMessageClickActionType is ABKInAppMessageRedirectToURI, if the property is set to YES, 
- * the URI will be opened in a modal UIWebView inside the app. If this property is set to NO, the URI will be opened by
+ * the URI will be opened in a modal WKWebView inside the app. If this property is set to NO, the URI will be opened by
  * the OS and web URIs will be opened in an external web browser app.
  *
  * This property defaults to YES on ABKInAppMessageHTML subclasses and NO on all other ABKInAppMessage subclasses.

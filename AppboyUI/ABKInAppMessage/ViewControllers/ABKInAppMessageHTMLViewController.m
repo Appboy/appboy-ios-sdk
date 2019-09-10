@@ -28,9 +28,22 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.edgesForExtendedLayout = UIRectEdgeNone;
+  
+  WKWebViewConfiguration *webViewConfiguration = [[WKWebViewConfiguration alloc] init];
+  webViewConfiguration.allowsInlineMediaPlayback = YES;
+  WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:webViewConfiguration];
+  self.webView = webView;
+
   self.javascriptInterface = [[ABKInAppMessageHTMLJSBridge alloc] init];
-  self.webView.delegate = self;
+  self.webView.allowsLinkPreview = NO;
+  self.webView.navigationDelegate = self;
+  self.webView.UIDelegate = self;
   self.webView.scrollView.bounces = NO;
+
+  // Handle resizing during orientation changes
+  self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
   if (@available(iOS 11.0, *)) {
     // Cover status bar when showing HTML IAMs
     [self.webView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
@@ -39,26 +52,41 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
     NSString *localPath = [((ABKInAppMessageHTML *)self.inAppMessage).assetsLocalDirectoryPath absoluteString];
     // Here we must use fileURLWithPath: to add the "file://" scheme, otherwise the webView won't recognize the
     // base URL and won't load the zip file resources.
-    [self.webView loadHTMLString:self.inAppMessage.message baseURL:[NSURL fileURLWithPath:localPath]];
+    NSURL *html = [NSURL fileURLWithPath:[localPath stringByAppendingPathComponent:ABKInAppMessageHTMLFileName]];
+    [self.webView loadFileURL:html allowingReadAccessToURL:[NSURL fileURLWithPath:localPath]];
   } else {
     [self.webView loadHTMLString:self.inAppMessage.message baseURL:nil];
   }
+  [self.view addSubview:self.webView];
 }
 
-- (BOOL)webView:(UIWebView *)webView
-        shouldStartLoadWithRequest:(NSURLRequest *)request
-        navigationType:(UIWebViewNavigationType)navigationType {
-  NSURL *url = request.URL;
+#pragma mark - WKDelegate methods
+
+- (WKWebView *)webView:(WKWebView *)webView
+createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
+   forNavigationAction:(WKNavigationAction *)navigationAction
+        windowFeatures:(WKWindowFeatures *)windowFeatures {
+  if (navigationAction.targetFrame == nil) {
+    [webView loadRequest:navigationAction.request];
+  }
+  return nil;
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
+decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+  NSURL *url = navigationAction.request.URL;
   if ([ABKInAppMessageHTMLJSBridge isBridgeURL:url]) {
     [self.javascriptInterface handleBridgeCallWithURL:url appboyInstance:[Appboy sharedInstance]];
     // No bridge methods in handleBridgeCallWithURL currently close the In-App Message
-    return NO;
+    decisionHandler(WKNavigationActionPolicyCancel);
+    return;
   }
   
   if (url != nil &&
       ![url.absoluteString isEqualToString:ABKBlankURLString] &&
       ![url.path isEqualToString:[[(ABKInAppMessageHTML *)self.inAppMessage assetsLocalDirectoryPath]
-                                  absoluteString]]) {
+                                  absoluteString]] &&
+      ![url.lastPathComponent isEqualToString:ABKInAppMessageHTMLFileName]) {
     [self setClickActionBasedOnURL:url];
     
     NSMutableDictionary *queryParams = [self queryParameterDictionaryFromURL:url];
@@ -70,10 +98,12 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
     if ([self delegateHandlesHTMLButtonClick:parentViewController.inAppMessageUIDelegate
                                          URL:url
                                     buttonId:buttonId]) {
-      return NO;
+      decisionHandler(WKNavigationActionPolicyCancel);
+      return;
     } else if ([self isCustomEventURL:url]) {
       [self handleCustomEventWithQueryParams:queryParams];
-      return NO;
+      decisionHandler(WKNavigationActionPolicyCancel);
+      return;
     } else if (![ABKUIUtils objectIsValidAndNotEmpty:buttonId]) {
       // Log a body click if not a custom event or a button click
       parentViewController.inAppMessageIsTapped = YES;
@@ -82,15 +112,17 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
     [parentViewController inAppMessageClickedWithActionType:self.inAppMessage.inAppMessageClickActionType
                                                         URL:url
                                            openURLInWebView:[self getOpenURLInWebView:queryParams]];
-    return NO;
+    decisionHandler(WKNavigationActionPolicyCancel);
+    return;
   }
-  return YES;
+
+  decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
   // Disable touch callout from displaying link information
-  [self.webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
-  [self.webView stringByEvaluatingJavaScriptFromString:[ABKInAppMessageHTMLJSInterface getJSInterface]];
+  [self.webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none';" completionHandler:nil];
+  [self.webView evaluateJavaScript:[ABKInAppMessageHTMLJSInterface getJSInterface] completionHandler:nil];
 }
 
 - (BOOL)isCustomEventURL:(NSURL *)url {
