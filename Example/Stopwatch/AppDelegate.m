@@ -104,7 +104,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 // Pass the deviceToken to Braze as well
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
-  [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
+  [[Appboy sharedInstance] registerDeviceToken:deviceToken];
 }
 
 // When a notification is received, pass it to Braze. If the notification is received when the app

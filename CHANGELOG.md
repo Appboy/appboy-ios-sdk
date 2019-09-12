@@ -1,3 +1,16 @@
+## 3.20.0
+
+##### Breaking
+- **Important: Please upgrade to this version immediately to ensure uninterrupted collection of new push tokens as users upgrade to iOS 13.** Updates push token registration methods. In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, replace
+```
+[[Appboy sharedInstance] registerPushToken:
+                [NSString stringWithFormat:@"%@", deviceToken]];
+``` 
+with
+```
+[[Appboy sharedInstance] registerDeviceToken:deviceToken]];
+```
+
 ## 3.19.0
 
 ##### Breaking

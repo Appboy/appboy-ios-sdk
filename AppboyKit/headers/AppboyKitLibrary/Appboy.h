@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.19.0"
+#define APPBOY_SDK_VERSION @"3.20.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -485,11 +485,11 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
 - (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options __deprecated_msg("Use [ABKPushUtils isAppboyRemoteNotification:] instead.");
 
 /*!
- * @param token The device's push token.
+ * @param deviceToken The device's push token.
  *
  * @discussion This method posts a token to Braze servers to associate the token with the current device.
  */
-- (void)registerPushToken:(NSString *)token;
+- (void)registerDeviceToken:(NSData *)deviceToken;
 
 /*!
  * @param application The app's UIApplication object
