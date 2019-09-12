@@ -8,7 +8,7 @@
 ``` 
 with
 ```
-[[Appboy sharedInstance] registerDeviceToken:deviceToken]];
+[[Appboy sharedInstance] registerDeviceToken:deviceToken];
 ```
 
 ## 3.19.0
