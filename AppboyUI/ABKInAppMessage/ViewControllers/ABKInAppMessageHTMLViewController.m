@@ -40,7 +40,7 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   self.webView.navigationDelegate = self;
   self.webView.UIDelegate = self;
   self.webView.scrollView.bounces = NO;
-
+  
   // Handle resizing during orientation changes
   self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
@@ -120,6 +120,9 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+  self.webView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.3];
+  self.webView.opaque = NO;
+  
   // Disable touch callout from displaying link information
   [self.webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none';" completionHandler:nil];
   [self.webView evaluateJavaScript:[ABKInAppMessageHTMLJSInterface getJSInterface] completionHandler:nil];

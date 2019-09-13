@@ -1,3 +1,11 @@
+## 3.20.1
+
+**Important** Integrators using 3.20.0 should upgrade to this version as soon as possible.
+
+##### Fixed
+- Fixes an issue introduced in 3.19.0 which changed the background of HTML in-app messages to a non-transparent color.
+- Improves the robustness of push token collection code for iOS 13 introduced in 3.20.0.
+
 ## 3.20.0
 
 ##### Breaking
@@ -15,8 +23,7 @@ with
 
 ##### Breaking
 - Replaces UIWebView with WKWebView for HTML in-app messages.
-  - If you are utilizing customization for HTML in-app messages, you should test to make sure your in-app messages still display and function as intended.
-  - If you are using ATS in your app, add the `NSAppTransportSecurity` dictionary to your Info.plist file. Inside the dictionary, add the `NSAllowsArbitraryLoads` boolean subentry and set the value to `YES`.
+  -  If you are utilizing customization for HTML in-app messages (such customizing `ABKInAppMessageHTMLFullViewController` or `ABKInAppMessageHTMLViewController`), you must test to ensure your in-app messages continue to display correctly and interactions function as intended.
   - The following javascript methods are now no-ops in HTML in-app messages: alert, confirm, prompt.
 
 ## 3.18.0
