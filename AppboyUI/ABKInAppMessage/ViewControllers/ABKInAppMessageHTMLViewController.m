@@ -29,9 +29,15 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.edgesForExtendedLayout = UIRectEdgeNone;
-  
   WKWebViewConfiguration *webViewConfiguration = [[WKWebViewConfiguration alloc] init];
   webViewConfiguration.allowsInlineMediaPlayback = YES;
+  webViewConfiguration.suppressesIncrementalRendering = YES;
+  if (@available(iOS 10.0, *)) {
+    webViewConfiguration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAll;
+  } else {
+    webViewConfiguration.requiresUserActionForMediaPlayback = YES;
+  }
+
   WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:webViewConfiguration];
   self.webView = webView;
 
@@ -53,6 +59,11 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
     // Here we must use fileURLWithPath: to add the "file://" scheme, otherwise the webView won't recognize the
     // base URL and won't load the zip file resources.
     NSURL *html = [NSURL fileURLWithPath:[localPath stringByAppendingPathComponent:ABKInAppMessageHTMLFileName]];
+    NSString *fullPath = [localPath stringByAppendingPathComponent:ABKInAppMessageHTMLFileName];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+      NSLog(@"Can't find HTML at path %@, with file name %@. Aborting display.", [NSURL fileURLWithPath:localPath], ABKInAppMessageHTMLFileName);
+      [self hideInAppMessage:NO];
+    }
     [self.webView loadFileURL:html allowingReadAccessToURL:[NSURL fileURLWithPath:localPath]];
   } else {
     [self.webView loadHTMLString:self.inAppMessage.message baseURL:nil];
@@ -120,7 +131,7 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-  self.webView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.3];
+  self.webView.backgroundColor = [UIColor clearColor];
   self.webView.opaque = NO;
   
   // Disable touch callout from displaying link information

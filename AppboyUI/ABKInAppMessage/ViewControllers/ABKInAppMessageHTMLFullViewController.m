@@ -1,6 +1,13 @@
 #import "ABKInAppMessageHTMLFullViewController.h"
+#import "ABKInAppMessageView.h"
 
 @implementation ABKInAppMessageHTMLFullViewController
+
+- (void)loadView {
+  // View is full screen and covers status bar. It needs to be an ABKInAppMessageView to
+  // ensure touches register as per custom logic in ABKInAppMessageWindow
+  self.view = [[ABKInAppMessageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];

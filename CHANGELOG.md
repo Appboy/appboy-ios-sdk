@@ -1,6 +1,35 @@
+## 3.20.2
+
+- **Important** If you are on Braze iOS SDK 3.19.0 or below, we recommend upgrading to this version immediately to ensure uninterrupted collection of new push tokens as users upgrade to iOS 13.
+- In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, replace
+```
+[[Appboy sharedInstance] registerPushToken:
+                [NSString stringWithFormat:@"%@", deviceToken]];
+``` 
+with
+```
+[[Appboy sharedInstance] registerDeviceToken:deviceToken];
+```
+- If you are on Braze iOS SDK 3.19.0 or below and unable to upgrade, you must ensure your `[Appboy registerPushToken]` implementation does not rely on `stringWithFormat` or `description` for parsing the `deviceToken` passed in from `application:didRegisterForRemoteNotificationsWithDeviceToken:`. Please reach out to your Customer Success Manager for more information.
+
+- **Important** In Braze iOS SDK 3.19.0, we updated our HTML in-app message container from `UIWebview` to `WKWebView`, however, the initial releases have known issues displaying HTML in-app messages. If you are currently using 3.19.0, 3.20.0, or 3.20.1, you are strongly encouraged to upgrade if you make use of HTML in-app messages. Please see the following for more important information about the transition to `WKWebView`:
+  -  If you are utilizing customization for HTML in-app messages (such as customizing `ABKInAppMessageHTMLFullViewController` or `ABKInAppMessageHTMLViewController`), we strongly recommend testing to ensure your in-app messages continue to display correctly and interactions function as intended.
+  - The following javascript methods are now no-ops: `alert`, `confirm`, `prompt`.
+  - Deep links without schemes are no longer supported. Ensure that your in-app message deep links contain schemes.
+
+##### Fixed
+- Fixes an issue introduced in 3.19.0 where HTML in-app messages would not register user clicks when the `.xib` failed to load.
+- Fixes an issue introduced in 3.19.0 where HTML in-app messages with select special characters and an assets zip would cause display irregularities.
+
+##### Changed
+- Updates the `WKWebView` which displays HTML in-app messages with the following attributes:
+  - `suppressesIncrementalRendering` is set to true
+  - `mediaTypesRequiringUserActionForPlayback` is set to `WKAudiovisualMediaTypeAll`
+- Updates the background color of the `WKWebView` which displays HTML in-app messages from `[[UIColor blackColor] colorWithAlphaComponent:.3]` to `[UIColor clearColor]`.
+
 ## 3.20.1
 
-**Important** Integrators using 3.20.0 should upgrade to this version as soon as possible.
+**Important** This release has known issues displaying HTML in-app messages. Do not upgrade to this version and upgrade to 3.20.2 and above instead. If you are using this version, you are strongly encouraged to upgrade to 3.20.2 or above if you make use of HTML in-app messages.
 
 ##### Fixed
 - Fixes an issue introduced in 3.19.0 which changed the background of HTML in-app messages to a non-transparent color.
@@ -8,8 +37,10 @@
 
 ## 3.20.0
 
+**Important** This release has known issues displaying HTML in-app messages and a known issue with push token collection. Do not upgrade to this version and upgrade to 3.20.2 and above instead. If you are using this version, you are strongly encouraged to upgrade to 3.20.2 or above if you make use of HTML in-app messages.
+
 ##### Breaking
-- **Important: Please upgrade to this version immediately to ensure uninterrupted collection of new push tokens as users upgrade to iOS 13.** Updates push token registration methods. In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, replace
+- Introduced a signature change for push token collection methods:
 ```
 [[Appboy sharedInstance] registerPushToken:
                 [NSString stringWithFormat:@"%@", deviceToken]];
@@ -21,10 +52,13 @@ with
 
 ## 3.19.0
 
+**Important** This release has known issues displaying HTML in-app messages. Do not upgrade to this version and upgrade to 3.20.2 and above instead. If you are using this version, you are strongly encouraged to upgrade to 3.20.2 or above if you make use of HTML in-app messages.
+
 ##### Breaking
-- Replaces UIWebView with WKWebView for HTML in-app messages.
-  -  If you are utilizing customization for HTML in-app messages (such customizing `ABKInAppMessageHTMLFullViewController` or `ABKInAppMessageHTMLViewController`), you must test to ensure your in-app messages continue to display correctly and interactions function as intended.
-  - The following javascript methods are now no-ops in HTML in-app messages: alert, confirm, prompt.
+- Replaces `UIWebView` with `WKWebView` for HTML in-app messages.
+  -  If you are utilizing customization for HTML in-app messages (such as customizing `ABKInAppMessageHTMLFullViewController` or `ABKInAppMessageHTMLViewController`), you must test to ensure your in-app messages continue to display correctly and interactions function as intended.
+  - The following javascript methods are now no-ops: `alert`, `confirm`, `prompt`.
+  - Deep links without schemes are no longer supported. Please ensure that your in-app message deep links contain schemes.
 
 ## 3.18.0
 
