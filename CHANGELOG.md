@@ -1,6 +1,13 @@
+## 3.20.3
+
+Released on 2019-10-04
+
+##### Added
+- After any affirmative location permission prompt, the SDK now submits a session start location request if location hasn't already been sent up for the session. This also applies to the new "Allow Once" option in iOS 13.
+
 ## 3.20.2
 
-- **Important** If you are on Braze iOS SDK 3.19.0 or below, we recommend upgrading to this version immediately to ensure uninterrupted collection of new push tokens as users upgrade to iOS 13.
+**Important** If you are on Braze iOS SDK 3.19.0 or below, we recommend upgrading to this version immediately to ensure uninterrupted collection of new push tokens as users upgrade to iOS 13.
 - In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, replace
 ```
 [[Appboy sharedInstance] registerPushToken:

@@ -1,10 +1,11 @@
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class ABKServerConfig;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ABKLocationManager : NSObject
+@interface ABKLocationManager : NSObject <CLLocationManagerDelegate>
 
 /*!
  * Use ABKEnableAutomaticLocationCollectionKey to enable automatic location tracking.
