@@ -32,7 +32,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   
   NSMutableDictionary *appboyOptions = [NSMutableDictionary dictionary];
   appboyOptions[ABKRequestProcessingPolicyOptionKey] = @(ABKAutomaticRequestProcessing);
-  appboyOptions[ABKMinimumTriggerTimeIntervalKey] = @(5);
+  appboyOptions[ABKMinimumTriggerTimeIntervalKey] = @(1);
   if (overrideEndpoint != nil) {
     appboyOptions[ABKEndpointKey] = overrideEndpoint;
   } else {

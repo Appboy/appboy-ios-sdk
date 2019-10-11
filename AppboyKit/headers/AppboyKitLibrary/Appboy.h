@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.20.3"
+#define APPBOY_SDK_VERSION @"3.20.4"
 #endif
 
 #if !TARGET_OS_TV
@@ -158,7 +158,8 @@ typedef NS_ENUM(NSInteger , ABKSDKFlavor) {
   XAMARIN,
   FLUTTER,
   SEGMENT,
-  MPARTICLE
+  MPARTICLE,
+  TEALIUM
 };
 
 typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {

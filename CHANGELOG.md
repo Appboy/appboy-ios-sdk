@@ -1,3 +1,11 @@
+## 3.20.4
+
+##### Fixed
+- Fixed an issue with Content Cards where the header and description text fields would appear to be missing in Dark Mode.
+
+##### Added
+- Adds a `TEALIUM` SDK flavor option.
+
 ## 3.20.3
 
 Released on 2019-10-04
