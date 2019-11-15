@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UISwitch *inAppMessageDelegateSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *urlDelegateSwitch;
 
+// Stopwatch setting that determines to enable/disable Dark Mode colors
+@property (strong, nonatomic) IBOutlet UISwitch *allowDarkThemeToggle;
+
 - (IBAction)flushAppboyData:(id)sender;
 - (IBAction)changeAppboyFlushMode:(id)sender;
 - (IBAction)logAttributionData:(id)sender;

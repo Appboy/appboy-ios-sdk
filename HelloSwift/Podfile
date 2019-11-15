@@ -7,3 +7,8 @@ use_frameworks!
 target 'HelloSwift' do
   pod 'Appboy-iOS-SDK'
 end
+
+target 'tvOS_HelloSwift' do
+  platform :tvos, '9.0'
+  pod 'Appboy-tvOS-SDK'
+end

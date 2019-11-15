@@ -84,6 +84,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   }];
 
   [self setUpRemoteNotification];
+  self.stopwatchEnableDarkTheme = YES;
   
   NSLog(@"Appboy device identifier is %@", [[Appboy sharedInstance] getDeviceId]);
 
@@ -136,11 +137,18 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  NSLog(@"Stopwatch got a deep link request: %@", url.absoluteString);
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+  NSLog(@"Stopwatch openURL delegate called with: %@", url.absoluteString);
   
   // Handle deep linking with scheme beginning with "stopwatch"
   NSString *urlString = url.absoluteString.stringByRemovingPercentEncoding;
+  if ([urlString isEqualToString:@"stopwatch:appstore-review"]) {
+    NSLog(@"Received app store review request.");
+    if (@available(iOS 10.3, *)) {
+      [SKStoreReviewController requestReview];
+    }
+    return YES;
+  }
   [AlertControllerUtils presentAlertWithOKButtonForTitle:@"Deep Linking"
                                                  message:urlString
                                             presentingVC:self.window.rootViewController];
@@ -244,7 +252,15 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 #pragma mark - ABKInAppMessageControllerDelegate
 
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
-  NSLog(@"beforeInAppMessageDisplayed: delegate called in Stopwatch. Returning ABKDisplayInAppMessageNow.");
+  NSLog(@"beforeInAppMessageDisplayed: delegate called in Stopwatch.");
+  if (inAppMessage.extras != nil && inAppMessage.extras[@"Appstore Review"] != nil) {
+    [[UIApplication sharedApplication] openURL:inAppMessage.uri options:@{} completionHandler:nil];
+    return ABKDiscardInAppMessage;
+  }
+
+  // Allows Stopwatch to disable dark theme for in-app messages based off a toggle switch
+  inAppMessage.enableDarkTheme = self.stopwatchEnableDarkTheme;
+
   return ABKDisplayInAppMessageNow;
 }
 

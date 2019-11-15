@@ -87,7 +87,7 @@ static NSInteger const CloseButtonTag = 50;
 }
 
 - (void)setupButtons {
-  NSArray *buttons = [self getInAppMessage].buttons;
+  NSArray<ABKInAppMessageButton *> *buttons = [self getInAppMessage].buttons;
   if (![ABKUIUtils objectIsValidAndNotEmpty:buttons]) {
     [self.leftInAppMessageButton removeFromSuperview];
     [self.rightInAppMessageButton removeFromSuperview];

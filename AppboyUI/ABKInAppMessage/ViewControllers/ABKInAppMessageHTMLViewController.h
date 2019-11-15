@@ -12,5 +12,11 @@ static NSString *const ABKInAppMessageHTMLFileName = @"message.html";
  */
 @property (nonatomic) WKWebView *webView;
 
+/*
+ * The constraints for top and bottom between view and the super view.
+ */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+
 @end
 NS_ASSUME_NONNULL_END

@@ -11,6 +11,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *emptyFeedLabel;
 
 /*!
+ * This property stores the cards displayed in the Content Cards feed. By default, the view controller
+ * updates this value when it receives an ABKContentCardsProcessedNotification notification from the Braze SDK.
+ *
+ * This field's value should not be set directly from a subclass; instead, it should be set from within a populateContentCards:
+ * implementation.
+ */
+@property (nonatomic) NSMutableArray<ABKContentCard *> *cards;
+
+/*!
  *  This property allows you to enable or disable the unread indicator on the cards. The default
  *  value is NO, which will enable the displaying of the unread indicator on cards.
  */
@@ -62,5 +71,10 @@
 - (void)handleCardClick:(ABKContentCard *)card;
 
 - (void)requestNewCardsIfTimeout;
+
+/*!
+* @discussion This method is called when the cards stored in the cards property should be refreshed.
+*/
+- (void)populateContentCards;
 
 @end

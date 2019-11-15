@@ -10,6 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 // was dismissed.
 static NSString * const ABKNotificationInAppMessageWindowDismissed = @"inAppMessageWindowDismissedNotification";
 
+static double const InAppMessageAnimationDuration = 0.4;
+
 /*!
  * ABKInAppMessageWindowController is the view controller responsible for housing and displaying
  * ABKInAppMessageViewControllers and performing actions after the in-app message is clicked. Instances 

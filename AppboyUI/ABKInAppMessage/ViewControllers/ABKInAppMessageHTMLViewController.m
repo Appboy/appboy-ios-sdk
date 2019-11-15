@@ -133,6 +133,22 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
   self.webView.backgroundColor = [UIColor clearColor];
   self.webView.opaque = NO;
+  if (self.inAppMessage.animateIn) {
+    [UIView animateWithDuration:InAppMessageAnimationDuration
+                          delay:0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                      self.topConstraint.constant = 0;
+                      self.bottomConstraint.constant = 0;
+                      [self.view.superview layoutIfNeeded];
+                    }
+                     completion:^(BOOL finished){
+                    }];
+  } else {
+    self.topConstraint.constant = 0;
+    self.bottomConstraint.constant = 0;
+    [self.view.superview layoutIfNeeded];
+  }
   
   // Disable touch callout from displaying link information
   [self.webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none';" completionHandler:nil];
@@ -216,6 +232,27 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     }
   }
   return queryDict;
+}
+
+#pragma mark - Animation
+
+- (void)beforeMoveInAppMessageViewOnScreen {}
+
+- (void)moveInAppMessageViewOnScreen {
+  // Do nothing - moving the in-app message is handled in didFinishNavigation
+  // though that logic should probably be gated by a call here. In a perfect world,
+  // ABKInAppMessageWindowController would "request" VC's to show themselves,
+  // and the VC's would report when they were shown so ABKInAppMessageWindowController
+  // could log impressions.
+}
+
+- (void)beforeMoveInAppMessageViewOffScreen {
+  self.topConstraint.constant = self.view.frame.size.height;
+  self.bottomConstraint.constant = self.view.frame.size.height;
+}
+
+- (void)moveInAppMessageViewOffScreen {
+  [self.view.superview layoutIfNeeded];
 }
 
 @end

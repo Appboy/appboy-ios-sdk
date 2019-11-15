@@ -6,13 +6,13 @@
 static CGFloat const SlideupAssetRightMargin = 20.0f;
 static CGFloat const SlideupAssetLeftMargin = 20.0f;
 
-static CGFloat const BevelViewRadius = 15.0f;
-static CGFloat const BevelDefaultVerticalMarginHeight = 10.0f;
-static CGFloat const BevelDefaultSideMarginWidth = 15.0f;
-static CGFloat const BevelNotchedPhoneLandscapeBottomMarginHeight = 21.0f;
-static CGFloat const BevelNotchedPhoneLandscapeSideMarginWidth = 44.0f;
-static CGFloat const BevelNotchedPhonePortraitTopMarginHeight = 44.0f;
-static CGFloat const BevelNotchedPhonePortraitBottomMarginHeight = 34.0f;
+static CGFloat const DefaultViewRadius = 15.0f;
+static CGFloat const DefaultVerticalMarginHeight = 10.0f;
+static CGFloat const DefaultSideMarginWidth = 15.0f;
+static CGFloat const NotchedPhoneLandscapeBottomMarginHeight = 21.0f;
+static CGFloat const NotchedPhoneLandscapeSideMarginWidth = 44.0f;
+static CGFloat const NotchedPhonePortraitTopMarginHeight = 44.0f;
+static CGFloat const NotchedPhonePortraitBottomMarginHeight = 34.0f;
 
 static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel";
 
@@ -50,7 +50,7 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
   [self setupImageOrLabelView];
   [self setupConstraintsWithSuperView];
 
-  self.view.layer.cornerRadius = BevelViewRadius;
+  self.view.layer.cornerRadius = DefaultViewRadius;
   self.view.layer.masksToBounds = NO;
 }
 
@@ -58,7 +58,7 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
   [super viewDidLayoutSubviews];
 
   // Redraw the shadow when the layout is changed.
-  UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds cornerRadius:BevelViewRadius];
+  UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds cornerRadius:DefaultViewRadius];
   self.view.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:InAppMessageShadowOpacity].CGColor;
   self.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
   self.view.layer.shadowRadius = InAppMessageShadowBlurRadius;
@@ -162,29 +162,37 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
 
 - (CGFloat)sideMarginsForPhoneAndOrientation {
   if ([ABKUIUtils isNotchedPhone] && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
-    return BevelNotchedPhoneLandscapeSideMarginWidth;
+    return NotchedPhoneLandscapeSideMarginWidth;
   }
-  return BevelDefaultSideMarginWidth;
+  return DefaultSideMarginWidth;
+}
+
+- (CGFloat)slideupAnimationDistance {
+  BOOL animatesFromTop = ((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop;
+
+  if ([ABKUIUtils isNotchedPhone]) {
+    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
+      if (animatesFromTop) {
+        return NotchedPhonePortraitTopMarginHeight;
+      } else {
+        return NotchedPhonePortraitBottomMarginHeight;
+      }
+    } else if (!animatesFromTop) {
+      // Is landscape and animates from bottom
+      return NotchedPhoneLandscapeBottomMarginHeight;
+    }
+
+  } else if (animatesFromTop) {
+    // Non-notched that animates from top, add status bar height
+    return DefaultVerticalMarginHeight + [UIApplication sharedApplication].statusBarFrame.size.height;
+  }
+  return DefaultVerticalMarginHeight;
 }
 
 #pragma mark - Superclass methods
 
 - (void)beforeMoveInAppMessageViewOnScreen {
-  self.slideConstraint.constant = BevelDefaultVerticalMarginHeight;
-
-  if ([ABKUIUtils isNotchedPhone]) {
-    BOOL animatesFromTop = ((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop;
-    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
-      if (animatesFromTop) {
-        self.slideConstraint.constant = BevelNotchedPhonePortraitTopMarginHeight;
-      } else {
-        self.slideConstraint.constant = BevelNotchedPhonePortraitBottomMarginHeight;
-      }
-    } else if (!animatesFromTop) {
-      // Is landscape and animates from bottom
-      self.slideConstraint.constant = BevelNotchedPhoneLandscapeBottomMarginHeight;
-    }
-  }
+  self.slideConstraint.constant = [self slideupAnimationDistance];
 }
 
 - (void)moveInAppMessageViewOnScreen {

@@ -35,13 +35,13 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageImmersiveImageStyle) {
  * headerTextColor defines the header text color, when there is a header string in the in-app message. The default text color
  * is black.
  */
-@property (strong, nullable) UIColor *headerTextColor;
+@property (nonatomic, strong, nullable) UIColor *headerTextColor;
 
 /*!
  * closeButtonColor defines the close button color of the in-app message.
  * When this property is nil, the close button's default color is black.
  */
-@property (strong, nullable) UIColor *closeButtonColor;
+@property (nonatomic, strong, nullable) UIColor *closeButtonColor;
 
 /*!
  * buttons defines the buttons of the in-app message.
@@ -49,14 +49,14 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageImmersiveImageStyle) {
  * When there are more than two buttons in the array, only the first two buttons will be displayed in the in-app message.
  * For more information and setting of ABKInAppMessageButton, please see the documentation in ABKInAppMessageButton.h for additional details.
  */
-@property (readonly, nullable) NSArray *buttons;
+@property (readonly, copy, nullable) NSArray<ABKInAppMessageButton *> *buttons;
 
 /*!
  * frameColor defines the frame color of an immersive in-app message. This color will fill the
  * screen outside of the in-app message. When the property is nil, the color will be
  * set to the default color, which is black with 90% opacity.
  */
-@property (strong, nullable) UIColor *frameColor;
+@property (nonatomic, strong, nullable) UIColor *frameColor;
 
 /*!
  * headerTextAlignment defines the preferred text alignment of the header label.

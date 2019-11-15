@@ -19,8 +19,25 @@
 - (void)contentCardsUpdatedNotificationReceived:(NSNotification *)notification {
   BOOL updateIsSuccessful = [notification.userInfo[ABKContentCardsProcessedIsSuccessfulKey] boolValue];
   if (updateIsSuccessful) {
-    NSLog(@"Content cards updated successfully", nil);
+    // Get an array containing only cards that have the "example" feed type set in their extras.
+    NSArray<ABKContentCard *> *filteredArray = [self getCardsForFeedType:@"example"];
+    NSLog(@"Got filtered array of length: %lu", [filteredArray count]);
   }
+}
+
+- (NSArray<ABKContentCard *> *)getCardsForFeedType:(NSString *)type {
+  NSArray<ABKContentCard *> *cards = [Appboy.sharedInstance.contentCardsController getContentCards];
+
+  NSArray<ABKContentCard *> *filteredArray = [cards filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(ABKContentCard * card, NSDictionary *bindings) {
+    NSDictionary *extras = [card extras];
+    if (extras != nil && [extras objectForKey:@"feed_type"] != nil && [[extras objectForKey:@"feed_type"] isEqualToString:type]) {
+      NSLog(@"Got card: %@ ", card.idString);
+      return YES;
+    }
+    return NO;
+  }]];
+
+  return filteredArray;
 }
 
 @end

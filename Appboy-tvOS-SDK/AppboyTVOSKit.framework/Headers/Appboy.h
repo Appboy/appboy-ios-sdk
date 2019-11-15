@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.17.0"
+#define APPBOY_SDK_VERSION @"3.21.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -26,7 +26,6 @@
 @class ABKFeedController;
 @class ABKContentCardsController;
 @class ABKLocationManager;
-@class ABKFeedback;
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKIDFADelegate;
 @protocol ABKURLDelegate;
@@ -53,11 +52,20 @@ extern NSString *const ABKFlushIntervalOptionKey;
 
 /*!
  * This key can be set to YES or NO and will configure whether Braze will automatically collect location (if the user permits).
- * If set to YES, location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
- * ABKUser (i.e. you must manually set the location, Braze will not).  If it is set to NO or omitted, Braze will collect
- * location if authorized.
+ * If set to YES, Braze will collect location if authorized.
+ * If it is set to NO or omitted, location will not be recorded for the user unless you manually
+ * call setUserLastKnownLocation on ABKUser.
  */
-extern NSString *const ABKDisableAutomaticLocationCollectionKey;
+extern NSString *const ABKEnableAutomaticLocationCollectionKey;
+
+/*!
+ * This key can be set to YES or NO and will configure whether goefences are enabled.
+ * If set to YES, geofences will be enabled.
+ * If set to NO, geofences will be disabled.
+ * If the field is omitted, we will use the value of ABKEnableAutomaticLocationCollectionKey.
+ */
+extern NSString *const ABKEnableGeofencesKey;
+
 
 /*!
  * This key can be set to an instance of a class that extends ABKIDFADelegate, which can be used to pass advertiser tracking information to to Braze.
@@ -120,7 +128,7 @@ extern NSString *const ABKPushStoryAppGroupKey;
 /*!
  * Possible values for the SDK's request processing policies:
  *   ABKAutomaticRequestProcessing (default) - All server communication is handled automatically. This includes flushing
- *        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Braze's
+ *        analytics data to the server, updating the feed, and requesting new in-app messages. Braze's
  *        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
  *        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
  *        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
@@ -150,20 +158,8 @@ typedef NS_ENUM(NSInteger , ABKSDKFlavor) {
   XAMARIN,
   FLUTTER,
   SEGMENT,
-  MPARTICLE
-};
-
-/*!
- * Possible values for the result of submitting feedback:
- *   ABKInvalidFeedback - The passed-in feedback isn't valid. Please check the validity of the ABKFeedback
- *        object with instance method `feedbackValidation` before submitting it to Braze.
- *   ABKNetworkIssue - The SDK failed to send the feedback due to network issue. 
- *   ABKFeedbackSentSuccessfully - The feedback is sent to Braze server successfully.
- */
-typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
-  ABKInvalidFeedback,
-  ABKNetworkIssue,
-  ABKFeedbackSentSuccessfully
+  MPARTICLE,
+  TEALIUM
 };
 
 typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
@@ -436,40 +432,10 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
 
 /*!
- * @param replyToEmail The email address to send feedback replies to.
- * @param message The message input by the user. Must be non-null and non-empty.
- * @param isReportingABug Flag indicating whether or not the feedback describes a bug, or is merely a suggestion/question.
- * @return a boolean indicating whether or not the feedback item was successfully queued for delivery.
- *
- * @discussion Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard.
- * The request to submit feedback is made immediately, however, this method does not block and will return as soon as the
- * feedback request is placed on the network queue.
- */
-- (BOOL)submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
-
-/*!
- * @param feedback The feedback object with feedback message, email, and is-bug flag.
- * @param completionHandler The block to execute when the feedback sending process is complete. An ABKFeedbackSentResult enum
- * will be passed to the block indicating if the feedback was sent successfully.
- *
- * @discussion Submits a piece of feedback to the Braze feedback center so that it can be handled in the Braze dashboard.
- * The request to submit feedback is made immediately. However, this method does not block and will return as soon as the
- * feedback request is placed on the network queue.
- */
-- (void)submitFeedback:(ABKFeedback *)feedback withCompletionHandler:(nullable void (^)(ABKFeedbackSentResult feedbackSentResult))completionHandler __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
-
-/*!
  * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
  * the news feed back to Braze with this method so that your campaign reporting features still work in the dashboard.
  */
 - (void)logFeedDisplayed;
-
-/*!
- * If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report
- * impressions of the feedback page back to Braze with this method so that your campaign reporting features still work
- * in the dashboard.
- */
-- (void)logFeedbackDisplayed __deprecated_msg("The feedback feature is disabled for new accounts, and will be removed in a future SDK release.");
 
 /*!
  * If you're displaying content cards on your own instead of using ABKContentCardsViewController, you should still report
@@ -520,11 +486,11 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
 - (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options __deprecated_msg("Use [ABKPushUtils isAppboyRemoteNotification:] instead.");
 
 /*!
- * @param token The device's push token.
+ * @param deviceToken The device's push token.
  *
  * @discussion This method posts a token to Braze servers to associate the token with the current device.
  */
-- (void)registerPushToken:(NSString *)token;
+- (void)registerDeviceToken:(NSData *)deviceToken;
 
 /*!
  * @param application The app's UIApplication object

@@ -33,6 +33,8 @@
 #import "ABKInAppMessageHTMLJSBridge.h"
 #import "ABKInAppMessageHTMLJSInterface.h"
 #import "ABKInAppMessageUIControlling.h"
+#import "ABKInAppMessageDarkTheme.h"
+#import "ABKInAppMessageDarkButtonTheme.h"
 
 // News Feed
 #import "ABKFeedController.h"

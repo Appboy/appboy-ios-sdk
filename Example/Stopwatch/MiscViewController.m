@@ -64,21 +64,21 @@
 
 // This is the selector of flushAppboyData Button which flushes queued data to the Braze servers manually on demand.
 - (IBAction)flushAppboyData:(id)sender {
-  NSLog(@"FlushAppboyData:");
+  NSLog(@"Flushing data to Braze.");
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+  [self showAlertWithMessage:@"Data was successfully flushed"];
 }
 
 - (IBAction)changeAppboyFlushMode:(id)sender {
-  NSLog(@"changeAppboyFlushMode:");
   switch ([Appboy sharedInstance].requestProcessingPolicy) {
     case ABKAutomaticRequestProcessing:
       [Appboy sharedInstance].requestProcessingPolicy = ABKManualRequestProcessing;
+      NSLog(@"Changing request processing policy to ABKManualRequestProcessing.");
       break;
-      
     case ABKManualRequestProcessing:
       [Appboy sharedInstance].requestProcessingPolicy = ABKAutomaticRequestProcessing;
+      NSLog(@"Changing request processing policy to ABKAutomaticRequestProcessing.");
       break;
-      
     default:
       break;
   }
@@ -110,6 +110,7 @@
                                          adGroup:[self attributionStringGenerator:@"adgroup"]
                                          creative:[self attributionStringGenerator:@"creative"]];
   [[Appboy sharedInstance].user setAttributionData:attributionData];
+  [self showAlertWithMessage:@"Attribution Data was successfully logged."];
   self.attributionCounter++;
 }
 
@@ -166,6 +167,11 @@
   [self showForceCloseAlertWithTitle:alertTitle];
 }
 
+- (IBAction)allowDarkThemeToggleSwitched:(id)sender {
+  AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  appDelegate.stopwatchEnableDarkTheme = self.allowDarkThemeToggle.on;
+}
+
 - (IBAction)setSessionTimeout:(id)sender {
   NSLog(@"session timeout called");
   [[NSUserDefaults standardUserDefaults] setObject:self.sessionTimeoutTextField.text forKey:NewSessionTimeoutKey];
@@ -177,6 +183,7 @@
 
 - (IBAction)logSingleLocation:(id)sender {
   [[Appboy sharedInstance].locationManager logSingleLocation];
+  [self showAlertWithMessage:@"Location was successfully logged."];
 }
 
 - (void)showForceCloseAlertWithTitle:(NSString *)title {
@@ -185,6 +192,11 @@
                                             presentingVC:self];
 }
 
+- (void)showAlertWithMessage:(NSString *)message {
+  [AlertControllerUtils presentTemporaryAlertWithTitle:nil
+                                                 message:message
+                                            presentingVC:self];
+}
 
 #pragma mark - Keyboard
 

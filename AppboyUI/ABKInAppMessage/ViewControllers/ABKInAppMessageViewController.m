@@ -25,7 +25,8 @@ static NSString *const FontAwesomeName = @"FontAwesome";
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [ABKInAppMessageView class];
-  
+
+  // Set colors of the IAM view at display time
   self.inAppMessageMessageLabel.text = self.inAppMessage.message;
   self.inAppMessageMessageLabel.textAlignment = self.inAppMessage.messageTextAlignment;
   if (self.inAppMessage.backgroundColor != nil) {

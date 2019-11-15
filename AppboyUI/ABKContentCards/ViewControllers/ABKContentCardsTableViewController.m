@@ -20,13 +20,6 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 @interface ABKContentCardsTableViewController () <ABKBaseContentCardCellDelegate>
 
 /*!
- * This property shows the cards displayed in the Content Cards feed. Please note that this view
- * controller listens to the ABKContentCardsProcessedNotification notification from the Braze SDK, which will
- * update the value of this property.
- */
-@property (nonatomic) NSMutableArray<ABKContentCard *> *cards;
-
-/*!
  * This set stores the content cards IDs for which the impressions have been logged.
  */
 @property (nonatomic) NSMutableSet<NSString *> *cardImpressions;
@@ -44,7 +37,6 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 
 - (void)logCardImpressionIfNeeded:(ABKContentCard *)card;
 - (void)requestContentCardsRefresh;
-- (void)populateContentCards;
 - (void)contentCardsUpdated:(NSNotification *)notification;
 
 + (NSString *)findCellIdentifierWithCard:(ABKContentCard *)card;

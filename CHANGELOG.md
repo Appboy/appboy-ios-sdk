@@ -1,3 +1,20 @@
+## 3.21.0
+
+##### Fixed
+- Fixes an issue in the animate-in behavior of HTML in-app messages that could cause a brief flicker before the message displayed on older devices and simulators.
+- Fixes an issue with Slideup in-app messages where they would cover part of the status bar when animating from the top on non-notched devices.
+- Fixes an issue introduced in 3.14.1 where boolean-typed event properties would be improperly cast to numbers.
+
+##### Changed
+- Updates the logging format for debug, warn, and error ABKLogger messages to now print their log level.
+
+##### Added
+- Adds support for the upcoming feature, in-app messages with Dark Mode support.
+  - Dark Mode enabled messages must be created from the dashboard. Braze does not dynamically theme in-app messages for Dark Mode.
+  - This feature is enabled by default for all new `ABKInAppMessage` instances. To prevent Braze from automatically applying a Dark Theme when the fields are available on Braze's servers, set the `enableDarkTheme` flag on `ABKInAppMessage` to `NO` in the `beforeInAppMessageDisplayed:` method of your `ABKInAppMessageControllerDelegate` delegate implementation.
+- Adds the ability to reference the Braze iOS SDK API from Swift when using the `Appboy-tvOS-SDK` pod. Adding `import AppboyTVOSKit` to the top of your Swift file while using the `Appboy-tvOS-SDK` pod will give you equivalent behavior to adding `import Appboy_iOS_SDK` while using the `Appboy-iOS-SDK` pod.
+- Adds the `populateContentCards:` method and the `cards` property to `ABKContentCardsTableViewController`'s public interface. By setting the `cards` property from within `populateContentCards:`, you may manipulate `ABKContentCard` field data and/or control which `ABKContentCard` instances are displayed from the context of a custom `ABKContentCardsTableViewController` subclass.
+
 ## 3.20.4
 
 ##### Fixed
@@ -11,7 +28,7 @@
 Released on 2019-10-04
 
 ##### Added
-- After any affirmative location permission prompt, the SDK now submits a session start location request if location hasn't already been sent up for the session. This also applies to the new "Allow Once" option in iOS 13.
+- If Automatic Braze location collection is enabled, the SDK now submits a session start location request if location hasn't already been sent up for the session after any affirmative location permission prompt. This also applies to the new "Allow Once" option in iOS 13.
 
 ## 3.20.2
 

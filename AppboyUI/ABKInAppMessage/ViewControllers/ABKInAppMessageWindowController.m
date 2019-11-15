@@ -13,7 +13,6 @@
 #import "ABKUIURLUtils.h"
 #import "ABKUIUtils.h"
 
-static double const SlideAnimationDuration = 0.4;
 static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 
 @implementation ABKInAppMessageWindowController
@@ -234,7 +233,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     self.inAppMessageWindow.hidden = NO;
 
     if (self.inAppMessage.inAppMessageDismissType == ABKInAppMessageDismissAutomatically) {
-      self.slideAwayTimer = [NSTimer scheduledTimerWithTimeInterval:self.inAppMessage.duration + SlideAnimationDuration
+      self.slideAwayTimer = [NSTimer scheduledTimerWithTimeInterval:self.inAppMessage.duration + InAppMessageAnimationDuration
                                                              target:self
                                                            selector:@selector(inAppMessageTimerFired:)
                                                            userInfo:nil repeats:NO];
@@ -242,7 +241,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     [self.view layoutIfNeeded];
     [self.inAppMessageViewController beforeMoveInAppMessageViewOnScreen];
     if (withAnimation) {
-      [UIView animateWithDuration:SlideAnimationDuration
+      [UIView animateWithDuration:InAppMessageAnimationDuration
                             delay:0
                           options:UIViewAnimationOptionBeginFromCurrentState
                        animations:^{
@@ -269,7 +268,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   [self.view layoutIfNeeded];
   [self.inAppMessageViewController beforeMoveInAppMessageViewOffScreen];
   if (withAnimation) {
-    [UIView animateWithDuration:SlideAnimationDuration
+    [UIView animateWithDuration:InAppMessageAnimationDuration
                           delay:0
                         options:UIViewAnimationOptionBeginFromCurrentState
                      animations:^{

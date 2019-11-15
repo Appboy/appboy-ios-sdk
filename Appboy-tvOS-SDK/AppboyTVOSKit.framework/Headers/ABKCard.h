@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nullable) NSString *urlString;
 
 /*!
- * When the card's urlString is not nil, if the property is set to YES, the URL will be opened in a modal UIWebView
+ * When the card's urlString is not nil, if the property is set to YES, the URL will be opened in a modal WKWebView
  * inside the app. If this property is set to NO, the URL will be opened by the OS and web URLs will be opened in
  * an external web browser app.
  *

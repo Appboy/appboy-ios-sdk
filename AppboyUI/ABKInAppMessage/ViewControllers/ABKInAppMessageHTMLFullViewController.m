@@ -44,24 +44,4 @@
   [self.view.superview addConstraints:@[leadConstraint, trailConstraint, self.topConstraint, self.bottomConstraint]];
 }
 
-#pragma mark - Animation
-
-- (void)beforeMoveInAppMessageViewOnScreen {
-  self.topConstraint.constant = 0;
-  self.bottomConstraint.constant = 0;
-}
-
-- (void)moveInAppMessageViewOnScreen {
-  [self.view.superview layoutIfNeeded];
-}
-
-- (void)beforeMoveInAppMessageViewOffScreen {
-  self.topConstraint.constant = self.view.frame.size.height;
-  self.bottomConstraint.constant = self.view.frame.size.height;
-}
-
-- (void)moveInAppMessageViewOffScreen {
-  [self.view.superview layoutIfNeeded];
-}
-
 @end

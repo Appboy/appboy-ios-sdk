@@ -37,4 +37,15 @@
   [super handleCardClick:card];
 }
 
+- (void)populateContentCards {
+  NSMutableArray<ABKContentCard *> *cards = [NSMutableArray arrayWithArray:[Appboy.sharedInstance.contentCardsController getContentCards]];
+  for (ABKContentCard *card in cards) {
+    // Replaces the card description for all Classic content cards
+    if ([card class] == [ABKClassicContentCard class]) {
+      ((ABKClassicContentCard *)card).cardDescription = @"Custom Feed Override title [classic cards only]!";
+    }
+  }
+  super.cards = cards;
+}
+
 @end

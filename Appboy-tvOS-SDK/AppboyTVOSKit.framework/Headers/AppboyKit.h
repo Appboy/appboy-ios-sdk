@@ -17,9 +17,6 @@
 #import "ABKCaptionedImageContentCard.h"
 #import "ABKClassicContentCard.h"
 
-// Feedback
-#import "ABKFeedback.h"
-
 #if !TARGET_OS_TV
 // In-app Message
 #import "ABKInAppMessage.h"
@@ -36,6 +33,8 @@
 #import "ABKInAppMessageHTMLJSBridge.h"
 #import "ABKInAppMessageHTMLJSInterface.h"
 #import "ABKInAppMessageUIControlling.h"
+#import "ABKInAppMessageDarkTheme.h"
+#import "ABKInAppMessageDarkButtonTheme.h"
 
 // News Feed
 #import "ABKFeedController.h"
