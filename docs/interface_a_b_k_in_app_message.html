@@ -128,6 +128,10 @@ Properties</h2></td></tr>
 <tr class="separator:a14025866ce5bddf0f0b20d2f1baeec13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada532e142b9f000581813c53f96e9e3d"><td class="memItemLeft" align="right" valign="top">UIColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#ada532e142b9f000581813c53f96e9e3d">iconBackgroundColor</a></td></tr>
 <tr class="separator:ada532e142b9f000581813c53f96e9e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89df6090bed623099ab0ecc0a74ad5d"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#ae89df6090bed623099ab0ecc0a74ad5d">enableDarkTheme</a></td></tr>
+<tr class="separator:ae89df6090bed623099ab0ecc0a74ad5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88713841c132ec0ba74a1f6ffebba32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_in_app_message_dark_theme.html">ABKInAppMessageDarkTheme</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#ad88713841c132ec0ba74a1f6ffebba32">darkTheme</a></td></tr>
+<tr class="separator:ad88713841c132ec0ba74a1f6ffebba32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d9d9d8615a6dcad9d684e4d6a37022"><td class="memItemLeft" align="right" valign="top">NSURL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#ad4d9d9d8615a6dcad9d684e4d6a37022">imageURI</a></td></tr>
 <tr class="separator:ad4d9d9d8615a6dcad9d684e4d6a37022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f44917d3a7d6a8671c40d873965cb4"><td class="memItemLeft" align="right" valign="top">UIViewContentMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#a27f44917d3a7d6a8671c40d873965cb4">imageContentMode</a></td></tr>
@@ -221,11 +225,32 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">strong</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>backgroundColor defines the background color of the in-app message. The default background color is black with 0.9 alpha for <a class="el" href="interface_a_b_k_in_app_message_slideup.html">ABKInAppMessageSlideup</a>, and white with 1.0 alpha for <a class="el" href="interface_a_b_k_in_app_message_modal.html">ABKInAppMessageModal</a> and <a class="el" href="interface_a_b_k_in_app_message_full.html">ABKInAppMessageFull</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad88713841c132ec0ba74a1f6ffebba32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_a_b_k_in_app_message_dark_theme.html">ABKInAppMessageDarkTheme</a>*) darkTheme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Data model that contains all the dark theme color info for any visible views, including any buttons that may be present. </p>
 
 </div>
 </div>
@@ -247,6 +272,28 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
 </table>
 </div><div class="memdoc">
 <p>This property defines the number of seconds before the in-app message is automatically dismissed. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae89df6090bed623099ab0ecc0a74ad5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) enableDarkTheme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This boolean determines if the in-app message will attempt to use dark theme colors, granted the device is in dark mode and the fields are present in the response.</p>
+<p>The default of this value is YES but can be overriden in <code>beforeInAppMessageDisplayed:</code> to ensure that the dark theme is disabled for any given in-app message. </p>
 
 </div>
 </div>
@@ -306,7 +353,7 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">strong</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -330,7 +377,7 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">strong</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -542,7 +589,7 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">atomic</span><span class="mlabel">strong</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -575,7 +622,7 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2019 12:58:23 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 15 2019 10:57:11 for “BrazeiOSSDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

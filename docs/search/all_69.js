@@ -18,6 +18,7 @@ var searchData=
   ['incrementcustomuserattribute_3a',['incrementCustomUserAttribute:',['../interface_a_b_k_user.html#a8f9fa4894dd236dedd48e610d43ef316',1,'ABKUser']]],
   ['incrementcustomuserattribute_3aby_3a',['incrementCustomUserAttribute:by:',['../interface_a_b_k_user.html#a3311dadde4e172539dce54d82a6d9447',1,'ABKUser']]],
   ['initwithfacebookuserdictionary_3anumberoffriends_3alikes_3a',['initWithFacebookUserDictionary:numberOfFriends:likes:',['../interface_a_b_k_facebook_user.html#a15526bd07ad1b0a72da4583dda4fc0d0',1,'ABKFacebookUser']]],
+  ['initwithfields_3a',['initWithFields:',['../interface_a_b_k_in_app_message_dark_button_theme.html#af40aef14b3b81e9ff2ba2b4b27a1052b',1,'ABKInAppMessageDarkButtonTheme::initWithFields:()'],['../interface_a_b_k_in_app_message_dark_theme.html#a36e8ed5a397bbf07c71ad7eb76c55bfd',1,'ABKInAppMessageDarkTheme::initWithFields:()']]],
   ['initwithnetwork_3acampaign_3aadgroup_3acreative_3a',['initWithNetwork:campaign:adGroup:creative:',['../interface_a_b_k_attribution_data.html#aab29d1bcd55c5f5687061f9916e0901f',1,'ABKAttributionData']]],
   ['isadvertisingtrackingenabled',['isAdvertisingTrackingEnabled',['../protocol_a_b_k_i_d_f_a_delegate-p.html#a76e1bb5e44988baa8acac9c1ddc44177',1,'ABKIDFADelegate-p']]],
   ['isappboyinternalremotenotification_3a',['isAppboyInternalRemoteNotification:',['../interface_a_b_k_push_utils.html#afd55ca5f35fb5b2306ae1be6b5deea9f',1,'ABKPushUtils']]],
