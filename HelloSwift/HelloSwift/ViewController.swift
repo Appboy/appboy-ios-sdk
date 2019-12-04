@@ -7,6 +7,9 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+    tapGesture.numberOfTapsRequired = 1
+    self.view.addGestureRecognizer(tapGesture)
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -24,5 +27,9 @@ class ViewController: UIViewController {
   @IBAction func updateUserId(sender: AnyObject) {
     userIdTextField.resignFirstResponder()
     Appboy.sharedInstance()?.changeUser(userIdTextField.text!)
+  }
+
+  @objc func dismissKeyboard() {
+    self.view.endEditing(true)
   }
 }

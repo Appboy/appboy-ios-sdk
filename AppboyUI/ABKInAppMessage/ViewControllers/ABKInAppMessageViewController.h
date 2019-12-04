@@ -6,6 +6,7 @@
 
 static const CGFloat InAppMessageShadowBlurRadius = 4.0f;
 static const CGFloat InAppMessageShadowOpacity = 0.3f;
+static const CGFloat InAppMessageSelectedOpacity = 0.8f;
 
 NS_ASSUME_NONNULL_BEGIN
 @interface ABKInAppMessageViewController : UIViewController

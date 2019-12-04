@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1379A02923731F1300578296 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1379A02823731F1300578296 /* AboutViewController.m */; };
 		18A80E049E9C4EF3CBEFEDC6 /* libPods-Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F249259AC60CD3E5F9147EC /* libPods-Stopwatch.a */; };
 		33A374D093A069BA4E044000 /* libPods-tvOS_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120D81078F772014E4675E3 /* libPods-tvOS_Stopwatch.a */; };
 		4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E94E118BD52C60008C815 /* Localizable.strings */; };
@@ -133,6 +134,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1379A02723731F1300578296 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		1379A02823731F1300578296 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		21F6413047AA13F4A67FF940 /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
 		2939F8CE24F6BD85EDF23202 /* Pods-tvOS_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		2C11560722D83F782DE63459 /* Pods-StopwatchNotificationContentExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopwatchNotificationContentExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StopwatchNotificationContentExtension/Pods-StopwatchNotificationContentExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -453,6 +456,8 @@
 				E3C754A71E7AE970004E1CCE /* InAppMessages */,
 				4E94D76F1743EE8900604EA0 /* AppDelegate.h */,
 				4E94D7701743EE8900604EA0 /* AppDelegate.m */,
+				1379A02723731F1300578296 /* AboutViewController.h */,
+				1379A02823731F1300578296 /* AboutViewController.m */,
 				D41D8F701CB7049400D622EF /* ContainerViewController.h */,
 				D41D8F731CB70A4600D622EF /* ContainerViewController.m */,
 				D411F3101CD0355200100702 /* CustomTabBarController.h */,
@@ -1274,6 +1279,7 @@
 				E3C754A41E70DE7D004E1CCE /* AliasViewController.m in Sources */,
 				E325DF461E29A93300B3E168 /* GeofencesViewController.m in Sources */,
 				4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */,
+				1379A02923731F1300578296 /* AboutViewController.m in Sources */,
 				4EABC19A1A606D00007259BD /* InAppMessageUIViewController.m in Sources */,
 				AD884BF52081289900DA304A /* UserCustomAttribute.m in Sources */,
 				4EABC19D1A621B7F007259BD /* InAppMessageUICells.m in Sources */,

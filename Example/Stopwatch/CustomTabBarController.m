@@ -13,7 +13,7 @@
                                      [self addNavigationControllerWithChildren:@[@"Attributes", @"Arrays", @"Events", @"Alias"] andTitle:@"User" andImageName:@"user" withFlushButton:YES], // User tab
                                      [self addNavigationControllerWithChildren:@[@"UI", @"Controls"] andTitle:@"IAM" andImageName:@"IAM" withFlushButton:NO], // IAM tab
                                      [self addNavigationControllerWithIdentifier:@"FeedUIViewController" withTitle:@"Braze UI" andImageName:@"newsfeed"], // UI tab
-                                     [self addNavigationControllerWithChildren:@[@"Misc", @"Data"] andTitle:@"Advanced" andImageName:@"bolt" withFlushButton:NO], // Advanced tab
+                                     [self addNavigationControllerWithChildren:@[@"Misc", @"Data", @"About"] andTitle:@"Advanced" andImageName:@"bolt" withFlushButton:NO], // Advanced tab
                                      nil];
   [self setViewControllers:viewControllers];
   

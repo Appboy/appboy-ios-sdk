@@ -1,4 +1,18 @@
+## 3.21.1
+
+##### Fixed
+- Fixes an issue for Modal and Full in-app messages where the opacity value of the close X button was not being respected.
+
+##### Changed
+- `ABKContentCard.m` will now log a click event when `logContentCardClicked` is called and no URL field is populated.
+
+##### Added
+- Adds the ability to force the status bar to hide when a Full or HTML in-app message is being actively displayed. To opt in to this feature, set `ABKInAppMessageHideStatusBarKey` to `YES` in `appboyOptions`.
+
 ## 3.21.0
+
+##### Breaking
+- Requires XCode 11.
 
 ##### Fixed
 - Fixes an issue in the animate-in behavior of HTML in-app messages that could cause a brief flicker before the message displayed on older devices and simulators.

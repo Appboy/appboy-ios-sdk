@@ -483,6 +483,50 @@
             </objects>
             <point key="canvasLocation" x="255.19999999999999" y="-2556.0719640179914"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="ZbJ-MQ-NpF">
+            <objects>
+                <viewController storyboardIdentifier="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eX1-wK-fWZ" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FEB-19-5cK"/>
+                        <viewControllerLayoutGuide type="bottom" id="xJc-s1-CeO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ujp-2j-twa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrd-PT-Rh8">
+                                <rect key="frame" x="36" y="144" width="342" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU4-l0-awE">
+                                <rect key="frame" x="36" y="195" width="342" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lrd-PT-Rh8" secondAttribute="trailing" constant="16" id="4Hg-Jt-E2B"/>
+                            <constraint firstItem="lrd-PT-Rh8" firstAttribute="leading" secondItem="Ujp-2j-twa" secondAttribute="leadingMargin" constant="16" id="7kV-eV-Up2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JU4-l0-awE" secondAttribute="trailing" constant="16" id="EoG-Fn-Lbs"/>
+                            <constraint firstItem="JU4-l0-awE" firstAttribute="top" secondItem="lrd-PT-Rh8" secondAttribute="bottom" constant="30" id="FAD-Bn-g5F"/>
+                            <constraint firstItem="lrd-PT-Rh8" firstAttribute="top" secondItem="FEB-19-5cK" secondAttribute="bottom" constant="100" id="M3b-PP-96o"/>
+                            <constraint firstItem="JU4-l0-awE" firstAttribute="leading" secondItem="Ujp-2j-twa" secondAttribute="leadingMargin" constant="16" id="gq7-ML-s9X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="apiEndpointLabel" destination="JU4-l0-awE" id="0v7-8K-4Th"/>
+                        <outlet property="apiKeyLabel" destination="lrd-PT-Rh8" id="kaI-aF-Zcv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISI-rd-iHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1208.6956521739132" y="-2557.3660714285711"/>
+        </scene>
         <!--User Attributes View Controller-->
         <scene sceneID="xov-Ox-xcT">
             <objects>

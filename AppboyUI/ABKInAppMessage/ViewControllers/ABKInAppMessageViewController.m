@@ -50,6 +50,11 @@ static NSString *const FontAwesomeName = @"FontAwesome";
                                   nil);
 }
 
+// This may be overriden by subclasses
+- (BOOL)prefersStatusBarHidden {
+  return NO;
+}
+
 #pragma mark - UIViewController Methods
 
 // Inherit the supported orientations from the topmost, currently visible view controller (the one

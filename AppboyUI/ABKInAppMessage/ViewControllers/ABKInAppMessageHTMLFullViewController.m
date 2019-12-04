@@ -44,4 +44,8 @@
   [self.view.superview addConstraints:@[leadConstraint, trailConstraint, self.topConstraint, self.bottomConstraint]];
 }
 
+- (BOOL)prefersStatusBarHidden {
+  return YES;
+}
+
 @end

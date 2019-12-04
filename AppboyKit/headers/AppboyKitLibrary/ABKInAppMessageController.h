@@ -25,6 +25,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) id<ABKInAppMessageUIControlling> inAppMessageUIController;
 
 /*!
+ * If this boolean is set to YES, the device will hide the status bar when displaying a full type or
+ * HTML full type in-app message. This property defaults to NO.
+ */
+@property (assign, nonatomic, readonly) BOOL forceHideStatusBar;
+
+/*!
  * @param delegate The in-app message delegate that implements the ABKInAppMessageControllerDelegate methods. If the delegate is
  * nil, it acts as one which always returns ABKDisplayInAppMessageNow and doesn't implement all other delegate methods.
  *

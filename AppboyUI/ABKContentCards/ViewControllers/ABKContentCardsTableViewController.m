@@ -10,7 +10,6 @@
 
 #import "ABKUIUtils.h"
 #import "ABKUIURLUtils.h"
-
 #import <SDWebImage/SDWebImagePrefetcher.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -322,13 +321,16 @@ estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 #pragma mark - Card Click Actions
 
 - (void)handleCardClick:(ABKContentCard *)card {
-  [card logContentCardClicked];
-  NSURL *cardURL = [ABKUIURLUtils getEncodedURIFromString:card.urlString];
-   if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
-     [self openURLInWebView:cardURL];
-   } else {
-     [ABKUIURLUtils openURLWithSystem:cardURL];
-   }
+  // Log a card click only when the card has the url property with a valid url.
+  if (card.urlString.length > 0) {
+    [card logContentCardClicked];
+    NSURL *cardURL = [ABKUIURLUtils getEncodedURIFromString:card.urlString];
+    if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
+      [self openURLInWebView:cardURL];
+    } else {
+      [ABKUIURLUtils openURLWithSystem:cardURL];
+    }
+  }
 }
 
 - (void)openURLInWebView:(NSURL *)url {

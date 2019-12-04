@@ -71,9 +71,9 @@ static NSInteger const CloseButtonTag = 50;
     closeButtonImageView.tintColor = closeButtonColor;
     [closeButton setImage:closeButtonImageView.image forState:UIControlStateNormal];
 
-    UIImageView *closeButtonSelectedImageView = closeButton.imageView;
-    closeButtonSelectedImageView.image = [closeButtonSelectedImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    closeButtonSelectedImageView.tintColor = [closeButtonColor colorWithAlphaComponent:.8];
+    // Copy of the imageView for the Selected state
+    UIImageView *closeButtonSelectedImageView = [[UIImageView alloc] initWithImage:closeButton.imageView.image];
+    closeButtonSelectedImageView.tintColor = [closeButtonColor colorWithAlphaComponent:InAppMessageSelectedOpacity];
     [closeButton setImage:closeButtonSelectedImageView.image forState:UIControlStateSelected];
   }
 }

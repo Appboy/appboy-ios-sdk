@@ -18,6 +18,8 @@ lane :matchFullAccess do
    match(type: "adhoc", app_identifier: "Appboy.HelloSwift", force_for_new_devices: true)
    match(type: "development", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", force_for_new_devices: true)
    match(type: "adhoc", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", force_for_new_devices: true)
+   match(type: "development", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationContentExtension", force_for_new_devices: true)
+   match(type: "adhoc", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationContentExtension", force_for_new_devices: true)
  end
 
  lane :matchReadOnly do
@@ -25,6 +27,8 @@ lane :matchFullAccess do
    match(type: "adhoc", app_identifier: "Appboy.HelloSwift", readonly: true, force_for_new_devices: true)
    match(type: "development", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", readonly:true, force_for_new_devices: true)
    match(type: "adhoc", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationExtension", readonly:true, force_for_new_devices: true)
+   match(type: "development", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationContentExtension", readonly:true, force_for_new_devices: true)
+   match(type: "adhoc", app_identifier: "Appboy.HelloSwift.HelloSwiftNotificationContentExtension", readonly:true, force_for_new_devices: true)
  end
 
 

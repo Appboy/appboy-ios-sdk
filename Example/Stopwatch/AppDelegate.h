@@ -10,6 +10,9 @@ static NSString *const SetInAppMessageControllerDelegateKey = @"com.appboy.stopw
 static NSString *const SetURLDelegateKey = @"com.appboy.stopwatch.urldelegate";
 static NSString *const NewSessionTimeoutKey = @"com.appboy.stopwatch.sessiontimeout";
 
+static NSString *const ApiKeyInUse = @"com.appboy.stopwatch.apikeyinuse";
+static NSString *const EndpointInUse = @"com.appboy.stopwatch.endpointinuse";
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate,
 ABKInAppMessageControllerDelegate, ABKURLDelegate>
 

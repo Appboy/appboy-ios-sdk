@@ -73,6 +73,14 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   [self.view addSubview:self.inAppMessageViewController.view];
 }
 
+- (BOOL)prefersStatusBarHidden {
+  if ([Appboy sharedInstance].inAppMessageController.forceHideStatusBar) {
+    // Config override is passed from appboyOptions
+    return [self.inAppMessageViewController prefersStatusBarHidden];
+  }
+  return [UIApplication sharedApplication].statusBarHidden;
+}
+
 #pragma mark - Rotation
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {

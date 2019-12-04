@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.21.0"
+#define APPBOY_SDK_VERSION @"3.21.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -88,6 +88,12 @@ extern NSString *const ABKURLDelegateKey;
 extern NSString *const ABKInAppMessageControllerDelegateKey;
 
 /*!
+ * This key can be set to YES to force the status bar to hide when presenting full screen in-app messages.
+ * If it is not set, the device will instead attempt to display the in-app message on top of the status bar, depending on the OS version.
+ */
+extern NSString *const ABKInAppMessageHideStatusBarKey;
+
+/*!
  * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
  * the set time interval. In that case, the session won't be close even though the user closed the app, but will continue until
  * it times out. The value should be an integer bigger than 0.
@@ -96,7 +102,7 @@ extern NSString *const ABKSessionTimeoutKey;
 
 /*!
  * Set the minimum time interval in seconds between triggers. After a trigger happens, we will ignore any triggers until
- * the minimum time interval elapses. The default value is 30s.
+ * the minimum time interval elapses. The default value is 30s. The minimum valid value is 0s.
  */
 extern NSString *const ABKMinimumTriggerTimeIntervalKey;
 

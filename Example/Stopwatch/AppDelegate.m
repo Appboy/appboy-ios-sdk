@@ -54,7 +54,8 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     NSLog(@"Setting ABKInAppMessageControllerDelegate for app run.");
     appboyOptions[ABKInAppMessageControllerDelegateKey] = self;
   }
-  
+  appboyOptions[ABKInAppMessageHideStatusBarKey] = @(YES);
+
   // Set ABKURLDelegate on startup
   BOOL setUrlDelegate = YES; // default value
   if ([preferences objectForKey:SetURLDelegateKey] != nil) {
@@ -69,6 +70,8 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   appboyOptions[ABKPushStoryAppGroupKey] = @"group.com.appboy.stopwatch";
 
   // Starts up Braze, opening a new session and causing an updated in-app message/feed to be requested.
+  [[NSUserDefaults standardUserDefaults] setObject:apiKeyToUse forKey:ApiKeyInUse];
+  [[NSUserDefaults standardUserDefaults] setObject:appboyOptions[ABKEndpointKey] forKey:EndpointInUse];
   [Appboy startWithApiKey:apiKeyToUse
           inApplication:application
       withLaunchOptions:launchOptions
@@ -83,7 +86,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     }
   }];
 
-  [self setUpRemoteNotification];
+  [self setUpRemoteNotifications];
   self.stopwatchEnableDarkTheme = YES;
   
   NSLog(@"Appboy device identifier is %@", [[Appboy sharedInstance] getDeviceId]);
@@ -161,7 +164,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 # pragma mark - Braze Push Registration
 
-- (void) setupRemoteNotificationForiOS8And9 {
+- (void)setUpPushWithApplicationDelegates {
   UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationAction alloc] init];
   likeAction.identifier = @"LIKE_IDENTIFIER";
   likeAction.title = @"Like";
@@ -192,7 +195,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 
-- (void) setupRemoteNotificationForiOS10 {
+- (void)setUpPushWithUserNotificationCenter {
   UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
   UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
   if (@available(iOS 12.0, *)) {
@@ -222,11 +225,11 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
-- (void) setUpRemoteNotification {
+- (void)setUpRemoteNotifications {
   if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
-    [self setupRemoteNotificationForiOS10];
+    [self setUpPushWithUserNotificationCenter];
   } else {
-    [self setupRemoteNotificationForiOS8And9];
+    [self setUpPushWithApplicationDelegates];
   }
 }
 
@@ -251,6 +254,9 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 #pragma mark - ABKInAppMessageControllerDelegate
 
+/*!
+* Note that this method will only be called if setting ABKInAppMessageControllerDelegate is enabled from the Stopwatch UI. By default, ABKInAppMessageControllerDelegate is not set.
+*/
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
   NSLog(@"beforeInAppMessageDisplayed: delegate called in Stopwatch.");
   if (inAppMessage.extras != nil && inAppMessage.extras[@"Appstore Review"] != nil) {
@@ -266,6 +272,9 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 #pragma mark - ABKURLDelegate
 
+/*!
+* Note that this method will only be called if setting ABKURLDelegate is enabled from the Stopwatch UI. By default, ABKURLDelegate is set.
+*/
 - (BOOL)handleAppboyURL:(NSURL *)url fromChannel:(ABKChannel)channel withExtras:(NSDictionary *)extras {
   // Use ABKURLDelegate to handle Universal Links
   if ([[url.host lowercaseString] isEqualToString:@"sweeney.appboy.com"]) {

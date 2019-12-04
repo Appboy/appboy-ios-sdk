@@ -217,7 +217,7 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   if (self.inAppMessage.inAppMessageClickActionType != ABKInAppMessageNoneClickAction) {
-    self.view.alpha = .8;
+    self.view.alpha = InAppMessageSelectedOpacity;
   }
 }
 

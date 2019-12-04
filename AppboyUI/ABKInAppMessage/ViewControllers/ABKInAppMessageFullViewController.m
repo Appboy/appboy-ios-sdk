@@ -114,6 +114,10 @@ static const CGFloat CloseXPadding = 15.0f;
 
 #pragma mark - Superclass methods
 
+- (BOOL)prefersStatusBarHidden {
+  return YES;
+}
+
 - (UIView *)bottomViewWithNoButton {
   return self.textsView;
 }

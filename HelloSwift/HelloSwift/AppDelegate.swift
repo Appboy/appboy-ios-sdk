@@ -13,16 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let appboyOptions: [AnyHashable: Any] = [
       ABKMinimumTriggerTimeIntervalKey : 1,
       ABKInAppMessageControllerDelegateKey : self,
-      ABKURLDelegateKey : self
+      ABKURLDelegateKey : self,
+      ABKPushStoryAppGroupKey : "group.Appboy.HelloSwift"
     ]
     Appboy.start(withApiKey: "1fbb9af3-93e0-43a2-920c-c6d867dab72a", in:application, withLaunchOptions:launchOptions, withAppboyOptions: appboyOptions)
     
     let center = UNUserNotificationCenter.current()
-    center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+    var options: UNAuthorizationOptions = [.alert, .sound, .badge]
+    if #available(iOS 12.0, *) {
+      options = UNAuthorizationOptions(rawValue: options.rawValue | UNAuthorizationOptions.provisional.rawValue)
+    }
+    center.requestAuthorization(options: options) { (granted, error) in
       Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)                                                             
       print("Permission granted.")
     }
     center.delegate = self
+    center.setNotificationCategories(ABKPushUtils.getAppboyUNNotificationCategorySet())
     UIApplication.shared.registerForRemoteNotifications()
     
     // Sample usage of unsafeInstance.  Note: startWithApiKey: MUST be called before calling unsafeInstance or an exception will be thrown.  
@@ -38,6 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     Appboy.sharedInstance()!.registerDeviceToken(deviceToken)
+  }
+  
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    Appboy.sharedInstance()?.register(application, didReceiveRemoteNotification:userInfo, fetchCompletionHandler: completionHandler)
   }
   
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
