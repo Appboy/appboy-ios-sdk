@@ -37,6 +37,12 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   } else {
     webViewConfiguration.requiresUserActionForMediaPlayback = YES;
   }
+  
+  ABKInAppMessageWindowController *parentViewController =
+    (ABKInAppMessageWindowController *)self.parentViewController;
+  if ([parentViewController.inAppMessageUIDelegate respondsToSelector:@selector(setCustomWKWebViewConfiguration)]) {
+    webViewConfiguration = [parentViewController.inAppMessageUIDelegate setCustomWKWebViewConfiguration];
+  }
 
   WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:webViewConfiguration];
   self.webView = webView;
@@ -69,6 +75,17 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
     [self.webView loadHTMLString:self.inAppMessage.message baseURL:nil];
   }
   [self.view addSubview:self.webView];
+
+  // Sets an observer for UIKeyboardWillHideNotification. This is a workaround for the
+  // keyboard dismissal bug in iOS 12+ WKWebView filed here
+  // https://bugs.webkit.org/show_bug.cgi?id=192564. The workaround is also from the post.
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
+}
+
+#pragma mark - NSNotificationCenter selectors
+
+- (void)keyboardWillHide {
+  [self.webView setNeedsLayout];
 }
 
 #pragma mark - WKDelegate methods

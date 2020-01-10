@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <WebKit/WebKit.h>
 #import "ABKInAppMessageViewController.h"
 #import "AppboyKit.h"
 
@@ -112,6 +113,8 @@ NS_ASSUME_NONNULL_BEGIN
  * ABKInAppMessageHTML.h for more information.
  */
 - (BOOL)onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTML *)inAppMessage clickedURL:(nullable NSURL *)clickedURL buttonID:(NSString *)buttonId;
+
+- (WKWebViewConfiguration *)setCustomWKWebViewConfiguration;
 
 @end
 NS_ASSUME_NONNULL_END

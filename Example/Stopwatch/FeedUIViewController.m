@@ -59,7 +59,7 @@
   
   // Update the application icon badge count to reflect the number of unread news feed cards
   [UIApplication sharedApplication].applicationIconBadgeNumber =
-    [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll];
+  [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll];
   [self.view setNeedsDisplay];
 }
 
@@ -86,50 +86,40 @@
 }
 
 - (void)displayCategoriesActionSheet {
-  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.title", nil)
-                                                           delegate:self
-                                                  cancelButtonTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.cancel", nil)
-                                             destructiveButtonTitle:nil
-                                                  otherButtonTitles:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.All", nil),
-                                NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Announcement", nil),
-                                NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Advertising", nil),
-                                NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Social", nil),
-                                NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.News", nil),
-                                NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.No-Category", nil), nil];
+  UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.title", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   
-  [actionSheet showInView:self.navigationController.visibleViewController.view];
-}
+  ABKNewsFeedTableViewController *feedTableViewController = (ABKNewsFeedTableViewController *)self.navigationController.topViewController;
+  [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Announcement", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self dismissViewControllerAnimated:YES completion:^{
+      [feedTableViewController setCategories:ABKCardCategoryAnnouncements];
+    }];
+  }]];
+  [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Advertising", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self dismissViewControllerAnimated:YES completion:^{
+      [feedTableViewController setCategories:ABKCardCategoryAdvertising];
+    }];
+  }]];
+  [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Social", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self dismissViewControllerAnimated:YES completion:^{
+      [feedTableViewController setCategories:ABKCardCategorySocial];
+    }];
+  }]];
+  [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.News", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self dismissViewControllerAnimated:YES completion:^{
+      [feedTableViewController setCategories:ABKCardCategoryNews];
+    }];
+  }]];
+  [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.No-Category", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self dismissViewControllerAnimated:YES completion:^{
+      [feedTableViewController setCategories:ABKCardCategoryNoCategory];
+    }];
+  }]];
+  [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+  }]];
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-  ABKNewsFeedTableViewController *newsFeed = (ABKNewsFeedTableViewController *)self.navigationController.topViewController;
-  switch (buttonIndex) {
-    case 0:
-      [newsFeed setCategories:ABKCardCategoryAll];
-      break;
-      
-    case 1:
-      [newsFeed setCategories:ABKCardCategoryAnnouncements];
-      break;
-      
-    case 2:
-      [newsFeed setCategories:ABKCardCategoryAdvertising];
-      break;
-      
-    case 3:
-      [newsFeed setCategories:ABKCardCategorySocial];
-      break;
-      
-    case 4:
-      [newsFeed setCategories:ABKCardCategoryNews];
-      break;
-      
-    case 5:
-      [newsFeed setCategories:ABKCardCategoryNoCategory];
-      break;
-      
-    default:
-      break;
-  }
+  [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 # pragma mark - Feed

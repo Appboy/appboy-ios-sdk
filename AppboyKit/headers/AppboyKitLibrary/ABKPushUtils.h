@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's uninstall tracking notifications
  *             (e.g., pinging your server for content).
  */
-+ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0) __deprecated_msg("Use [ABKPushUtils isAppboyInternalRemoteNotification:] instead.");
++ (BOOL)isUninstallTrackingUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's uninstall tracking notifications
  *             (e.g., pinging your server for content).
  */
-+ (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo __deprecated_msg("Use [ABKPushUtils isAppboyInternalRemoteNotification:] instead.");
++ (BOOL)isUninstallTrackingRemoteNotification:(NSDictionary *)userInfo;
 
 /*!
  * @param response The UNNotificationResponse passed to userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's geofence sync notifications
  *             (e.g., pinging your server for content).
  */
-+ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0) __deprecated_msg("Use [ABKPushUtils isAppboyInternalRemoteNotification:] instead.");
++ (BOOL)isGeofencesSyncUserNotification:(UNNotificationResponse *)response NS_AVAILABLE_IOS(10.0);
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             your app doesn't take any undesired or unnecessary actions upon receiving Braze's geofence sync notifications
  *             (e.g., pinging your server for content).
  */
-+ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo __deprecated_msg("Use [ABKPushUtils isAppboyInternalRemoteNotification:] instead.");
++ (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;
 
 /*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @return YES if the push notification was sent by Braze for push stories.
  */
-+ (BOOL)isPushStoryRemoteNotification:(NSDictionary *)userInfo __deprecated_msg("Use [ABKPushUtils isAppboyInternalRemoteNotification:] instead.");
++ (BOOL)isPushStoryRemoteNotification:(NSDictionary *)userInfo;
 
 + (BOOL)notificationContainsContentCard:(NSDictionary *)userInfo;
 

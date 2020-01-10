@@ -1,3 +1,16 @@
+## 3.21.2
+
+##### Fixed
+- Fixes an issue in HTML in-app messages where, during display, the viewport would shift down if the keyboard was opened but not shift back up when the keyboard was closed.
+- Fixes an issue introduced in 3.17.0 where the SDK would give precedence to the endpoint passed in `Info.plist` if given both an endpoint from the `Info.plist` and `appboyOptions`.
+
+##### Added
+- Adds the ability to set a custom WKWebViewConfiguration for HTML in-app messages. You can set it using the method `setCustomWKWebViewConfiguration` in `ABKInAppMessageUIDelegate`.
+
+##### Changed
+- Removes calls to deprecated APIs `statusBarOrientation` and `statusBarFrame`.
+- Un-deprecates the following push utility methods: `isUninstallTrackingUserNotification:`, `isUninstallTrackingRemoteNotification:`, `isGeofencesSyncUserNotification:`, `isGeofencesSyncRemoteNotification:`, and `isPushStoryRemoteNotification:` from `ABKPushUtils`. These APIs were originally deprecated in 3.16.0.
+
 ## 3.21.1
 
 ##### Fixed
@@ -38,8 +51,6 @@
 - Adds a `TEALIUM` SDK flavor option.
 
 ## 3.20.3
-
-Released on 2019-10-04
 
 ##### Added
 - If Automatic Braze location collection is enabled, the SDK now submits a session start location request if location hasn't already been sent up for the session after any affirmative location permission prompt. This also applies to the new "Allow Once" option in iOS 13.

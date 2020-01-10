@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface ColorUtils
+@interface ColorUtils : NSObject
 
 + (UIColor *)stopwatchBlueColor;
 

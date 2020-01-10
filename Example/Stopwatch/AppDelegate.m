@@ -85,6 +85,9 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
       NSLog(@"Calling Branch deep link handler on params: %@", params.description);
     }
   }];
+  
+  // Set ABKInAppMessageUIDelegate
+  [[Appboy sharedInstance].inAppMessageController.inAppMessageUIController setInAppMessageUIDelegate:self];
 
   [self setUpRemoteNotifications];
   self.stopwatchEnableDarkTheme = YES;
@@ -94,7 +97,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   return YES;
 }
 
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
   NSLog(@"application:continueUserActivity:restorationHandler called");
   
   if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
@@ -127,7 +130,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   }
 }
 
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)(void))completionHandler {
   NSLog(@"application:handleActionWithIdentifier:forRemoteNotification:completionHandler: with identifier %@", identifier);
   [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
 }
@@ -188,7 +191,10 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
   
   // Adding Braze default categories
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wdeprecated-declarations"
   NSMutableSet *categories = [NSMutableSet setWithSet:[ABKPushUtils getAppboyUIUserNotificationCategorySet]];
+  #pragma clang diagnostic pop
   [categories addObject:likeCategory];
   UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
   [[UIApplication sharedApplication] registerForRemoteNotifications];
@@ -269,6 +275,20 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
   return ABKDisplayInAppMessageNow;
 }
+
+#pragma mark - ABKInAppMessageUIDelegate
+
+/*- (WKWebViewConfiguration *)setCustomWKWebViewConfiguration {
+  WKWebViewConfiguration *webViewConfiguration = [[WKWebViewConfiguration alloc] init];
+  webViewConfiguration.allowsInlineMediaPlayback = YES;
+  webViewConfiguration.suppressesIncrementalRendering = YES;
+  if (@available(iOS 10.0, *)) {
+    webViewConfiguration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
+  } else {
+    webViewConfiguration.requiresUserActionForMediaPlayback = YES;
+  }
+  return webViewConfiguration;
+}*/
 
 #pragma mark - ABKURLDelegate
 

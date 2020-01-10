@@ -35,7 +35,7 @@
 - (void)showInAppMessage:(ABKInAppMessage *)inAppMessage {
   if ([UIDevice currentDevice].userInterfaceIdiom != UIUserInterfaceIdiomPad) {
     // Check the device orientation before displaying the in-app message
-    UIInterfaceOrientation statusBarOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    UIInterfaceOrientation statusBarOrientation = [ABKUIUtils getInterfaceOrientation];
     NSString *errorMessage = @"The in-app message %@ with %@ orientation shouldn't be displayed in %@, disregarding this in-app message.";
     if (inAppMessage.orientation == ABKInAppMessageOrientationPortrait &&
         !UIInterfaceOrientationIsPortrait(statusBarOrientation)) {
@@ -105,8 +105,12 @@
     NSLog(@"Initially setting in-app message display choice to ABKDisplayInAppMessageLater due to visible keyboard.");
   }
   if ([self.uiDelegate respondsToSelector:@selector(beforeInAppMessageDisplayed:withKeyboardIsUp:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    // ignore deprecation warning to support client integrations using the deprecated method
     inAppMessageDisplayChoice = [self.uiDelegate beforeInAppMessageDisplayed:inAppMessage
-                                                            withKeyboardIsUp:self.keyboardVisible];
+                                                        withKeyboardIsUp:self.keyboardVisible];
+#pragma clang diagnostic pop
   } else if ([[Appboy sharedInstance].inAppMessageController.delegate
               respondsToSelector:@selector(beforeInAppMessageDisplayed:)]) {
     inAppMessageDisplayChoice = [[Appboy sharedInstance].inAppMessageController.delegate

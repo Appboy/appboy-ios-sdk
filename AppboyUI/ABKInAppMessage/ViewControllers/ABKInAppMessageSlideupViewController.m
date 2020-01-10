@@ -161,7 +161,7 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
 }
 
 - (CGFloat)sideMarginsForPhoneAndOrientation {
-  if ([ABKUIUtils isNotchedPhone] && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+  if ([ABKUIUtils isNotchedPhone] && UIInterfaceOrientationIsLandscape([ABKUIUtils getInterfaceOrientation])) {
     return NotchedPhoneLandscapeSideMarginWidth;
   }
   return DefaultSideMarginWidth;
@@ -171,7 +171,7 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
   BOOL animatesFromTop = ((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop;
 
   if ([ABKUIUtils isNotchedPhone]) {
-    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
+    if ([ABKUIUtils getInterfaceOrientation] == UIInterfaceOrientationPortrait) {
       if (animatesFromTop) {
         return NotchedPhonePortraitTopMarginHeight;
       } else {
@@ -181,10 +181,9 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
       // Is landscape and animates from bottom
       return NotchedPhoneLandscapeBottomMarginHeight;
     }
-
   } else if (animatesFromTop) {
     // Non-notched that animates from top, add status bar height
-    return DefaultVerticalMarginHeight + [UIApplication sharedApplication].statusBarFrame.size.height;
+    return DefaultVerticalMarginHeight + [ABKUIUtils getStatusBarSize].height;
   }
   return DefaultVerticalMarginHeight;
 }

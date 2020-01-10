@@ -88,49 +88,6 @@
   return actionSheet;
 }
 
-- (UIActionSheet *)getActionSheetWithInAppMessageDictionary:(NSMutableDictionary *)dictionary {
-  NSString *buttonTitle = self.titleButton.titleLabel.text;
-  NSDictionary *optionDictionary;
-  if ([buttonTitle isEqualToString:ItemImageURL]) {
-    optionDictionary = [ButtonLabelCell imageDictionary];
-  } else if ([buttonTitle isEqualToString:ItemMessage]) {
-    optionDictionary = [ButtonLabelCell messageDictionary];
-  } else if ([buttonTitle isEqualToString:ItemHeader]) {
-    optionDictionary = [ButtonLabelCell headerDictionary];
-  }
-  
-  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:buttonTitle
-                                                           delegate:self
-                                                  cancelButtonTitle:nil
-                                             destructiveButtonTitle:nil
-                                                  otherButtonTitles:nil];
-  
-  for (NSString *title in [optionDictionary allKeys]) {
-    [actionSheet addButtonWithTitle:title];
-  }
-  self.inAppMessageDictionary = dictionary;
-  return actionSheet;
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-  NSDictionary *optionDictionary;
-  if ([actionSheet.title isEqualToString:ItemImageURL]) {
-    optionDictionary = [ButtonLabelCell imageDictionary];
-  } else if ([actionSheet.title isEqualToString:ItemMessage]) {
-    optionDictionary = [ButtonLabelCell messageDictionary];
-  } else if ([actionSheet.title isEqualToString:ItemHeader]) {
-    optionDictionary = [ButtonLabelCell headerDictionary];
-  }
-  
-  NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-  if (optionDictionary[buttonTitle] != [NSNull null]) {
-    self.textField.text  = optionDictionary[buttonTitle];
-  } else {
-    self.textField.text  = @"";
-  }
-  self.inAppMessageDictionary[buttonTitle] = self.textField.text;
-}
-
 @end
 
 @implementation ColorCell

@@ -129,9 +129,22 @@
 }
 
 - (IBAction)rebootAndApplyEnvironment:(id)sender {
-  [[NSUserDefaults standardUserDefaults] setObject:self.apiKeyTextField.text forKey:OverrideApiKeyStorageKey];
-  [[NSUserDefaults standardUserDefaults] setObject:self.endointTextField.text forKey:OverrideEndpointStorageKey];
+  if ([[self.endointTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] <= 0) {
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:OverrideEndpointStorageKey];
+  } else {
+    [[NSUserDefaults standardUserDefaults] setObject:self.endointTextField.text forKey:OverrideEndpointStorageKey];
+  }
+  if ([[self.apiKeyTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] <= 0) {
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:OverrideApiKeyStorageKey];
+  } else {
+    [[NSUserDefaults standardUserDefaults] setObject:self.apiKeyTextField.text forKey:OverrideApiKeyStorageKey];
+  }
   [self showForceCloseAlertWithTitle:@"Environment Set"];
+}
+
+- (IBAction)rebootAndApplyK8Environment:(id)sender {
+  [[NSUserDefaults standardUserDefaults] setObject:@"elsa.braze.com" forKey:OverrideEndpointStorageKey];
+  [self showForceCloseAlertWithTitle:@"K8s Environment Set"];
 }
 
 - (NSArray *)getDirectoryContentsWithPath:(NSString *)path {

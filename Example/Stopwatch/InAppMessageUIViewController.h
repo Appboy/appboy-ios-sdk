@@ -3,8 +3,7 @@
 
 @class ABKSlideup;
 
-@interface InAppMessageUIViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,
-  UIActionSheetDelegate, KKColorListViewControllerDelegate>
+@interface InAppMessageUIViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, KKColorListViewControllerDelegate>
 @property NSMutableArray *inAppSlideupList;
 @property NSMutableArray *inAppModalList;
 @property NSMutableArray *inAppFullList;

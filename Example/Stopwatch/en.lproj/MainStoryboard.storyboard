@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -202,7 +202,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQB-sU-MHh" userLabel="Environment View">
-                                                        <rect key="frame" x="0.0" y="374.66666666666669" width="414" height="160.00000000000006"/>
+                                                        <rect key="frame" x="0.0" y="374.66666666666669" width="414" height="239.66666666666669"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-9o-2Lo" customClass="StopwatchButton">
                                                                 <rect key="frame" x="16" y="96.999999999999943" width="382" height="38"/>
@@ -233,6 +233,17 @@
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CO-Ds-nXw" customClass="StopwatchButton">
+                                                                <rect key="frame" x="16" y="145" width="382" height="38"/>
+                                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                                <state key="normal">
+                                                                    <string key="title">Change to K8s Endpoint
+</string>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="rebootAndApplyK8Environment:" destination="Lea-J4-vz9" eventType="touchUpInside" id="anc-AR-dkt"/>
+                                                                </connections>
+                                                            </button>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Blank sets default" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKk-eq-dcv">
                                                                 <rect key="frame" x="104.66666666666666" y="54" width="293.33333333333337" height="30"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Default" label="Default"/>
@@ -251,37 +262,39 @@
                                                             <constraint firstItem="pKk-eq-dcv" firstAttribute="centerY" secondItem="taI-Sv-eWX" secondAttribute="centerY" id="Afh-9O-kie"/>
                                                             <constraint firstItem="MFI-6t-zvq" firstAttribute="leading" secondItem="txv-U8-fmm" secondAttribute="trailing" constant="36" id="JY4-3I-Zr4"/>
                                                             <constraint firstItem="txv-U8-fmm" firstAttribute="leading" secondItem="vQB-sU-MHh" secondAttribute="leading" constant="16" id="Jjz-mV-iXv"/>
+                                                            <constraint firstItem="5CO-Ds-nXw" firstAttribute="centerX" secondItem="hXN-9o-2Lo" secondAttribute="centerX" id="MCm-Zi-HEe"/>
                                                             <constraint firstItem="taI-Sv-eWX" firstAttribute="height" secondItem="txv-U8-fmm" secondAttribute="height" id="MUf-0u-ha6"/>
                                                             <constraint firstItem="MFI-6t-zvq" firstAttribute="centerY" secondItem="txv-U8-fmm" secondAttribute="centerY" id="UO2-qg-VbC"/>
+                                                            <constraint firstItem="5CO-Ds-nXw" firstAttribute="top" secondItem="hXN-9o-2Lo" secondAttribute="bottom" constant="10" id="UOx-hu-L1f"/>
                                                             <constraint firstItem="pKk-eq-dcv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="taI-Sv-eWX" secondAttribute="trailing" constant="5" id="dru-nz-lHl"/>
                                                             <constraint firstItem="pKk-eq-dcv" firstAttribute="top" secondItem="MFI-6t-zvq" secondAttribute="bottom" constant="10" id="eJd-ie-KBS"/>
                                                             <constraint firstItem="hXN-9o-2Lo" firstAttribute="centerX" secondItem="vQB-sU-MHh" secondAttribute="centerX" id="jLf-kz-uq4"/>
-                                                            <constraint firstAttribute="height" constant="160" id="taX-un-Usd"/>
                                                             <constraint firstAttribute="trailing" secondItem="MFI-6t-zvq" secondAttribute="trailing" constant="16" id="tbV-aH-gwg"/>
                                                             <constraint firstAttribute="trailing" secondItem="pKk-eq-dcv" secondAttribute="trailing" constant="16" id="uEU-45-xew"/>
+                                                            <constraint firstItem="5CO-Ds-nXw" firstAttribute="leading" secondItem="hXN-9o-2Lo" secondAttribute="leading" id="vY3-Ku-mEw"/>
                                                             <constraint firstItem="txv-U8-fmm" firstAttribute="top" secondItem="vQB-sU-MHh" secondAttribute="top" constant="10" id="zCt-yd-zgy"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set In-App Message Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz4-x6-sYU">
-                                                        <rect key="frame" x="16" y="544.66666666666663" width="266" height="18"/>
+                                                        <rect key="frame" x="16" y="624.33333333333337" width="266" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-D6-9YS">
-                                                        <rect key="frame" x="349" y="538" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="618" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="setInAppDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="bFy-lY-zOS"/>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set URI Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C67-Hk-uo5">
-                                                        <rect key="frame" x="16" y="583.66666666666663" width="178" height="18"/>
+                                                        <rect key="frame" x="16" y="663.33333333333337" width="178" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBd-3z-vDi" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="657" width="382" height="38"/>
+                                                        <rect key="frame" x="16" y="737" width="382" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="See Registered Geofences"/>
                                                         <connections>
@@ -289,24 +302,24 @@
                                                         </connections>
                                                     </button>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-w2-7ZR">
-                                                        <rect key="frame" x="349" y="577" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="657" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="urlDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="M7p-S2-OFB"/>
                                                         </connections>
                                                     </switch>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdT-oh-jh2">
-                                                        <rect key="frame" x="149.66666666666663" y="717" width="248.33333333333337" height="34"/>
+                                                        <rect key="frame" x="149.66666666666663" y="797" width="248.33333333333337" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Timeout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-lu-E9l">
-                                                        <rect key="frame" x="16.000000000000007" y="715" width="113.66666666666669" height="38"/>
+                                                        <rect key="frame" x="16.000000000000007" y="795" width="113.66666666666669" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-6Q-use" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="761" width="382" height="38"/>
+                                                        <rect key="frame" x="16" y="841" width="382" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Set Session Timeout"/>
                                                         <connections>
@@ -328,33 +341,34 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-Yr-JLj">
-                                                        <rect key="frame" x="16" y="526.66666666666663" width="382" height="1"/>
+                                                        <rect key="frame" x="16" y="574.66666666666663" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="qa3-PG-jYr"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzO-3u-7cG">
-                                                        <rect key="frame" x="16" y="706" width="382" height="1"/>
+                                                        <rect key="frame" x="16" y="786" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="mZe-m7-3PS"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Dark Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vou-Wk-mPn">
-                                                        <rect key="frame" x="16" y="622.66666666666663" width="125" height="18"/>
+                                                        <rect key="frame" x="16" y="702.33333333333337" width="125" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-os-OeC">
-                                                        <rect key="frame" x="349" y="616" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="696" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="allowDarkThemeToggleSwitched:" destination="Lea-J4-vz9" eventType="valueChanged" id="Jqv-P4-bad"/>
                                                         </connections>
                                                     </switch>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="0xO-D6-9YS" firstAttribute="top" secondItem="7UD-Yr-JLj" secondAttribute="bottom" constant="42.333333333333371" id="0q6-cD-O10"/>
                                                     <constraint firstItem="wNO-pV-BHh" firstAttribute="centerX" secondItem="fba-Vc-gZu" secondAttribute="centerX" id="2fE-18-sSf"/>
                                                     <constraint firstItem="VBd-3z-vDi" firstAttribute="centerX" secondItem="fba-Vc-gZu" secondAttribute="centerX" id="3M9-MJ-WE6"/>
                                                     <constraint firstItem="Szq-qJ-HE9" firstAttribute="top" secondItem="z8J-GY-Dyi" secondAttribute="bottom" id="4FK-vN-l2I"/>
@@ -368,7 +382,6 @@
                                                     <constraint firstItem="Jib-w2-7ZR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C67-Hk-uo5" secondAttribute="trailing" constant="10" id="6B9-eg-4Mn"/>
                                                     <constraint firstItem="jFI-6Q-use" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" id="6x9-Cn-tg2"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="7H5-ee-dQb" secondAttribute="centerX" id="77E-9o-hPb"/>
-                                                    <constraint firstItem="7UD-Yr-JLj" firstAttribute="top" secondItem="hXN-9o-2Lo" secondAttribute="bottom" constant="17" id="7Jt-Nn-yCK"/>
                                                     <constraint firstItem="0zK-lu-E9l" firstAttribute="height" secondItem="wNO-pV-BHh" secondAttribute="height" id="9ku-7N-jfy"/>
                                                     <constraint firstItem="wNO-pV-BHh" firstAttribute="top" secondItem="fba-Vc-gZu" secondAttribute="top" constant="10" id="DEV-AH-mbK"/>
                                                     <constraint firstItem="0xO-D6-9YS" firstAttribute="trailing" secondItem="pKk-eq-dcv" secondAttribute="trailing" id="DHS-C8-bzu"/>
@@ -383,6 +396,7 @@
                                                     <constraint firstItem="7H5-ee-dQb" firstAttribute="top" secondItem="7i6-27-s0b" secondAttribute="bottom" constant="10" id="OUe-jF-Zev"/>
                                                     <constraint firstItem="Rrm-os-OeC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vou-Wk-mPn" secondAttribute="trailing" constant="10" id="QHF-XS-Gcn"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="Dg7-JD-KCe" secondAttribute="centerX" id="Qvd-Tl-UnP"/>
+                                                    <constraint firstItem="7UD-Yr-JLj" firstAttribute="top" secondItem="5CO-Ds-nXw" secondAttribute="bottom" constant="17" id="R0P-Gk-YCH"/>
                                                     <constraint firstItem="VBd-3z-vDi" firstAttribute="top" secondItem="Rrm-os-OeC" secondAttribute="bottom" constant="10" id="S6F-CA-Ixq"/>
                                                     <constraint firstItem="VBd-3z-vDi" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" id="SIs-YS-Ldg"/>
                                                     <constraint firstItem="hXN-9o-2Lo" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="TXL-Ux-MYo"/>
@@ -418,6 +432,7 @@
                                                     <constraint firstItem="7i6-27-s0b" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="jKh-bR-dG6"/>
                                                     <constraint firstItem="ghk-t6-03W" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="jcw-Rp-JfP"/>
                                                     <constraint firstItem="Rrm-os-OeC" firstAttribute="leading" secondItem="Jib-w2-7ZR" secondAttribute="leading" id="kBn-p6-xEN"/>
+                                                    <constraint firstItem="5CO-Ds-nXw" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" id="kDn-cg-BGg"/>
                                                     <constraint firstItem="Vz4-x6-sYU" firstAttribute="top" secondItem="vQB-sU-MHh" secondAttribute="bottom" constant="10" id="l8e-OJ-tYO"/>
                                                     <constraint firstItem="0xO-D6-9YS" firstAttribute="centerY" secondItem="Vz4-x6-sYU" secondAttribute="centerY" id="mHZ-P7-yMm"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="Szq-qJ-HE9" secondAttribute="centerX" id="nOY-xB-b0R"/>
@@ -481,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7V-Aw-QGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255.19999999999999" y="-2556.0719640179914"/>
+            <point key="canvasLocation" x="255.07246376811597" y="-2556.6964285714284"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="ZbJ-MQ-NpF">

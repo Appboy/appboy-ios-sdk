@@ -68,12 +68,12 @@ static const CGFloat CloseXPadding = 15.0f;
   // Close X should be equidistant from top and right in notched phones despite presence of (hidden) status bar
   if (![ABKUIUtils isNotchedPhone]) {
     if (!self.isiPad) {
-      CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
+      CGSize statusBarSize = [ABKUIUtils getStatusBarSize];
       self.closeXButtonTopConstraint.constant = CloseXPadding - statusBarSize.height;
     }
   } else {
     // Move close x button slightly higher for notched phones in portrait
-    BOOL isPortrait = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
+    BOOL isPortrait = UIInterfaceOrientationIsPortrait([ABKUIUtils getInterfaceOrientation]);
     self.closeXButtonTopConstraint.constant = isPortrait ? 0.0f : CloseXPadding;
   }
 }

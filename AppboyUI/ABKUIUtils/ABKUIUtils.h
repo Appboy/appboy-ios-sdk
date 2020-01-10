@@ -11,5 +11,7 @@
 + (UIImage *)getImageWithName:(NSString *)name
                          type:(NSString *)type
                inAppboyBundle:(NSBundle *)appboyBundle;
++ (UIInterfaceOrientation)getInterfaceOrientation;
++ (CGSize)getStatusBarSize;
 
 @end

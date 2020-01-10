@@ -3,6 +3,7 @@
 #import <StoreKit/StoreKit.h>
 #import "ABKInAppMessageControllerDelegate.h"
 #import "ABKURLDelegate.h"
+#import "ABKInAppMessageUIDelegate.h"
 
 static NSString *const OverrideApiKeyStorageKey = @"com.appboy.stopwatch.apikey";
 static NSString *const OverrideEndpointStorageKey = @"com.appboy.stopwatch.endpoint";
@@ -14,7 +15,7 @@ static NSString *const ApiKeyInUse = @"com.appboy.stopwatch.apikeyinuse";
 static NSString *const EndpointInUse = @"com.appboy.stopwatch.endpointinuse";
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate,
-ABKInAppMessageControllerDelegate, ABKURLDelegate>
+ABKInAppMessageControllerDelegate, ABKURLDelegate, ABKInAppMessageUIDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

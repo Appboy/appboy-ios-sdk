@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <AppboyKit.h>
 
-@interface FeedUIViewController : UIViewController <UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface FeedUIViewController : UIViewController <UINavigationControllerDelegate>
 
 @property IBOutlet UINavigationController *feedNavigationController;
 @property IBOutlet UILabel *unreadCardLabel;

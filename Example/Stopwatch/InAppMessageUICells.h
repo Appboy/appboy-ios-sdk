@@ -50,7 +50,7 @@ static NSString *const CellIdentifierButtonLabel = @"ButtonLabelCellIdentifier";
 
 @end
 
-@interface ButtonLabelCell : TextFieldCell <UIActionSheetDelegate>
+@interface ButtonLabelCell : TextFieldCell
 
 @property IBOutlet UIButton *titleButton;
 @property NSMutableDictionary *inAppMessageDictionary;
@@ -58,7 +58,6 @@ static NSString *const CellIdentifierButtonLabel = @"ButtonLabelCellIdentifier";
 + (NSDictionary *)messageDictionary;
 + (NSDictionary *)headerDictionary;
 - (UIAlertController *)getAlertControllerWithInAppMessageDictionary:(NSMutableDictionary *)dictionary;
-- (UIActionSheet *)getActionSheetWithInAppMessageDictionary:(NSMutableDictionary *)dictionary;
 
 @end
 
