@@ -20,6 +20,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly) BOOL enableGeofences;
 
 /*!
+ * Use ABKDisableAutomaticGeofenceRequestsKey to disable automatic geofence requests.
+ * For more information, please refer to requestGeofencesWithLongitude:latitude: in Appboy.h
+ */
+@property (readonly) BOOL disableAutomaticGeofenceRequests;
+
+/*!
  * Calling this method will log a location using the regular location provider if a location is reported in under
  * 60 seconds. After 60 seconds expires the regular location provider will stop collecting location.
  */

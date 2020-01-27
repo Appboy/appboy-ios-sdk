@@ -49,12 +49,12 @@ static NSString *const SwitchCell = @"switch cell";
   
   self.valuesDictionary = [NSMutableDictionary dictionaryWithDictionary:@{
                                                                           Name : @"",
-                                                                          EventSwitch : @(NO),
+                                                                          EventSwitch : @NO,
                                                                           ProductId : @"",
                                                                           CurrencyCode : @"USD",
                                                                           Price: @"5",
                                                                           Quantity : @"1",
-                                                                          PurchaseSwitch : @(NO),
+                                                                          PurchaseSwitch : @NO,
                                                                           EventPropertyKey : @"",
                                                                           EventPropertyValue : @"",
                                                                           PurchasePropertyKey : @"",

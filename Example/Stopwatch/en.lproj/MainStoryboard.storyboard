@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Za8-FW-PxY">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -133,6 +133,13 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-fU-2p3" customClass="StopwatchButton">
+                                                        <rect key="frame" x="16" y="326.66666666666669" width="382" height="30"/>
+                                                        <state key="normal" title="Manually Request Geofences"/>
+                                                        <connections>
+                                                            <action selector="manuallyRequestGeofences:" destination="Lea-J4-vz9" eventType="touchUpInside" id="DC9-5a-T2f"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-iv-ktD" customClass="StopwatchButton">
                                                         <rect key="frame" x="16" y="124" width="382" height="38"/>
                                                         <constraints>
@@ -150,7 +157,7 @@
                                                             <action selector="changeAppboyFlushMode:" destination="Lea-J4-vz9" eventType="touchUpInside" id="3mR-kz-OEt"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-qJ-HE9">
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-qJ-HE9">
                                                         <rect key="frame" x="191" y="86" width="32.333333333333343" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -194,7 +201,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg7-JD-KCe" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="326.66666666666669" width="382" height="38"/>
+                                                        <rect key="frame" x="16" y="366.66666666666669" width="382" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Show Caches Dir Files"/>
                                                         <connections>
@@ -202,7 +209,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQB-sU-MHh" userLabel="Environment View">
-                                                        <rect key="frame" x="0.0" y="374.66666666666669" width="414" height="239.66666666666669"/>
+                                                        <rect key="frame" x="0.0" y="414.66666666666669" width="414" height="239.66666666666669"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-9o-2Lo" customClass="StopwatchButton">
                                                                 <rect key="frame" x="16" y="96.999999999999943" width="382" height="38"/>
@@ -224,17 +231,15 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txv-U8-fmm">
                                                                 <rect key="frame" x="15.999999999999996" y="10" width="52.666666666666657" height="38"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endpoint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taI-Sv-eWX">
                                                                 <rect key="frame" x="16" y="50" width="61" height="38"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CO-Ds-nXw" customClass="StopwatchButton">
-                                                                <rect key="frame" x="16" y="145" width="382" height="38"/>
+                                                                <rect key="frame" x="16" y="144.99999999999994" width="382" height="38"/>
                                                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                                 <state key="normal">
                                                                     <string key="title">Change to K8s Endpoint
@@ -245,7 +250,7 @@
                                                                 </connections>
                                                             </button>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Blank sets default" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKk-eq-dcv">
-                                                                <rect key="frame" x="104.66666666666666" y="54" width="293.33333333333337" height="30"/>
+                                                                <rect key="frame" x="104.66666666666666" y="53.999999999999943" width="293.33333333333337" height="30"/>
                                                                 <accessibility key="accessibilityConfiguration" hint="Default" label="Default"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="OPU-Kb-mS9"/>
@@ -276,25 +281,23 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set In-App Message Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz4-x6-sYU">
-                                                        <rect key="frame" x="16" y="624.33333333333337" width="266" height="18"/>
+                                                        <rect key="frame" x="16" y="664.33333333333337" width="266" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-D6-9YS">
-                                                        <rect key="frame" x="349" y="618" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="658" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="setInAppDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="bFy-lY-zOS"/>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set URI Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C67-Hk-uo5">
-                                                        <rect key="frame" x="16" y="663.33333333333337" width="178" height="18"/>
+                                                        <rect key="frame" x="16" y="703.33333333333337" width="178" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBd-3z-vDi" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="737" width="382" height="38"/>
+                                                        <rect key="frame" x="16" y="777" width="382" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="See Registered Geofences"/>
                                                         <connections>
@@ -302,24 +305,23 @@
                                                         </connections>
                                                     </button>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-w2-7ZR">
-                                                        <rect key="frame" x="349" y="657" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="697" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="urlDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="M7p-S2-OFB"/>
                                                         </connections>
                                                     </switch>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdT-oh-jh2">
-                                                        <rect key="frame" x="149.66666666666663" y="797" width="248.33333333333337" height="34"/>
+                                                        <rect key="frame" x="149.66666666666663" y="837" width="248.33333333333337" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Timeout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-lu-E9l">
-                                                        <rect key="frame" x="16.000000000000007" y="795" width="113.66666666666669" height="38"/>
+                                                        <rect key="frame" x="16.000000000000007" y="835" width="113.66666666666669" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-6Q-use" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="841" width="382" height="38"/>
+                                                        <rect key="frame" x="16" y="881" width="382" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Set Session Timeout"/>
                                                         <connections>
@@ -334,34 +336,34 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghk-t6-03W">
-                                                        <rect key="frame" x="16" y="374.66666666666669" width="382" height="1"/>
+                                                        <rect key="frame" x="16" y="414.66666666666669" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="GCs-Ee-l7j"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UD-Yr-JLj">
-                                                        <rect key="frame" x="16" y="574.66666666666663" width="382" height="1"/>
+                                                        <rect key="frame" x="16" y="614.66666666666663" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="qa3-PG-jYr"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzO-3u-7cG">
-                                                        <rect key="frame" x="16" y="786" width="382" height="1"/>
+                                                        <rect key="frame" x="16" y="826" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="mZe-m7-3PS"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Dark Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vou-Wk-mPn">
-                                                        <rect key="frame" x="16" y="702.33333333333337" width="125" height="18"/>
+                                                        <rect key="frame" x="16" y="742.33333333333337" width="125" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-os-OeC">
-                                                        <rect key="frame" x="349" y="696" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="736" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="allowDarkThemeToggleSwitched:" destination="Lea-J4-vz9" eventType="valueChanged" id="Jqv-P4-bad"/>
                                                         </connections>
@@ -374,7 +376,6 @@
                                                     <constraint firstItem="Szq-qJ-HE9" firstAttribute="top" secondItem="z8J-GY-Dyi" secondAttribute="bottom" id="4FK-vN-l2I"/>
                                                     <constraint firstItem="Rrm-os-OeC" firstAttribute="top" secondItem="Jib-w2-7ZR" secondAttribute="bottom" constant="8" id="4IB-h3-Xe0"/>
                                                     <constraint firstItem="VBd-3z-vDi" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="4cc-QI-wrz"/>
-                                                    <constraint firstItem="Dg7-JD-KCe" firstAttribute="top" secondItem="DLG-60-Vzq" secondAttribute="bottom" constant="10" id="4fE-Lh-2mo"/>
                                                     <constraint firstItem="Jib-w2-7ZR" firstAttribute="top" secondItem="0xO-D6-9YS" secondAttribute="bottom" constant="8" id="4jF-Pc-tJG"/>
                                                     <constraint firstItem="hdT-oh-jh2" firstAttribute="top" secondItem="vzO-3u-7cG" secondAttribute="bottom" constant="10" id="5c3-HM-QUa"/>
                                                     <constraint firstItem="DLG-60-Vzq" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="5fi-hT-cDr"/>
@@ -401,6 +402,7 @@
                                                     <constraint firstItem="VBd-3z-vDi" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" id="SIs-YS-Ldg"/>
                                                     <constraint firstItem="hXN-9o-2Lo" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="TXL-Ux-MYo"/>
                                                     <constraint firstItem="jFI-6Q-use" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="ThH-JH-0js"/>
+                                                    <constraint firstItem="fEX-fU-2p3" firstAttribute="top" secondItem="DLG-60-Vzq" secondAttribute="bottom" constant="10" id="UJw-N9-wRA"/>
                                                     <constraint firstItem="vou-Wk-mPn" firstAttribute="leading" secondItem="Vz4-x6-sYU" secondAttribute="leading" id="Uaq-uv-sFy"/>
                                                     <constraint firstItem="Szq-qJ-HE9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="V3o-CK-5Le"/>
                                                     <constraint firstItem="7i6-27-s0b" firstAttribute="top" secondItem="MV7-Qb-KZO" secondAttribute="bottom" constant="10" id="VPP-XQ-LLF"/>
@@ -422,11 +424,14 @@
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="DLG-60-Vzq" secondAttribute="centerX" id="ePZ-gY-mIt"/>
                                                     <constraint firstItem="z8J-GY-Dyi" firstAttribute="top" secondItem="wNO-pV-BHh" secondAttribute="bottom" id="ej7-L8-Vhg"/>
                                                     <constraint firstAttribute="trailing" secondItem="ghk-t6-03W" secondAttribute="trailing" constant="16" id="eo5-WU-wdV"/>
+                                                    <constraint firstItem="fEX-fU-2p3" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" multiplier="0.789474" id="eq2-YI-Euw"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="z8J-GY-Dyi" secondAttribute="centerX" id="eyG-hp-l2G"/>
                                                     <constraint firstItem="Dg7-JD-KCe" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="fFR-7m-xsS"/>
                                                     <constraint firstAttribute="trailing" secondItem="F6w-iv-ktD" secondAttribute="trailing" constant="16" id="fHW-WO-sfK"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Szq-qJ-HE9" secondAttribute="trailing" constant="16" id="gSQ-Sk-LIO"/>
+                                                    <constraint firstItem="Dg7-JD-KCe" firstAttribute="top" secondItem="fEX-fU-2p3" secondAttribute="bottom" constant="10" id="h8A-rV-6at"/>
                                                     <constraint firstItem="7H5-ee-dQb" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" id="hhf-9R-bZg"/>
+                                                    <constraint firstItem="fEX-fU-2p3" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="hqu-oA-qNI"/>
                                                     <constraint firstItem="jFI-6Q-use" firstAttribute="top" secondItem="hdT-oh-jh2" secondAttribute="bottom" constant="10" id="hwR-6b-Qyy"/>
                                                     <constraint firstItem="F6w-iv-ktD" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="iQd-UA-10d"/>
                                                     <constraint firstItem="7i6-27-s0b" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="jKh-bR-dG6"/>
@@ -434,6 +439,7 @@
                                                     <constraint firstItem="Rrm-os-OeC" firstAttribute="leading" secondItem="Jib-w2-7ZR" secondAttribute="leading" id="kBn-p6-xEN"/>
                                                     <constraint firstItem="5CO-Ds-nXw" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" id="kDn-cg-BGg"/>
                                                     <constraint firstItem="Vz4-x6-sYU" firstAttribute="top" secondItem="vQB-sU-MHh" secondAttribute="bottom" constant="10" id="l8e-OJ-tYO"/>
+                                                    <constraint firstItem="fEX-fU-2p3" firstAttribute="centerX" secondItem="DLG-60-Vzq" secondAttribute="centerX" id="lHW-j9-UiE"/>
                                                     <constraint firstItem="0xO-D6-9YS" firstAttribute="centerY" secondItem="Vz4-x6-sYU" secondAttribute="centerY" id="mHZ-P7-yMm"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="Szq-qJ-HE9" secondAttribute="centerX" id="nOY-xB-b0R"/>
                                                     <constraint firstAttribute="trailing" secondItem="7UD-Yr-JLj" secondAttribute="trailing" constant="16" id="pf7-eB-m7g"/>
@@ -899,6 +905,7 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Jvg-U3-zI4" secondAttribute="trailing" constant="16" id="NVf-ZC-AjO"/>
                                                 <constraint firstItem="oCU-Na-UyI" firstAttribute="centerY" secondItem="IX8-7E-mGa" secondAttribute="centerY" id="YA7-Ou-f3l"/>
@@ -1899,7 +1906,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-nm-JMW">
                                                     <rect key="frame" x="16" y="53.666666666666664" width="50" height="16.999999999999993"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-4S-K0E">

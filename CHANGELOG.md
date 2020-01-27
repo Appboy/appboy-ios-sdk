@@ -1,3 +1,11 @@
+## 3.21.3
+
+##### Added
+- Adds an option to disable automatic geofence requests.
+  - You can do this in the plist by adding the `Appboy` dictionary to your Info.plist file. Inside the `Appboy` dictionary, add the `DisableAutomaticGeofenceRequests` boolean subentry and set the value to `YES`.
+  - You can also disable automatic geofence requests at runtime by setting `ABKDisableAutomaticGeofenceRequestsKey` to `YES` in `appboyOptions`.
+- Adds the method `requestGeofencesWithLongitude:latitude:` to `Appboy.h`. This method can be called whenever you explicitly want Braze to send a request for updated Geofences information. This call is rate limited to once per user session.
+
 ## 3.21.2
 
 ##### Fixed

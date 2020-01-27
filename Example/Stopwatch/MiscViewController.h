@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MiscViewController : UIViewController <UIScrollViewDelegate>
+@interface MiscViewController : UIViewController <UIScrollViewDelegate, CLLocationManagerDelegate>
 
 @property IBOutlet UILabel *versionLabel;
 @property IBOutlet UILabel *flushModeLabel;
@@ -23,5 +24,6 @@
 - (IBAction)setInAppDelegateSwitchChanged:(id)sender;
 - (IBAction)urlDelegateSwitchChanged:(id)sender;
 - (IBAction)setSessionTimeout:(id)sender;
+- (IBAction)manuallyRequestGeofences:(id)sender;
 
 @end

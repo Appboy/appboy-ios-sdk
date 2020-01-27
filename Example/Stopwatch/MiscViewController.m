@@ -199,6 +199,38 @@
   [self showAlertWithMessage:@"Location was successfully logged."];
 }
 
+- (IBAction)manuallyRequestGeofences:(id)sender {
+  CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+  locationManager.delegate = self;
+  CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
+
+  if (authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
+      authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+    [self showAlertWithMessage:@"Manually requesting Geofences."];
+    [locationManager requestLocation];
+  } else {
+    [self showAlertWithMessage:@"Can't request geofences because of insufficient location permissions."];
+  }
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+  CLLocation *location = [locations lastObject];
+  double longitude = location.coordinate.longitude;
+  double latitude = location.coordinate.latitude;
+  [[Appboy sharedInstance] requestGeofencesWithLongitude:longitude
+                                                latitude:latitude];
+  NSString *alertMessage = [NSString stringWithFormat:@"Requesting geofences with longitude %f and latitude %f", longitude, latitude];
+  [self showAlertWithMessage:alertMessage];
+  NSLog(@"%@", alertMessage);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+  NSLog(@"Can't request geofences because of error:%@", error);
+}
+
 - (void)showForceCloseAlertWithTitle:(NSString *)title {
   [AlertControllerUtils presentTemporaryAlertWithTitle:title
                                                  message:@"Force Close App and Re-Open to Apply"
