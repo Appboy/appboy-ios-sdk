@@ -7,5 +7,6 @@ var searchData=
   ['removelocationcustomattributewithkey_3a',['removeLocationCustomAttributeWithKey:',['../interface_a_b_k_user.html#a01db7758665fd9fa6c82eac9911a1101',1,'ABKUser']]],
   ['requestcontentcardsrefresh',['requestContentCardsRefresh',['../interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82',1,'Appboy']]],
   ['requestenablesdkonnextapprun',['requestEnableSDKOnNextAppRun',['../interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b',1,'Appboy']]],
-  ['requestfeedrefresh',['requestFeedRefresh',['../interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452',1,'Appboy']]]
+  ['requestfeedrefresh',['requestFeedRefresh',['../interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452',1,'Appboy']]],
+  ['requestgeofenceswithlongitude_3alatitude_3a',['requestGeofencesWithLongitude:latitude:',['../interface_appboy.html#a0a4744774a3f36ea043c336896b8ab14',1,'Appboy']]]
 ];
