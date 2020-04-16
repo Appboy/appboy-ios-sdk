@@ -25,6 +25,12 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     _inAppMessageUIDelegate = (id<ABKInAppMessageUIDelegate>)delegate;
     _inAppMessageViewController = inAppMessageViewController;
     _inAppMessageWindow = [[ABKInAppMessageWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    if (@available(iOS 13.0, *)) {
+        UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
+        if ([scene isKindOfClass:[UIWindowScene class]] && scene != nil) {
+            _inAppMessageWindow = [[ABKInAppMessageWindow alloc] initWithWindowScene:((UIWindowScene *)scene)];
+        }
+    }
     _inAppMessageWindow.backgroundColor = [UIColor clearColor];
     // Make sure the slideup is over the status bar when it slides from the top.
     _inAppMessageWindow.windowLevel = UIWindowLevelStatusBar + 1.0f;
@@ -229,6 +235,15 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 - (void)displayInAppMessageViewWithAnimation:(BOOL)withAnimation {
   dispatch_async(dispatch_get_main_queue(), ^{
     self.appWindow = [UIApplication sharedApplication].keyWindow;
+    if (@available(iOS 13.0, *)) {
+        UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
+        if ([scene isKindOfClass:[UIWindowScene class]] && scene != nil) {
+            UIWindow *firstWindow = ((UIWindowScene *) scene).windows.firstObject;
+            if (firstWindow != nil) {
+                self.appWindow = firstWindow;
+            }
+        }
+    }
     // Here we try to catch the edge case where an alert view is being shown when the in-app message is
     // displayed, so the alert view is dismissed and that can cause a crash
     if (self.appWindow.windowLevel != UIWindowLevelNormal) {
