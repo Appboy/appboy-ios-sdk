@@ -201,7 +201,7 @@
    if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
      [self openURLInWebView:cardURL];
    } else {
-     [ABKUIURLUtils openURLWithSystem:cardURL];
+     [ABKUIURLUtils openURLWithSystem:cardURL fromChannel:ABKNewsFeedChannel];
    }
 }
 

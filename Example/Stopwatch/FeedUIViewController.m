@@ -5,6 +5,7 @@
 #import "ABKNewsFeedViewController.h"
 #import "AlertControllerUtils.h"
 #import "ABKContentCardsViewController.h"
+#import "AppDelegate.h"
 
 @interface FeedUIViewController ()
 
@@ -54,8 +55,8 @@
 
 - (void)feedUpdated:(NSNotification *)notification {
   self.unreadCardLabel.text = [NSString stringWithFormat:@"Unread Feed Cards: %ld / %ld",
-                               [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll],
-                               [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll]];
+                               (long)[[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll],
+                               (long)[[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll]];
   
   // Update the application icon badge count to reflect the number of unread news feed cards
   [UIApplication sharedApplication].applicationIconBadgeNumber =
@@ -65,8 +66,8 @@
 
 - (void)contentCardsUpdated:(NSNotification *)notification {
   self.unreadContentCardLabel.text = [NSString stringWithFormat:@"Unread Content Cards: %ld / %ld",
-                                      [Appboy sharedInstance].contentCardsController.unviewedContentCardCount,
-                                      [Appboy sharedInstance].contentCardsController.contentCardCount];
+                                      (long)[Appboy sharedInstance].contentCardsController.unviewedContentCardCount,
+                                      (long)[Appboy sharedInstance].contentCardsController.contentCardCount];
   [self.view setNeedsDisplay];
 }
 
@@ -145,6 +146,9 @@
   ABKContentCardsViewController *contentCardsVC = [ABKContentCardsViewController new];
   contentCardsVC.contentCardsViewController.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   contentCardsVC.contentCardsViewController.navigationItem.title = @"Stopwatch Modal Cards";
+  contentCardsVC.contentCardsViewController.maxContentCardWidth = 1024.0;
+  AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  contentCardsVC.contentCardsViewController.enableDarkTheme = appDelegate.stopwatchEnableDarkTheme;
   [self.navigationController presentViewController:contentCardsVC animated:YES completion:nil];
 }
 
@@ -152,6 +156,8 @@
   ABKContentCardsTableViewController *contentCards = [ABKContentCardsTableViewController getNavigationContentCardsViewController];
   contentCards.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   contentCards.navigationItem.title = @"Stopwatch Navigation Cards";
+  AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  contentCards.enableDarkTheme = appDelegate.stopwatchEnableDarkTheme;
   [self.navigationController pushViewController:contentCards animated:YES];
 }
 

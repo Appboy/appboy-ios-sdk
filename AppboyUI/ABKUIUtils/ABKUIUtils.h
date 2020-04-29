@@ -13,5 +13,7 @@
                inAppboyBundle:(NSBundle *)appboyBundle;
 + (UIInterfaceOrientation)getInterfaceOrientation;
 + (CGSize)getStatusBarSize;
++ (UIColor *)dynamicColorForLightColor:(UIColor *)lightColor
+                             darkColor:(UIColor *)darkColor;
 
 @end

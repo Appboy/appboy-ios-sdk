@@ -70,6 +70,7 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
   _cardImpressions = [NSMutableSet set];
   _unviewedOnScreenCards = [NSMutableSet set];
   _cellHeights = [NSMutableDictionary dictionary];
+  _enableDarkTheme = YES;
   
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(contentCardsUpdated:)
@@ -85,7 +86,14 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  if (@available(iOS 13.0, *)) {
+    if (self.enableDarkTheme) {
+      // This value will respect the system UI style of dark or light mode
+      self.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
+    } else {
+      self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+    }
+  }
   self.emptyFeedLabel.text = [self localizedAppboyContentCardsString:@"Appboy.content-cards.no-card.text"];
 }
 
@@ -214,6 +222,13 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
     return self.cards.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  if ([self.cards[indexPath.row] isControlCard]) {
+    return 0;
+  }
+   return UITableViewAutomaticDimension;
+}
+
 // Overrides the storyboard to get accurate cell height estimates to prevent from having
 // the scrollView jump if a cell needs to resize itself
 - (CGFloat)tableView:(UITableView *)tableView
@@ -226,6 +241,10 @@ estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (self.maxContentCardWidth > 0.0 && [cell isKindOfClass:[ABKBaseContentCardCell class]]) {
+    ABKBaseContentCardCell *contentCardCell = (ABKBaseContentCardCell*)cell;
+    contentCardCell.cardWidthConstraint.constant = self.maxContentCardWidth;
+  }
   self.cellHeights[indexPath] = @(cell.frame.size.height);
   BOOL cellVisible = [[tableView indexPathsForVisibleRows] containsObject:indexPath];
   if (cellVisible) {
@@ -328,7 +347,7 @@ estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
       [self openURLInWebView:cardURL];
     } else {
-      [ABKUIURLUtils openURLWithSystem:cardURL];
+      [ABKUIURLUtils openURLWithSystem:cardURL fromChannel:ABKContentCardChannel];
     }
   }
 }

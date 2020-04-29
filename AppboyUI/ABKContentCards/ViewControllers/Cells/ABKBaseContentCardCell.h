@@ -34,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewBottomConstraint;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cardWidthConstraint;
+
 /*!
  * These are basic UI configuration for the Content Cards feed. They are set to the default values in the
  * `setUp` method.

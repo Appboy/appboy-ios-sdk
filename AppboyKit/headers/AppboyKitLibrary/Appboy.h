@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.21.3"
+#define APPBOY_SDK_VERSION @"3.22.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -92,12 +92,6 @@ extern NSString *const ABKURLDelegateKey;
  * This key can be set to an instance of a class that conforms to the ABKInAppMessageControllerDelegate protocol, allowing it to handle in-app messages in a custom way.
  */
 extern NSString *const ABKInAppMessageControllerDelegateKey;
-
-/*!
- * This key can be set to YES to force the status bar to hide when presenting full screen in-app messages.
- * If it is not set, the device will instead attempt to display the in-app message on top of the status bar, depending on the OS version.
- */
-extern NSString *const ABKInAppMessageHideStatusBarKey;
 
 /*!
  * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than

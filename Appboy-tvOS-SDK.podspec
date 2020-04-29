@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.platform = :tvos
   s.tvos.deployment_target = 9.0
   s.requires_arc = true
-  s.documentation_url = 'http://documentation.braze.com/'
+  s.documentation_url = 'https://www.braze.com/docs'
   s.tvos.frameworks = 'SystemConfiguration'
   s.tvos.weak_framework = 'AdSupport', 'StoreKit'
   s.preserve_paths = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'

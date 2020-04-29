@@ -34,8 +34,22 @@
 @property NSTimeInterval cacheTimeout;
 
 /*!
+ * If set, this property overrides the maximum width of Content Cards set by the storyboard.
+ */
+@property (assign, nonatomic) CGFloat maxContentCardWidth;
+
+/*!
+ * This boolean determines if the Content Card will attempt to use dark theme colors, granted the device
+ * is in dark mode.
+ *
+ * @discussion The default of this value is YES but can be overriden before the view controller is presented
+ *             to ensure that the dark theme is disabled for any Content Card displayed.
+ */
+@property (assign, nonatomic) BOOL enableDarkTheme;
+
+/*!
  * @discussion This method returns an instance of ABKContentCardsTableViewController. You can call it
- * to get a Content  view controller for your navigation controller.
+ * to get a Content Cards view controller for your navigation controller.
  */
 + (instancetype)getNavigationContentCardsViewController;
 

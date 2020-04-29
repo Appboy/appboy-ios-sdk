@@ -12,9 +12,9 @@
 
 - (instancetype)initWithNotification:(UNNotification *)notification
                          storiesView:(ABKStoriesView *)storiesView
-                            appGroup:(NSString *)appGroup;
+                            appGroup:(NSString *)appGroup API_AVAILABLE(ios(10.0));
 
-- (UNNotificationContentExtensionResponseOption)didReceiveNotificationResponse:(UNNotificationResponse *)response;
+- (UNNotificationContentExtensionResponseOption)didReceiveNotificationResponse:(UNNotificationResponse *)response API_AVAILABLE(ios(10.0));
 
 - (void)viewWillDisappear;
 

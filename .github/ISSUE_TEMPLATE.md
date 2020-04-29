@@ -6,7 +6,7 @@ If you are experiencing issues with our product, please consider directing your 
 For other items, like requests for modifications to our SDK or bug reports, please follow the following guidelines while submitting:
 -->
 
-* [ ] I have checked [Braze's documentation](https://www.braze.com/documentation/iOS/) and am still experiencing the issue.
+* [ ] I have checked [Braze's documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/) and am still experiencing the issue.
 
 # Report
 

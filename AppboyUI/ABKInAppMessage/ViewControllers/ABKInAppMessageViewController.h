@@ -37,6 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL isiPad;
 
 /*!
+ * This is YES for full screen in-app message controllers, NO otherwise
+ */
+@property (nonatomic, readonly) BOOL overrideApplicationStatusBarHiddenState;
+
+/*!
  * @discussion This method is used for passing the in-app message property to any custom view
  *             controller.
  */

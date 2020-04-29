@@ -12,7 +12,6 @@
 		33A374D093A069BA4E044000 /* libPods-tvOS_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120D81078F772014E4675E3 /* libPods-tvOS_Stopwatch.a */; };
 		4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E94E118BD52C60008C815 /* Localizable.strings */; };
 		4E3E94F318BD6AED0008C815 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958071A7173D727000129B89 /* QuartzCore.framework */; };
-		4E49ED0619DDE84F00ADC43F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E49ECEE19DDE84F00ADC43F /* Default-568h@2x.png */; };
 		4E6D661619DCC18F009983AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Images.xcassets */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
 		4EA3EE241745B9A2000E403C /* UserCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserCells.m */; };
@@ -146,7 +145,6 @@
 		4A13A163EFC7528AB511F858 /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		4E3E94E218BD52C60008C815 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E3E94E418BD52CE0008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		4E49ECEE19DDE84F00ADC43F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4E6D661519DCC18F009983AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E94D7701743EE8900604EA0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -359,7 +357,6 @@
 			children = (
 				D4139BD31CBD88C100CA3307 /* bolt@2x.png */,
 				D4992FE11CD4126D007CC304 /* bolt@3x.png */,
-				4E49ECEE19DDE84F00ADC43F /* Default-568h@2x.png */,
 				D4139BD61CBD88C100CA3307 /* IAM@2x.png */,
 				D4992FE41CD4126D007CC304 /* IAM@3x.png */,
 				D4139BD81CBD88C100CA3307 /* newsfeed@2x.png */,
@@ -753,7 +750,7 @@
 		95EF5102173D5FD600C0D780 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Appboy;
 				TargetAttributes = {
 					95EF5109173D5FD600C0D780 = {
@@ -849,7 +846,6 @@
 				D4992FEB1CD4126D007CC304 /* IAM@3x.png in Resources */,
 				E3C754AA1E7AE9B3004E1CCE /* InAppMessageWithJS.html in Resources */,
 				E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */,
-				4E49ED0619DDE84F00ADC43F /* Default-568h@2x.png in Resources */,
 				D4139BDF1CBD88C100CA3307 /* newsfeed@2x.png in Resources */,
 				4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */,
 				E3C754AC1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html in Resources */,
@@ -923,6 +919,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/ABKContentCardsStoryboard.storyboard",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/ar.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/Base.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/cs.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/da.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/de.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/en.lproj/AppboyContentCardsLocalizable.strings",
@@ -956,6 +953,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/ru.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/sv.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/th.lproj/AppboyContentCardsLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/uk.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/vi.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/zh-Hans.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/zh-Hant.lproj/AppboyContentCardsLocalizable.strings",
@@ -964,6 +962,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/zh.lproj/AppboyContentCardsLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/ar.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/Base.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/cs.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/da.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/de.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/en.lproj",
@@ -992,6 +991,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/ru.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/sv.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/th.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/uk.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/vi.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/zh-Hans.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKContentCards/Resources/zh-Hant.lproj",
@@ -1012,6 +1012,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/ABKNewsFeedCardStoryboard.storyboard",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/ar.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/Base.lproj/AppboyFeedLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/cs.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/da.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/de.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/en.lproj/AppboyFeedLocalizable.strings",
@@ -1046,6 +1047,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/ru.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/sv.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/th.lproj/AppboyFeedLocalizable.strings",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/uk.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/vi.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/zh-Hans.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/zh-Hant.lproj/AppboyFeedLocalizable.strings",
@@ -1054,6 +1056,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/zh.lproj/AppboyFeedLocalizable.strings",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/ar.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/Base.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/cs.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/da.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/de.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/en.lproj",
@@ -1082,6 +1085,7 @@
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/ru.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/sv.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/th.lproj",
+				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/uk.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/vi.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/zh-Hans.lproj",
 				"${PODS_ROOT}/../../../Appboy-iOS-SDK/AppboyUI/ABKNewsFeed/Resources/zh-Hant.lproj",
@@ -1104,6 +1108,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/appboy_cc_noimage_lrg@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ar.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Base.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cs.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/da.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/de.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
@@ -1132,6 +1137,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sv.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/th.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/uk.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vi.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.lproj",
@@ -1406,19 +1412,34 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3.21.1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1426,8 +1447,12 @@
 					"PUSH_DEV=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
@@ -1475,28 +1500,47 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3.21.1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";
@@ -1513,20 +1557,39 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 3.21.1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}";

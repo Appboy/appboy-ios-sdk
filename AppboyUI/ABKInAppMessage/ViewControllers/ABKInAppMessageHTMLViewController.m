@@ -47,7 +47,7 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:webViewConfiguration];
   self.webView = webView;
 
-  self.javascriptInterface = [[ABKInAppMessageHTMLJSBridge alloc] init];
+  self.javascriptInterface = [[ABKInAppMessageHTMLJSBridge alloc] initWithHTMLInAppMessage:(ABKInAppMessageHTML *)self.inAppMessage];
   self.webView.allowsLinkPreview = NO;
   self.webView.navigationDelegate = self;
   self.webView.UIDelegate = self;
@@ -117,7 +117,7 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
       ![url.lastPathComponent isEqualToString:ABKInAppMessageHTMLFileName]) {
     [self setClickActionBasedOnURL:url];
     
-    NSMutableDictionary *queryParams = [self queryParameterDictionaryFromURL:url];
+    NSMutableDictionary *queryParams = [[self queryParameterDictionaryFromURL:url] mutableCopy];
     NSString *buttonId = queryParams[ABKHTMLInAppButtonIdKey];
     ABKInAppMessageWindowController *parentViewController =
       (ABKInAppMessageWindowController *)self.parentViewController;
@@ -239,16 +239,14 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 
 #pragma mark - Utility Methods
 
-- (NSMutableDictionary *)queryParameterDictionaryFromURL:(NSURL *)url {
-  NSMutableDictionary *queryDict = [[NSMutableDictionary alloc] init];
-  NSString *urlQueryUnescaped = [url.query stringByRemovingPercentEncoding];
-  for (NSString *param in [urlQueryUnescaped componentsSeparatedByString:@"&"]) {
-    NSArray *elts = [param componentsSeparatedByString:@"="];
-    if (elts.count > 1) {
-      queryDict[elts[0]] = elts[1];
-    }
+- (NSDictionary *)queryParameterDictionaryFromURL:(NSURL *)url {
+  NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+  NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
+  for (NSURLQueryItem *queryItem in components.queryItems) {
+    dict[queryItem.name] = queryItem.value;
   }
-  return queryDict;
+
+  return [dict copy];
 }
 
 #pragma mark - Animation

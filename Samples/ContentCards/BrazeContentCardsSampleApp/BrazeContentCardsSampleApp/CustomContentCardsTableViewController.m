@@ -22,6 +22,7 @@
     ABKBaseContentCardCell *cardCell = (ABKBaseContentCardCell *)cell;
     cardCell.rootView.backgroundColor = [UIColor lightGrayColor];
     cardCell.rootView.layer.borderColor = [UIColor purpleColor].CGColor;
+    cardCell.unviewedLineView.backgroundColor = [UIColor redColor];
     
     if ([cardCell isKindOfClass:[ABKCaptionedImageContentCardCell class]]) {
       ((ABKCaptionedImageContentCardCell *)cardCell).TitleBackgroundView.backgroundColor = [UIColor darkGrayColor];

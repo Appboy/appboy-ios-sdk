@@ -40,7 +40,7 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
 + (BOOL)objectIsValidAndNotEmpty:(id)object {
   if (object != nil && object != [NSNull null]) {
     if ([object isKindOfClass:[NSArray class]] || [object isKindOfClass:[NSDictionary class]] || [object isKindOfClass:[NSString class]]) {
-      return ![object isEmpty];
+      return ![ABKUIUtils isEmpty:object];
     }
     if ([object isKindOfClass:[NSURL class]]) {
       NSString *string = [(NSURL *)object absoluteString];
@@ -49,6 +49,13 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
     return YES;
   }
   return NO;
+}
+
+// Calls AppboyKit private abk_isEmpty method on object
++ (BOOL)isEmpty:(id)object {
+  SEL sel = NSSelectorFromString(@"abk_isEmpty");
+  IMP imp = [object methodForSelector:sel];
+  return ((BOOL (*)(id, SEL))imp)(object, sel);
 }
 
 + (Class)getSDWebImageProxyClass {
@@ -105,6 +112,32 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
   } else {
     return [UIApplication sharedApplication].statusBarFrame.size;
   }
+}
+
+#pragma mark - Dark Theme
+
++ (UIColor *)dynamicColorForLightColor:(UIColor *)lightColor
+                             darkColor:(UIColor *)darkColor {
+  if (lightColor == nil || darkColor == nil) {
+    return lightColor;
+  }
+
+#if !TARGET_OS_TV
+  if (@available(iOS 13.0, *)) {
+    // Crashes if either darkColor or lightColor is nil
+    return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+      if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        return darkColor;
+      } else {
+        return lightColor;
+      }
+    }];
+  } else {
+    return lightColor;
+  }
+#else
+  return lightColor;
+#endif
 }
 
 @end

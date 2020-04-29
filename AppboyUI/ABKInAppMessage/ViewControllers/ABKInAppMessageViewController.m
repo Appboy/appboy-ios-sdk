@@ -50,8 +50,7 @@ static NSString *const FontAwesomeName = @"FontAwesome";
                                   nil);
 }
 
-// This may be overriden by subclasses
-- (BOOL)prefersStatusBarHidden {
+- (BOOL)overrideApplicationStatusBarHiddenState {
   return NO;
 }
 

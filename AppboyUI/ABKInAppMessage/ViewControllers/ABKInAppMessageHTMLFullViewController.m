@@ -3,6 +3,8 @@
 
 @implementation ABKInAppMessageHTMLFullViewController
 
+#pragma mark - LifeCycle
+
 - (void)loadView {
   // View is full screen and covers status bar. It needs to be an ABKInAppMessageView to
   // ensure touches register as per custom logic in ABKInAppMessageWindow
@@ -42,6 +44,12 @@
                                                       multiplier:1
                                                         constant:self.view.frame.size.height];
   [self.view.superview addConstraints:@[leadConstraint, trailConstraint, self.topConstraint, self.bottomConstraint]];
+}
+
+#pragma mark - Superclass Methods
+
+- (BOOL)overrideApplicationStatusBarHiddenState {
+  return YES;
 }
 
 - (BOOL)prefersStatusBarHidden {

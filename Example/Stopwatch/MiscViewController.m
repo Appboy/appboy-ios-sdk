@@ -45,11 +45,6 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)viewDidUnload {
-  [self setFlushModeLabel:nil];
-  [super viewDidUnload];
-}
-
 #pragma mark - Scroll view settings
 
 - (void)updateScrollViewContentSize {

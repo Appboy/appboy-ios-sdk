@@ -1,4 +1,5 @@
 #import "ContainerViewController.h"
+#import "AlertControllerUtils.h"
 
 @implementation ContainerViewController
 
@@ -27,7 +28,7 @@
   
   // Add Flush navigation bar item
   if (self.hasFlushButton) {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"appboy"]
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"bolt"]
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                              action:@selector(flushDataToAppboy:)];
@@ -85,6 +86,9 @@
 
 - (IBAction)flushDataToAppboy:(id)sender {
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+  [AlertControllerUtils presentTemporaryAlertWithTitle:nil
+                                               message:@"Data was successfully flushed"
+                                          presentingVC:self];
 }
 
 @end

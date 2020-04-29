@@ -54,7 +54,6 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     NSLog(@"Setting ABKInAppMessageControllerDelegate for app run.");
     appboyOptions[ABKInAppMessageControllerDelegateKey] = self;
   }
-  appboyOptions[ABKInAppMessageHideStatusBarKey] = @YES;
 
   // Set ABKURLDelegate on startup
   BOOL setUrlDelegate = YES; // default value

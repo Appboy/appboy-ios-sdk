@@ -29,6 +29,8 @@ static NSString *const ButtonCell = @"button cell";
 static NSString *const TextFieldCell = @"text field cell";
 static NSString *const SegmentedControlCell = @"segmented control cell";
 static NSString *const SwitchCell = @"switch cell";
+static NSString *const UserId = @"User ID";
+static NSString *const ChangeUser = @"Set User ID";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -46,6 +48,9 @@ static NSString *const SwitchCell = @"switch cell";
                                                               Quantity,
                                                               PurchaseSwitch,
                                                               LogPurchase]];
+    
+  self.labelsArraySection0 = [NSMutableArray arrayWithArray:@[UserId,
+                                                              ChangeUser]];
   
   self.valuesDictionary = [NSMutableDictionary dictionaryWithDictionary:@{
                                                                           Name : @"",
@@ -58,13 +63,20 @@ static NSString *const SwitchCell = @"switch cell";
                                                                           EventPropertyKey : @"",
                                                                           EventPropertyValue : @"",
                                                                           PurchasePropertyKey : @"",
-                                                                          PurchasePropertyValue : @""
+                                                                          PurchasePropertyValue : @"",
+                                                                          UserId: @""
                                                                           }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+  NSString *appboyUserId = [Appboy sharedInstance].user.userID;
+  if (appboyUserId != nil) {
+    self.valuesDictionary[UserId] = appboyUserId;
+    [self.tableView reloadData];
+  }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -88,14 +100,14 @@ static NSString *const SwitchCell = @"switch cell";
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 2;
+  return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSString *label = [self labelForIndexPath:indexPath];
   NSInteger row = indexPath.row;
   UITableViewCell *cell = nil;
-  if ([label isEqualToString:LogEvent] || [label isEqualToString:LogPurchase]) {
+  if ([label isEqualToString:LogEvent] || [label isEqualToString:LogPurchase] || [label isEqualToString:ChangeUser]) {
     // EventButtonCell
     cell = [self createCellWithIdentifier:ButtonCell withClass:[EventButtonCell class]];
     EventButtonCell *buttonCell = (EventButtonCell *)cell;
@@ -108,30 +120,33 @@ static NSString *const SwitchCell = @"switch cell";
              || [label isEqualToString:EventPropertyKey]
              || [label isEqualToString:EventPropertyValue]
              || [label isEqualToString:PurchasePropertyKey]
-             || [label isEqualToString:PurchasePropertyValue]) {
+             || [label isEqualToString:PurchasePropertyValue]
+             || [label isEqualToString:UserId]) {
     // EventTextFieldCell
     cell = [self createCellWithIdentifier:TextFieldCell withClass:[EventTextFieldCell class]];
     ((EventTextFieldCell *)cell).eventLabel.text = label;
     if (indexPath.section == 0) {
-      ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArraySection1[row]];
+      ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArraySection0[row]];
     } else if (indexPath.section == 1) {
+      ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArraySection1[row]];
+    } else if (indexPath.section == 2) {
       ((EventTextFieldCell *)cell).eventTextField.text = self.valuesDictionary[self.labelsArraySection2[row]];
     }
   } else if ([label isEqualToString:CustomEventPropertyType] || [label isEqualToString:PurchasePropertyType]) {
     // EventSegmentedControlCell
     cell = [self createCellWithIdentifier:SegmentedControlCell withClass:[EventSegmentedControlCell class]];
-    if (indexPath.section == 0) {
+    if (indexPath.section == 1) {
       ((EventSegmentedControlCell *)cell).customEventPropertyTypeSegment.selectedSegmentIndex = self.eventPropertyType;
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 2) {
       ((EventSegmentedControlCell *)cell).customEventPropertyTypeSegment.selectedSegmentIndex = self.purchasePropertyType;
     }
   } else {
     // EventSwitchCell
     cell = [self createCellWithIdentifier:SwitchCell withClass:[EventSwitchCell class]];
     ((EventSwitchCell *)cell).eventLabel.text = label;
-    if (indexPath.section == 0) {
+    if (indexPath.section == 1) {
       ((EventSwitchCell *)cell).eventPropertySwitch.on = [self.valuesDictionary[self.labelsArraySection1[row]] boolValue];
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 2) {
       ((EventSwitchCell *)cell).eventPropertySwitch.on = [self.valuesDictionary[self.labelsArraySection2[row]] boolValue];
     }
   }
@@ -144,23 +159,27 @@ static NSString *const SwitchCell = @"switch cell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  if (section == 0) {
+  if (section == 1) {
     return self.labelsArraySection1.count;
-  } else {
+  } else if (section == 2 ) {
     return self.labelsArraySection2.count;
+  } else {
+    return self.labelsArraySection0.count;
   }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   NSString *label = [self labelForIndexPath:indexPath];
   if ([label isEqualToString:LogEvent] ||
-      [label isEqualToString:LogPurchase]) {
+      [label isEqualToString:LogPurchase] ||
+      [label isEqualToString:ChangeUser]) {
     return TableViewTopY + 22.0;
   } else if ([label isEqualToString:Name] ||
              [label isEqualToString:ProductId] ||
              [label isEqualToString:CurrencyCode] ||
              [label isEqualToString:Price] ||
-             [label isEqualToString:Quantity]) {
+             [label isEqualToString:Quantity] ||
+             [label isEqualToString:UserId]) {
     return TableViewTopY + 6.0;
   }
   return TableViewTopY;
@@ -169,8 +188,10 @@ static NSString *const SwitchCell = @"switch cell";
 - (NSString *)labelForIndexPath:(NSIndexPath *)indexPath {
   NSString *label = @"";
   if (indexPath.section == 0) {
-    label = self.labelsArraySection1[indexPath.row];
+    label = self.labelsArraySection0[indexPath.row];
   } else if (indexPath.section == 1) {
+    label = self.labelsArraySection1[indexPath.row];
+  } else if (indexPath.section == 2) {
     label = self.labelsArraySection2[indexPath.row];
   }
   return label;
@@ -185,8 +206,8 @@ static NSString *const SwitchCell = @"switch cell";
   
   // Check if the text field being edited is the event value or purchase value so we can implement the date picker if
   // the user wants to input a date value
-  if ((indexPath.section == 0 && self.eventPropertyType == 3 && [self.labelsArraySection1[indexPath.row] isEqualToString:EventPropertyValue]) ||
-          (indexPath.section == 1 && self.purchasePropertyType == 3 && [self.labelsArraySection2[indexPath.row] isEqualToString:PurchasePropertyValue])) {
+  if ((indexPath.section == 1 && self.eventPropertyType == 3 && [self.labelsArraySection1[indexPath.row] isEqualToString:EventPropertyValue]) ||
+          (indexPath.section == 2 && self.purchasePropertyType == 3 && [self.labelsArraySection2[indexPath.row] isEqualToString:PurchasePropertyValue])) {
     self.currentTextField = textField;
     textField.text = nil;
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
@@ -201,12 +222,12 @@ static NSString *const SwitchCell = @"switch cell";
     }
   }
   
-  if (indexPath.section == 0) {
+  if (indexPath.section == 1) {
     if ([self.labelsArraySection1[indexPath.row] isEqualToString:Name]
         || [self.labelsArraySection1[indexPath.row] isEqualToString:EventPropertyKey]) {
       [self setUpTextField:textField withKeyboardType:UIKeyboardTypeDefault];
     }
-  } else if (indexPath.section == 1) {
+  } else if (indexPath.section == 2) {
     if ([self.labelsArraySection2[indexPath.row] isEqualToString:ProductId]
         || [self.labelsArraySection2[indexPath.row] isEqualToString:PurchasePropertyKey]
         || [self.labelsArraySection2[indexPath.row] isEqualToString:CurrencyCode]) {
@@ -231,8 +252,10 @@ static NSString *const SwitchCell = @"switch cell";
   UITableViewCell *cell = ((UITableViewCell *)[[((UIView *)textField) superview] superview]); // Get UITextField's parent UITableViewCell
   NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
   if (indexPath.section == 0) {
-    self.valuesDictionary[self.labelsArraySection1[indexPath.row]] = textField.text;
+    self.valuesDictionary[self.labelsArraySection0[indexPath.row]] = textField.text;
   } else if (indexPath.section == 1) {
+    self.valuesDictionary[self.labelsArraySection1[indexPath.row]] = textField.text;
+  } else if (indexPath.section == 2) {
     self.valuesDictionary[self.labelsArraySection2[indexPath.row]] = textField.text;
   }
   self.currentTextField = nil;
@@ -257,7 +280,7 @@ static NSString *const SwitchCell = @"switch cell";
   UITableViewCell *cell = ((UITableViewCell *)[[((UIView *)sender) superview] superview]); // Get UISwitch's parent UITableViewCell
   NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
   
-  if (indexPath.section == 0) {
+  if (indexPath.section == 1) {
     self.valuesDictionary[self.labelsArraySection1[indexPath.row]] = @(sender.on);
     if (sender.on) {
       // Add Key and Value to labelsArray
@@ -272,7 +295,7 @@ static NSString *const SwitchCell = @"switch cell";
       NSRange indexRange = NSMakeRange(indexPath.row + 1, 3);
       [self.labelsArraySection1 removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:indexRange]];
     }
-  } else if (indexPath.section == 1) {
+  } else if (indexPath.section == 2) {
     self.valuesDictionary[self.labelsArraySection2[indexPath.row]] = @(sender.on);
     if (sender.on) {
       // Add Key and Value to labelsArray
@@ -373,6 +396,10 @@ static NSString *const SwitchCell = @"switch cell";
         }
       }
     }
+  } else if ([sender.titleLabel.text isEqualToString:ChangeUser] && [self checkIfFieldIsEmpty:UserId]){
+    NSString *userId = self.valuesDictionary[UserId];
+    [[Appboy sharedInstance] changeUser:userId];
+    [self showAlertWithMessage:[NSString localizedStringWithFormat:@"Changed user to %@", userId]];
   }
   // restoring NSNumber/NSDate values back to NSString
   NSMutableDictionary *updatedValues = [NSMutableDictionary dictionary];
@@ -423,10 +450,10 @@ static NSString *const SwitchCell = @"switch cell";
   // Need to know index path to know which section this text field is in
   UITableViewCell *cell = ((UITableViewCell *)[[((UIView *)sender) superview] superview]); // Get UISegmentedControl's parent UITableViewCell
   NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-  if(indexPath.section == 0) {
+  if (indexPath.section == 1) {
     self.eventPropertyType = sender.selectedSegmentIndex;
     self.valuesDictionary[EventPropertyValue] = @"";
-  } else if (indexPath.section == 1) {
+  } else if (indexPath.section == 2) {
     self.purchasePropertyType = sender.selectedSegmentIndex;
     self.valuesDictionary[PurchasePropertyValue] = @"";
   }

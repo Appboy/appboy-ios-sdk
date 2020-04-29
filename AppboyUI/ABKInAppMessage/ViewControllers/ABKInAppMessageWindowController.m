@@ -26,8 +26,6 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     _inAppMessageViewController = inAppMessageViewController;
     _inAppMessageWindow = [[ABKInAppMessageWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _inAppMessageWindow.backgroundColor = [UIColor clearColor];
-    // Make sure the slideup is over the status bar when it slides from the top.
-    _inAppMessageWindow.windowLevel = UIWindowLevelStatusBar + 1.0f;
     _inAppMessageWindow.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     _inAppMessageIsTapped = NO;
     _clickedButtonId = -1;
@@ -74,9 +72,8 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 }
 
 - (BOOL)prefersStatusBarHidden {
-  if ([Appboy sharedInstance].inAppMessageController.forceHideStatusBar) {
-    // Config override is passed from appboyOptions
-    return [self.inAppMessageViewController prefersStatusBarHidden];
+  if (self.inAppMessageViewController.overrideApplicationStatusBarHiddenState) {
+    return self.inAppMessageViewController.prefersStatusBarHidden;
   }
   return [UIApplication sharedApplication].statusBarHidden;
 }
@@ -380,7 +377,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
       [ABKUIURLUtils topmostViewControllerWithRootViewController:self.appWindow.rootViewController];
     [ABKUIURLUtils displayModalWebViewWithURL:url topmostViewController:keyWindowTopmostViewController];
   } else {
-    [ABKUIURLUtils openURLWithSystem:url];
+    [ABKUIURLUtils openURLWithSystem:url fromChannel:ABKInAppMessageChannel];
   }
 }
 

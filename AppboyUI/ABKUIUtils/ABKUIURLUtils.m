@@ -1,6 +1,7 @@
 #import "ABKUIURLUtils.h"
 #import "ABKUIUtils.h"
 #import "ABKModalWebViewController.h"
+#import "Appboy.h"
 
 @implementation ABKUIURLUtils
 
@@ -39,16 +40,23 @@
 }
 
 + (void)openURLWithSystem:(NSURL *)url {
+  [self openURLWithSystem:url fromChannel:ABKUnknownChannel];
+}
+
++ (void)openURLWithSystem:(NSURL *)url fromChannel:(ABKChannel)channel {
   if (![NSThread isMainThread]) {
     dispatch_sync(dispatch_get_main_queue(), ^{
-      [self openURL:url];
+      [self openURL:url fromChannel:(ABKChannel)channel];
     });
   } else {
-    [self openURL:url];
+    [self openURL:url fromChannel:(ABKChannel)channel];
   }
 }
 
-+ (void)openURL:(NSURL *)url {
++ (void)openURL:(NSURL *)url fromChannel:(ABKChannel)channel {
+  if ([ABKUIURLUtils URLDelegate:[Appboy sharedInstance].appboyUrlDelegate handlesURL:url fromChannel:channel withExtras:nil]) {
+    return;
+  }
   if (@available(iOS 10.0, *)) {
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
   } else {

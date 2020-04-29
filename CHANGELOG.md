@@ -1,3 +1,21 @@
+## 3.22.0
+
+##### Breaking
+- Removes the key `ABKInAppMessageHideStatusBarKey` from `appboyOptions` and the property `forceHideStatusBar` from `ABKInAppMessageController`. Full screen in-app messages are now always displayed with the status bar hidden.
+- Adds Dark Mode support to Content Cards. This feature is enabled by default and can be disabled by setting `enableDarkTheme` property to `NO` on `ABKContentCardsTableViewController` before the view controller is presented.
+
+##### Fixed
+- Fixes an issue in HTML in-app messages where button clicks weren't correctly being attributed for `mailto:` and `tel:` links.
+- Fixes an issue in HTML in-app messages where videos would be displayed underneath the in-app message when full screen playback was enabled. The in-app message `UIWindow`'s `windowLevel` is now set to `UIWindowLevelNormal` instead of being above `UIWindowLevelStatusBar`.
+- Fixes an issue in Content Cards where `ABKURLDelegate` was not being respected when opening links.
+
+##### Added
+- Adds `appboyBridge.logClick(id)`, `appboyBridge.logClick()` and `appboyBridge.getUser().setCustomLocationAttribute(key, latitude, longitude)` to the javascript interface for HTML in-app messages.
+- Adds Czech and Ukrainian language support for Braze UI elements.
+- Adds the ability to unset the current user's email attribute by setting the `email` property of the current `ABKUser` instance to `nil` (e.g. `[Appboy sharedInstance].user.email = nil;`).
+- Adds Dark Mode support to Push Stories.
+- Adds the ability to set maximum width of Content Cards by using the `maxContentCardWidth` property of `ABKContentCardsTableViewController`.
+
 ## 3.21.3
 
 ##### Added
@@ -13,7 +31,7 @@
 - Fixes an issue introduced in 3.17.0 where the SDK would give precedence to the endpoint passed in `Info.plist` if given both an endpoint from the `Info.plist` and `appboyOptions`.
 
 ##### Added
-- Adds the ability to set a custom WKWebViewConfiguration for HTML in-app messages. You can set it using the method `setCustomWKWebViewConfiguration` in `ABKInAppMessageUIDelegate`.
+- Adds the ability to set a custom `WKWebViewConfiguration` for HTML in-app messages. You can set it using the method `setCustomWKWebViewConfiguration` in `ABKInAppMessageUIDelegate`.
 
 ##### Changed
 - Removes calls to deprecated APIs `statusBarOrientation` and `statusBarFrame`.
@@ -41,7 +59,7 @@
 - Fixes an issue introduced in 3.14.1 where boolean-typed event properties would be improperly cast to numbers.
 
 ##### Changed
-- Updates the logging format for debug, warn, and error ABKLogger messages to now print their log level.
+- Updates the logging format for debug, warn, and error `ABKLogger` messages to now print their log level.
 
 ##### Added
 - Adds support for the upcoming feature, in-app messages with Dark Mode support.
@@ -932,7 +950,7 @@ occurred.
  - Adds a new property `expiresAt` in class ABKCard. The property is the unix timestamp of the card's expiration time. For more detail, please refer to ABKCard.h.
 
 ##### Changed
- - Stops collecting user's Twitter data automatically. You can pass a user's Twitter information to Braze by initialzing a ABKTwitterUser object with the twitter data, and setting it to [Appboy sharedInstance].user.twitterUser. For more information, please refer to ABKUser.h and ABKTwitterUser.h.
+ - Stops collecting user's Twitter data automatically. You can pass a user's Twitter information to Braze by initialzing a ABKTwitterUser object with the twitter data, and setting it to `[Appboy sharedInstance].user.twitterUser`. For more information, please refer to `ABKUser.h` and `ABKTwitterUser.h`.
  - Stops logging foreground push as a push open as it is not delivered by the system.
 
 ##### Removed
@@ -1004,7 +1022,7 @@ occurred.
 
 ##### Changed
  - Updates the minimum deployment targets of Braze iOS SDK to iOS 6.0.  For apps supporting lower iOS versions, please continue to use 2.9.+ versions of the Braze SDK.
- - Stops collecting user's Facebook data automatically. You can pass a user's Facebook information to Braze by initializing a ABKFacebookUser object with the facebook data, and set it to [Appboy sharedInstance].user.facebookUser. For more information, please refer to ABKUser.h and ABKFacebookUser.h.
+ - Stops collecting user's Facebook data automatically. You can pass a user's Facebook information to Braze by initializing a ABKFacebookUser object with the facebook data, and set it to `[Appboy sharedInstance].user.facebookUser`. For more information, please refer to `ABKUser.h` and `ABKFacebookUser.h`.
 
 ##### Removed
  - Removes Facebook SDK dependent builds.  Now there is a single library - AppboyKit - and a single Pod without functional subspecs - Appboy-iOS-SDK (note we now have both the subspecs pointing at the same library). Please update your Podfile to `pod 'Appboy-iOS-SDK` if you are integrating Braze with Cocoapods.
@@ -1246,7 +1264,7 @@ All former Braze slideup delegate methods have been depreciated and removed. In 
       * `ABK_ENABLE_IDFA_COLLECTION`
 
 ## 2.3.1
-* The Braze SDK for iOS now has two versions, one for use with apps which incorporate the official Facebook SDK and one for those which do not. In November of 2013, the App Store Validation Process started generating warnings about the usage of isOpen and setActiveSession in the Braze SDK. These selectors were being sent to instances of classes in the Facebook SDK and are generally able to be used without generating warnings. However because of the way that the classes were initialized in Braze (a result of building a single Braze binary to fully support apps with and without the Facebook SDK), the App Store Validation Process started generating warnings the Facebook SDK methods share a name with private selectors elsewhere in iOS. Although none of our customers have been denied App Store approval yet, to protect against potential validation policy changes by Apple, Braze now provides two versions of its SDK, neither of which generate warnings. Going forward, the appboy-ios-sdk repository will provide both versions of the SDK in the folders 'AppboySDK' (as before) and 'AppboySDKWithoutFacebookSupport'. The 'AppboySDKWithoutFacebookSupport' does not require the host app to include the Facebook SDK, but as a result does not include all of the Braze features for Facebook data fetching. More information is available here within the [Braze documentation](http://documentation.braze.com/sdk-integration-ios.html#ios-basic-sdk-integration).
+* The Braze SDK for iOS now has two versions, one for use with apps which incorporate the official Facebook SDK and one for those which do not. In November of 2013, the App Store Validation Process started generating warnings about the usage of isOpen and setActiveSession in the Braze SDK. These selectors were being sent to instances of classes in the Facebook SDK and are generally able to be used without generating warnings. However because of the way that the classes were initialized in Braze (a result of building a single Braze binary to fully support apps with and without the Facebook SDK), the App Store Validation Process started generating warnings the Facebook SDK methods share a name with private selectors elsewhere in iOS. Although none of our customers have been denied App Store approval yet, to protect against potential validation policy changes by Apple, Braze now provides two versions of its SDK, neither of which generate warnings. Going forward, the appboy-ios-sdk repository will provide both versions of the SDK in the folders 'AppboySDK' (as before) and 'AppboySDKWithoutFacebookSupport'. The 'AppboySDKWithoutFacebookSupport' does not require the host app to include the Facebook SDK, but as a result does not include all of the Braze features for Facebook data fetching. More information is available here within the [Braze documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/).
 * Fixed a bug that repeatedly updated the push token of some users unnecessarily.
 * The "Reporting an Issue?" box within the UI layout of the Feedback Page has been moved to the left side of the label away from the "Send" button. This change was made to reduce the number of misclicks of the "Send" button. The "Reporting an Issue?" label is now clickable as well.
 * Cross Promotion Cards for apps with long titles will now render appropriately in iOS5. Before the title would render abnormally large on these devices.

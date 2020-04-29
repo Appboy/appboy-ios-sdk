@@ -46,12 +46,6 @@ static NSMutableArray *attributesValuesArray = nil;
   self.userCustomAttributes = [NSMutableArray array];
 }
 
-- (void)viewDidUnload {
-  [self setAttributesTableView:nil];
-  [self setModalNavBar:nil];
-  [super viewDidUnload];
-}
-
 - (void)dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self.modalNavBar];
 }

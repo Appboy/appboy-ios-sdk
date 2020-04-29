@@ -3,6 +3,7 @@
 @interface EventsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray *labelsArraySection0;
 @property NSMutableArray *labelsArraySection1;
 @property NSMutableArray *labelsArraySection2;
 @property NSMutableDictionary *valuesDictionary;

@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target :Stopwatch do
   platform :ios, '9.0'
   pod 'Appboy-iOS-SDK'
-  pod 'KKColorListPicker', :git => 'https://github.com/leoru/KKColorListPicker.git'
+  pod 'KKColorListPicker', :git => 'https://github.com/leoru/KKColorListPicker.git', :inhibit_warnings => true
   pod 'Branch'
   pod 'BuddyBuildSDK'
 end

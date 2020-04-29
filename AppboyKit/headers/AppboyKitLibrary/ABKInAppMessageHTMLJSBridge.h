@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "Appboy.h"
+#import "ABKInAppMessageHTML.h"
 
 static NSString *const ABKBridgeScheme = @"appboybridge";
 static NSString *const ABKFirstParam = @"ab_url_param_0";
@@ -23,6 +24,10 @@ static NSString *const ABKInAppMessageHTMLJSInterfaceParseExceptionName = @"Appb
 static NSString *const ABKInAppMessageHTMLJSInterfaceParseExceptionReason = @"Failed to parse appboyBridge call";
 
 @interface ABKInAppMessageHTMLJSBridge : NSObject
+
+@property ABKInAppMessageHTML *inAppMessage;
+
+- (instancetype)initWithHTMLInAppMessage:(ABKInAppMessageHTML *)inAppMessage;
 
 + (BOOL)isBridgeURL:(NSURL *)url;
   
