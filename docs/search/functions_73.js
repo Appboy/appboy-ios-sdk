@@ -16,6 +16,8 @@ var searchData=
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:',['../interface_a_b_k_user.html#a1da5a1245765b2aa3f9d1e2c3322c6bd',1,'ABKUser']]],
   ['setlastknownlocationwithlatitude_3alongitude_3ahorizontalaccuracy_3aaltitude_3averticalaccuracy_3a',['setLastKnownLocationWithLatitude:longitude:horizontalAccuracy:altitude:verticalAccuracy:',['../interface_a_b_k_user.html#a3fc175e2db49ef60e49ad0929f35632a',1,'ABKUser']]],
   ['setpushnotificationsubscriptiontype_3a',['setPushNotificationSubscriptionType:',['../interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3',1,'ABKUser']]],
+  ['setuplayoutforgraphic',['setupLayoutForGraphic',['../interface_a_b_k_in_app_message_immersive_view_controller.html#a158aab7273ec92badd311074d0bb0e0d',1,'ABKInAppMessageImmersiveViewController']]],
+  ['setuplayoutfortopimage',['setupLayoutForTopImage',['../interface_a_b_k_in_app_message_immersive_view_controller.html#a01ee6a3675930220d567c215aa81fe40',1,'ABKInAppMessageImmersiveViewController']]],
   ['sharedinstance',['sharedInstance',['../interface_appboy.html#aa62135eada7135024e1e042325f426fa',1,'Appboy']]],
   ['shouldfetchtesttriggersflagcontainedinpayload_3a',['shouldFetchTestTriggersFlagContainedInPayload:',['../interface_a_b_k_push_utils.html#a7b7e481adae71046134b2c6b007c18df',1,'ABKPushUtils']]],
   ['showinappmessage_3a',['showInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_controlling-p.html#a0dfcd38adc1fc156dc3f0d4d8129f9c6',1,'ABKInAppMessageUIControlling-p']]],

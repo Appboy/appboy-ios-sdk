@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['localizedappboycontentcardsstring_3a',['localizedAppboyContentCardsString:',['../interface_a_b_k_content_cards_table_view_controller.html#a45c6fcc44efe03ee746bc27ea48b13e2',1,'ABKContentCardsTableViewController']]],
+  ['localizedappboyfeedstring_3a',['localizedAppboyFeedString:',['../interface_a_b_k_news_feed_table_view_controller.html#a95d6f411fa83a6ff12a8e93ab7c2300b',1,'ABKNewsFeedTableViewController']]],
   ['logcontentcardclicked',['logContentCardClicked',['../interface_a_b_k_content_card.html#aaecf1a0f9a08a09793cca12ecd5a3d19',1,'ABKContentCard']]],
   ['logcontentcarddismissed',['logContentCardDismissed',['../interface_a_b_k_content_card.html#a6a65b26625defe0f62f19c9de9a67e8e',1,'ABKContentCard']]],
   ['logcontentcardimpression',['logContentCardImpression',['../interface_a_b_k_content_card.html#aa68cd71bf14024c21f404f3f16bdb2c3',1,'ABKContentCard']]],

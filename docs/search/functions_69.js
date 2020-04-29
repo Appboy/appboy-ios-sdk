@@ -1,11 +1,14 @@
 var searchData=
 [
+  ['inappmessageclickedwithactiontype_3aurl_3aopenurlinwebview_3a',['inAppMessageClickedWithActionType:URL:openURLInWebView:',['../interface_a_b_k_in_app_message_window_controller.html#ae524aa39798873eef03734c351961ced',1,'ABKInAppMessageWindowController']]],
   ['inappmessagecurrentlyvisible',['inAppMessageCurrentlyVisible',['../protocol_a_b_k_in_app_message_u_i_controlling-p.html#a2f066d150517f34f161588169dd3f0ed',1,'ABKInAppMessageUIControlling-p']]],
   ['inappmessagesremainingonstack',['inAppMessagesRemainingOnStack',['../interface_a_b_k_in_app_message_controller.html#a5832131be107c369436a58546d1a2810',1,'ABKInAppMessageController']]],
+  ['inappmessageviewcontrollerwithinappmessage_3a',['inAppMessageViewControllerWithInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_delegate-p.html#aff6974ec6332db363abe719ef0e9e679',1,'ABKInAppMessageUIDelegate-p']]],
   ['incrementcustomuserattribute_3a',['incrementCustomUserAttribute:',['../interface_a_b_k_user.html#a8f9fa4894dd236dedd48e610d43ef316',1,'ABKUser']]],
   ['incrementcustomuserattribute_3aby_3a',['incrementCustomUserAttribute:by:',['../interface_a_b_k_user.html#a3311dadde4e172539dce54d82a6d9447',1,'ABKUser']]],
   ['initwithfacebookuserdictionary_3anumberoffriends_3alikes_3a',['initWithFacebookUserDictionary:numberOfFriends:likes:',['../interface_a_b_k_facebook_user.html#a15526bd07ad1b0a72da4583dda4fc0d0',1,'ABKFacebookUser']]],
   ['initwithfields_3a',['initWithFields:',['../interface_a_b_k_in_app_message_dark_button_theme.html#af40aef14b3b81e9ff2ba2b4b27a1052b',1,'ABKInAppMessageDarkButtonTheme::initWithFields:()'],['../interface_a_b_k_in_app_message_dark_theme.html#a36e8ed5a397bbf07c71ad7eb76c55bfd',1,'ABKInAppMessageDarkTheme::initWithFields:()']]],
+  ['initwithinappmessage_3a',['initWithInAppMessage:',['../interface_a_b_k_in_app_message_view_controller.html#a0839790b8d939b59532c5dbb1ce9fa8f',1,'ABKInAppMessageViewController']]],
   ['initwithnetwork_3acampaign_3aadgroup_3acreative_3a',['initWithNetwork:campaign:adGroup:creative:',['../interface_a_b_k_attribution_data.html#aab29d1bcd55c5f5687061f9916e0901f',1,'ABKAttributionData']]],
   ['isadvertisingtrackingenabled',['isAdvertisingTrackingEnabled',['../protocol_a_b_k_i_d_f_a_delegate-p.html#a76e1bb5e44988baa8acac9c1ddc44177',1,'ABKIDFADelegate-p']]],
   ['isappboyinternalremotenotification_3a',['isAppboyInternalRemoteNotification:',['../interface_a_b_k_push_utils.html#afd55ca5f35fb5b2306ae1be6b5deea9f',1,'ABKPushUtils']]],
