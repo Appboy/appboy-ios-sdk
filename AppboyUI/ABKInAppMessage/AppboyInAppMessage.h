@@ -6,6 +6,7 @@
 #import "ABKInAppMessageFullViewController.h"
 #import "ABKInAppMessageHTMLFullViewController.h"
 #import "ABKInAppMessageHTMLViewController.h"
+#import "ABKInAppMessageHTMLBaseViewController.h"
 #import "ABKInAppMessageImmersiveViewController.h"
 #import "ABKInAppMessageModalViewController.h"
 #import "ABKInAppMessageSlideupViewController.h"

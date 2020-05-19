@@ -1,3 +1,13 @@
+## 3.23.0
+
+##### Fixed
+- Fixes an issue with regex based event property triggers not working as expected. Previously on iOS they had to match the entire string, now they will search for matches as expected.
+- Improves resiliency when handling multiple background requests.
+
+##### Added
+- Adds support for upcoming HTML In-App Message templates.
+- Adds support for applications using [scenes](https://developer.apple.com/documentation/uikit/app_and_environment/scenes) (`UIWindowSceneDelegate`). In-app messages are now properly displayed in that context.
+
 ## 3.22.0
 
 ##### Breaking

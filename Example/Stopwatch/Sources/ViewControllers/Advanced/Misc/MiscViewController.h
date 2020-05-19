@@ -16,6 +16,9 @@
 // Stopwatch setting that determines to enable/disable Dark Mode colors
 @property (strong, nonatomic) IBOutlet UISwitch *allowDarkThemeToggle;
 
+// Stopwatch setting that determines to display silent push alerts
+@property (weak, nonatomic) IBOutlet UISwitch *showSilentPushAlertsToggle;
+
 - (IBAction)flushAppboyData:(id)sender;
 - (IBAction)changeAppboyFlushMode:(id)sender;
 - (IBAction)logAttributionData:(id)sender;

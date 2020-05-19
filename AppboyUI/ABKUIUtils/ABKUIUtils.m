@@ -9,12 +9,87 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
 
 @implementation ABKUIUtils
 
+#pragma mark - View Hierarchy Helpers
+
+// Used in unit tests to mock the UIApplication instance used.
++ (UIApplication *)application {
+  return UIApplication.sharedApplication;
+}
+
++ (UIWindowScene *)activeWindowScene {
+  UIWindowScene *windowScene;
+  UIWindowScene *activeWindowScene;
+  
+  // Loop over the connected window scenes to find the last foreground active
+  // one. If no scene is currently in foreground state, fallback to last window
+  // scene in hierarchy.
+  for (UIScene *scene in [self application].connectedScenes) {
+    if (![scene isKindOfClass:[UIWindowScene class]]) {
+      continue;
+    }
+    
+    windowScene = (UIWindowScene *)scene;
+    if (scene.activationState == UISceneActivationStateForegroundActive) {
+      activeWindowScene = windowScene;
+    }
+  }
+  return activeWindowScene ?: windowScene;
+}
+
++ (UIWindow *)activeApplicationWindow {
+  if (@available(iOS 13.0, tvOS 13.0, *)) {
+    UIWindow *window = [self selectApplicationWindow:ABKUIUtils.activeWindowScene.windows];
+    if (window) {
+      return window;
+    }
+  }
+  
+  return [self selectApplicationWindow:[self application].windows];
+}
+
++ (UIViewController *)activeApplicationViewController {
+  return ABKUIUtils.activeApplicationWindow.rootViewController;
+}
+
+/*!
+ * Selects the window most likely to be the application window among an array of windows.
+ *
+ * @discussion The application window should most likely be the topmost window with a windowLevel
+ *             set to UIWindowLevelNormal (excluding a potential ABKInAppMessageWindow currently
+ *             being displayed). If no window respecting that condition is found, fallback to the first
+ *             window in the hierarchy.
+ *
+ * @param windows An array of UIWindow
+ * @returns The UIWindow most likely to be the application window, nil if windows param is empty
+ */
++ (UIWindow *)selectApplicationWindow:(NSArray<UIWindow *> *)windows {
+  // Dynamically gets ABKInAppMessageWindow class as it is part of AppboyUI
+  Class ABKInAppMessageWindow = NSClassFromString(@"ABKInAppMessageWindow");
+  
+  for (UIWindow *window in [windows reverseObjectEnumerator]) {
+    // Ignores ABKInAppMessageWindow
+    if (ABKInAppMessageWindow && [window isKindOfClass:[ABKInAppMessageWindow class]]) {
+      continue;
+    }
+    // Assumes that the application window has a windowLevel set to
+    // UIWindowLevelNormal
+    if (window.windowLevel == UIWindowLevelNormal) {
+      return window;
+    }
+  }
+  
+  // Fallback to first window in hierarchy
+  return windows.firstObject;
+}
+
+#pragma mark - Methods
+
 + (NSString *)getLocalizedString:(NSString *)key inAppboyBundle:(NSBundle *)appboyBundle table:(NSString *)table {
   // Check if the app has a customized localization for the given key
   NSString *localizedString = [[NSBundle mainBundle] localizedStringForKey:key
                                                                      value:LocalizedAppboyStringNotFound
                                                                      table:nil];
-  if ([localizedString isEqualToString:LocalizedAppboyStringNotFound]) {
+  if ([ABKUIUtils string:localizedString isEqualToString:LocalizedAppboyStringNotFound]) {
     // Check Braze's localization in the given bundle
     for (NSString *language in [[NSBundle mainBundle] preferredLocalizations]) {
       if ([[appboyBundle localizations] containsObject:language]) {
@@ -25,7 +100,7 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
         break;
       }
     }
-    if ([localizedString isEqualToString:LocalizedAppboyStringNotFound]) {
+    if ([ABKUIUtils string:localizedString isEqualToString:LocalizedAppboyStringNotFound]) {
       // Couldn't find Braze's localization for the given key, fetch the default value for the key
       // from Base.lproj.
       NSBundle *appboyBaseBundle = [NSBundle bundleWithPath:[appboyBundle pathForResource:@"Base" ofType:@"lproj"]];
@@ -92,26 +167,22 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
 
 + (UIInterfaceOrientation)getInterfaceOrientation {
   if (@available(iOS 13.0, *)) {
-    if ([UIApplication sharedApplication].windows.firstObject.windowScene == nil) {
-      return UIInterfaceOrientationPortrait;
-    } else {
-      return [UIApplication sharedApplication].windows.firstObject.windowScene.interfaceOrientation;
+    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+    if (windowScene) {
+      return windowScene.interfaceOrientation;
     }
-  } else {
-    return [UIApplication sharedApplication].statusBarOrientation;
   }
+  return UIApplication.sharedApplication.statusBarOrientation;
 }
 
 + (CGSize)getStatusBarSize {
   if (@available(iOS 13.0, *)) {
-    if ([UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager == nil) {
-      return CGSizeZero;
-    } else {
-      return [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size;
+    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+    if (windowScene) {
+      return windowScene.statusBarManager.statusBarFrame.size;
     }
-  } else {
-    return [UIApplication sharedApplication].statusBarFrame.size;
   }
+  return UIApplication.sharedApplication.statusBarFrame.size;
 }
 
 #pragma mark - Dark Theme
@@ -138,6 +209,20 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
 #else
   return lightColor;
 #endif
+}
+
+/*!
+ * Unlike NSString's :isEqualToString method, this method returns true rather than throwing an exception if the first or both inputs are nil
+ * OR the first or both inputs are NSNull.
+ */
++ (BOOL)string:(NSString *)string1 isEqualToString:(NSString *)string2 {
+  if ((string1 == nil && string2 == nil) || ([string1 isKindOfClass:[NSNull class]] && [string2 isKindOfClass:[NSNull class]])) {
+    return YES;
+  }
+  if (string1 == nil || [string1 isKindOfClass:[NSNull class]] || string2 == nil || [string2 isKindOfClass:[NSNull class]]) {
+    return NO;
+  }
+  return [string1 isEqualToString:string2];
 }
 
 @end

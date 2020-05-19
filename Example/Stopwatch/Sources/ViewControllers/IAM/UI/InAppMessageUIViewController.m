@@ -4,6 +4,8 @@
 #import "AppboyKit.h"
 #import "UIViewController+Keyboard.h"
 #import "ColorUtils.h"
+#import "ABKInAppMessageHTMLFull.h"
+#import "ABKInAppMessageHTML.h"
 
 static const NSInteger textFieldTagNumber = 50;
 static const CGFloat ButtonTableViewCellHeight = 176.0f;
@@ -339,11 +341,21 @@ static const int CustomInAppMessageDuration = 5;
   ABKInAppMessage *inAppMessage = nil;
   switch (self.inAppMessageTypeSegment.selectedSegmentIndex) {
     case 3: {
-      ABKInAppMessageHTMLFull *inAppHTMLFull = [[ABKInAppMessageHTMLFull alloc] init];
-      inAppHTMLFull.assetsZipRemoteUrl = [self.htmlComposerVC remoteURL];
-      inAppHTMLFull.message = [self.htmlComposerVC inAppText];
-      [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppHTMLFull];
-      return;
+      switch (self.htmlComposerVC.HTMLTypeSegment.selectedSegmentIndex) {
+        case 0: {
+          ABKInAppMessageHTMLFull *inAppHTMLFull = [[ABKInAppMessageHTMLFull alloc] init];
+          inAppHTMLFull.assetsZipRemoteUrl = [self.htmlComposerVC remoteURL];
+          inAppHTMLFull.message = [self.htmlComposerVC inAppText];
+          [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppHTMLFull];
+          return;
+        }
+        case 1: {
+          ABKInAppMessageHTML *inAppHTML = [[ABKInAppMessageHTML alloc] init];
+          inAppHTML.message = [self.htmlComposerVC inAppText];
+          [[Appboy sharedInstance].inAppMessageController addInAppMessage:inAppHTML];
+          return;
+        }
+      }
     }
     case 2:
       inAppMessage = [[ABKInAppMessageFull alloc] init];

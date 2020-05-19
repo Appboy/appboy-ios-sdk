@@ -56,11 +56,10 @@ static NSString *const FontAwesomeName = @"FontAwesome";
 
 #pragma mark - UIViewController Methods
 
-// Inherit the supported orientations from the topmost, currently visible view controller (the one
-// immediately under the in-app message window)
+// Inherit the supported orientations from the currently active application view
+// controller (the one immediately under the in-app message window)
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-  UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
-  return [topController supportedInterfaceOrientations];
+  return ABKUIUtils.activeApplicationViewController.supportedInterfaceOrientations;
 }
 
 #pragma mark - In-app Message Initialization

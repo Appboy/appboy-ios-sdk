@@ -123,7 +123,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fba-Vc-gZu" userLabel="ContentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Braze Version:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNO-pV-BHh">
                                                         <rect key="frame" x="148" y="10" width="118" height="38"/>
@@ -209,7 +209,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQB-sU-MHh" userLabel="Environment View">
-                                                        <rect key="frame" x="0.0" y="414.66666666666669" width="414" height="239.66666666666669"/>
+                                                        <rect key="frame" x="0.0" y="414.66666666666674" width="414" height="268.33333333333326"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-9o-2Lo" customClass="StopwatchButton">
                                                                 <rect key="frame" x="16" y="96.999999999999943" width="382" height="38"/>
@@ -281,23 +281,23 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set In-App Message Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz4-x6-sYU">
-                                                        <rect key="frame" x="16" y="664.33333333333337" width="266" height="18"/>
+                                                        <rect key="frame" x="16" y="693" width="266" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-D6-9YS">
-                                                        <rect key="frame" x="349" y="658" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="686.66666666666663" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="setInAppDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="bFy-lY-zOS"/>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set URI Delegate On Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C67-Hk-uo5">
-                                                        <rect key="frame" x="16" y="703.33333333333337" width="178" height="18"/>
+                                                        <rect key="frame" x="16" y="732" width="178" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBd-3z-vDi" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="777" width="382" height="38"/>
+                                                        <rect key="frame" x="16" y="805.66666666666663" width="382" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="See Registered Geofences"/>
                                                         <connections>
@@ -305,23 +305,23 @@
                                                         </connections>
                                                     </button>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-w2-7ZR">
-                                                        <rect key="frame" x="349" y="697" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="725.66666666666663" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="urlDelegateSwitchChanged:" destination="Lea-J4-vz9" eventType="valueChanged" id="M7p-S2-OFB"/>
                                                         </connections>
                                                     </switch>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdT-oh-jh2">
-                                                        <rect key="frame" x="149.66666666666663" y="837" width="248.33333333333337" height="34"/>
+                                                        <rect key="frame" x="149.66666666666663" y="865.66666666666663" width="248.33333333333337" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Timeout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-lu-E9l">
-                                                        <rect key="frame" x="16.000000000000007" y="835" width="113.66666666666669" height="38"/>
+                                                        <rect key="frame" x="16.000000000000007" y="863.66666666666663" width="113.66666666666669" height="38"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-6Q-use" customClass="StopwatchButton">
-                                                        <rect key="frame" x="16" y="881" width="382" height="38"/>
+                                                        <rect key="frame" x="16" y="909.66666666666663" width="382" height="38"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                         <state key="normal" title="Set Session Timeout"/>
                                                         <connections>
@@ -350,39 +350,54 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzO-3u-7cG">
-                                                        <rect key="frame" x="16" y="826" width="382" height="1"/>
+                                                        <rect key="frame" x="16" y="854.66666666666663" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="mZe-m7-3PS"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Dark Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vou-Wk-mPn">
-                                                        <rect key="frame" x="16" y="742.33333333333337" width="125" height="18"/>
+                                                        <rect key="frame" x="16" y="771" width="125" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-os-OeC">
-                                                        <rect key="frame" x="349" y="736" width="51" height="31"/>
+                                                        <rect key="frame" x="349" y="764.66666666666663" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="allowDarkThemeToggleSwitched:" destination="Lea-J4-vz9" eventType="valueChanged" id="Jqv-P4-bad"/>
                                                         </connections>
                                                     </switch>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C7o-uA-VQs">
+                                                        <rect key="frame" x="349" y="645.66666666666663" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="toggleSilentPushAlerts:" destination="Lea-J4-vz9" eventType="valueChanged" id="e1E-m9-fFG"/>
+                                                        </connections>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Silent Push Alerts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-cj-eog">
+                                                        <rect key="frame" x="16" y="652" width="162.66666666666666" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="0xO-D6-9YS" firstAttribute="top" secondItem="7UD-Yr-JLj" secondAttribute="bottom" constant="42.333333333333371" id="0q6-cD-O10"/>
                                                     <constraint firstItem="wNO-pV-BHh" firstAttribute="centerX" secondItem="fba-Vc-gZu" secondAttribute="centerX" id="2fE-18-sSf"/>
                                                     <constraint firstItem="VBd-3z-vDi" firstAttribute="centerX" secondItem="fba-Vc-gZu" secondAttribute="centerX" id="3M9-MJ-WE6"/>
+                                                    <constraint firstItem="Scb-cj-eog" firstAttribute="leading" secondItem="Vz4-x6-sYU" secondAttribute="leading" id="3qM-Gg-4yL"/>
                                                     <constraint firstItem="Szq-qJ-HE9" firstAttribute="top" secondItem="z8J-GY-Dyi" secondAttribute="bottom" id="4FK-vN-l2I"/>
                                                     <constraint firstItem="Rrm-os-OeC" firstAttribute="top" secondItem="Jib-w2-7ZR" secondAttribute="bottom" constant="8" id="4IB-h3-Xe0"/>
+                                                    <constraint firstItem="C7o-uA-VQs" firstAttribute="leading" secondItem="Jib-w2-7ZR" secondAttribute="leading" id="4Nj-iv-GfJ"/>
                                                     <constraint firstItem="VBd-3z-vDi" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="4cc-QI-wrz"/>
                                                     <constraint firstItem="Jib-w2-7ZR" firstAttribute="top" secondItem="0xO-D6-9YS" secondAttribute="bottom" constant="8" id="4jF-Pc-tJG"/>
+                                                    <constraint firstItem="Scb-cj-eog" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="5Uy-cr-agY"/>
                                                     <constraint firstItem="hdT-oh-jh2" firstAttribute="top" secondItem="vzO-3u-7cG" secondAttribute="bottom" constant="10" id="5c3-HM-QUa"/>
                                                     <constraint firstItem="DLG-60-Vzq" firstAttribute="leading" secondItem="F6w-iv-ktD" secondAttribute="leading" id="5fi-hT-cDr"/>
                                                     <constraint firstItem="0zK-lu-E9l" firstAttribute="top" secondItem="VBd-3z-vDi" secondAttribute="bottom" constant="20" id="5xq-aa-Kij"/>
                                                     <constraint firstItem="Jib-w2-7ZR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C67-Hk-uo5" secondAttribute="trailing" constant="10" id="6B9-eg-4Mn"/>
                                                     <constraint firstItem="jFI-6Q-use" firstAttribute="height" secondItem="F6w-iv-ktD" secondAttribute="height" id="6x9-Cn-tg2"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="7H5-ee-dQb" secondAttribute="centerX" id="77E-9o-hPb"/>
+                                                    <constraint firstItem="0xO-D6-9YS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Scb-cj-eog" secondAttribute="trailing" constant="10" id="8Xr-xb-Xbq"/>
                                                     <constraint firstItem="0zK-lu-E9l" firstAttribute="height" secondItem="wNO-pV-BHh" secondAttribute="height" id="9ku-7N-jfy"/>
                                                     <constraint firstItem="wNO-pV-BHh" firstAttribute="top" secondItem="fba-Vc-gZu" secondAttribute="top" constant="10" id="DEV-AH-mbK"/>
                                                     <constraint firstItem="0xO-D6-9YS" firstAttribute="trailing" secondItem="pKk-eq-dcv" secondAttribute="trailing" id="DHS-C8-bzu"/>
@@ -419,6 +434,7 @@
                                                     <constraint firstItem="vzO-3u-7cG" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="cUR-tM-exv"/>
                                                     <constraint firstAttribute="trailing" secondItem="MV7-Qb-KZO" secondAttribute="trailing" constant="16" id="czb-fo-GKw"/>
                                                     <constraint firstItem="0zK-lu-E9l" firstAttribute="leading" secondItem="C67-Hk-uo5" secondAttribute="leading" id="d3s-QV-N0u"/>
+                                                    <constraint firstItem="Scb-cj-eog" firstAttribute="centerY" secondItem="C7o-uA-VQs" secondAttribute="centerY" id="dc1-CC-A6I"/>
                                                     <constraint firstItem="C67-Hk-uo5" firstAttribute="leading" secondItem="Vz4-x6-sYU" secondAttribute="leading" id="e2s-3R-FVp"/>
                                                     <constraint firstItem="Vz4-x6-sYU" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="eMU-Pp-cuD"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="DLG-60-Vzq" secondAttribute="centerX" id="ePZ-gY-mIt"/>
@@ -443,9 +459,11 @@
                                                     <constraint firstItem="0xO-D6-9YS" firstAttribute="centerY" secondItem="Vz4-x6-sYU" secondAttribute="centerY" id="mHZ-P7-yMm"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="centerX" secondItem="Szq-qJ-HE9" secondAttribute="centerX" id="nOY-xB-b0R"/>
                                                     <constraint firstAttribute="trailing" secondItem="7UD-Yr-JLj" secondAttribute="trailing" constant="16" id="pf7-eB-m7g"/>
-                                                    <constraint firstAttribute="height" constant="793" id="qRk-9c-wx1"/>
+                                                    <constraint firstAttribute="height" constant="950" id="qRk-9c-wx1"/>
                                                     <constraint firstItem="MV7-Qb-KZO" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="qUK-Xl-73g"/>
                                                     <constraint firstItem="jFI-6Q-use" firstAttribute="centerX" secondItem="fba-Vc-gZu" secondAttribute="centerX" id="qaG-WW-AsH"/>
+                                                    <constraint firstItem="C7o-uA-VQs" firstAttribute="top" secondItem="7UD-Yr-JLj" secondAttribute="bottom" constant="30" id="rwg-P0-Slp"/>
+                                                    <constraint firstItem="0xO-D6-9YS" firstAttribute="top" secondItem="C7o-uA-VQs" secondAttribute="bottom" constant="10" id="shO-Cx-ha1"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" id="tX6-M2-Rfv"/>
                                                     <constraint firstItem="7UD-Yr-JLj" firstAttribute="leading" secondItem="fba-Vc-gZu" secondAttribute="leading" constant="16" id="twO-Db-YKk"/>
                                                     <constraint firstItem="vQB-sU-MHh" firstAttribute="top" secondItem="Dg7-JD-KCe" secondAttribute="bottom" constant="10" id="upz-rx-WIE"/>
@@ -495,6 +513,7 @@
                         <outlet property="inAppMessageDelegateSwitch" destination="0xO-D6-9YS" id="xvA-W2-X9a"/>
                         <outlet property="scrollView" destination="QnV-GI-PPD" id="il4-u4-hYZ"/>
                         <outlet property="sessionTimeoutTextField" destination="hdT-oh-jh2" id="U0V-jd-Yrg"/>
+                        <outlet property="showSilentPushAlertsToggle" destination="C7o-uA-VQs" id="6Cy-zT-jsg"/>
                         <outlet property="urlDelegateSwitch" destination="Jib-w2-7ZR" id="RaP-YT-8FO"/>
                         <outlet property="versionLabel" destination="wNO-pV-BHh" id="glV-bd-RWW"/>
                         <outlet property="view" destination="hw1-81-rGu" id="o4F-SM-7co"/>
@@ -1679,8 +1698,8 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-Rz-1Xx" customClass="StopwatchSegmentedControl">
                                         <rect key="frame" x="16" y="10" width="382" height="32"/>
                                         <segments>
-                                            <segment title="Zip"/>
-                                            <segment title="No Zip"/>
+                                            <segment title="Zip (HTML Full)"/>
+                                            <segment title="No Zip (Rich HTML)"/>
                                         </segments>
                                         <color key="tintColor" red="0.1333333333" green="0.41960784309999999" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>

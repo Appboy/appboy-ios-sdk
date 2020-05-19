@@ -180,6 +180,11 @@
   appDelegate.stopwatchEnableDarkTheme = self.allowDarkThemeToggle.on;
 }
 
+- (IBAction)toggleSilentPushAlerts:(id)sender {
+  AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  appDelegate.showSilentPushAlerts = self.showSilentPushAlertsToggle.on;
+}
+
 - (IBAction)setSessionTimeout:(id)sender {
   NSLog(@"session timeout called");
   [[NSUserDefaults standardUserDefaults] setObject:self.sessionTimeoutTextField.text forKey:NewSessionTimeoutKey];

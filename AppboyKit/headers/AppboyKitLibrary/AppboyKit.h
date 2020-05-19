@@ -26,6 +26,7 @@
 #import "ABKInAppMessageFull.h"
 #import "ABKInAppMessageHTML.h"
 #import "ABKInAppMessageHTMLFull.h"
+#import "ABKInAppMessageHTMLBase.h"
 #import "ABKInAppMessageControl.h"
 #import "ABKInAppMessageControllerDelegate.h"
 #import "ABKInAppMessageController.h"

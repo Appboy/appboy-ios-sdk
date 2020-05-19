@@ -5,6 +5,7 @@
 #import "ABKInAppMessageSlideupViewController.h"
 #import "ABKInAppMessageModalViewController.h"
 #import "ABKInAppMessageHTMLFullViewController.h"
+#import "ABKInAppMessageHTMLViewController.h"
 #import "ABKInAppMessageFullViewController.h"
 
 @implementation ABKInAppMessageUIController
@@ -83,6 +84,9 @@
                                     initWithInAppMessage:inAppMessage];
     } else if ([inAppMessage isKindOfClass:[ABKInAppMessageHTMLFull class]]) {
       inAppMessageViewController = [[ABKInAppMessageHTMLFullViewController alloc]
+                                    initWithInAppMessage:inAppMessage];
+    } else if ([inAppMessage isKindOfClass:[ABKInAppMessageHTML class]]) {
+      inAppMessageViewController = [[ABKInAppMessageHTMLViewController alloc]
                                     initWithInAppMessage:inAppMessage];
     }
   }

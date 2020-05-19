@@ -1,29 +1,26 @@
 #import <Foundation/Foundation.h>
-#import "ABKInAppMessage.h"
+#import "ABKInAppMessageHTMLBase.h"
 
 /*
  * Braze Public API: ABKInAppMessageHTML
  */
 NS_ASSUME_NONNULL_BEGIN
-@interface ABKInAppMessageHTML : ABKInAppMessage
-/*!
- * This property is the remote URL of the assets zip file.
- */
-@property (strong, nonatomic, nullable) NSURL *assetsZipRemoteUrl;
+@interface ABKInAppMessageHTML : ABKInAppMessageHTMLBase
 
 /*!
- * This is the local URL of the assets directory for the HTML in-app message. Please note that the
- * value of this property can be overridden by Braze at the time of displaying, so please don't set
- * it as the value will be discarded.
+ * This property indicates whether the content was built by our platform.
  */
-@property (strong, nonatomic) NSURL *assetsLocalDirectoryPath;
+@property (nonatomic) BOOL trusted;
 
 /*!
- * Log a click on the in-app message with a buttonId. Clicks may only be logged once per in-app message.
- *
- * @param buttonId the id of the click
+ * This property is an array of asset URLs that are used when generating the HTML.
  */
-- (void)logInAppMessageHTMLClickWithButtonID:(NSString *)buttonId;
+@property (strong, nonatomic, nullable) NSArray *assetUrls;
+
+/*!
+ * This property is a dictionary of other structured data that can be included with the in-app message.
+ */
+@property (strong, nonatomic, nullable) NSDictionary *messageFields;
 
 @end
 NS_ASSUME_NONNULL_END

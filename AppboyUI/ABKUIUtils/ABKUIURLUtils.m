@@ -35,8 +35,8 @@
 }
 
 + (BOOL)URLHasValidWebScheme:(NSURL *)url {
-  return ([[url.scheme lowercaseString] isEqualToString:@"http"] ||
-          [[url.scheme lowercaseString] isEqualToString:@"https"]);
+  return ([ABKUIUtils string:[url.scheme lowercaseString] isEqualToString:@"http"] ||
+          [ABKUIUtils string:[url.scheme lowercaseString] isEqualToString:@"https"]);
 }
 
 + (void)openURLWithSystem:(NSURL *)url {
@@ -57,11 +57,21 @@
   if ([ABKUIURLUtils URLDelegate:[Appboy sharedInstance].appboyUrlDelegate handlesURL:url fromChannel:channel withExtras:nil]) {
     return;
   }
+  
+  if (@available(iOS 13.0, *)) {
+    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+    if (windowScene) {
+      [windowScene openURL:url options:nil completionHandler:nil];
+      return;
+    }
+  }
+  
   if (@available(iOS 10.0, *)) {
     [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
-  } else {
-    [[UIApplication sharedApplication] openURL:url];
+    return;
   }
+  
+  [[UIApplication sharedApplication] openURL:url];
 }
 
 + (UIViewController *)topmostViewControllerWithRootViewController:(UIViewController *)viewController {

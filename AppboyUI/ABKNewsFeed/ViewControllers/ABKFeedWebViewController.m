@@ -1,5 +1,6 @@
 #import "ABKFeedWebViewController.h"
 #import "ABKNoConnectionLocalization.h"
+#import "ABKUIUtils.h"
 
 static NSString *const EstimatedProgressKeyPath = @"estimatedProgress";
 static NSString *const LocalizedNoConnectionKey = @"Appboy.no-connection.message";
@@ -35,7 +36,7 @@ static NSString *const LocalizedNoConnectionKey = @"Appboy.no-connection.message
                       ofObject:(id)object
                         change:(NSDictionary<NSKeyValueChangeKey,id> *)change
                        context:(void *)context {
-  if ([EstimatedProgressKeyPath isEqualToString:keyPath]) {
+  if ([ABKUIUtils string:EstimatedProgressKeyPath isEqualToString:keyPath]) {
     if (self.webView.estimatedProgress == 1.0) {
       [UIView animateWithDuration:1 animations:^{
         self.progressBar.alpha = 0.0;
@@ -149,7 +150,7 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   label.numberOfLines = 0;
   NSString *localizedNoConectionMessage = NSLocalizedString(@"Appboy.no-connection.message",
                                                             @"No connection error message for URL loading failure");
-  if (localizedNoConectionMessage.length == 0 || [LocalizedNoConnectionKey isEqualToString:localizedNoConectionMessage]) {
+  if (localizedNoConectionMessage.length == 0 || [ABKUIUtils string:LocalizedNoConnectionKey isEqualToString:localizedNoConectionMessage]) {
     localizedNoConectionMessage = [ABKNoConnectionLocalization getNoConnectionLocalizedString];
   }
   label.text = localizedNoConectionMessage;

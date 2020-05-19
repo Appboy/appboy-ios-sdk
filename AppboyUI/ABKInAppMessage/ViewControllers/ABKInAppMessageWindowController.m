@@ -5,6 +5,7 @@
 #import "ABKInAppMessageFull.h"
 #import "ABKInAppMessageHTMLFull.h"
 #import "ABKInAppMessageHTML.h"
+#import "ABKInAppMessageHTMLBase.h"
 #import "ABKInAppMessageHTMLViewController.h"
 #import "ABKInAppMessageImmersiveViewController.h"
 #import "ABKInAppMessageSlideupViewController.h"
@@ -22,9 +23,11 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
                 inAppMessageDelegate:(id<ABKInAppMessageUIDelegate>)delegate {
   if (self = [super init]) {
     _inAppMessage = inAppMessage;
-    _inAppMessageUIDelegate = (id<ABKInAppMessageUIDelegate>)delegate;
     _inAppMessageViewController = inAppMessageViewController;
-    _inAppMessageWindow = [[ABKInAppMessageWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _inAppMessageUIDelegate = (id<ABKInAppMessageUIDelegate>)delegate;
+    
+    _appWindow = ABKUIUtils.activeApplicationWindow;
+    _inAppMessageWindow = [self createInAppMessageWindow];
     _inAppMessageWindow.backgroundColor = [UIColor clearColor];
     _inAppMessageWindow.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     _inAppMessageIsTapped = NO;
@@ -225,12 +228,6 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 
 - (void)displayInAppMessageViewWithAnimation:(BOOL)withAnimation {
   dispatch_async(dispatch_get_main_queue(), ^{
-    self.appWindow = [UIApplication sharedApplication].keyWindow;
-    // Here we try to catch the edge case where an alert view is being shown when the in-app message is
-    // displayed, so the alert view is dismissed and that can cause a crash
-    if (self.appWindow.windowLevel != UIWindowLevelNormal) {
-      self.appWindow = [UIApplication sharedApplication].windows[0];
-    }
     // Set the root view controller after the inAppMessagewindow becomes the key window so it gets the
     // correct window size during and after rotation.
     [self.inAppMessageWindow makeKeyWindow];
@@ -297,7 +294,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   [self.inAppMessageWindow resignKeyWindow];
   self.inAppMessageWindow.hidden = YES;
   if (self.appWindow == nil || ![self.appWindow isKindOfClass:[UIWindow class]]) {
-    self.appWindow = [UIApplication sharedApplication].windows[0];
+    self.appWindow = ABKUIUtils.activeApplicationWindow;
   }
   [self.appWindow makeKeyAndVisible];
   self.inAppMessageWindow = nil;
@@ -309,7 +306,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   } else if (self.inAppMessageIsTapped) {
     [self.inAppMessage logInAppMessageClicked];
   } else if ([ABKUIUtils objectIsValidAndNotEmpty:self.clickedHTMLButtonId]) {
-    [(ABKInAppMessageHTML *)self.inAppMessage logInAppMessageHTMLClickWithButtonID:self.clickedHTMLButtonId];
+    [(ABKInAppMessageHTMLBase *)self.inAppMessage logInAppMessageHTMLClickWithButtonID:self.clickedHTMLButtonId];
   }
 }
 
@@ -345,12 +342,13 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 }
 
 #pragma mark - Display News Feed
+
 - (void)displayModalFeedView {
   Class ModalFeedViewControllerClass = [ABKUIUtils getModalFeedViewControllerClass];
   if (ModalFeedViewControllerClass != nil) {
-    UIViewController *keyWindowTopmostViewController =
-      [ABKUIURLUtils topmostViewControllerWithRootViewController:self.appWindow.rootViewController];
-    [keyWindowTopmostViewController presentViewController:[[ModalFeedViewControllerClass alloc] init]
+    UIViewController *topmostViewController =
+      [ABKUIURLUtils topmostViewControllerWithRootViewController:ABKUIUtils.activeApplicationViewController];
+    [topmostViewController presentViewController:[[ModalFeedViewControllerClass alloc] init]
                                                  animated:YES
                                                completion:nil];
   }
@@ -373,12 +371,41 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 
 - (void)openInAppMessageURL:(NSURL *)url inWebView:(BOOL)openUrlInWebView {
   if ([ABKUIURLUtils URL:url shouldOpenInWebView:openUrlInWebView]) {
-    UIViewController *keyWindowTopmostViewController =
-      [ABKUIURLUtils topmostViewControllerWithRootViewController:self.appWindow.rootViewController];
-    [ABKUIURLUtils displayModalWebViewWithURL:url topmostViewController:keyWindowTopmostViewController];
+    UIViewController *topmostViewController =
+      [ABKUIURLUtils topmostViewControllerWithRootViewController:ABKUIUtils.activeApplicationViewController];
+    [ABKUIURLUtils displayModalWebViewWithURL:url topmostViewController:topmostViewController];
   } else {
     [ABKUIURLUtils openURLWithSystem:url fromChannel:ABKInAppMessageChannel];
   }
+}
+
+#pragma mark - Helpers
+
+/*!
+ * Creates and setups the ABKInAppMessageWindow used to display the in-app message
+ *
+ * @discussion First tries to create the window with the current UIWindowScene if available, then fallbacks
+ *             to create the window with a frame.
+ */
+- (ABKInAppMessageWindow *)createInAppMessageWindow {
+  ABKInAppMessageWindow *window;
+  
+  if (@available(iOS 13.0, *)) {
+    UIWindowScene *windowScene = ABKUIUtils.activeWindowScene;
+    if (windowScene) {
+      window = [[ABKInAppMessageWindow alloc] initWithWindowScene:windowScene];
+    }
+  }
+  
+  if (!window) {
+    window = [[ABKInAppMessageWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+  }
+  
+  window.backgroundColor = UIColor.clearColor;
+  window.autoresizingMask = UIViewAutoresizingFlexibleWidth |
+                            UIViewAutoresizingFlexibleHeight;
+  
+  return window;
 }
 
 @end

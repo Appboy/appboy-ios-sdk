@@ -90,6 +90,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
   [self setUpRemoteNotifications];
   self.stopwatchEnableDarkTheme = YES;
+  self.showSilentPushAlerts = NO;
   
   NSLog(@"Appboy device identifier is %@", [[Appboy sharedInstance] getDeviceId]);
 
@@ -126,6 +127,14 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   if ([ABKPushUtils isAppboyRemoteNotification:userInfo] && ![ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     NSLog(@"Remote notification was sent from Braze, clearing badge number.");
+
+    if (userInfo != nil && userInfo[@"aps"][@"content-available"]) {
+      if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive && self.showSilentPushAlerts) {
+        [AlertControllerUtils presentAlertWithOKButtonForTitle:@"Silent Push Received"
+                                                       message:[self getExtrasFromPush:userInfo]
+                                                  presentingVC:[self topViewController:self.window.rootViewController]];
+      }
+    }
   }
 }
 
@@ -156,7 +165,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   }
   [AlertControllerUtils presentAlertWithOKButtonForTitle:@"Deep Linking"
                                                  message:urlString
-                                            presentingVC:self.window.rootViewController];
+                                            presentingVC:[self topViewController:self.window.rootViewController]];
 
   // Handle Branch deep links
   [[Branch getInstance] handleDeepLink:url];
@@ -310,7 +319,33 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   NSString *alertTitle = withURIDelegate ? @"Universal Link (ABKURLDelegate)" : @"Universal Link (UIApplicationDelegate)";
   [AlertControllerUtils presentAlertWithOKButtonForTitle:alertTitle
                                                  message:uriString
-                                            presentingVC:self.window.rootViewController];
+                                            presentingVC:[self topViewController:self.window.rootViewController]];
+}
+
+- (NSString *)getExtrasFromPush:(NSDictionary *)userInfo {
+  NSMutableDictionary *dict =  [[NSMutableDictionary alloc] init];
+  for (NSString* key in userInfo) {
+    // Skip 'ab' because it's a Braze defined key and 'aps' because it's an Apple defined key
+    if ([key isEqualToString:@"aps"] || [key isEqualToString:@"ab"]) {
+      continue;
+    }
+    dict[key] = userInfo[key];
+  }
+  return ([dict count] > 0) ? [NSString stringWithFormat:@"%@", dict] : @"No KVP's attached";
+}
+
+- (UIViewController *)topViewController:(UIViewController *)topVC {
+  while (true) {
+    if (topVC.presentedViewController) {
+      topVC = topVC.presentedViewController;
+    } else if ([topVC isKindOfClass:[UINavigationController class]]) {
+      topVC = ((UINavigationController *)topVC).topViewController;
+    } else if ([topVC isKindOfClass:[UITabBarController class]]) {
+      topVC = ((UITabBarController *)topVC).selectedViewController;
+    } else {
+      return topVC;
+    }
+  }
 }
 
 @end

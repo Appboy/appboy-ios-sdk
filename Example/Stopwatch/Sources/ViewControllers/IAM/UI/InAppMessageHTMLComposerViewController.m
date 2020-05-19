@@ -1,12 +1,10 @@
 #import "InAppMessageHTMLComposerViewController.h"
-#import "StopwatchSegmentedControl.h"
 #import "UIViewController+Keyboard.h"
 
 static NSString *const HTMLAssetsZip = @"https://appboy-images.com/HTML_ZIP_STOPWATCH.zip";
 
 @interface InAppMessageHTMLComposerViewController ()
 
-@property (nonatomic, weak) IBOutlet StopwatchSegmentedControl *HTMLTypeSegment;
 @property (nonatomic, weak) IBOutlet UITextField *zipRemoteURLTextField;
 @property (nonatomic, weak) IBOutlet UITextView *HTMLInAppTextView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *htmlComposerBottomConstraint;

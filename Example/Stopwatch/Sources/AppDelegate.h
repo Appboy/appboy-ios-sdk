@@ -26,6 +26,7 @@ ABKInAppMessageControllerDelegate, ABKURLDelegate, ABKInAppMessageUIDelegate>
  * If YES, attempt to display the dark theme colors if available; otherwise if not available, display the light colors.
  */
 @property (nonatomic, assign) BOOL stopwatchEnableDarkTheme;
+@property (nonatomic, assign) BOOL showSilentPushAlerts;
 
 @end
 

@@ -12,13 +12,15 @@
 		33A374D093A069BA4E044000 /* libPods-tvOS_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120D81078F772014E4675E3 /* libPods-tvOS_Stopwatch.a */; };
 		4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E3E94E118BD52C60008C815 /* Localizable.strings */; };
 		4E3E94F318BD6AED0008C815 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958071A7173D727000129B89 /* QuartzCore.framework */; };
-		4E6D661619DCC18F009983AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Images.xcassets */; };
+		4E6D661619DCC18F009983AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6D661519DCC18F009983AD /* Assets.xcassets */; };
 		4E94D7711743EE8900604EA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94D7701743EE8900604EA0 /* AppDelegate.m */; };
 		4EA3EE241745B9A2000E403C /* UserCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EE231745B9A2000E403C /* UserCells.m */; };
 		4EA7AA8E185626EC00D2B651 /* MiscViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7AA8D185626EC00D2B651 /* MiscViewController.m */; };
 		4EABC19A1A606D00007259BD /* InAppMessageUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */; };
 		4EABC19D1A621B7F007259BD /* InAppMessageUICells.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */; };
 		4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */; };
+		703BF6D4245A2AD9001C1963 /* InAppMessageWithoutAssetZip.html in Resources */ = {isa = PBXBuildFile; fileRef = 703BF6D2245A2AD9001C1963 /* InAppMessageWithoutAssetZip.html */; };
+		703BF6D5245A2AD9001C1963 /* InAppMessageWithJS.html in Resources */ = {isa = PBXBuildFile; fileRef = 703BF6D3245A2AD9001C1963 /* InAppMessageWithJS.html */; };
 		7F825DEA205C810100150F07 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F825DE9205C810100150F07 /* DataViewController.m */; };
 		7FBB842C22D91B65001BF587 /* StopwatchSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB842B22D91B65001BF587 /* StopwatchSegmentedControl.m */; };
 		7FBB842F22D92398001BF587 /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB842E22D92398001BF587 /* ColorUtils.m */; };
@@ -35,7 +37,6 @@
 		95EF510E173D5FD600C0D780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF510D173D5FD600C0D780 /* UIKit.framework */; };
 		95EF5110173D5FD600C0D780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF510F173D5FD600C0D780 /* Foundation.framework */; };
 		95EF5112173D5FD600C0D780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5111173D5FD600C0D780 /* CoreGraphics.framework */; };
-		95EF5118173D5FD600C0D780 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5116173D5FD600C0D780 /* InfoPlist.strings */; };
 		95EF511A173D5FD600C0D780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5119173D5FD600C0D780 /* main.m */; };
 		95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */; };
 		95EF5152173D6A6F00C0D780 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EF5151173D6A6F00C0D780 /* CoreImage.framework */; };
@@ -57,16 +58,8 @@
 		C8AD7AF1C2D332D35DEA947E /* libPods-tvOS_TVML_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43361D7FDD22C5392EC6F80E /* libPods-tvOS_TVML_Stopwatch.a */; };
 		D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D400EBF21CC86A6100550AD8 /* EventsViewController.m */; };
 		D411F3121CD0355200100702 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D411F3111CD0355200100702 /* CustomTabBarController.m */; };
-		D4139BDA1CBD88C100CA3307 /* bolt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD31CBD88C100CA3307 /* bolt@2x.png */; };
-		D4139BDD1CBD88C100CA3307 /* IAM@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD61CBD88C100CA3307 /* IAM@2x.png */; };
-		D4139BDF1CBD88C100CA3307 /* newsfeed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD81CBD88C100CA3307 /* newsfeed@2x.png */; };
-		D4139BE01CBD88C100CA3307 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4139BD91CBD88C100CA3307 /* user@2x.png */; };
 		D4139BEC1CBDA4F200CA3307 /* FeedUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */; };
 		D41D8F741CB70A4600D622EF /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41D8F731CB70A4600D622EF /* ContainerViewController.m */; };
-		D4992FE81CD4126D007CC304 /* bolt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE11CD4126D007CC304 /* bolt@3x.png */; };
-		D4992FEB1CD4126D007CC304 /* IAM@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE41CD4126D007CC304 /* IAM@3x.png */; };
-		D4992FED1CD4126D007CC304 /* newsfeed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE61CD4126D007CC304 /* newsfeed@3x.png */; };
-		D4992FEE1CD4126D007CC304 /* user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4992FE71CD4126D007CC304 /* user@3x.png */; };
 		D4C6940D1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */; };
 		D5405F0D22162FD600E2958C /* AlertControllerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D5405F0C22162FD600E2958C /* AlertControllerUtils.m */; };
 		E056052DE24220E65AE47718 /* libPods-StopwatchNotificationContentExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAB3BEAB093F54DC4C88A8F /* libPods-StopwatchNotificationContentExtension.a */; };
@@ -87,8 +80,6 @@
 		E397F41C1CC5BA550095A3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E397F41B1CC5BA550095A3ED /* Assets.xcassets */; };
 		E3A8A3641E5E6C07002E8821 /* IDFADelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */; };
 		E3C754A41E70DE7D004E1CCE /* AliasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C754A31E70DE7D004E1CCE /* AliasViewController.m */; };
-		E3C754AA1E7AE9B3004E1CCE /* InAppMessageWithJS.html in Resources */ = {isa = PBXBuildFile; fileRef = E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */; };
-		E3C754AC1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html in Resources */ = {isa = PBXBuildFile; fileRef = E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +136,7 @@
 		4A13A163EFC7528AB511F858 /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_TVML_Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_TVML_Stopwatch/Pods-tvOS_TVML_Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		4E3E94E218BD52C60008C815 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E3E94E418BD52CE0008C815 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		4E6D661519DCC18F009983AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4E6D661519DCC18F009983AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E94D76F1743EE8900604EA0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E94D7701743EE8900604EA0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4EA3EE221745B9A2000E403C /* UserCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCells.h; sourceTree = "<group>"; };
@@ -156,11 +147,13 @@
 		4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppMessageUIViewController.m; sourceTree = "<group>"; };
 		4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppMessageUICells.h; sourceTree = "<group>"; };
 		4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppMessageUICells.m; sourceTree = "<group>"; };
-		4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stopwatch.entitlements; sourceTree = "<group>"; };
+		4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Stopwatch.entitlements; sourceTree = "<group>"; };
 		5FA9D2138BF035DDA73B49AD /* Pods-tvOS_Stopwatch.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.develop.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.develop.xcconfig"; sourceTree = "<group>"; };
 		6120D81078F772014E4675E3 /* libPods-tvOS_Stopwatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvOS_Stopwatch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAA2B0DAE2DD26830F19D4B /* Pods-tvOS_Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS_Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOS_Stopwatch/Pods-tvOS_Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
 		6CAB3BEAB093F54DC4C88A8F /* libPods-StopwatchNotificationContentExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StopwatchNotificationContentExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		703BF6D2245A2AD9001C1963 /* InAppMessageWithoutAssetZip.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithoutAssetZip.html; sourceTree = "<group>"; };
+		703BF6D3245A2AD9001C1963 /* InAppMessageWithJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithJS.html; sourceTree = "<group>"; };
 		7F825DE8205C80D300150F07 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
 		7F825DE9205C810100150F07 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
 		7FBB842B22D91B65001BF587 /* StopwatchSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopwatchSegmentedControl.m; sourceTree = "<group>"; };
@@ -178,13 +171,9 @@
 		95EF510D173D5FD600C0D780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95EF510F173D5FD600C0D780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95EF5111173D5FD600C0D780 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		95EF5115173D5FD600C0D780 /* Stopwatch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Stopwatch-Info.plist"; sourceTree = "<group>"; };
-		95EF5117173D5FD600C0D780 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95EF5115173D5FD600C0D780 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EF5119173D5FD600C0D780 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95EF511B173D5FD600C0D780 /* Stopwatch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Stopwatch-Prefix.pch"; sourceTree = "<group>"; };
-		95EF511F173D5FD600C0D780 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		95EF5121173D5FD600C0D780 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		95EF5123173D5FD600C0D780 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		95EF5126173D5FD600C0D780 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		95EF514D173D6A6100C0D780 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		95EF514F173D6A6800C0D780 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -229,18 +218,10 @@
 		D400EBF21CC86A6100550AD8 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		D411F3101CD0355200100702 /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
 		D411F3111CD0355200100702 /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
-		D4139BD31CBD88C100CA3307 /* bolt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bolt@2x.png"; sourceTree = "<group>"; };
-		D4139BD61CBD88C100CA3307 /* IAM@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IAM@2x.png"; sourceTree = "<group>"; };
-		D4139BD81CBD88C100CA3307 /* newsfeed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsfeed@2x.png"; sourceTree = "<group>"; };
-		D4139BD91CBD88C100CA3307 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		D4139BEA1CBDA4E500CA3307 /* FeedUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedUIViewController.h; sourceTree = "<group>"; };
 		D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedUIViewController.m; sourceTree = "<group>"; };
 		D41D8F701CB7049400D622EF /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		D41D8F731CB70A4600D622EF /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
-		D4992FE11CD4126D007CC304 /* bolt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bolt@3x.png"; sourceTree = "<group>"; };
-		D4992FE41CD4126D007CC304 /* IAM@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IAM@3x.png"; sourceTree = "<group>"; };
-		D4992FE61CD4126D007CC304 /* newsfeed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsfeed@3x.png"; sourceTree = "<group>"; };
-		D4992FE71CD4126D007CC304 /* user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@3x.png"; sourceTree = "<group>"; };
 		D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttributesArrayViewController.m; sourceTree = "<group>"; };
 		D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttributesArrayViewController.h; sourceTree = "<group>"; };
 		D5405F0B22162FD600E2958C /* AlertControllerUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertControllerUtils.h; sourceTree = "<group>"; };
@@ -276,8 +257,6 @@
 		E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFADelegate.m; sourceTree = "<group>"; };
 		E3C754A21E70DE7D004E1CCE /* AliasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliasViewController.h; sourceTree = "<group>"; };
 		E3C754A31E70DE7D004E1CCE /* AliasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliasViewController.m; sourceTree = "<group>"; };
-		E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithJS.html; sourceTree = "<group>"; };
-		E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = InAppMessageWithoutAssetZip.html; sourceTree = "<group>"; };
 		E3ED8D401CE54C0300C23B99 /* AppboyTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppboyTVOSKit.framework; path = ../Public/AppboyTVOSKit.framework; sourceTree = "<group>"; };
 		FB497A0BD3D68502BB714F22 /* Pods-StopwatchNotificationContentExtension.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopwatchNotificationContentExtension.develop.xcconfig"; path = "Pods/Target Support Files/Pods-StopwatchNotificationContentExtension/Pods-StopwatchNotificationContentExtension.develop.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -343,31 +322,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E3178751AC49363006C88B4 /* CustomInAppMessageClasses */ = {
-			isa = PBXGroup;
-			children = (
-				955DE8931741A70700C07A57 /* InAppMessageTestViewController.h */,
-				955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */,
-			);
-			name = CustomInAppMessageClasses;
-			sourceTree = "<group>";
-		};
-		4E49ECEA19DDE84F00ADC43F /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				D4139BD31CBD88C100CA3307 /* bolt@2x.png */,
-				D4992FE11CD4126D007CC304 /* bolt@3x.png */,
-				D4139BD61CBD88C100CA3307 /* IAM@2x.png */,
-				D4992FE41CD4126D007CC304 /* IAM@3x.png */,
-				D4139BD81CBD88C100CA3307 /* newsfeed@2x.png */,
-				D4992FE61CD4126D007CC304 /* newsfeed@3x.png */,
-				D4139BD91CBD88C100CA3307 /* user@2x.png */,
-				D4992FE71CD4126D007CC304 /* user@3x.png */,
-			);
-			name = Images;
-			path = Stopwatch/Images;
-			sourceTree = "<group>";
-		};
 		62A03C031FEC321EB9DD3DF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,12 +341,256 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		703BF6B9245A1E46001C1963 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				703BF6BB245A1F28001C1963 /* User */,
+				703BF6BD245A204B001C1963 /* IAM */,
+				703BF6C2245A21B2001C1963 /* Braze UI */,
+				703BF6C3245A21BE001C1963 /* Advanced */,
+				D41D8F701CB7049400D622EF /* ContainerViewController.h */,
+				D41D8F731CB70A4600D622EF /* ContainerViewController.m */,
+				D411F3101CD0355200100702 /* CustomTabBarController.h */,
+				D411F3111CD0355200100702 /* CustomTabBarController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		703BF6BB245A1F28001C1963 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				703BF6C7245A2444001C1963 /* Events */,
+				703BF6C8245A2453001C1963 /* Attributes */,
+				703BF6C9245A2461001C1963 /* Array */,
+				703BF6CA245A2468001C1963 /* Alias */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		703BF6BD245A204B001C1963 /* IAM */ = {
+			isa = PBXGroup;
+			children = (
+				703BF6BE245A20C4001C1963 /* UI */,
+				703BF6BF245A20CD001C1963 /* Controls */,
+			);
+			path = IAM;
+			sourceTree = "<group>";
+		};
+		703BF6BE245A20C4001C1963 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				703BF6D1245A2AB6001C1963 /* HTML */,
+				4EABC1981A606D00007259BD /* InAppMessageUIViewController.h */,
+				4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */,
+				4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */,
+				4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */,
+				ADC332DF2076A56F00D688E3 /* InAppMessageHTMLComposerViewController.h */,
+				ADC332E02076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		703BF6BF245A20CD001C1963 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				955DE8931741A70700C07A57 /* InAppMessageTestViewController.h */,
+				955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		703BF6C0245A212D001C1963 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD26107A20FE3E5000023BCD /* StopwatchButton.h */,
+				AD26107B20FE3E5000023BCD /* StopwatchButton.m */,
+				7FBB842D22D91B7C001BF587 /* StopwatchSegmentedControl.h */,
+				7FBB842B22D91B65001BF587 /* StopwatchSegmentedControl.m */,
+				ADC332E62077AB4200D688E3 /* ScrollContentView.h */,
+				ADC332E72077AB4200D688E3 /* ScrollContentView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		703BF6C1245A2148001C1963 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				ADC332E22077A43E00D688E3 /* UIViewController+Keyboard.h */,
+				ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		703BF6C2245A21B2001C1963 /* Braze UI */ = {
+			isa = PBXGroup;
+			children = (
+				D4139BEA1CBDA4E500CA3307 /* FeedUIViewController.h */,
+				D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */,
+			);
+			path = "Braze UI";
+			sourceTree = "<group>";
+		};
+		703BF6C3245A21BE001C1963 /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				703BF6C4245A22BE001C1963 /* Misc */,
+				703BF6C5245A22CF001C1963 /* Data */,
+				703BF6C6245A22DA001C1963 /* About */,
+			);
+			path = Advanced;
+			sourceTree = "<group>";
+		};
+		703BF6C4245A22BE001C1963 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4EA7AA8C185626EC00D2B651 /* MiscViewController.h */,
+				4EA7AA8D185626EC00D2B651 /* MiscViewController.m */,
+				E325DF441E29A93300B3E168 /* GeofencesViewController.h */,
+				E325DF451E29A93300B3E168 /* GeofencesViewController.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		703BF6C5245A22CF001C1963 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7F825DE8205C80D300150F07 /* DataViewController.h */,
+				7F825DE9205C810100150F07 /* DataViewController.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		703BF6C6245A22DA001C1963 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				1379A02723731F1300578296 /* AboutViewController.h */,
+				1379A02823731F1300578296 /* AboutViewController.m */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		703BF6C7245A2444001C1963 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				D400EBF11CC86A6100550AD8 /* EventsViewController.h */,
+				D400EBF21CC86A6100550AD8 /* EventsViewController.m */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		703BF6C8245A2453001C1963 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				703BF6CB245A2819001C1963 /* Views */,
+				703BF6CC245A28AA001C1963 /* Location Custom Attribute */,
+				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
+				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		703BF6C9245A2461001C1963 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */,
+				D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		703BF6CA245A2468001C1963 /* Alias */ = {
+			isa = PBXGroup;
+			children = (
+				E3C754A21E70DE7D004E1CCE /* AliasViewController.h */,
+				E3C754A31E70DE7D004E1CCE /* AliasViewController.m */,
+			);
+			path = Alias;
+			sourceTree = "<group>";
+		};
+		703BF6CB245A2819001C1963 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4EA3EE221745B9A2000E403C /* UserCells.h */,
+				4EA3EE231745B9A2000E403C /* UserCells.m */,
+				AD884BF620813F1B00DA304A /* UserCustomAttributeCell.h */,
+				AD884BF720813F1B00DA304A /* UserCustomAttributeCell.m */,
+				AD884BF32081289900DA304A /* UserCustomAttribute.h */,
+				AD884BF42081289900DA304A /* UserCustomAttribute.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		703BF6CC245A28AA001C1963 /* Location Custom Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				ADDAFB8C2107BAA30061C96E /* LocationCustomAttributeViewController.h */,
+				ADDAFB8D2107BAA30061C96E /* LocationCustomAttributeViewController.m */,
+				ADDAFB8F2107C2080061C96E /* LocationAnnotation.h */,
+				ADDAFB902107C2080061C96E /* LocationAnnotation.m */,
+			);
+			path = "Location Custom Attribute";
+			sourceTree = "<group>";
+		};
+		703BF6CD245A28C6001C1963 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E3A8A3621E5E6C07002E8821 /* IDFADelegate.h */,
+				E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */,
+				D5405F0B22162FD600E2958C /* AlertControllerUtils.h */,
+				D5405F0C22162FD600E2958C /* AlertControllerUtils.m */,
+				7FBB843022D923A7001BF587 /* ColorUtils.h */,
+				7FBB842E22D92398001BF587 /* ColorUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		703BF6CF245A29D6001C1963 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				95EF5119173D5FD600C0D780 /* main.m */,
+				4E94D76F1743EE8900604EA0 /* AppDelegate.h */,
+				4E94D7701743EE8900604EA0 /* AppDelegate.m */,
+				703BF6B9245A1E46001C1963 /* ViewControllers */,
+				703BF6C0245A212D001C1963 /* Views */,
+				703BF6CD245A28C6001C1963 /* Utils */,
+				703BF6C1245A2148001C1963 /* Categories */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		703BF6D0245A29F1001C1963 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */,
+				7FEEFA4923BFFCAA00255541 /* LaunchScreen.storyboard */,
+				4E6D661519DCC18F009983AD /* Assets.xcassets */,
+				4E3E94E118BD52C60008C815 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		703BF6D1245A2AB6001C1963 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				703BF6D3245A2AD9001C1963 /* InAppMessageWithJS.html */,
+				703BF6D2245A2AD9001C1963 /* InAppMessageWithoutAssetZip.html */,
+			);
+			path = HTML;
+			sourceTree = "<group>";
+		};
+		703BF6D6245A2B00001C1963 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95EF511B173D5FD600C0D780 /* Stopwatch-Prefix.pch */,
+				4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */,
+				95EF5115173D5FD600C0D780 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		95EF5101173D5FD600C0D780 = {
 			isa = PBXGroup;
 			children = (
-				7FEEFA4923BFFCAA00255541 /* LaunchScreen.storyboard */,
-				4E49ECEA19DDE84F00ADC43F /* Images */,
-				4E3E94E118BD52C60008C815 /* Localizable.strings */,
 				95EF5113173D5FD600C0D780 /* Stopwatch */,
 				E397F40E1CC5BA540095A3ED /* tvOS_Stopwatch */,
 				E32835AE1CC6C6F200E2C2DE /* tvOS_TVML_Stopwatch */,
@@ -450,108 +648,11 @@
 		95EF5113173D5FD600C0D780 /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
-				AD26107920FE3E3C00023BCD /* UserInterface */,
-				ADB1FAB62081285A009F108A /* User Custom Attribute */,
-				ADC332E52077AB2500D688E3 /* ScrollContentView */,
-				E3C754A71E7AE970004E1CCE /* InAppMessages */,
-				4E94D76F1743EE8900604EA0 /* AppDelegate.h */,
-				4E94D7701743EE8900604EA0 /* AppDelegate.m */,
-				1379A02723731F1300578296 /* AboutViewController.h */,
-				1379A02823731F1300578296 /* AboutViewController.m */,
-				D41D8F701CB7049400D622EF /* ContainerViewController.h */,
-				D41D8F731CB70A4600D622EF /* ContainerViewController.m */,
-				D411F3101CD0355200100702 /* CustomTabBarController.h */,
-				D411F3111CD0355200100702 /* CustomTabBarController.m */,
-				4E3178751AC49363006C88B4 /* CustomInAppMessageClasses */,
-				D4139BEA1CBDA4E500CA3307 /* FeedUIViewController.h */,
-				D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */,
-				D400EBF11CC86A6100550AD8 /* EventsViewController.h */,
-				D400EBF21CC86A6100550AD8 /* EventsViewController.m */,
-				4E6D661519DCC18F009983AD /* Images.xcassets */,
-				95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */,
-				4EEAD0EE1B0FB00700883707 /* Stopwatch.entitlements */,
-				95EF5114173D5FD600C0D780 /* Supporting Files */,
-				4EA7AA8C185626EC00D2B651 /* MiscViewController.h */,
-				4EA7AA8D185626EC00D2B651 /* MiscViewController.m */,
-				953574A91743F862003A64B3 /* UserAttributesViewController.h */,
-				953574A81743F862003A64B3 /* UserAttributesViewController.m */,
-				D4C6940E1CAA0F34006B69B1 /* UserAttributesArrayViewController.h */,
-				D4C6940C1CA5E2E2006B69B1 /* UserAttributesArrayViewController.m */,
-				4EA3EE221745B9A2000E403C /* UserCells.h */,
-				4EA3EE231745B9A2000E403C /* UserCells.m */,
-				E325DF441E29A93300B3E168 /* GeofencesViewController.h */,
-				E325DF451E29A93300B3E168 /* GeofencesViewController.m */,
-				E3A8A3621E5E6C07002E8821 /* IDFADelegate.h */,
-				E3A8A3631E5E6C07002E8821 /* IDFADelegate.m */,
-				E3C754A21E70DE7D004E1CCE /* AliasViewController.h */,
-				E3C754A31E70DE7D004E1CCE /* AliasViewController.m */,
-				7F825DE9205C810100150F07 /* DataViewController.m */,
-				7F825DE8205C80D300150F07 /* DataViewController.h */,
-				ADC332E22077A43E00D688E3 /* UIViewController+Keyboard.h */,
-				ADC332E32077A43E00D688E3 /* UIViewController+Keyboard.m */,
-				AD884BF620813F1B00DA304A /* UserCustomAttributeCell.h */,
-				AD884BF720813F1B00DA304A /* UserCustomAttributeCell.m */,
-				ADDAFB922107C7130061C96E /* Location Custom Attribute */,
+				703BF6CF245A29D6001C1963 /* Sources */,
+				703BF6D0245A29F1001C1963 /* Resources */,
+				703BF6D6245A2B00001C1963 /* Supporting Files */,
 			);
 			path = Stopwatch;
-			sourceTree = "<group>";
-		};
-		95EF5114173D5FD600C0D780 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D5405F0B22162FD600E2958C /* AlertControllerUtils.h */,
-				D5405F0C22162FD600E2958C /* AlertControllerUtils.m */,
-				95EF5115173D5FD600C0D780 /* Stopwatch-Info.plist */,
-				95EF5116173D5FD600C0D780 /* InfoPlist.strings */,
-				95EF5119173D5FD600C0D780 /* main.m */,
-				95EF511B173D5FD600C0D780 /* Stopwatch-Prefix.pch */,
-				95EF511F173D5FD600C0D780 /* Default.png */,
-				95EF5121173D5FD600C0D780 /* Default@2x.png */,
-				95EF5123173D5FD600C0D780 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AD26107920FE3E3C00023BCD /* UserInterface */ = {
-			isa = PBXGroup;
-			children = (
-				AD26107A20FE3E5000023BCD /* StopwatchButton.h */,
-				AD26107B20FE3E5000023BCD /* StopwatchButton.m */,
-				7FBB842D22D91B7C001BF587 /* StopwatchSegmentedControl.h */,
-				7FBB842B22D91B65001BF587 /* StopwatchSegmentedControl.m */,
-				7FBB843022D923A7001BF587 /* ColorUtils.h */,
-				7FBB842E22D92398001BF587 /* ColorUtils.m */,
-			);
-			name = UserInterface;
-			sourceTree = "<group>";
-		};
-		ADB1FAB62081285A009F108A /* User Custom Attribute */ = {
-			isa = PBXGroup;
-			children = (
-				AD884BF32081289900DA304A /* UserCustomAttribute.h */,
-				AD884BF42081289900DA304A /* UserCustomAttribute.m */,
-			);
-			name = "User Custom Attribute";
-			sourceTree = "<group>";
-		};
-		ADC332E52077AB2500D688E3 /* ScrollContentView */ = {
-			isa = PBXGroup;
-			children = (
-				ADC332E62077AB4200D688E3 /* ScrollContentView.h */,
-				ADC332E72077AB4200D688E3 /* ScrollContentView.m */,
-			);
-			name = ScrollContentView;
-			sourceTree = "<group>";
-		};
-		ADDAFB922107C7130061C96E /* Location Custom Attribute */ = {
-			isa = PBXGroup;
-			children = (
-				ADDAFB8C2107BAA30061C96E /* LocationCustomAttributeViewController.h */,
-				ADDAFB8D2107BAA30061C96E /* LocationCustomAttributeViewController.m */,
-				ADDAFB8F2107C2080061C96E /* LocationAnnotation.h */,
-				ADDAFB902107C2080061C96E /* LocationAnnotation.m */,
-			);
-			name = "Location Custom Attribute";
 			sourceTree = "<group>";
 		};
 		C1C53F021F7D7CA700042AA5 /* StopwatchNotificationContentExtension */ = {
@@ -620,29 +721,6 @@
 				E397F4101CC5BA540095A3ED /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E3C754A71E7AE970004E1CCE /* InAppMessages */ = {
-			isa = PBXGroup;
-			children = (
-				E3C754A81E7AE982004E1CCE /* HTML */,
-				4EABC19B1A621AF4007259BD /* InAppMessageUICells.h */,
-				4EABC19C1A621B7F007259BD /* InAppMessageUICells.m */,
-				4EABC1981A606D00007259BD /* InAppMessageUIViewController.h */,
-				4EABC1991A606D00007259BD /* InAppMessageUIViewController.m */,
-				ADC332DF2076A56F00D688E3 /* InAppMessageHTMLComposerViewController.h */,
-				ADC332E02076A56F00D688E3 /* InAppMessageHTMLComposerViewController.m */,
-			);
-			name = InAppMessages;
-			sourceTree = "<group>";
-		};
-		E3C754A81E7AE982004E1CCE /* HTML */ = {
-			isa = PBXGroup;
-			children = (
-				E3C754A91E7AE9B3004E1CCE /* InAppMessageWithJS.html */,
-				E3C754AB1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html */,
-			);
-			name = HTML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -836,22 +914,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6D661619DCC18F009983AD /* Images.xcassets in Resources */,
-				D4139BDA1CBD88C100CA3307 /* bolt@2x.png in Resources */,
+				703BF6D5245A2AD9001C1963 /* InAppMessageWithJS.html in Resources */,
+				4E6D661619DCC18F009983AD /* Assets.xcassets in Resources */,
 				7FEEFA4A23BFFCAA00255541 /* LaunchScreen.storyboard in Resources */,
-				95EF5118173D5FD600C0D780 /* InfoPlist.strings in Resources */,
-				D4992FED1CD4126D007CC304 /* newsfeed@3x.png in Resources */,
-				D4992FEE1CD4126D007CC304 /* user@3x.png in Resources */,
-				D4992FE81CD4126D007CC304 /* bolt@3x.png in Resources */,
-				D4992FEB1CD4126D007CC304 /* IAM@3x.png in Resources */,
-				E3C754AA1E7AE9B3004E1CCE /* InAppMessageWithJS.html in Resources */,
+				703BF6D4245A2AD9001C1963 /* InAppMessageWithoutAssetZip.html in Resources */,
 				E34464731C87B4DE00318C05 /* Stopwatch.entitlements in Resources */,
-				D4139BDF1CBD88C100CA3307 /* newsfeed@2x.png in Resources */,
 				4E3E94E318BD52C60008C815 /* Localizable.strings in Resources */,
-				E3C754AC1E7B4F20004E1CCE /* InAppMessageWithoutAssetZip.html in Resources */,
 				95EF5127173D5FD600C0D780 /* MainStoryboard.storyboard in Resources */,
-				D4139BDD1CBD88C100CA3307 /* IAM@2x.png in Resources */,
-				D4139BE01CBD88C100CA3307 /* user@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1373,14 +1442,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		95EF5116173D5FD600C0D780 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95EF5117173D5FD600C0D780 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		95EF5125173D5FD600C0D780 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1470,10 +1531,9 @@
 			baseConfigurationReference = CF26DEACDB1334DE153A964E /* Pods-Stopwatch.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Stopwatch/Supporting Files/Stopwatch.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Appboy Appboy (QWFN3H2ZPW)";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
@@ -1481,8 +1541,8 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
-				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Stopwatch/Supporting Files/Stopwatch-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Stopwatch/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -1608,10 +1668,9 @@
 			baseConfigurationReference = D6ABEED57B5E362790D2728D /* Pods-Stopwatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Stopwatch/Supporting Files/Stopwatch.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
@@ -1619,8 +1678,8 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
-				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Stopwatch/Supporting Files/Stopwatch-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Stopwatch/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -1639,10 +1698,9 @@
 			baseConfigurationReference = 2E6CFE87DF9981ED078916B8 /* Pods-Stopwatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = Stopwatch/Stopwatch.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Stopwatch/Supporting Files/Stopwatch.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appboy Inc. (5GLZKGNWQ3)";
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
@@ -1650,8 +1708,8 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Stopwatch/Stopwatch-Prefix.pch";
-				INFOPLIST_FILE = "Stopwatch/Stopwatch-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Stopwatch/Supporting Files/Stopwatch-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Stopwatch/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
