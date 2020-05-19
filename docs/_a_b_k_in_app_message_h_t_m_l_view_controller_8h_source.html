@@ -82,19 +82,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessageHTMLBaseViewController.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_view_controller.html">    6</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_view_controller.html">ABKInAppMessageHTMLViewController</a> : <a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_base_view_controller.html">ABKInAppMessageHTMLBaseViewController</a></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &lt;WebKit/WebKit.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessageViewController.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">static</span> NSString *<span class="keyword">const</span> ABKInAppMessageHTMLFileName = <span class="stringliteral">@&quot;message.html&quot;</span>;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_view_controller.html">    8</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_view_controller.html">ABKInAppMessageHTMLViewController</a> : <a class="code" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> &lt;WKNavigationDelegate, WKUIDelegate&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_view_controller.html#a0235466e7f26c0031a1d4c181847180c">   13</a></span>&#160;<span class="keyword">@property</span> (nonatomic) WKWebView *<a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_view_controller.html#a0235466e7f26c0031a1d4c181847180c">webView</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * The constraints for top and bottom between view and the super view.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2020 18:58:25 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 19 2020 13:27:46 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

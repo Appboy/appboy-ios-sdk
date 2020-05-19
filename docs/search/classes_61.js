@@ -35,8 +35,6 @@ var searchData=
   ['abkinappmessagefull',['ABKInAppMessageFull',['../interface_a_b_k_in_app_message_full.html',1,'']]],
   ['abkinappmessagefullviewcontroller',['ABKInAppMessageFullViewController',['../interface_a_b_k_in_app_message_full_view_controller.html',1,'']]],
   ['abkinappmessagehtml',['ABKInAppMessageHTML',['../interface_a_b_k_in_app_message_h_t_m_l.html',1,'']]],
-  ['abkinappmessagehtmlbase',['ABKInAppMessageHTMLBase',['../interface_a_b_k_in_app_message_h_t_m_l_base.html',1,'']]],
-  ['abkinappmessagehtmlbaseviewcontroller',['ABKInAppMessageHTMLBaseViewController',['../interface_a_b_k_in_app_message_h_t_m_l_base_view_controller.html',1,'']]],
   ['abkinappmessagehtmlfull',['ABKInAppMessageHTMLFull',['../interface_a_b_k_in_app_message_h_t_m_l_full.html',1,'']]],
   ['abkinappmessagehtmlfullviewcontroller',['ABKInAppMessageHTMLFullViewController',['../interface_a_b_k_in_app_message_h_t_m_l_full_view_controller.html',1,'']]],
   ['abkinappmessagehtmljsbridge',['ABKInAppMessageHTMLJSBridge',['../interface_a_b_k_in_app_message_h_t_m_l_j_s_bridge.html',1,'']]],

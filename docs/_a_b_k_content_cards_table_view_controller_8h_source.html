@@ -96,29 +96,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a307efbe63da7bead0f8f3c569c699c20">   34</a></span>&#160;<span class="keyword">@property</span> NSTimeInterval <a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a307efbe63da7bead0f8f3c569c699c20">cacheTimeout</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a3aa057060507768e1e70ef12ea7f92b9">   39</a></span>&#160;<span class="keyword">@property</span> (assign, nonatomic) CGFloat <a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a3aa057060507768e1e70ef12ea7f92b9">maxContentCardWidth</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a603454587ea02bb36297ed0c61a74647">   48</a></span>&#160;<span class="keyword">@property</span> (assign, nonatomic) BOOL <a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a603454587ea02bb36297ed0c61a74647">enableDarkTheme</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;+ (instancetype)<a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a34b5b58d511f1e4793298077638c3c8b">getNavigationContentCardsViewController</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;- (NSString *)localizedAppboyContentCardsString:(NSString *)key;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;+ (<a class="code" href="interface_a_b_k_base_content_card_cell.html">ABKBaseContentCardCell</a> *)dequeueCellFromTableView:(UITableView *)tableView</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                        forIndexPath:(NSIndexPath *)indexPath</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                             forCard:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;- (void)handleCardClick:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;- (void)requestNewCardsIfTimeout;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#adff13861e7e99fc748f427a88e834817">populateContentCards</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;+ (instancetype)<a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#a34b5b58d511f1e4793298077638c3c8b">getNavigationContentCardsViewController</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;- (NSString *)localizedAppboyContentCardsString:(NSString *)key;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;+ (<a class="code" href="interface_a_b_k_base_content_card_cell.html">ABKBaseContentCardCell</a> *)dequeueCellFromTableView:(UITableView *)tableView</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                        forIndexPath:(NSIndexPath *)indexPath</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                             forCard:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;- (void)handleCardClick:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;- (void)requestNewCardsIfTimeout;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_cards_table_view_controller.html#adff13861e7e99fc748f427a88e834817">populateContentCards</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2020 18:58:25 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 19 2020 13:27:46 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
