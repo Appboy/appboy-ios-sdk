@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Braze iOS SDK: ABKInAppMessageHTMLJSInterface Class Reference</title>
+<title>Braze iOS SDK: tmp/docs/ABKInAppMessageHTMLBase.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,7 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -57,14 +57,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,26 +71,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8af83c0dc83a45a35ca6968cdc29a7af.html">tmp</a></li><li class="navelem"><a class="el" href="dir_0a210242779ad4a14943a572f93f0ce8.html">docs</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Class Methods</a> &#124;
-<a href="class_a_b_k_in_app_message_h_t_m_l_j_s_interface-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ABKInAppMessageHTMLJSInterface Class Reference</div>  </div>
+<div class="title">ABKInAppMessageHTMLBase.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Class Methods</h2></td></tr>
-<tr class="memitem:a77a6de1cc0ee8ae9fd05a2f4305810fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77a6de1cc0ee8ae9fd05a2f4305810fa"></a>
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getJSInterface</b></td></tr>
-<tr class="separator:a77a6de1cc0ee8ae9fd05a2f4305810fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessage.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Braze Public API: ABKInAppMessageHTMLBase</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_base.html">    8</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_base.html">ABKInAppMessageHTMLBase</a> : <a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_base.html#ad2acba00648bea72f4fc00085246c7ee">   15</a></span>&#160;<span class="keyword">@property</span> (strong, nonatomic) NSURL *<a class="code" href="interface_a_b_k_in_app_message_h_t_m_l_base.html#ad2acba00648bea72f4fc00085246c7ee">assetsLocalDirectoryPath</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;- (void)logInAppMessageHTMLClickWithButtonID:(NSString *)buttonId;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;NS_ASSUME_NONNULL_END</div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 19 2020 13:27:46 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 4 2020 15:54:51 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

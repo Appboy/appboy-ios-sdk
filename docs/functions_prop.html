@@ -116,6 +116,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>activeApplicationViewController
+: <a class="el" href="interface_a_b_k_u_i_utils.html#a334797a279da260b6814fc67ad1b8de1">ABKUIUtils</a>
+</li>
+<li>activeApplicationWindow
+: <a class="el" href="interface_a_b_k_u_i_utils.html#a9dc5cd953e2b3e62eb2a22dd8f496e86">ABKUIUtils</a>
+</li>
 <li>appboyUrlDelegate
 : <a class="el" href="interface_appboy.html#aba673cda72bad3e386dad6a24236d104">Appboy</a>
 </li>
@@ -126,10 +132,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interface_a_b_k_in_app_message_slideup_view_controller.html#ab377c1535b27f98affe30193052c0b85">ABKInAppMessageSlideupViewController</a>
 </li>
 <li>assetsLocalDirectoryPath
-: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l.html#a9fa754d784c64b5f18f01b3b2a5da787">ABKInAppMessageHTML</a>
+: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l_base.html#ad2acba00648bea72f4fc00085246c7ee">ABKInAppMessageHTMLBase</a>
 </li>
 <li>assetsZipRemoteUrl
-: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l.html#abd7837a68cc883e2ceb05d082f95674b">ABKInAppMessageHTML</a>
+: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l_full.html#ad8b9b4b245b9712be8c52ed39771d5f8">ABKInAppMessageHTMLFull</a>
+</li>
+<li>assetUrls
+: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l.html#aed02009f192506b128bb81167b3f1fe4">ABKInAppMessageHTML</a>
 </li>
 <li>attributionData
 : <a class="el" href="interface_a_b_k_user.html#ad423f39f7bd2be15fd5cdedd7c1a2e7f">ABKUser</a>
@@ -238,15 +247,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interface_a_b_k_user.html#a271442b2725658da79fd2d0de580c2e5">ABKUser</a>
 </li>
 <li>delegate
-: <a class="el" href="interface_a_b_k_in_app_message_controller.html#a80753997e8a3c809d0fa984f7d6d6bbe">ABKInAppMessageController</a>
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a3fae6a378c54ab73ee963bd14a57467f">ABKContentCardsTableViewController</a>
+, <a class="el" href="interface_a_b_k_in_app_message_controller.html#a80753997e8a3c809d0fa984f7d6d6bbe">ABKInAppMessageController</a>
 , <a class="el" href="interface_a_b_k_base_content_card_cell.html#a82e917ba07d56bf39a1fba0c77671195">ABKBaseContentCardCell</a>
+, <a class="el" href="interface_a_b_k_in_app_message_web_view_bridge.html#a242a9a46763f256d0b9fdef7a1051164">ABKInAppMessageWebViewBridge</a>
 </li>
 <li>disableAutomaticGeofenceRequests
 : <a class="el" href="interface_a_b_k_location_manager.html#a0053a0c49797ab7863515e458327d2c8">ABKLocationManager</a>
 </li>
 <li>disableUnreadIndicator
-: <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a747c00c836a40249eb98078a7d045033">ABKNewsFeedTableViewController</a>
-, <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a387a2313e95358c10150121cd9ed1b71">ABKContentCardsTableViewController</a>
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a387a2313e95358c10150121cd9ed1b71">ABKContentCardsTableViewController</a>
+, <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a747c00c836a40249eb98078a7d045033">ABKNewsFeedTableViewController</a>
 </li>
 <li>dismissed
 : <a class="el" href="interface_a_b_k_content_card.html#a3e21a7e416ed303e5bd9ef845909225d">ABKContentCard</a>
@@ -269,7 +280,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a61ab75ec7d0e673d407c26ca2edad5ef">ABKNewsFeedTableViewController</a>
 </li>
 <li>enableDarkTheme
-: <a class="el" href="interface_a_b_k_in_app_message.html#ae89df6090bed623099ab0ecc0a74ad5d">ABKInAppMessage</a>
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a603454587ea02bb36297ed0c61a74647">ABKContentCardsTableViewController</a>
+, <a class="el" href="interface_a_b_k_in_app_message.html#ae89df6090bed623099ab0ecc0a74ad5d">ABKInAppMessage</a>
 </li>
 <li>enableGeofences
 : <a class="el" href="interface_a_b_k_location_manager.html#aac607216d4909f488a47464ab2aa7cda">ABKLocationManager</a>
@@ -298,9 +310,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>followersCount
 : <a class="el" href="interface_a_b_k_twitter_user.html#a012878d5cc9e0eec2ab88d90135f72ed">ABKTwitterUser</a>
 </li>
-<li>forceHideStatusBar
-: <a class="el" href="interface_a_b_k_in_app_message_controller.html#a1ceb5afeb3292b959d80a391e982e1af">ABKInAppMessageController</a>
-</li>
 <li>frameColor
 : <a class="el" href="interface_a_b_k_in_app_message_immersive.html#a8d793eafd9c276ab2b336a8754185c5a">ABKInAppMessageImmersive</a>
 </li>
@@ -318,6 +327,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>handleAllTouchEvents
+: <a class="el" href="interface_a_b_k_in_app_message_window.html#a7392355e56fa7c3f58b2dda274a00d22">ABKInAppMessageWindow</a>
+</li>
 <li>header
 : <a class="el" href="interface_a_b_k_in_app_message_immersive.html#a6c744c795b56e76dcf3da6750405a3e6">ABKInAppMessageImmersive</a>
 </li>
@@ -456,8 +468,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>maxContentCardWidth
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a3aa057060507768e1e70ef12ea7f92b9">ABKContentCardsTableViewController</a>
+</li>
 <li>message
 : <a class="el" href="interface_a_b_k_in_app_message.html#af58e6c0d210ab02dc353e9752f5f4f1c">ABKInAppMessage</a>
+</li>
+<li>messageFields
+: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l.html#a4894299ab60d7c29551db6ae70fcbf5d">ABKInAppMessageHTML</a>
 </li>
 <li>messageTextAlignment
 : <a class="el" href="interface_a_b_k_in_app_message.html#ac43f4cb980ff8631ee4e3ee37833a86b">ABKInAppMessage</a>
@@ -483,6 +501,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>orientation
 : <a class="el" href="interface_a_b_k_in_app_message.html#a48e89b20cad835ce9cd478eada10fb66">ABKInAppMessage</a>
+</li>
+<li>overrideApplicationStatusBarHiddenState
+: <a class="el" href="interface_a_b_k_in_app_message_view_controller.html#aa15572ba40c286beb6315b23be030652">ABKInAppMessageViewController</a>
 </li>
 </ul>
 
@@ -567,6 +588,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>textsView
 : <a class="el" href="interface_a_b_k_in_app_message_immersive_view_controller.html#a49867465d29663017da6a1030e633613">ABKInAppMessageImmersiveViewController</a>
 </li>
+<li>topConstraint
+: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l_base_view_controller.html#add42804e8b660b51fb76d58337e41a93">ABKInAppMessageHTMLBaseViewController</a>
+</li>
+<li>trusted
+: <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l.html#a8c371771f3d02170f40b4e9266d29c8a">ABKInAppMessageHTML</a>
+</li>
 <li>twitterID
 : <a class="el" href="interface_a_b_k_twitter_user.html#aa32e44383b43e0fce147304363bc37d7">ABKTwitterUser</a>
 </li>
@@ -620,14 +647,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>webView
 : <a class="el" href="interface_a_b_k_content_cards_web_view_controller.html#a9ef34842791b8c307ff713baeaa46a0a">ABKContentCardsWebViewController</a>
 , <a class="el" href="interface_a_b_k_modal_web_view_controller.html#a8d5a94556c32fc4d9935b8e22ac82a0e">ABKModalWebViewController</a>
-, <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l_view_controller.html#a0235466e7f26c0031a1d4c181847180c">ABKInAppMessageHTMLViewController</a>
+, <a class="el" href="interface_a_b_k_in_app_message_h_t_m_l_base_view_controller.html#ade2daa7f441c2d46618f84301a27a9b6">ABKInAppMessageHTMLBaseViewController</a>
 , <a class="el" href="interface_a_b_k_feed_web_view_controller.html#a97b13bfe310a43cd12d8da609d64d094">ABKFeedWebViewController</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 19 2020 13:27:46 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 4 2020 15:54:51 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

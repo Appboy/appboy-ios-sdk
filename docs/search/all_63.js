@@ -16,6 +16,8 @@ var searchData=
   ['contentcardcount',['contentCardCount',['../interface_a_b_k_content_cards_controller.html#a245919366ee020cf6db87de187240bd8',1,'ABKContentCardsController']]],
   ['contentcards',['contentCards',['../interface_a_b_k_content_cards_controller.html#ad3a42eca8dd891df774d2e751fb33bb6',1,'ABKContentCardsController']]],
   ['contentcardsviewcontroller',['contentCardsViewController',['../interface_a_b_k_content_cards_view_controller.html#a35314d19f2b0f616b63ddabb7216e685',1,'ABKContentCardsViewController']]],
+  ['contentcardtableviewcontroller_3adidhandlecardclick_3a',['contentCardTableViewController:didHandleCardClick:',['../protocol_a_b_k_content_cards_table_view_controller_delegate-p.html#a7824cfdb359aec26424e7a50de336903',1,'ABKContentCardsTableViewControllerDelegate-p']]],
+  ['contentcardtableviewcontroller_3ashouldhandlecardclick_3a',['contentCardTableViewController:shouldHandleCardClick:',['../protocol_a_b_k_content_cards_table_view_controller_delegate-p.html#a564798d0c9d549f67c10e06029a0e80b',1,'ABKContentCardsTableViewControllerDelegate-p']]],
   ['country',['country',['../interface_a_b_k_user.html#a3d3fb8c80f0f4a38346b9f3b279cf48a',1,'ABKUser']]],
   ['created',['created',['../interface_a_b_k_content_card.html#aaa4d524e0741e7e2793f4ceb3bfac185',1,'ABKContentCard']]]
 ];

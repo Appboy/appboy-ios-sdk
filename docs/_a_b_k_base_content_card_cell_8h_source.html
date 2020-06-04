@@ -103,23 +103,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewTopConstraint;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewBottomConstraint;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="interface_a_b_k_base_content_card_cell.html#a5b1a22982202fc58c3f8b109ec68a0e0">   43</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_base_content_card_cell.html#a5b1a22982202fc58c3f8b109ec68a0e0">cardSidePadding</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat cardSpacing;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">@property</span> (nonatomic, assign) BOOL hideUnreadIndicator;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="interface_a_b_k_base_content_card_cell.html#a82e917ba07d56bf39a1fba0c77671195">   50</a></span>&#160;<span class="keyword">@property</span> (weak, nonatomic) id &lt;ABKBaseContentCardCellDelegate&gt; <a class="code" href="interface_a_b_k_base_content_card_cell.html#a82e917ba07d56bf39a1fba0c77671195">delegate</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;- (void)applyCard:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;- (UIImage *)<a class="code" href="interface_a_b_k_base_content_card_cell.html#aa30db0a38b184b517e7d2bb8af5dc279">getPlaceHolderImage</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;- (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *cardWidthConstraint;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="interface_a_b_k_base_content_card_cell.html#a5b1a22982202fc58c3f8b109ec68a0e0">   45</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat <a class="code" href="interface_a_b_k_base_content_card_cell.html#a5b1a22982202fc58c3f8b109ec68a0e0">cardSidePadding</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">@property</span> (nonatomic, assign) CGFloat cardSpacing;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">@property</span> (nonatomic, assign) BOOL hideUnreadIndicator;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="interface_a_b_k_base_content_card_cell.html#a82e917ba07d56bf39a1fba0c77671195">   52</a></span>&#160;<span class="keyword">@property</span> (weak, nonatomic) id &lt;ABKBaseContentCardCellDelegate&gt; <a class="code" href="interface_a_b_k_base_content_card_cell.html#a82e917ba07d56bf39a1fba0c77671195">delegate</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;- (void)applyCard:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;- (UIImage *)<a class="code" href="interface_a_b_k_base_content_card_cell.html#aa30db0a38b184b517e7d2bb8af5dc279">getPlaceHolderImage</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;- (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 19 2020 13:27:46 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 4 2020 15:54:51 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

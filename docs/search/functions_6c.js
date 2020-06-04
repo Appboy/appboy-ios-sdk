@@ -10,7 +10,7 @@ var searchData=
   ['logcustomevent_3awithproperties_3a',['logCustomEvent:withProperties:',['../interface_appboy.html#abb8c5e47a270fc7ad0b20630ce073f30',1,'Appboy']]],
   ['logfeeddisplayed',['logFeedDisplayed',['../interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2',1,'Appboy']]],
   ['loginappmessageclickedwithbuttonid_3a',['logInAppMessageClickedWithButtonID:',['../interface_a_b_k_in_app_message_immersive.html#a55db6e2c9230159d5048b74554a43220',1,'ABKInAppMessageImmersive']]],
-  ['loginappmessagehtmlclickwithbuttonid_3a',['logInAppMessageHTMLClickWithButtonID:',['../interface_a_b_k_in_app_message_h_t_m_l.html#af53d4288c27ce0369c0284d6f7773021',1,'ABKInAppMessageHTML']]],
+  ['loginappmessagehtmlclickwithbuttonid_3a',['logInAppMessageHTMLClickWithButtonID:',['../interface_a_b_k_in_app_message_h_t_m_l_base.html#a7235d465ce6e94e5be3c9f49e04ff4f3',1,'ABKInAppMessageHTMLBase']]],
   ['loginappmessageimpression',['logInAppMessageImpression',['../interface_a_b_k_in_app_message.html#adf845c0449a477a75bdaf84e39cb835b',1,'ABKInAppMessage']]],
   ['logpurchase_3aincurrency_3aatprice_3a',['logPurchase:inCurrency:atPrice:',['../interface_appboy.html#a63d8c390bff05f87c7f8f86f2fc0deb6',1,'Appboy']]],
   ['logpurchase_3aincurrency_3aatprice_3awithproperties_3a',['logPurchase:inCurrency:atPrice:withProperties:',['../interface_appboy.html#aaca4b885a8f61ac9fad3936b091448cc',1,'Appboy']]],
