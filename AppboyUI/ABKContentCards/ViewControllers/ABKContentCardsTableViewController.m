@@ -139,6 +139,13 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 }
 
 - (IBAction)refreshContentCards:(UIRefreshControl *)sender {
+  // Remove visible cards from unviewedOnScreenCards
+  NSArray *visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
+  for (NSIndexPath *indexPath in visibleIndexPaths) {
+    ABKContentCard *card = self.cards[indexPath.row];
+    [self.unviewedOnScreenCards removeObject:card.idString];
+  }
+  
   [self requestContentCardsRefresh];
 }
 
@@ -287,6 +294,10 @@ estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   ABKContentCard *card = self.cards[indexPath.row];
   [self handleCardClick:card];
+  
+  // Remove card from unviewedOnScreenCards
+  [self.unviewedOnScreenCards removeObject:card.idString];
+  [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -341,14 +352,29 @@ estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 
 - (void)handleCardClick:(ABKContentCard *)card {
   // Log a card click only when the card has the url property with a valid url.
-  if (card.urlString.length > 0) {
-    [card logContentCardClicked];
-    NSURL *cardURL = [ABKUIURLUtils getEncodedURIFromString:card.urlString];
-    if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
-      [self openURLInWebView:cardURL];
-    } else {
-      [ABKUIURLUtils openURLWithSystem:cardURL fromChannel:ABKContentCardChannel];
-    }
+  if (card.urlString.length <= 0) {
+    return;
+  }
+  
+  [card logContentCardClicked];
+  NSURL *cardURL = [ABKUIURLUtils getEncodedURIFromString:card.urlString];
+  
+  // Delegate handles card click action
+  if ([self.delegate respondsToSelector:@selector(contentCardTableViewController:shouldHandleCardClick:)] &&
+      ![self.delegate contentCardTableViewController:self shouldHandleCardClick:cardURL]) {
+    return;
+  }
+  
+  // Handles card click action
+  if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
+    [self openURLInWebView:cardURL];
+  } else {
+    [ABKUIURLUtils openURLWithSystem:cardURL fromChannel:ABKContentCardChannel];
+  }
+  
+  // Delegate inform card click action
+  if ([self.delegate respondsToSelector:@selector(contentCardTableViewController:didHandleCardClick:)]) {
+    [self.delegate contentCardTableViewController:self didHandleCardClick:cardURL];
   }
 }
 

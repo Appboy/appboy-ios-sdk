@@ -14,4 +14,10 @@
   return self;
 }
 
+#pragma mark - NSSecureCoding
+
++ (BOOL)supportsSecureCoding {
+  return YES;
+}
+
 @end

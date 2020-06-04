@@ -11,7 +11,7 @@ end
 target 'HelloSwiftNotificationContentExtension' do
   platform :ios, '10.0'
   pod 'Appboy-Push-Story', '~>3.0'
-  #pod 'Appboy-Push-Story', :path => './../../Appboy-Push-Story/
+  #pod 'Appboy-Push-Story', :path => './../../Appboy-Push-Story/'
 end
 
 target 'tvOS_HelloSwift' do

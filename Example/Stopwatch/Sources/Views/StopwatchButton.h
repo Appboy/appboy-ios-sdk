@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface StopwatchButton : UIButton
+@interface StopwatchButton : UIButton <NSSecureCoding>
 
 @end

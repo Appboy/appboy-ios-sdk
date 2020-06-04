@@ -1,3 +1,18 @@
+## 3.24.0
+
+##### Fixed
+- Fixes an issue where the unread indicator on a Content Card would persist even after being read.
+
+##### Breaking
+- Renames `ABKInAppMessageWindow`'s `catchClicksOutsideInAppMessage` to `handleAllTouchEvents`.
+
+##### Fixed
+- Fixes an issue preventing long texts from displaying correctly in Full in-app messages.
+
+##### Added
+- Adds support for JavaScript functions `window.alert()`, `window.confirm()` and `window.prompt()` in HTML in-app messages.
+- Adds the `ABKContentCardsTableViewControllerDelegate` protocol to more intricately handle Content Card clicks using the methods `contentCardTableViewController:shouldHandleCardClick:` and `contentCardTableViewController:didHandleCardClick:`.
+
 ## 3.23.0
 
 ##### Fixed

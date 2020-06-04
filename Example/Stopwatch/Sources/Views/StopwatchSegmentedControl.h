@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface StopwatchSegmentedControl : UISegmentedControl
+@interface StopwatchSegmentedControl : UISegmentedControl <NSSecureCoding>
 
 @end

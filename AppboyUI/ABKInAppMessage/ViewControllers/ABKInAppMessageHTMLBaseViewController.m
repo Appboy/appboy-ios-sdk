@@ -2,7 +2,7 @@
 #import "ABKInAppMessageView.h"
 #import "ABKUIUtils.h"
 #import "ABKInAppMessageWindowController.h"
-#import "ABKInAppMessageHTMLJSBridge.h"
+#import "ABKInAppMessageWebViewBridge.h"
 
 static NSString *const ABKBlankURLString = @"about:blank";
 static NSString *const ABKHTMLInAppButtonIdKey = @"abButtonId";
@@ -14,6 +14,12 @@ static NSString *const ABKHTMLInAppCustomEventQueryParamNameKey = @"name";
 static NSString *const ABKHTMLInAppExternalOpenKey = @"abExternalOpen";
 static NSString *const ABKHTMLInAppDeepLinkKey = @"abDeepLink";
 static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
+
+@interface ABKInAppMessageHTMLBaseViewController () <ABKInAppMessageWebViewBridgeDelegate>
+
+@property (nonatomic) ABKInAppMessageWebViewBridge *webViewBridge;
+
+@end
 
 @implementation ABKInAppMessageHTMLBaseViewController
 
@@ -80,8 +86,11 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
 
   WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:webViewConfiguration];
   self.webView = webView;
+  
+  self.webViewBridge = [[ABKInAppMessageWebViewBridge alloc] initWithWebView:webView
+                                                                inAppMessage:(ABKInAppMessageHTML *)self.inAppMessage appboyInstance:[Appboy sharedInstance]];
+  self.webViewBridge.delegate = self;
 
-  self.javascriptInterface = [[ABKInAppMessageHTMLJSBridge alloc] initWithHTMLInAppMessage:(ABKInAppMessageHTMLBase *)self.inAppMessage];
   self.webView.allowsLinkPreview = NO;
   self.webView.navigationDelegate = self;
   self.webView.UIDelegate = self;
@@ -147,12 +156,6 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
 decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   NSURL *url = navigationAction.request.URL;
-  if ([ABKInAppMessageHTMLJSBridge isBridgeURL:url]) {
-    [self.javascriptInterface handleBridgeCallWithURL:url appboyInstance:[Appboy sharedInstance]];
-    // No bridge methods in handleBridgeCallWithURL currently close the In-App Message
-    decisionHandler(WKNavigationActionPolicyCancel);
-    return;
-  }
   
   if (url != nil &&
       ![ABKUIUtils string:url.absoluteString isEqualToString:ABKBlankURLString] &&
@@ -213,7 +216,73 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   
   // Disable touch callout from displaying link information
   [self.webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none';" completionHandler:nil];
-  [self.webView evaluateJavaScript:[ABKInAppMessageHTMLJSInterface getJSInterface] completionHandler:nil];
+}
+
+- (void)webView:(WKWebView *)webView
+runJavaScriptAlertPanelWithMessage:(nonnull NSString *)message
+                  initiatedByFrame:(nonnull WKFrameInfo *)frame
+                 completionHandler:(nonnull void (^)(void))completionHandler {
+  [self presentAlertWithMessage:message
+               andConfiguration:^(UIAlertController *alert) {
+    // Action labels matches Safari implementation
+    // Close
+    [alert addAction:[UIAlertAction actionWithTitle:@"Close"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction * _Nonnull action) {
+      completionHandler();
+    }]];
+  }];
+}
+
+- (void)webView:(WKWebView *)webView
+runJavaScriptConfirmPanelWithMessage:(NSString *)message
+                    initiatedByFrame:(WKFrameInfo *)frame
+                   completionHandler:(void (^)(BOOL))completionHandler {
+  [self presentAlertWithMessage:message andConfiguration:^(UIAlertController *alert) {
+    // Action labels matches Safari implementation
+    // Cancel
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                              style:UIAlertActionStyleCancel
+                                            handler:^(UIAlertAction * _Nonnull action) {
+      completionHandler(NO);
+    }]];
+    
+    // OK
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction * _Nonnull action) {
+      completionHandler(YES);
+    }]];
+  }];
+}
+
+- (void)webView:(WKWebView *)webView
+runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt
+                          defaultText:(NSString *)defaultText
+                     initiatedByFrame:(WKFrameInfo *)frame
+                    completionHandler:(void (^)(NSString * _Nullable))completionHandler {
+  [self presentAlertWithMessage:prompt
+               andConfiguration:^(UIAlertController *alert) {
+    // Action labels matches Safari implementation
+    // Text field
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+      textField.text = defaultText;
+    }];
+    
+    // Cancel
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                              style:UIAlertActionStyleCancel
+                                            handler:^(UIAlertAction * _Nonnull action) {
+      completionHandler(nil);
+    }]];
+    
+    // OK
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction * _Nonnull action) {
+      completionHandler(alert.textFields[0].text);
+    }]];
+  }];
 }
 
 - (BOOL)isCustomEventURL:(NSURL *)url {
@@ -293,6 +362,15 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   return [dict copy];
 }
 
+- (void)presentAlertWithMessage:(NSString *)message
+               andConfiguration:(void (^)(UIAlertController *alert))configure {
+  UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                 message:message
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+  configure(alert);
+  [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Animation
 
 - (void)beforeMoveInAppMessageViewOnScreen {}
@@ -312,6 +390,19 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 
 - (void)moveInAppMessageViewOffScreen {
   [self.view.superview layoutIfNeeded];
+}
+
+#pragma mark - ABKInAppMessageWebViewBridgeDelegate
+
+- (void)webViewBridge:(ABKInAppMessageWebViewBridge *)webViewBridge
+  receivedClickAction:(ABKInAppMessageClickActionType)clickAction {
+  ABKInAppMessageWindowController *parentViewController =
+    (ABKInAppMessageWindowController *)self.parentViewController;
+  
+  [self.inAppMessage setInAppMessageClickAction:clickAction withURI:nil];
+  [parentViewController inAppMessageClickedWithActionType:self.inAppMessage.inAppMessageClickActionType
+                                                      URL:nil
+                                         openURLInWebView:false];
 }
 
 @end

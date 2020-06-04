@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 #import "ABKInAppMessageViewController.h"
-#import "ABKInAppMessageHTMLJSBridge.h"
 
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const ABKInAppMessageHTMLFileName = @"message.html";
@@ -12,8 +11,6 @@ static NSString *const ABKInAppMessageHTMLFileName = @"message.html";
  * The WKWebView used to parse and display the HTML.
  */
 @property (nonatomic) WKWebView *webView;
-
-@property (nonatomic) ABKInAppMessageHTMLJSBridge *javascriptInterface;
 
 /*!
  * The constraints for top and bottom between view and the super view.

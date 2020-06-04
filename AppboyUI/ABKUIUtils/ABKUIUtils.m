@@ -225,4 +225,14 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
   return [string1 isEqualToString:string2];
 }
 
++ (BOOL)responderChainOf:(UIResponder *)responder hasKindOfClass:(Class)aClass {
+  UIResponder *resp = responder;
+  
+  while (resp && ![resp isKindOfClass:aClass]) {
+    resp = resp.nextResponder;
+  }
+  
+  return resp != nil;
+}
+
 @end

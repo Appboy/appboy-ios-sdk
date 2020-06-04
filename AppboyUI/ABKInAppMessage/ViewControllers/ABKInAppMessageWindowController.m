@@ -6,7 +6,7 @@
 #import "ABKInAppMessageHTMLFull.h"
 #import "ABKInAppMessageHTML.h"
 #import "ABKInAppMessageHTMLBase.h"
-#import "ABKInAppMessageHTMLViewController.h"
+#import "ABKInAppMessageHTMLBaseViewController.h"
 #import "ABKInAppMessageImmersiveViewController.h"
 #import "ABKInAppMessageSlideupViewController.h"
 #import "ABKInAppMessageViewController.h"
@@ -68,7 +68,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     }
 
     if ([self.inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
-      self.inAppMessageWindow.catchClicksOutsideInAppMessage = YES;
+      self.inAppMessageWindow.handleAllTouchEvents = YES;
     }
   }
   [self.view addSubview:self.inAppMessageViewController.view];
@@ -217,7 +217,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 #pragma mark - Keyboard
 
 - (void)keyboardWasShown {
-  if (![self.inAppMessageViewController isKindOfClass:[ABKInAppMessageHTMLViewController class]]
+  if (![self.inAppMessageViewController isKindOfClass:[ABKInAppMessageHTMLBaseViewController class]]
       && !self.inAppMessageWindow.hidden) {
     // If the keyboard is shown while an in-app message is on the screen, we hide the in-app message
     [self hideInAppMessageWindow];
