@@ -1,4 +1,11 @@
+## 3.24.1
+
+##### Fixed
+- Fixes an issue introduced in 3.24.0 breaking the SDK compatibility with Cocoapods.
+
 ## 3.24.0
+
+**Important** This release is not compatible with Cocoapods. Do not upgrade to this version and upgrade to 3.24.1 and above instead.
 
 ##### Fixed
 - Fixes an issue where the unread indicator on a Content Card would persist even after being read.
