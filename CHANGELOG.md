@@ -1,11 +1,13 @@
 ## 3.24.1
 
+**Important** This release has a known issue with the `github "Appboy/Appboy-iOS-SDK"` Cartfile configuration. If using that configuration, please use 3.24.0, which is functionally identical, instead.
+
 ##### Fixed
 - Fixes an issue introduced in 3.24.0 breaking the SDK compatibility with Cocoapods.
 
 ## 3.24.0
 
-**Important** This release is not compatible with Cocoapods. Do not upgrade to this version and upgrade to 3.24.1 and above instead.
+**Important** This release is not compatible with Cocoapods. If you are using Cocoapods, do not upgrade to this version and upgrade to 3.24.1 and above instead.
 
 ##### Fixed
 - Fixes an issue where the unread indicator on a Content Card would persist even after being read.
