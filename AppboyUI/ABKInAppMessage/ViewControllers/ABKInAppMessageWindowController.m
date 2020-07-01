@@ -26,7 +26,6 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     _inAppMessageViewController = inAppMessageViewController;
     _inAppMessageUIDelegate = (id<ABKInAppMessageUIDelegate>)delegate;
     
-    _appWindow = ABKUIUtils.activeApplicationWindow;
     _inAppMessageWindow = [self createInAppMessageWindow];
     _inAppMessageWindow.backgroundColor = [UIColor clearColor];
     _inAppMessageWindow.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
@@ -291,12 +290,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 - (void)hideInAppMessageWindow {
   [self.slideAwayTimer invalidate];
   self.slideAwayTimer = nil;
-  [self.inAppMessageWindow resignKeyWindow];
-  self.inAppMessageWindow.hidden = YES;
-  if (self.appWindow == nil || ![self.appWindow isKindOfClass:[UIWindow class]]) {
-    self.appWindow = ABKUIUtils.activeApplicationWindow;
-  }
-  [self.appWindow makeKeyAndVisible];
+
   self.inAppMessageWindow = nil;
   [[NSNotificationCenter defaultCenter] postNotificationName:ABKNotificationInAppMessageWindowDismissed
                                                       object:self

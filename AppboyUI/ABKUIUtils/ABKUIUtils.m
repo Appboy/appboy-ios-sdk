@@ -54,7 +54,7 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
 /*!
  * Selects the window most likely to be the application window among an array of windows.
  *
- * @discussion The application window should most likely be the topmost window with a windowLevel
+ * @discussion The application window should most likely be the bottommost window with a windowLevel
  *             set to UIWindowLevelNormal (excluding a potential ABKInAppMessageWindow currently
  *             being displayed). If no window respecting that condition is found, fallback to the first
  *             window in the hierarchy.
@@ -66,7 +66,7 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
   // Dynamically gets ABKInAppMessageWindow class as it is part of AppboyUI
   Class ABKInAppMessageWindow = NSClassFromString(@"ABKInAppMessageWindow");
   
-  for (UIWindow *window in [windows reverseObjectEnumerator]) {
+  for (UIWindow *window in windows) {
     // Ignores ABKInAppMessageWindow
     if (ABKInAppMessageWindow && [window isKindOfClass:[ABKInAppMessageWindow class]]) {
       continue;

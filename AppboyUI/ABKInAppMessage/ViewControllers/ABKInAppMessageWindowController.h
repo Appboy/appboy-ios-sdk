@@ -97,7 +97,7 @@ static double const InAppMessageAnimationDuration = 0.4;
 /*!
  * The UIWindow of the host app.
  */
-@property (weak, nonatomic, nullable) UIWindow *appWindow;
+@property (weak, nonatomic, nullable) UIWindow *appWindow DEPRECATED_MSG_ATTRIBUTE("appWindow is not used anymore.");
 
 /*!
  * The variable that shows if the device is being rotated.

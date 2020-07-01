@@ -1,13 +1,19 @@
-## 3.24.1
+## 3.24.2
 
-**Important** This release has a known issue with the `github "Appboy/Appboy-iOS-SDK"` Cartfile configuration. If using that configuration, please use 3.24.0, which is functionally identical, instead.
+##### Fixed
+- Fixes an issue with post-dismissal view hierarchy restoration for in-app messages under specific conditions.
+
+##### Changed
+- Deprecates `ABKInAppMessageWindowController` property `appWindow`.
+
+## 3.24.1
 
 ##### Fixed
 - Fixes an issue introduced in 3.24.0 breaking the SDK compatibility with Cocoapods.
 
 ## 3.24.0
 
-**Important** This release is not compatible with Cocoapods. If you are using Cocoapods, do not upgrade to this version and upgrade to 3.24.1 and above instead.
+**Important** This release is not compatible with Cocoapods. Do not upgrade to this version and upgrade to 3.24.1 and above instead.
 
 ##### Fixed
 - Fixes an issue where the unread indicator on a Content Card would persist even after being read.
@@ -122,7 +128,7 @@
 ```
 [[Appboy sharedInstance] registerPushToken:
                 [NSString stringWithFormat:@"%@", deviceToken]];
-``` 
+```
 with
 ```
 [[Appboy sharedInstance] registerDeviceToken:deviceToken];
@@ -161,7 +167,7 @@ with
 ```
 [[Appboy sharedInstance] registerPushToken:
                 [NSString stringWithFormat:@"%@", deviceToken]];
-``` 
+```
 with
 ```
 [[Appboy sharedInstance] registerDeviceToken:deviceToken];
@@ -196,7 +202,7 @@ with
 ## 3.17.0
 
 ##### Breaking
-- Removes `ABKAppboyEndpointDelegate`. 
+- Removes `ABKAppboyEndpointDelegate`.
   - You can now set the endpoint at runtime by setting the value of `ABKEndpointKey` in `appboyOptions` to your custom endpoint (ex. `sdk.api.braze.eu`) at initialization.
 
 ## 3.16.0
@@ -218,7 +224,7 @@ with
   - The preprocessor macro `ABK_DISABLE_LOCATION_SERVICES` is no longer needed.
   - __Important:__ Configuring geofences to request always location permissions remotely from the Braze dashboard is no longer supported. If you are using Geofences, you will need to ensure that your app requests always location permission from your users manually.
 - `ABKAutomaticRequestProcessingExceptForDataFlush` is deprecated. Users using `ABKAutomaticRequestProcessingExceptForDataFlush` should switch to `ABKManualRequestProcessing`, as the new behavior of `ABKManualRequestProcessing` is identical to the previous behavior of `ABKAutomaticRequestProcessingExceptForDataFlush`
- 
+
 ##### Changed
 - Deprecates the push utility methods: `isUninstallTrackingUserNotification:`, `isUninstallTrackingRemoteNotification:`, `isGeofencesSyncUserNotification:`, `isGeofencesSyncRemoteNotification:`, and `isPushStoryRemoteNotification:` from `ABKPushUtils`. Please use the function `isAppboyInternalRemoteNotification:`.
 - Minor changes to the logic of `ABKManualRequestProcessing`. The original `ABKManualRequestProcessing` had specific exceptions and behaved more like `ABKAutomaticRequestProcessingExceptForDataFlush` in practice. As a result, the two policies have been merged into `ABKManualRequestProcessing`. Note that the new definition of `ABKManualRequestProcessing` is that periodic automatic data flushes are disabled. Other requests important to basic Braze functionality will still occur.
@@ -424,7 +430,7 @@ with
   ```
   - See our [News Feed Sample app](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/NewsFeed/BrazeNewsFeedSample) for sample implementations and customizations.
 - Removes NUI support for Feedback, In-App Messages, and the News Feed.
-  - All customization can now be done by using categories or by extending our open sourced view controllers.  
+  - All customization can now be done by using categories or by extending our open sourced view controllers.
 - Removes deprecated `ABKPushURIDelegate` from the SDK. Use `ABKURLDelegate` instead.
 
 
@@ -521,7 +527,7 @@ with
 - Adds an Objective-C sample app for the Core subspec of the SDK. See `Samples/Core/ObjCSample`.
 
 ##### Fixed
- - Fixes a bug introduced in version 2.30 where crashes could occur if the SDK was directed to handle a custom scheme deep link inside a WebView.   
+ - Fixes a bug introduced in version 2.30 where crashes could occur if the SDK was directed to handle a custom scheme deep link inside a WebView.
    - Addresses https://github.com/Appboy/appboy-ios-sdk/issues/122.
  - Fixes a bug introduced in version 3.0 where new custom attributes were not being flushed if custom attributes had been previously flushed in the same foregrounded session.
  - Fixes a bug introduced in version 3.0 where previously flushed custom attributes were being re-sent.
@@ -699,8 +705,8 @@ with
 ##### Changed
  - Updates push registration to flush the token to the server immediately.
  - Improves the accessibility of in-app messages and news feed cards.
-   - When in voiceOver mode, the SDK auto-focuses on in-app messages when they appear and resets focus on dismissal.  
-   - VoiceOver no longer reads Braze internal labels.  
+   - When in voiceOver mode, the SDK auto-focuses on in-app messages when they appear and resets focus on dismissal.
+   - VoiceOver no longer reads Braze internal labels.
    - News feed cards are enhanced to be more accessible.
 
 ## 2.24.4
@@ -862,7 +868,7 @@ occurred.
  - Adds support for action-based, locally triggered in-app messages. In-app messages are now sent to the device at session start with associated trigger events. The SDK will display in-app messages in near real-time when the trigger event associated with a message occurs. Trigger events can be app opens, push opens, purchases, and custom events.
 
 ##### Changed
- - Deprecates the old system of requesting in-app message display, now collectively known as 'original' in-app messaging, where messages were limited to displaying at app start.  
+ - Deprecates the old system of requesting in-app message display, now collectively known as 'original' in-app messaging, where messages were limited to displaying at app start.
 
 ## 2.18.4
 
