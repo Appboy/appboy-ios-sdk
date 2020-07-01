@@ -94,6 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:a4b0bafed82c9b81990cfeb12ca44ac14"><td class="memItemLeft" align="right" valign="top">(UIWindow *appWindow)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_in_app_message_window_controller.html#a4b0bafed82c9b81990cfeb12ca44ac14">DEPRECATED_MSG_ATTRIBUTE</a></td></tr>
+<tr class="separator:a4b0bafed82c9b81990cfeb12ca44ac14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa30bf7fb8f94937db5f0cdc6c5c5050e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa30bf7fb8f94937db5f0cdc6c5c5050e"></a>
 (instancetype)&#160;</td><td class="memItemRight" valign="bottom">- <b>initWithInAppMessage:inAppMessageViewController:inAppMessageDelegate:</b></td></tr>
 <tr class="separator:aa30bf7fb8f94937db5f0cdc6c5c5050e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,8 +132,6 @@ CGPoint&#160;</td><td class="memItemRight" valign="bottom"><b>inAppMessagePrevio
 <tr class="separator:af9ec2fb897163c7eb7d88ebb97ad63a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfd77afa7e26d7620664e044ea471629"><td class="memItemLeft" align="right" valign="top">UIInterfaceOrientation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_window_controller.html#acfd77afa7e26d7620664e044ea471629">preferredOrientation</a></td></tr>
 <tr class="separator:acfd77afa7e26d7620664e044ea471629"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1d71fe8f34bb4f42ee240305217d8c"><td class="memItemLeft" align="right" valign="top">UIWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_window_controller.html#adc1d71fe8f34bb4f42ee240305217d8c">appWindow</a></td></tr>
-<tr class="separator:adc1d71fe8f34bb4f42ee240305217d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa40edd16d712fb2825f6e93708f8ce6c"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_window_controller.html#aa40edd16d712fb2825f6e93708f8ce6c">isInRotation</a></td></tr>
 <tr class="separator:aa40edd16d712fb2825f6e93708f8ce6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2985c3276549d66cb2bb031bbe7dfbdc"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_window_controller.html#a2985c3276549d66cb2bb031bbe7dfbdc">inAppMessageIsTapped</a></td></tr>
@@ -167,6 +167,23 @@ CGPoint&#160;</td><td class="memItemRight" valign="bottom"><b>inAppMessagePrevio
 <p>Additionally, the view controller is responsible for executing that in-app message's specified behavior on click or performing a "custom action", which can be specified through a delegate for the in-app message.</p>
 <p>After the in-app message is dismissed, <a class="el" href="interface_a_b_k_in_app_message_window_controller.html">ABKInAppMessageWindowController</a> will set the inAppMessageWindow property to nil, and inform <a class="el" href="interface_a_b_k_in_app_message_u_i_controller.html">ABKInAppMessageUIController</a> to set it's windowController property to nil as well. At that point, the in-app message window's retainer count will drop to 0 and the system will clean it out from the UIApplication's windows array. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a4b0bafed82c9b81990cfeb12ca44ac14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIWindow* appWindow) DEPRECATED_MSG_ATTRIBUTE </td>
+          <td></td>
+          <td class="paramtype">(&quot;appWindow is not used anymore.&quot;)&#160;</td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The UIWindow of the host app. </p>
+
+</div>
+</div>
 <a class="anchor" id="a00f5678a212b1ca5ad11b6a9c5ef84f3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -255,27 +272,6 @@ CGPoint&#160;</td><td class="memItemRight" valign="bottom"><b>inAppMessagePrevio
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="adc1d71fe8f34bb4f42ee240305217d8c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (UIWindow*) appWindow</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">weak</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The UIWindow of the host app. </p>
-
-</div>
-</div>
 <a class="anchor" id="a8533e6b1e6f4012ca4c588a057500394"></a>
 <div class="memitem">
 <div class="memproto">
@@ -531,7 +527,7 @@ CGPoint&#160;</td><td class="memItemRight" valign="bottom"><b>inAppMessagePrevio
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 4 2020 15:54:51 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 1 2020 16:38:37 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
