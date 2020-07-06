@@ -95,11 +95,6 @@ static double const InAppMessageAnimationDuration = 0.4;
 @property UIInterfaceOrientation preferredOrientation;
 
 /*!
- * The UIWindow of the host app.
- */
-@property (weak, nonatomic, nullable) UIWindow *appWindow DEPRECATED_MSG_ATTRIBUTE("appWindow is not used anymore.");
-
-/*!
  * The variable that shows if the device is being rotated.
  */
 @property BOOL isInRotation;

@@ -1,3 +1,9 @@
+## 3.25.0
+
+##### Breaking
+- Removes the `arm64e` architecture when building with Cocoapods.
+- Removes the deprecated property `appWindow` from `ABKInAppMessageWindowController`.
+
 ## 3.24.2
 
 ##### Fixed
@@ -15,14 +21,16 @@
 
 **Important** This release is not compatible with Cocoapods. Do not upgrade to this version and upgrade to 3.24.1 and above instead.
 
-##### Fixed
-- Fixes an issue where the unread indicator on a Content Card would persist even after being read.
-
 ##### Breaking
 - Renames `ABKInAppMessageWindow`'s `catchClicksOutsideInAppMessage` to `handleAllTouchEvents`.
 
 ##### Fixed
+- Fixes an issue where the unread indicator on a Content Card would persist even after being read.
 - Fixes an issue preventing long texts from displaying correctly in Full in-app messages.
+- Fixes an issue where appboyBridge would not work in an Ajax callback within HTML In-App Messages.
+
+##### Changed
+- Changes the manual integration steps for versions 3.24.0 and newer. Please follow the updated integration steps [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/manual_integration_options/).
 
 ##### Added
 - Adds support for JavaScript functions `window.alert()`, `window.confirm()` and `window.prompt()` in HTML in-app messages.
@@ -277,7 +285,7 @@ with
 
 ##### Breaking
 - Drops support for iOS 8.
-- Adds support for the arm64e architecture when building with Cocoapods. Requires Xcode 10.1.
+- Adds support for the `arm64e` architecture when building with Cocoapods. Requires Xcode 10.1.
 
 ##### Fixed
 - Fixes bitcode support for the Push Story framework when using Xcode 10.
