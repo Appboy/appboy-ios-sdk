@@ -91,6 +91,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:af086e1baddaecbf78be9f2f9e6ebf7e0"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_modal_view_controller.html#af086e1baddaecbf78be9f2f9e6ebf7e0">enableDismissOnOutsideTap</a></td></tr>
+<tr class="separator:af086e1baddaecbf78be9f2f9e6ebf7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d5d5141540e9575d4d6c6683e38fa17"><td class="memItemLeft" align="right" valign="top">IBOutlet NSLayoutConstraint *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_modal_view_controller.html#a5d5d5141540e9575d4d6c6683e38fa17">iconImageHeightConstraint</a></td></tr>
 <tr class="separator:a5d5d5141540e9575d4d6c6683e38fa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1babf486add13392f0538147f5fb18a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1babf486add13392f0538147f5fb18a1"></a>
@@ -126,8 +128,6 @@ IBOutlet UIView *&#160;</td><td class="memItemRight" valign="bottom"><b>graphicI
 <tr class="separator:a233aa44331f0395ec48f0817118020aa inherit properties_interface_a_b_k_in_app_message_view_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac50c0e23e55dd69995400c91f7c1252c inherit properties_interface_a_b_k_in_app_message_view_controller"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_view_controller.html#ac50c0e23e55dd69995400c91f7c1252c">isiPad</a></td></tr>
 <tr class="separator:ac50c0e23e55dd69995400c91f7c1252c inherit properties_interface_a_b_k_in_app_message_view_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa15572ba40c286beb6315b23be030652 inherit properties_interface_a_b_k_in_app_message_view_controller"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message_view_controller.html#aa15572ba40c286beb6315b23be030652">overrideApplicationStatusBarHiddenState</a></td></tr>
-<tr class="separator:aa15572ba40c286beb6315b23be030652 inherit properties_interface_a_b_k_in_app_message_view_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -144,6 +144,28 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa9793351d77d2086f4a38535d6d44012 inherit pub_methods_interface_a_b_k_in_app_message_immersive_view_controller"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="af086e1baddaecbf78be9f2f9e6ebf7e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) enableDismissOnOutsideTap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This boolean determines if the modal in-app message will be dismissed when the user taps outside of the in-app message.</p>
+<p>The default of this value is NO but can be overriden by setting the value of ABKEnableDismissModalOnOutsideTapKey in appboyOptions or in the <a class="el" href="interface_appboy.html">Appboy</a> dictionary in your Info.plist file. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5d5d5141540e9575d4d6c6683e38fa17"></a>
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +190,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 6 2020 14:47:01 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 20 2020 15:44:45 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

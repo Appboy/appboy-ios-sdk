@@ -132,6 +132,8 @@ Properties</h2></td></tr>
 <tr class="separator:ae89df6090bed623099ab0ecc0a74ad5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad88713841c132ec0ba74a1f6ffebba32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_b_k_in_app_message_dark_theme.html">ABKInAppMessageDarkTheme</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#ad88713841c132ec0ba74a1f6ffebba32">darkTheme</a></td></tr>
 <tr class="separator:ad88713841c132ec0ba74a1f6ffebba32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e8d5086509e740fbc5e12292d059ec"><td class="memItemLeft" align="right" valign="top">NSInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#a20e8d5086509e740fbc5e12292d059ec">overrideUserInterfaceStyle</a></td></tr>
+<tr class="separator:a20e8d5086509e740fbc5e12292d059ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d9d9d8615a6dcad9d684e4d6a37022"><td class="memItemLeft" align="right" valign="top">NSURL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#ad4d9d9d8615a6dcad9d684e4d6a37022">imageURI</a></td></tr>
 <tr class="separator:ad4d9d9d8615a6dcad9d684e4d6a37022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f44917d3a7d6a8671c40d873965cb4"><td class="memItemLeft" align="right" valign="top">UIViewContentMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_b_k_in_app_message.html#a27f44917d3a7d6a8671c40d873965cb4">imageContentMode</a></td></tr>
@@ -576,6 +578,28 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
 
 </div>
 </div>
+<a class="anchor" id="a20e8d5086509e740fbc5e12292d059ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSInteger) overrideUserInterfaceStyle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An optional UIUserInterfaceStyle that can be used to force dark or light mode.</p>
+<p>The default value will not override OS settings but can be overriden in <code>beforeInAppMessageDisplayed:</code> to ensure that the dark or light theme is used for any given in-app message. This property is of type NSInteger to avoid any iOS version dependencies. </p>
+
+</div>
+</div>
 <a class="anchor" id="a80d3c36a06f635dd176466c6a1d21fe8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -622,7 +646,7 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>animateOut</b></td></
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 6 2020 14:47:01 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 20 2020 15:44:45 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

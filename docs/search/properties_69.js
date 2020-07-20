@@ -27,5 +27,6 @@ var searchData=
   ['inappmessagewindowcontroller',['inAppMessageWindowController',['../interface_a_b_k_in_app_message_u_i_controller.html#a85805a1397179dd2045f71f290dfff34',1,'ABKInAppMessageUIController']]],
   ['iscontrol',['isControl',['../interface_a_b_k_in_app_message.html#a2b718dcc018145b379e58cf7ffff13c3',1,'ABKInAppMessage']]],
   ['isinrotation',['isInRotation',['../interface_a_b_k_in_app_message_window_controller.html#aa40edd16d712fb2825f6e93708f8ce6c',1,'ABKInAppMessageWindowController']]],
-  ['isipad',['isiPad',['../interface_a_b_k_in_app_message_view_controller.html#ac50c0e23e55dd69995400c91f7c1252c',1,'ABKInAppMessageViewController']]]
+  ['isipad',['isiPad',['../interface_a_b_k_in_app_message_view_controller.html#ac50c0e23e55dd69995400c91f7c1252c',1,'ABKInAppMessageViewController']]],
+  ['istest',['isTest',['../interface_a_b_k_content_card.html#a9ba446535b2afa29944d9c641de1a4d1',1,'ABKContentCard']]]
 ];

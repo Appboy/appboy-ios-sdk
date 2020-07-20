@@ -107,30 +107,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_card.html#a5fcb3666c976715fc8a62547a7f566f5">   54</a></span>&#160;<span class="keyword">@property</span> (strong, nullable) NSDictionary *<a class="code" href="interface_a_b_k_content_card.html#a5fcb3666c976715fc8a62547a7f566f5">extras</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_card.html#ad5c7d758bc9b579e14bb571a6abab91a">   59</a></span>&#160;<span class="keyword">@property</span> (copy, nullable) NSString *<a class="code" href="interface_a_b_k_content_card.html#ad5c7d758bc9b579e14bb571a6abab91a">urlString</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_card.html#a9ba446535b2afa29944d9c641de1a4d1">   59</a></span>&#160;<span class="keyword">@property</span> (nonatomic, readonly) BOOL <a class="code" href="interface_a_b_k_content_card.html#a9ba446535b2afa29944d9c641de1a4d1">isTest</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_card.html#a0866c08227901bf4eb85a4b43b5386bf">   68</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_a_b_k_content_card.html#a0866c08227901bf4eb85a4b43b5386bf">openUrlInWebView</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;+ (nullable <a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)deserializeCardFromDictionary:(nullable NSDictionary *)cardDictionary;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;- (nullable NSData *)<a class="code" href="interface_a_b_k_content_card.html#ae6f199fb4f7f0673d3a7e1da59e55e66">serializeToData</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_card.html#ad5c7d758bc9b579e14bb571a6abab91a">   64</a></span>&#160;<span class="keyword">@property</span> (copy, nullable) NSString *<a class="code" href="interface_a_b_k_content_card.html#ad5c7d758bc9b579e14bb571a6abab91a">urlString</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="interface_a_b_k_content_card.html#a0866c08227901bf4eb85a4b43b5386bf">   73</a></span>&#160;<span class="keyword">@property</span> BOOL <a class="code" href="interface_a_b_k_content_card.html#a0866c08227901bf4eb85a4b43b5386bf">openUrlInWebView</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;+ (nullable <a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)deserializeCardFromDictionary:(nullable NSDictionary *)cardDictionary;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_card.html#aa68cd71bf14024c21f404f3f16bdb2c3">logContentCardImpression</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_card.html#aaecf1a0f9a08a09793cca12ecd5a3d19">logContentCardClicked</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_card.html#a6a65b26625defe0f62f19c9de9a67e8e">logContentCardDismissed</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;- (BOOL)isControlCard;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;- (BOOL)hasSameId:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;- (nullable NSData *)<a class="code" href="interface_a_b_k_content_card.html#ae6f199fb4f7f0673d3a7e1da59e55e66">serializeToData</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_card.html#aa68cd71bf14024c21f404f3f16bdb2c3">logContentCardImpression</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_card.html#aaecf1a0f9a08a09793cca12ecd5a3d19">logContentCardClicked</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;- (void)<a class="code" href="interface_a_b_k_content_card.html#a6a65b26625defe0f62f19c9de9a67e8e">logContentCardDismissed</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;- (BOOL)isControlCard;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;- (BOOL)hasSameId:(<a class="code" href="interface_a_b_k_content_card.html">ABKContentCard</a> *)card;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 6 2020 14:47:01 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 20 2020 15:44:45 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

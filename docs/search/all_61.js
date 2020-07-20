@@ -88,6 +88,8 @@ var searchData=
   ['api_5favailable',['API_AVAILABLE',['../interface_a_b_k_u_i_utils.html#a110828108f29badcdec146a17ec364ef',1,'ABKUIUtils']]],
   ['appboy',['Appboy',['../interface_appboy.html',1,'']]],
   ['appboyurldelegate',['appboyUrlDelegate',['../interface_appboy.html#aba673cda72bad3e386dad6a24236d104',1,'Appboy']]],
+  ['applicationstatusbarhidden',['applicationStatusBarHidden',['../interface_a_b_k_u_i_utils.html#a9d5081af4f763e91a0ae991abac49fef',1,'ABKUIUtils']]],
+  ['applicationstatusbarstyle',['applicationStatusBarStyle',['../interface_a_b_k_u_i_utils.html#af7eb5ebdc99c4655b83f8c0576b52682',1,'ABKUIUtils']]],
   ['applyappboyattributedtextstylefrom_3aforlabel_3a',['applyAppboyAttributedTextStyleFrom:forLabel:',['../interface_a_b_k_base_content_card_cell.html#a8fb6973fc1092f8a545d20e5b1ba9277',1,'ABKBaseContentCardCell']]],
   ['applycard_3a',['applyCard:',['../interface_a_b_k_base_content_card_cell.html#ad6881c041ae1264feca165af747d6d30',1,'ABKBaseContentCardCell::applyCard:()'],['../interface_a_b_k_n_f_banner_card_cell.html#a18fce29f3f03be5e46702e06d868a080',1,'ABKNFBannerCardCell::applyCard:()'],['../interface_a_b_k_n_f_base_card_cell.html#ae712f6e66c747fc0ef5373e4a57addb2',1,'ABKNFBaseCardCell::applyCard:()']]],
   ['arrowimage',['arrowImage',['../interface_a_b_k_in_app_message_slideup_view_controller.html#ab377c1535b27f98affe30193052c0b85',1,'ABKInAppMessageSlideupViewController']]],
