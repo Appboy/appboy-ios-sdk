@@ -3,6 +3,8 @@
 #import "ABKInAppMessageViewController.h"
 #import "ABKInAppMessageImmersive.h"
 #import "ABKSDWebImageProxy.h"
+#import "Appboy.h"
+#import "ABKInAppMessageController.h"
 
 static const CGFloat ModalViewCornerRadius = 8.0f;
 static const CGFloat MaxModalViewWidth = 450.0f;
@@ -13,6 +15,7 @@ static const CGFloat MaxModalViewHeight = 720.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  self.enableDismissOnOutsideTap = [Appboy sharedInstance].inAppMessageController.enableDismissModalOnOutsideTap;
   
   if (((ABKInAppMessageImmersive *)self.inAppMessage).imageStyle == ABKInAppMessageTopImage) {
     [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=15)-[view]-(>=15)-|"

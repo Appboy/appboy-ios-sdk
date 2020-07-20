@@ -4,10 +4,12 @@
 #import "ABKLocationManager.h"
 #import "AppDelegate.h"
 #import "AlertControllerUtils.h"
+#import "CustomThemesDataSource.h"
 
 @interface MiscViewController ()
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
+@property (nonatomic, strong) CustomThemesDataSource *customThemesDataSource;
 
 - (void)updateScrollViewContentSize;
 - (void)setViewBottomSpace:(CGFloat)bottomSpace;
@@ -18,6 +20,10 @@
 
 - (void)viewDidLoad{
   [super viewDidLoad];
+  self.customThemesDataSource = [[CustomThemesDataSource alloc] init];
+  self.customThemePicker.dataSource = self.customThemesDataSource;
+  self.customThemePicker.delegate = self.customThemesDataSource;
+  [self.customThemePicker selectRow:[self.customThemesDataSource currentTheme] inComponent:0 animated:NO];
   
   self.versionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.appboy-version.message", nil), APPBOY_SDK_VERSION];
   [self displayAppboyRequestPolicy];

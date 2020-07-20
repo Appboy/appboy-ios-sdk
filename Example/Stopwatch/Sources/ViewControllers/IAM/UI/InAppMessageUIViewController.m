@@ -32,6 +32,12 @@ static const int CustomInAppMessageDuration = 5;
 
 @implementation InAppMessageUIViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+  // Replace with UIStatusBarStyleLightContent to verify that IAM respects the
+  // status bar style when displayed
+  return UIStatusBarStyleDefault;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -57,12 +63,18 @@ static const int CustomInAppMessageDuration = 5;
   [notificationCenter addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [ColorUtils applyThemeToViewController:self];
+}
+
 #pragma mark - Child VC
 
 - (void)loadHTMLComposer {
   self.htmlComposerVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InAppMessageHTMLComposerViewController"];
   self.htmlComposerVC.view.translatesAutoresizingMaskIntoConstraints = NO;
   [self addChildViewController:self.htmlComposerVC];
+  [ColorUtils applyThemeToViewController:self.htmlComposerVC];
 
   [self.HTMLComposerView addSubview:self.htmlComposerVC.view];
   [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[v]-0-|" options:0 metrics:nil views:@{ @"v": self.htmlComposerVC.view }]];

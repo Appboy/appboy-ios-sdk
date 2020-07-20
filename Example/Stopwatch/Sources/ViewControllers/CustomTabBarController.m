@@ -5,9 +5,14 @@
 
 @implementation CustomTabBarController
 
+- (UIViewController *)childViewControllerForStatusBarStyle {
+  return ((UINavigationController *)self.selectedViewController).topViewController;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+  [ColorUtils applyThemeToViewController:self];
+  
   // Add tab bar items to UITabBarController
   NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects:
                                      [self addNavigationControllerWithChildren:@[@"Events", @"Attributes", @"Arrays", @"Alias"] andTitle:@"User" andImageName:@"user" withFlushButton:YES], // User tab

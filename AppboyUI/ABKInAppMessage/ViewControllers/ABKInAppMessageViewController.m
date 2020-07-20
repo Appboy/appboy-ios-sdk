@@ -50,8 +50,12 @@ static NSString *const FontAwesomeName = @"FontAwesome";
                                   nil);
 }
 
-- (BOOL)overrideApplicationStatusBarHiddenState {
-  return NO;
+- (BOOL)prefersStatusBarHidden {
+  return ABKUIUtils.applicationStatusBarHidden;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+  return ABKUIUtils.applicationStatusBarStyle;
 }
 
 #pragma mark - UIViewController Methods

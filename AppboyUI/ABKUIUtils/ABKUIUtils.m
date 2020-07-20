@@ -51,6 +51,22 @@ static NSUInteger const iPhoneXRScaledHeight = 1624.0;
   return ABKUIUtils.activeApplicationWindow.rootViewController;
 }
 
++ (BOOL)applicationStatusBarHidden {
+  UIViewController *viewController = self.activeApplicationViewController;
+  while (viewController.childViewControllerForStatusBarHidden) {
+    viewController = viewController.childViewControllerForStatusBarHidden;
+  }
+  return viewController.prefersStatusBarHidden;
+}
+
++ (UIStatusBarStyle)applicationStatusBarStyle {
+  UIViewController *viewController = self.activeApplicationViewController;
+  while (viewController.childViewControllerForStatusBarStyle) {
+    viewController = viewController.childViewControllerForStatusBarStyle;
+  }
+  return viewController.preferredStatusBarStyle;
+}
+
 /*!
  * Selects the window most likely to be the application window among an array of windows.
  *

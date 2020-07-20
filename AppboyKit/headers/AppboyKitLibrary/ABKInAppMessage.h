@@ -160,6 +160,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) ABKInAppMessageDarkTheme *darkTheme;
 
 /*!
+ * An optional UIUserInterfaceStyle that can be used to force dark or light mode.
+ *
+ * @discussion The default value will not override OS settings but can
+ *             be overriden in `beforeInAppMessageDisplayed:`
+ *             to ensure that the dark or light theme is used for any given in-app message.
+ *             This property is of type NSInteger to avoid any iOS version dependencies.
+ */
+@property (nonatomic) NSInteger overrideUserInterfaceStyle;
+
+/*!
  * imageURI defines the URI of the image icon on in-app message.
  * When there is a iconImage defined, the iconImage will be used and the value of property icon will 
  * be ignored.

@@ -9,6 +9,7 @@
 #import "ABKInAppMessageHTMLBaseViewController.h"
 #import "ABKInAppMessageImmersiveViewController.h"
 #import "ABKInAppMessageSlideupViewController.h"
+#import "ABKInAppMessageModalViewController.h"
 #import "ABKInAppMessageViewController.h"
 #import "ABKURLDelegate.h"
 #import "ABKUIURLUtils.h"
@@ -59,25 +60,28 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     // We want to detect the pan gesture first, so we only recognize a tap when the pan recognizer fails.
     [inAppSlideupTapGesture requireGestureRecognizerToFail:inAppSlideupPanGesture];
   } else if ([self.inAppMessage isKindOfClass:[ABKInAppMessageImmersive class]]) {
-    if (![ABKUIUtils objectIsValidAndNotEmpty:((ABKInAppMessageImmersive *)self.inAppMessage).buttons]) {
-      UITapGestureRecognizer *inAppImmersiveInsideTapGesture = [[UITapGestureRecognizer alloc]
-                                                                initWithTarget:self
-                                                                        action:@selector(inAppMessageTapped:)];
-      [self.inAppMessageViewController.view addGestureRecognizer:inAppImmersiveInsideTapGesture];
-    }
+    UITapGestureRecognizer *inAppImmersiveInsideTapGesture = [[UITapGestureRecognizer alloc]
+                                                              initWithTarget:self
+                                                                      action:@selector(inAppMessageTapped:)];
+    [self.inAppMessageViewController.view addGestureRecognizer:inAppImmersiveInsideTapGesture];
 
     if ([self.inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
       self.inAppMessageWindow.handleAllTouchEvents = YES;
+      UITapGestureRecognizer *inAppModalOutsideTapGesture = [[UITapGestureRecognizer alloc]
+                                                              initWithTarget:self
+                                                                      action:@selector(inAppMessageTappedOutside:)];
+      [self.view addGestureRecognizer:inAppModalOutsideTapGesture];
     }
   }
   [self.view addSubview:self.inAppMessageViewController.view];
 }
 
-- (BOOL)prefersStatusBarHidden {
-  if (self.inAppMessageViewController.overrideApplicationStatusBarHiddenState) {
-    return self.inAppMessageViewController.prefersStatusBarHidden;
-  }
-  return [UIApplication sharedApplication].statusBarHidden;
+- (UIViewController *)childViewControllerForStatusBarHidden {
+  return self.inAppMessageViewController;
+}
+
+- (UIViewController *)childViewControllerForStatusBarStyle {
+  return self.inAppMessageViewController;
 }
 
 #pragma mark - Rotation
@@ -187,6 +191,10 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
 }
 
 - (void)inAppMessageTapped:(id)sender {
+  if ([self.inAppMessage isKindOfClass:[ABKInAppMessageImmersive class]] &&
+      [ABKUIUtils objectIsValidAndNotEmpty:((ABKInAppMessageImmersive *)self.inAppMessage).buttons]) {
+    return;
+  }
   [self invalidateSlideAwayTimer];
   self.inAppMessageIsTapped = YES;
   
@@ -194,6 +202,15 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     [self inAppMessageClickedWithActionType:self.inAppMessage.inAppMessageClickActionType
                                         URL:self.inAppMessage.uri
                            openURLInWebView:self.inAppMessage.openUrlInWebView];
+  }
+}
+
+- (void)inAppMessageTappedOutside:(id)sender {
+  if (![self.inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
+    return;
+  }
+  if (((ABKInAppMessageModalViewController *)self.inAppMessageViewController).enableDismissOnOutsideTap) {
+    [(ABKInAppMessageModalViewController *)self.inAppMessageViewController dismissInAppMessage:self.inAppMessage];
   }
 }
 

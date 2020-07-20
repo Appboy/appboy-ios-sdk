@@ -7,8 +7,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ABKContentCard : NSObject <NSCopying, NSCoding>
 
 /*!
-* Card's ID.
-*/
+ * Card's ID.
+ */
 @property (readonly) NSString *idString;
 
 /*!
@@ -52,6 +52,11 @@ NS_ASSUME_NONNULL_BEGIN
  * You may want to design and implement a custom handler to access this data depending on your use case.
  */
 @property (strong, nullable) NSDictionary *extras;
+
+/*!
+ * This property is set to YES if the instance represents a test content card 
+ */
+@property (nonatomic, readonly) BOOL isTest;
 
 /*!
  * The URL string that will be opened after the card is clicked on.

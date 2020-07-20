@@ -1,5 +1,6 @@
 #import "ContainerViewController.h"
 #import "AlertControllerUtils.h"
+#import "ColorUtils.h"
 
 @implementation ContainerViewController
 
@@ -22,7 +23,12 @@
   [self.segmentedControl setSelectedSegmentIndex:0];
 }
 
+- (UIViewController *)childViewControllerForStatusBarStyle {
+  return self.currentViewController;
+}
+
 - (void)viewDidLoad {
+  [ColorUtils applyThemeToViewController:self];
   [self.navigationItem setTitleView:self.segmentedControl];
   [self displayViewForSegmentAtIndex:[self.segmentedControl selectedSegmentIndex]];
   
@@ -72,6 +78,8 @@
     [newViewController didMoveToParentViewController:self];
     self.currentViewController = newViewController;
   }
+  
+  [self.currentViewController setNeedsStatusBarAppearanceUpdate];
 }
 
 - (IBAction)changeViewController:(id)sender {

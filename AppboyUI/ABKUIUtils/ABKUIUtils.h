@@ -18,6 +18,16 @@
  */
 @property (class, nonatomic, readonly) UIViewController *activeApplicationViewController;
 
+/*!
+ * The current application status bar hidden state
+ */
+@property (class, readonly) BOOL applicationStatusBarHidden;
+
+/*!
+ * The current application status bar style
+ */
+@property (class, readonly) UIStatusBarStyle applicationStatusBarStyle;
+
 + (NSString *)getLocalizedString:(NSString *)key inAppboyBundle:(NSBundle *)appboyBundle table:(NSString *)table;
 + (BOOL)objectIsValidAndNotEmpty:(id)object;
 + (Class)getSDWebImageProxyClass;

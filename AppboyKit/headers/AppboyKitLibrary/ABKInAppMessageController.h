@@ -25,6 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) id<ABKInAppMessageUIControlling> inAppMessageUIController;
 
 /*!
+ * This boolean determines if modal in-app messages will be dismissed when the user taps outside of the
+ * in-app message.
+ *
+ * @discussion The default of this value is NO but can be overriden by setting the value of ABKEnableDismissModalOnOutsideTapKey in
+ *             appboyOptions or in the Appboy dictionary in your Info.plist file.
+ */
+@property BOOL enableDismissModalOnOutsideTap;
+
+/*!
  * @param delegate The in-app message delegate that implements the ABKInAppMessageControllerDelegate methods. If the delegate is
  * nil, it acts as one which always returns ABKDisplayInAppMessageNow and doesn't implement all other delegate methods.
  *

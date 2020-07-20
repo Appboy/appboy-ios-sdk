@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.25.0"
+#define APPBOY_SDK_VERSION @"3.26.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -92,6 +92,14 @@ extern NSString *const ABKURLDelegateKey;
  * This key can be set to an instance of a class that conforms to the ABKInAppMessageControllerDelegate protocol, allowing it to handle in-app messages in a custom way.
  */
 extern NSString *const ABKInAppMessageControllerDelegateKey;
+
+/*!
+ * This key can be set YES or NO and will configure whether a modal in-app message will be dismissed when the user clicks
+ * outside of the in-app message.
+ * If set to YES, the in-app message will be dismissed.
+ * If set to NO, the in-app message will not be dismissed. This is the default value.
+ */
+extern NSString *const ABKEnableDismissModalOnOutsideTapKey;
 
 /*!
  * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than

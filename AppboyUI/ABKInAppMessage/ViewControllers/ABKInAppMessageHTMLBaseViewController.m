@@ -131,10 +131,6 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
   return YES;
 }
 
-- (BOOL)overrideApplicationStatusBarHiddenState {
-  return YES;
-}
-
 #pragma mark - NSNotificationCenter selectors
 
 - (void)keyboardWillHide {

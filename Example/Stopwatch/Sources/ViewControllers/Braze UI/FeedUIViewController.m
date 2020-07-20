@@ -6,6 +6,7 @@
 #import "AlertControllerUtils.h"
 #import "ABKContentCardsViewController.h"
 #import "AppDelegate.h"
+#import "ColorUtils.h"
 
 @interface FeedUIViewController ()
 
@@ -149,6 +150,7 @@
   contentCardsVC.contentCardsViewController.maxContentCardWidth = 1024.0;
   AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
   contentCardsVC.contentCardsViewController.enableDarkTheme = appDelegate.stopwatchEnableDarkTheme;
+  [ColorUtils applyThemeToViewController:contentCardsVC];
   [self.navigationController presentViewController:contentCardsVC animated:YES completion:nil];
 }
 
@@ -158,6 +160,7 @@
   contentCards.navigationItem.title = @"Stopwatch Navigation Cards";
   AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
   contentCards.enableDarkTheme = appDelegate.stopwatchEnableDarkTheme;
+  [ColorUtils applyThemeToViewController:contentCards];
   [self.navigationController pushViewController:contentCards animated:YES];
 }
 

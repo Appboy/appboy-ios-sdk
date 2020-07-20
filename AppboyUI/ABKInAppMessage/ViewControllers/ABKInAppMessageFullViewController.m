@@ -114,10 +114,6 @@ static const CGFloat CloseXPadding = 15.0f;
 
 #pragma mark - Superclass methods
 
-- (BOOL)overrideApplicationStatusBarHiddenState {
-  return YES;
-}
-
 - (BOOL)prefersStatusBarHidden {
   return YES;
 }

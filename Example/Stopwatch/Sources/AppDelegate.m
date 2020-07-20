@@ -6,6 +6,7 @@
 #import "IDFADelegate.h"
 #import "Branch.h"
 #import "AlertControllerUtils.h"
+#import "ColorUtils.h"
 #import <CoreLocation/CoreLocation.h>
 
 #ifdef PUSH_DEV
@@ -273,6 +274,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 */
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
   NSLog(@"beforeInAppMessageDisplayed: delegate called in Stopwatch.");
+  inAppMessage.overrideUserInterfaceStyle = [[[NSUserDefaults standardUserDefaults] valueForKey:StopwatchInAppThemeSettingsKey] integerValue];
   if (inAppMessage.extras != nil && inAppMessage.extras[@"Appstore Review"] != nil) {
     [[UIApplication sharedApplication] openURL:inAppMessage.uri options:@{} completionHandler:nil];
     return ABKDiscardInAppMessage;

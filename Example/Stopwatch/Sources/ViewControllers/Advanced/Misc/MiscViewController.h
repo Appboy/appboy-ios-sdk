@@ -15,6 +15,9 @@
 
 // Stopwatch setting that determines to enable/disable Dark Mode colors
 @property (strong, nonatomic) IBOutlet UISwitch *allowDarkThemeToggle;
+// Stopwatch custom theme example
+@property IBOutlet UILabel *customThemeLabel;
+@property (strong, nonatomic) IBOutlet UIPickerView *customThemePicker;
 
 // Stopwatch setting that determines to display silent push alerts
 @property (weak, nonatomic) IBOutlet UISwitch *showSilentPushAlertsToggle;

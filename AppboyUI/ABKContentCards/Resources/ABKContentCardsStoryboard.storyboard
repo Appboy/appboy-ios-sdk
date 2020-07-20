@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +36,7 @@
                                                                 <constraint firstAttribute="height" constant="20" id="uxr-Kf-wzO"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBF-6R-JPA" userLabel="Title">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBF-6R-JPA" userLabel="Title">
                                                             <rect key="frame" x="25" y="17" width="305" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                             <nil key="textColor"/>
@@ -300,15 +300,15 @@
                                     <outlet property="unviewedLineView" destination="jPu-U8-pTJ" id="CT8-hJ-oq0"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ABKClassicImageCardCell" rowHeight="160" id="gzx-in-eIA" customClass="ABKClassicImageContentCardCell">
-                                <rect key="frame" x="0.0" y="638" width="375" height="160"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ABKClassicImageCardCell" id="gzx-in-eIA" customClass="ABKClassicImageContentCardCell">
+                                <rect key="frame" x="0.0" y="638" width="375" height="128.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gzx-in-eIA" id="KMu-I3-bAv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-jd-ndj" userLabel="Root View">
-                                            <rect key="frame" x="10" y="10" width="355" height="140"/>
+                                            <rect key="frame" x="10" y="10" width="355" height="108.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appboy_cc_icon_pinned.png" translatesAutoresizingMaskIntoConstraints="NO" id="lIm-rR-Mrk">
                                                     <rect key="frame" x="335" y="0.0" width="20" height="20"/>
@@ -338,7 +338,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Link" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBh-6s-twj">
-                                                    <rect key="frame" x="94.5" y="99" width="235.5" height="16"/>
+                                                    <rect key="frame" x="94.5" y="67.5" width="26" height="16"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" link="YES" staticText="YES"/>
                                                         <bool key="isElement" value="YES"/>
@@ -348,7 +348,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reu-jL-oVA">
-                                                    <rect key="frame" x="0.0" y="132" width="355" height="8"/>
+                                                    <rect key="frame" x="0.0" y="100.5" width="355" height="8"/>
                                                     <color key="backgroundColor" red="0.086274509799999996" green="0.46274509800000002" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="8" id="UMI-Xs-qJT"/>
@@ -357,7 +357,7 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstItem="xBh-6s-twj" firstAttribute="trailing" secondItem="UD2-VE-dlU" secondAttribute="trailing" id="0Wh-gw-fTK"/>
+                                                <constraint firstItem="xBh-6s-twj" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="UD2-VE-dlU" secondAttribute="trailing" id="0Wh-gw-fTK"/>
                                                 <constraint firstItem="xBh-6s-twj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2LE-EF-Mwl" secondAttribute="bottom" constant="8" id="2GR-zZ-Ll6"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oEA-BV-ssv" secondAttribute="bottom" priority="999" constant="20" id="5Mr-qO-tMZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="UD2-VE-dlU" secondAttribute="trailing" constant="25" id="5ZT-1d-DSs"/>
@@ -409,7 +409,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ABKControlCardCell" rowHeight="0.0" id="PLR-fM-stV" customClass="ABKBaseContentCardCell">
-                                <rect key="frame" x="0.0" y="798" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="766.5" width="375" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PLR-fM-stV" id="RF0-pj-4Y8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
