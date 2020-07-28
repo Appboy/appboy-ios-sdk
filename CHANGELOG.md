@@ -1,19 +1,35 @@
+## 3.27.0-beta1
+
+- This release can be used to beta test iOS 14.
+
+##### Breaking
+- Requires Xcode 12.
+- Updates the minimum required version of SDWebImage from 5.0 to 5.8.2.
+- Removes the `ABK_ENABLE_IDFA_COLLECTION` preprocessor macro from the SDK.
+  - If you wish to enable IDFA, please use the `ABKIDFADelegate`.
+  - Integration instructions for supporting iOS 14 in your `ABKIDFADelegate` will be included in a future beta release.
+
+##### Updated
+- Adds support for iOS 14's Approximate Location feature.
+  - Note that the Geofence feature will not work if the end user chooses to provide only approximate location.
+  - Optional session-start based location tracking will continue to work. Accuracy will be based on the user's precise vs. approximate choice.
+
 ## 3.26.0
 
 ##### Breaking
 - Removed readonly property `overrideApplicationStatusBarHiddenState` in `ABKInAppMessageViewController.h`.
-
-##### Changed
-- Added Binary Project Specification file for more efficient Carthage integration of the full SDK. 
-  - Update your Cartfile to use `binary "https://raw.githubusercontent.com/Appboy/appboy-ios-sdk/master/appboy_ios_sdk_full.json"`
-  - Support for this integration method was added starting with version 3.24.0 of the SDK.
 
 ##### Fixed
 - Fixes an issue with in-app messages not respecting the application's status bar style when _View controller-based status bar appearance_ (`UIViewControllerBasedStatusBarAppearance`) is set to `YES` in the Info.plist.
 - Fixes an issue which can lead to text being cut off in Content Cards for specific iPhone models.
 - Fixes an issue preventing test Content Cards from displaying under specific conditions.
 
-#### Added
+##### Changed
+- Added Binary Project Specification file for more efficient Carthage integration of the full SDK.
+  - Update your Cartfile to use `binary "https://raw.githubusercontent.com/Appboy/appboy-ios-sdk/master/appboy_ios_sdk_full.json"`
+  - Support for this integration method was added starting with version 3.24.0 of the SDK.
+
+##### Added
 - Adds support for specifying `PushStoryAppGroup` in the `Appboy` dictionary in your app's `Info.plist`. This [Apple App Group](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_application-groups?language=objc) will share the [Braze Push Story](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_story/) information such as Campaign IDs between applications from a single Apple Developer account.
 - Adds `appboyBridge.getUser().addAlias(alias, label)` to the javascript interface for HTML in-app messages.
 - Adds the property `overrideUserInterfaceStyle` to `ABKInAppMessage` that allows forcing Light or Dark mode in the same way as Apple's [`UIViewController.overrideUserInterfaceStyle`](https://developer.apple.com/documentation/uikit/uiviewcontroller/3238087-overrideuserinterfacestyle?language=objc).

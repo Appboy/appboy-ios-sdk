@@ -43,7 +43,6 @@
 #import "ABKContentCardsController.h"
 
 // IDFA
-#import "ABKIdentifierForAdvertisingProvider.h"
 #import "ABKIDFADelegate.h"
 
 // SDWebImage
