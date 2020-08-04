@@ -13,6 +13,7 @@
  * Braze Public API: ABKIdentifierForAdvertisingProvider
  */
 NS_ASSUME_NONNULL_BEGIN
+__attribute__ ((deprecated))
 @interface ABKIdentifierForAdvertisingProvider : NSObject
 
 + (nullable NSString *)getIdentifierForAdvertiser;

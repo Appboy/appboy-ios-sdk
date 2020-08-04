@@ -1,3 +1,12 @@
+## 3.26.1
+
+#### Changed
+- Deprecates the compilation macro `ABK_ENABLE_IDFA_COLLECTION` in favor of the `ABKIDFADelegate` implementation.
+  - `ABK_ENABLE_IDFA_COLLECTION` will not function properly in iOS 14. To continue collecting IDFA on iOS 14 devices, please upgrade to Xcode 12 and implement `App Tracking Transparency` and Braze's `ABKIDFADelegate` (see the [iOS 14 upgrade guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/#idfa-and-app-tracking-transparency) for more information).
+
+#### Added
+- Adds improved support for iOS 14 Approximate Location tracking.
+
 ## 3.26.0
 
 ##### Breaking

@@ -9,7 +9,6 @@
  * ABKIdentifierForAdvertisingProvider.m and ABKIdentifierForAdvertisingProvider.h must be added to your project
  * regardless of whether or not you enable collection. This occurs automatically if you integrate/update via the CocoaPod.
  */
-
 @implementation ABKIdentifierForAdvertisingProvider
 
 /*!
@@ -27,6 +26,8 @@
  */
 + (NSString *)getIdentifierForAdvertiser {
 #ifdef ABK_ENABLE_IDFA_COLLECTION
+#warning ABK_ENABLE_IDFA_COLLECTION compilation macro will be removed with Braze's iOS 14 release.
+#warning ABK_ENABLE_IDFA_COLLECTION compilation macro will not function properly in iOS 14.
   ASIdentifierManager *sharedManager = [self getASIdentifierManager];
   if (sharedManager) {
     if ([sharedManager isAdvertisingTrackingEnabled]) {
