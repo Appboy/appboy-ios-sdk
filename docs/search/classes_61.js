@@ -24,7 +24,6 @@ var searchData=
   ['abkfacebookuser',['ABKFacebookUser',['../interface_a_b_k_facebook_user.html',1,'']]],
   ['abkfeedcontroller',['ABKFeedController',['../interface_a_b_k_feed_controller.html',1,'']]],
   ['abkfeedwebviewcontroller',['ABKFeedWebViewController',['../interface_a_b_k_feed_web_view_controller.html',1,'']]],
-  ['abkidentifierforadvertisingprovider',['ABKIdentifierForAdvertisingProvider',['../interface_a_b_k_identifier_for_advertising_provider.html',1,'']]],
   ['abkidfadelegate_2dp',['ABKIDFADelegate-p',['../protocol_a_b_k_i_d_f_a_delegate-p.html',1,'']]],
   ['abkinappmessage',['ABKInAppMessage',['../interface_a_b_k_in_app_message.html',1,'']]],
   ['abkinappmessagebutton',['ABKInAppMessageButton',['../interface_a_b_k_in_app_message_button.html',1,'']]],
