@@ -1,0 +1,1 @@
+brew ls --versions hub
