@@ -19,9 +19,9 @@ THIN_FRAMEWORK_FULL_PATH=""
 CORE_FRAMEWORK_FULL_PATH=""
 
 function step_header {
-  echo $'\n======================================================='
+  echo $'\n============================================================'
   echo "$1"
-  echo $'=======================================================\n'
+  echo $'============================================================\n'
 }
 
 function get_derived_data_folder {
@@ -204,5 +204,20 @@ echo $'*******************************************************************\n'
 step_header "Generating Core Framework using ObjCSample."
 # create_frameworks_for_project "ObjCSample"
 
-# Attach assets to tagged release
-bundle exec test_attach_files_to_release.rb $FAT_FRAMEWORK_FULL_PATH $THIN_FRAMEWORK_FULL_PATH $CORE_FRAMEWORK_FULL_PATH
+    FAT_FRAMEWORK_FULL_PATH=$TMP_DIR"Appboy_iOS_SDK.framework.zip"
+    THIN_FRAMEWORK_FULL_PATH="$TMP_DIR""$THIN_FRAMEWORK_FILE_NAME"
+
+    CORE_FRAMEWORK_FULL_PATH=$TMP_DIR$CORE_FRAMEWORK_FILE_NAME
+
+step_header "Attaching assets to the release"
+
+# Extract the latest release from the Changelog
+releaseTag=$(bundle exec ruby test_attach_files_to_release.rb | tail -1)
+
+hub release edit -a $FAT_FRAMEWORK_FULL_PATH -a $THIN_FRAMEWORK_FULL_PATH -a $CORE_FRAMEWORK_FULL_PATH $rubyOutput
+
+if [ $? -eq 0 ]; then
+  step_header "Finished attaching assets for Carthage to the release ✅"
+else
+  step_header "🚨🚨🚨 Error when attaching assets to the release 🚨🚨🚨"
+fi
