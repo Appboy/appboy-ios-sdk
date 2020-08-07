@@ -14,6 +14,10 @@ SIMULATORS_ARCHIVE_DIR="Build/Products/Debug-iphonesimulator/"
 THIN_FRAMEWORK_FILE_NAME="Appboy_iOS_SDK_thin.framework.zip"
 CORE_FRAMEWORK_FILE_NAME="Appboy_iOS_SDK_core.framework.zip"
 
+FAT_FRAMEWORK_FULL_PATH=""
+THIN_FRAMEWORK_FULL_PATH=""
+CORE_FRAMEWORK_FULL_PATH=""
+
 function step_header {
   echo $'\n======================================================='
   echo "$1"
@@ -118,15 +122,19 @@ Type \"continue\" to proceed with the build."
 
 function zip_frameworks {
   if [[ "${PROJECT_NAME}" == 'HelloSwift' ]]; then
-    zip -r -X $TMP_DIR"Appboy_iOS_SDK.framework.zip" iOS
-    zip -r -X $TMP_DIR$THIN_FRAMEWORK_FILE_NAME iOS/Appboy_iOS_SDK.framework
+    FAT_FRAMEWORK_FULL_PATH=$TMP_DIR"Appboy_iOS_SDK.framework.zip"
+    THIN_FRAMEWORK_FILE_NAME=$TMP_DIR$THIN_FRAMEWORK_FILE_NAME
+
+    zip -r -X $FAT_FRAMEWORK_FULL_PATH iOS
+    zip -r -X $THIN_FRAMEWORK_FULL_PATH iOS/Appboy_iOS_SDK.framework
 
     echo "
 Fat framework: "$TMP_DIR"Appboy_iOS_SDK.framework.zip
-Thin framework: "$TMP_DIR$THIN_FRAMEWORK_FILE_NAME
+Thin framework: "$THIN_FRAMEWORK_FILE_NAME
 
   else
-    zip -r -X $TMP_DIR$CORE_FRAMEWORK_FILE_NAME iOS/Appboy_iOS_SDK.framework
+    CORE_FRAMEWORK_FULL_PATH=$TMP_DIR$CORE_FRAMEWORK_FILE_NAME
+    zip -r -X CORE_FRAMEWORK_FULL_PATH iOS/Appboy_iOS_SDK.framework
   fi
 }
 
@@ -189,9 +197,12 @@ function create_frameworks_for_project {
 }
 
 step_header "Generating Fat & Thin Frameworks using HelloSwift."
-create_frameworks_for_project "HelloSwift"
+# create_frameworks_for_project "HelloSwift"
 
 echo $'*******************************************************************\n'
 
 step_header "Generating Core Framework using ObjCSample."
-create_frameworks_for_project "ObjCSample"
+# create_frameworks_for_project "ObjCSample"
+
+# Attach assets to tagged release
+bundle exec test_attach_files_to_release.rb $FAT_FRAMEWORK_FULL_PATH $THIN_FRAMEWORK_FULL_PATH $CORE_FRAMEWORK_FULL_PATH
