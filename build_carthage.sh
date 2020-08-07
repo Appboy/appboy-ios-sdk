@@ -206,18 +206,23 @@ step_header "Generating Core Framework using ObjCSample."
 create_frameworks_for_project "ObjCSample"
 
 step_header "Attaching assets to the release"
+cd_root
 
 # Extract the latest release from the Changelog
-releaseTag=$(bundle exec ruby ./test_attach_files_to_release.rb | tail -1)
+releaseTag=$(bundle exec ruby test_attach_files_to_release.rb | tail -1)
 
-echo "fat: $FAT_FRAMEWORK_FULL_PATH \n thin: $THIN_FRAMEWORK_FULL_PATH \n core: $CORE_FRAMEWORK_FULL_PATH"
+# Install 'hub' if it isn't already installed
+isHubInstalled=$(brew ls --versions hub)
+if [ -z "$isHubInstalled" ]; then
+  echo "hub is not installed. Installing now...\n"
+  brew install hub
+fi
 
-echo "using release tag: $releaseTag"
-
+# Finds the release with the tag and attached these files
 hub release edit -a $FAT_FRAMEWORK_FULL_PATH -a $THIN_FRAMEWORK_FULL_PATH -a $CORE_FRAMEWORK_FULL_PATH $releaseTag
 
 if [ $? -eq 0 ]; then
-  step_header "Finished attaching assets for Carthage to the release ✅"
+  step_header "Finished attaching assets to the release tagged '$releaseTag' ✅"
 else
-  step_header "🚨🚨🚨 Error when attaching assets to the release 🚨🚨🚨"
+  step_header "🚨🚨🚨 Error when attaching assets to the release tagged '$releaseTag' 🚨🚨🚨"
 fi
