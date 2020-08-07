@@ -114,27 +114,28 @@ function verify_archs {
 
 Type \"continue\" to proceed with the build."
 
-  read continue
-  if [[ continue != "continue" ]]; then
-    exit 0
-  fi
+  # Removed the explicit check to save time for the example
+  # read continue
+  # if [[ continue != "continue" ]]; then
+  #   exit 0
+  # fi
 }
 
 function zip_frameworks {
   if [[ "${PROJECT_NAME}" == 'HelloSwift' ]]; then
     FAT_FRAMEWORK_FULL_PATH=$TMP_DIR"Appboy_iOS_SDK.framework.zip"
-    THIN_FRAMEWORK_FILE_NAME=$TMP_DIR$THIN_FRAMEWORK_FILE_NAME
+    THIN_FRAMEWORK_FULL_PATH=$TMP_DIR$THIN_FRAMEWORK_FILE_NAME
 
     zip -r -X $FAT_FRAMEWORK_FULL_PATH iOS
     zip -r -X $THIN_FRAMEWORK_FULL_PATH iOS/Appboy_iOS_SDK.framework
 
     echo "
 Fat framework: "$TMP_DIR"Appboy_iOS_SDK.framework.zip
-Thin framework: "$THIN_FRAMEWORK_FILE_NAME
+Thin framework: "$THIN_FRAMEWORK_FULL_PATH
 
   else
     CORE_FRAMEWORK_FULL_PATH=$TMP_DIR$CORE_FRAMEWORK_FILE_NAME
-    zip -r -X CORE_FRAMEWORK_FULL_PATH iOS/Appboy_iOS_SDK.framework
+    zip -r -X $CORE_FRAMEWORK_FULL_PATH iOS/Appboy_iOS_SDK.framework
   fi
 }
 
@@ -197,24 +198,23 @@ function create_frameworks_for_project {
 }
 
 step_header "Generating Fat & Thin Frameworks using HelloSwift."
-# create_frameworks_for_project "HelloSwift"
+create_frameworks_for_project "HelloSwift"
 
 echo $'*******************************************************************\n'
 
 step_header "Generating Core Framework using ObjCSample."
-# create_frameworks_for_project "ObjCSample"
-
-    FAT_FRAMEWORK_FULL_PATH=$TMP_DIR"Appboy_iOS_SDK.framework.zip"
-    THIN_FRAMEWORK_FULL_PATH="$TMP_DIR""$THIN_FRAMEWORK_FILE_NAME"
-
-    CORE_FRAMEWORK_FULL_PATH=$TMP_DIR$CORE_FRAMEWORK_FILE_NAME
+create_frameworks_for_project "ObjCSample"
 
 step_header "Attaching assets to the release"
 
 # Extract the latest release from the Changelog
-releaseTag=$(bundle exec ruby test_attach_files_to_release.rb | tail -1)
+releaseTag=$(bundle exec ruby ./test_attach_files_to_release.rb | tail -1)
 
-hub release edit -a $FAT_FRAMEWORK_FULL_PATH -a $THIN_FRAMEWORK_FULL_PATH -a $CORE_FRAMEWORK_FULL_PATH $rubyOutput
+echo "fat: $FAT_FRAMEWORK_FULL_PATH \n thin: $THIN_FRAMEWORK_FULL_PATH \n core: $CORE_FRAMEWORK_FULL_PATH"
+
+echo "using release tag: $releaseTag"
+
+hub release edit -a $FAT_FRAMEWORK_FULL_PATH -a $THIN_FRAMEWORK_FULL_PATH -a $CORE_FRAMEWORK_FULL_PATH $releaseTag
 
 if [ $? -eq 0 ]; then
   step_header "Finished attaching assets for Carthage to the release ✅"
