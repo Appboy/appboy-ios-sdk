@@ -3,7 +3,4 @@
 
 @interface IDFADelegate : NSObject <ABKIDFADelegate>
 
-- (NSString *)advertisingIdentifierString;
-- (BOOL)isAdvertisingTrackingEnabled;
-
 @end

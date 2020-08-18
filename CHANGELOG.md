@@ -1,3 +1,10 @@
+## 3.27.0-beta2
+
+- This release can be used to beta test iOS 14. See `3.27.0-beta1` notes for additional changes.
+
+##### Breaking
+- Updates `IDFADelegate` protocol by renaming `isAdvertisingTrackingEnabled` to `isAdvertisingTrackingEnabledOrATTAuthorized` to reflect the new requirements of iOS 14. See the `IDFADelegate` implementation [in Stopwatch for an example](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.h).
+
 ## 3.27.0-beta1
 
 - This release can be used to beta test iOS 14.
@@ -13,6 +20,15 @@
 - Adds support for iOS 14's Approximate Location feature.
   - Note that the Geofence feature will not work if the end user chooses to provide only approximate location.
   - Optional session-start based location tracking will continue to work. Accuracy will be based on the user's precise vs. approximate choice.
+
+## 3.26.1
+
+##### Changed
+- Deprecates the compilation macro `ABK_ENABLE_IDFA_COLLECTION` in favor of the `ABKIDFADelegate` implementation.
+  - `ABK_ENABLE_IDFA_COLLECTION` will not function properly in iOS 14. To continue collecting IDFA on iOS 14 devices, please upgrade to Xcode 12 and implement `App Tracking Transparency` and Braze's `ABKIDFADelegate` (see the [iOS 14 upgrade guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/#idfa-and-app-tracking-transparency) for more information).
+
+##### Added
+- Adds improved support for iOS 14 Approximate Location tracking.
 
 ## 3.26.0
 

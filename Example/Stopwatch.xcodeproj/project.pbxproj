@@ -49,6 +49,7 @@
 		ADDAFB8E2107BAA30061C96E /* LocationCustomAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDAFB8D2107BAA30061C96E /* LocationCustomAttributeViewController.m */; };
 		ADDAFB912107C2080061C96E /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDAFB902107C2080061C96E /* LocationAnnotation.m */; };
 		B24B1724248151AB00127211 /* CustomThemesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B24B1723248151AB00127211 /* CustomThemesDataSource.m */; };
+		B253831E24CF2CEF001575CA /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B253831D24CF2CEF001575CA /* AppTrackingTransparency.framework */; };
 		C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
 		C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C16085C51B964BC600E57F30 /* libz.dylib */; };
 		C1C53F001F7D7CA700042AA5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12172071D5A3815003B986E /* UserNotifications.framework */; };
@@ -205,6 +206,7 @@
 		ADDAFB902107C2080061C96E /* LocationAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 		B24B1722248151AB00127211 /* CustomThemesDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomThemesDataSource.h; sourceTree = "<group>"; };
 		B24B1723248151AB00127211 /* CustomThemesDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomThemesDataSource.m; sourceTree = "<group>"; };
+		B253831D24CF2CEF001575CA /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		C03E52C51D46574A0065ABD6 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C0A45ABC1E66155C0028C5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C12172071D5A3815003B986E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -272,6 +274,7 @@
 				E325DF481E2AE5FD00B3E168 /* MapKit.framework in Frameworks */,
 				C12172081D5A3815003B986E /* UserNotifications.framework in Frameworks */,
 				C16085C61B964BC600E57F30 /* libz.dylib in Frameworks */,
+				B253831E24CF2CEF001575CA /* AppTrackingTransparency.framework in Frameworks */,
 				4E3E94F318BD6AED0008C815 /* QuartzCore.framework in Frameworks */,
 				9580719E173D723400129B89 /* SystemConfiguration.framework in Frameworks */,
 				9580719F173D723400129B89 /* AssetsLibrary.framework in Frameworks */,
@@ -622,6 +625,7 @@
 		95EF510C173D5FD600C0D780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B253831D24CF2CEF001575CA /* AppTrackingTransparency.framework */,
 				C17BCBCE1F7DCF2C00F65F39 /* AppboyPushStory.framework */,
 				E325DF471E2AE5FD00B3E168 /* MapKit.framework */,
 				E3688B1A1D6BB2DD0032091D /* UserNotificationsUI.framework */,
