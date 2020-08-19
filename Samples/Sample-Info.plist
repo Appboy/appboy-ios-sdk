@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Appboy</key>
+	<dict>
+		<key>DisableAutomaticGeofenceRequests</key>
+		<false/>
+		<key>DismissModalOnOutsideTap</key>
+		<false/>
+		<key>EnableAutomaticLocationCollection</key>
+		<false/>
+		<key>EnableGeofences</key>
+		<false/>
+		<key>Endpoint</key>
+		<string>&lt;YOUR-SDK-ENDPOINT&gt;</string>
+		<key>LogLevel</key>
+		<string>0</string>
+		<key>PushStoryAppGroup</key>
+		<string>&lt;YOUR-PUSHSTORY-APPGROUP&gt;</string>
+		<key>SessionTimeout</key>
+		<integer>-999</integer>
+	</dict>
+</dict>
+</plist>
