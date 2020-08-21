@@ -1,13 +1,24 @@
 ## 3.27.0-beta2
 
 - This release can be used to beta test iOS 14. See `3.27.0-beta1` notes for additional changes.
+- Push Stories and the tvOS SDK are not yet compatible with Xcode 12. This will be added in a future beta release.
 
 ##### Breaking
 - Updates `IDFADelegate` protocol by renaming `isAdvertisingTrackingEnabled` to `isAdvertisingTrackingEnabledOrATTAuthorized` to reflect the new requirements of iOS 14. See the `IDFADelegate` implementation [in Stopwatch for an example](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.h).
 
+##### Changed
+- Integrators will now be required to exclude the `arm64` simulator slice in their entire project.
+  - This is done automatically when integrating via Cocoapods.
+  - For other cases:
+    - If you are using `xcconfig` files to build your app, please set:
+      - For iOS targets: `EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64`
+      - For tvOS targets: `EXCLUDED_ARCHS[sdk=appletvsimulator*] = arm64`
+    - If you are using the Xcode _Build Settings_ panel, enable _Build Active Architecture Only_ for the configuration you use to run your app on the simulator. (`ONLY_ACTIVE_ARCH = YES`)
+
 ## 3.27.0-beta1
 
 - This release can be used to beta test iOS 14.
+- Push Stories and the tvOS SDK are not yet compatible with Xcode 12. This will be added in a future beta release.
 
 ##### Breaking
 - Requires Xcode 12.
