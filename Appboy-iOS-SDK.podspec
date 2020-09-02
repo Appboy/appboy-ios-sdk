@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "3.27.0-beta2"
+  s.version      = "3.27.0-beta3"
   s.summary      = "This is the Braze iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -12,13 +12,16 @@ Pod::Spec.new do |s|
   s.documentation_url = 'https://www.braze.com/docs'
   s.exclude_files = 'AppboyKit/**/*.txt'
   s.preserve_paths = 'AppboyKit/**/*.*'
+  s.default_subspec = 'UI'
+
   s.pod_target_xcconfig = {
     'OTHER_LDFLAGS' => '-ObjC',
 
-    # Skipping this architecture to pass Pod validation since we explicitly remove simulator `arm64` ARCH to do lipo later
+    # Skip this architecture to pass Pod validation since we removed the `arm64` simulator ARCH in order to use lipo later
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-  s.default_subspec = 'UI'
+  # Same reason as above
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.subspec 'Core' do |sc|
     sc.ios.library = 'z'

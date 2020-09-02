@@ -1,3 +1,9 @@
+## 3.27.0-beta3
+- This release can be used to beta test iOS 14. See `3.27.0-beta2` and `3.27.0-beta1` notes for additional changes.
+
+##### Changed
+- Adds support for Push Stories and the tvOS SDK when using Xcode 12.
+
 ## 3.27.0-beta2
 
 - This release can be used to beta test iOS 14. See `3.27.0-beta1` notes for additional changes.
@@ -27,7 +33,7 @@
   - If you wish to enable IDFA, please use the `ABKIDFADelegate`.
   - Integration instructions for supporting iOS 14 in your `ABKIDFADelegate` will be included in a future beta release.
 
-##### Updated
+##### Changed
 - Adds support for iOS 14's Approximate Location feature.
   - Note that the Geofence feature will not work if the end user chooses to provide only approximate location.
   - Optional session-start based location tracking will continue to work. Accuracy will be based on the user's precise vs. approximate choice.
@@ -462,7 +468,7 @@ with
 
 ## 3.7.0
 
-#### Breaking
+##### Breaking
 - In `ABKInAppMessageUIControlling` protocol, `getCurrentDisplayChoiceForControlInAppMessage` method is added to define whether the control in-app message impression should be logged now, later or discarded.
 - In `ABKInAppMessageControllerDelegate` protocol, `beforeControlMessageImpressionLogged` method is added to define whether the control in-app message impression should be logged now, later or discarded.
 

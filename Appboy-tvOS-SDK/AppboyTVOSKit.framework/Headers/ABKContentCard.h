@@ -7,8 +7,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ABKContentCard : NSObject <NSCopying, NSCoding>
 
 /*!
-* Card's ID.
-*/
+ * Card's ID.
+ */
 @property (readonly) NSString *idString;
 
 /*!
@@ -54,6 +54,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nullable) NSDictionary *extras;
 
 /*!
+ * This property is set to YES if the instance represents a test content card
+ */
+@property (nonatomic, readonly) BOOL isTest;
+
+/*!
  * The URL string that will be opened after the card is clicked on.
  */
 @property (copy, nullable) NSString *urlString;
@@ -89,7 +94,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * Manually log a click to Braze for the card.
  * This should only be used for custom contentcard view controllers.
- * The SDK will only log a card click when the card has the url property with a valid url.
  */
 - (void)logContentCardClicked;
 
