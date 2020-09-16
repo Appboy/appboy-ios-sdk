@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "3.26.1"
+  s.version      = "3.27.0"
   s.summary      = "This is the Braze iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -12,8 +12,16 @@ Pod::Spec.new do |s|
   s.documentation_url = 'https://www.braze.com/docs'
   s.exclude_files = 'AppboyKit/**/*.txt'
   s.preserve_paths = 'AppboyKit/**/*.*'
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   s.default_subspec = 'UI'
+
+  s.pod_target_xcconfig = {
+    'OTHER_LDFLAGS' => '-ObjC',
+
+    # Skip this architecture to pass Pod validation since we removed the `arm64` simulator ARCH in order to use lipo later
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  # Same reason as above
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.subspec 'Core' do |sc|
     sc.ios.library = 'z'
@@ -35,20 +43,20 @@ Pod::Spec.new do |s|
     snf.source_files = 'AppboyUI/ABKNewsFeed/*.*', 'AppboyUI/ABKNewsFeed/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     snf.resource = 'AppboyUI/ABKNewsFeed/Resources/**/*.*'
     snf.dependency 'Appboy-iOS-SDK/Core'
-    snf.dependency 'SDWebImage', '~>5.0'
+    snf.dependency 'SDWebImage', '~>5.8.2'
   end
 
   s.subspec 'InAppMessage' do |siam|
     siam.source_files = 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyUI/ABKInAppMessage/*.*', 'AppboyUI/ABKInAppMessage/ViewControllers/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     siam.resource = 'AppboyUI/ABKInAppMessage/Resources/*.*'
     siam.dependency 'Appboy-iOS-SDK/Core'
-    siam.dependency 'SDWebImage', '~>5.0'
+    siam.dependency 'SDWebImage', '~>5.8.2'
   end
 
   s.subspec 'ContentCards' do |scc|
     scc.source_files = 'AppboyUI/ABKContentCards/*.*', 'AppboyUI/ABKContentCards/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     scc.resource = 'AppboyUI/ABKContentCards/Resources/**/*.*'
     scc.dependency 'Appboy-iOS-SDK/Core'
-    scc.dependency 'SDWebImage', '~>5.0'
+    scc.dependency 'SDWebImage', '~>5.8.2'
   end
 end

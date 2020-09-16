@@ -1,10 +1,29 @@
+## 3.27.0
+
+##### Breaking
+- Adds support for iOS 14. Requires Xcode 12.
+- Removes the `ABK_ENABLE_IDFA_COLLECTION` preprocessor macro from the SDK.
+  - If you wish to send IDFA to Braze, please use the [`ABKIDFADelegate`](https://appboy.github.io/appboy-ios-sdk/docs/protocol_a_b_k_i_d_f_a_delegate-p.html). For more information, reference [our documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#implementing-idfa-collection).
+- Updates the `ABKIDFADelegate` protocol by renaming `isAdvertisingTrackingEnabled` to `isAdvertisingTrackingEnabledOrATTAuthorized` to reflect the addition of the `AppTrackingTransparency` framework in iOS 14.
+  - If you use the `Ad Tracking Enabled` segment filter on the Braze dashboard or are implementing `AppTrackingTransparency`, you must update your integration to use `AppTrackingTransparency` to read the correct user status. Please see our [sample app](https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.h) for implementation details.
+  - If you do not use the `Ad Tracking Enabled` segment filter and are not implementing `AppTrackingTransparency` yet, your implementation of `isAdvertisingTrackingEnabledOrATTAuthorized` may temporarily continue to use `isAdvertisingTrackingEnabled`. However, [the returned value will always be `NO` in iOS 14](https://developer.apple.com/documentation/adsupport/asidentifiermanager/1614148-isadvertisingtrackingenabled), regardless of actual IDFA availability.
+  - Note that Apple announced that they will delay the enforcement of upcoming IDFA changes until early 2021. Please reference our [iOS 14 upgrade guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/) for more details.
+- Updates the minimum required version of SDWebImage from 5.0 to 5.8.2.
+- Integrators will now be required to exclude the `arm64` simulator slice in their entire project.
+  - This is done automatically when integrating via Cocoapods.
+  - For other cases:
+    - If you are using `xcconfig` files to build your app, please set:
+      - For iOS targets: `EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64`
+      - For tvOS targets: `EXCLUDED_ARCHS[sdk=appletvsimulator*] = arm64`
+    - If you are using the Xcode _Build Settings_ panel, enable _Build Active Architecture Only_ for the configuration you use to run your app on the simulator. (`ONLY_ACTIVE_ARCH = YES`)
+
 ## 3.26.1
 
-#### Changed
+##### Changed
 - Deprecates the compilation macro `ABK_ENABLE_IDFA_COLLECTION` in favor of the `ABKIDFADelegate` implementation.
   - `ABK_ENABLE_IDFA_COLLECTION` will not function properly in iOS 14. To continue collecting IDFA on iOS 14 devices, please upgrade to Xcode 12 and implement `App Tracking Transparency` and Braze's `ABKIDFADelegate` (see the [iOS 14 upgrade guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/#idfa-and-app-tracking-transparency) for more information).
 
-#### Added
+##### Added
 - Adds improved support for iOS 14 Approximate Location tracking.
 
 ## 3.26.0
@@ -12,17 +31,17 @@
 ##### Breaking
 - Removed readonly property `overrideApplicationStatusBarHiddenState` in `ABKInAppMessageViewController.h`.
 
-##### Changed
-- Added Binary Project Specification file for more efficient Carthage integration of the full SDK. 
-  - Update your Cartfile to use `binary "https://raw.githubusercontent.com/Appboy/appboy-ios-sdk/master/appboy_ios_sdk_full.json"`
-  - Support for this integration method was added starting with version 3.24.0 of the SDK.
-
 ##### Fixed
 - Fixes an issue with in-app messages not respecting the application's status bar style when _View controller-based status bar appearance_ (`UIViewControllerBasedStatusBarAppearance`) is set to `YES` in the Info.plist.
 - Fixes an issue which can lead to text being cut off in Content Cards for specific iPhone models.
 - Fixes an issue preventing test Content Cards from displaying under specific conditions.
 
-#### Added
+##### Changed
+- Added Binary Project Specification file for more efficient Carthage integration of the full SDK.
+  - Update your Cartfile to use `binary "https://raw.githubusercontent.com/Appboy/appboy-ios-sdk/master/appboy_ios_sdk_full.json"`
+  - Support for this integration method was added starting with version 3.24.0 of the SDK.
+
+##### Added
 - Adds support for specifying `PushStoryAppGroup` in the `Appboy` dictionary in your app's `Info.plist`. This [Apple App Group](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_application-groups?language=objc) will share the [Braze Push Story](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_story/) information such as Campaign IDs between applications from a single Apple Developer account.
 - Adds `appboyBridge.getUser().addAlias(alias, label)` to the javascript interface for HTML in-app messages.
 - Adds the property `overrideUserInterfaceStyle` to `ABKInAppMessage` that allows forcing Light or Dark mode in the same way as Apple's [`UIViewController.overrideUserInterfaceStyle`](https://developer.apple.com/documentation/uikit/uiviewcontroller/3238087-overrideuserinterfacestyle?language=objc).
@@ -428,7 +447,7 @@ with
 
 ## 3.7.0
 
-#### Breaking
+##### Breaking
 - In `ABKInAppMessageUIControlling` protocol, `getCurrentDisplayChoiceForControlInAppMessage` method is added to define whether the control in-app message impression should be logged now, later or discarded.
 - In `ABKInAppMessageControllerDelegate` protocol, `beforeControlMessageImpressionLogged` method is added to define whether the control in-app message impression should be logged now, later or discarded.
 

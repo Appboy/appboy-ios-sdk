@@ -26,12 +26,12 @@
 #import "ABKInAppMessageFull.h"
 #import "ABKInAppMessageHTML.h"
 #import "ABKInAppMessageHTMLFull.h"
+#import "ABKInAppMessageHTMLBase.h"
 #import "ABKInAppMessageControl.h"
 #import "ABKInAppMessageControllerDelegate.h"
 #import "ABKInAppMessageController.h"
 #import "ABKInAppMessageButton.h"
-#import "ABKInAppMessageHTMLJSBridge.h"
-#import "ABKInAppMessageHTMLJSInterface.h"
+#import "ABKInAppMessageWebViewBridge.h"
 #import "ABKInAppMessageUIControlling.h"
 #import "ABKInAppMessageDarkTheme.h"
 #import "ABKInAppMessageDarkButtonTheme.h"
@@ -43,7 +43,6 @@
 #import "ABKContentCardsController.h"
 
 // IDFA
-#import "ABKIdentifierForAdvertisingProvider.h"
 #import "ABKIDFADelegate.h"
 
 // SDWebImage

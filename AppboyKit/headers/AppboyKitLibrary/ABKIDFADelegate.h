@@ -13,11 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)advertisingIdentifierString;
 
 /*!
- * The result from [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled].
+ * With iOS 14, the delegate should first check ATTrackingManager on iOS 14 and then check ASIdentifierManager on
+ * earlier iOS versions. An example implementation is included with Stopwatch here:
+ * https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.m
  *
- * @return If advertising tracking is enabled.
+ * @return YES if advertising tracking is enabled for iOS 14 and earlier or if AppTrackingTransparency (ATT) is authorized with iOS 14+, NO otherwise
  */
-- (BOOL)isAdvertisingTrackingEnabled;
+- (BOOL)isAdvertisingTrackingEnabledOrATTAuthorized;
 
 @end
 NS_ASSUME_NONNULL_END

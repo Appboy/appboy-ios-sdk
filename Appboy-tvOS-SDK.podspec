@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-tvOS-SDK"
-  s.version      = "3.21.0"
+  s.version      = "3.27.0"
   s.summary      = "This is the Braze tvOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -14,4 +14,7 @@ Pod::Spec.new do |s|
   s.tvos.weak_framework = 'AdSupport', 'StoreKit'
   s.preserve_paths = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'
   s.vendored_frameworks = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'
+
+  # Skip this architecture to pass Pod validation since we removed the `arm64` simulator ARCH in order to use lipo later
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
 end

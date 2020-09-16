@@ -1,5 +1,6 @@
 #import "IDFADelegate.h"
-#import <AdSupport/ASIdentifierManager.h> 
+#import <AdSupport/ASIdentifierManager.h>
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
 
 @implementation IDFADelegate
 
@@ -7,7 +8,10 @@
   return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 }
 
-- (BOOL)isAdvertisingTrackingEnabled {
+- (BOOL)isAdvertisingTrackingEnabledOrATTAuthorized {
+  if (@available(iOS 14, *)) {
+    return [ATTrackingManager trackingAuthorizationStatus] == ATTrackingManagerAuthorizationStatusAuthorized;
+  }
   return [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
 }
 

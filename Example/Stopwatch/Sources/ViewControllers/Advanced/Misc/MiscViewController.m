@@ -208,8 +208,13 @@
 - (IBAction)manuallyRequestGeofences:(id)sender {
   CLLocationManager *locationManager = [[CLLocationManager alloc] init];
   locationManager.delegate = self;
-  CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
-
+  CLAuthorizationStatus authorizationStatus;
+  if (@available(iOS 14.0, *)) {
+    authorizationStatus = [locationManager authorizationStatus];
+  } else {
+    authorizationStatus = [CLLocationManager authorizationStatus];
+  }
+    
   if (authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
       authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
     [self showAlertWithMessage:@"Manually requesting Geofences."];

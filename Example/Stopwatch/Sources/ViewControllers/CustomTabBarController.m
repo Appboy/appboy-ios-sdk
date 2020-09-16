@@ -2,6 +2,7 @@
 #import "ContainerViewController.h"
 #import "ABKLocationManager.h"
 #import "ColorUtils.h"
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
 
 @implementation CustomTabBarController
 
@@ -21,17 +22,30 @@
                                      [self addNavigationControllerWithChildren:@[@"Misc", @"Data", @"About"] andTitle:@"Advanced" andImageName:@"bolt" withFlushButton:NO], // Advanced tab
                                      nil];
   [self setViewControllers:viewControllers];
-  
+
+  self.locationManager = [[CLLocationManager alloc] init];
+
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(requestLocationAuthorization)
                                                name:UIApplicationDidBecomeActiveNotification
                                              object:nil];
   
-  self.locationManager = [[CLLocationManager alloc] init];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(requestAppTrackingTransperancyAuthorization)
+                                               name:UIApplicationDidBecomeActiveNotification
+                                             object:nil];
 }
 
 - (void)requestLocationAuthorization {
   [self.locationManager requestAlwaysAuthorization];
+}
+
+- (void)requestAppTrackingTransperancyAuthorization {
+  if (@available(iOS 14, *)) {
+    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+      NSLog(@"Got result from App Track Transparency popup %ld", (long)status);
+    }];
+  }
 }
 
 /* Helper methods for adding tab bar items to the root UITabBarController */
