@@ -23,10 +23,6 @@ Successful marketing automation is essential to the future of your mobile app. B
 
 The iOS SDK supports iOS 9.0+.
 
-Integrating the iOS SDK [requires Xcode 11](https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md#3210).
-
-Braze uses [Font Awesome](http://fortawesome.github.io/Font-Awesome/) 4.3.0 for in-app message icons.  Check out the [cheat sheet](http://fortawesome.github.io/Font-Awesome/cheatsheet/) to browse available icons.
-
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) as a prebuilt framework.  Building from source currently not supported, see [#85](https://github.com/Appboy/appboy-ios-sdk/issues/85). 
 
 ## Questions?
