@@ -93,8 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Instance Methods</h2></td></tr>
 <tr class="memitem:a45d45ee03c023d4768bfbecc89f6154f"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_i_d_f_a_delegate-p.html#a45d45ee03c023d4768bfbecc89f6154f">advertisingIdentifierString</a></td></tr>
 <tr class="separator:a45d45ee03c023d4768bfbecc89f6154f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76e1bb5e44988baa8acac9c1ddc44177"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_i_d_f_a_delegate-p.html#a76e1bb5e44988baa8acac9c1ddc44177">isAdvertisingTrackingEnabled</a></td></tr>
-<tr class="separator:a76e1bb5e44988baa8acac9c1ddc44177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe0b3fd59b6d12366fafa18c34a1e81a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_i_d_f_a_delegate-p.html#abe0b3fd59b6d12366fafa18c34a1e81a">isAdvertisingTrackingEnabledOrATTAuthorized</a></td></tr>
+<tr class="separator:abe0b3fd59b6d12366fafa18c34a1e81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="a45d45ee03c023d4768bfbecc89f6154f"></a>
@@ -114,27 +114,27 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a76e1bb5e44988baa8acac9c1ddc44177"></a>
+<a class="anchor" id="abe0b3fd59b6d12366fafa18c34a1e81a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (BOOL) isAdvertisingTrackingEnabled </td>
+          <td class="memname">- (BOOL) isAdvertisingTrackingEnabledOrATTAuthorized </td>
           <td></td>
           <td class="paramname"></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The result from [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled].</p>
-<dl class="section return"><dt>Returns</dt><dd>If advertising tracking is enabled. </dd></dl>
+<p>With iOS 14, the delegate should first check ATTrackingManager on iOS 14 and then check ASIdentifierManager on earlier iOS versions. An example implementation is included with Stopwatch here: <a href="https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.m">https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.m</a></p>
+<dl class="section return"><dt>Returns</dt><dd>YES if advertising tracking is enabled for iOS 14 and earlier or if AppTrackingTransparency (ATT) is authorized with iOS 14+, NO otherwise </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 16 2020 16:17:35 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2020 15:48:31 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

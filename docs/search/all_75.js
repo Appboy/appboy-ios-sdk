@@ -12,6 +12,5 @@ var searchData=
   ['urlstring',['urlString',['../interface_a_b_k_content_card.html#ad5c7d758bc9b579e14bb571a6abab91a',1,'ABKContentCard']]],
   ['user',['user',['../interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1',1,'Appboy']]],
   ['userdescription',['userDescription',['../interface_a_b_k_twitter_user.html#a8290ccfde55e28e82fd0cf4c3e2092d4',1,'ABKTwitterUser']]],
-  ['usernotificationcenter_3adidreceivenotificationresponse_3awithcompletionhandler_3a',['userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:',['../interface_appboy.html#a73beef1563a3d0d70184a4ceefb331f4',1,'Appboy']]],
-  ['usernotificationwassentfromappboy_3a',['userNotificationWasSentFromAppboy:',['../interface_appboy.html#a03075a89970f6c60df54f8a24a6c227a',1,'Appboy']]]
+  ['usernotificationcenter_3adidreceivenotificationresponse_3awithcompletionhandler_3a',['userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:',['../interface_appboy.html#a73beef1563a3d0d70184a4ceefb331f4',1,'Appboy']]]
 ];

@@ -11,7 +11,7 @@ var searchData=
   ['initwithinappmessage_3a',['initWithInAppMessage:',['../interface_a_b_k_in_app_message_view_controller.html#a0839790b8d939b59532c5dbb1ce9fa8f',1,'ABKInAppMessageViewController']]],
   ['initwithnetwork_3acampaign_3aadgroup_3acreative_3a',['initWithNetwork:campaign:adGroup:creative:',['../interface_a_b_k_attribution_data.html#aab29d1bcd55c5f5687061f9916e0901f',1,'ABKAttributionData']]],
   ['initwithwebview_3ainappmessage_3aappboyinstance_3a',['initWithWebView:inAppMessage:appboyInstance:',['../interface_a_b_k_in_app_message_web_view_bridge.html#a821f4bdd601985f6e80c4526d416d8cc',1,'ABKInAppMessageWebViewBridge']]],
-  ['isadvertisingtrackingenabled',['isAdvertisingTrackingEnabled',['../protocol_a_b_k_i_d_f_a_delegate-p.html#a76e1bb5e44988baa8acac9c1ddc44177',1,'ABKIDFADelegate-p']]],
+  ['isadvertisingtrackingenabledorattauthorized',['isAdvertisingTrackingEnabledOrATTAuthorized',['../protocol_a_b_k_i_d_f_a_delegate-p.html#abe0b3fd59b6d12366fafa18c34a1e81a',1,'ABKIDFADelegate-p']]],
   ['isappboyinternalremotenotification_3a',['isAppboyInternalRemoteNotification:',['../interface_a_b_k_push_utils.html#afd55ca5f35fb5b2306ae1be6b5deea9f',1,'ABKPushUtils']]],
   ['isappboyremotenotification_3a',['isAppboyRemoteNotification:',['../interface_a_b_k_push_utils.html#a9510314a1e1f6cf457872505b2af1599',1,'ABKPushUtils']]],
   ['isappboyusernotification_3a',['isAppboyUserNotification:',['../interface_a_b_k_push_utils.html#a014da7e11d2d848bb95411caa989f3e8',1,'ABKPushUtils']]],
