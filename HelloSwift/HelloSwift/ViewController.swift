@@ -33,6 +33,12 @@ class ViewController: UIViewController {
     Appboy.sharedInstance()?.changeUser(userIdTextField.text!)
   }
 
+  @IBAction func newsFeedButtonTapped(_ sender: Any) {
+    let newsFeed = ABKNewsFeedViewController()
+    newsFeed.newsFeed.navigationItem.title = "News Feed"
+    self.navigationController?.present(newsFeed, animated: true, completion: nil)
+  }
+  
   @IBAction func contentCardButtonTapped(_ sender: Any) {
     if modalOrNavigationPicker.selectedSegmentIndex == 0 {
       let contentCards = ABKContentCardsViewController();

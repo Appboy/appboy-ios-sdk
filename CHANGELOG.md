@@ -1,3 +1,15 @@
+## 3.28.0
+
+##### Breaking
+- Removes `userNotificationWasSentFromAppboy:` and `pushNotificationWasSentFromAppboy:` on `Appboy`. Use `isAppboyUserNotification:` and `isAppboyRemoteNotification:` in `ABKPushUtils` instead.
+- Updates `ABKURLDelegate`'s method signature for `handleAppboyURL:fromChannel:withExtras:` to include nullability annotations required for proper Swift support.
+
+##### Fixed
+- Fixes a race condition in `Appboy` method `wipeDataAndDisableForAppRun` where certain persisted fields would still be available immediately after calling the method. These fields now are removed synchronously.
+
+##### Changed
+- Updated SDWebImage to use version 5.9.x.
+
 ## 3.27.0
 
 ##### Breaking

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "3.27.0"
+  s.version      = "3.28.0"
   s.summary      = "This is the Braze iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |sc|
     sc.ios.library = 'z'
     sc.frameworks = 'SystemConfiguration', 'QuartzCore', 'CoreText', 'WebKit'
-    sc.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/ABKIdentifierForAdvertisingProvider.m', 'AppboyKit/ABKModalWebViewController.m', 'AppboyKit/ABKNoConnectionLocalization.m', 'AppboyKit/ABKLocationManagerProvider.m'
+    sc.source_files = 'AppboyKit/headers/AppboyKitLibrary/*.h', 'AppboyKit/ABKModalWebViewController.m', 'AppboyKit/ABKNoConnectionLocalization.m', 'AppboyKit/ABKLocationManagerProvider.m'
     sc.resource = 'AppboyKit/Appboy.bundle'
     sc.vendored_libraries = 'AppboyKit/libAppboyKitLibrary.a'
     sc.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'AdSupport', 'UserNotifications'
@@ -43,20 +43,20 @@ Pod::Spec.new do |s|
     snf.source_files = 'AppboyUI/ABKNewsFeed/*.*', 'AppboyUI/ABKNewsFeed/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     snf.resource = 'AppboyUI/ABKNewsFeed/Resources/**/*.*'
     snf.dependency 'Appboy-iOS-SDK/Core'
-    snf.dependency 'SDWebImage', '~>5.8.2'
+    snf.dependency 'SDWebImage', '>= 5.8.2', '< 6'
   end
 
   s.subspec 'InAppMessage' do |siam|
     siam.source_files = 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyUI/ABKInAppMessage/*.*', 'AppboyUI/ABKInAppMessage/ViewControllers/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     siam.resource = 'AppboyUI/ABKInAppMessage/Resources/*.*'
     siam.dependency 'Appboy-iOS-SDK/Core'
-    siam.dependency 'SDWebImage', '~>5.8.2'
+    siam.dependency 'SDWebImage', '>= 5.8.2', '< 6'
   end
 
   s.subspec 'ContentCards' do |scc|
     scc.source_files = 'AppboyUI/ABKContentCards/*.*', 'AppboyUI/ABKContentCards/ViewControllers/**/*.*', 'AppboyUI/ABKUIUtils/**/*.*', 'AppboyKit/ABKSDWebImageProxy.m'
     scc.resource = 'AppboyUI/ABKContentCards/Resources/**/*.*'
     scc.dependency 'Appboy-iOS-SDK/Core'
-    scc.dependency 'SDWebImage', '~>5.8.2'
+    scc.dependency 'SDWebImage', '>= 5.8.2', '< 6'
   end
 end

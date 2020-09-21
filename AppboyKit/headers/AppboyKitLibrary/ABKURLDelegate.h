@@ -34,7 +34,9 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
  * This delegate method is fired whenever the user attempts to open a URL sent by Braze. You can use this delegate
  * to customize Braze's URL handling.
  */
-- (BOOL)handleAppboyURL:(NSURL *)url fromChannel:(ABKChannel)channel withExtras:(NSDictionary *)extras;
+- (BOOL)handleAppboyURL:(NSURL * _Nullable)url
+            fromChannel:(ABKChannel)channel
+             withExtras:(NSDictionary * _Nullable)extras;
 
 @end
 NS_ASSUME_NONNULL_END

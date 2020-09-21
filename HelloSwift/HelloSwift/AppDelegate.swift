@@ -81,12 +81,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
   }
 
-  func handleAppboyURL(_ url: URL, from channel: ABKChannel, withExtras extras: [AnyHashable : Any]) -> Bool {
-    if (url.host == "sweeney.appboy.com") {
-      NSLog("Received link with host sweeney.appboy.com.")
-      return true;
+  func handleAppboyURL(_ url: URL?, from channel: ABKChannel, withExtras extras: [AnyHashable : Any]?) -> Bool {
+    guard let url = url, url.host == "sweeney.appboy.com" else {
+      // Let Braze handle links otherwise
+      return false
     }
-    // Let Braze handle links otherwise
-    return false;
+    NSLog("Received link with host sweeney.appboy.com.")
+    return true;
   }
 }

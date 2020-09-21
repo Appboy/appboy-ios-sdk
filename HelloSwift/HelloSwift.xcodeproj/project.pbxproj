@@ -129,7 +129,6 @@
 		C06D5DDF1ED367C200087F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1E6FB321D835D230084F8CE /* HelloSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloSwift.entitlements; sourceTree = "<group>"; };
 		C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		C1E6FB371D83671A0084F8CE /* AirshipKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AirshipKit.framework; path = ../../../../Downloads/Carthage/Build/iOS/AirshipKit.framework; sourceTree = "<group>"; };
 		CA3221C7D1BB492DAD146EE9 /* Pods-HelloSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D16084DD3DE533703D4D40BB /* Pods-HelloSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloSwift/Pods-HelloSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2DEB2A95BEB5EA28A525D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -267,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				132CC5AF23760367007F3576 /* AppboyPushStory.framework */,
-				C1E6FB371D83671A0084F8CE /* AirshipKit.framework */,
 				C1E6FB331D835D5C0084F8CE /* NotificationCenter.framework */,
 				446901049F7C1F60144D6DC2 /* Pods.framework */,
 				0174F70FAE31265EA00C5A40 /* Pods_HelloSwift.framework */,

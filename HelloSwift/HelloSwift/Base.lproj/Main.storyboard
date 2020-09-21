@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B2b-IW-ogs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B2b-IW-ogs">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -101,6 +101,14 @@
                                     <segment title="Navigation"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRI-jF-kbd">
+                                <rect key="frame" x="145" y="468" width="86" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="News Feed"/>
+                                <connections>
+                                    <action selector="newsFeedButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oqu-TM-X0a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -123,7 +131,9 @@
                             <constraint firstItem="8Fo-Tc-mkG" firstAttribute="top" secondItem="VXY-50-8l3" secondAttribute="bottom" constant="10" id="oGW-0I-cFm"/>
                             <constraint firstItem="VXY-50-8l3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="p6J-Dc-kZg"/>
                             <constraint firstItem="VXY-50-8l3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="pCc-Xr-5GE"/>
+                            <constraint firstItem="IRI-jF-kbd" firstAttribute="centerX" secondItem="qYV-XB-kwJ" secondAttribute="centerX" id="vcd-Xn-vEV"/>
                             <constraint firstItem="7WZ-ry-KG3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vqQ-x3-FHK"/>
+                            <constraint firstItem="qYV-XB-kwJ" firstAttribute="top" secondItem="IRI-jF-kbd" secondAttribute="bottom" constant="11" id="wb2-gx-3gr"/>
                             <constraint firstItem="dKu-zb-hIz" firstAttribute="leading" secondItem="VXY-50-8l3" secondAttribute="leading" id="xlH-U1-sdH"/>
                         </constraints>
                     </view>

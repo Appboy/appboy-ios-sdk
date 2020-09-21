@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.27.0"
+#define APPBOY_SDK_VERSION @"3.28.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -491,21 +491,6 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
 
 
 #if !TARGET_OS_TV
-/*!
- * @param response The response passed in from userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
- *
- * @discussion This method returns whether or not a UNNotification was sent from Braze servers.
- */
-- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response __deprecated_msg("Use [ABKPushUtils isAppboyUserNotification:] instead.") NS_AVAILABLE_IOS(10.0);
-
-/*!
- * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or
- * application:didReceiveRemoteNotification in your App Delegate.
- *
- * @discussion
- * Test a push notification to see if it came Braze.
- */
-- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options __deprecated_msg("Use [ABKPushUtils isAppboyRemoteNotification:] instead.");
 
 /*!
  * @param deviceToken The device's push token.
