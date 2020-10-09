@@ -73,7 +73,7 @@ static NSString *const FontAwesomeName = @"FontAwesome";
     // Check if font awesome is already registered in the application. If not, register it.
     // The size can be any number here.
     if ([UIFont fontWithName:FontAwesomeName size:30] == nil) {
-      NSString *fontPath = [[NSBundle bundleForClass:[ABKInAppMessageViewController class]]
+      NSString *fontPath = [[ABKUIUtils bundle:[ABKInAppMessageViewController class]]
                                      pathForResource:FontAwesomeName
                                               ofType:@"otf"];
       NSData *fontData = [NSData dataWithContentsOfFile:fontPath];

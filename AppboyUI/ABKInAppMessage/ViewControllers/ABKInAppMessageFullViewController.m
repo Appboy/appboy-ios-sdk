@@ -84,7 +84,7 @@ static const CGFloat CloseXPadding = 15.0f;
 }
 
 - (void)loadView {
-  [[NSBundle bundleForClass:[ABKInAppMessageFullViewController class]] loadNibNamed:@"ABKInAppMessageFullViewController"
+  [[ABKUIUtils bundle:[ABKInAppMessageFullViewController class]] loadNibNamed:@"ABKInAppMessageFullViewController"
                                                                                owner:self
                                                                              options:nil];
   self.inAppMessageHeaderLabel.font = HeaderLabelDefaultFont;

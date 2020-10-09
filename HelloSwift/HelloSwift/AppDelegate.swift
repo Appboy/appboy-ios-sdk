@@ -17,21 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       ABKPushStoryAppGroupKey : "group.Appboy.HelloSwift"
     ]
     Appboy.start(withApiKey: "1fbb9af3-93e0-43a2-920c-c6d867dab72a", in:application, withLaunchOptions:launchOptions, withAppboyOptions: appboyOptions)
-    
+
     let center = UNUserNotificationCenter.current()
     var options: UNAuthorizationOptions = [.alert, .sound, .badge]
     if #available(iOS 12.0, *) {
       options = UNAuthorizationOptions(rawValue: options.rawValue | UNAuthorizationOptions.provisional.rawValue)
     }
     center.requestAuthorization(options: options) { (granted, error) in
-      Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)                                                             
-      print("Permission granted.")
+      Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)
     }
     center.delegate = self
     center.setNotificationCategories(ABKPushUtils.getAppboyUNNotificationCategorySet())
     UIApplication.shared.registerForRemoteNotifications()
-    
-    // Sample usage of unsafeInstance.  Note: startWithApiKey: MUST be called before calling unsafeInstance or an exception will be thrown.  
+
+    // Sample usage of unsafeInstance.  Note: startWithApiKey: MUST be called before calling unsafeInstance or an exception will be thrown.
     // Note: this is a nonoptional alternative to sharedInstance()
     Appboy.unsafeInstance().user.setCustomAttributeWithKey("unsafeCustomAttributeSwift", andStringValue: "unsafeCustomAttributeSwift value")
 
@@ -41,19 +40,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func applicationDidBecomeActive(_ application: UIApplication) {
     UIApplication.shared.applicationIconBadgeNumber = 0
   }
-  
+
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     Appboy.sharedInstance()!.registerDeviceToken(deviceToken)
   }
-  
+
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     Appboy.sharedInstance()?.register(application, didReceiveRemoteNotification:userInfo, fetchCompletionHandler: completionHandler)
   }
-  
+
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     Appboy.sharedInstance()!.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
   }
-  
+
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     NSLog("HelloSwift open url delegate called with: %@", url.absoluteString)
     let urlString = url.absoluteString.removingPercentEncoding

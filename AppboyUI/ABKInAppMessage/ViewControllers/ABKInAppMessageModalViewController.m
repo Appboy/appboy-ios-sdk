@@ -105,7 +105,7 @@ static const CGFloat MaxModalViewHeight = 720.0f;
 }
 
 - (void)loadView {
-  [[NSBundle bundleForClass:[ABKInAppMessageModalViewController class]]
+  [[ABKUIUtils bundle:[ABKInAppMessageModalViewController class]]
                loadNibNamed:@"ABKInAppMessageModalViewController"
                       owner:self
                     options:nil];

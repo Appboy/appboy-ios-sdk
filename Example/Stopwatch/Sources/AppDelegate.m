@@ -218,7 +218,6 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   }
   [center requestAuthorizationWithOptions:(options)
                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                          NSLog(@"Permission granted.");
                           [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
                         }];
   center.delegate = self;

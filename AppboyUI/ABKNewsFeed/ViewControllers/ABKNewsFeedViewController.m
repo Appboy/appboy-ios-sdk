@@ -1,11 +1,12 @@
 #import "ABKNewsFeedViewController.h"
 #import "ABKNewsFeedTableViewController.h"
+#import "ABKUIUtils.h"
 
 @implementation ABKNewsFeedViewController
 
 - (instancetype)init {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKNewsFeedCardStoryboard"
-                                               bundle:[NSBundle bundleForClass:[ABKNewsFeedViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedViewController class]]];
   ABKNewsFeedViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKNewsFeedViewController"];
   self = nf;
   _newsFeed = self.viewControllers[0];

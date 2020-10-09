@@ -26,7 +26,7 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
 @implementation ABKInAppMessageSlideupViewController
 
 - (void)loadView {
-  [[NSBundle bundleForClass:[ABKInAppMessageSlideupViewController class]] loadNibNamed:@"ABKInAppMessageSlideupViewController"
+  [[ABKUIUtils bundle:[ABKInAppMessageSlideupViewController class]] loadNibNamed:@"ABKInAppMessageSlideupViewController"
                                                                                  owner:self
                                                                                options:nil];
   self.inAppMessageMessageLabel.font = MessageLabelDefaultFont;

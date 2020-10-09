@@ -1,10 +1,11 @@
 #import "ABKContentCardsViewController.h"
+#import "ABKUIUtils.h"
 
 @implementation ABKContentCardsViewController
 
 - (instancetype)init {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKContentCardsStoryboard"
-                                               bundle:[NSBundle bundleForClass:[ABKContentCardsViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKContentCardsViewController class]]];
   ABKContentCardsViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKContentCardsViewController"];
   self = nf;
   self.contentCardsViewController = self.viewControllers[0];

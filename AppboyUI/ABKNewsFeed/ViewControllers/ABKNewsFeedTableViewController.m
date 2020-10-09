@@ -5,6 +5,7 @@
 #import "ABKUIUtils.h"
 #import "ABKFeedWebViewController.h"
 #import "ABKUIURLUtils.h"
+
 #import <SDWebImage/SDWebImagePrefetcher.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -14,7 +15,7 @@
 
 - (instancetype)init {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKNewsFeedCardStoryboard"
-                                               bundle:[NSBundle bundleForClass:[ABKNewsFeedTableViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class]]];
   ABKNewsFeedTableViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKNewsFeedTableViewController"];
   self = nf;
   return self;
@@ -232,14 +233,14 @@
 
 + (instancetype)getNavigationFeedViewController {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKNewsFeedCardStoryboard"
-                                               bundle:[NSBundle bundleForClass:[ABKNewsFeedTableViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class]]];
   ABKNewsFeedTableViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKNewsFeedTableViewController"];
   return nf;
 }
 
 - (NSString *)localizedAppboyFeedString:(NSString *)key {
   return [ABKUIUtils getLocalizedString:key
-                         inAppboyBundle:[NSBundle bundleForClass:[ABKNewsFeedTableViewController class]]
+                         inAppboyBundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class]]
                                   table:@"AppboyFeedLocalizable"];
 }
 

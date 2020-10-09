@@ -94,7 +94,7 @@ static CGFloat AppboyCardLineSpacing = 1.2;
 - (UIImage *)getPlaceHolderImage {
   return [ABKUIUtils getImageWithName:@"appboy_cc_noimage_lrg"
                                  type:@"png"
-                       inAppboyBundle:[NSBundle bundleForClass:[ABKBaseContentCardCell class]]];
+                       inAppboyBundle:[ABKUIUtils bundle:[ABKBaseContentCardCell class]]];
 }
 
 - (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label {

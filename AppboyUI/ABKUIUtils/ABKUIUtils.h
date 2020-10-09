@@ -28,6 +28,11 @@
  */
 @property (class, readonly) UIStatusBarStyle applicationStatusBarStyle;
 
+/*!
+ * Given a class, this method searches across multiple locations and returns the associated bundle for that class
+ */
++ (NSBundle *)bundle:(Class)bundleClass;
+
 + (NSString *)getLocalizedString:(NSString *)key inAppboyBundle:(NSBundle *)appboyBundle table:(NSString *)table;
 + (BOOL)objectIsValidAndNotEmpty:(id)object;
 + (Class)getSDWebImageProxyClass;

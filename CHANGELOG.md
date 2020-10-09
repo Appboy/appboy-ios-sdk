@@ -1,3 +1,22 @@
+## 3.29.0
+
+##### Added
+- Adds initial support for Swift Package Manager. There are 2 new packages that have been added: `AppboyKit` for the core SDK and `AppboyUI` for the full SDK (including UI elements), which correspond to the `Appboy-iOS-SDK/Core` and `Appboy-iOS-SDK` pods, respectively.
+  - Note that tvOS support is not available via Swift Package Manager for this release. Push Stories is only available through a side-by-side integration with Cocoapods.
+  - To add the package to your project follow these steps:
+    - Select `File > Swift Packages > Add Package Dependency`.
+      - In the search bar, enter `https://github.com/Appboy/Appboy-ios-sdk`.
+      - Select _one_ of `AppboyKit` or `AppboyUI`. Note that `AppboyUI` includes `AppboyKit` automatically.
+    - In your app's target, under `Build Settings > Other Linker Flags`, add the `-ObjC` linker flag.
+    - In the Xcode menu, click `Product > Scheme > Edit Scheme...`
+      - Click the expand ▶️ next to `Build` and select `Post-actions`. Press `+` and select `New Run Script Action`. 
+      - In the dropdown next to `Provide build settings from`, select your app's target.
+      - Copy this script into the open field:
+        ```
+        rm -rf "${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/Frameworks/libAppboyKitLibrary.a"
+        rm -rf "${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/Plugins/libAppboyKitLibrary.a"
+        ```
+
 ## 3.28.0
 
 ##### Breaking
