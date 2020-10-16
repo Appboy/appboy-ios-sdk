@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'
 
   # Skip this architecture to pass Pod validation since we removed the `arm64` simulator ARCH in order to use lipo later
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=appletvsimulator*]' => 'arm64' }
 end
