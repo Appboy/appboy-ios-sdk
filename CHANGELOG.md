@@ -1,3 +1,8 @@
+## 3.29.1
+
+#### Added
+- Adds improved support for in-app message display on iPhone 12 models.
+
 ## 3.29.0
 
 ##### Added
@@ -9,7 +14,7 @@
       - Select _one_ of `AppboyKit` or `AppboyUI`. Note that `AppboyUI` includes `AppboyKit` automatically.
     - In your app's target, under `Build Settings > Other Linker Flags`, add the `-ObjC` linker flag.
     - In the Xcode menu, click `Product > Scheme > Edit Scheme...`
-      - Click the expand ▶️ next to `Build` and select `Post-actions`. Press `+` and select `New Run Script Action`. 
+      - Click the expand ▶️ next to `Build` and select `Post-actions`. Press `+` and select `New Run Script Action`.
       - In the dropdown next to `Provide build settings from`, select your app's target.
       - Copy this script into the open field:
         ```
