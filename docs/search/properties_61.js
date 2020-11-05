@@ -10,5 +10,6 @@ var searchData=
   ['assetszipremoteurl',['assetsZipRemoteUrl',['../interface_a_b_k_in_app_message_h_t_m_l_full.html#ad8b9b4b245b9712be8c52ed39771d5f8',1,'ABKInAppMessageHTMLFull']]],
   ['asseturls',['assetUrls',['../interface_a_b_k_in_app_message_h_t_m_l.html#aed02009f192506b128bb81167b3f1fe4',1,'ABKInAppMessageHTML']]],
   ['attributiondata',['attributionData',['../interface_a_b_k_user.html#ad423f39f7bd2be15fd5cdedd7c1a2e7f',1,'ABKUser']]],
+  ['automaticbodyclicksenabled',['automaticBodyClicksEnabled',['../interface_a_b_k_in_app_message_h_t_m_l_base_view_controller.html#ae009fa09d574e146f1f88e6238738a88',1,'ABKInAppMessageHTMLBaseViewController']]],
   ['avatarimageurl',['avatarImageURL',['../interface_a_b_k_user.html#a0b80c46f2ed8eb2e95e5ff956c1fe08b',1,'ABKUser']]]
 ];
