@@ -23,6 +23,12 @@ static NSString *const ABKHTMLInAppJavaScriptExtension = @"js";
 
 @implementation ABKInAppMessageHTMLBaseViewController
 
+#pragma mark - Properties
+
+- (BOOL)automaticBodyClicksEnabled {
+  return NO;
+}
+
 #pragma mark - View Lifecycle
 
 - (void)loadView {
@@ -153,41 +159,58 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
 decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   NSURL *url = navigationAction.request.URL;
   
-  if (url != nil &&
-      ![ABKUIUtils string:url.absoluteString isEqualToString:ABKBlankURLString] &&
-      ![ABKUIUtils string:url.path isEqualToString:[[(ABKInAppMessageHTMLBase *)self.inAppMessage assetsLocalDirectoryPath]
-                                  absoluteString]] &&
-      ![ABKUIUtils string:url.lastPathComponent isEqualToString:ABKInAppMessageHTMLFileName]) {
-    [self setClickActionBasedOnURL:url];
-    
-    NSMutableDictionary *queryParams = [[self queryParameterDictionaryFromURL:url] mutableCopy];
-    NSString *buttonId = queryParams[ABKHTMLInAppButtonIdKey];
-    ABKInAppMessageWindowController *parentViewController =
-      (ABKInAppMessageWindowController *)self.parentViewController;
-    parentViewController.clickedHTMLButtonId = buttonId;
-    
-    if ([self delegateHandlesHTMLButtonClick:parentViewController.inAppMessageUIDelegate
-                                         URL:url
-                                    buttonId:buttonId]) {
-      decisionHandler(WKNavigationActionPolicyCancel);
-      return;
-    } else if ([self isCustomEventURL:url]) {
-      [self handleCustomEventWithQueryParams:queryParams];
-      decisionHandler(WKNavigationActionPolicyCancel);
-      return;
-    } else if (![ABKUIUtils objectIsValidAndNotEmpty:buttonId]) {
-      // Log a body click if not a custom event or a button click
-      parentViewController.inAppMessageIsTapped = YES;
-    }
-
-    [parentViewController inAppMessageClickedWithActionType:self.inAppMessage.inAppMessageClickActionType
-                                                        URL:url
-                                           openURLInWebView:[self getOpenURLInWebView:queryParams]];
+  // Handle normal html resource loading
+  
+  NSString *assetPath = ((ABKInAppMessageHTMLBase *)self.inAppMessage).assetsLocalDirectoryPath.absoluteString;
+  BOOL isHandledByWebView =
+    !url ||
+    [ABKUIUtils string:url.absoluteString isEqualToString:ABKBlankURLString] ||
+    [ABKUIUtils string:url.path isEqualToString:assetPath] ||
+    [ABKUIUtils string:url.lastPathComponent isEqualToString:ABKInAppMessageHTMLFileName];
+  
+  if (isHandledByWebView) {
+    decisionHandler(WKNavigationActionPolicyAllow);
+    return;
+  }
+  
+  // Handle Appboy specific actions
+  NSDictionary *queryParams = [self queryParameterDictionaryFromURL:url];
+  NSString *buttonId = [self parseButtonIdFromQueryParams:queryParams];
+  ABKInAppMessageWindowController *parentViewController =
+    (ABKInAppMessageWindowController *)self.parentViewController;
+  
+  [self setClickActionBasedOnURL:url];
+  parentViewController.clickedHTMLButtonId = buttonId;
+  
+  // - Delegate handling
+  if ([self delegateHandlesHTMLButtonClick:parentViewController.inAppMessageUIDelegate
+                                       URL:url
+                                  buttonId:buttonId]) {
     decisionHandler(WKNavigationActionPolicyCancel);
     return;
   }
-
-  decisionHandler(WKNavigationActionPolicyAllow);
+  
+  // - Custom event handling
+  if ([self isCustomEventURL:url]) {
+    [self handleCustomEventWithQueryParams:queryParams];
+    decisionHandler(WKNavigationActionPolicyCancel);
+    return;
+  }
+  
+  // - Body click handling
+  if (![ABKUIUtils objectIsValidAndNotEmpty:buttonId]) {
+    if (self.automaticBodyClicksEnabled) {
+      parentViewController.inAppMessageIsTapped = YES;
+      NSLog(@"In-app message body click registered. Automatic body clicks are enabled.");
+    } else {
+      NSLog(@"In-app message body click not registered. Automatic body clicks are disabled.");
+    }
+  }
+  
+  [parentViewController inAppMessageClickedWithActionType:self.inAppMessage.inAppMessageClickActionType
+                                                      URL:url
+                                         openURLInWebView:[self getOpenURLInWebView:queryParams]];
+  decisionHandler(WKNavigationActionPolicyCancel);
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
@@ -311,23 +334,27 @@ runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt
 
 #pragma mark - Custom Event Handling
 
-- (void)handleCustomEventWithQueryParams:(NSMutableDictionary *)queryParams {
+- (void)handleCustomEventWithQueryParams:(NSDictionary *)queryParams {
   NSString *customEventName = [self parseCustomEventNameFromQueryParams:queryParams];
   NSMutableDictionary *eventProperties = [self parseCustomEventPropertiesFromQueryParams:queryParams];
   [[Appboy sharedInstance] logCustomEvent:customEventName withProperties:eventProperties];
 }
 
-- (NSString *)parseCustomEventNameFromQueryParams:(NSMutableDictionary *)queryParams {
+- (NSString *)parseCustomEventNameFromQueryParams:(NSDictionary *)queryParams {
   return queryParams[ABKHTMLInAppCustomEventQueryParamNameKey];
 }
 
-- (NSMutableDictionary *)parseCustomEventPropertiesFromQueryParams:(NSMutableDictionary *)queryParams {
+- (NSMutableDictionary *)parseCustomEventPropertiesFromQueryParams:(NSDictionary *)queryParams {
   NSMutableDictionary *eventProperties = [queryParams mutableCopy];
   [eventProperties removeObjectForKey:ABKHTMLInAppCustomEventQueryParamNameKey];
   return eventProperties;
 }
 
 #pragma mark - Button Click Handling
+
+- (NSString *)parseButtonIdFromQueryParams:(NSDictionary *)queryParams {
+  return queryParams[ABKHTMLInAppButtonIdKey];
+}
 
 // Set the inAppMessage's click action type based on given URL. It's going to be three types:
 // * URL is appboy://close: set click action to be ABKInAppMessageNoneClickAction

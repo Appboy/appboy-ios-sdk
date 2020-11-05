@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,7 +32,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z23-Sg-7Xr">
-                    <rect key="frame" x="25" y="478" width="364" height="290"/>
+                    <rect key="frame" x="25" y="478" width="364" height="56"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-Fs-Mb1">
                             <rect key="frame" x="0.0" y="0.0" width="364" height="56"/>
@@ -89,8 +89,8 @@
                         <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="M95-RZ-cAa"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZR-LG-Ie5" customClass="ABKInAppMessageUIButton">
-                    <rect key="frame" x="212" y="788" width="177" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZR-LG-Ie5" customClass="ABKInAppMessageUIButton">
+                    <rect key="frame" x="212" y="554" width="177" height="44"/>
                     <color key="backgroundColor" red="0.10588235294117647" green="0.47058823529411764" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="I9Z-DV-8Hy"/>
@@ -110,8 +110,8 @@
                         <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="1iK-m1-P29"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-RJ-G5m" customClass="ABKInAppMessageUIButton">
-                    <rect key="frame" x="25" y="788" width="177" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22x-RJ-G5m" customClass="ABKInAppMessageUIButton">
+                    <rect key="frame" x="25" y="554" width="177" height="44"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="uLZ-Yo-2BF"/>
@@ -129,6 +129,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="xPm-PP-bN3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xPm-PP-bN3" firstAttribute="trailing" secondItem="z23-Sg-7Xr" secondAttribute="trailing" constant="25" id="1BU-h4-VSn"/>
@@ -136,7 +137,6 @@
                 <constraint firstItem="xPm-PP-bN3" firstAttribute="trailing" secondItem="dmQ-gu-wor" secondAttribute="trailing" constant="15" id="8OM-Hq-hsx"/>
                 <constraint firstItem="1sk-El-iBS" firstAttribute="height" secondItem="j6O-5v-jBn" secondAttribute="height" multiplier="0.5" id="Ajs-ma-RTE"/>
                 <constraint firstItem="22x-RJ-G5m" firstAttribute="leading" secondItem="xPm-PP-bN3" secondAttribute="leading" constant="25" id="As0-a8-UYK"/>
-                <constraint firstItem="xPm-PP-bN3" firstAttribute="bottom" secondItem="z23-Sg-7Xr" secondAttribute="bottom" priority="500" constant="30" id="Gjj-mF-QOT"/>
                 <constraint firstItem="z23-Sg-7Xr" firstAttribute="leading" secondItem="xPm-PP-bN3" secondAttribute="leading" constant="25" id="MLg-0f-qis"/>
                 <constraint firstItem="1sk-El-iBS" firstAttribute="top" secondItem="j6O-5v-jBn" secondAttribute="top" id="PIA-mR-nzy"/>
                 <constraint firstItem="22x-RJ-G5m" firstAttribute="width" secondItem="MZR-LG-Ie5" secondAttribute="width" id="R6l-kW-ZV8"/>
@@ -159,7 +159,6 @@
                 <constraint firstItem="22x-RJ-G5m" firstAttribute="centerY" secondItem="MZR-LG-Ie5" secondAttribute="centerY" id="x9l-KZ-wik"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <viewLayoutGuide key="safeArea" id="xPm-PP-bN3"/>
             <point key="canvasLocation" x="364" y="265"/>
         </view>
     </objects>

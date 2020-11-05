@@ -29,8 +29,6 @@
   [self displayAppboyRequestPolicy];
   self.attributionCounter++;
   
-  self.apiKeyTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideApiKeyStorageKey];
-  self.endointTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:OverrideEndpointStorageKey];
   self.inAppMessageDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
   self.urlDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetURLDelegateKey];
   self.sessionTimeoutTextField.keyboardType = UIKeyboardTypeNumberPad;
@@ -143,9 +141,9 @@
   [self showForceCloseAlertWithTitle:@"Environment Set"];
 }
 
-- (IBAction)rebootAndApplyK8Environment:(id)sender {
+- (IBAction)rebootAndApplyDevEnvironment:(id)sender {
   [[NSUserDefaults standardUserDefaults] setObject:@"elsa.braze.com" forKey:OverrideEndpointStorageKey];
-  [self showForceCloseAlertWithTitle:@"K8s Environment Set"];
+  [self showForceCloseAlertWithTitle:@"Switching to Development Environment."];
 }
 
 - (NSArray *)getDirectoryContentsWithPath:(NSString *)path {
@@ -245,7 +243,8 @@
 - (void)showForceCloseAlertWithTitle:(NSString *)title {
   [AlertControllerUtils presentTemporaryAlertWithTitle:title
                                                  message:@"Force Close App and Re-Open to Apply"
-                                            presentingVC:self];
+                                            presentingVC:self
+                                              duration:3];
 }
 
 - (void)showAlertWithMessage:(NSString *)message {

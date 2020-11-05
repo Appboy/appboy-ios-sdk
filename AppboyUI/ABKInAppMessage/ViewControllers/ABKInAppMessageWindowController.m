@@ -84,6 +84,25 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   return self.inAppMessageViewController;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  // When the in-app message first become visible, monitor windows changes in the view hierarchy to
+  // ensure that the in-app message stays visible.
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(handleWindowDidBecomeKeyNotification:)
+                                               name:UIWindowDidBecomeKeyNotification
+                                             object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                  name:UIWindowDidBecomeKeyNotification
+                                                object:nil];
+}
+
 #pragma mark - Rotation
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -238,6 +257,33 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
     // If the keyboard is shown while an in-app message is on the screen, we hide the in-app message
     [self hideInAppMessageWindow];
   }
+}
+
+#pragma mark - Windows
+
+/*!
+ * React to windows changes in the view hierarchy. This is needed to ensure that the in-app message stays visible in cases where the
+ * host app decides to display a window (possibly the app's main window) over our in-app message.
+ *
+ * e.g. Some clients have extra logic when bootstrapping their app that can lead to the app's main window being made key and visible
+ * after a delay at startup. In the case of test in-app messages delivered via push notifications, our in-app messages would be displayed
+ * before the host app window being made key and visible. Soon after, the host app window takes over and hides our in-app message.
+ */
+- (void)handleWindowDidBecomeKeyNotification:(NSNotification *)notification {
+  UIWindow *window = notification.object;
+
+  // Skip for the in-app message window
+  if (window == self.inAppMessageWindow) {
+    return;
+  }
+  // Skip if the new key window is meant to be displayed above the in-app message (alert, sheet,
+  // host app toast)
+  if (window.windowLevel > UIWindowLevelNormal) {
+    return;
+  }
+  
+  // Force in-app message window to be displayed
+  [self.inAppMessageWindow makeKeyAndVisible];
 }
 
 #pragma mark - Display and Hide In-app Message

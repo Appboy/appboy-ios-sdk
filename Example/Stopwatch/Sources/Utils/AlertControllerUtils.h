@@ -7,6 +7,11 @@
                                  message:(NSString *)message
                             presentingVC:(UIViewController *)presentingVC;
 
++ (void)presentTemporaryAlertWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                            presentingVC:(UIViewController *)presentingVC
+                              duration:(NSInteger)duration;
+
 + (void)presentAlertWithOKButtonForTitle:(NSString *)title
                                  message:(NSString *)message
                             presentingVC:(UIViewController *)presentingVC;

@@ -18,5 +18,10 @@ static NSString *const ABKInAppMessageHTMLFileName = @"message.html";
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
+/*!
+ * The flag specifying if body clicks should be registered automatically. Defaults to NO.
+ */
+@property (assign, nonatomic, readonly) BOOL automaticBodyClicksEnabled;
+
 @end
 NS_ASSUME_NONNULL_END

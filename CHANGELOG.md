@@ -1,3 +1,17 @@
+## 3.30.0
+
+##### Breaking
+- Body click analytics will no longer automatically be collected for HTML in-app messages created using the _HTML Upload with Preview_ option in the platform.
+  - To continue to receive body click analytics, you must log body clicks explicitly from your message via Javascript using `appboyBridge.logClick()`.
+
+##### Fixed
+- Fixes a bug with Full in-app messages where the button positions did not match the preview on the Braze dashboard.
+- Fixes a bug where in-app messages would be displayed below the application window under specific conditions.
+  - Apps that set up their window asynchronously at startup could accidentally hide the in-app message window if one was being displayed (e.g. as a result of clicking on a test in-app message notification).
+
+##### Added
+- Adds support for custom endpoints with a scheme included (`https`, `http`, etc.). For example, `http://localhost:3001` will no longer result in `https://http://localhost:3001` as the resolved endpoint.
+
 ## 3.29.1
 
 #### Added
