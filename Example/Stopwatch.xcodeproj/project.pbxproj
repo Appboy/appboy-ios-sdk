@@ -20,6 +20,7 @@
 		4EB014FD1A79D31D00E11E41 /* InAppMessageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955DE8941741A70700C07A57 /* InAppMessageTestViewController.m */; };
 		703BF6D4245A2AD9001C1963 /* InAppMessageWithoutAssetZip.html in Resources */ = {isa = PBXBuildFile; fileRef = 703BF6D2245A2AD9001C1963 /* InAppMessageWithoutAssetZip.html */; };
 		703BF6D5245A2AD9001C1963 /* InAppMessageWithJS.html in Resources */ = {isa = PBXBuildFile; fileRef = 703BF6D3245A2AD9001C1963 /* InAppMessageWithJS.html */; };
+		70AAB53D2548663C00F64D7C /* StopwatchNotificationContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C1C53EFF1F7D7CA600042AA5 /* StopwatchNotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		715339A6C9F8E86F1CFE61B4 /* libPods-tvOS_Stopwatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7198A927FDBA136DD1BAA0 /* libPods-tvOS_Stopwatch.a */; };
 		7435A384D098710E76548E58 /* libPods-StopwatchNotificationContentExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A07EA9383F93EFF70E1F00B /* libPods-StopwatchNotificationContentExtension.a */; };
 		7F825DEA205C810100150F07 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F825DE9205C810100150F07 /* DataViewController.m */; };
@@ -58,7 +59,6 @@
 		C1C53F011F7D7CA700042AA5 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3688B1A1D6BB2DD0032091D /* UserNotificationsUI.framework */; };
 		C1C53F051F7D7CA700042AA5 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C53F041F7D7CA700042AA5 /* NotificationViewController.m */; };
 		C1C53F081F7D7CA700042AA5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C53F061F7D7CA700042AA5 /* MainInterface.storyboard */; };
-		C1C53F0C1F7D7CA700042AA5 /* StopwatchNotificationContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C1C53EFF1F7D7CA600042AA5 /* StopwatchNotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D400EBF31CC86A6100550AD8 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D400EBF21CC86A6100550AD8 /* EventsViewController.m */; };
 		D411F3121CD0355200100702 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D411F3111CD0355200100702 /* CustomTabBarController.m */; };
 		D4139BEC1CBDA4F200CA3307 /* FeedUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4139BEB1CBDA4F200CA3307 /* FeedUIViewController.m */; };
@@ -85,7 +85,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C1C53F0A1F7D7CA700042AA5 /* PBXContainerItemProxy */ = {
+		70AAB53E2548663C00F64D7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95EF5102173D5FD600C0D780 /* Project object */;
 			proxyType = 1;
@@ -119,7 +119,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				E33088211D6BB0B4008935A9 /* StopwatchNotificationService.appex in Embed App Extensions */,
-				C1C53F0C1F7D7CA700042AA5 /* StopwatchNotificationContentExtension.appex in Embed App Extensions */,
+				70AAB53D2548663C00F64D7C /* StopwatchNotificationContentExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +344,6 @@
 				A77A349C24E6AE46F1B800EA /* Pods-tvOS_TVML_Stopwatch.develop.xcconfig */,
 				554E827EA66F0EED2E46DF49 /* Pods-tvOS_TVML_Stopwatch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -752,7 +751,7 @@
 			);
 			dependencies = (
 				E33088201D6BB0B4008935A9 /* PBXTargetDependency */,
-				C1C53F0B1F7D7CA700042AA5 /* PBXTargetDependency */,
+				70AAB53F2548663C00F64D7C /* PBXTargetDependency */,
 			);
 			name = Stopwatch;
 			productName = Stopwatch;
@@ -1437,10 +1436,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C1C53F0B1F7D7CA700042AA5 /* PBXTargetDependency */ = {
+		70AAB53F2548663C00F64D7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C1C53EFE1F7D7CA600042AA5 /* StopwatchNotificationContentExtension */;
-			targetProxy = C1C53F0A1F7D7CA700042AA5 /* PBXContainerItemProxy */;
+			targetProxy = 70AAB53E2548663C00F64D7C /* PBXContainerItemProxy */;
 		};
 		E33088201D6BB0B4008935A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

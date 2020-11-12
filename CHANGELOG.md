@@ -1,3 +1,11 @@
+## 4.0.0-beta1
+
+**This beta is not compatible with Carthage.**
+
+##### Breaking
+- `AppboyKit` is now distributed as an XCFramework when integrating with Cocoapods. Cocoapods 1.10.0+ is required.
+  - This removes the need for integrators to exclude the `arm64` architecture when building for the simulator. Please undo any of the changes that may have been made when upgrading to [3.27.0](#3270).
+
 ## 3.30.0
 
 ##### Breaking
