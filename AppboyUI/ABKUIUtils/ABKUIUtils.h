@@ -4,32 +4,32 @@
 @interface ABKUIUtils : NSObject
 
 /*!
- * The currently active UIWindowScene
+ * The currently active UIWindowScene.
  */
 @property (class, nonatomic, readonly) UIWindowScene *activeWindowScene API_AVAILABLE(ios(13.0));
 
 /*!
- * The currently active application UIWindow
+ * The currently active application UIWindow.
  */
 @property (class, nonatomic, readonly) UIWindow *activeApplicationWindow;
 
 /*!
- * The currently active application UIViewController
+ * The currently active application UIViewController.
  */
 @property (class, nonatomic, readonly) UIViewController *activeApplicationViewController;
 
 /*!
- * The current application status bar hidden state
+ * The current application status bar hidden state.
  */
 @property (class, readonly) BOOL applicationStatusBarHidden;
 
 /*!
- * The current application status bar style
+ * The current application status bar style.
  */
 @property (class, readonly) UIStatusBarStyle applicationStatusBarStyle;
 
 /*!
- * Given a class, this method searches across multiple locations and returns the associated bundle for that class
+ * Given a class, this method searches across multiple locations and returns the associated bundle for that class.
  */
 + (NSBundle *)bundle:(Class)bundleClass;
 
@@ -49,10 +49,18 @@
 
 /*!
  * Verifies that one of the responders in the responder chain is kind of class aClass.
- * @param responder The start of the UIResponder chain
- * @param aClass The UIResponder subclass looked for in the responder chain
- * @return YES if aClass is found in the responder chain, NO otherwise
+ * @param responder The start of the UIResponder chain.
+ * @param aClass The UIResponder subclass looked for in the responder chain.
+ * @return YES if aClass is found in the responder chain, NO otherwise.
  */
 + (BOOL)responderChainOf:(UIResponder *)responder hasKindOfClass:(Class)aClass;
+
+/*!
+ * Verifies that one of the responders in the responder chain is prefixed by prefix.
+ * @param responder The start of the UIResponder chain.
+ * @param prefix The prefix looked for in the responder chain.
+ * @return YES if a class prefixed by prefix is found in the responder chain, NO otherwise.
+ */
++ (BOOL)responderChainOf:(UIResponder *)responder hasClassPrefixedWith:(NSString *)prefix;
 
 @end

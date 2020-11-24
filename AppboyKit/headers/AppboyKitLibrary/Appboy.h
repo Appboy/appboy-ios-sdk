@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.30.0"
+#define APPBOY_SDK_VERSION @"3.31.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -120,13 +120,18 @@ extern NSString *const ABKMinimumTriggerTimeIntervalKey;
 extern NSString *const ABKSDKFlavorKey;
 
 /*!
- * Key to specify a whitelist for device fields that are collected by the Braze SDK.
+ * Key to specify an allowlist for device fields that are collected by the Braze SDK.
  *
- * To specify whitelisted device fields, assign the bitwise `OR` of desired fields to this key. Fields are defined
+ * To specify allowlisted device fields, assign the bitwise `OR` of desired fields to this key. Fields are defined
  * in `ABKDeviceOptions`. To turn off all fields, set the value of this key to `ABKDeviceOptionNone`. By default,
  * all fields are collected.
  */
-extern NSString *const ABKDeviceWhitelistKey;
+extern NSString *const ABKDeviceAllowlistKey;
+
+/*!
+ * This key is deprecated in favor of ABKDeviceAllowlistKey. See ABKDeviceAllowlistKey for more details.
+ */
+extern NSString *const ABKDeviceWhitelistKey __deprecated_msg("ABKDeviceWhitelistKey is deprecated. Please use ABKDeviceAllowlistKey instead.");
 
 /*!
  * This key can be set to a string value representing the app group name for the Push Story Notification
@@ -183,8 +188,8 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
   ABKDeviceOptionLocale = (1 << 2),
   ABKDeviceOptionModel = (1 << 3),
   ABKDeviceOptionOSVersion = (1 << 4),
-  // Note: The ABKDeviceOptionIDFV whitelist key currently has no effect.
-  // IDFV is read regardless of whitelist settings due to its
+  // Note: The ABKDeviceOptionIDFV allowlist key currently has no effect.
+  // IDFV is read regardless of allowlist settings due to its
   // role as the primary device identifier within the Braze system.
   ABKDeviceOptionIDFV = (1 << 5),
   ABKDeviceOptionIDFA = (1 << 6),

@@ -267,4 +267,14 @@ static NSUInteger const iPhone12ProMax = 2778.0;
   return resp != nil;
 }
 
++ (BOOL)responderChainOf:(UIResponder *)responder hasClassPrefixedWith:(NSString *)prefix {
+  UIResponder *resp = responder;
+  
+  while (resp && ![NSStringFromClass(resp.class) hasPrefix:prefix]) {
+    resp = resp.nextResponder;
+  }
+  
+  return resp != nil;
+}
+
 @end

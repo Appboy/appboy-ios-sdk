@@ -10,7 +10,8 @@ let package = Package(
   ],
   products: [
     .library(name: "AppboyKit", type: .static, targets: ["AppboyKit"]),
-    .library(name: "AppboyUI", targets: ["AppboyUI"])
+    .library(name: "AppboyUI", targets: ["AppboyUI"]),
+    .library(name: "AppboyPushStory", targets: ["AppboyPushStory"])
   ],
   dependencies: [
     .package(name: "SDWebImage", url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.8.2")
@@ -18,8 +19,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "AppboyKitLibrary",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.30.0/AppboyKitLibrary.xcframework.zip",
-      checksum: "2c7d4234b808537434f8632c824b58e1c53819e364852276f720f28cfac77fab"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.31.0/AppboyKitLibrary.xcframework.zip",
+      checksum: "1d5021e07ae81bf705af9fc3a636019d736c2e374feababbb1e253124469c9f2"
     ),
     .target(
       name: "AppboyKit",
@@ -52,6 +53,11 @@ let package = Package(
         .process("ABKContentCards/Resources")
       ],
       publicHeadersPath: "include/AppboyUI"
+    ),
+    .binaryTarget(
+      name: "AppboyPushStory",
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.31.0/AppboyPushStory.xcframework.zip",
+      checksum: "50fb05df160478b1a3d782ca8d9fd101583a6bceb2c3aa5626161de6f54c9dc6"
     )
   ]
 )

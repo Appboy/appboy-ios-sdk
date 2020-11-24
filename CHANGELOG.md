@@ -1,3 +1,27 @@
+## 3.31.0
+
+##### Breaking
+- Clients integrating via Swift Package Manager must perform the following steps:
+  - In the Xcode menu, click `Product > Scheme > Edit Scheme...`
+      - Click the expand ▶️ next to `Build` and select `Post-actions`. Press `+` and select `New Run Script Action`.
+      - In the dropdown next to `Provide build settings from`, select your app's target.
+      - Copy this script into the open field:
+        ```
+        bash "$BUILT_PRODUCTS_DIR/Appboy_iOS_SDK_AppboyKit.bundle/Appboy.bundle/appboy-spm-cleanup.sh"
+        ```
+  - If you are updating from 3.29.0 or 3.29.1, you can remove the `Run Script Action` previously specified in the [3.29.0 section of this changelog](#3290).
+  
+##### Added
+- Adds support for Push Stories integration via Swift Package Manager.
+  - In your app content extension's target, under `Build Settings > Other Linker Flags`, add the `-ObjC` linker flag.
+
+##### Changed
+- Updates the email validation on the SDK to be more lenient in favor of more accurate validation by the Braze backend. Valid emails with uncommon patterns or international characters that were previously rejected will now be accepted.
+- Deprecates `ABKDeviceWhitelistKey` in favor of `ABKDeviceAllowlistKey`.
+
+##### Fixed
+- Fixes a bug in HTML in-app messages where some native WebKit UI elements could be unresponsive.
+
 ## 3.30.0
 
 ##### Breaking
