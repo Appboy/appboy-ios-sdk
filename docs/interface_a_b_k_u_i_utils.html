@@ -132,6 +132,8 @@ Class Methods</h2></td></tr>
 <tr class="separator:a662f977b4581ed224aebb529a79b1490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ed414001d92cb7dfb614a876a87c721"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#a1ed414001d92cb7dfb614a876a87c721">responderChainOf:hasKindOfClass:</a></td></tr>
 <tr class="separator:a1ed414001d92cb7dfb614a876a87c721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a410042179e8ffe83c3777d1a80462e50"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#a410042179e8ffe83c3777d1a80462e50">responderChainOf:hasClassPrefixedWith:</a></td></tr>
+<tr class="separator:a410042179e8ffe83c3777d1a80462e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -158,7 +160,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The currently active UIWindowScene </p>
+<p>The currently active UIWindowScene. </p>
 
 </div>
 </div>
@@ -175,7 +177,42 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Given a class, this method searches across multiple locations and returns the associated bundle for that class </p>
+<p>Given a class, this method searches across multiple locations and returns the associated bundle for that class. </p>
+
+</div>
+</div>
+<a class="anchor" id="a410042179e8ffe83c3777d1a80462e50"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (BOOL) responderChainOf: </td>
+          <td></td>
+          <td class="paramtype">(UIResponder *)&#160;</td>
+          <td class="paramname"><em>responder</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">hasClassPrefixedWith:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>prefix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Verifies that one of the responders in the responder chain is prefixed by prefix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responder</td><td>The start of the UIResponder chain. </td></tr>
+    <tr><td class="paramname">prefix</td><td>The prefix looked for in the responder chain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if a class prefixed by prefix is found in the responder chain, NO otherwise. </dd></dl>
 
 </div>
 </div>
@@ -205,12 +242,12 @@ Properties</h2></td></tr>
 <p>Verifies that one of the responders in the responder chain is kind of class aClass. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">responder</td><td>The start of the UIResponder chain </td></tr>
-    <tr><td class="paramname">aClass</td><td>The UIResponder subclass looked for in the responder chain </td></tr>
+    <tr><td class="paramname">responder</td><td>The start of the UIResponder chain. </td></tr>
+    <tr><td class="paramname">aClass</td><td>The UIResponder subclass looked for in the responder chain. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>YES if aClass is found in the responder chain, NO otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if aClass is found in the responder chain, NO otherwise. </dd></dl>
 
 </div>
 </div>
@@ -232,7 +269,7 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The currently active application UIViewController </p>
+<p>The currently active application UIViewController. </p>
 
 </div>
 </div>
@@ -253,7 +290,7 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The currently active application UIWindow </p>
+<p>The currently active application UIWindow. </p>
 
 </div>
 </div>
@@ -274,7 +311,7 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The current application status bar hidden state </p>
+<p>The current application status bar hidden state. </p>
 
 </div>
 </div>
@@ -295,14 +332,14 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The current application status bar style </p>
+<p>The current application status bar style. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 5 2020 12:52:36 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2020 14:23:53 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

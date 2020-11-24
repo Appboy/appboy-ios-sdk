@@ -9,5 +9,6 @@ var searchData=
   ['requestenablesdkonnextapprun',['requestEnableSDKOnNextAppRun',['../interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b',1,'Appboy']]],
   ['requestfeedrefresh',['requestFeedRefresh',['../interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452',1,'Appboy']]],
   ['requestgeofenceswithlongitude_3alatitude_3a',['requestGeofencesWithLongitude:latitude:',['../interface_appboy.html#a0a4744774a3f36ea043c336896b8ab14',1,'Appboy']]],
+  ['responderchainof_3ahasclassprefixedwith_3a',['responderChainOf:hasClassPrefixedWith:',['../interface_a_b_k_u_i_utils.html#a410042179e8ffe83c3777d1a80462e50',1,'ABKUIUtils']]],
   ['responderchainof_3ahaskindofclass_3a',['responderChainOf:hasKindOfClass:',['../interface_a_b_k_u_i_utils.html#a1ed414001d92cb7dfb614a876a87c721',1,'ABKUIUtils']]]
 ];
