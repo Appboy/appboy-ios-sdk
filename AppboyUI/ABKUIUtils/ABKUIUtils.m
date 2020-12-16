@@ -51,13 +51,6 @@ static NSUInteger const iPhone12ProMax = 2778.0;
 }
 
 + (UIWindow *)activeApplicationWindow {
-  if (@available(iOS 13.0, tvOS 13.0, *)) {
-    UIWindow *window = [self selectApplicationWindow:ABKUIUtils.activeWindowScene.windows];
-    if (window) {
-      return window;
-    }
-  }
-  
   return [self selectApplicationWindow:[self application].windows];
 }
 
@@ -67,17 +60,11 @@ static NSUInteger const iPhone12ProMax = 2778.0;
 
 + (BOOL)applicationStatusBarHidden {
   UIViewController *viewController = self.activeApplicationViewController;
-  while (viewController.childViewControllerForStatusBarHidden) {
-    viewController = viewController.childViewControllerForStatusBarHidden;
-  }
   return viewController.prefersStatusBarHidden;
 }
 
 + (UIStatusBarStyle)applicationStatusBarStyle {
   UIViewController *viewController = self.activeApplicationViewController;
-  while (viewController.childViewControllerForStatusBarStyle) {
-    viewController = viewController.childViewControllerForStatusBarStyle;
-  }
   return viewController.preferredStatusBarStyle;
 }
 
