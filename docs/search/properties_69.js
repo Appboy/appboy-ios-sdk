@@ -9,6 +9,7 @@ var searchData=
   ['idfadelegate',['idfaDelegate',['../interface_appboy.html#abf9f0355099652da6068eaa40dec669d',1,'Appboy']]],
   ['idstring',['idString',['../interface_a_b_k_content_card.html#af70f56e9d7d01bed34feeb774454fb68',1,'ABKContentCard']]],
   ['imagecontentmode',['imageContentMode',['../interface_a_b_k_in_app_message.html#a27f44917d3a7d6a8671c40d873965cb4',1,'ABKInAppMessage']]],
+  ['imagedelegate',['imageDelegate',['../interface_appboy.html#ae9735c31fa9fe9121213326ca367e0ac',1,'Appboy']]],
   ['imagestyle',['imageStyle',['../interface_a_b_k_in_app_message_immersive.html#aa5645c31a73781ee00b575fed118abbf',1,'ABKInAppMessageImmersive']]],
   ['imageuri',['imageURI',['../interface_a_b_k_in_app_message.html#ad4d9d9d8615a6dcad9d684e4d6a37022',1,'ABKInAppMessage']]],
   ['inappbuttonmodel',['inAppButtonModel',['../interface_a_b_k_in_app_message_u_i_button.html#a81bc48b8ba7540b708f0dc1940d54268',1,'ABKInAppMessageUIButton']]],

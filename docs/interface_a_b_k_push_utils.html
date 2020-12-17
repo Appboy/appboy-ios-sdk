@@ -105,6 +105,8 @@ Class Methods</h2></td></tr>
 <tr class="separator:a4b25bef3d7d8cb60a32d08f23ced6811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a125929fe98f20625db1a5a71439301a7"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#a125929fe98f20625db1a5a71439301a7">isGeofencesSyncRemoteNotification:</a></td></tr>
 <tr class="separator:a125929fe98f20625db1a5a71439301a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dde2e7042f093c5bda1a3d8c12965ef"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#a0dde2e7042f093c5bda1a3d8c12965ef">isAppboySilentRemoteNotification:</a></td></tr>
+<tr class="separator:a0dde2e7042f093c5bda1a3d8c12965ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac193a6e6a991bd95879eee92c9fae069"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_push_utils.html#ac193a6e6a991bd95879eee92c9fae069">isPushStoryRemoteNotification:</a></td></tr>
 <tr class="separator:ac193a6e6a991bd95879eee92c9fae069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfe2a451aa947b7466d704ac18e56fcd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfe2a451aa947b7466d704ac18e56fcd"></a>
@@ -165,6 +167,29 @@ Class Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the push notification was sent from Braze servers. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0dde2e7042f093c5bda1a3d8c12965ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (BOOL) isAppboySilentRemoteNotification: </td>
+          <td></td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
+          <td class="paramname"><em>userInfo</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userInfo</td><td>The userInfo dictionary passed to application:didReceiveRemoteNotification:fetch​Completion​Handler:</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the push notification was sent by Braze and is silent. </dd></dl>
 
 </div>
 </div>
@@ -336,7 +361,7 @@ Class Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 24 2020 14:23:53 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 17 2020 15:31:21 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

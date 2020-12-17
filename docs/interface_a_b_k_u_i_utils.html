@@ -98,17 +98,14 @@ Instance Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
-<tr class="memitem:a1dba473d57261f41c4f11594a3080732"><td class="memItemLeft" align="right" valign="top">(NSBundle *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#a1dba473d57261f41c4f11594a3080732">bundle:</a></td></tr>
-<tr class="separator:a1dba473d57261f41c4f11594a3080732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaede9a01b109bd14fc2ddcc997fa316"><td class="memItemLeft" align="right" valign="top">(NSBundle *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#afaede9a01b109bd14fc2ddcc997fa316">bundle:channel:</a></td></tr>
+<tr class="separator:afaede9a01b109bd14fc2ddcc997fa316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd96591301116aeeabefa678ced080ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd96591301116aeeabefa678ced080ec"></a>
 (NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getLocalizedString:inAppboyBundle:table:</b></td></tr>
 <tr class="separator:afd96591301116aeeabefa678ced080ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbb08c12392d94654c57f0e5c50cf2f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbb08c12392d94654c57f0e5c50cf2f0"></a>
 (BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <b>objectIsValidAndNotEmpty:</b></td></tr>
 <tr class="separator:afbb08c12392d94654c57f0e5c50cf2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9616c68de93ee8d5403f25a2a10dec2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9616c68de93ee8d5403f25a2a10dec2"></a>
-(Class)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getSDWebImageProxyClass</b></td></tr>
-<tr class="separator:aa9616c68de93ee8d5403f25a2a10dec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20356c6049de6255412bd157d4be3ef6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20356c6049de6255412bd157d4be3ef6"></a>
 (Class)&#160;</td><td class="memItemRight" valign="bottom">+ <b>getModalFeedViewControllerClass</b></td></tr>
 <tr class="separator:a20356c6049de6255412bd157d4be3ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +161,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1dba473d57261f41c4f11594a3080732"></a>
+<a class="anchor" id="afaede9a01b109bd14fc2ddcc997fa316"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -173,11 +170,29 @@ Properties</h2></td></tr>
           <td></td>
           <td class="paramtype">(Class)&#160;</td>
           <td class="paramname"><em>bundleClass</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">channel:</td>
           <td></td>
+          <td class="paramtype">(ABKChannel)&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Given a class, this method searches across multiple locations and returns the associated bundle for that class. </p>
+<p>Given a class and a channel, this method searches across multiple locations and returns the appropriate bundle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bundleClass</td><td>The class associated with the bundle. </td></tr>
+    <tr><td class="paramname">channel</td><td>The channel associated with the bundle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The bundle if available, nil otherwise. </dd></dl>
 
 </div>
 </div>
@@ -339,7 +354,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 24 2020 14:23:53 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 17 2020 15:31:21 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

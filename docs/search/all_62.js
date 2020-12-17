@@ -4,7 +4,7 @@ var searchData=
   ['beforecontrolmessageimpressionlogged_3a',['beforeControlMessageImpressionLogged:',['../protocol_a_b_k_in_app_message_controller_delegate-p.html#a0e8cc58099bb0798b38af02c7049a789',1,'ABKInAppMessageControllerDelegate-p']]],
   ['beforeinappmessagedisplayed_3a',['beforeInAppMessageDisplayed:',['../protocol_a_b_k_in_app_message_controller_delegate-p.html#a829bd5ba5ca7ce9ec671bf112c030b95',1,'ABKInAppMessageControllerDelegate-p']]],
   ['beforeinappmessagedisplayed_3awithkeyboardisup_3a',['beforeInAppMessageDisplayed:withKeyboardIsUp:',['../protocol_a_b_k_in_app_message_u_i_delegate-p.html#a1db3481c1466f747a66ba2de6d60a20d',1,'ABKInAppMessageUIDelegate-p']]],
-  ['bundle_3a',['bundle:',['../interface_a_b_k_u_i_utils.html#a1dba473d57261f41c4f11594a3080732',1,'ABKUIUtils']]],
+  ['bundle_3achannel_3a',['bundle:channel:',['../interface_a_b_k_u_i_utils.html#afaede9a01b109bd14fc2ddcc997fa316',1,'ABKUIUtils']]],
   ['buttonbackgroundcolor',['buttonBackgroundColor',['../interface_a_b_k_in_app_message_button.html#a631dcbc3fc2014539892b5bea7b72b5b',1,'ABKInAppMessageButton::buttonBackgroundColor()'],['../interface_a_b_k_in_app_message_dark_button_theme.html#a8cad79957aae3d86c8a52fd35df09588',1,'ABKInAppMessageDarkButtonTheme::buttonBackgroundColor()']]],
   ['buttonbordercolor',['buttonBorderColor',['../interface_a_b_k_in_app_message_button.html#a8d521d68bf10d9a292c2bb0123e4d974',1,'ABKInAppMessageButton::buttonBorderColor()'],['../interface_a_b_k_in_app_message_dark_button_theme.html#a216848ba6545d53464ec9ba1045d3f99',1,'ABKInAppMessageDarkButtonTheme::buttonBorderColor()']]],
   ['buttonclickactiontype',['buttonClickActionType',['../interface_a_b_k_in_app_message_button.html#aff938abb33df633a3473bdd457f210b0',1,'ABKInAppMessageButton']]],
