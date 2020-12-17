@@ -95,7 +95,7 @@ static CGFloat AppboyCardCornerRadius = 3.0;
 - (UIImage *)getPlaceHolderImage {
   return [ABKUIUtils getImageWithName:@"img-noimage-lrg"
                                  type:@"png"
-                       inAppboyBundle:[ABKUIUtils bundle:[ABKNFBaseCardCell class]]];
+                       inAppboyBundle:[ABKUIUtils bundle:[ABKNFBaseCardCell class] channel:ABKNewsFeedChannel]];
 }
 
 @end

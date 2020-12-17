@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.31.0"
+#define APPBOY_SDK_VERSION @"3.31.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -29,6 +29,7 @@
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKIDFADelegate;
 @protocol ABKURLDelegate;
+@protocol ABKImageDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 /* ------------------------------------------------------------------------------------------------------
@@ -87,6 +88,11 @@ extern NSString *const ABKEndpointKey;
  * This key can be set to an instance of a class that conforms to the ABKURLDelegate protocol, allowing it to handle URLs in a custom way.
  */
 extern NSString *const ABKURLDelegateKey;
+
+/*!
+ * This can can be set to an instance of a class that conforms to the ABKImageDelegate protocol, allowing flexibility for using custom image libraries.
+ */
+extern NSString *const ABKImageDelegateKey;
 
 /*!
  * This key can be set to an instance of a class that conforms to the ABKInAppMessageControllerDelegate protocol, allowing it to handle in-app messages in a custom way.
@@ -201,6 +207,19 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
   ABKDeviceOptionAll = ~ABKDeviceOptionNone
 };
 
+/*!
+ * Possible channels supported by the SDK.
+ */
+typedef NS_ENUM(NSInteger, ABKChannel) {
+  ABKPushNotificationChannel,
+  ABKInAppMessageChannel,
+  ABKNewsFeedChannel,
+  ABKContentCardChannel,
+  
+  // Note: Compatibility value for old internal APIs
+  ABKUnknownChannel
+};
+
 /*
  * Braze Public API: Appboy
  */
@@ -302,6 +321,11 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
  * A class conforming to the ABKURLDelegate protocol can be set to handle URLs in a custom way.
  */
 @property (nonatomic, weak, nullable) id<ABKURLDelegate> appboyUrlDelegate;
+
+/*!
+ * A class conforming to ABKImageDelegate can be set to use a custom image library.
+ */
+@property (nonatomic, strong, nullable) id<ABKImageDelegate> imageDelegate;
 
 /*!
  * Property for internal reporting of SDK flavor.

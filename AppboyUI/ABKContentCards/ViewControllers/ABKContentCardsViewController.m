@@ -5,7 +5,7 @@
 
 - (instancetype)init {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKContentCardsStoryboard"
-                                               bundle:[ABKUIUtils bundle:[ABKContentCardsViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKContentCardsViewController class] channel:ABKContentCardChannel]];
   ABKContentCardsViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKContentCardsViewController"];
   self = nf;
   self.contentCardsViewController = self.viewControllers[0];

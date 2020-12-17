@@ -48,6 +48,9 @@
 // SDWebImage
 #import "ABKSDWebImageProxy.h"
 
+// ABKImageDelegate
+#import "ABKImageDelegate.h"
+
 // Location
 #import "ABKLocationManager.h"
 #import "ABKLocationManagerProvider.h"

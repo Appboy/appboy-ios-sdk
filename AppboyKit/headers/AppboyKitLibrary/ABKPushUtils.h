@@ -84,6 +84,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)isGeofencesSyncRemoteNotification:(NSDictionary *)userInfo;
 
 /*!
+ * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetch​Completion​Handler:
+ *
+ * @return YES if the push notification was sent by Braze and is silent.
+ */
++ (BOOL)isAppboySilentRemoteNotification:(NSDictionary *)userInfo;
+
+/*!
  * @param userInfo The userInfo dictionary passed to application:didReceiveRemoteNotification:fetchCompletionHandler:
  *                 or application:didReceiveRemoteNotification:.
  *

@@ -6,7 +6,7 @@
 
 - (instancetype)init {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKNewsFeedCardStoryboard"
-                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedViewController class] channel:ABKNewsFeedChannel]];
   ABKNewsFeedViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKNewsFeedViewController"];
   self = nf;
   _newsFeed = self.viewControllers[0];

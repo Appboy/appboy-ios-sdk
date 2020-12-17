@@ -1,3 +1,10 @@
+## 3.31.1
+
+##### Fixed
+- Fixes a bug in the Cocoapods integration that would lead to SDK localizations being embedded for languages not explicitly supported in the app.
+- Fixes a rare crash that would occur when no windows exist at `UIWindowLevelNormal` while an in-app message is being displayed and `UIKit` requests UI updates (orientation change, etc.).
+- Fixes a bug in modal in-app messages where some languages (such as Burmese) may have clipped text.
+
 ## 3.31.0
 
 ##### Breaking
@@ -10,7 +17,7 @@
         bash "$BUILT_PRODUCTS_DIR/Appboy_iOS_SDK_AppboyKit.bundle/Appboy.bundle/appboy-spm-cleanup.sh"
         ```
   - If you are updating from 3.29.0 or 3.29.1, you can remove the `Run Script Action` previously specified in the [3.29.0 section of this changelog](#3290).
-  
+
 ##### Added
 - Adds support for Push Stories integration via Swift Package Manager.
   - In your app content extension's target, under `Build Settings > Other Linker Flags`, add the `-ObjC` linker flag.

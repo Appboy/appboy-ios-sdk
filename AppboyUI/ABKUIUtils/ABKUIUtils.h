@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Appboy.h"
 
 @interface ABKUIUtils : NSObject
 
@@ -29,13 +30,16 @@
 @property (class, readonly) UIStatusBarStyle applicationStatusBarStyle;
 
 /*!
- * Given a class, this method searches across multiple locations and returns the associated bundle for that class.
+ * Given a class and a channel, this method searches across multiple locations and returns the appropriate
+ * bundle.
+ * @param bundleClass The class associated with the bundle.
+ * @param channel The channel associated with the bundle.
+ * @returns The bundle if available, nil otherwise.
  */
-+ (NSBundle *)bundle:(Class)bundleClass;
++ (NSBundle *)bundle:(Class)bundleClass channel:(ABKChannel)channel;
 
 + (NSString *)getLocalizedString:(NSString *)key inAppboyBundle:(NSBundle *)appboyBundle table:(NSString *)table;
 + (BOOL)objectIsValidAndNotEmpty:(id)object;
-+ (Class)getSDWebImageProxyClass;
 + (Class)getModalFeedViewControllerClass;
 + (BOOL)isNotchedPhone;
 + (UIImage *)getImageWithName:(NSString *)name

@@ -2,9 +2,9 @@
 #import "ABKUIUtils.h"
 #import "ABKInAppMessageViewController.h"
 #import "ABKInAppMessageImmersive.h"
-#import "ABKSDWebImageProxy.h"
 #import "Appboy.h"
 #import "ABKInAppMessageController.h"
+#import "ABKImageDelegate.h"
 
 static const CGFloat ModalViewCornerRadius = 8.0f;
 static const CGFloat MaxModalViewWidth = 450.0f;
@@ -28,12 +28,7 @@ static const CGFloat MaxModalViewHeight = 720.0f;
                                                                                   views:@{@"view" : self.view}]];
   } else {
     @try {
-      // SDWebImage downloads the imageView's image asynchronously, so the image is not guaranteed
-      // to be downloaded at this point, so we don't create the constraint based on the imageView's image size.
-      // Instead, we fetch the image from the SDWebImage cache directly.
-      Class SDWebImageProxyClass = [ABKUIUtils getSDWebImageProxyClass];
-      NSString *imageKey = [SDWebImageProxyClass cacheKeyForURL:self.inAppMessage.imageURI];
-      UIImage *inAppImage = [SDWebImageProxyClass imageFromCacheForKey:imageKey];
+      UIImage *inAppImage = [[Appboy sharedInstance].imageDelegate imageFromCacheForURL:self.inAppMessage.imageURI];
       CGFloat imageAspectRatio = 1.0;
       if (inAppImage != nil) {
         imageAspectRatio = inAppImage.size.width / inAppImage.size.height;
@@ -105,10 +100,10 @@ static const CGFloat MaxModalViewHeight = 720.0f;
 }
 
 - (void)loadView {
-  [[ABKUIUtils bundle:[ABKInAppMessageModalViewController class]]
-               loadNibNamed:@"ABKInAppMessageModalViewController"
-                      owner:self
-                    options:nil];
+  NSBundle *bundle = [ABKUIUtils bundle:[ABKInAppMessageModalViewController class] channel:ABKInAppMessageChannel];
+  [bundle loadNibNamed:@"ABKInAppMessageModalViewController"
+                 owner:self
+               options:nil];
   self.view.layer.cornerRadius = ModalViewCornerRadius;
   self.inAppMessageHeaderLabel.font = HeaderLabelDefaultFont;
   self.inAppMessageMessageLabel.font = MessageLabelDefaultFont;
@@ -208,9 +203,7 @@ static const CGFloat MaxModalViewHeight = 720.0f;
     self.iconLabelView = nil;
     
     @try {
-      Class SDWebImageProxyClass = [ABKUIUtils getSDWebImageProxyClass];
-      NSString *imageKey = [SDWebImageProxyClass cacheKeyForURL:self.inAppMessage.imageURI];
-      UIImage *inAppImage = [SDWebImageProxyClass imageFromCacheForKey:imageKey];
+      UIImage *inAppImage = [[Appboy sharedInstance].imageDelegate imageFromCacheForURL:self.inAppMessage.imageURI];
       CGFloat imageAspectRatio = 1.0;
       if (inAppImage != nil) {
         imageAspectRatio = inAppImage.size.width / inAppImage.size.height;

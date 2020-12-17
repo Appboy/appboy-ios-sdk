@@ -15,7 +15,7 @@
 
 - (instancetype)init {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKNewsFeedCardStoryboard"
-                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class] channel:ABKNewsFeedChannel]];
   ABKNewsFeedTableViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKNewsFeedTableViewController"];
   self = nf;
   return self;
@@ -233,14 +233,14 @@
 
 + (instancetype)getNavigationFeedViewController {
   UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKNewsFeedCardStoryboard"
-                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class]]];
+                                               bundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class] channel:ABKNewsFeedChannel]];
   ABKNewsFeedTableViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKNewsFeedTableViewController"];
   return nf;
 }
 
 - (NSString *)localizedAppboyFeedString:(NSString *)key {
   return [ABKUIUtils getLocalizedString:key
-                         inAppboyBundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class]]
+                         inAppboyBundle:[ABKUIUtils bundle:[ABKNewsFeedTableViewController class] channel:ABKNewsFeedChannel]
                                   table:@"AppboyFeedLocalizable"];
 }
 

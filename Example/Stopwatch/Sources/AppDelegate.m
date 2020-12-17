@@ -129,7 +129,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     NSLog(@"Remote notification was sent from Braze, clearing badge number.");
 
-    if (userInfo != nil && userInfo[@"aps"][@"content-available"]) {
+    if ([ABKPushUtils isAppboySilentRemoteNotification:userInfo]) {
       if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive && self.showSilentPushAlerts) {
         [AlertControllerUtils presentAlertWithOKButtonForTitle:@"Silent Push Received"
                                                        message:[self getExtrasFromPush:userInfo]
