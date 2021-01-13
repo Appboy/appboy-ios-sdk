@@ -119,7 +119,7 @@ static NSString *const FontAwesomeName = @"FontAwesome";
 // we cannot find any icon from the in-app message, and won't do anything to the given image view.
 - (BOOL)applyImageToImageView:(UIImageView *)iconImageView {
   if ([ABKUIUtils objectIsValidAndNotEmpty:self.inAppMessage.imageURI]) {
-    if ([Appboy sharedInstance].imageDelegate != nil) {
+    if ([Appboy sharedInstance].imageDelegate) {
       [[Appboy sharedInstance].imageDelegate setImageForView:iconImageView
                       showActivityIndicator:NO
                                     withURL:self.inAppMessage.imageURI

@@ -1,5 +1,6 @@
 #import "ABKNFBannerCardCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "Appboy.h"
+#import "ABKImageDelegate.h"
 
 @implementation ABKNFBannerCardCell
 
@@ -14,30 +15,40 @@
   [self updateImageRatioConstraintToRatio:bannerCard.imageAspectRatio];
   [self setNeedsUpdateConstraints];
   [self setNeedsDisplay];
+
+  if (![Appboy sharedInstance].imageDelegate) {
+    NSLog(@"[APPBOY][WARN] %@ %s",
+          @"ABKImageDelegate on Appboy is nil. Image loading may be disabled.",
+          __PRETTY_FUNCTION__);
+    return;
+  }
   typeof(self) __weak weakSelf = self;
-  [self.bannerImageView sd_setImageWithURL:[NSURL URLWithString:bannerCard.image]
-                          placeholderImage:nil
-                                   options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync) 
-                                 completed:^(UIImage * _Nullable image, NSError * _Nullable error,
-                                             SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                                   if (weakSelf == nil) {
-                                     return;
-                                   }
-                                   if (image) {
-                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                       CGFloat newRatio = image.size.width / image.size.height;
-                                       if (fabs(newRatio - weakSelf.imageRatioConstraint.multiplier) > 0.1f) {
-                                         [weakSelf updateImageRatioConstraintToRatio:newRatio];
-                                         [weakSelf setNeedsUpdateConstraints];
-                                         [weakSelf setNeedsDisplay];
-                                       }
-                                     });
-                                   } else {
-                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                       weakSelf.bannerImageView.image = [weakSelf getPlaceHolderImage];
-                                     });
-                                   }
-                                 }];
+  [[Appboy sharedInstance].imageDelegate setImageForView:self.bannerImageView
+                                   showActivityIndicator:NO
+                                                 withURL:[NSURL URLWithString:bannerCard.image]
+                                        imagePlaceHolder:nil
+                                               completed:^(UIImage * _Nullable image,
+                                                           NSError * _Nullable error,
+                                                           NSInteger cacheType,
+                                                           NSURL * _Nullable imageURL) {
+    if (weakSelf == nil) {
+      return;
+    }
+    if (image) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        CGFloat newRatio = image.size.width / image.size.height;
+        if (fabs(newRatio - weakSelf.imageRatioConstraint.multiplier) > 0.1f) {
+          [weakSelf updateImageRatioConstraintToRatio:newRatio];
+          [weakSelf setNeedsUpdateConstraints];
+          [weakSelf setNeedsDisplay];
+        }
+      });
+    } else {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        weakSelf.bannerImageView.image = [weakSelf getPlaceHolderImage];
+      });
+    }
+  }];
 }
 
 - (void)updateImageRatioConstraintToRatio:(CGFloat)newRatio {

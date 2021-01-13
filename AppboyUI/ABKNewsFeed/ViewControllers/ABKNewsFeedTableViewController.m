@@ -7,7 +7,6 @@
 #import "ABKUIURLUtils.h"
 
 #import <SDWebImage/SDWebImagePrefetcher.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation ABKNewsFeedTableViewController
 

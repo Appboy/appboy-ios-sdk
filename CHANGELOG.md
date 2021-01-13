@@ -1,3 +1,11 @@
+## 3.31.2
+
+##### Fixed
+- Fixes the formatting of Full and Slideup in-app messages when displaying on iPhone 12 mini.
+
+##### Changed
+- Improves Push Story click tracking handling.
+
 ## 3.31.1
 
 ##### Fixed

@@ -1,5 +1,6 @@
 #import "ABKClassicImageContentCardCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "Appboy.h"
+#import "ABKImageDelegate.h"
 
 @implementation ABKClassicImageContentCardCell
 
@@ -16,9 +17,17 @@
     return;
   }
   [super applyCard:card];
-  [self.classicImageView sd_setImageWithURL:[NSURL URLWithString:card.image]
-                           placeholderImage:[self getPlaceHolderImage]
-                                    options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync)];
+  if (![Appboy sharedInstance].imageDelegate) {
+    NSLog(@"[APPBOY][WARN] %@ %s",
+          @"ImageDelegate on Appboy is nil. Image loading may be disabled.",
+          __PRETTY_FUNCTION__);
+    return;
+  }
+  [[Appboy sharedInstance].imageDelegate setImageForView:self.classicImageView
+                                   showActivityIndicator:NO
+                                                 withURL:[NSURL URLWithString:card.image]
+                                        imagePlaceHolder:[self getPlaceHolderImage]
+                                               completed:nil];
 }
 
 @end

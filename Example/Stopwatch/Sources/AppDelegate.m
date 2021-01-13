@@ -174,8 +174,9 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   return YES;
 }
 
-# pragma mark - Braze Push Registration
+#pragma mark - Braze Push Registration
 
+// Pre-iOS 10 or if UserNotifications framework is not used
 - (void)setUpPushWithApplicationDelegates {
   UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationAction alloc] init];
   likeAction.identifier = @"LIKE_IDENTIFIER";

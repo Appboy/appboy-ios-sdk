@@ -11,7 +11,6 @@
 #import "ABKUIUtils.h"
 #import "ABKUIURLUtils.h"
 #import <SDWebImage/SDWebImagePrefetcher.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 
 static double const ABKContentCardsCacheTimeout = 1 * 60; // 1 minute
 static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;

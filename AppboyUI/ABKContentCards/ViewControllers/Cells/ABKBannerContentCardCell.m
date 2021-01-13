@@ -1,6 +1,7 @@
 #import "ABKBannerContentCardCell.h"
 #import "ABKBannerCard.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "Appboy.h"
+#import "ABKImageDelegate.h"
 
 static const CGFloat ImageMinResizingMultiplier = 0.1f;
 
@@ -16,8 +17,21 @@ static const CGFloat ImageMinResizingMultiplier = 0.1f;
     [self updateImageConstraintsWithRatio:card.imageAspectRatio];
   }
   
+  if (![Appboy sharedInstance].imageDelegate) {
+    NSLog(@"[APPBOY][WARN] %@ %s",
+          @"ABKImageDelegate on Appboy is nil. Image loading may be disabled.",
+          __PRETTY_FUNCTION__);
+    return;
+  }
   typeof(self) __weak weakSelf = self;
-  [self.bannerImageView sd_setImageWithURL:[NSURL URLWithString:card.image] placeholderImage:nil options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync) completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+  [[Appboy sharedInstance].imageDelegate setImageForView:self.bannerImageView
+                                   showActivityIndicator:NO
+                                                 withURL:[NSURL URLWithString:card.image]
+                                        imagePlaceHolder:nil
+                                               completed:^(UIImage * _Nullable image,
+                                                           NSError * _Nullable error,
+                                                           NSInteger cacheType,
+                                                           NSURL * _Nullable imageURL) {
     if (weakSelf == nil) {
       return;
     }

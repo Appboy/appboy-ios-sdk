@@ -1,5 +1,6 @@
 #import "ABKCaptionedImageContentCardCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "Appboy.h"
+#import "ABKImageDelegate.h"
 
 static const CGFloat ImageMinResizingDifference = 5e-1;
 
@@ -43,8 +44,21 @@ static const CGFloat ImageMinResizingDifference = 5e-1;
     [self updateImageConstraintsWithNewConstant:currImageHeightConstraint];
   }
   
+  if (![Appboy sharedInstance].imageDelegate) {
+    NSLog(@"[APPBOY][WARN] %@ %s",
+          @"ABKImageDelegate on Appboy is nil. Image loading may be disabled.",
+          __PRETTY_FUNCTION__);
+    return;
+  }
   typeof(self) __weak weakSelf = self;
-  [self.captionedImageView sd_setImageWithURL:[NSURL URLWithString:captionedImageCard.image] placeholderImage:nil options:(SDWebImageQueryMemoryData | SDWebImageQueryDiskDataSync) completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+  [[Appboy sharedInstance].imageDelegate setImageForView:self.captionedImageView
+                                   showActivityIndicator:NO
+                                                 withURL:[NSURL URLWithString:captionedImageCard.image]
+                                        imagePlaceHolder:nil
+                                               completed:^(UIImage * _Nullable image,
+                                                           NSError * _Nullable error,
+                                                           NSInteger cacheType,
+                                                           NSURL * _Nullable imageURL) {
     if (weakSelf == nil) {
       return;
     }

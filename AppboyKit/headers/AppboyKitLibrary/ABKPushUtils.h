@@ -108,9 +108,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)shouldFetchTestTriggersFlagContainedInPayload:(NSDictionary *)userInfo __deprecated;
 
+/*!
+ * @return A set of the default UNNotificationCategories used by Braze.
+ */
 + (NSSet<UNNotificationCategory *> *)getAppboyUNNotificationCategorySet NS_AVAILABLE_IOS(10.0);
 
-+ (NSSet<UIUserNotificationCategory *> *)getAppboyUIUserNotificationCategorySet __deprecated;
++ (NSSet<UIUserNotificationCategory *> *)getAppboyUIUserNotificationCategorySet __deprecated_msg("Please use `getAppboyUNNotificationCategorySet` instead.");
 
 @end
 NS_ASSUME_NONNULL_END
