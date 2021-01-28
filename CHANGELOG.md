@@ -8,6 +8,10 @@
 
 ## 3.31.1
 
+##### Breaking
+- Removes the method `getSDWebImageProxyClass` from `ABKUIUtils`.
+  - You can access the public class `ABKSDWebImageProxy` directly by importing `ABKSDWebImageProxy.h`.
+
 ##### Fixed
 - Fixes a bug in the Cocoapods integration that would lead to SDK localizations being embedded for languages not explicitly supported in the app.
 - Fixes a rare crash that would occur when no windows exist at `UIWindowLevelNormal` while an in-app message is being displayed and `UIKit` requests UI updates (orientation change, etc.).
