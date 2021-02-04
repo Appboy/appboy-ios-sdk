@@ -20,8 +20,6 @@ Pod::Spec.new do |s|
     # Skip this architecture to pass Pod validation since we removed the `arm64` simulator ARCH in order to use lipo later
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-  # Same reason as above
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.subspec 'Core' do |sc|
     sc.ios.library = 'z'
