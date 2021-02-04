@@ -57,7 +57,7 @@ let package = Package(
     .binaryTarget(
       name: "AppboyPushStory",
       url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.32.0/AppboyPushStory.xcframework.zip",
-      checksum: ""
+      checksum: "f74b15ca857172d2910571d0850ff056ac5aeb9c5721293e6cdf5ed813187804"
     )
   ]
 )
