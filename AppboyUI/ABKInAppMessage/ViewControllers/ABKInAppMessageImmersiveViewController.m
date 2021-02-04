@@ -93,7 +93,9 @@ static NSInteger const CloseButtonTag = 50;
     [self.rightInAppMessageButton removeFromSuperview];
     self.leftInAppMessageButton = nil;
     self.rightInAppMessageButton = nil;
-    if ([[self getInAppMessage] isKindOfClass:[ABKInAppMessageModal class]] && [self getInAppMessage].imageStyle != ABKInAppMessageGraphic) {
+    if (([[self getInAppMessage] isKindOfClass:[ABKInAppMessageModal class]]
+         || [[self getInAppMessage] isKindOfClass:[ABKInAppMessageFull class]])
+        && [self getInAppMessage].imageStyle != ABKInAppMessageGraphic) {
       UIView *bottomView = [self bottomViewWithNoButton];
       if ([ABKUIUtils objectIsValidAndNotEmpty:bottomView]) {
         NSArray *bottomConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view]-30-|"

@@ -19,8 +19,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "AppboyKitLibrary",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.31.2/AppboyKitLibrary.xcframework.zip",
-      checksum: "0507970ac763c35eb2653908cba1c044f7c0d46e6f18b7b1ebfdf2ae5edba35f"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.32.0/AppboyKitLibrary.xcframework.zip",
+      checksum: "591dbfb735e6ec991b908bb7ea0d94dab87a357a9a9e4e7f40906c3677b3d925"
     ),
     .target(
       name: "AppboyKit",
@@ -56,8 +56,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "AppboyPushStory",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.31.2/AppboyPushStory.xcframework.zip",
-      checksum: "735391261e035295b5a88a26ad880c156dd8056c88a9ca1d7d9d179844c73458"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.32.0/AppboyPushStory.xcframework.zip",
+      checksum: ""
     )
   ]
 )

@@ -1,3 +1,17 @@
+## 3.32.0
+
+##### Added
+- Adds Mac Catalyst support for apps integrating with Swift Package Manager (SPM).
+  - Please follow [the instructions here](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/swift_package_manager/) to import the SDK with SPM. The SDK does not currently support Mac Catalyst when integrated through Cocoapods or Carthage.
+  - To add Mac Catalyst support, update the `Run Script Action` described in the [3.31.0 section of the Changelog](#3310).
+    - Replace the existing script with the following:
+      ```
+      # iOS
+      bash "$BUILT_PRODUCTS_DIR/Appboy_iOS_SDK_AppboyKit.bundle/Appboy.bundle/appboy-spm-cleanup.sh"
+      # macOS
+      bash "$BUILT_PRODUCTS_DIR/Appboy_iOS_SDK_AppboyKit.bundle/Contents/Resources/Appboy.bundle/appboy-spm-cleanup.sh"
+      ```
+
 ## 3.31.2
 
 ##### Fixed
@@ -20,7 +34,7 @@
 ## 3.31.0
 
 ##### Breaking
-- Clients integrating via Swift Package Manager must perform the following steps:
+- For apps that have previously integrated through Swift Package Manager, please perform the following steps:
   - In the Xcode menu, click `Product > Scheme > Edit Scheme...`
       - Click the expand ▶️ next to `Build` and select `Post-actions`. Press `+` and select `New Run Script Action`.
       - In the dropdown next to `Provide build settings from`, select your app's target.
@@ -28,10 +42,10 @@
         ```
         bash "$BUILT_PRODUCTS_DIR/Appboy_iOS_SDK_AppboyKit.bundle/Appboy.bundle/appboy-spm-cleanup.sh"
         ```
-  - If you are updating from 3.29.0 or 3.29.1, you can remove the `Run Script Action` previously specified in the [3.29.0 section of this changelog](#3290).
+  - If you are updating from 3.29.0 or 3.29.1, remove the `Run Script Action` previously specified in the [3.29.0 section of this changelog](#3290).
 
 ##### Added
-- Adds support for Push Stories integration via Swift Package Manager.
+- Adds Push Stories support for apps integrating with Swift Package Manager.
   - In your app content extension's target, under `Build Settings > Other Linker Flags`, add the `-ObjC` linker flag.
 
 ##### Changed

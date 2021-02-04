@@ -1,20 +1,12 @@
 #import "ABKInAppMessageSlideupViewController.h"
 #import "ABKInAppMessageSlideup.h"
 #import "ABKUIUtils.h"
-#import <QuartzCore/QuartzCore.h>
 
-static CGFloat const SlideupAssetRightMargin = 20.0f;
-static CGFloat const SlideupAssetLeftMargin = 20.0f;
-
+static CGFloat const AssetSideMargin = 20.0f;
 static CGFloat const DefaultViewRadius = 15.0f;
 static CGFloat const DefaultVerticalMarginHeight = 10.0f;
-static CGFloat const DefaultSideMarginWidth = 15.0f;
 static CGFloat const NotchedPhoneLandscapeBottomMarginHeight = 21.0f;
-static CGFloat const NotchedPhoneLandscapeSideMarginWidth = 44.0f;
-static CGFloat const NotchedPhonePortraitTopMarginHeight = 44.0f;
 static CGFloat const NotchedPhonePortraitBottomMarginHeight = 34.0f;
-
-static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel";
 
 @interface ABKInAppMessageSlideupViewController()
 
@@ -71,26 +63,17 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
   self.view.layer.shadowOpacity = alpha;
 }
 
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-  [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-
-  CGFloat sidePadding = [self sideMarginsForPhoneAndOrientation];
-  self.leadConstraint.constant = sidePadding;
-  self.trailConstraint.constant = sidePadding;
-}
-
 #pragma mark - Private methods
 
 - (void)setupChevron {
   if (((ABKInAppMessageSlideup *)self.inAppMessage).hideChevron) {
     [self.arrowImage removeFromSuperview];
     self.arrowImage = nil;
-    NSDictionary *inAppMessageLabelDictionary = @{ InAppMessageSlideupLabelKey : self.inAppMessageMessageLabel };
-    NSArray *inAppMessageLabelTrailingConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[inAppMessageMessageLabel]-RightMargin-|"
-                                                                                           options:0
-                                                                                           metrics:@{@"RightMargin" : @(SlideupAssetRightMargin)}
-                                                                                             views:inAppMessageLabelDictionary];
-    [self.view addConstraints:inAppMessageLabelTrailingConstraint];
+    NSLayoutConstraint *inAppMessageLabelTrailingConstraint =
+        [self.inAppMessageMessageLabel.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor
+                                                                     constant:-AssetSideMargin];
+    [self.view addConstraint:inAppMessageLabelTrailingConstraint];
+
   } else {
     if (((ABKInAppMessageSlideup *)self.inAppMessage).chevronColor != nil) {
       UIColor *arrowColor = ((ABKInAppMessageSlideup *)self.inAppMessage).chevronColor;
@@ -112,42 +95,23 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
     if (![super applyIconToLabelView:self.iconLabelView]) {
       [self.iconLabelView removeFromSuperview];
       self.iconLabelView = nil;
-      NSDictionary *inAppMessageLabelDictionary = @{ InAppMessageSlideupLabelKey : self.inAppMessageMessageLabel };
-      NSArray *inAppMessageLabelLeadingConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-LeftMargin-[inAppMessageMessageLabel]"
-                                                                                            options:0
-                                                                                            metrics:@{@"LeftMargin" : @(SlideupAssetLeftMargin)}
-                                                                                              views:inAppMessageLabelDictionary];
-      [self.view addConstraints:inAppMessageLabelLeadingConstraint];
+      NSLayoutConstraint *inAppMessageLabelLeadingConstraint =
+          [self.inAppMessageMessageLabel.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor
+                                                                       constant:AssetSideMargin];
+      [self.view addConstraint:inAppMessageLabelLeadingConstraint];
     }
   }
 }
 
 - (void)setupConstraintsWithSuperView {
-  CGFloat sidePadding = [self sideMarginsForPhoneAndOrientation];
-  self.leadConstraint = [NSLayoutConstraint constraintWithItem:self.view
-                                                     attribute:NSLayoutAttributeLeading
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self.view.superview
-                                                     attribute:NSLayoutAttributeLeading
-                                                    multiplier:1
-                                                      constant:sidePadding];
-  self.trailConstraint = [NSLayoutConstraint constraintWithItem:self.view.superview
-                                                      attribute:NSLayoutAttributeTrailing
-                                                      relatedBy:NSLayoutRelationEqual
-                                                         toItem:self.view
-                                                      attribute:NSLayoutAttributeTrailing
-                                                     multiplier:1
-                                                       constant:sidePadding];
+  self.leadConstraint = [self.view.leadingAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.leadingAnchor];
+  self.trailConstraint = [self.view.trailingAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.trailingAnchor];
 
   NSLayoutConstraint *slideConstraint = nil;
-  if (((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop) {
-    slideConstraint = [NSLayoutConstraint constraintWithItem:self.view
-                                                   attribute:NSLayoutAttributeTop
-                                                   relatedBy:NSLayoutRelationEqual
-                                                      toItem:self.view.superview
-                                                   attribute:NSLayoutAttributeTop
-                                                  multiplier:1
-                                                    constant:- self.view.frame.size.height];
+  if ([self animatesFromTop]) {
+    CGFloat offscreenDistance = self.view.frame.size.height + [ABKUIUtils getStatusBarSize].height;
+    slideConstraint = [self.view.topAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.topAnchor
+                                                          constant:-offscreenDistance];
   } else {
     slideConstraint =  [NSLayoutConstraint constraintWithItem:self.view.superview
                                                     attribute:NSLayoutAttributeBottom
@@ -161,32 +125,17 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
   [self.view.superview addConstraints:@[self.leadConstraint, self.trailConstraint, slideConstraint]];
 }
 
-- (CGFloat)sideMarginsForPhoneAndOrientation {
-  if ([ABKUIUtils isNotchedPhone] && UIInterfaceOrientationIsLandscape([ABKUIUtils getInterfaceOrientation])) {
-    return NotchedPhoneLandscapeSideMarginWidth;
-  }
-  return DefaultSideMarginWidth;
-}
-
 - (CGFloat)slideupAnimationDistance {
-  BOOL animatesFromTop = ((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop;
-
-  if ([ABKUIUtils isNotchedPhone]) {
-    if ([ABKUIUtils getInterfaceOrientation] == UIInterfaceOrientationPortrait) {
-      if (animatesFromTop) {
-        return NotchedPhonePortraitTopMarginHeight;
-      } else {
-        return NotchedPhonePortraitBottomMarginHeight;
-      }
-    } else if (!animatesFromTop) {
-      // Is landscape and animates from bottom
-      return NotchedPhoneLandscapeBottomMarginHeight;
-    }
-  } else if (animatesFromTop) {
-    // Non-notched that animates from top, add status bar height
-    return DefaultVerticalMarginHeight + [ABKUIUtils getStatusBarSize].height;
+  if ([ABKUIUtils isNotchedPhone] && ![self animatesFromTop]) {
+    return UIInterfaceOrientationIsPortrait([ABKUIUtils getInterfaceOrientation])
+            ? NotchedPhonePortraitBottomMarginHeight
+            : NotchedPhoneLandscapeBottomMarginHeight;
   }
   return DefaultVerticalMarginHeight;
+}
+
+- (BOOL)animatesFromTop {
+  return ((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop;
 }
 
 #pragma mark - Superclass methods
@@ -200,7 +149,9 @@ static NSString *const InAppMessageSlideupLabelKey = @"inAppMessageMessageLabel"
 }
 
 - (void)beforeMoveInAppMessageViewOffScreen {
-  self.slideConstraint.constant = - self.view.frame.size.height;
+  CGFloat offscreenDistance = [self animatesFromTop] ? self.view.frame.size.height + [ABKUIUtils getStatusBarSize].height
+                                                     : self.view.frame.size.height;
+  self.slideConstraint.constant = -offscreenDistance;
 }
 
 - (void)moveInAppMessageViewOffScreen {

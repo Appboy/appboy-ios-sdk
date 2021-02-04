@@ -228,8 +228,11 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   if (![self.inAppMessage isKindOfClass:[ABKInAppMessageModal class]]) {
     return;
   }
-  if (((ABKInAppMessageModalViewController *)self.inAppMessageViewController).enableDismissOnOutsideTap) {
-    [(ABKInAppMessageModalViewController *)self.inAppMessageViewController dismissInAppMessage:self.inAppMessage];
+  if ([self.inAppMessageViewController isKindOfClass:ABKInAppMessageModalViewController.class]) {
+    ABKInAppMessageModalViewController *viewController = (ABKInAppMessageModalViewController *)self.inAppMessageViewController;
+    if (viewController.enableDismissOnOutsideTap) {
+      [viewController dismissInAppMessage:self.inAppMessage];
+    }
   }
 }
 
@@ -354,6 +357,7 @@ static CGFloat const MinimumInAppMessageDismissVelocity = 20.0;
   [self.slideAwayTimer invalidate];
   self.slideAwayTimer = nil;
 
+  self.inAppMessageWindow.rootViewController = nil;
   self.inAppMessageWindow = nil;
   [[NSNotificationCenter defaultCenter] postNotificationName:ABKNotificationInAppMessageWindowDismissed
                                                       object:self
