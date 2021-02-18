@@ -1,6 +1,5 @@
 #import "ViewController.h"
 #import "AppboyNewsFeed.h"
-#import "CustomFeedTableViewController.h"
 
 @implementation ViewController
 
@@ -14,12 +13,6 @@
   ABKNewsFeedTableViewController *newsFeed = [[ABKNewsFeedTableViewController alloc] init];
   newsFeed.disableUnreadIndicator = !self.unreadIndicatorSwitch.on;
   [self.navigationController pushViewController:newsFeed animated:YES];
-}
-
-- (IBAction)displayCustomNewsFeed:(id)sender {
-  CustomFeedTableViewController *customFeed = [[CustomFeedTableViewController alloc] init];
-  customFeed.disableUnreadIndicator = !self.unreadIndicatorSwitch.on;
-  [self.navigationController pushViewController:customFeed animated:YES];
 }
 
 @end

@@ -1,6 +1,5 @@
 #import "ViewController.h"
 #import "AppboyContentCards.h"
-#import "CustomContentCardsTableViewController.h"
 
 @interface ViewController () <ABKContentCardsTableViewControllerDelegate>
 
@@ -32,11 +31,9 @@
   [self.navigationController pushViewController:contentCards animated:YES];
 }
 
+// Currently unavailable
 - (IBAction)displayCustomContentCards:(id)sender {
-  CustomContentCardsTableViewController *customContentCards = [[CustomContentCardsTableViewController alloc] init];
-  customContentCards.delegate = self;
-  customContentCards.disableUnreadIndicator = !self.unreadIndicatorSwitch.on;
-  [self.navigationController pushViewController:customContentCards animated:YES];
+  NSLog(@"Custom Feed currently unavailable");
 }
 
 - (IBAction)changeUser:(id)sender {

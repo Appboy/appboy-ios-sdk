@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		FCCC1FD320F4405600297CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCC1FD120F4405600297CB2 /* LaunchScreen.storyboard */; };
 		FCCC1FD620F4405600297CB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC1FD520F4405600297CB2 /* main.m */; };
 		FCCC1FDD20F4431000297CB2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FCCC1FDC20F4431000297CB2 /* Podfile */; };
-		FCCC1FE320F590DA00297CB2 /* CustomContentCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC1FE220F590DA00297CB2 /* CustomContentCardsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +32,6 @@
 		FCCC1FD420F4405600297CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCC1FD520F4405600297CB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FCCC1FDC20F4431000297CB2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		FCCC1FE120F590CB00297CB2 /* CustomContentCardsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomContentCardsTableViewController.h; sourceTree = "<group>"; };
-		FCCC1FE220F590DA00297CB2 /* CustomContentCardsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomContentCardsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +94,6 @@
 				FCCC1FD120F4405600297CB2 /* LaunchScreen.storyboard */,
 				FCCC1FD420F4405600297CB2 /* Info.plist */,
 				FCCC1FD520F4405600297CB2 /* main.m */,
-				FCCC1FE120F590CB00297CB2 /* CustomContentCardsTableViewController.h */,
-				FCCC1FE220F590DA00297CB2 /* CustomContentCardsTableViewController.m */,
 			);
 			path = BrazeContentCardsSampleApp;
 			sourceTree = "<group>";
@@ -214,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCCC1FE320F590DA00297CB2 /* CustomContentCardsTableViewController.m in Sources */,
 				FCCC1FCB20F4405400297CB2 /* ViewController.m in Sources */,
 				FCCC1FD620F4405600297CB2 /* main.m in Sources */,
 				FCCC1FC820F4405400297CB2 /* AppDelegate.m in Sources */,

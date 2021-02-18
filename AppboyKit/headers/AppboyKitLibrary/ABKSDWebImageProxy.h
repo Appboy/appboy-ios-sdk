@@ -17,7 +17,6 @@ static NSString *const CORE_VERSION_WARNING = @"Attempting to download image but
                 withURL:(nullable NSURL *)imageURL
        imagePlaceHolder:(nullable UIImage *)placeHolder
               completed:(nullable void (^)(UIImage * _Nullable image, NSError * _Nullable error, NSInteger cacheType, NSURL * _Nullable imageURL))completion;
-+ (void)prefetchURLs:(nullable NSArray *)imageURLs;
 + (void)loadImageWithURL:(nullable NSURL *)url
                  options:(NSInteger)options
                completed:(nullable void(^)(UIImage *image, NSData *data, NSError *error, NSInteger cacheType, BOOL finished, NSURL *imageURL))completion;

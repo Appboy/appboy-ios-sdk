@@ -19,8 +19,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "AppboyKitLibrary",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.32.0/AppboyKitLibrary.xcframework.zip",
-      checksum: "591dbfb735e6ec991b908bb7ea0d94dab87a357a9a9e4e7f40906c3677b3d925"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.33.0/AppboyKitLibrary.xcframework.zip",
+      checksum: "5fdd9634e76b6d90ff52c1adb7c1466a913e8ccc0cf0b00ace21c7332da25a96"
     ),
     .target(
       name: "AppboyKit",
@@ -55,9 +55,17 @@ let package = Package(
       publicHeadersPath: "include/AppboyUI"
     ),
     .binaryTarget(
+      name: "AppboyPushStoryFramework",
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.33.0/AppboyPushStory.xcframework.zip",
+      checksum: "369278ed05fe9eb42a5a3380d41dd79861b5f7a205b10623e89fe475961b71e5"
+    ),
+    .target(
       name: "AppboyPushStory",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/3.32.0/AppboyPushStory.xcframework.zip",
-      checksum: "f74b15ca857172d2910571d0850ff056ac5aeb9c5721293e6cdf5ed813187804"
+      dependencies: ["AppboyPushStoryFramework"],
+      path: "AppboyPushStory",
+      resources: [
+        .process("Resources/ABKPageView.nib")
+      ]
     )
   ]
 )

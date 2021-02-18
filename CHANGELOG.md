@@ -1,3 +1,23 @@
+## 3.33.0
+
+##### Breaking
+- Changed Push Story integration to use XCFrameworks for Cocoapods and manual integration. Applications currently integrating Push Stories via Cocoapods or manual integration must follow these steps when updating:
+  - In your Notification Content Extension target:
+    - Remove `AppboyPushStory.framework` from `Frameworks and Libraries` under the `General` tab.
+  - In your application target:
+    - Delete the `Copy File` build phase copying the `AppboyPushStory.framework` to the `Frameworks` destination.
+    - Delete the `Run Script` build phase that starts with:
+```
+APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
+
+find "$APP_PATH" -name 'AppboyPushStory.framework' -type d | while read -r FRAMEWORK
+...
+```
+- Removed `ABKSDWebImageProxy`'s `prefetchURLs:` method.
+
+##### Fixed
+- Fixes a double redirection bug in Push Stories when the app is in a terminated state and the `UNUserNotificationCenter` delegate is not the `AppDelegate`.
+
 ## 3.32.0
 
 ##### Added

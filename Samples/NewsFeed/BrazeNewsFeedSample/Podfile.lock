@@ -1,28 +1,24 @@
 PODS:
-  - Appboy-iOS-SDK/Core (3.10.0)
-  - Appboy-iOS-SDK/NewsFeed (3.10.0):
+  - Appboy-iOS-SDK/Core (3.32.0)
+  - Appboy-iOS-SDK/NewsFeed (3.32.0):
     - Appboy-iOS-SDK/Core
-    - SDWebImage/GIF (~> 4.0)
-  - FLAnimatedImage (1.0.12)
-  - SDWebImage/Core (4.4.2)
-  - SDWebImage/GIF (4.4.2):
-    - FLAnimatedImage (~> 1.0)
-    - SDWebImage/Core
+    - SDWebImage (< 6, >= 5.8.2)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
 
 DEPENDENCIES:
   - Appboy-iOS-SDK/NewsFeed
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Appboy-iOS-SDK
-    - FLAnimatedImage
     - SDWebImage
 
 SPEC CHECKSUMS:
-  Appboy-iOS-SDK: 2c1135d321280dadbdc3f88ba68bbd87023cd03e
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  Appboy-iOS-SDK: 6d3016581cb5306e26826ec7333f0c5ae59e2a2f
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
 
 PODFILE CHECKSUM: 08939cdb7801e7cca33976fd67045892c2039b5e
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.3
