@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-Push-Story"
-  s.version      = "3.33.0"
+  s.version      = "3.33.1"
   s.summary      = "This is the Braze Push Story SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   s.documentation_url = 'https://www.braze.com/docs'
   s.vendored_frameworks = 'AppboyPushStory/AppboyPushStory.xcframework'
   s.resource_bundle = { 'AppboyPushStory' => 'AppboyPushStory/Resources/*' }
+  s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 end

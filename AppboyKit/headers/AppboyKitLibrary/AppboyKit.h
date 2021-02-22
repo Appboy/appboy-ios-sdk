@@ -57,4 +57,7 @@
 
 #import "ABKURLDelegate.h"
 #import "ABKPushUtils.h"
+#import "ABKModalWebViewController.h"
+#import "ABKNoConnectionLocalization.h"
+
 #endif

@@ -1,3 +1,10 @@
+## 3.33.1
+
+##### Fixed
+- Fixes Swift Package Manager integration.
+  - In Xcode, select _File ▸ Swift Packages ▸ Update to Latest Package Versions_ to update.
+- Fixes Push Story integration via CocoaPods for applications that have `use_frameworks!` in their Podfile.
+
 ## 3.33.0
 
 ##### Breaking
