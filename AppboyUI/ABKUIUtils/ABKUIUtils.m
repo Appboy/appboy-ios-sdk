@@ -44,7 +44,7 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
       break;
       
     default:
-      NSLog(@"Warning: Received bundle request for unsupported Appboy channel: %ld", (long)channel);
+      NSLog(@"Warning: Received bundle request for unsupported channel: %ld", (long)channel);
       break;
   }
   
@@ -310,6 +310,36 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
   }
   
   return resp != nil;
+}
+
++ (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)textStyle weight:(UIFontWeight)weight {
+  if (@available(iOS 11.0, tvOS 11.0, *)) {
+    UIFontMetrics *metrics = [UIFontMetrics metricsForTextStyle:textStyle];
+    UIFontDescriptor *descriptor = [UIFontDescriptor preferredFontDescriptorWithTextStyle:textStyle];
+    UIFont *font = [UIFont systemFontOfSize:descriptor.pointSize weight:weight];
+    return [metrics scaledFontForFont:font];
+  } else {
+    // https://apple.co/3snncd9 (Large / Default)
+    static dispatch_once_t once;
+    static NSDictionary *textStyleMap;
+    dispatch_once(&once, ^{
+      textStyleMap = @{
+        UIFontTextStyleTitle1: @(28.0),
+        UIFontTextStyleTitle2: @(22.0),
+        UIFontTextStyleTitle3: @(20.0),
+        UIFontTextStyleHeadline: @(17.0),
+        UIFontTextStyleBody: @(17.0),
+        UIFontTextStyleCallout: @(16.0),
+        UIFontTextStyleSubheadline: @(15.0),
+        UIFontTextStyleFootnote: @(13.0),
+        UIFontTextStyleCaption1: @(12.0),
+        UIFontTextStyleCaption2: @(11.0)
+      };
+    });
+
+    return [UIFont systemFontOfSize:[textStyleMap[textStyle] doubleValue]
+                             weight:weight];
+  }
 }
 
 @end

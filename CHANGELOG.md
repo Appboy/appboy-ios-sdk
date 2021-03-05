@@ -1,3 +1,21 @@
+## 3.34.0
+
+##### Breaking
+- Replaces `ABKInAppMessageSlideupViewController`'s `slideConstraint` by `offset`.
+
+##### Added
+- Adds a new Github repo to optimize import speeds for applications integrating with Swift Package Manager.
+  - To use this repo, follow these steps:
+    - Remove the existing package in your application that points to the url: `https://github.com/Appboy/Appboy-ios-sdk`.
+    - Add a new package using the new url: `https://github.com/braze-inc/braze-ios-sdk`.
+    - Follow the rest of [the setup instructions here](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/swift_package_manager/).
+- Adds support for Right-to-Left languages in the News Feed.
+- Adds support for scaling fonts automatically with [Dynamic Type](https://apple.co/3jSe9hc) for in-app messages and the News Feed.
+
+##### Changed
+- Improves accessibility handling for modal and full in-app messages.
+- Improves Slideup in-app message animations.
+
 ## 3.33.1
 
 ##### Fixed

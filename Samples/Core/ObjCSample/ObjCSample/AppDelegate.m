@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 
-@import Appboy_iOS_SDK.AppboyKit;
+@import Appboy_iOS_SDK;
 
 @implementation AppDelegate
 

@@ -1,11 +1,20 @@
 #import "ABKNFCaptionedMessageCardCell.h"
 #import "Appboy.h"
 #import "ABKImageDelegate.h"
+#import "ABKUIUtils.h"
 
 @implementation ABKNFCaptionedMessageCardCell
 
 - (void)awakeFromNib {
   [super awakeFromNib];
+
+  // DynamicType
+  self.titleLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleTitle3 weight:UIFontWeightBold];
+  self.titleLabel.adjustsFontForContentSizeCategory = YES;
+  self.descriptionLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+  self.descriptionLabel.adjustsFontForContentSizeCategory = YES;
+  self.linkLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleSubheadline weight:UIFontWeightBold];
+  self.linkLabel.adjustsFontForContentSizeCategory = YES;
 
   // Bug: On Mac Catalyst 13, allowsDefaultTighteningForTruncation defaults to YES
   // - Occurs only if numberOfLine is not 0

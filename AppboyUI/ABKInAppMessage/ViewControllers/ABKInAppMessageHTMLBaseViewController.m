@@ -160,7 +160,7 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     return;
   }
   
-  // Handle Appboy specific actions
+  // Handle Braze specific actions
   NSDictionary *queryParams = [self queryParameterDictionaryFromURL:url];
   NSString *buttonId = [self parseButtonIdFromQueryParams:queryParams];
   ABKInAppMessageWindowController *parentViewController =

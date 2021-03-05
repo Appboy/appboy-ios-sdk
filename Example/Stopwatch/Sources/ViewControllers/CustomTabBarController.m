@@ -2,6 +2,7 @@
 #import "ContainerViewController.h"
 #import "ABKLocationManager.h"
 #import "ColorUtils.h"
+#import "LoggerUtils.h"
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 
 @implementation CustomTabBarController
@@ -43,7 +44,7 @@
 - (void)requestAppTrackingTransperancyAuthorization {
   if (@available(iOS 14, *)) {
     [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-      NSLog(@"Got result from App Track Transparency popup %ld", (long)status);
+      StopwatchDebugMsg(@"Got result from App Track Transparency popup %ld", (long)status);
     }];
   }
 }

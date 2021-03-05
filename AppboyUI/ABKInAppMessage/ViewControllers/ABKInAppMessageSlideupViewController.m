@@ -5,13 +5,12 @@
 static CGFloat const AssetSideMargin = 20.0f;
 static CGFloat const DefaultViewRadius = 15.0f;
 static CGFloat const DefaultVerticalMarginHeight = 10.0f;
-static CGFloat const NotchedPhoneLandscapeBottomMarginHeight = 21.0f;
-static CGFloat const NotchedPhonePortraitBottomMarginHeight = 34.0f;
 
 @interface ABKInAppMessageSlideupViewController()
 
-@property (strong, nonatomic) NSLayoutConstraint *leadConstraint;
-@property (strong, nonatomic) NSLayoutConstraint *trailConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *slideConstraint;
+@property (nonatomic, readonly) BOOL animatesFromTop;
+@property (nonatomic, readonly) CGFloat safeAreaOffset;
 
 @end
 
@@ -41,10 +40,18 @@ static CGFloat const NotchedPhonePortraitBottomMarginHeight = 34.0f;
 
   [self setupChevron];
   [self setupImageOrLabelView];
-  [self setupConstraintsWithSuperView];
 
   self.view.layer.cornerRadius = DefaultViewRadius;
   self.view.layer.masksToBounds = NO;
+}
+
+- (void)viewWillLayoutSubviews {
+  [super viewWillLayoutSubviews];
+
+  // Setup the constraints once UIKit has set the layoutMargins / safeAreaInsets
+  if (!self.slideConstraint) {
+    [self setupConstraintsWithSuperView];
+  }
 }
 
 - (void)viewDidLayoutSubviews {
@@ -61,6 +68,16 @@ static CGFloat const NotchedPhonePortraitBottomMarginHeight = 34.0f;
   CGFloat alpha = 0;
   [self.view.backgroundColor getRed:nil green:nil blue:nil alpha:&alpha];
   self.view.layer.shadowOpacity = alpha;
+}
+
+#pragma mark - Public methods
+
+- (CGFloat)offset {
+  return self.slideConstraint.constant - self.safeAreaOffset;
+}
+
+- (void)setOffset:(CGFloat)offset {
+  self.slideConstraint.constant = offset + self.safeAreaOffset;
 }
 
 #pragma mark - Private methods
@@ -104,44 +121,46 @@ static CGFloat const NotchedPhonePortraitBottomMarginHeight = 34.0f;
 }
 
 - (void)setupConstraintsWithSuperView {
-  self.leadConstraint = [self.view.leadingAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.leadingAnchor];
-  self.trailConstraint = [self.view.trailingAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.trailingAnchor];
+  NSLayoutConstraint *leadConstraint = [self.view.leadingAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.leadingAnchor];
+  NSLayoutConstraint *trailConstraint = [self.view.trailingAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.trailingAnchor];
+  NSLayoutConstraint *offscreenConstraint;
 
-  NSLayoutConstraint *slideConstraint = nil;
-  if ([self animatesFromTop]) {
-    CGFloat offscreenDistance = self.view.frame.size.height + [ABKUIUtils getStatusBarSize].height;
-    slideConstraint = [self.view.topAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.topAnchor
-                                                          constant:-offscreenDistance];
+  if (self.animatesFromTop) {
+    offscreenConstraint = [self.view.bottomAnchor constraintEqualToAnchor:self.view.superview.topAnchor];
+    self.slideConstraint = [self.view.topAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.topAnchor
+                                                               constant:self.safeAreaOffset];
   } else {
-    slideConstraint =  [NSLayoutConstraint constraintWithItem:self.view.superview
-                                                    attribute:NSLayoutAttributeBottom
-                                                    relatedBy:NSLayoutRelationEqual
-                                                       toItem:self.view
-                                                    attribute:NSLayoutAttributeBottom
-                                                   multiplier:1
-                                                     constant:- self.view.frame.size.height];
+    offscreenConstraint = [self.view.topAnchor constraintEqualToAnchor:self.view.superview.bottomAnchor];
+    self.slideConstraint = [self.view.bottomAnchor constraintEqualToAnchor:self.view.superview.layoutMarginsGuide.bottomAnchor
+                                                                  constant:self.safeAreaOffset];
   }
-  self.slideConstraint = slideConstraint;
-  [self.view.superview addConstraints:@[self.leadConstraint, self.trailConstraint, slideConstraint]];
-}
 
-- (CGFloat)slideupAnimationDistance {
-  if ([ABKUIUtils isNotchedPhone] && ![self animatesFromTop]) {
-    return UIInterfaceOrientationIsPortrait([ABKUIUtils getInterfaceOrientation])
-            ? NotchedPhonePortraitBottomMarginHeight
-            : NotchedPhoneLandscapeBottomMarginHeight;
-  }
-  return DefaultVerticalMarginHeight;
+  offscreenConstraint.priority = UILayoutPriorityDefaultLow;
+  [NSLayoutConstraint activateConstraints:@[leadConstraint, trailConstraint, offscreenConstraint]];
 }
 
 - (BOOL)animatesFromTop {
   return ((ABKInAppMessageSlideup *)self.inAppMessage).inAppMessageSlideupAnchor == ABKInAppMessageSlideupFromTop;
 }
 
+- (CGFloat)safeAreaOffset {
+  BOOL hasSafeArea = self.animatesFromTop
+    ? self.view.superview.layoutMargins.top != 0
+    : self.view.superview.layoutMargins.bottom != 0;
+
+  if (hasSafeArea) {
+    return 0;
+  }
+
+  return self.animatesFromTop
+    ? DefaultVerticalMarginHeight
+    : -DefaultVerticalMarginHeight;
+}
+
 #pragma mark - Superclass methods
 
 - (void)beforeMoveInAppMessageViewOnScreen {
-  self.slideConstraint.constant = [self slideupAnimationDistance];
+  self.slideConstraint.active = YES;
 }
 
 - (void)moveInAppMessageViewOnScreen {
@@ -149,9 +168,7 @@ static CGFloat const NotchedPhonePortraitBottomMarginHeight = 34.0f;
 }
 
 - (void)beforeMoveInAppMessageViewOffScreen {
-  CGFloat offscreenDistance = [self animatesFromTop] ? self.view.frame.size.height + [ABKUIUtils getStatusBarSize].height
-                                                     : self.view.frame.size.height;
-  self.slideConstraint.constant = -offscreenDistance;
+  self.slideConstraint.active = NO;
 }
 
 - (void)moveInAppMessageViewOffScreen {

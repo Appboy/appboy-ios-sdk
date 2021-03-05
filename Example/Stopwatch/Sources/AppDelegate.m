@@ -1,5 +1,6 @@
 #import <AppboyKit.h>
 #import <BuddyBuildSDK/BuddyBuildSDK.h>
+#import <CoreLocation/CoreLocation.h>
 
 #import "AppDelegate.h"
 #import "ABKPushUtils.h"
@@ -7,7 +8,7 @@
 #import "Branch.h"
 #import "AlertControllerUtils.h"
 #import "ColorUtils.h"
-#import <CoreLocation/CoreLocation.h>
+#import "LoggerUtils.h"
 
 #ifdef PUSH_DEV
 static NSString *const AppboyApiKey = @"appboy-sample-ios";
@@ -20,17 +21,17 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 # pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  NSLog(@"Application delegate method didFinishLaunchingWithOptions is called with launch options: %@", launchOptions);
-  
+  StopwatchDebugMsg(@"Application launched with options: %@", launchOptions);
+
   [BuddyBuildSDK setup];
-  
+
   NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
 
   NSString *overrideApiKey = [preferences stringForKey:OverrideApiKeyStorageKey];
   NSString *overrideEndpoint = [preferences stringForKey:OverrideEndpointStorageKey];
 
   NSString *apiKeyToUse = (overrideApiKey != nil && overrideApiKey.length != 0) ? overrideApiKey : AppboyApiKey;
-  
+
   NSMutableDictionary *appboyOptions = [NSMutableDictionary dictionary];
   appboyOptions[ABKRequestProcessingPolicyOptionKey] = @(ABKAutomaticRequestProcessing);
   appboyOptions[ABKMinimumTriggerTimeIntervalKey] = @(1);
@@ -39,10 +40,10 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   } else {
     appboyOptions[ABKEndpointKey] = @"sondheim.appboy.com";
   }
-  
+
   IDFADelegate *idfaDelegate = [[IDFADelegate alloc] init];
   appboyOptions[ABKIDFADelegateKey] = idfaDelegate;
-  
+
   // Set custom session timeout
   id sessionTimeout = [preferences objectForKey:NewSessionTimeoutKey];
   if (sessionTimeout != nil) {
@@ -52,7 +53,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   // Set ABKInAppMessageControllerDelegate on startup
   BOOL setInAppDelegate = [preferences boolForKey:SetInAppMessageControllerDelegateKey];
   if (setInAppDelegate) {
-    NSLog(@"Setting ABKInAppMessageControllerDelegate for app run.");
+    StopwatchDebugMsg(@"Setting ABKInAppMessageControllerDelegate for app run.", nil);
     appboyOptions[ABKInAppMessageControllerDelegateKey] = self;
   }
 
@@ -64,7 +65,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     [preferences setBool:setUrlDelegate forKey:SetURLDelegateKey];
   }
   if (setUrlDelegate) {
-    NSLog(@"Setting ABKURLDelegateKey for app run.");
+    StopwatchDebugMsg(@"Setting ABKURLDelegateKey for app run.", nil);
     appboyOptions[ABKURLDelegateKey] = self;
   }
   appboyOptions[ABKPushStoryAppGroupKey] = @"group.com.appboy.stopwatch";
@@ -76,31 +77,31 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
           inApplication:application
       withLaunchOptions:launchOptions
       withAppboyOptions:appboyOptions];
-  
+
   // Define and initialize Branch
   Branch *branch = [Branch getInstance];
   [branch initSessionWithLaunchOptions:launchOptions andRegisterDeepLinkHandler:^(NSDictionary *params, NSError *error) {
     if (!error && params) {
       // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
-      NSLog(@"Calling Branch deep link handler on params: %@", params.description);
+      StopwatchDebugMsg(@"Calling Branch deep link handler with params: %@", params.description);
     }
   }];
-  
+
   // Set ABKInAppMessageUIDelegate
   [[Appboy sharedInstance].inAppMessageController.inAppMessageUIController setInAppMessageUIDelegate:self];
 
   [self setUpRemoteNotifications];
   self.stopwatchEnableDarkTheme = YES;
   self.showSilentPushAlerts = NO;
-  
-  NSLog(@"Appboy device identifier is %@", [[Appboy sharedInstance] getDeviceId]);
+
+  StopwatchDebugMsg(@"Appboy device identifier is %@", [[Appboy sharedInstance] getDeviceId]);
 
   return YES;
 }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
-  NSLog(@"application:continueUserActivity:restorationHandler called");
-  
+  StopwatchDebugMsg(@"Continuing userActivity: %@", userActivity);
+
   if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
     NSString *urlString = [[userActivity.webpageURL absoluteString] stringByRemovingPercentEncoding];
     [self handleUniversalLinkString:urlString withABKURLDelegate:NO];
@@ -111,23 +112,22 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 // Pass the deviceToken to Braze as well
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  NSLog(@"In application:didRegisterForRemoteNotificationsWithDeviceToken, token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
+  StopwatchDebugMsg(@"Device Token is %@", [NSString stringWithFormat:@"%@", deviceToken]);
   [[Appboy sharedInstance] registerDeviceToken:deviceToken];
 }
 
 // When a notification is received, pass it to Braze. If the notification is received when the app
 // is in the background, Braze will try to fetch the news feed, and call completionHandler after
-// the request finished; otherwise, Appboy won't fetch the news feed, nor call the completionHandler.
+// the request finished; otherwise, Braze won't fetch the news feed, nor call the completionHandler.
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-  NSLog(@"Application delegate method didReceiveRemoteNotification:fetchCompletionHandler: is called with user info: %@", userInfo);
   if ([ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
-    NSLog(@"Detected Braze internal push in didReceiveRemoteNotification:fetchCompletionHandler:.");
+    StopwatchDebugMsg(@"Detected Braze internal push", nil);
   }
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
   
   if ([ABKPushUtils isAppboyRemoteNotification:userInfo] && ![ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    NSLog(@"Remote notification was sent from Braze, clearing badge number.");
+    StopwatchDebugMsg(@"Remote notification was sent from Braze, clearing badge number", nil);
 
     if ([ABKPushUtils isAppboySilentRemoteNotification:userInfo]) {
       if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive && self.showSilentPushAlerts) {
@@ -140,7 +140,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 }
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)(void))completionHandler {
-  NSLog(@"application:handleActionWithIdentifier:forRemoteNotification:completionHandler: with identifier %@", identifier);
+  StopwatchDebugMsg(@"Handling action with identifier: %@", identifier);
   [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
 }
 
@@ -148,17 +148,17 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   /*
    Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
    */
-  NSLog(@"applicationDidBecomeActive:(UIApplication *)application");
+  StopwatchDebugMsg(@"Application is active.", nil);
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-  NSLog(@"Stopwatch openURL delegate called with: %@", url.absoluteString);
-  
+  StopwatchDebugMsg(@"Opening url: %@", url.absoluteString);
+
   // Handle deep linking with scheme beginning with "stopwatch"
   NSString *urlString = url.absoluteString.stringByRemovingPercentEncoding;
   if ([urlString isEqualToString:@"stopwatch:appstore-review"]) {
-    NSLog(@"Received app store review request.");
+    StopwatchDebugMsg(@"Received app store review request.", nil);
     if (@available(iOS 10.3, *)) {
       [SKStoreReviewController requestReview];
     }
@@ -253,17 +253,17 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
-  NSLog(@"Application delegate method userNotificationCenter:willPresentNotification:withCompletionHandler: is called.");
+  StopwatchDebugMsg(@"Notification received in foreground: %@", notification.request.content.userInfo);
   completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+  StopwatchDebugMsg(@"Notification response received with user info: %@", response.notification.request.content.userInfo);
   [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-  NSLog(@"Application delegate method userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: is called with user info: %@", response.notification.request.content.userInfo);
   
   if ([ABKPushUtils isAppboyUserNotification:response]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    NSLog(@"User notification was sent from Braze, clearing badge number.");
+    StopwatchDebugMsg(@"User notification was sent from Braze, clearing badge number.", nil);
   }
 }
 
@@ -273,7 +273,8 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 * Note that this method will only be called if setting ABKInAppMessageControllerDelegate is enabled from the Stopwatch UI. By default, ABKInAppMessageControllerDelegate is not set.
 */
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
-  NSLog(@"beforeInAppMessageDisplayed: delegate called in Stopwatch.");
+  StopwatchDebugMsg(@"Before inAppMessage is displayed: %@", inAppMessage);
+
   inAppMessage.overrideUserInterfaceStyle = [[[NSUserDefaults standardUserDefaults] valueForKey:StopwatchInAppThemeSettingsKey] integerValue];
   if (inAppMessage.extras != nil && inAppMessage.extras[@"Appstore Review"] != nil) {
     [[UIApplication sharedApplication] openURL:inAppMessage.uri options:@{} completionHandler:nil];

@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.documentation_url = 'https://www.braze.com/docs'
   s.tvos.frameworks = 'SystemConfiguration'
-  s.tvos.weak_framework = 'AdSupport', 'StoreKit'
+  s.tvos.weak_framework = 'StoreKit'
   s.preserve_paths = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'
   s.vendored_frameworks = 'Appboy-tvOS-SDK/AppboyTVOSKit.framework'
 

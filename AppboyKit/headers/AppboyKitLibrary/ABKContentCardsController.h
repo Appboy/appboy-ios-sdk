@@ -5,7 +5,7 @@
  */
 
 /*!
- * When the content cards are updated, Appboy will post a notification through the NSNotificationCenter.
+ * When Content Cards are updated, Braze will post a notification through the NSNotificationCenter.
  * The name of the notification is the string constant referred to by ABKContentCardsProcessedNotification. The
  * userInfo dictionary associated with the notification will has one object, with key the same string
  * as ABKContentCardsProcessedIsSuccessfulKey, to indicate whether the update is successful or not.
@@ -45,7 +45,7 @@ extern NSString *const ABKContentCardsProcessedIsSuccessfulKey;
 @property (readonly, getter=getContentCards) NSArray *contentCards;
 
 /*!
- * The NSDate object that indicates the last time the contentCards property was updated from Appboy server.
+ * The NSDate object that indicates the last time the contentCards property was updated from Braze server.
  */
 @property (readonly, nullable) NSDate *lastUpdate;
 

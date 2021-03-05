@@ -1,6 +1,7 @@
 #import "InAppMessageTestViewController.h"
 #import "AppboyInAppMessage.h"
 #import "AlertControllerUtils.h"
+#import "LoggerUtils.h"
 
 @implementation InAppMessageTestViewController
 
@@ -34,7 +35,7 @@
  */
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage
                                             withKeyboardIsUp:(BOOL)keyboardIsUp {
-  NSLog(@"Received in-app message with message: %@", inAppMessage.message);
+  StopwatchDebugMsg(@"Received in-app message with message: %@", inAppMessage.message);
   
   
   // We want to display the in-app message from the top if there is a keyboard being displayed on the screen.
@@ -86,7 +87,7 @@
  * will be logged according to the above scheme.
  */
 - (ABKInAppMessageDisplayChoice)beforeControlMessageImpressionLogged:(ABKInAppMessage *)inAppMessage {
-  NSLog(@"Received in-app message with message: %@", inAppMessage.message);
+  StopwatchDebugMsg(@"Received in-app message with message: %@", inAppMessage.message);
   
   [self updateRemainingInAppMessageLabel];
   
@@ -130,7 +131,7 @@
 // in response to the tap.  Note that when the delegate returns NO, Braze SDK will perform the action sent down from
 // the Braze Server after the delegate method is executed. If it returns YES, the response to the tap is up to you.
 - (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
-  NSLog(@"In-app message tapped!");
+  StopwatchDebugMsg(@"In-app message tapped!", nil);
   [AlertControllerUtils presentTemporaryAlertWithTitle:NSLocalizedString(@"Appboy.Stopwatch", nil)
                                                  message:NSLocalizedString(@"Appboy.Stowpatch.slideup-test.slideup-is-tap", nil)
                                             presentingVC:self];

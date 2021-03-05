@@ -5,6 +5,7 @@
 #import "AppDelegate.h"
 #import "AlertControllerUtils.h"
 #import "CustomThemesDataSource.h"
+#import "LoggerUtils.h"
 
 @interface MiscViewController ()
 
@@ -63,7 +64,7 @@
 
 // This is the selector of flushAppboyData Button which flushes queued data to the Braze servers manually on demand.
 - (IBAction)flushAppboyData:(id)sender {
-  NSLog(@"Flushing data to Braze.");
+  StopwatchDebugMsg(@"Flushing data to Braze.", nil);
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
   [self showAlertWithMessage:@"Data was successfully flushed"];
 }
@@ -72,11 +73,11 @@
   switch ([Appboy sharedInstance].requestProcessingPolicy) {
     case ABKAutomaticRequestProcessing:
       [Appboy sharedInstance].requestProcessingPolicy = ABKManualRequestProcessing;
-      NSLog(@"Changing request processing policy to ABKManualRequestProcessing.");
+      StopwatchDebugMsg(@"Changing request processing policy to ABKManualRequestProcessing.", nil);
       break;
     case ABKManualRequestProcessing:
       [Appboy sharedInstance].requestProcessingPolicy = ABKAutomaticRequestProcessing;
-      NSLog(@"Changing request processing policy to ABKAutomaticRequestProcessing.");
+      StopwatchDebugMsg(@"Changing request processing policy to ABKAutomaticRequestProcessing.", nil);
       break;
     default:
       break;
@@ -158,7 +159,7 @@
       if (!isDirectory && ![item hasSuffix:@".DS_Store"]) {
         [returnArray addObject:[NSString stringWithFormat:@"%d) %@", count, item]];
         count++;
-        NSLog(@"Cache file: %@", item);
+        StopwatchDebugMsg(@"Cache file: %@", item);
       }
     }
   }
@@ -190,7 +191,7 @@
 }
 
 - (IBAction)setSessionTimeout:(id)sender {
-  NSLog(@"session timeout called");
+  StopwatchDebugMsg(@"session timeout called", nil);
   [[NSUserDefaults standardUserDefaults] setObject:self.sessionTimeoutTextField.text forKey:NewSessionTimeoutKey];
   NSString *alertTitle = [NSString stringWithFormat:@"New Session Timeout: %@", self.sessionTimeoutTextField.text];
   [self showForceCloseAlertWithTitle:alertTitle];
@@ -233,11 +234,11 @@
                                                 latitude:latitude];
   NSString *alertMessage = [NSString stringWithFormat:@"Requesting geofences with longitude %f and latitude %f", longitude, latitude];
   [self showAlertWithMessage:alertMessage];
-  NSLog(@"%@", alertMessage);
+  StopwatchDebugMsg(@"%@", alertMessage);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-  NSLog(@"Can't request geofences because of error:%@", error);
+  StopwatchDebugMsg(@"Can't request geofences because of error:%@", error);
 }
 
 - (void)showForceCloseAlertWithTitle:(NSString *)title {

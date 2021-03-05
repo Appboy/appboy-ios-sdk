@@ -3,7 +3,7 @@ import AppboyTVOSKit
 
 struct ContentView: View {
     var body: some View {
-      Text("Logged Custom Event 'hello-tv-OS' to Braze for user " + Appboy.sharedInstance()?.getDeviceId())
+      Text("Logged Custom Event 'hello-tv-OS' to Braze for user: \(Appboy.sharedInstance()?.getDeviceId() ?? "{nil}")")
     }
 }
 
