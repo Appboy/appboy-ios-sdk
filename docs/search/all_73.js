@@ -26,7 +26,6 @@ var searchData=
   ['showinappmessage_3a',['showInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_controlling-p.html#a0dfcd38adc1fc156dc3f0d4d8129f9c6',1,'ABKInAppMessageUIControlling-p']]],
   ['shutdownservercommunication',['shutdownServerCommunication',['../interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8',1,'Appboy']]],
   ['slideawaytimer',['slideAwayTimer',['../interface_a_b_k_in_app_message_window_controller.html#a4338bb044303d423d23660ebb00f8b96',1,'ABKInAppMessageWindowController']]],
-  ['slideconstraint',['slideConstraint',['../interface_a_b_k_in_app_message_slideup_view_controller.html#a4a9be17146fd3668e5f55e6413c4cff8',1,'ABKInAppMessageSlideupViewController']]],
   ['slideupconstraintmaxvalue',['slideupConstraintMaxValue',['../interface_a_b_k_in_app_message_window_controller.html#a5c38e2496e8da4240e01d67d1f0512a8',1,'ABKInAppMessageWindowController']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:',['../interface_appboy.html#afd911d60dfe7e5361afbfb364f5d20f9',1,'Appboy']]],
   ['startwithapikey_3ainapplication_3awithlaunchoptions_3awithappboyoptions_3a',['startWithApiKey:inApplication:withLaunchOptions:withAppboyOptions:',['../interface_appboy.html#aa9f1bd9e4a5c082133dd9cc344108b24',1,'Appboy']]],

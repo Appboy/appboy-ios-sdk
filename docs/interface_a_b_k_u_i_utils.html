@@ -131,6 +131,8 @@ Class Methods</h2></td></tr>
 <tr class="separator:a1ed414001d92cb7dfb614a876a87c721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a410042179e8ffe83c3777d1a80462e50"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#a410042179e8ffe83c3777d1a80462e50">responderChainOf:hasClassPrefixedWith:</a></td></tr>
 <tr class="separator:a410042179e8ffe83c3777d1a80462e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f7c47533046cfc93cc3184944ceff91"><td class="memItemLeft" align="right" valign="top">(UIFont *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#a5f7c47533046cfc93cc3184944ceff91">preferredFontForTextStyle:weight:</a></td></tr>
+<tr class="separator:a5f7c47533046cfc93cc3184944ceff91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -193,6 +195,42 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The bundle if available, nil otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f7c47533046cfc93cc3184944ceff91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (UIFont *) preferredFontForTextStyle: </td>
+          <td></td>
+          <td class="paramtype">(UIFontTextStyle)&#160;</td>
+          <td class="paramname"><em>textStyle</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">weight:</td>
+          <td></td>
+          <td class="paramtype">(UIFontWeight)&#160;</td>
+          <td class="paramname"><em>weight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates an instance of the font associated with the text style and scaled appropriately for the user's selected content size category.</p>
+<dl class="section warning"><dt>Warning</dt><dd>On iOS 10 / tvOS 10 and below, this method does not apply the text style to the resulting font. The font size is chosen according to <a href="https://apple.co/3snncd9">https://apple.co/3snncd9</a> (Large / Default).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textStyle</td><td>The text style to use </td></tr>
+    <tr><td class="paramname">weight</td><td>The weight of the font </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The font corresponding to the text style with weight applied to it. </dd></dl>
 
 </div>
 </div>
@@ -354,7 +392,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 22 2021 14:09:25 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 5 2021 14:21:35 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
