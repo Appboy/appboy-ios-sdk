@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.34.0"
+#define APPBOY_SDK_VERSION @"4.0.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -215,7 +215,7 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
   ABKInAppMessageChannel,
   ABKNewsFeedChannel,
   ABKContentCardChannel,
-  
+
   // Note: Compatibility value for old internal APIs
   ABKUnknownChannel
 };
@@ -452,14 +452,14 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
  * who have access to the NSLocale object for the purchase in question (which can be obtained from SKProduct listings
  * provided by StoreKit) can obtain the currency code by invoking:
  * <pre>[locale objectForKey:NSLocaleCurrencyCode]</pre>
- * Supported currency symbols include: AED, AFN, ALL, AMD, ANG, AOA, ARS, AUD, AWG, AZN, BAM, BBD, BDT, BGN, BHD, BIF, 
- * BMD, BND, BOB, BRL, BSD, BTC, BTN, BWP, BYR, BZD, CAD, CDF, CHF, CLF, CLP, CNY, COP, CRC, CUC, CUP, CVE, CZK, DJF, 
- * DKK, DOP, DZD, EEK, EGP, ERN, ETB, EUR, FJD, FKP, GBP, GEL, GGP, GHS, GIP, GMD, GNF, GTQ, GYD, HKD, HNL, HRK, HTG, HUF, 
- * IDR, ILS, IMP, INR, IQD, IRR, ISK, JEP, JMD, JOD, JPY, KES, KGS, KHR, KMF, KPW, KRW, KWD, KYD, KZT, LAK, LBP, LKR, LRD, 
- * LSL, LTL, LVL, LYD, MAD, MDL, MGA, MKD, MMK, MNT, MOP, MRO, MTL, MUR, MVR, MWK, MXN, MYR, MZN, NAD, NGN, NIO, NOK, NPR, 
- * NZD, OMR, PAB, PEN, PGK, PHP, PKR, PLN, PYG, QAR, RON, RSD, RUB, RWF, SAR, SBD, SCR, SDG, SEK, SGD, SHP, SLL, SOS, SRD, 
- * STD, SVC, SYP, SZL, THB, TJS, TMT, TND, TOP, TRY, TTD, TWD, TZS, UAH, UGX, USD, UYU, UZS, VEF, VND, VUV, WST, XAF, XAG, 
- * XAU, XCD, XDR, XOF, XPD, XPF, XPT, YER, ZAR, ZMK, ZMW and ZWL. Any other provided currency symbol will result in a logged 
+ * Supported currency symbols include: AED, AFN, ALL, AMD, ANG, AOA, ARS, AUD, AWG, AZN, BAM, BBD, BDT, BGN, BHD, BIF,
+ * BMD, BND, BOB, BRL, BSD, BTC, BTN, BWP, BYR, BZD, CAD, CDF, CHF, CLF, CLP, CNY, COP, CRC, CUC, CUP, CVE, CZK, DJF,
+ * DKK, DOP, DZD, EEK, EGP, ERN, ETB, EUR, FJD, FKP, GBP, GEL, GGP, GHS, GIP, GMD, GNF, GTQ, GYD, HKD, HNL, HRK, HTG, HUF,
+ * IDR, ILS, IMP, INR, IQD, IRR, ISK, JEP, JMD, JOD, JPY, KES, KGS, KHR, KMF, KPW, KRW, KWD, KYD, KZT, LAK, LBP, LKR, LRD,
+ * LSL, LTL, LVL, LYD, MAD, MDL, MGA, MKD, MMK, MNT, MOP, MRO, MTL, MUR, MVR, MWK, MXN, MYR, MZN, NAD, NGN, NIO, NOK, NPR,
+ * NZD, OMR, PAB, PEN, PGK, PHP, PKR, PLN, PYG, QAR, RON, RSD, RUB, RWF, SAR, SBD, SCR, SDG, SEK, SGD, SHP, SLL, SOS, SRD,
+ * STD, SVC, SYP, SZL, THB, TJS, TMT, TND, TOP, TRY, TTD, TWD, TZS, UAH, UGX, USD, UYU, UZS, VEF, VND, VUV, WST, XAF, XAG,
+ * XAU, XCD, XDR, XOF, XPD, XPF, XPT, YER, ZAR, ZMK, ZMW and ZWL. Any other provided currency symbol will result in a logged
  * warning and no other action taken by the SDK.
  * @param price Prices should be reported as NSDecimalNumber objects. Base units are treated the same as with SKProduct
  * from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should
@@ -577,13 +577,13 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(nullable void (^)(void))completionHandler NS_AVAILABLE_IOS(10_0);
 
 /*!
- * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's 
+ * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's
  * requestAuthorizationWithOptions:completionHandler: method, which indicates if the push authorization
  * was granted or not.
  *
  * @discussion This method forwards the push authorization result to Braze after the user interacts with
  * the notification prompt.
- * Call it from the UNUserNotificationCenter's requestAuthorizationWithOptions:completionHandler: method 
+ * Call it from the UNUserNotificationCenter's requestAuthorizationWithOptions:completionHandler: method
  * when you prompt users to enable push.
  */
 - (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;

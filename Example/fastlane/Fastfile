@@ -23,15 +23,6 @@ lane :matchFullAccess do
     ],
     force_for_new_devices: true
   )
-  match(
-    type: "adhoc", 
-    app_identifier: [
-      "com.appboy.stopwatch",
-      "com.appboy.stopwatch.StopwatchNotificationService",
-      "com.appboy.stopwatch.StopwatchNotificationContentExtension"
-    ],
-    force_for_new_devices: true
-  )
   # We don't use `force_for_new_devices: true` for `type: "appstore"` as this
   # option is not supported and generates a warning
   match(
@@ -47,16 +38,6 @@ end
 lane :matchReadOnly do
   match(
     type: "development",
-    readonly: true,
-    app_identifier: [
-      "com.appboy.stopwatch",
-      "com.appboy.stopwatch.StopwatchNotificationService",
-      "com.appboy.stopwatch.StopwatchNotificationContentExtension"
-    ],
-    force_for_new_devices: true
-  )
-  match(
-    type: "adhoc",
     readonly: true,
     app_identifier: [
       "com.appboy.stopwatch",

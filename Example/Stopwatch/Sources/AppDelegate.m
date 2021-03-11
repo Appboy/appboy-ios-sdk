@@ -116,6 +116,10 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   [[Appboy sharedInstance] registerDeviceToken:deviceToken];
 }
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+  StopwatchDebugMsg(@"Failed to register with error: %@", error.localizedDescription);
+}
+
 // When a notification is received, pass it to Braze. If the notification is received when the app
 // is in the background, Braze will try to fetch the news feed, and call completionHandler after
 // the request finished; otherwise, Braze won't fetch the news feed, nor call the completionHandler.
@@ -124,7 +128,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     StopwatchDebugMsg(@"Detected Braze internal push", nil);
   }
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-  
+
   if ([ABKPushUtils isAppboyRemoteNotification:userInfo] && ![ABKPushUtils isAppboyInternalRemoteNotification:userInfo]) {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     StopwatchDebugMsg(@"Remote notification was sent from Braze, clearing badge number", nil);
@@ -186,7 +190,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   likeAction.destructive = NO;
   // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
   likeAction.authenticationRequired = NO;
-  
+
   UIMutableUserNotificationAction *unlikeAction = [[UIMutableUserNotificationAction alloc] init];
   unlikeAction.identifier = @"UNLIKE_IDENTIFIER";
   unlikeAction.title = @"Unlike";
@@ -195,11 +199,11 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   unlikeAction.destructive = NO;
   // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
   unlikeAction.authenticationRequired = NO;
-  
+
   UIMutableUserNotificationCategory *likeCategory = [[UIMutableUserNotificationCategory alloc] init];
   likeCategory.identifier = @"LIKE_CATEGORY";
   [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
-  
+
   // Adding Braze default categories
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -222,7 +226,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
                           [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
                         }];
   center.delegate = self;
-  
+
   UNNotificationAction *likeAction = [UNNotificationAction actionWithIdentifier:@"LIKE_IDENTIFIER"
                                                                           title:@"Like"
                                                                         options:UNNotificationActionOptionForeground];

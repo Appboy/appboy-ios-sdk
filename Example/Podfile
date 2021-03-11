@@ -20,7 +20,7 @@ end
 
 target :StopwatchNotificationContentExtension do
   platform :ios, '10.0'
-  pod 'Appboy-Push-Story'
+   pod 'Appboy-Push-Story'
 end
 
 post_install do |installer|

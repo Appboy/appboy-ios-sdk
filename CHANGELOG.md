@@ -1,3 +1,15 @@
+## 4.0.0
+
+##### Breaking
+- `AppboyKit` is now distributed as an XCFramework when integrating with Cocoapods. Cocoapods 1.10.0+ is required.
+  - This removes the need for integrators to exclude the `arm64` architecture when building for the simulator. Please undo any of the changes that may have been made when upgrading to [3.27.0 (_Integrators will now be required to exclude ..._)](#3.27.0_4.0.0).
+
+##### Fixed
+- Fixes the Swift Package Manager cleanup script to remove only the necessary files.
+
+##### Added
+- Adds Mac Catalyst support for apps integrating with Cocoapods.
+
 ## 3.34.0
 
 ##### Breaking
@@ -161,7 +173,7 @@ find "$APP_PATH" -name 'AppboyPushStory.framework' -type d | while read -r FRAME
   - If you do not use the `Ad Tracking Enabled` segment filter and are not implementing `AppTrackingTransparency` yet, your implementation of `isAdvertisingTrackingEnabledOrATTAuthorized` may temporarily continue to use `isAdvertisingTrackingEnabled`. However, [the returned value will always be `NO` in iOS 14](https://developer.apple.com/documentation/adsupport/asidentifiermanager/1614148-isadvertisingtrackingenabled), regardless of actual IDFA availability.
   - Note that Apple announced that they will delay the enforcement of upcoming IDFA changes until early 2021. Please reference our [iOS 14 upgrade guide](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_14/) for more details.
 - Updates the minimum required version of SDWebImage from 5.0 to 5.8.2.
-- Integrators will now be required to exclude the `arm64` simulator slice in their entire project.
+- <a name="3.27.0_4.0.0"></a>Integrators will now be required to exclude the `arm64` simulator slice in their entire project.
   - This is done automatically when integrating via Cocoapods.
   - For other cases:
     - If you are using `xcconfig` files to build your app, please set:
