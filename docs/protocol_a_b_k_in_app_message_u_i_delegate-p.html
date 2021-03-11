@@ -122,7 +122,7 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="memname">- (ABKInAppMessageDisplayChoice) beforeInAppMessageDisplayed: </td>
           <td></td>
-          <td class="paramtype">(ABKInAppMessage *)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)&#160;</td>
           <td class="paramname"><em>inAppMessage</em></td>
         </tr>
         <tr>
@@ -153,7 +153,7 @@ Instance Methods</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>ABKInAppMessageDisplayChoice for details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice above.</dd></dl>
 <p>This delegate method defines whether the in-app message will be displayed now, displayed later, or discarded.</p>
 <p>The default behavior is that the in-app message will be displayed unless the keyboard is currently active on the screen. However, if there are other situations where you would not want the in-app message to appear (such as during a full screen game or on a loading screen), you can use this delegate to delay or discard pending in-app message messages.</p>
-<p>This method is deprecated. Please use the beforeInAppMessageDisplayed: method in ABKInAppMessageControllerDelegate and use the methods receiveKeyboardDidHideNotification: and receiveKeyboardWasShownNotification: in <a class="el" href="interface_a_b_k_in_app_message_u_i_controller.html">ABKInAppMessageUIController</a> to customize based on keyboard behavior. </p>
+<p>This method is deprecated. Please use the beforeInAppMessageDisplayed: method in <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> and use the methods receiveKeyboardDidHideNotification: and receiveKeyboardWasShownNotification: in <a class="el" href="interface_a_b_k_in_app_message_u_i_controller.html">ABKInAppMessageUIController</a> to customize based on keyboard behavior. </p>
 
 </div>
 </div>
@@ -167,7 +167,7 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="memname">- (<a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *) inAppMessageViewControllerWithInAppMessage: </td>
           <td></td>
-          <td class="paramtype">(ABKInAppMessage *)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)&#160;</td>
           <td class="paramname"><em>inAppMessage</em></td>
           <td></td>
         </tr>
@@ -186,22 +186,22 @@ Instance Methods</h2></td></tr>
 </dl>
 <p>This delegate method allows host applications to customize the look of an in-app message while maintaining the same user experience and impression/click tracking as the default Braze in-app message. It allows developers to pass incoming in-app messages to custom view controllers which they have created.</p>
 <p>The custom view controller is responsible for handling any responsive UI layout use-cases. e.g. device orientations, or varied message lengths.</p>
-<p>Even with a custom view, by inheriting from <a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a>, the in-app message will automatically animate and dismiss according to the parameters of the provided ABKInAppMessage object. See ABKInAppMessage.h for more information.</p>
+<p>Even with a custom view, by inheriting from <a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a>, the in-app message will automatically animate and dismiss according to the parameters of the provided <a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> object. See <a class="el" href="_a_b_k_in_app_message_8h_source.html">ABKInAppMessage.h</a> for more information.</p>
 <p>By default, Braze will add following functions/changes to the custom view controller, and animate the in-app message on and off the screen, based on the class of the given in-app message:</p>
 <ul>
-<li>ABKInAppMessageSlideup:<ul>
+<li><a class="el" href="interface_a_b_k_in_app_message_slideup.html">ABKInAppMessageSlideup</a>:<ul>
 <li>stretch/shrink the in-app message view's width to fix the screen's width. If you wish to have margins between the in-app message and the edge of the screen, those must be incorporated into the custom view controller itself.</li>
 <li>add the impression and click tracking for the in-app message</li>
 <li>when user clicks on the in-app message, call the onInAppMessageClicked:, and handle the click behavior correspond to the in-app message's inAppMessageClickActionType property.</li>
 <li>add a pan gesture to the in-app message so user can swipe it away.</li>
 </ul>
 </li>
-<li>ABKInAppMessageModal:<ul>
+<li><a class="el" href="interface_a_b_k_in_app_message_modal.html">ABKInAppMessageModal</a>:<ul>
 <li>make the in-app message clickable when there is no button(s) on it.</li>
 <li>put the in-app message in the center of the screen, and add a full screen background layer.</li>
 </ul>
 </li>
-<li>ABKInAppMessageFull:<ul>
+<li><a class="el" href="interface_a_b_k_in_app_message_full.html">ABKInAppMessageFull</a>:<ul>
 <li>make the in-app message clickable when there is no button(s) on it.</li>
 <li>stretch/shrink the in-app message view to fix the whole screen.</li>
 </ul>
@@ -221,13 +221,13 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="memname">- (BOOL) onInAppMessageButtonClicked: </td>
           <td></td>
-          <td class="paramtype">(ABKInAppMessageImmersive *)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message_immersive.html">ABKInAppMessageImmersive</a> *)&#160;</td>
           <td class="paramname"><em>inAppMessage</em></td>
         </tr>
         <tr>
           <td class="paramkey">button:</td>
           <td></td>
-          <td class="paramtype">(ABKInAppMessageButton *)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message_button.html">ABKInAppMessageButton</a> *)&#160;</td>
           <td class="paramname"><em>button</em>&#160;</td>
         </tr>
         <tr>
@@ -264,7 +264,7 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="memname">- (BOOL) onInAppMessageClicked: </td>
           <td></td>
-          <td class="paramtype">(ABKInAppMessage *)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)&#160;</td>
           <td class="paramname"><em>inAppMessage</em></td>
           <td></td>
         </tr>
@@ -282,7 +282,7 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean Value which controls whether or not Braze will execute the click action. Returning YES will prevent Braze from performing the click action. Returning NO will cause Braze to execute the action defined in the in-app message's inAppMessageClickActionType property after this delegate method is called.</dd></dl>
-<p>This delegate method is fired when the user clicks on a slideup in-app message, or a modal/full in-app message without button(s) on it. See ABKInAppMessage.h for more information. </p>
+<p>This delegate method is fired when the user clicks on a slideup in-app message, or a modal/full in-app message without button(s) on it. See <a class="el" href="_a_b_k_in_app_message_8h_source.html">ABKInAppMessage.h</a> for more information. </p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="memname">- (void) onInAppMessageDismissed: </td>
           <td></td>
-          <td class="paramtype">(ABKInAppMessage *)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)&#160;</td>
           <td class="paramname"><em>inAppMessage</em></td>
           <td></td>
         </tr>
@@ -332,7 +332,7 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="memname">- (BOOL) onInAppMessageHTMLButtonClicked: </td>
           <td></td>
-          <td class="paramtype">(ABKInAppMessageHTMLBase *)&#160;</td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message_h_t_m_l_base.html">ABKInAppMessageHTMLBase</a> *)&#160;</td>
           <td class="paramname"><em>inAppMessage</em></td>
         </tr>
         <tr>
@@ -368,14 +368,14 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean Value which controls whether or not Braze will execute the click action. Returning YES will prevent Braze from performing the click action. Returning NO will cause Braze to follow the link.</dd></dl>
-<p>This delegate method is fired whenever the user clicks a link on the HTML in-app message. See ABKInAppMessageHTMLBase.h for more information. </p>
+<p>This delegate method is fired whenever the user clicks a link on the HTML in-app message. See <a class="el" href="_a_b_k_in_app_message_h_t_m_l_base_8h_source.html">ABKInAppMessageHTMLBase.h</a> for more information. </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 11 2021 14:32:33 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 11 2021 14:41:23 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
