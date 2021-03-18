@@ -8,6 +8,12 @@ static NSInteger const CloseButtonTag = 50;
 
 #pragma mark - Immersive In-App Message View UI Initialization
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  self.inAppMessageHeaderLabel.adjustsFontForContentSizeCategory = YES;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   

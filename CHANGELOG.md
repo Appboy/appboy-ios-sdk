@@ -1,3 +1,9 @@
+## 4.0.1
+
+##### Fixed
+- Sets `CFBundleSupportedPlatforms` in _.plist_ files to the correct non-simulator value.
+- Removes the Dynamic Type support warnings.
+
 ## 4.0.0
 
 ##### Breaking
