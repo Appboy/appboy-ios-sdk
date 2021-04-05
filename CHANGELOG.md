@@ -1,3 +1,14 @@
+## 4.0.2
+
+##### Fixed
+- Fixes a double redirection bug in Push Stories when the app is in a terminated state and `application:didReceiveRemoteNotification:fetchCompletionHandler:` is not implemented.
+
+##### Changed
+- Improves the Swift Package Manager bundle lookup to be more flexible.
+
+##### Added
+- Adds support to use a dictionary named `Braze` instead of `Appboy` when adding customization in the `Info.plist`. After adding the `Braze` dictionary, please remove the previous `Appboy` dictionary.
+
 ## 4.0.1
 
 ##### Fixed
@@ -50,12 +61,13 @@
   - In your application target:
     - Delete the `Copy File` build phase copying the `AppboyPushStory.framework` to the `Frameworks` destination.
     - Delete the `Run Script` build phase that starts with:
-```
-APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
-
-find "$APP_PATH" -name 'AppboyPushStory.framework' -type d | while read -r FRAMEWORK
-...
-```
+      ```
+      APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
+      
+      find "$APP_PATH" -name 'AppboyPushStory.framework' -type d | while read -r FRAMEWORK
+      ...
+      ```
+      
 - Removed `ABKSDWebImageProxy`'s `prefetchURLs:` method.
 
 ##### Fixed

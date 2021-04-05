@@ -11,7 +11,6 @@ static NSUInteger const iPhone12ProMax = 2778.0;
 static NSUInteger const iPhone12Mini = 2340.0;
 
 // Bundles
-static NSString * const ABKUISPMBundleName = @"Appboy_iOS_SDK_AppboyUI.bundle";
 static NSString * const ABKUIPodCCBundleName = @"AppboyUI.ContentCards.bundle";
 static NSString * const ABKUIPodIAMBundleName = @"AppboyUI.InAppMessage.bundle";
 static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
@@ -22,13 +21,15 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
 
 + (NSBundle *)bundle:(Class)bundleClass channel:(ABKChannel)channel {
   NSBundle *bundle;
-  
+
   // SPM
-  bundle = [self bundleForName:ABKUISPMBundleName class:bundleClass];
+#if SWIFT_PACKAGE
+  bundle = SWIFTPM_MODULE_BUNDLE;
   if (bundle != nil) {
     return bundle;
   }
-  
+#endif
+
   // Cocoapods
   switch (channel) {
     case ABKContentCardChannel:
@@ -61,7 +62,7 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
   if ([bundleURL checkResourceIsReachableAndReturnError:nil]) {
     return [NSBundle bundleWithURL:bundleURL];
   }
-  
+
   return nil;
 }
 

@@ -15,12 +15,13 @@ For other items, like requests for modifications to our SDK or bug reports, plea
 
  Info                    | Value                               |
 -------------------------|-------------------------------------|
- Platform Name           | e.g. ios / tvos
+ Platform Name           | e.g. iOS / tvOS / Mac Catalyst
  Platform Version        | e.g. 12.1
  SDK Version             | e.g. 3.10.0
- Integration Method      | e.g. carthage / cocoapods / manually
+ Integration Method      | e.g. SPM / Cocoapods / Carthage / Manually
  Xcode Version           | e.g. Xcode 10.1
- Repro rate              | e.g. all the time (100%) / sometimes x% / only once
+ Computer Processor      | e.g. Intel-based / Apple M1
+ Repro rate              | e.g. All the time (100%) / Sometimes x% / Only once
  
 ## What did you do?
 
