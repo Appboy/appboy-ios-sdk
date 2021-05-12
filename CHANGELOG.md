@@ -1,3 +1,16 @@
+## 4.1.0
+
+##### Breaking
+- `ABKURLDelegate` method `handleAppboyURL:fromChannel:withExtras:` is now invoked for all urls.
+  - Previously, this delegate method was not invoked for urls opened in a WebView or the default browser when originating from the News Feed or Content Cards.
+- Removes `ABKUIURLUtils` method `openURLWithSystem:fromChannel:`. Use `openURLWithSystem:` as a replacement.
+
+##### Fixed
+- Fixes a case where the `ABKURLDelegate` method `handleAppboyURL:fromChannel:withExtras:` was being called twice when opening a push notification with an url.
+
+##### Changed
+- Deprecates `ABKUnknownChannel`.
+
 ## 4.0.2
 
 ##### Fixed

@@ -396,26 +396,24 @@ static CGFloat const SlideUpDragResistanceFactor = 0.055;
 #pragma mark - URL Handling
 
 - (void)handleInAppMessageURL:(NSURL *)url inWebView:(BOOL)openUrlInWebView {
-  if (![self delegateHandlesInAppMessageURL:url]) {
-    [self openInAppMessageURL:url inWebView:openUrlInWebView];
+  // URL Delegate
+  if ([ABKUIURLUtils URLDelegate:Appboy.sharedInstance.appboyUrlDelegate
+                      handlesURL:url
+                     fromChannel:ABKInAppMessageChannel
+                      withExtras:self.inAppMessage.extras]) {
+    return;
   }
-}
 
-- (BOOL)delegateHandlesInAppMessageURL:(NSURL *)url {
-  return [ABKUIURLUtils URLDelegate:[Appboy sharedInstance].appboyUrlDelegate
-                           handlesURL:url
-                          fromChannel:ABKInAppMessageChannel
-                           withExtras:self.inAppMessage.extras];
-}
-
-- (void)openInAppMessageURL:(NSURL *)url inWebView:(BOOL)openUrlInWebView {
+  // WebView
   if ([ABKUIURLUtils URL:url shouldOpenInWebView:openUrlInWebView]) {
     UIViewController *topmostViewController =
-      [ABKUIURLUtils topmostViewControllerWithRootViewController:ABKUIUtils.activeApplicationViewController];
+    [ABKUIURLUtils topmostViewControllerWithRootViewController:ABKUIUtils.activeApplicationViewController];
     [ABKUIURLUtils displayModalWebViewWithURL:url topmostViewController:topmostViewController];
-  } else {
-    [ABKUIURLUtils openURLWithSystem:url fromChannel:ABKInAppMessageChannel];
+    return;
   }
+
+  // System
+  [ABKUIURLUtils openURLWithSystem:url];
 }
 
 #pragma mark - Helpers

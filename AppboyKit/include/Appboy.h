@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"4.0.2"
+#define APPBOY_SDK_VERSION @"4.1.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -215,9 +215,7 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
   ABKInAppMessageChannel,
   ABKNewsFeedChannel,
   ABKContentCardChannel,
-
-  // Note: Compatibility value for old internal APIs
-  ABKUnknownChannel
+  ABKUnknownChannel __deprecated_enum_msg("ABKUnknownChannel will be removed in a future update.")
 };
 
 /*

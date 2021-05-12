@@ -195,11 +195,23 @@
   [card logCardClicked];
 
   NSURL *cardURL = [ABKUIURLUtils getEncodedURIFromString:card.urlString];
-   if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
-     [self openURLInWebView:cardURL];
-   } else {
-     [ABKUIURLUtils openURLWithSystem:cardURL fromChannel:ABKNewsFeedChannel];
-   }
+
+  // URL Delegate
+  if ([ABKUIURLUtils URLDelegate:Appboy.sharedInstance.appboyUrlDelegate
+                      handlesURL:cardURL
+                     fromChannel:ABKNewsFeedChannel
+                      withExtras:nil]) {
+    return;
+  }
+
+  // WebView
+  if ([ABKUIURLUtils URL:cardURL shouldOpenInWebView:card.openUrlInWebView]) {
+    [self openURLInWebView:cardURL];
+    return;
+  }
+
+  // System
+  [ABKUIURLUtils openURLWithSystem:cardURL];
 }
 
 - (void)openURLInWebView:(NSURL *)url {
