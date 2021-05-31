@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.preserve_paths = 'AppboyKit/**/*.*'
   s.default_subspec = 'UI'
 
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC', 'DEFINES_MODULE' => 'YES' }
 
   s.subspec 'Core' do |sc|
     sc.ios.library = 'z'
