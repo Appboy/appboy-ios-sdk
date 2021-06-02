@@ -4,12 +4,11 @@
 @implementation ABKContentCardsViewController
 
 - (instancetype)init {
-  UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKContentCardsStoryboard"
-                                               bundle:[ABKUIUtils bundle:[ABKContentCardsViewController class] channel:ABKContentCardChannel]];
-  ABKContentCardsViewController *nf = [st instantiateViewControllerWithIdentifier:@"ABKContentCardsViewController"];
-  self = nf;
-  self.contentCardsViewController = self.viewControllers[0];
-  [self addDoneButton];
+  self = [super initWithRootViewController:[[ABKContentCardsTableViewController alloc] init]];
+  if (self) {
+    self.contentCardsViewController = self.viewControllers.firstObject;
+    [self addDoneButton];
+  }
   return self;
 }
 

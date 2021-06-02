@@ -93,7 +93,7 @@
 }
 
 - (IBAction)flushDataToAppboy:(id)sender {
-  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+  [[Appboy sharedInstance] requestImmediateDataFlush];
   [AlertControllerUtils presentTemporaryAlertWithTitle:nil
                                                message:@"Data was successfully flushed"
                                           presentingVC:self];

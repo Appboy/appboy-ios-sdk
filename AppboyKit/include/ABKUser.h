@@ -94,7 +94,7 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  */
 @property (nonatomic, copy, nullable) NSString *phone;
 
-@property (nonatomic, copy, readonly) NSString *userID;
+@property (nonatomic, copy, nullable, readonly) NSString *userID;
 
 /*!
  * The User's avatar image URL. This URL will be processed by the server and used in their user profile on the

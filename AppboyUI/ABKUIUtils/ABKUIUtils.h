@@ -80,4 +80,13 @@
  */
 + (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)textStyle weight:(UIFontWeight)weight;
 
+/*!
+ * Enables `adjustsFontForContentSizeCategory` on the label if available (iOS 10+).
+ *
+ * This method has no effect on iOS / tvOS versions prior to 10.0.
+ *
+ * @param label Any object conforming to `UIContentSizeCategoryAdjusting`
+ */
++ (void)enableAdjustsFontForContentSizeCategory:(id)label;
+
 @end

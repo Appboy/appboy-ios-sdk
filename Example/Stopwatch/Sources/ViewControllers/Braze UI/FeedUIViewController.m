@@ -75,7 +75,7 @@
 #pragma mark - Categoried News
 
 - (IBAction)displayCategoriedNews:(id)sender {
-  ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
+  ABKNewsFeedTableViewController *newsFeed = [[ABKNewsFeedTableViewController alloc] init];
   newsFeed.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   // Add Categories button
   UIBarButtonItem *categoriesButton = [[UIBarButtonItem alloc]
@@ -92,33 +92,27 @@
   
   ABKNewsFeedTableViewController *feedTableViewController = (ABKNewsFeedTableViewController *)self.navigationController.topViewController;
   [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Announcement", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    [self dismissViewControllerAnimated:YES completion:^{
-      [feedTableViewController setCategories:ABKCardCategoryAnnouncements];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [feedTableViewController setCategories:ABKCardCategoryAnnouncements];
   }]];
   [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Advertising", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    [self dismissViewControllerAnimated:YES completion:^{
-      [feedTableViewController setCategories:ABKCardCategoryAdvertising];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [feedTableViewController setCategories:ABKCardCategoryAdvertising];
   }]];
   [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.Social", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    [self dismissViewControllerAnimated:YES completion:^{
-      [feedTableViewController setCategories:ABKCardCategorySocial];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [feedTableViewController setCategories:ABKCardCategorySocial];
   }]];
   [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.News", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    [self dismissViewControllerAnimated:YES completion:^{
-      [feedTableViewController setCategories:ABKCardCategoryNews];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [feedTableViewController setCategories:ABKCardCategoryNews];
   }]];
   [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.test-view.categories.No-Category", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    [self dismissViewControllerAnimated:YES completion:^{
-      [feedTableViewController setCategories:ABKCardCategoryNoCategory];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [feedTableViewController setCategories:ABKCardCategoryNoCategory];
   }]];
   [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Appboy.Stopwatch.initial-view.cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
   }]];
 
   [self presentViewController:actionSheet animated:YES completion:nil];
@@ -135,10 +129,19 @@
 }
 
 - (IBAction)navigationNewsFeedButtonTapped:(id)sender {
-  ABKNewsFeedTableViewController *newsFeed = [ABKNewsFeedTableViewController getNavigationFeedViewController];
+  ABKNewsFeedTableViewController *newsFeed = [[ABKNewsFeedTableViewController alloc] init];
   newsFeed.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   newsFeed.navigationItem.title = @"Stopwatch Navigation Feed";
   [self.navigationController pushViewController:newsFeed animated:YES];
+}
+
+- (IBAction)legacyStoryboardNewsFeedButtonTapped:(id)sender {
+  UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKNewsFeedCardStoryboard"
+                                                 bundle:[NSBundle mainBundle]];
+  ABKNewsFeedViewController *newsFeed = [st instantiateViewControllerWithIdentifier:@"ABKNewsFeedViewController"];
+  newsFeed.newsFeed.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  newsFeed.newsFeed.navigationItem.title = @"Stopwatch Legacy Feed";
+  [self.navigationController presentViewController:newsFeed animated:YES completion:nil];
 }
 
 # pragma mark - Content Cards
@@ -155,13 +158,39 @@
 }
 
 - (IBAction)navigationContentCardsButtonTapped:(id)sender {
-  ABKContentCardsTableViewController *contentCards = [ABKContentCardsTableViewController getNavigationContentCardsViewController];
+  ABKContentCardsTableViewController *contentCards = [[ABKContentCardsTableViewController alloc] init];
   contentCards.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
   contentCards.navigationItem.title = @"Stopwatch Navigation Cards";
   AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
   contentCards.enableDarkTheme = appDelegate.stopwatchEnableDarkTheme;
   [ColorUtils applyThemeToViewController:contentCards];
   [self.navigationController pushViewController:contentCards animated:YES];
+}
+
+- (IBAction)legacyStoryboardContentCardsButtonTapped:(id)sender {
+  UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKContentCardsStoryboard"
+                                                 bundle:[NSBundle mainBundle]];
+  ABKContentCardsViewController *cc = [st instantiateViewControllerWithIdentifier:@"ABKContentCardsViewController"];
+  cc.contentCardsViewController = cc.viewControllers.firstObject;
+  cc.contentCardsViewController.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  cc.contentCardsViewController.navigationItem.title = @"Legacy Storyboard Cards";
+  AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  cc.contentCardsViewController.enableDarkTheme = appDelegate.stopwatchEnableDarkTheme;
+  [ColorUtils applyThemeToViewController:cc.contentCardsViewController];
+  [self.navigationController pushViewController:cc.contentCardsViewController animated:YES];
+}
+
+- (IBAction)customStoryboardContentCardsButtonTapped:(id)sender {
+  UIStoryboard *st = [UIStoryboard storyboardWithName:@"ABKContentCardsCustomStoryboard"
+                                                 bundle:[NSBundle mainBundle]];
+  ABKContentCardsViewController *cc = [st instantiateViewControllerWithIdentifier:@"ABKContentCardsViewController"];
+  cc.contentCardsViewController = cc.viewControllers.firstObject;
+  cc.contentCardsViewController.disableUnreadIndicator = !self.unReadIndicatorSwitch.on;
+  cc.contentCardsViewController.navigationItem.title = @"Custom Storyboard Cards";
+  AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+  cc.contentCardsViewController.enableDarkTheme = appDelegate.stopwatchEnableDarkTheme;
+  [ColorUtils applyThemeToViewController:cc.contentCardsViewController];
+  [self.navigationController pushViewController:cc.contentCardsViewController animated:YES];
 }
 
 #pragma mark - Transition

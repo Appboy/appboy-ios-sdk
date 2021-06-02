@@ -343,4 +343,13 @@ static NSString * const ABKUIPodNFBundleName = @"AppboyUI.NewsFeed.bundle";
   }
 }
 
++ (void)enableAdjustsFontForContentSizeCategory:(id)label {
+  if (@available(iOS 10.0, tvOS 10.0, *)) {
+    id<UIContentSizeCategoryAdjusting> adjustableLabel = label;
+    if ([adjustableLabel respondsToSelector:@selector(setAdjustsFontForContentSizeCategory:)]) {
+      adjustableLabel.adjustsFontForContentSizeCategory = YES;
+    }
+  }
+}
+
 @end

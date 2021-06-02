@@ -9,12 +9,15 @@
          handlesURL:(NSURL *)url
         fromChannel:(ABKChannel)channel
          withExtras:(NSDictionary *)extras {
-  if ([ABKUIURLUtils URLDelegateIsValid:urlDelegate]) {
-    if ([urlDelegate handleAppboyURL:url fromChannel:channel withExtras:extras]) {
-      NSLog(@"Braze is not handling the URL %@, as the ABKURLDelegate %@ returned YES"
-            "in handleAppboyURL:fromChannel:withExtras:", url.absoluteString, urlDelegate);
-      return YES;
-    }
+  if (![ABKUIURLUtils URLDelegateIsValid:urlDelegate]) {
+    NSLog(@"Not handling URL %@ with invalid ABKURLDelegate %@.",
+          url.absoluteString, urlDelegate);
+    return NO;
+  }
+  if ([urlDelegate handleAppboyURL:url fromChannel:channel withExtras:extras]) {
+    NSLog(@"Handled URL %@ with external ABKURLDelegate %@.",
+          url.absoluteString, urlDelegate);
+    return YES;
   }
   return NO;
 }

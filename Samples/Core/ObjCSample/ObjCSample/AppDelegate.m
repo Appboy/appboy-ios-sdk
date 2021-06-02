@@ -43,7 +43,11 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
-  completionHandler(UNNotificationPresentationOptionAlert);
+  if (@available(iOS 14.0, *)) {
+    completionHandler(UNNotificationPresentationOptionList | UNNotificationPresentationOptionBanner);
+  } else {
+    completionHandler(UNNotificationPresentationOptionAlert);
+  }
 }
 
 @end

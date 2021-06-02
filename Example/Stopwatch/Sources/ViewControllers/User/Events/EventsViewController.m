@@ -2,6 +2,7 @@
 #import <AppboyKit.h>
 #import "AlertControllerUtils.h"
 #import "UserCells.h"
+#import "SdkAuthDelegate.h"
 
 /*
  * We use the number 44 here because the height of a table view cell is 44.
@@ -398,7 +399,17 @@ static NSString *const ChangeUser = @"Set User ID";
     }
   } else if ([sender.titleLabel.text isEqualToString:ChangeUser] && [self checkIfFieldIsEmpty:UserId]){
     NSString *userId = self.valuesDictionary[UserId];
-    [[Appboy sharedInstance] changeUser:userId];
+
+    SdkAuthDelegate *authDelegate = (SdkAuthDelegate *)Appboy.sharedInstance.sdkAuthenticationDelegate;
+    if (authDelegate) {
+      // Sdk Authentication is enabled, request new token and update auth signature
+      [authDelegate requestSdkAuthTokenForUserId:userId
+                                      completion:^(NSString * _Nullable token) {
+        [Appboy.sharedInstance changeUser:userId sdkAuthSignature:token];
+      }];
+    } else {
+      [[Appboy sharedInstance] changeUser:userId];
+    }
     [self showAlertWithMessage:[NSString localizedStringWithFormat:@"Changed user to %@", userId]];
   }
   // restoring NSNumber/NSDate values back to NSString

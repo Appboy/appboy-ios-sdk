@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		087135B4069E8E043A69613F /* libPods-BrazeContentCardsSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90978684C830B2D43412487C /* libPods-BrazeContentCardsSampleApp.a */; };
+		B207A7FF25EE9CD5003149F4 /* CustomContentCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B207A7FE25EE9CD5003149F4 /* CustomContentCardsTableViewController.m */; };
+		B254C1CA25EECF34009D77BD /* CustomClassicContentCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B254C1C925EECF34009D77BD /* CustomClassicContentCardCell.m */; };
+		B254C1CE25EECF61009D77BD /* CustomCaptionedImageContentCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B254C1CD25EECF61009D77BD /* CustomCaptionedImageContentCardCell.m */; };
 		FCCC1FC820F4405400297CB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC1FC720F4405400297CB2 /* AppDelegate.m */; };
 		FCCC1FCB20F4405400297CB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCC1FCA20F4405400297CB2 /* ViewController.m */; };
 		FCCC1FCE20F4405400297CB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCC1FCC20F4405400297CB2 /* Main.storyboard */; };
@@ -21,6 +24,12 @@
 		10FACE6E962C5AFD8C73CAA9 /* Pods-BrazeContentCardsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrazeContentCardsSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrazeContentCardsSampleApp/Pods-BrazeContentCardsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		77751F8ED975D08985565294 /* Pods-BrazeContentCardsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrazeContentCardsSampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrazeContentCardsSampleApp/Pods-BrazeContentCardsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		90978684C830B2D43412487C /* libPods-BrazeContentCardsSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BrazeContentCardsSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B207A7FD25EE9CD5003149F4 /* CustomContentCardsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomContentCardsTableViewController.h; sourceTree = "<group>"; };
+		B207A7FE25EE9CD5003149F4 /* CustomContentCardsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomContentCardsTableViewController.m; sourceTree = "<group>"; };
+		B254C1C825EECF34009D77BD /* CustomClassicContentCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomClassicContentCardCell.h; sourceTree = "<group>"; };
+		B254C1C925EECF34009D77BD /* CustomClassicContentCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomClassicContentCardCell.m; sourceTree = "<group>"; };
+		B254C1CC25EECF61009D77BD /* CustomCaptionedImageContentCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCaptionedImageContentCardCell.h; sourceTree = "<group>"; };
+		B254C1CD25EECF61009D77BD /* CustomCaptionedImageContentCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCaptionedImageContentCardCell.m; sourceTree = "<group>"; };
 		FCCC1FC320F4405400297CB2 /* BrazeContentCardsSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrazeContentCardsSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCC1FC620F4405400297CB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCCC1FC720F4405400297CB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,7 +40,7 @@
 		FCCC1FD220F4405600297CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCCC1FD420F4405600297CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCC1FD520F4405600297CB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FCCC1FDC20F4431000297CB2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		FCCC1FDC20F4431000297CB2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,12 @@
 				FCCC1FD120F4405600297CB2 /* LaunchScreen.storyboard */,
 				FCCC1FD420F4405600297CB2 /* Info.plist */,
 				FCCC1FD520F4405600297CB2 /* main.m */,
+				B207A7FD25EE9CD5003149F4 /* CustomContentCardsTableViewController.h */,
+				B207A7FE25EE9CD5003149F4 /* CustomContentCardsTableViewController.m */,
+				B254C1CC25EECF61009D77BD /* CustomCaptionedImageContentCardCell.h */,
+				B254C1CD25EECF61009D77BD /* CustomCaptionedImageContentCardCell.m */,
+				B254C1C825EECF34009D77BD /* CustomClassicContentCardCell.h */,
+				B254C1C925EECF34009D77BD /* CustomClassicContentCardCell.m */,
 			);
 			path = BrazeContentCardsSampleApp;
 			sourceTree = "<group>";
@@ -209,8 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B207A7FF25EE9CD5003149F4 /* CustomContentCardsTableViewController.m in Sources */,
 				FCCC1FCB20F4405400297CB2 /* ViewController.m in Sources */,
 				FCCC1FD620F4405600297CB2 /* main.m in Sources */,
+				B254C1CA25EECF34009D77BD /* CustomClassicContentCardCell.m in Sources */,
+				B254C1CE25EECF61009D77BD /* CustomCaptionedImageContentCardCell.m in Sources */,
 				FCCC1FC820F4405400297CB2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

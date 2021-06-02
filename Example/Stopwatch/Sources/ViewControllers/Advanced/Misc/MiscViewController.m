@@ -29,7 +29,8 @@
   self.versionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Appboy.Stopwatch.test-view.appboy-version.message", nil), APPBOY_SDK_VERSION];
   [self displayAppboyRequestPolicy];
   self.attributionCounter++;
-  
+
+  self.sdkAuthSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SDKAuthKey];
   self.inAppMessageDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetInAppMessageControllerDelegateKey];
   self.urlDelegateSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:SetURLDelegateKey];
   self.sessionTimeoutTextField.keyboardType = UIKeyboardTypeNumberPad;
@@ -65,7 +66,7 @@
 // This is the selector of flushAppboyData Button which flushes queued data to the Braze servers manually on demand.
 - (IBAction)flushAppboyData:(id)sender {
   StopwatchDebugMsg(@"Flushing data to Braze.", nil);
-  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+  [[Appboy sharedInstance] requestImmediateDataFlush];
   [self showAlertWithMessage:@"Data was successfully flushed"];
 }
 
@@ -164,6 +165,13 @@
     }
   }
   return returnArray;
+}
+
+- (IBAction)setSDKAuthSwitchChange:(id)sender {
+  [[NSUserDefaults standardUserDefaults] setBool:self.sdkAuthSwitch.on forKey:SDKAuthKey];
+  NSString *switchStatus = (self.sdkAuthSwitch.on) ? @"Enabled" : @"Disabled";
+  NSString *alertTitle = [NSString stringWithFormat:@"SDK Authentication %@", switchStatus];
+  [self showForceCloseAlertWithTitle:alertTitle];
 }
 
 - (IBAction)setInAppDelegateSwitchChanged:(id)sender {

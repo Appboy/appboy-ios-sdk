@@ -53,6 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     Appboy.sharedInstance()!.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
   }
 
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              willPresent notification: UNNotification,
+                              withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    if #available(iOS 14.0, *) {
+      completionHandler([.list, .banner]);
+    } else {
+      completionHandler([.alert]);
+    }
+  }
+
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     NSLog("HelloSwift open url delegate called with: %@", url.absoluteString)
     let urlString = url.absoluteString.removingPercentEncoding

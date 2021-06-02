@@ -10,6 +10,8 @@
 @property IBOutlet UITextField *apiKeyTextField;
 @property IBOutlet UITextField *endointTextField;
 @property IBOutlet UITextField *sessionTimeoutTextField;
+
+@property (weak, nonatomic) IBOutlet UISwitch *sdkAuthSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *inAppMessageDelegateSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *urlDelegateSwitch;
 

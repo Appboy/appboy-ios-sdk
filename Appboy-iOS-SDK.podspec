@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-iOS-SDK"
-  s.version      = "4.1.0"
+  s.version      = "4.2.0"
   s.summary      = "This is the Braze iOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     sc.source_files = 'AppboyKit/include/*.h', 'AppboyKit/ABKModalWebViewController.m', 'AppboyKit/ABKNoConnectionLocalization.m', 'AppboyKit/ABKLocationManagerProvider.m'
     sc.resource_bundle = { 'Appboy' => 'AppboyKit/Appboy.bundle/*.lproj' }
     sc.vendored_framework = 'AppboyKit/AppboyKitLibrary.xcframework'
-    sc.weak_framework = 'CoreTelephony', 'Social', 'Accounts', 'UserNotifications'
+    sc.weak_framework = 'CoreTelephony', 'UserNotifications'
   end
 
   s.subspec 'UI' do |sui|

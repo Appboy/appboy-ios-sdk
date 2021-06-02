@@ -13,5 +13,7 @@
 - (IBAction)modalNewsFeedButtonTapped:(id)sender;
 - (IBAction)modalContentCardsButtonTapped:(id)sender;
 - (IBAction)navigationContentCardsButtonTapped:(id)sender;
+- (IBAction)legacyStoryboardContentCardsButtonTapped:(id)sender;
+- (IBAction)customStoryboardContentCardsButtonTapped:(id)sender;
 
 @end

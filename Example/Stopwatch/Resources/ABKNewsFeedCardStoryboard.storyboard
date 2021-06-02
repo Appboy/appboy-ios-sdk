@@ -151,17 +151,17 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="TitleBackgroundView" destination="xzv-3L-WDj" id="cC4-mg-cpN"/>
                                     <outlet property="bodyAndLinkConstraint" destination="AZn-ci-dJm" id="jLU-Bj-VE6"/>
                                     <outlet property="captionedImageView" destination="vE3-pM-vca" id="dcL-Pp-ZCz"/>
                                     <outlet property="descriptionLabel" destination="UGC-fY-DfN" id="Pqf-10-TTh"/>
-                                    <outlet property="imageHeightContraint" destination="TW5-4g-gud" id="8fJ-MP-RGC"/>
+                                    <outlet property="imageHeightConstraint" destination="TW5-4g-gud" id="Hri-Fs-1ZP"/>
                                     <outlet property="linkLabel" destination="Yy8-cq-nRL" id="HMd-7m-qkA"/>
                                     <outlet property="rootView" destination="OO0-Sd-dv6" id="74Y-uL-6bw"/>
                                     <outlet property="rootViewBottomConstraint" destination="tGr-HL-CUA" id="VXd-AT-mn5"/>
                                     <outlet property="rootViewLeadingConstraint" destination="ZaD-Vm-E5b" id="wMy-dd-gBS"/>
                                     <outlet property="rootViewTopConstraint" destination="THp-xt-mWA" id="3pM-HC-w94"/>
                                     <outlet property="rootViewTrailingConstraint" destination="iW3-ql-u5z" id="KB0-By-vwv"/>
+                                    <outlet property="titleBackgroundView" destination="xzv-3L-WDj" id="1jP-Aq-ote"/>
                                     <outlet property="titleLabel" destination="dBF-6R-JPA" id="fBX-J7-62s"/>
                                     <outlet property="unreadIndicatorView" destination="nFM-dS-rg2" id="Vgs-Ws-50z"/>
                                 </connections>

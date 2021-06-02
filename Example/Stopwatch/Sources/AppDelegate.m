@@ -5,6 +5,7 @@
 #import "AppDelegate.h"
 #import "ABKPushUtils.h"
 #import "IDFADelegate.h"
+#import "SdkAuthDelegate.h"
 #import "Branch.h"
 #import "AlertControllerUtils.h"
 #import "ColorUtils.h"
@@ -69,6 +70,19 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
     appboyOptions[ABKURLDelegateKey] = self;
   }
   appboyOptions[ABKPushStoryAppGroupKey] = @"group.com.appboy.stopwatch";
+
+  // Enable SDK Auth and set SDK Auth delegate on startup
+  BOOL sdkAuthEnabled = YES; // default value
+  if ([preferences objectForKey:SDKAuthKey] != nil) {
+    sdkAuthEnabled = [preferences boolForKey:SDKAuthKey];
+  } else {
+    [preferences setBool:sdkAuthEnabled forKey:SDKAuthKey];
+  }
+  if (sdkAuthEnabled) {
+    StopwatchDebugMsg(@"Enabling SDK Authentication for app run.", nil);
+    appboyOptions[ABKEnableSDKAuthenticationKey] = @YES;
+    appboyOptions[ABKSdkAuthenticationDelegateKey] = [[SdkAuthDelegate alloc] init];
+  }
 
   // Starts up Braze, opening a new session and causing an updated in-app message/feed to be requested.
   [[NSUserDefaults standardUserDefaults] setObject:apiKeyToUse forKey:ApiKeyInUse];
@@ -258,7 +272,11 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
   StopwatchDebugMsg(@"Notification received in foreground: %@", notification.request.content.userInfo);
-  completionHandler(UNNotificationPresentationOptionAlert);
+  if (@available(iOS 14.0, *)) {
+    completionHandler(UNNotificationPresentationOptionList | UNNotificationPresentationOptionBanner);
+  } else {
+    completionHandler(UNNotificationPresentationOptionAlert);
+  }
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {

@@ -11,7 +11,7 @@ static NSInteger const CloseButtonTag = 50;
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.inAppMessageHeaderLabel.adjustsFontForContentSizeCategory = YES;
+  [ABKUIUtils enableAdjustsFontForContentSizeCategory:self.inAppMessageMessageLabel];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

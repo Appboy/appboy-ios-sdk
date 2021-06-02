@@ -1,3 +1,25 @@
+## 4.2.0
+
+##### Breaking
+- Contents Cards and News Feed are now more extensible!
+  - Class level API methods have changed to instance methods to make subclassing easier, however `getNavigationContentCardsViewController` and `getNavigationFeedViewController` are left in as class methods for backwards compatibility. 
+  - Subclassing views is now fully supported for customizations. See the [Content Card sample code for examples]((https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/ContentCards/BrazeContentCardsSampleApp).
+  - Alternatively, you can bring your own storyboard with customizations. See our [example custom storyboard implementation](https://github.com/Appboy/appboy-ios-sdk/tree/master/Example/Stopwatch/Sources/ViewControllers/Braze%20UI/FeedUIViewController.m).
+  - See the [Content Cards documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/content_cards/) for more information.
+
+##### Fixed
+- Fixes an issue with Dynamic Type support introduced in [3.34.0](#3.34.0) to be compatible with iOS 9.
+
+##### Added
+- Adds support for new SDK Authentication feature.
+- Exposes `window.brazeBridge` in HTML in-app messages which replaces `window.appboyBridge`. `appboyBridge` is deprecated and will be removed in a future version of the SDK.
+
+##### Changed
+- Makes in-app message window handling more resilient:
+  - The in-app message window tries to display up to 10 times when another window competes for visibility. If the in-app message is not guaranteed visibility, it is dismissed and an error is logged.
+- Improves `Appboy`'s `wipeDataAndDisableForAppRun` and `disableSDK` to handle additional use cases.
+- Deprecates `flushDataAndProcessRequestQueue` in favor of `requestImmediateDataFlush`.
+
 ## 4.1.0
 
 ##### Breaking

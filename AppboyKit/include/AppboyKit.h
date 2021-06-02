@@ -51,6 +51,10 @@
 // ABKImageDelegate
 #import "ABKImageDelegate.h"
 
+// SDK Authentication
+#import "ABKSdkAuthenticationError.h"
+#import "ABKSdkAuthenticationDelegate.h"
+
 // Location
 #import "ABKLocationManager.h"
 #import "ABKLocationManagerProvider.h"

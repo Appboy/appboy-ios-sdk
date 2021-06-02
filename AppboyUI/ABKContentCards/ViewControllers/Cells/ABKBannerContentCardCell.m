@@ -7,15 +7,57 @@ static const CGFloat ImageMinResizingMultiplier = 0.1f;
 
 @implementation ABKBannerContentCardCell
 
+#pragma mark - SetUp
+
+- (void)setUpUI {
+  [super setUpUI];
+  [self setUpBannerImageView];
+}
+
+#pragma mark BannerImageView
+
+- (void)setUpBannerImageView {
+  if (!self.bannerImageView) {
+    self.bannerImageView = [[[self imageViewClass] alloc] init];
+    self.bannerImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.bannerImageView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [self.rootView addSubview:self.bannerImageView];
+
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[bannerImageView]-0-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:@{@"bannerImageView" : self.bannerImageView}];
+    [NSLayoutConstraint activateConstraints:horizontalConstraints];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bannerImageView]-0-|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:@{@"bannerImageView" : self.bannerImageView}];
+    [NSLayoutConstraint activateConstraints:verticalConstraints];
+
+    self.imageRatioConstraint = [NSLayoutConstraint
+                                 constraintWithItem:self.bannerImageView
+                                 attribute:NSLayoutAttributeWidth
+                                 relatedBy:NSLayoutRelationEqual
+                                 toItem:self.bannerImageView
+                                 attribute:NSLayoutAttributeHeight
+                                 multiplier:(355 / 79)
+                                 constant:0];
+    self.imageRatioConstraint.priority = ABKContentCardPriorityLayoutVeryHighButBelowRequired;
+    self.imageRatioConstraint.active = YES;
+  }
+}
+
+#pragma mark - ApplyCard
+
 - (void)applyCard:(ABKBannerContentCard *)card {
   if (![card isKindOfClass:[ABKBannerContentCard class]]) {
     return;
   }
   
   [super applyCard:card];
-  if ([self shouldResizeImageWithNewRatio:card.imageAspectRatio]) {
-    [self updateImageConstraintsWithRatio:card.imageAspectRatio];
-  }
+
+  [self.rootView bringSubviewToFront:self.unviewedLineView];
   
   if (![Appboy sharedInstance].imageDelegate) {
     NSLog(@"[APPBOY][WARN] %@ %s",
@@ -27,7 +69,7 @@ static const CGFloat ImageMinResizingMultiplier = 0.1f;
   [[Appboy sharedInstance].imageDelegate setImageForView:self.bannerImageView
                                    showActivityIndicator:NO
                                                  withURL:[NSURL URLWithString:card.image]
-                                        imagePlaceHolder:nil
+                                        imagePlaceHolder:[self getPlaceHolderImage]
                                                completed:^(UIImage * _Nullable image,
                                                            NSError * _Nullable error,
                                                            NSInteger cacheType,
@@ -57,13 +99,7 @@ static const CGFloat ImageMinResizingMultiplier = 0.1f;
   if (self.imageRatioConstraint) {
     self.imageRatioConstraint.active = NO;
   }
-  self.imageRatioConstraint = [NSLayoutConstraint constraintWithItem:self.bannerImageView
-                                                           attribute:NSLayoutAttributeWidth
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:self.bannerImageView
-                                                           attribute:NSLayoutAttributeHeight
-                                                          multiplier:newRatio
-                                                            constant:0];
+  self.imageRatioConstraint = [self.bannerImageView.widthAnchor constraintEqualToAnchor:self.bannerImageView.heightAnchor multiplier:newRatio];
   self.imageRatioConstraint.active = YES;
   [self setNeedsLayout];
 }
