@@ -10,6 +10,7 @@ var searchData=
   ['clickedbuttonid',['clickedButtonId',['../interface_a_b_k_in_app_message_window_controller.html#a8533e6b1e6f4012ca4c588a057500394',1,'ABKInAppMessageWindowController']]],
   ['clickedhtmlbuttonid',['clickedHTMLButtonId',['../interface_a_b_k_in_app_message_window_controller.html#af4051eb95e0aa225a376c10383002ff4',1,'ABKInAppMessageWindowController']]],
   ['closebuttoncolor',['closeButtonColor',['../interface_a_b_k_in_app_message_immersive.html#a03008a80cfec882472d347b8e82d527a',1,'ABKInAppMessageImmersive']]],
+  ['code',['code',['../interface_a_b_k_sdk_authentication_error.html#aeaffb7e67aadcc94a7772681101b9c6a',1,'ABKSdkAuthenticationError']]],
   ['contentcards',['contentCards',['../interface_a_b_k_content_cards_controller.html#ad3a42eca8dd891df774d2e751fb33bb6',1,'ABKContentCardsController']]],
   ['contentcardsviewcontroller',['contentCardsViewController',['../interface_a_b_k_content_cards_view_controller.html#a35314d19f2b0f616b63ddabb7216e685',1,'ABKContentCardsViewController']]],
   ['country',['country',['../interface_a_b_k_user.html#a3d3fb8c80f0f4a38346b9f3b279cf48a',1,'ABKUser']]],

@@ -12,6 +12,7 @@ var searchData=
   ['imagedelegate',['imageDelegate',['../interface_appboy.html#ae9735c31fa9fe9121213326ca367e0ac',1,'Appboy']]],
   ['imagestyle',['imageStyle',['../interface_a_b_k_in_app_message_immersive.html#aa5645c31a73781ee00b575fed118abbf',1,'ABKInAppMessageImmersive']]],
   ['imageuri',['imageURI',['../interface_a_b_k_in_app_message.html#ad4d9d9d8615a6dcad9d684e4d6a37022',1,'ABKInAppMessage']]],
+  ['imageviewclass',['imageViewClass',['../protocol_a_b_k_image_delegate-p.html#a3397fdc1f06f25d5ccd76d861fab5684',1,'ABKImageDelegate-p::imageViewClass()'],['../interface_a_b_k_n_f_base_card_cell.html#ad31f6b3fa3336995c0dc2ed72ffcf7e7',1,'ABKNFBaseCardCell::imageViewClass()']]],
   ['inappbuttonmodel',['inAppButtonModel',['../interface_a_b_k_in_app_message_u_i_button.html#a81bc48b8ba7540b708f0dc1940d54268',1,'ABKInAppMessageUIButton']]],
   ['inappmessage',['inAppMessage',['../interface_a_b_k_in_app_message_view_controller.html#aded8d84fb0fa54a16702a12c9a4326d4',1,'ABKInAppMessageViewController::inAppMessage()'],['../interface_a_b_k_in_app_message_window_controller.html#a5f5b6da1558202a1d5458d09a26cee54',1,'ABKInAppMessageWindowController::inAppMessage()']]],
   ['inappmessageclickactiontype',['inAppMessageClickActionType',['../interface_a_b_k_in_app_message.html#a14e5b3e1822190a499d25b4d67e5baa5',1,'ABKInAppMessage']]],

@@ -87,32 +87,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html">    5</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html">ABKNewsFeedTableViewController</a> : UITableViewController &lt;<a class="code" href="protocol_a_b_k_base_news_feed_cell_delegate-p.html">ABKBaseNewsFeedCellDelegate</a>&gt;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a61ab75ec7d0e673d407c26ca2edad5ef">   10</a></span>&#160;<span class="keyword">@property</span> (strong, nonatomic) IBOutlet UIView *<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a61ab75ec7d0e673d407c26ca2edad5ef">emptyFeedView</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">@property</span> (unsafe_unretained, nonatomic) IBOutlet UILabel *emptyFeedLabel;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a747c00c836a40249eb98078a7d045033">   17</a></span>&#160;<span class="keyword">@property</span> (nonatomic) BOOL <a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a747c00c836a40249eb98078a7d045033">disableUnreadIndicator</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac4d658718482b9d46d932cde02d3f9d9">   24</a></span>&#160;<span class="keyword">@property</span> (nonatomic) ABKCardCategory <a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac4d658718482b9d46d932cde02d3f9d9">categories</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#aafc0fe59049b19b20095b19584628054">   31</a></span>&#160;<span class="keyword">@property</span> (nonatomic) NSArray&lt;ABKCard *&gt; *<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#aafc0fe59049b19b20095b19584628054">cards</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a9dbe83cd7e01605525585e66882f1d54">   36</a></span>&#160;<span class="keyword">@property</span> (nonatomic) NSMutableSet&lt;NSString *&gt; *<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a9dbe83cd7e01605525585e66882f1d54">cardImpressions</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac9e0a3103e9f4ecbbb08f2cdf8b66a26">   44</a></span>&#160;<span class="keyword">@property</span> NSTimeInterval <a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac9e0a3103e9f4ecbbb08f2cdf8b66a26">cacheTimeout</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">@property</span> <span class="keywordtype">id</span> constraintWarningValue;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;+ (instancetype)<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a11a32e1f12fd907a5d5094d0c25393d3">getNavigationFeedViewController</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;- (void)<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#aec344bd60b3c7df5226295d3fa0f08a9">setUp</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;- (void)<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#acee11dbb99e02d56ea1ca7f7d636abbb">setUpUI</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;- (void)<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a68f6aa043ce25f759f4b906cc79c25f1">registerTableViewCellClasses</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;- (<a class="code" href="interface_a_b_k_n_f_base_card_cell.html">ABKNFBaseCardCell</a> *)dequeueCellFromTableView:(UITableView *)tableView</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                   forIndexPath:(NSIndexPath *)indexPath</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                        forCard:(<a class="code" href="interface_a_b_k_card.html">ABKCard</a> *)card;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a61ab75ec7d0e673d407c26ca2edad5ef">   38</a></span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet UIView *<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a61ab75ec7d0e673d407c26ca2edad5ef">emptyFeedView</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet UILabel *emptyFeedLabel;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a747c00c836a40249eb98078a7d045033">   45</a></span>&#160;<span class="keyword">@property</span> (nonatomic) BOOL <a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a747c00c836a40249eb98078a7d045033">disableUnreadIndicator</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac4d658718482b9d46d932cde02d3f9d9">   52</a></span>&#160;<span class="keyword">@property</span> (nonatomic) ABKCardCategory <a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac4d658718482b9d46d932cde02d3f9d9">categories</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;- (NSString *)localizedAppboyFeedString:(NSString *)key;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;- (void)handleCardClick:(<a class="code" href="interface_a_b_k_card.html">ABKCard</a> *)card;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#aafc0fe59049b19b20095b19584628054">   59</a></span>&#160;<span class="keyword">@property</span> (nonatomic) NSArray&lt;ABKCard *&gt; *<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#aafc0fe59049b19b20095b19584628054">cards</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a9dbe83cd7e01605525585e66882f1d54">   64</a></span>&#160;<span class="keyword">@property</span> (nonatomic) NSMutableSet&lt;NSString *&gt; *<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a9dbe83cd7e01605525585e66882f1d54">cardImpressions</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac9e0a3103e9f4ecbbb08f2cdf8b66a26">   72</a></span>&#160;<span class="keyword">@property</span> NSTimeInterval <a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#ac9e0a3103e9f4ecbbb08f2cdf8b66a26">cacheTimeout</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">@property</span> <span class="keywordtype">id</span> constraintWarningValue;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;+ (instancetype)<a class="code" href="interface_a_b_k_news_feed_table_view_controller.html#a11a32e1f12fd907a5d5094d0c25393d3">getNavigationFeedViewController</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; - (NSString *)findCellIdentifierWithCard:(<a class="code" href="interface_a_b_k_card.html">ABKCard</a> *)card;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;- (NSString *)localizedAppboyFeedString:(NSString *)key;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;- (void)handleCardClick:(<a class="code" href="interface_a_b_k_card.html">ABKCard</a> *)card;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 12 2021 14:58:52 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 2 2021 13:25:41 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

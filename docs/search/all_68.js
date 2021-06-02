@@ -3,6 +3,7 @@ var searchData=
   ['handlealltouchevents',['handleAllTouchEvents',['../interface_a_b_k_in_app_message_window.html#a7392355e56fa7c3f58b2dda274a00d22',1,'ABKInAppMessageWindow']]],
   ['handleappboyurl_3afromchannel_3awithextras_3a',['handleAppboyURL:fromChannel:withExtras:',['../protocol_a_b_k_u_r_l_delegate-p.html#a19b1f2cd01b1037c0861a9158b28bf40',1,'ABKURLDelegate-p']]],
   ['handlecardclick_3a',['handleCardClick:',['../interface_a_b_k_content_cards_table_view_controller.html#a6c3bfc173cc98b7ef284ce573f1a2556',1,'ABKContentCardsTableViewController::handleCardClick:()'],['../interface_a_b_k_news_feed_table_view_controller.html#a0bff61aa5a585d7c1545d2dfbac01857',1,'ABKNewsFeedTableViewController::handleCardClick:()']]],
+  ['handlesdkauthenticationerror_3a',['handleSdkAuthenticationError:',['../protocol_a_b_k_sdk_authentication_delegate-p.html#a42903fc53547f085eccba2a79611aa1d',1,'ABKSdkAuthenticationDelegate-p']]],
   ['header',['header',['../interface_a_b_k_in_app_message_immersive.html#a6c744c795b56e76dcf3da6750405a3e6',1,'ABKInAppMessageImmersive']]],
   ['headerbodyspaceconstraint',['headerBodySpaceConstraint',['../interface_a_b_k_in_app_message_immersive_view_controller.html#a6a04219098c20466638a05eadcb967c4',1,'ABKInAppMessageImmersiveViewController']]],
   ['headertextalignment',['headerTextAlignment',['../interface_a_b_k_in_app_message_immersive.html#a862d772b72985f89e22a632309cada70',1,'ABKInAppMessageImmersive']]],

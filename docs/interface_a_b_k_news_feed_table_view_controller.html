@@ -93,6 +93,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:aec344bd60b3c7df5226295d3fa0f08a9"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#aec344bd60b3c7df5226295d3fa0f08a9">setUp</a></td></tr>
+<tr class="separator:aec344bd60b3c7df5226295d3fa0f08a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee11dbb99e02d56ea1ca7f7d636abbb"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#acee11dbb99e02d56ea1ca7f7d636abbb">setUpUI</a></td></tr>
+<tr class="separator:acee11dbb99e02d56ea1ca7f7d636abbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f6aa043ce25f759f4b906cc79c25f1"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a68f6aa043ce25f759f4b906cc79c25f1">registerTableViewCellClasses</a></td></tr>
+<tr class="separator:a68f6aa043ce25f759f4b906cc79c25f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156504a2686ea68ee8723bc408475c14"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_a_b_k_n_f_base_card_cell.html">ABKNFBaseCardCell</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a156504a2686ea68ee8723bc408475c14">dequeueCellFromTableView:forIndexPath:forCard:</a></td></tr>
+<tr class="separator:a156504a2686ea68ee8723bc408475c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eb1442bf5d4d1d9d35738e92271659e"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a9eb1442bf5d4d1d9d35738e92271659e">findCellIdentifierWithCard:</a></td></tr>
+<tr class="separator:a9eb1442bf5d4d1d9d35738e92271659e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95d6f411fa83a6ff12a8e93ab7c2300b"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a95d6f411fa83a6ff12a8e93ab7c2300b">localizedAppboyFeedString:</a></td></tr>
 <tr class="separator:a95d6f411fa83a6ff12a8e93ab7c2300b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bff61aa5a585d7c1545d2dfbac01857"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a0bff61aa5a585d7c1545d2dfbac01857">handleCardClick:</a></td></tr>
@@ -129,6 +139,64 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>constraintWarningValue<
 <tr class="separator:ae304dc563c0281761c1bcede2985dadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a156504a2686ea68ee8723bc408475c14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_a_b_k_n_f_base_card_cell.html">ABKNFBaseCardCell</a> *) dequeueCellFromTableView: </td>
+          <td></td>
+          <td class="paramtype">(UITableView *)&#160;</td>
+          <td class="paramname"><em>tableView</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">forIndexPath:</td>
+          <td></td>
+          <td class="paramtype">(NSIndexPath *)&#160;</td>
+          <td class="paramname"><em>indexPath</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">forCard:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_card.html">ABKCard</a> *)&#160;</td>
+          <td class="paramname"><em>card</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tableView</td><td>The table view which need the cell to diplay the card UI. </td></tr>
+    <tr><td class="paramname">indexPath</td><td>The index path of the card UI in the table view. </td></tr>
+    <tr><td class="paramname">card</td><td>The card model for the cell.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method dequeues and returns the corresponding card cell based on card type from the given table view. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9eb1442bf5d4d1d9d35738e92271659e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) findCellIdentifierWithCard: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_card.html">ABKCard</a> *)&#160;</td>
+          <td class="paramname"><em>card</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Given a content card return the type identifier for the above registration. </p>
+
+</div>
+</div>
 <a class="anchor" id="a11a32e1f12fd907a5d5094d0c25393d3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,6 +210,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>constraintWarningValue<
       </table>
 </div><div class="memdoc">
 <p>This method returns an instance of <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html">ABKNewsFeedTableViewController</a>. You can call it to get a News Feed view controller for your navigation controller. </p>
+<dl class="section warning"><dt>Warning</dt><dd>To use a custom News Feed view controller, instantiate your own subclass instead (e.g. via alloc / init). </dd></dl>
 
 </div>
 </div>
@@ -178,6 +247,54 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>constraintWarningValue<
 </div><div class="memdoc">
 <p>This method returns the localized string from AppboyFeedLocalizable.strings file. You can easily override the localized string by adding the keys and the translations to your own Localizable.strings file.</p>
 <p>To do custom handling with the <a class="el" href="interface_appboy.html">Appboy</a> localized string, you can override this method in a subclass. </p>
+
+</div>
+</div>
+<a class="anchor" id="a68f6aa043ce25f759f4b906cc79c25f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) registerTableViewCellClasses </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Registers Cell classes with the tableview, override this method when implementing custom cell classes to register the new subclasses. </p>
+
+</div>
+</div>
+<a class="anchor" id="aec344bd60b3c7df5226295d3fa0f08a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setUp </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialization that is done for all ABKNewsFeedTableViewControllers with or without storyboard/XIB. </p>
+
+</div>
+</div>
+<a class="anchor" id="acee11dbb99e02d56ea1ca7f7d636abbb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setUpUI </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialization that is done for ABKNewsFeedTableViewControllers with programmatic layout only. </p>
 
 </div>
 </div>
@@ -301,7 +418,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>constraintWarningValue<
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">strong</span></span>  </td>
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -312,7 +429,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>constraintWarningValue<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 12 2021 14:58:52 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 2 2021 13:25:42 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

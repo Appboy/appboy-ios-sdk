@@ -78,6 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
@@ -170,6 +171,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>changeUser:
 : <a class="el" href="interface_appboy.html#ac8b369b40e15860b0ec18c0f4b46ac69">Appboy</a>
 </li>
+<li>changeUser:sdkAuthSignature:
+: <a class="el" href="interface_appboy.html#a8e6aeb4b6235faacd697d38c292291de">Appboy</a>
+</li>
 <li>contentCardCount
 : <a class="el" href="interface_a_b_k_content_cards_controller.html#a245919366ee020cf6db87de187240bd8">ABKContentCardsController</a>
 </li>
@@ -185,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>dequeueCellFromTableView:forIndexPath:forCard:
 : <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a548a0abb6e028288bf6faf06de213e52">ABKContentCardsTableViewController</a>
-, <a class="el" href="interface_a_b_k_n_f_base_card_cell.html#a9a37245de767cb51a33b87480b52eb3f">ABKNFBaseCardCell</a>
+, <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a156504a2686ea68ee8723bc408475c14">ABKNewsFeedTableViewController</a>
 </li>
 <li>deserializeCardFromDictionary:
 : <a class="el" href="interface_a_b_k_content_card.html#a9a4b6fd9b48f2724f1a2e7b9b62497b4">ABKContentCard</a>
@@ -205,9 +209,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>enableAdjustsFontForContentSizeCategory:
+: <a class="el" href="interface_a_b_k_u_i_utils.html#a9369aaed2d3032a2973a6f05ee0b06e9">ABKUIUtils</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
-<li>flushDataAndProcessRequestQueue
-: <a class="el" href="interface_appboy.html#a746fa87363a1530ba655498b4c36a0dd">Appboy</a>
+<li>findCellIdentifierWithCard:
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#aab84a310c6c8702c86d1cfb58e3e1bc8">ABKContentCardsTableViewController</a>
+, <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a9eb1442bf5d4d1d9d35738e92271659e">ABKNewsFeedTableViewController</a>
 </li>
 </ul>
 
@@ -252,6 +264,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a6c3bfc173cc98b7ef284ce573f1a2556">ABKContentCardsTableViewController</a>
 , <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a0bff61aa5a585d7c1545d2dfbac01857">ABKNewsFeedTableViewController</a>
 </li>
+<li>handleSdkAuthenticationError:
+: <a class="el" href="protocol_a_b_k_sdk_authentication_delegate-p.html#a42903fc53547f085eccba2a79611aa1d">&lt;ABKSdkAuthenticationDelegate&gt;</a>
+</li>
 <li>hideCurrentInAppMessage:
 : <a class="el" href="protocol_a_b_k_in_app_message_u_i_controlling-p.html#a6feb23255f96672c0f495a2b84c2d656">&lt;ABKInAppMessageUIControlling&gt;</a>
 </li>
@@ -263,13 +278,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>hideLinkLabel:
 : <a class="el" href="interface_a_b_k_n_f_captioned_message_card_cell.html#a422df06554e70a25d4a5459085d6765d">ABKNFCaptionedMessageCardCell</a>
-, <a class="el" href="interface_a_b_k_captioned_image_content_card_cell.html#aab0ed0d836d8c22f8e01c0211c263432">ABKCaptionedImageContentCardCell</a>
 , <a class="el" href="interface_a_b_k_classic_content_card_cell.html#a1cb3c18ed03c885ba8336e689341043c">ABKClassicContentCardCell</a>
+, <a class="el" href="interface_a_b_k_captioned_image_content_card_cell.html#aab0ed0d836d8c22f8e01c0211c263432">ABKCaptionedImageContentCardCell</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>imageViewClass
+: <a class="el" href="protocol_a_b_k_image_delegate-p.html#a3397fdc1f06f25d5ccd76d861fab5684">&lt;ABKImageDelegate&gt;</a>
+, <a class="el" href="interface_a_b_k_n_f_base_card_cell.html#ad31f6b3fa3336995c0dc2ed72ffcf7e7">ABKNFBaseCardCell</a>
+</li>
 <li>inAppMessageClickedWithActionType:URL:openURLInWebView:
 : <a class="el" href="interface_a_b_k_in_app_message_window_controller.html#ae524aa39798873eef03734c351961ced">ABKInAppMessageWindowController</a>
 </li>
@@ -445,6 +464,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>registerDeviceToken:
 : <a class="el" href="interface_appboy.html#afcdc8ce638ec414503b1f9fce8924e19">Appboy</a>
 </li>
+<li>registerTableViewCellClasses
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#ad6bc3aee7b5c4689d9162f4759ddeb81">ABKContentCardsTableViewController</a>
+, <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#a68f6aa043ce25f759f4b906cc79c25f1">ABKNewsFeedTableViewController</a>
+</li>
 <li>removeFromCustomAttributeArrayWithKey:value:
 : <a class="el" href="interface_a_b_k_user.html#ade60374cb566bd3b7ec789d15059c3ae">ABKUser</a>
 </li>
@@ -462,6 +485,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>requestGeofencesWithLongitude:latitude:
 : <a class="el" href="interface_appboy.html#a0a4744774a3f36ea043c336896b8ab14">Appboy</a>
+</li>
+<li>requestImmediateDataFlush
+: <a class="el" href="interface_appboy.html#ace452b4561512c9a9661fa22789e2d94">Appboy</a>
+</li>
+<li>resetUpPinImageView
+: <a class="el" href="interface_a_b_k_captioned_image_content_card_cell.html#a38b10c4eb7450554d6b7657163324dfe">ABKCaptionedImageContentCardCell</a>
 </li>
 <li>responderChainOf:hasClassPrefixedWith:
 : <a class="el" href="interface_a_b_k_u_i_utils.html#a410042179e8ffe83c3777d1a80462e50">ABKUIUtils</a>
@@ -522,11 +551,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setPushNotificationSubscriptionType:
 : <a class="el" href="interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3">ABKUser</a>
 </li>
+<li>setSdkAuthenticationSignature:
+: <a class="el" href="interface_appboy.html#a35df92cb9b2b4c286e2c4fb8f3fc14cd">Appboy</a>
+</li>
+<li>setUp
+: <a class="el" href="interface_a_b_k_base_content_card_cell.html#a5feda88b53899b3402d107c2821d9007">ABKBaseContentCardCell</a>
+, <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a6bdab8904dd55f5d8133e6d499f63971">ABKContentCardsTableViewController</a>
+, <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#aec344bd60b3c7df5226295d3fa0f08a9">ABKNewsFeedTableViewController</a>
+, <a class="el" href="interface_a_b_k_n_f_base_card_cell.html#aaa30c3c2339725f05e5c958f8ebd8170">ABKNFBaseCardCell</a>
+</li>
+<li>setUpBannerImageView
+: <a class="el" href="interface_a_b_k_banner_content_card_cell.html#abd916a6d06dfc1141fbae83ba7118de7">ABKBannerContentCardCell</a>
+, <a class="el" href="interface_a_b_k_n_f_banner_card_cell.html#a3f897ecd85f34b1a3aa9ec62bff29dbc">ABKNFBannerCardCell</a>
+</li>
+<li>setUpCaptionedImageView
+: <a class="el" href="interface_a_b_k_captioned_image_content_card_cell.html#a48ca2843a710c4d6d96cd110ae150b33">ABKCaptionedImageContentCardCell</a>
+, <a class="el" href="interface_a_b_k_n_f_captioned_message_card_cell.html#aec46b50503b2b9b616566753e754de6d">ABKNFCaptionedMessageCardCell</a>
+</li>
+<li>setUpClassicImageView
+: <a class="el" href="interface_a_b_k_n_f_classic_card_cell.html#ac233beeec2c7c7a4b77f01921c348002">ABKNFClassicCardCell</a>
+</li>
+<li>setUpDescriptionLabel
+: <a class="el" href="interface_a_b_k_n_f_captioned_message_card_cell.html#ae19ec5a0a7f016535f20aa5ceff2c29f">ABKNFCaptionedMessageCardCell</a>
+, <a class="el" href="interface_a_b_k_n_f_classic_card_cell.html#a34180e12aaf95bc07b0cb83a16dbbd79">ABKNFClassicCardCell</a>
+</li>
+<li>setUpEmptyFeedLabel
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#a70790c91f4414b5d89f7e9ad2e60ef6e">ABKContentCardsTableViewController</a>
+</li>
+<li>setUpFonts
+: <a class="el" href="interface_a_b_k_n_f_classic_card_cell.html#adf1f5470b99dc9e5d4bb9cbaeca29914">ABKNFClassicCardCell</a>
+, <a class="el" href="interface_a_b_k_n_f_captioned_message_card_cell.html#aa5375f744fd6c2453fa3ae899f574ff1">ABKNFCaptionedMessageCardCell</a>
+</li>
 <li>setupLayoutForGraphic
 : <a class="el" href="interface_a_b_k_in_app_message_immersive_view_controller.html#a158aab7273ec92badd311074d0bb0e0d">ABKInAppMessageImmersiveViewController</a>
 </li>
 <li>setupLayoutForTopImage
 : <a class="el" href="interface_a_b_k_in_app_message_immersive_view_controller.html#a01ee6a3675930220d567c215aa81fe40">ABKInAppMessageImmersiveViewController</a>
+</li>
+<li>setUpLinkLabel
+: <a class="el" href="interface_a_b_k_n_f_classic_card_cell.html#a7095c7651b0542765ad6cbb773fe76dc">ABKNFClassicCardCell</a>
+, <a class="el" href="interface_a_b_k_n_f_captioned_message_card_cell.html#a859431036cb6e8a3b8b07652d3f5fa64">ABKNFCaptionedMessageCardCell</a>
+</li>
+<li>setUpRootView
+: <a class="el" href="interface_a_b_k_base_content_card_cell.html#a5fe4737caf0ba5d71fd4853653c01837">ABKBaseContentCardCell</a>
+, <a class="el" href="interface_a_b_k_n_f_base_card_cell.html#a44dadc4535ec36068be0525712673dbf">ABKNFBaseCardCell</a>
+</li>
+<li>setUpRootViewBorder
+: <a class="el" href="interface_a_b_k_n_f_base_card_cell.html#aed812c3dae348ce6f8549e5adca6f257">ABKNFBaseCardCell</a>
+</li>
+<li>setUpTitleBackgroundView
+: <a class="el" href="interface_a_b_k_n_f_captioned_message_card_cell.html#a3c00157b0ff27087d5b71dbabc32c82e">ABKNFCaptionedMessageCardCell</a>
+</li>
+<li>setUpTitleLabel
+: <a class="el" href="interface_a_b_k_n_f_captioned_message_card_cell.html#a1f45a5fd1af51097c99c53d5da8ffa11">ABKNFCaptionedMessageCardCell</a>
+, <a class="el" href="interface_a_b_k_classic_content_card_cell.html#ab021786661ea09e9b4eae7fb70f389d6">ABKClassicContentCardCell</a>
+, <a class="el" href="interface_a_b_k_n_f_classic_card_cell.html#a5f7c925392cd86f52482a8441d97f544">ABKNFClassicCardCell</a>
+</li>
+<li>setUpUI
+: <a class="el" href="interface_a_b_k_content_cards_table_view_controller.html#acf5265b3b5ff097e753c3f9d1859ccc3">ABKContentCardsTableViewController</a>
+, <a class="el" href="interface_a_b_k_n_f_base_card_cell.html#a994b71283a34c975d87d86a728d6c9c3">ABKNFBaseCardCell</a>
+, <a class="el" href="interface_a_b_k_base_content_card_cell.html#a4c97f2fa620c50b6b7ce333bf7cbb11a">ABKBaseContentCardCell</a>
+, <a class="el" href="interface_a_b_k_news_feed_table_view_controller.html#acee11dbb99e02d56ea1ca7f7d636abbb">ABKNewsFeedTableViewController</a>
+</li>
+<li>setUpUnreadIndicatorView
+: <a class="el" href="interface_a_b_k_n_f_base_card_cell.html#a46546e5e0e9c5d4d4df93d4138486379">ABKNFBaseCardCell</a>
 </li>
 <li>sharedInstance
 : <a class="el" href="interface_appboy.html#aa62135eada7135024e1e042325f426fa">Appboy</a>
@@ -559,6 +647,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>unsetCustomAttributeWithKey:
 : <a class="el" href="interface_a_b_k_user.html#ac7e013d77cb3db42b29e17755c11b91d">ABKUser</a>
 </li>
+<li>unsubscribeFromSdkAuthenticationErrors
+: <a class="el" href="interface_appboy.html#a8846dbad57ac2c4ce369678ac92d9664">Appboy</a>
+</li>
 <li>unviewedContentCardCount
 : <a class="el" href="interface_a_b_k_content_cards_controller.html#a20ad7fe02d63a586a2dd7bd97a7691a7">ABKContentCardsController</a>
 </li>
@@ -579,7 +670,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 12 2021 14:58:52 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 2 2021 13:25:42 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

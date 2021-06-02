@@ -5,6 +5,7 @@ var searchData=
   ['unreadindicatorview',['unreadIndicatorView',['../interface_a_b_k_n_f_base_card_cell.html#a5b9fbdfe8b2fec6d08a609dac883fa9c',1,'ABKNFBaseCardCell']]],
   ['unsafeinstance',['unsafeInstance',['../interface_appboy.html#aa5a1fccaae11905e6dc2d3fab26879ed',1,'Appboy']]],
   ['unsetcustomattributewithkey_3a',['unsetCustomAttributeWithKey:',['../interface_a_b_k_user.html#ac7e013d77cb3db42b29e17755c11b91d',1,'ABKUser']]],
+  ['unsubscribefromsdkauthenticationerrors',['unsubscribeFromSdkAuthenticationErrors',['../interface_appboy.html#a8846dbad57ac2c4ce369678ac92d9664',1,'Appboy']]],
   ['unviewedcontentcardcount',['unviewedContentCardCount',['../interface_a_b_k_content_cards_controller.html#a20ad7fe02d63a586a2dd7bd97a7691a7',1,'ABKContentCardsController']]],
   ['unviewedlineview',['unviewedLineView',['../interface_a_b_k_base_content_card_cell.html#a59a17a044f67c6f3fcc1f01b20391061',1,'ABKBaseContentCardCell']]],
   ['uri',['uri',['../interface_a_b_k_in_app_message.html#a5008f6c7125a3902685d7cfb795539fd',1,'ABKInAppMessage']]],
@@ -12,5 +13,6 @@ var searchData=
   ['urlstring',['urlString',['../interface_a_b_k_content_card.html#ad5c7d758bc9b579e14bb571a6abab91a',1,'ABKContentCard']]],
   ['user',['user',['../interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1',1,'Appboy']]],
   ['userdescription',['userDescription',['../interface_a_b_k_twitter_user.html#a8290ccfde55e28e82fd0cf4c3e2092d4',1,'ABKTwitterUser']]],
+  ['userid',['userId',['../interface_a_b_k_sdk_authentication_error.html#a650d0a7aa8623b682eeff0678e2048aa',1,'ABKSdkAuthenticationError']]],
   ['usernotificationcenter_3adidreceivenotificationresponse_3awithcompletionhandler_3a',['userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:',['../interface_appboy.html#a73beef1563a3d0d70184a4ceefb331f4',1,'Appboy']]]
 ];

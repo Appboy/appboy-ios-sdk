@@ -91,35 +91,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html">   11</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_n_f_base_card_cell.html">ABKNFBaseCardCell</a> : UITableViewCell</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a46b3d72b7002fa38d5e063994d63b8f8">   18</a></span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet UIView *<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a46b3d72b7002fa38d5e063994d63b8f8">rootView</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a5b9fbdfe8b2fec6d08a609dac883fa9c">   23</a></span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet UIImageView *<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a5b9fbdfe8b2fec6d08a609dac883fa9c">unreadIndicatorView</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) id &lt;ABKBaseNewsFeedCellDelegate&gt; delegate;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aeea12ded349d64df93c4bd4bfcd49283">   30</a></span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aeea12ded349d64df93c4bd4bfcd49283">rootViewLeadingConstraint</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewTrailingConstraint;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewTopConstraint;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewBottomConstraint;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> CGFloat ABKNFLabelHorizontalSpace;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> CGFloat ABKNFLabelVerticalSpace;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> CGFloat ABKNFTopSpace;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html">   15</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_a_b_k_n_f_base_card_cell.html">ABKNFBaseCardCell</a> : UITableViewCell</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;+ (UIColor *)ABKNFDescriptionLabelColor;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;+ (UIColor *)ABKNFTitleLabelColor;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;+ (UIColor *)ABKNFTitleLabelColorOnGray;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a46b3d72b7002fa38d5e063994d63b8f8">   26</a></span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet UIView *<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a46b3d72b7002fa38d5e063994d63b8f8">rootView</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a5b9fbdfe8b2fec6d08a609dac883fa9c">   31</a></span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet UIImageView *<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a5b9fbdfe8b2fec6d08a609dac883fa9c">unreadIndicatorView</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">@property</span> (nonatomic) id &lt;ABKBaseNewsFeedCellDelegate&gt; delegate;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#addbf8512c5c4f24d2a355e76e5e0b354">   41</a></span>&#160;<span class="keyword">@property</span> CGFloat <a class="code" href="interface_a_b_k_n_f_base_card_cell.html#addbf8512c5c4f24d2a355e76e5e0b354">cardSidePadding</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">@property</span> CGFloat cardSpacing;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">@property</span> (nonatomic) BOOL hideUnreadIndicator;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;+ (<a class="code" href="interface_a_b_k_n_f_base_card_cell.html">ABKNFBaseCardCell</a> *)dequeueCellFromTableView:(UITableView *)tableView</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                   forIndexPath:(NSIndexPath *)indexPath</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                        forCard:(<a class="code" href="interface_a_b_k_card.html">ABKCard</a> *)card;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;- (void)applyCard:(<a class="code" href="interface_a_b_k_card.html">ABKCard</a> *)card;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;- (UIImage *)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aa29f8e7f4cf7358ac05623762f8339f3">getPlaceHolderImage</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aeea12ded349d64df93c4bd4bfcd49283">   38</a></span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet NSLayoutConstraint *<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aeea12ded349d64df93c4bd4bfcd49283">rootViewLeadingConstraint</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet NSLayoutConstraint *rootViewTrailingConstraint;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet NSLayoutConstraint *rootViewTopConstraint;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">@property</span> (nonatomic) IBOutlet NSLayoutConstraint *rootViewBottomConstraint;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="interface_a_b_k_n_f_base_card_cell.html#addbf8512c5c4f24d2a355e76e5e0b354">   49</a></span>&#160;<span class="keyword">@property</span> CGFloat <a class="code" href="interface_a_b_k_n_f_base_card_cell.html#addbf8512c5c4f24d2a355e76e5e0b354">cardSidePadding</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">@property</span> CGFloat cardSpacing;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">@property</span> (nonatomic) BOOL hideUnreadIndicator;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;- (void)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aaa30c3c2339725f05e5c958f8ebd8170">setUp</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;- (void)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a994b71283a34c975d87d86a728d6c9c3">setUpUI</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;- (void)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a44dadc4535ec36068be0525712673dbf">setUpRootView</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;- (void)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aed812c3dae348ce6f8549e5adca6f257">setUpRootViewBorder</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;- (void)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#a46546e5e0e9c5d4d4df93d4138486379">setUpUnreadIndicatorView</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;- (void)applyCard:(<a class="code" href="interface_a_b_k_card.html">ABKCard</a> *)card;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;- (UIImage *)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#aa29f8e7f4cf7358ac05623762f8339f3">getPlaceHolderImage</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;- (Class)<a class="code" href="interface_a_b_k_n_f_base_card_cell.html#ad31f6b3fa3336995c0dc2ed72ffcf7e7">imageViewClass</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 12 2021 14:58:52 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 2 2021 13:25:41 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -133,6 +133,8 @@ Class Methods</h2></td></tr>
 <tr class="separator:a410042179e8ffe83c3777d1a80462e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f7c47533046cfc93cc3184944ceff91"><td class="memItemLeft" align="right" valign="top">(UIFont *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#a5f7c47533046cfc93cc3184944ceff91">preferredFontForTextStyle:weight:</a></td></tr>
 <tr class="separator:a5f7c47533046cfc93cc3184944ceff91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9369aaed2d3032a2973a6f05ee0b06e9"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_b_k_u_i_utils.html#a9369aaed2d3032a2973a6f05ee0b06e9">enableAdjustsFontForContentSizeCategory:</a></td></tr>
+<tr class="separator:a9369aaed2d3032a2973a6f05ee0b06e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -195,6 +197,30 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The bundle if available, nil otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9369aaed2d3032a2973a6f05ee0b06e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (void) enableAdjustsFontForContentSizeCategory: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>label</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enables <code>adjustsFontForContentSizeCategory</code> on the label if available (iOS 10+).</p>
+<p>This method has no effect on iOS / tvOS versions prior to 10.0.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>Any object conforming to <code>UIContentSizeCategoryAdjusting</code> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -392,7 +418,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 12 2021 14:58:52 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 2 2021 13:25:42 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
