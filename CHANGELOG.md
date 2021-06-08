@@ -1,6 +1,6 @@
 ## 4.2.0
 
-##### Known Issues
+##### ⚠️ Known Issues
 - This release contains a known issue with the Content Cards default UI on iOS, where showing a "Classic" type card with an image causes a crash. If you are using the default Content Cards UI, do not upgrade to this version.
 
 ##### Breaking
