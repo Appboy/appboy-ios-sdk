@@ -1,5 +1,8 @@
 ## 4.2.0
 
+##### ⚠️ Known Issues
+- This release contains a known issue with the Content Cards default UI on iOS, where showing a "Classic" type card with an image causes a crash. If you are using the default Content Cards UI, do not upgrade to this version.
+
 ##### Breaking
 - Contents Cards and News Feed are now more extensible!
   - Class level API methods have changed to instance methods to make subclassing easier, however `getNavigationContentCardsViewController` and `getNavigationFeedViewController` are left in as class methods for backwards compatibility. 
