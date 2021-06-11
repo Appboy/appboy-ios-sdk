@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="protocol_a_b_k_base_content_card_cell_delegate-p.html">    4</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_base_content_card_cell_delegate-p.html">ABKBaseContentCardCellDelegate</a> &lt;NSObject&gt;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;- (void)refreshTableViewCellHeights;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;- (void)cellRequestSizeUpdate:(UITableViewCell *)cell;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
@@ -122,21 +122,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;- (void)<a class="code" href="interface_a_b_k_base_content_card_cell.html#a4c97f2fa620c50b6b7ce333bf7cbb11a">setUpUI</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;- (void)<a class="code" href="interface_a_b_k_base_content_card_cell.html#a5fe4737caf0ba5d71fd4853653c01837">setUpRootView</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;- (void)setUpPinImageView;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;- (void)setUpUnviewedLineView;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;- (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> UILayoutPriority ABKContentCardPriorityLayoutRequiredBelowAppleRequired = UILayoutPriorityRequired - 1;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> UILayoutPriority ABKContentCardPriorityLayoutVeryHighButBelowRequired = UILayoutPriorityRequired - 2;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;- (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> UILayoutPriority ABKContentCardPriorityLayoutRequiredBelowAppleRequired = UILayoutPriorityRequired - 1;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 2 2021 13:25:41 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 11 2021 14:21:59 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

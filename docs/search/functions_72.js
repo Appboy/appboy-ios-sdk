@@ -11,7 +11,6 @@ var searchData=
   ['requestfeedrefresh',['requestFeedRefresh',['../interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452',1,'Appboy']]],
   ['requestgeofenceswithlongitude_3alatitude_3a',['requestGeofencesWithLongitude:latitude:',['../interface_appboy.html#a0a4744774a3f36ea043c336896b8ab14',1,'Appboy']]],
   ['requestimmediatedataflush',['requestImmediateDataFlush',['../interface_appboy.html#ace452b4561512c9a9661fa22789e2d94',1,'Appboy']]],
-  ['resetuppinimageview',['resetUpPinImageView',['../interface_a_b_k_captioned_image_content_card_cell.html#a38b10c4eb7450554d6b7657163324dfe',1,'ABKCaptionedImageContentCardCell']]],
   ['responderchainof_3ahasclassprefixedwith_3a',['responderChainOf:hasClassPrefixedWith:',['../interface_a_b_k_u_i_utils.html#a410042179e8ffe83c3777d1a80462e50',1,'ABKUIUtils']]],
   ['responderchainof_3ahaskindofclass_3a',['responderChainOf:hasKindOfClass:',['../interface_a_b_k_u_i_utils.html#a1ed414001d92cb7dfb614a876a87c721',1,'ABKUIUtils']]]
 ];

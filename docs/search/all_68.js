@@ -12,6 +12,6 @@ var searchData=
   ['hidecurrentinappmessage_3a',['hideCurrentInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_controlling-p.html#a6feb23255f96672c0f495a2b84c2d656',1,'ABKInAppMessageUIControlling-p']]],
   ['hideinappmessage_3a',['hideInAppMessage:',['../interface_a_b_k_in_app_message_view_controller.html#a611a5dff1064d6bdc0586139c9c9b78c',1,'ABKInAppMessageViewController']]],
   ['hideinappmessageviewwithanimation_3a',['hideInAppMessageViewWithAnimation:',['../interface_a_b_k_in_app_message_window_controller.html#a0259967f5d828aad160c9d460ebfd334',1,'ABKInAppMessageWindowController']]],
-  ['hidelinklabel_3a',['hideLinkLabel:',['../interface_a_b_k_captioned_image_content_card_cell.html#aab0ed0d836d8c22f8e01c0211c263432',1,'ABKCaptionedImageContentCardCell::hideLinkLabel:()'],['../interface_a_b_k_classic_content_card_cell.html#a1cb3c18ed03c885ba8336e689341043c',1,'ABKClassicContentCardCell::hideLinkLabel:()'],['../interface_a_b_k_n_f_captioned_message_card_cell.html#a422df06554e70a25d4a5459085d6765d',1,'ABKNFCaptionedMessageCardCell::hideLinkLabel:()']]],
+  ['hidelinklabel_3a',['hideLinkLabel:',['../interface_a_b_k_n_f_captioned_message_card_cell.html#a422df06554e70a25d4a5459085d6765d',1,'ABKNFCaptionedMessageCardCell']]],
   ['homecity',['homeCity',['../interface_a_b_k_user.html#a0539aac0fa07d5ec9877e033761907a1',1,'ABKUser']]]
 ];
