@@ -31,7 +31,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzv-3L-WDj" userLabel="Title Background Gradient">
                                                     <rect key="frame" x="0.0" y="223" width="355" height="137"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appboy_cc_icon_pinned.png" translatesAutoresizingMaskIntoConstraints="NO" id="nFM-dS-rg2">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch_cc_icon_pinned" translatesAutoresizingMaskIntoConstraints="NO" id="nFM-dS-rg2">
                                                             <rect key="frame" x="335" y="0.0" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="ij5-J0-4li"/>
@@ -80,7 +80,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="223"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" priority="998" constant="223" id="TW5-4g-gud"/>
+                                                        <constraint firstAttribute="width" secondItem="vE3-pM-vca" secondAttribute="height" multiplier="355:223" id="NJd-1j-jeA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6I-Yt-oqe">
@@ -121,10 +121,8 @@
                                 <connections>
                                     <outlet property="captionedImageView" destination="vE3-pM-vca" id="dcL-Pp-ZCz"/>
                                     <outlet property="cardWidthConstraint" destination="MPG-Gd-2Mi" id="hHC-XS-7cr"/>
-                                    <outlet property="descriptionBottomConstraint" destination="Jlv-dW-WFq" id="R8k-MX-ahc"/>
                                     <outlet property="descriptionLabel" destination="UGC-fY-DfN" id="Pqf-10-TTh"/>
-                                    <outlet property="imageHeightConstraint" destination="TW5-4g-gud" id="8fJ-MP-RGC"/>
-                                    <outlet property="linkBottomConstraint" destination="7Ul-d5-yED" id="es8-8g-APc"/>
+                                    <outlet property="imageRatioConstraint" destination="NJd-1j-jeA" id="Qvu-93-fo8"/>
                                     <outlet property="linkLabel" destination="Yy8-cq-nRL" id="HMd-7m-qkA"/>
                                     <outlet property="pinImageView" destination="nFM-dS-rg2" id="62p-e0-xA3"/>
                                     <outlet property="rootView" destination="OO0-Sd-dv6" id="74Y-uL-6bw"/>
@@ -132,7 +130,6 @@
                                     <outlet property="rootViewLeadingConstraint" destination="ZaD-Vm-E5b" id="wMy-dd-gBS"/>
                                     <outlet property="rootViewTopConstraint" destination="THp-xt-mWA" id="3pM-HC-w94"/>
                                     <outlet property="rootViewTrailingConstraint" destination="iW3-ql-u5z" id="KB0-By-vwv"/>
-                                    <outlet property="titleBackgroundView" destination="xzv-3L-WDj" id="cC4-mg-cpN"/>
                                     <outlet property="titleLabel" destination="dBF-6R-JPA" id="fBX-J7-62s"/>
                                     <outlet property="unviewedLineView" destination="r6I-Yt-oqe" id="rfD-Sn-dhB"/>
                                 </connections>
@@ -154,7 +151,7 @@
                                                         <constraint firstAttribute="width" secondItem="MX9-Bb-S0W" secondAttribute="height" multiplier="355:79" priority="998" id="yLN-Ep-HgJ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appboy_cc_icon_pinned.png" translatesAutoresizingMaskIntoConstraints="NO" id="vVA-Lu-kPN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch_cc_icon_pinned" translatesAutoresizingMaskIntoConstraints="NO" id="vVA-Lu-kPN">
                                                     <rect key="frame" x="335" y="0.0" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="6yR-bw-SBl"/>
@@ -216,7 +213,7 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On7-Xz-EwZ" userLabel="Root View">
                                             <rect key="frame" x="10" y="10" width="355" height="110"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appboy_cc_icon_pinned.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-i2-AsD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch_cc_icon_pinned" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-i2-AsD">
                                                     <rect key="frame" x="335" y="0.0" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="K32-xH-4Ma"/>
@@ -288,9 +285,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="cardWidthConstraint" destination="jZe-sb-mUJ" id="JfM-dT-Vgg"/>
-                                    <outlet property="descriptionBottomConstraint" destination="bWd-ub-Dlb" id="Xv5-FD-P2b"/>
                                     <outlet property="descriptionLabel" destination="HTG-0g-poE" id="auh-vy-CDP"/>
-                                    <outlet property="linkBottomConstraint" destination="2tk-eQ-Kik" id="kTh-OD-g0C"/>
                                     <outlet property="linkLabel" destination="NmY-63-m8B" id="UdQ-KR-Oe2"/>
                                     <outlet property="pinImageView" destination="Xkj-i2-AsD" id="yS6-Jd-xxx"/>
                                     <outlet property="rootView" destination="On7-Xz-EwZ" id="7J9-d8-REY"/>
@@ -312,7 +307,7 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-jd-ndj" userLabel="Root View">
                                             <rect key="frame" x="10" y="10" width="355" height="108.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appboy_cc_icon_pinned.png" translatesAutoresizingMaskIntoConstraints="NO" id="lIm-rR-Mrk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch_cc_icon_pinned" translatesAutoresizingMaskIntoConstraints="NO" id="lIm-rR-Mrk">
                                                     <rect key="frame" x="335" y="0.0" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="exc-Oq-My5"/>
@@ -323,7 +318,7 @@
                                                     <rect key="frame" x="25" y="20" width="57.5" height="57.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="57.5" id="84b-Gu-LNL"/>
+                                                        <constraint firstAttribute="width" constant="57.5" id="84b-Gu-LNL"/>
                                                         <constraint firstAttribute="width" secondItem="oEA-BV-ssv" secondAttribute="height" multiplier="1:1" id="yJo-5E-rFQ"/>
                                                     </constraints>
                                                 </imageView>
@@ -396,9 +391,7 @@
                                 <connections>
                                     <outlet property="cardWidthConstraint" destination="TV2-sq-gDk" id="Yq9-eP-MCu"/>
                                     <outlet property="classicImageView" destination="oEA-BV-ssv" id="Fc7-yo-WEw"/>
-                                    <outlet property="descriptionBottomConstraint" destination="THe-ot-acP" id="AYf-We-Ye5"/>
                                     <outlet property="descriptionLabel" destination="2LE-EF-Mwl" id="wpF-eS-E0h"/>
-                                    <outlet property="linkBottomConstraint" destination="g5x-kt-Q5E" id="oQm-Ny-Wrt"/>
                                     <outlet property="linkLabel" destination="xBh-6s-twj" id="LNM-b6-AiF"/>
                                     <outlet property="pinImageView" destination="lIm-rR-Mrk" id="hOr-8x-1d4"/>
                                     <outlet property="rootView" destination="uBL-jd-ndj" id="zF8-aj-MEg"/>
@@ -411,10 +404,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ABKControlCardCell" rowHeight="0.0" id="PLR-fM-stV" customClass="ABKBaseContentCardCell">
-                                <rect key="frame" x="0.0" y="766.5" width="375" height="1.1920928955078125e-07"/>
+                                <rect key="frame" x="0.0" y="766.5" width="375" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PLR-fM-stV" id="RF0-pj-4Y8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1.1920928955078125e-07"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
@@ -507,7 +500,7 @@ Please try again later. </string>
         </scene>
     </scenes>
     <resources>
-        <image name="appboy_cc_icon_pinned.png" width="13" height="13"/>
+        <image name="stopwatch_cc_icon_pinned" width="20" height="20"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

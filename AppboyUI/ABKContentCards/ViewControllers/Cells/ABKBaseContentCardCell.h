@@ -3,7 +3,7 @@
 
 @protocol ABKBaseContentCardCellDelegate <NSObject>
 
-- (void)refreshTableViewCellHeights;
+- (void)cellRequestSizeUpdate:(UITableViewCell *)cell;
 
 @end
 
@@ -78,14 +78,6 @@
 - (void)setUpUI;
 
 /*!
- * @discussion specific view property initialization that is in place of Storyboard or XIB initialization.
- *  Called by the above setUpUI method and is exposed here to allow overriding.
- */
-- (void)setUpRootView;
-- (void)setUpPinImageView;
-- (void)setUpUnviewedLineView;
-
-/*!
  * @discussion This is a utility method to make text styled.
  */
 - (void)applyAppboyAttributedTextStyleFrom:(NSString *)text forLabel:(UILabel *)label;
@@ -93,5 +85,4 @@
 @end
 
 static const UILayoutPriority ABKContentCardPriorityLayoutRequiredBelowAppleRequired = UILayoutPriorityRequired - 1;
-static const UILayoutPriority ABKContentCardPriorityLayoutVeryHighButBelowRequired = UILayoutPriorityRequired - 2;
 

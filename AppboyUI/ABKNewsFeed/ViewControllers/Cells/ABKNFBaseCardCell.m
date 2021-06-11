@@ -99,13 +99,13 @@ static CGFloat AppboyCardCornerRadius = 3.0;
 }
 
 - (void)setUpUnreadIndicatorView {
-  self.unreadIndicatorView = [[UIImageView alloc] initWithImage:[ABKUIUtils getImageWithName:@"Icons_Read"
-                                                                                        type:@"png"
-                                                                              inAppboyBundle:[ABKUIUtils bundle:[ABKNFBaseCardCell class] channel:ABKNewsFeedChannel]]];
+  self.unreadIndicatorView = [[UIImageView alloc] initWithImage:[ABKUIUtils imageNamed:@"Icons_Read"
+                                                                                bundle:[ABKNFBaseCardCell class]
+                                                                               channel:ABKNewsFeedChannel]];
   self.unreadIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
-  self.unreadIndicatorView.highlightedImage = [ABKUIUtils getImageWithName:@"Icons_Unread"
-                                                                      type:@"png"
-                                                            inAppboyBundle:[ABKUIUtils bundle:[ABKNFBaseCardCell class] channel:ABKNewsFeedChannel]];
+  self.unreadIndicatorView.highlightedImage = [ABKUIUtils imageNamed:@"Icons_Unread"
+                                                              bundle:[ABKNFBaseCardCell class]
+                                                             channel:ABKNewsFeedChannel];
   [self.rootView addSubview:self.unreadIndicatorView];
 
   [self.unreadIndicatorView.heightAnchor constraintEqualToConstant:20].active = YES;
@@ -135,9 +135,9 @@ static CGFloat AppboyCardCornerRadius = 3.0;
 #pragma mark - Utiliy Methods
 
 - (UIImage *)getPlaceHolderImage {
-  return [ABKUIUtils getImageWithName:@"img-noimage-lrg"
-                                 type:@"png"
-                       inAppboyBundle:[ABKUIUtils bundle:[ABKNFBaseCardCell class] channel:ABKNewsFeedChannel]];
+  return [ABKUIUtils imageNamed:@"img-noimage-lrg"
+                         bundle:[ABKNFBaseCardCell class]
+                        channel:ABKNewsFeedChannel];
 }
 
 - (Class)imageViewClass {

@@ -8,12 +8,4 @@
 
 - (void)applyCard:(ABKBannerContentCard *)bannerCard;
 
-- (void)updateImageConstraintsWithRatio:(CGFloat)newRatio;
-
-/*!
- * @discussion specific view property initialization that is in place of Storyboard or XIB initialization.
- *  Called by the ABKBaseContentCardCell setUpUI method and is exposed here to allow overriding.
- */
-- (void)setUpBannerImageView;
-
 @end

@@ -2,6 +2,8 @@
 #import <UIKit/UIKit.h>
 #import "Appboy.h"
 
+#define ABK_CGFLT_EQ(lhs, rhs) (fabs(lhs - rhs) < 10 * FLT_EPSILON * fabs(lhs + rhs))
+
 @interface ABKUIUtils : NSObject
 
 /*!
@@ -38,13 +40,13 @@
  */
 + (NSBundle *)bundle:(Class)bundleClass channel:(ABKChannel)channel;
 
++ (UIImage *)imageNamed:(NSString *)name bundle:(Class)bundleClass channel:(ABKChannel)channel;
+
 + (NSString *)getLocalizedString:(NSString *)key inAppboyBundle:(NSBundle *)appboyBundle table:(NSString *)table;
 + (BOOL)objectIsValidAndNotEmpty:(id)object;
 + (Class)getModalFeedViewControllerClass;
 + (BOOL)isNotchedPhone;
-+ (UIImage *)getImageWithName:(NSString *)name
-                         type:(NSString *)type
-               inAppboyBundle:(NSBundle *)appboyBundle;
+
 + (UIInterfaceOrientation)getInterfaceOrientation;
 + (CGSize)getStatusBarSize;
 + (UIColor *)dynamicColorForLightColor:(UIColor *)lightColor

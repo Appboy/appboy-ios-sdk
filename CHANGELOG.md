@@ -1,12 +1,20 @@
+## 4.3.0
+
+##### Breaking
+- Refined Content Cards UI public api changes introduced in `4.2.0`.
+
+#### Fixed
+- Fixes an issue introduced in `4.2.0` that caused Content Card type `ABKClassicImageContentCardCell` to crash on display when not using Storyboard.
+
 ## 4.2.0
 
 ##### ⚠️ Known Issues
 - This release contains a known issue with the Content Cards default UI on iOS, where showing a "Classic" type card with an image causes a crash. If you are using the default Content Cards UI, do not upgrade to this version.
 
 ##### Breaking
-- Contents Cards and News Feed are now more extensible!
+- Content Cards and News Feed are now more extensible!
   - Class level API methods have changed to instance methods to make subclassing easier, however `getNavigationContentCardsViewController` and `getNavigationFeedViewController` are left in as class methods for backwards compatibility. 
-  - Subclassing views is now fully supported for customizations. See the [Content Card sample code for examples]((https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/ContentCards/BrazeContentCardsSampleApp).
+  - Subclassing views is now fully supported for customizations. See the [Content Card sample code for examples](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/ContentCards/BrazeContentCardsSampleApp).
   - Alternatively, you can bring your own storyboard with customizations. See our [example custom storyboard implementation](https://github.com/Appboy/appboy-ios-sdk/tree/master/Example/Stopwatch/Sources/ViewControllers/Braze%20UI/FeedUIViewController.m).
   - See the [Content Cards documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/content_cards/) for more information.
 

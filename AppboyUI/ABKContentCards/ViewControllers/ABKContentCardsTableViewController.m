@@ -29,12 +29,6 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 @property (nonatomic) NSMutableSet<NSString *> *unviewedOnScreenCards;
 
 /*!
- * Stores the cell heights to provide for a smooth scrolling experience when cells need
- * to resize themselves as you scroll through the ViewController
- */
-@property (nonatomic) NSMutableDictionary<NSString *, NSNumber *> *cellHeights;
-
-/*!
  *  There is some initialization such as associating which cell class to use in the table view that
  *  is the responsibility of the storyboard if one is provided. If no story board is used then
  *  the code in viewDidLoad will handle it. We can tell based on which init method is used.
@@ -77,7 +71,6 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
   _cacheTimeout = ABKContentCardsCacheTimeout;
   _cardImpressions = [NSMutableSet set];
   _unviewedOnScreenCards = [NSMutableSet set];
-  _cellHeights = [NSMutableDictionary dictionary];
   _enableDarkTheme = YES;
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(contentCardsUpdated:)
@@ -298,11 +291,6 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 // the scrollView jump if a cell needs to resize itself
 - (CGFloat)tableView:(UITableView *)tableView
   estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-  ABKContentCard *card = self.cards[indexPath.row];
-  NSNumber *height = self.cellHeights[card.idString];
-  if (height) {
-    return [height floatValue];
-  }
   return ABKContentCardsCellEstimatedHeight;
 }
 
@@ -310,8 +298,6 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath {
   ABKContentCard *card = self.cards[indexPath.row];
-  self.cellHeights[card.idString] = @(cell.frame.size.height);
-
   BOOL cellVisible = [[tableView indexPathsForVisibleRows] containsObject:indexPath];
   if (cellVisible) {
     [self logCardImpressionIfNeeded:card];
@@ -469,10 +455,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - ABKBaseContentCardCellDelegate
 
-- (void)refreshTableViewCellHeights {
+- (void)cellRequestSizeUpdate:(UITableViewCell *)cell {
+  NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+  if (indexPath == nil) {
+    return;
+  }
+
   [UIView performWithoutAnimation:^{
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
   }];
 }
 

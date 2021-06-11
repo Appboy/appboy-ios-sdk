@@ -3,7 +3,13 @@
 #import "ABKImageDelegate.h"
 #import "ABKUIUtils.h"
 
-static const CGFloat ImageMinResizingDifference = 5e-1;
+@interface ABKCaptionedImageContentCardCell ()
+
+@property (strong, nonatomic) NSArray *descriptionConstraints;
+@property (strong, nonatomic) NSArray *linkConstraints;
+
+@end
+
 
 @implementation ABKCaptionedImageContentCardCell
 
@@ -56,204 +62,148 @@ static UIColor *_linkLabelColor = nil;
   _linkLabelColor = linkLabelColor;
 }
 
+#pragma mark - Properties
+
+- (UIImageView *)captionedImageView {
+  if (_captionedImageView != nil) {
+    return _captionedImageView;
+  }
+
+  UIImageView *captionedImageView = [[[self imageViewClass] alloc] init];
+  captionedImageView.contentMode = UIViewContentModeScaleAspectFit;
+  captionedImageView.translatesAutoresizingMaskIntoConstraints = NO;
+  _captionedImageView = captionedImageView;
+  return captionedImageView;
+}
+
+- (UILabel *)titleLabel {
+  if (_titleLabel != nil) {
+    return _titleLabel;
+  }
+
+  UILabel *titleLabel = [[UILabel alloc] init];
+  titleLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleCallout weight:UIFontWeightBold];
+  titleLabel.textColor = [self class].titleLabelColor;
+  titleLabel.text = @"Title";
+  titleLabel.numberOfLines = 0;
+  titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+  titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  _titleLabel = titleLabel;
+  return titleLabel;
+}
+
+- (UILabel *)descriptionLabel {
+  if (_descriptionLabel != nil) {
+    return _descriptionLabel;
+  }
+
+  UILabel *descriptionLabel = [[UILabel alloc] init];
+  descriptionLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleFootnote weight:UIFontWeightRegular];
+  descriptionLabel.textColor = [self class].descriptionLabelColor;
+  descriptionLabel.text = @"Description";
+  descriptionLabel.numberOfLines = 0;
+  descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  _descriptionLabel = descriptionLabel;
+  return descriptionLabel;
+}
+
+- (UILabel *)linkLabel {
+  if (_linkLabel != nil) {
+    return _linkLabel;
+  }
+
+  UILabel *linkLabel = [[UILabel alloc] init];
+  linkLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleFootnote weight:UIFontWeightMedium];
+  linkLabel.textColor = [self class].linkLabelColor;
+  linkLabel.text = @"Link";
+  linkLabel.numberOfLines = 0;
+  linkLabel.lineBreakMode = NSLineBreakByCharWrapping;
+  linkLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  _linkLabel = linkLabel;
+  return linkLabel;
+}
+
 #pragma mark - SetUp
 
 - (void)setUpUI {
   [super setUpUI];
-  [self setUpCaptionedImageView];
-  [self setUpBackgroundTitleView];
-  [self resetUpPinImageView];
-  [self setUpTitleLabel];
-  [self setUpDescriptionLabel];
-  [self setUpLinkLabel];
-}
 
-#pragma mark CaptionedImageView
-
-- (void)setUpCaptionedImageView {
-  self.captionedImageView =  [[[self imageViewClass] alloc] init];
-  self.captionedImageView.contentMode = UIViewContentModeScaleAspectFit;
-  self.captionedImageView.translatesAutoresizingMaskIntoConstraints = NO;
-
+  // Views
   [self.rootView addSubview:self.captionedImageView];
+  [self.rootView addSubview:self.titleLabel];
+  [self.rootView addSubview:self.descriptionLabel];
+  [self.rootView addSubview:self.linkLabel];
 
-  NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[captionedImageView]-0-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"captionedImageView" : self.captionedImageView}];
-  [NSLayoutConstraint activateConstraints:horizontalConstraints];
-
-  NSLayoutConstraint *topConstraint = [self.captionedImageView.topAnchor constraintEqualToAnchor:self.rootView.topAnchor];
-  topConstraint.priority = ABKContentCardPriorityLayoutRequiredBelowAppleRequired;
-
-  self.imageHeightConstraint = [self.captionedImageView.heightAnchor constraintEqualToConstant:223];
-  self.imageHeightConstraint.priority = ABKContentCardPriorityLayoutVeryHighButBelowRequired;
-  [NSLayoutConstraint activateConstraints:@[topConstraint,self.imageHeightConstraint]];
-}
-
-#pragma mark BackgroundTitleView
-
-- (void)setUpBackgroundTitleView {
-  self.titleBackgroundView = [[UIView alloc] init];
-  self.titleBackgroundView.translatesAutoresizingMaskIntoConstraints = NO;
-
-  [self.rootView addSubview:self.titleBackgroundView];
-
-  NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[titleBackgroundView]-0-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"titleBackgroundView" : self.titleBackgroundView}];
-  [NSLayoutConstraint activateConstraints:horizontalConstraints];
-
-  NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[captionedImageView]-0-[titleBackgroundView]-0-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                           views:@{
-                                                                               @"titleBackgroundView" : self.titleBackgroundView,
-                                                                               @"captionedImageView" : self.captionedImageView,
-                                                                           }];
-  [NSLayoutConstraint activateConstraints:verticalConstraints];
-}
-
-- (void)resetUpPinImageView {
+  // - Remove / add pinImageView to reset it
   [self.pinImageView removeFromSuperview];
-  
-  [self.titleBackgroundView addSubview:self.pinImageView];
+  [self.rootView addSubview:self.pinImageView];
 
-  NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[pinImageView(20)]-0-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"pinImageView" : self.pinImageView}];
-  [NSLayoutConstraint activateConstraints:horizontalConstraints];
+  // AutoLayout
 
-  NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[pinImageView(20)]"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                           views:@{@"pinImageView" : self.pinImageView}];
-  [NSLayoutConstraint activateConstraints:verticalConstraints];
-}
+  self.imageRatioConstraint = [self.captionedImageView.heightAnchor constraintEqualToAnchor:self.captionedImageView.widthAnchor];
+  self.imageRatioConstraint.priority = UILayoutPriorityDefaultHigh;
 
-- (void)setUpTitleLabel {
-  self.titleLabel = [[UILabel alloc] init];
-  self.titleLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleCallout weight:UIFontWeightBold];
-  self.titleLabel.textColor = [self class].titleLabelColor;
-  self.titleLabel.text = @"Title";
-  self.titleLabel.numberOfLines = 0;
-  self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-  self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  NSArray *constraints = @[
+    // Captioned Image
+    [self.captionedImageView.topAnchor constraintEqualToAnchor:self.rootView.topAnchor],
+    [self.captionedImageView.leadingAnchor constraintEqualToAnchor:self.rootView.leadingAnchor],
+    [self.captionedImageView.trailingAnchor constraintEqualToAnchor:self.rootView.trailingAnchor],
+    self.imageRatioConstraint,
 
-  [self.titleBackgroundView addSubview:self.titleLabel];
+    // Pin Image
+    [self.pinImageView.topAnchor constraintEqualToAnchor:self.captionedImageView.bottomAnchor],
+    [self.pinImageView.trailingAnchor constraintEqualToAnchor:self.rootView.trailingAnchor],
+    [self.pinImageView.widthAnchor constraintEqualToConstant:20],
+    [self.pinImageView.heightAnchor constraintEqualToConstant:20],
 
-  NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-25-[titleLabel]-25-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"titleLabel" : self.titleLabel}];
-  [NSLayoutConstraint activateConstraints:horizontalConstraints];
+    // Title
+    [self.titleLabel.topAnchor constraintEqualToAnchor:self.captionedImageView.bottomAnchor
+                                              constant:17],
+    [self.titleLabel.leadingAnchor constraintEqualToAnchor:self.rootView.leadingAnchor
+                                                  constant:25],
+    [self.titleLabel.trailingAnchor constraintEqualToAnchor:self.rootView.trailingAnchor
+                                                   constant:-25],
 
-  [self.titleLabel.topAnchor constraintEqualToAnchor:self.titleBackgroundView.topAnchor constant:17].active = YES;
+    // Description
+    [self.descriptionLabel.topAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor
+                                                    constant:6],
+    [self.descriptionLabel.leadingAnchor constraintEqualToAnchor:self.titleLabel.leadingAnchor],
+    [self.descriptionLabel.trailingAnchor constraintEqualToAnchor:self.titleLabel.trailingAnchor],
 
-  [self.titleLabel setContentHuggingPriority:UILayoutPriorityDefaultLow - 1
-                                     forAxis:UILayoutConstraintAxisHorizontal];
-  [self.titleLabel setContentHuggingPriority:UILayoutPriorityDefaultHigh
-                                     forAxis:UILayoutConstraintAxisVertical];
-  [self.titleLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh + 1
-                                                   forAxis:UILayoutConstraintAxisVertical];
-}
+    // Link
+    [self.linkLabel.leadingAnchor constraintEqualToAnchor:self.titleLabel.leadingAnchor],
+    [self.linkLabel.trailingAnchor constraintEqualToAnchor:self.titleLabel.trailingAnchor]
+  ];
+  [NSLayoutConstraint activateConstraints:constraints];
 
-- (void)setUpDescriptionLabel {
-  self.descriptionLabel = [[UILabel alloc] init];
-  self.descriptionLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleFootnote weight:UIFontWeightRegular];
-  self.descriptionLabel.textColor = [self class].descriptionLabelColor;
-  self.descriptionLabel.text = @"Description";
-  self.descriptionLabel.numberOfLines = 0;
-  self.descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  self.descriptionConstraints = @[
+    [self.descriptionLabel.bottomAnchor constraintEqualToAnchor:self.rootView.bottomAnchor
+                                                       constant:-25]
+  ];
 
-  [self.titleBackgroundView addSubview:self.descriptionLabel];
-
-  NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-25-[descriptionLabel]-25-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"descriptionLabel" : self.descriptionLabel}];
-  [NSLayoutConstraint activateConstraints:horizontalConstraints];
-
-  [self.descriptionLabel.topAnchor constraintEqualToAnchor:self.titleLabel.bottomAnchor constant:6].active = YES;
-
-  [self.descriptionLabel setContentHuggingPriority:UILayoutPriorityDefaultLow + 1
-                                           forAxis:UILayoutConstraintAxisVertical];
-  [self.descriptionLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh + 1
-                                                         forAxis:UILayoutConstraintAxisVertical];
-
-  self.descriptionBottomConstraint = [self.descriptionLabel.bottomAnchor constraintEqualToAnchor:self.titleBackgroundView.bottomAnchor constant:-25];
-  self.descriptionBottomConstraint.priority = UILayoutPriorityDefaultLow;
-  self.descriptionBottomConstraint.active = YES;
-}
-
-- (void)setUpLinkLabel {
-  self.linkLabel = [[UILabel alloc] init];
-  self.linkLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleFootnote weight:UIFontWeightMedium];
-  self.linkLabel.textColor = [self class].linkLabelColor;
-  self.linkLabel.text = @"Link";
-  self.linkLabel.numberOfLines = 0;
-  self.linkLabel.lineBreakMode = NSLineBreakByCharWrapping;
-  self.linkLabel.translatesAutoresizingMaskIntoConstraints = NO;
-
-  [self.titleBackgroundView addSubview:self.linkLabel];
-
-  NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-25-[linkLabel]-25-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"linkLabel" : self.linkLabel}];
-  [NSLayoutConstraint activateConstraints:horizontalConstraints];
-
-  NSLayoutConstraint *topConstraint = [self.linkLabel.topAnchor constraintGreaterThanOrEqualToAnchor:self.descriptionLabel.bottomAnchor constant:8];
-  topConstraint.priority = UILayoutPriorityRequired;
-  topConstraint.active = YES;
-  self.linkBottomConstraint = [self.linkLabel.bottomAnchor constraintEqualToAnchor:self.titleBackgroundView.bottomAnchor constant:-25];
-  self.linkBottomConstraint.priority = UILayoutPriorityDefaultHigh;
-  self.linkBottomConstraint.active = YES;
-}
-
-#pragma mark - Update UI
-
-- (void)hideLinkLabel:(BOOL)hide {
-  self.linkLabel.hidden = hide;
-  if (hide) {
-    if ((self.linkBottomConstraint.priority != UILayoutPriorityDefaultLow)
-        || (self.descriptionBottomConstraint.priority != UILayoutPriorityDefaultHigh)) {
-      self.linkBottomConstraint.priority = UILayoutPriorityDefaultLow;
-      self.descriptionBottomConstraint.priority = UILayoutPriorityDefaultHigh;
-      [self setNeedsLayout];
-    }
-  } else {
-    if ((self.linkBottomConstraint.priority != UILayoutPriorityDefaultHigh)
-        || (self.descriptionBottomConstraint.priority != UILayoutPriorityDefaultLow)) {
-      self.linkBottomConstraint.priority = UILayoutPriorityDefaultHigh;
-      self.descriptionBottomConstraint.priority = UILayoutPriorityDefaultLow;
-      [self setNeedsLayout];
-    }
-  }
+  self.linkConstraints = @[
+    [self.linkLabel.topAnchor constraintEqualToAnchor:self.descriptionLabel.bottomAnchor
+                                             constant:8],
+    [self.linkLabel.bottomAnchor constraintEqualToAnchor:self.rootView.bottomAnchor
+                                                constant:-25]
+  ];
 }
 
 #pragma mark - ApplyCard
 
-- (void)applyCard:(ABKCaptionedImageContentCard *)captionedImageCard {
-  if (![captionedImageCard isKindOfClass:[ABKCaptionedImageContentCard class]]) {
+- (void)applyCard:(ABKCaptionedImageContentCard *)card {
+  if (![card isKindOfClass:[ABKCaptionedImageContentCard class]]) {
     return;
   }
   
-  [super applyCard:captionedImageCard];
-  
-  [self applyAppboyAttributedTextStyleFrom:captionedImageCard.title forLabel:self.titleLabel];
-  [self applyAppboyAttributedTextStyleFrom:captionedImageCard.cardDescription forLabel:self.descriptionLabel];
-  [self applyAppboyAttributedTextStyleFrom:captionedImageCard.domain forLabel:self.linkLabel];
-  
-  BOOL shouldHideLink = (captionedImageCard.domain.length == 0);
-  [self hideLinkLabel:shouldHideLink];
-  
-  CGFloat currImageHeightConstraint = self.captionedImageView.frame.size.width / captionedImageCard.imageAspectRatio;
-  if ([self shouldResizeImageWithNewConstant:currImageHeightConstraint]) {
-    [self updateImageConstraintsWithNewConstant:currImageHeightConstraint];
-  }
+  [super applyCard:card];
+  [self applyAppboyAttributedTextStyleFrom:card.title forLabel:self.titleLabel];
+  [self applyAppboyAttributedTextStyleFrom:card.cardDescription forLabel:self.descriptionLabel];
+  [self applyAppboyAttributedTextStyleFrom:card.domain forLabel:self.linkLabel];
+  self.linkLabel.hidden = card.domain.length == 0;
+
+  [self updateConstraintsForCard:card];
+  [self updateImageConstraintIfNeededWithAspectRatio:card.imageAspectRatio];
   
   if (![Appboy sharedInstance].imageDelegate) {
     NSLog(@"[APPBOY][WARN] %@ %s",
@@ -264,45 +214,51 @@ static UIColor *_linkLabelColor = nil;
   typeof(self) __weak weakSelf = self;
   [[Appboy sharedInstance].imageDelegate setImageForView:self.captionedImageView
                                    showActivityIndicator:NO
-                                                 withURL:[NSURL URLWithString:captionedImageCard.image]
+                                                 withURL:[NSURL URLWithString:card.image]
                                         imagePlaceHolder:[self getPlaceHolderImage]
                                                completed:^(UIImage * _Nullable image,
                                                            NSError * _Nullable error,
                                                            NSInteger cacheType,
                                                            NSURL * _Nullable imageURL) {
-    if (weakSelf == nil) {
-      return;
-    }
-    if (image && image.size.width > 0.0) {
-      dispatch_async(dispatch_get_main_queue(), ^{
-        CGFloat newImageAspectRatio = image.size.width / image.size.height;
-        CGFloat newImageHeightConstraint = weakSelf.captionedImageView.frame.size.width / newImageAspectRatio;
-        if ([self shouldResizeImageWithNewConstant:newImageHeightConstraint]) {
-          // Update image size based on actual downloaded image
-          [weakSelf updateImageConstraintsWithNewConstant:newImageHeightConstraint];
-          [weakSelf.delegate refreshTableViewCellHeights];
-          captionedImageCard.imageAspectRatio = newImageAspectRatio;
-        }
-      });
-    } else {
-      dispatch_async(dispatch_get_main_queue(), ^{
-        weakSelf.captionedImageView.image = [weakSelf getPlaceHolderImage];
-      });
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+      typeof(self) __strong strongSelf = weakSelf;
+      if (strongSelf == nil) {
+        return;
+      }
+
+      if (image == nil) {
+        strongSelf.captionedImageView.image = [strongSelf getPlaceHolderImage];
+        return;
+      }
+
+      CGFloat aspectRatio = image.size.width / image.size.height;
+      card.imageAspectRatio = aspectRatio;
+      [strongSelf updateImageConstraintIfNeededWithAspectRatio:aspectRatio];
+    });
   }];
 }
 
-- (void)updateImageConstraintsWithNewConstant:(CGFloat)newConstant {
-  self.imageHeightConstraint.constant = newConstant;
-  [self setNeedsLayout];
+- (void)updateConstraintsForCard:(ABKCaptionedImageContentCard *)card {
+  if (card.domain.length == 0) {
+    [NSLayoutConstraint deactivateConstraints:self.linkConstraints];
+    [NSLayoutConstraint activateConstraints:self.descriptionConstraints];
+  } else {
+    [NSLayoutConstraint deactivateConstraints:self.descriptionConstraints];
+    [NSLayoutConstraint activateConstraints:self.linkConstraints];
+  }
 }
 
-#pragma mark - Private methods
+- (void)updateImageConstraintIfNeededWithAspectRatio:(CGFloat)aspectRatio {
+  if (aspectRatio == 0 || ABK_CGFLT_EQ(self.imageRatioConstraint.multiplier, 1 / aspectRatio)) {
+    return;
+  }
 
-- (BOOL)shouldResizeImageWithNewConstant:(CGFloat)newConstant {
-  return self.imageHeightConstraint &&
-      newConstant != INFINITY &&
-      fabs(newConstant - self.imageHeightConstraint.constant) > ImageMinResizingDifference;
+  self.imageRatioConstraint.active = NO;
+  self.imageRatioConstraint = [self.captionedImageView.heightAnchor constraintEqualToAnchor:self.captionedImageView.widthAnchor
+                                                                                multiplier:1 / aspectRatio];
+  self.imageRatioConstraint.priority = UILayoutPriorityDefaultHigh;
+  self.imageRatioConstraint.active = YES;
+  [self.delegate cellRequestSizeUpdate:self];
 }
 
 @end
