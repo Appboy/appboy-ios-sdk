@@ -429,7 +429,7 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">eventName</td><td>The name of the event to log. </td></tr>
-    <tr><td class="paramname">properties</td><td>An <code>NSDictionary</code> of properties to associate with this purchase. Property keys are non-empty <code>NSString</code> objects with &lt;= 255 characters and no leading dollar signs. Property values can be <code>NSNumber</code> booleans, integers, floats &lt; 62 bits, <code>NSDate</code> objects or <code>NSString</code> objects with &lt;= 255 characters.</td></tr>
+    <tr><td class="paramname">properties</td><td>An <code>NSDictionary</code> of properties to associate with this purchase. Property keys are non-empty <code>NSString</code> objects with &lt;= 255 characters and no leading dollar signs. Property values can be <code>NSNumber</code> booleans, integers, floats &lt; 62 bits, <code>NSDate</code> objects, <code>NSString</code> objects with &lt;= 255 characters, or any JSON Encodable object including NSArray and NSDictionary of the previous data types (nested properties). Total length of encoded properties must be under 50 KB.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1289,7 +1289,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 11 2021 14:22:00 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 15 2021 15:29:51 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

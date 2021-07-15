@@ -117,7 +117,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method returns the total number of currently active content cards. Cards are counted only once even if they appear in multiple Content Cards views. </p>
+<p>Returns the count of available cards, including control cards. Cards are counted only once even if they appear in multiple Content Cards views. </p>
 
 </div>
 </div>
@@ -133,7 +133,7 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method returns the number of currently active content cards which have not been viewed. A "view" happens when a card becomes visible in the Content Cards view. This differentiates between cards which are off-screen in the scrolling view, and those which are on-screen; when a card scrolls onto the screen, it's counted as viewed.</p>
+<p>Returns the count of unviewed cards, excluding control cards. A "view" happens when a card becomes visible in the Content Cards view. This differentiates between cards which are off-screen in the scrolling view, and those which are on-screen; when a card scrolls onto the screen, it's counted as viewed.</p>
 <p>Cards are counted as viewed only once &ndash; if a card scrolls off the screen and back on, it's not re-counted.</p>
 <p>Cards are counted only once even if they appear in multiple Content Cards views or across multiple devices. </p>
 
@@ -185,7 +185,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 11 2021 14:21:59 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 15 2021 15:29:51 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
