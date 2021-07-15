@@ -3,6 +3,12 @@
 #import "ABKModalWebViewController.h"
 #import "Appboy.h"
 
+@interface ABKUIURLUtils ()
+
++ (NSString *)trim:(NSString *)string;
+
+@end
+
 @implementation ABKUIURLUtils
 
 + (BOOL)URLDelegate:(id<ABKURLDelegate>)urlDelegate
@@ -87,7 +93,7 @@
   if (![ABKUIUtils objectIsValidAndNotEmpty:uriString]) {
     return nil;
   }
-  uriString = [uriString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+  uriString = [ABKUIURLUtils trim:uriString];
   NSURL *parsedUrl = [NSURL URLWithString:uriString];
   // If the uriString is an invalid uri, e.g. an uri with unicode, URLWithString: will return nil.
   if (!parsedUrl) {
@@ -96,6 +102,16 @@
     parsedUrl = [NSURL URLWithString:uriString];
   }
   return parsedUrl;
+}
+
++ (NSString *)trim:(NSString *)string {
+  if ([string isKindOfClass:[NSString class]]) {
+    return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+  }
+
+  NSLog(@"Calling `trim` with invalid class: %@, value: %@. Returning nil.",
+        [string class], string);
+  return nil;
 }
 
 @end

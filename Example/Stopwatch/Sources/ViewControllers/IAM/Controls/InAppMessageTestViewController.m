@@ -26,7 +26,7 @@
  *
  * In-app messages are potentially removed from the in-app message stack and displayed when:
  * - The application comes to the foreground after being backgrounded
- * - displayNextInAppMessageWithDelegate is called
+ * - displayNextInAppMessage is called
  *
  * If one of these events occurs and the in-app message can't be displayed, it remains in the stack.
  *
@@ -79,7 +79,7 @@
  *
  * Control in-app messages are potentially removed from the in-app message stack and logged when:
  * - The application comes to the foreground after being backgrounded
- * - displayNextInAppMessageWithDelegate is called
+ * - displayNextInAppMessage is called
  *
  * If one of these events occurs and the control in-app message can't be logged, it remains in the stack.
  *
@@ -164,7 +164,7 @@
 // one off the stack and display it.
 - (IBAction)displayNextAvailableInAppPressed:(id)sender {
   self.shouldDisplayInAppMessage = YES;
-  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:self];
+  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessage];
   self.shouldDisplayInAppMessage = NO;
   [self updateRemainingInAppMessageLabel];
 }

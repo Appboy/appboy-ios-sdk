@@ -1,9 +1,24 @@
+## 4.3.1
+
+##### Fixed
+- The `sdkAuthenticationDelegate` now works as expected when setting the property directly.
+- VoiceOver no longer reads content beneath the displayed in-app message.
+
+##### Changed
+- The number of unviewed Content Cards in `ABKContentCardsController`'s `unviewedContentCardCount` now excludes control cards.
+- The default Content Cards UI now allows swipe-to-refresh gestures when empty.
+- Deprecates `ABKInAppMessageController`'s method `displayNextInAppMessageWithDelegate:` in favor of `displayNextInAppMessage`.
+
+##### Added
+- Custom events and purchases now support nested properties. 
+  - In addition to integers, floats, booleans, dates, or strings, a JSON object can be provided containing dictionaries of arrays or nested dictionaries. All properties combined can be up to 50 KB in total length.
+
 ## 4.3.0
 
 ##### Breaking
 - Refined Content Cards UI public api changes introduced in `4.2.0`.
 
-#### Fixed
+##### Fixed
 - Fixes an issue introduced in `4.2.0` that caused Content Card type `ABKClassicImageContentCardCell` to crash on display when not using Storyboard.
 
 ## 4.2.0
@@ -13,7 +28,7 @@
 
 ##### Breaking
 - Content Cards and News Feed are now more extensible!
-  - Class level API methods have changed to instance methods to make subclassing easier, however `getNavigationContentCardsViewController` and `getNavigationFeedViewController` are left in as class methods for backwards compatibility. 
+  - Class level API methods have changed to instance methods to make subclassing easier, however `getNavigationContentCardsViewController` and `getNavigationFeedViewController` are left in as class methods for backwards compatibility.
   - Subclassing views is now fully supported for customizations. See the [Content Card sample code for examples](https://github.com/Appboy/appboy-ios-sdk/tree/master/Samples/ContentCards/BrazeContentCardsSampleApp).
   - Alternatively, you can bring your own storyboard with customizations. See our [example custom storyboard implementation](https://github.com/Appboy/appboy-ios-sdk/tree/master/Example/Stopwatch/Sources/ViewControllers/Braze%20UI/FeedUIViewController.m).
   - See the [Content Cards documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/content_cards/) for more information.
@@ -109,11 +124,11 @@
     - Delete the `Run Script` build phase that starts with:
       ```
       APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
-      
+
       find "$APP_PATH" -name 'AppboyPushStory.framework' -type d | while read -r FRAMEWORK
       ...
       ```
-      
+
 - Removed `ABKSDWebImageProxy`'s `prefetchURLs:` method.
 
 ##### Fixed

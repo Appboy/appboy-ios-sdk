@@ -221,9 +221,9 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 - (void)updateAndDisplayCardsFromCache {
   [self populateContentCards];
   if (self.cards == nil || self.cards.count == 0) {
-    [self hideTableViewAndShowViewInHeader:self.emptyFeedView];
+    [self hideTableViewAndShowViewInBackground:self.emptyFeedView];
   } else {
-    [self showTableViewAndHideHeaderViews];
+    [self showTableViewAndHideBackgroundViews];
   }
   [self.tableView reloadData];
 }
@@ -245,20 +245,16 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 
 #pragma mark - Table view header view
 
-- (void)hideTableViewAndShowViewInHeader:(UIView *)view {
+- (void)hideTableViewAndShowViewInBackground:(UIView *)view {
   view.hidden = NO;
   view.frame = self.view.bounds;
   [view layoutIfNeeded];
-  self.tableView.sectionHeaderHeight = self.tableView.frame.size.height;
-  self.tableView.tableHeaderView = view;
-  self.tableView.scrollEnabled = NO;
+  self.tableView.backgroundView = view;
 }
 
-- (void)showTableViewAndHideHeaderViews {
+- (void)showTableViewAndHideBackgroundViews {
   self.emptyFeedView.hidden = YES;
-  self.tableView.tableHeaderView = nil;
-  self.tableView.sectionHeaderHeight = 0;
-  self.tableView.scrollEnabled = YES;
+  self.tableView.backgroundView = nil;
 }
 
 #pragma mark - Configuration Update

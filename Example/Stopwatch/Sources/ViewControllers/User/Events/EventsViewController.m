@@ -222,6 +222,14 @@ static NSString *const ChangeUser = @"Set User ID";
       textField.text = [self getStringFromDate:datePicker.date];
     }
   }
+
+  if ((indexPath.section == 1 && self.eventPropertyType == 4 && [self.labelsArraySection1[indexPath.row] isEqualToString:EventPropertyValue]) ||
+          (indexPath.section == 2 && self.purchasePropertyType == 4 && [self.labelsArraySection2[indexPath.row] isEqualToString:PurchasePropertyValue])) {
+    if (@available(iOS 11.0, *)) {
+      // Smart quotes make it impossible to type JSON in for nested properties.
+      textField.smartQuotesType = UITextSmartQuotesTypeNo;
+    }
+  }
   
   if (indexPath.section == 1) {
     if ([self.labelsArraySection1[indexPath.row] isEqualToString:Name]
@@ -450,6 +458,17 @@ static NSString *const ChangeUser = @"Set User ID";
     case 3:
       if (![self.valuesDictionary[value] isKindOfClass:[NSDate class]]) {
         self.valuesDictionary[value] = [self getDateFromString:self.valuesDictionary[value]];
+      }
+      break;
+    case 4: {
+        NSData *jsonData = [self.valuesDictionary[value] dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error;
+        id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        if (error) {
+          NSLog(@"Error parsing JSON: %@", error);
+          return NO;
+        }
+        self.valuesDictionary[value] = jsonObject;
       }
       break;
   }

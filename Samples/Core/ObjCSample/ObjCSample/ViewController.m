@@ -20,7 +20,7 @@
 }
 
 - (IBAction)flushButtonClicked:(id)sender {
-  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+  [[Appboy sharedInstance] requestImmediateDataFlush];
 }
 
 - (IBAction)customAttributeButtonClicked:(id)sender {

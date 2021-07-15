@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"4.3.0"
+#define APPBOY_SDK_VERSION @"4.3.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -452,8 +452,8 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
 /*!
  * @param eventName The name of the event to log.
  * @param properties An <code>NSDictionary</code> of properties to associate with this purchase. Property keys are non-empty <code>NSString</code> objects with
- * <= 255 characters and no leading dollar signs.  Property values can be <code>NSNumber</code> booleans, integers, floats < 62 bits, <code>NSDate</code> objects or
- * <code>NSString</code> objects with <= 255 characters.
+ * <= 255 characters and no leading dollar signs.  Property values can be <code>NSNumber</code> booleans, integers, floats < 62 bits, <code>NSDate</code> objects,
+ * <code>NSString</code> objects with <= 255 characters, or any JSON Encodable object including NSArray and NSDictionary of the previous data types (nested properties). Total length of encoded properties must be under 50 KB.
  *
  * @discussion Adds an app specific event to event tracking log that's lazily pushed up to the server. Think of
  *   events like counters. That is, each time you log an event, we'll update a counter for that user. Events should be

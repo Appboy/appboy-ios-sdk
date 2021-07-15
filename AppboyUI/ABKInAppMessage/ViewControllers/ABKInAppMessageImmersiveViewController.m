@@ -42,7 +42,6 @@ static NSInteger const CloseButtonTag = 50;
       self.view.superview.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.3];
     }
   }
-  self.view.superview.accessibilityViewIsModal = YES;
   
   NSLayoutConstraint *centerYConstraint = [NSLayoutConstraint constraintWithItem:self.view
                                                                        attribute:NSLayoutAttributeCenterY

@@ -80,6 +80,12 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
       [self.view addGestureRecognizer:inAppModalOutsideTapGesture];
     }
   }
+
+  if ([self.inAppMessageViewController isKindOfClass:[ABKInAppMessageImmersiveViewController class]] ||
+      [self.inAppMessageViewController isKindOfClass:[ABKInAppMessageHTMLBaseViewController class]]) {
+    self.inAppMessageWindow.accessibilityViewIsModal = YES;
+  }
+
   [self.view addSubview:self.inAppMessageViewController.view];
 }
 
