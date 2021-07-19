@@ -6,6 +6,9 @@
 
 @interface ABKContentCardsTableViewController : UITableViewController
 
+- (id)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
+- (id)init NS_DESIGNATED_INITIALIZER;
+
 /*!
  * UI elements which are used in the Content Cards table view. You can find them in the Content Cards Storyboard.
  */
