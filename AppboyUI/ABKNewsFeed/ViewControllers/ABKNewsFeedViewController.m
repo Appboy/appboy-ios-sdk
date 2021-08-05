@@ -10,6 +10,11 @@
     self.newsFeed = [[ABKNewsFeedTableViewController alloc] init];
     [self pushViewController:self.newsFeed animated:NO];
     [self addDoneButton];
+#if !TARGET_OS_TV
+    if (@available(iOS 15.0, *)) {
+      self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+    }
+#endif
   }
   return self;
 }

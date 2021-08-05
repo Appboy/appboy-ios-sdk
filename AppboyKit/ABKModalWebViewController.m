@@ -11,10 +11,13 @@ static NSString *const localizedNoConnectionKey = @"Appboy.no-connection.message
   [super viewDidLoad];
   
   UIViewController *webViewController = [[UIViewController alloc] init];
-  webViewController.edgesForExtendedLayout = UIRectEdgeNone;
-  
   self.webView = [self getWebView];
   webViewController.view = self.webView;
+#if !TARGET_OS_TV
+  if (@available(iOS 15.0, *)) {
+    self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+  }
+#endif
 
   [self setupProgressBarWithViewController:webViewController];
   

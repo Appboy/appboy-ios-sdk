@@ -14,7 +14,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [ColorUtils applyThemeToViewController:self];
-  
+#if !TARGET_OS_TV
+  if (@available(iOS 15.0, *)) {
+    self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+  }
+#endif
   // Add tab bar items to UITabBarController
   NSMutableArray *viewControllers = [[NSMutableArray alloc] initWithObjects:
                                      [self addNavigationControllerWithChildren:@[@"Events", @"Attributes", @"Arrays", @"Alias"] andTitle:@"User" andImageName:@"user" withFlushButton:YES], // User tab

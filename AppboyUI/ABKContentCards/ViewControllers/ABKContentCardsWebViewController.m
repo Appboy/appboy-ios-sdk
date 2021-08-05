@@ -9,13 +9,17 @@ static NSString *const LocalizedNoConnectionKey = @"Appboy.no-connection.message
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  self.edgesForExtendedLayout = UIRectEdgeNone;
+
   self.webView.navigationDelegate = self;
-  
   self.webView = [self getWebView];
   self.view = self.webView;
-  
+
+#if !TARGET_OS_TV
+  if (@available(iOS 15.0, *)) {
+    self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+  }
+#endif
+
   [self setupProgressBar];
   
   if (self.showDoneButton) {

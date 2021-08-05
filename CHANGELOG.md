@@ -1,3 +1,11 @@
+## 4.3.2
+
+##### Fixed
+- Iframes embedded in an HTML in-app message are now displayed as part of the same in-app message. Previously, iframes would be loaded in a separate webview.
+
+##### Added
+- Adds support for navigation bar transparency changes introduced in iOS 15. Apps using Braze default UIs for Content Cards, the News Feed, and the modal WebView should upgrade to this version as soon as possible ahead of iOS 15's release.
+
 ## 4.3.1
 
 ##### Fixed

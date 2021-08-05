@@ -42,6 +42,11 @@
 }
 
 - (void)setUpUI {
+#if !TARGET_OS_TV
+   if (@available(iOS 15.0, *)) {
+     self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+   }
+#endif
   self.emptyFeedView = [[UIView alloc] init];
   self.emptyFeedView.translatesAutoresizingMaskIntoConstraints = NO;
   [self.view addSubview:self.emptyFeedView];

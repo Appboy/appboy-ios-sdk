@@ -29,6 +29,11 @@
 
 - (void)viewDidLoad {
   [ColorUtils applyThemeToViewController:self];
+#if !TARGET_OS_TV
+  if (@available(iOS 15.0, *)) {
+    self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+  }
+#endif
   [self.navigationItem setTitleView:self.segmentedControl];
   [self displayViewForSegmentAtIndex:[self.segmentedControl selectedSegmentIndex]];
   

@@ -147,10 +147,11 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   NSURL *url = navigationAction.request.URL;
   
   // Handle normal html resource loading
-  
+  BOOL isIframeLoad = navigationAction.targetFrame != nil && ![navigationAction.sourceFrame isEqual:navigationAction.targetFrame];
   NSString *assetPath = ((ABKInAppMessageHTMLBase *)self.inAppMessage).assetsLocalDirectoryPath.absoluteString;
   BOOL isHandledByWebView =
     !url ||
+    isIframeLoad ||
     [ABKUIUtils string:url.absoluteString isEqualToString:ABKBlankURLString] ||
     [ABKUIUtils string:url.path isEqualToString:assetPath] ||
     [ABKUIUtils string:url.lastPathComponent isEqualToString:ABKInAppMessageHTMLFileName];

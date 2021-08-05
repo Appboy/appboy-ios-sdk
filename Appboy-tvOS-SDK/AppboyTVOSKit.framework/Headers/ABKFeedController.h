@@ -5,7 +5,7 @@
  */
 
 /*!
- * When the news feed is updated, Appboy will post a notification through the NSNotificationCenter.
+ * When the news feed is updated, Braze will post a notification through the NSNotificationCenter.
  * The name of the notification is the string constant referred to by ABKFeedUpdatedNotification. The
  * userInfo dictionary associated with the notification will has one object, with key the same string
  * as ABKFeedUpdatedIsSuccessfulKey, to indicate whether the update is successful or not.
@@ -55,14 +55,14 @@ typedef NS_OPTIONS(NSUInteger, ABKCardCategory) {
 @interface ABKFeedController : NSObject
 
 /*!
- * The latest cards of Appboy news feed that is saved in memory and disk. Right now the available card types are ABKBannerCard,
+ * The latest cards of the Braze News Feed saved in memory and disk. Right now the available card types are ABKBannerCard,
  * ABKCaptionedImageCard, ABKClassicCard and ABKTextAnnouncementCard. They are all subclasses
  * of ABKCard.
  */
 @property (readonly, getter=getNewsFeedCards) NSArray *newsFeedCards;
 
 /*!
- * The NSDate object that indicates the last time the newsFeedCards property was updated from Appboy server.
+ * The NSDate object that indicates the last time the newsFeedCards property was updated from the Braze server.
  */
 @property (readonly, nullable) NSDate *lastUpdate;
 

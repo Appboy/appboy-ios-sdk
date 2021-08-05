@@ -8,6 +8,11 @@
   if (self) {
     self.contentCardsViewController = self.viewControllers.firstObject;
     [self addDoneButton];
+#if !TARGET_OS_TV
+    if (@available(iOS 15.0, *)) {
+      self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+    }
+#endif
   }
   return self;
 }

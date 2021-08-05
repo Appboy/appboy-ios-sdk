@@ -99,7 +99,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
  * Manually dismiss a card.
- * It can be done only if the card is dismissable.
+ * Sets the card's `dismissed` property to YES and logs the dismissal to Braze.
+ * Only has effect if the card is dismissible and if the `dismissed` property is currently set to NO.
  */
 - (void)logContentCardDismissed;
 
