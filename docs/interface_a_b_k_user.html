@@ -102,6 +102,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ae8ef1e78bfafde343974a004ca81bb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb2c11d1889fd08537f90ee64c94efb3"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#afb2c11d1889fd08537f90ee64c94efb3">setPushNotificationSubscriptionType:</a></td></tr>
 <tr class="separator:afb2c11d1889fd08537f90ee64c94efb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74092a50fcda364bb159013d0222e287"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a74092a50fcda364bb159013d0222e287">addToSubscriptionGroupWithGroupId:</a></td></tr>
+<tr class="separator:a74092a50fcda364bb159013d0222e287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937f2ae8d2ffb4f1ae63cef4faba0686"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a937f2ae8d2ffb4f1ae63cef4faba0686">removeFromSubscriptionGroupWithGroupId:</a></td></tr>
+<tr class="separator:a937f2ae8d2ffb4f1ae63cef4faba0686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb4fa3dd31b091338caa7c3ddcafe26"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#aafb4fa3dd31b091338caa7c3ddcafe26">setCustomAttributeWithKey:andBOOLValue:</a></td></tr>
 <tr class="separator:aafb4fa3dd31b091338caa7c3ddcafe26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61b6359f6b4abdc09868e7632f466597"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_b_k_user.html#a61b6359f6b4abdc09868e7632f466597">setCustomAttributeWithKey:andIntegerValue:</a></td></tr>
@@ -281,6 +285,30 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 
 </div>
 </div>
+<a class="anchor" id="a74092a50fcda364bb159013d0222e287"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) addToSubscriptionGroupWithGroupId: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>groupId</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds the user to a Subscription Group.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">groupId</td><td>The string UUID corresponding to the subscription group, provided by the Braze dashboard. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the user was successfully added, else NO. If not, the groupId might have been nil or invalid. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a8f9fa4894dd236dedd48e610d43ef316"></a>
 <div class="memitem">
 <div class="memproto">
@@ -372,6 +400,30 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES if the operation was successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a937f2ae8d2ffb4f1ae63cef4faba0686"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) removeFromSubscriptionGroupWithGroupId: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>groupId</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes the user from a Subscription Group.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">groupId</td><td>The string UUID corresponding to the subscription group, provided by the Braze dashboard. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if the user was successfully removed, else NO. If not, the groupId might have been nil or invalid. </dd></dl>
 
 </div>
 </div>
@@ -1051,7 +1103,7 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>userID</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 5 2021 15:34:01 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 14 2021 15:52:26 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

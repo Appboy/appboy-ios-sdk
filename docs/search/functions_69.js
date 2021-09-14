@@ -16,10 +16,10 @@ var searchData=
   ['isappboyinternalremotenotification_3a',['isAppboyInternalRemoteNotification:',['../interface_a_b_k_push_utils.html#afd55ca5f35fb5b2306ae1be6b5deea9f',1,'ABKPushUtils']]],
   ['isappboyremotenotification_3a',['isAppboyRemoteNotification:',['../interface_a_b_k_push_utils.html#a9510314a1e1f6cf457872505b2af1599',1,'ABKPushUtils']]],
   ['isappboysilentremotenotification_3a',['isAppboySilentRemoteNotification:',['../interface_a_b_k_push_utils.html#a0dde2e7042f093c5bda1a3d8c12965ef',1,'ABKPushUtils']]],
-  ['isappboyusernotification_3a',['isAppboyUserNotification:',['../interface_a_b_k_push_utils.html#a014da7e11d2d848bb95411caa989f3e8',1,'ABKPushUtils']]],
+  ['isappboyusernotification_3a',['isAppboyUserNotification:',['../interface_a_b_k_push_utils.html#a73923ed4dacc516729a0c1b67ba568e1',1,'ABKPushUtils']]],
   ['isgeofencessyncremotenotification_3a',['isGeofencesSyncRemoteNotification:',['../interface_a_b_k_push_utils.html#a125929fe98f20625db1a5a71439301a7',1,'ABKPushUtils']]],
-  ['isgeofencessyncusernotification_3a',['isGeofencesSyncUserNotification:',['../interface_a_b_k_push_utils.html#a4b25bef3d7d8cb60a32d08f23ced6811',1,'ABKPushUtils']]],
+  ['isgeofencessyncusernotification_3a',['isGeofencesSyncUserNotification:',['../interface_a_b_k_push_utils.html#ac61540fe6f18717f3cf7f4bcc21c975e',1,'ABKPushUtils']]],
   ['ispushstoryremotenotification_3a',['isPushStoryRemoteNotification:',['../interface_a_b_k_push_utils.html#ac193a6e6a991bd95879eee92c9fae069',1,'ABKPushUtils']]],
   ['isuninstalltrackingremotenotification_3a',['isUninstallTrackingRemoteNotification:',['../interface_a_b_k_push_utils.html#ad1140db01688f422034c33ee3d8b0c47',1,'ABKPushUtils']]],
-  ['isuninstalltrackingusernotification_3a',['isUninstallTrackingUserNotification:',['../interface_a_b_k_push_utils.html#a525becd99865641babef50155171cb8e',1,'ABKPushUtils']]]
+  ['isuninstalltrackingusernotification_3a',['isUninstallTrackingUserNotification:',['../interface_a_b_k_push_utils.html#a914f9ec8f3db924a4d7581828ffaabfe',1,'ABKPushUtils']]]
 ];

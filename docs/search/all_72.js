@@ -6,6 +6,7 @@ var searchData=
   ['registerdevicetoken_3a',['registerDeviceToken:',['../interface_appboy.html#afcdc8ce638ec414503b1f9fce8924e19',1,'Appboy']]],
   ['registertableviewcellclasses',['registerTableViewCellClasses',['../interface_a_b_k_content_cards_table_view_controller.html#ad6bc3aee7b5c4689d9162f4759ddeb81',1,'ABKContentCardsTableViewController::registerTableViewCellClasses()'],['../interface_a_b_k_news_feed_table_view_controller.html#a68f6aa043ce25f759f4b906cc79c25f1',1,'ABKNewsFeedTableViewController::registerTableViewCellClasses()']]],
   ['removefromcustomattributearraywithkey_3avalue_3a',['removeFromCustomAttributeArrayWithKey:value:',['../interface_a_b_k_user.html#ade60374cb566bd3b7ec789d15059c3ae',1,'ABKUser']]],
+  ['removefromsubscriptiongroupwithgroupid_3a',['removeFromSubscriptionGroupWithGroupId:',['../interface_a_b_k_user.html#a937f2ae8d2ffb4f1ae63cef4faba0686',1,'ABKUser']]],
   ['removelocationcustomattributewithkey_3a',['removeLocationCustomAttributeWithKey:',['../interface_a_b_k_user.html#a01db7758665fd9fa6c82eac9911a1101',1,'ABKUser']]],
   ['requestcontentcardsrefresh',['requestContentCardsRefresh',['../interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82',1,'Appboy']]],
   ['requestenablesdkonnextapprun',['requestEnableSDKOnNextAppRun',['../interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b',1,'Appboy']]],
