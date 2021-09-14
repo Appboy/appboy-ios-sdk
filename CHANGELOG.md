@@ -1,3 +1,15 @@
+## 4.3.3
+
+##### Fixed
+- Fixes a race-condition occasionally preventing HTML in-app messages with assets from being displayed from a test push.
+- Fixes an issue which prevented HTML in-app messages from opening `sms:`, `mailto:`, `tel:`, `facetime:` and `facetime-audio:` urls.
+  - Previously, those urls would fail to open silently.
+- Fixes an issue where `ABKContentCardsTableViewController` was not displaying the "no update" label after the last card was deleted from the feed.
+
+##### Added
+- Adds methods `addToSubscriptionGroupWithGroupId:` and `removeFromSubscriptionGroupWithGroupId:` to `ABKUser` to manage SMS/Email Subscription Groups.
+  - Also adds `appboyBridge.getUser().addToSubscriptionGroup(groupId)` and `appboyBridge.getUser().removeFromSubscriptionGroup(groupId)` to the javascript interface for HTML in-app messages.
+
 ## 4.3.2
 
 ##### Fixed
@@ -42,7 +54,7 @@
   - See the [Content Cards documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/content_cards/) for more information.
 
 ##### Fixed
-- Fixes an issue with Dynamic Type support introduced in [3.34.0](#3.34.0) to be compatible with iOS 9.
+- Fixes an issue with Dynamic Type support introduced in [3.34.0](#3340) to be compatible with iOS 9.
 
 ##### Added
 - Adds support for new SDK Authentication feature.

@@ -360,6 +360,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     [card logContentCardDismissed];
     [self.cards removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+    if (self.cards.count == 0) {
+      [self hideTableViewAndShowViewInBackground:self.emptyFeedView];
+    }
   }
 }
 

@@ -33,7 +33,6 @@ static NSString *const LocalizedNoConnectionKey = @"Appboy.no-connection.message
                     context:nil];
   
   [self.webView loadRequest:[NSURLRequest requestWithURL:self.url]];
-  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -121,8 +120,9 @@ static NSString *const LocalizedNoConnectionKey = @"Appboy.no-connection.message
 
 #pragma mark - WKNavigationDelegate methods
 
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
-decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+- (void)webView:(WKWebView *)webView
+    decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
+    decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   NSString *urlString = [[navigationAction.request.mainDocumentURL absoluteString] lowercaseString];
   NSArray *stringComponents = [urlString componentsSeparatedByString:@":"];
   if ([stringComponents[1] hasPrefix:@"//itunes.apple.com"]  ||
@@ -138,16 +138,15 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
   self.progressBar.alpha = 0.0;
-  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation
-      withError:(NSError *)error{
+- (void)webView:(WKWebView *)webView
+    didFailProvisionalNavigation:(WKNavigation *)navigation
+      withError:(NSError *)error {
   self.progressBar.alpha = 0.0;
-  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-  
+
   UILabel *label = [[UILabel alloc] init];
   label.textAlignment = NSTextAlignmentCenter;
   label.numberOfLines = 0;

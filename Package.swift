@@ -19,16 +19,15 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "AppboyKitLibrary",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.3.2/AppboyKitLibrary.xcframework.zip",
-      checksum: "322425861bda3768acc0a9e88273afb430ba1d3e931184bf4cb0a0d2485e950c"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.3.3/AppboyKitLibrary.xcframework.zip",
+      checksum: "f93bc8a6e6cf5cdbc498f47510a4e4981a4d0bfdb0d25d3591cab89164120779"
     ),
     .target(
       name: "AppboyKit",
       dependencies: ["SDWebImage", "AppboyKitLibrary"],
       path: "AppboyKit",
       resources: [
-        .process("Appboy.bundle"),
-        .process("headers/AppboyKitLibrary/ZipArchive_LICENSE.txt")
+        .process("Appboy.bundle")
       ],
       linkerSettings: [
         .linkedFramework("SystemConfiguration"),
@@ -54,8 +53,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "AppboyPushStoryFramework",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.3.2/AppboyPushStoryFramework.xcframework.zip",
-      checksum: "97ce2945aa9d8e1839c846e554cd66774c0834ab777b3bb2bc595dace356bf82"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.3.3/AppboyPushStoryFramework.xcframework.zip",
+      checksum: "c2e82a3f020ce419040ec65e6906eb7039ed6cb5c576669e8037d7e870e38a2f"
     ),
     .target(
       name: "AppboyPushStory",

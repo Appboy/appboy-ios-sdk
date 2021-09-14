@@ -48,6 +48,22 @@
           [ABKUIUtils string:[url.scheme lowercaseString] isEqualToString:@"https"]);
 }
 
++ (BOOL)URLHasSystemScheme:(NSURL *)url {
+  static dispatch_once_t once;
+  static NSSet<NSString *> *systemSchemes;
+  dispatch_once(&once, ^{
+    systemSchemes = [NSSet setWithArray:@[
+      @"mailto",
+      @"tel",
+      @"facetime",
+      @"facetime-audio",
+      @"sms"
+    ]];
+  });
+
+  return [systemSchemes containsObject:[url.scheme lowercaseString]];
+}
+
 + (void)openURLWithSystem:(NSURL *)url {
   if (![NSThread isMainThread]) {
     dispatch_sync(dispatch_get_main_queue(), ^{

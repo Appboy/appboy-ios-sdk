@@ -4,6 +4,8 @@
 #import "UIViewController+Keyboard.h"
 #import "UserCustomAttribute.h"
 #import "UserCustomAttributeCell.h"
+#import "UserSubscriptionGroup.h"
+#import "UserSubscriptionGroupCell.h"
 #import "AlertControllerUtils.h"
 
 static NSInteger const TextFieldTagNumber = 1000;
@@ -16,6 +18,7 @@ static NSMutableArray *attributesValuesArray = nil;
 @interface UserAttributesViewController ()
 
 @property (nonatomic, strong) NSMutableArray<UserCustomAttribute *> *userCustomAttributes;
+@property (nonatomic, strong) NSMutableArray<UserSubscriptionGroup *> *userSubscriptionGroups;
 
 @end
 
@@ -44,6 +47,7 @@ static NSMutableArray *attributesValuesArray = nil;
     }
   }
   self.userCustomAttributes = [NSMutableArray array];
+  self.userSubscriptionGroups = [NSMutableArray array];
 }
 
 - (void)dealloc {
@@ -148,10 +152,31 @@ static NSMutableArray *attributesValuesArray = nil;
   return cell;
 }
 
+- (UITableViewCell *)setupTableView:(UITableView *)tableView subscriptionGroupCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  UserSubscriptionGroupCell *cell = (UserSubscriptionGroupCell *)[tableView dequeueReusableCellWithIdentifier:@"SubscriptionGroupCell" forIndexPath:indexPath];
+  UserSubscriptionGroup *subscriptionGroup = self.userSubscriptionGroups[indexPath.row - 1];
+  typeof(self) __weak weakSelf = self;
+  [cell setUserSubscriptionGroup:subscriptionGroup selectNextCellBlock:^(UITableViewCell *cell) {
+    NSIndexPath *indexPath = [weakSelf.attributesTableView indexPathForCell:cell];
+    if (indexPath && (weakSelf.userCustomAttributes.count > indexPath.row)) {
+      // we can pick next cell since it exists
+      UserSubscriptionGroupCell *nextCell = [weakSelf.attributesTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(indexPath.row + 1) inSection:indexPath.section]];
+      [nextCell.groupIdTextField becomeFirstResponder];
+    }
+  } textFieldShouldBeginEditingBlock:^(UITableViewCell *cell) {
+    NSIndexPath *indexPath = [weakSelf.attributesTableView indexPathForCell:cell];
+    if (indexPath) {
+      [weakSelf.attributesTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+  }];
+  return cell;
+}
+
+
 #pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 3;
+  return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -181,6 +206,15 @@ static NSMutableArray *attributesValuesArray = nil;
       }
     }
       
+    case 3: {
+      // subscription groups
+      if (indexPath.row == 0) {
+        return [tableView dequeueReusableCellWithIdentifier:@"AddSubscriptionGroupCell" forIndexPath:indexPath];
+      } else {
+        return [self setupTableView:tableView subscriptionGroupCellForRowAtIndexPath:indexPath];
+      }
+    }
+      
     default:
       return [UITableViewCell new];
   }
@@ -199,6 +233,10 @@ static NSMutableArray *attributesValuesArray = nil;
     case 2:
       // 'add attribute' button + custom attributes
       return 1 + self.userCustomAttributes.count;
+      
+    case 3:
+      // 'add subscription group' button + subscription groups
+      return 1 + self.userSubscriptionGroups.count;
       
     default:
       return 0;
@@ -219,14 +257,19 @@ static NSMutableArray *attributesValuesArray = nil;
       // 'add attribute' button + custom attributes
       return NSLocalizedString(@"Custom Attributes", @"");
       
+    case 3:
+      // 'add subscription group' button + subscription groups
+      return NSLocalizedString(@"Subscription Groups", @"");
+      
     default:
       return @"";
   }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-  // we can remove custom attributes
-  return (indexPath.section == 2 && indexPath.row > 0);
+  // we can remove custom attributes and subscription groups
+  return ((indexPath.section == 2 && indexPath.row > 0) ||
+          (indexPath.section == 3 && indexPath.row > 0));
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -234,8 +277,13 @@ static NSMutableArray *attributesValuesArray = nil;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-  [self.userCustomAttributes removeObjectAtIndex:(indexPath.row - 1)]; // since 0th row in the table view is button, not array element
-  [self.attributesTableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
+  if (indexPath.section == 2) {
+    [self.userCustomAttributes removeObjectAtIndex:(indexPath.row - 1)]; // since 0th row in the table view is button, not array element
+    [self.attributesTableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
+  } else if (indexPath.section == 3) {
+    [self.userSubscriptionGroups removeObjectAtIndex:(indexPath.row - 1)];
+    [self.attributesTableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
+  }
 }
 
 #pragma mark - Text Field Delegate Methods
@@ -323,6 +371,13 @@ static NSMutableArray *attributesValuesArray = nil;
   return;
 }
 
+- (IBAction)addSubscriptionGroupTapped:(id)sender {
+  [self.userSubscriptionGroups addObject:[UserSubscriptionGroup new]];
+  NSIndexPath *addedIndexPath = [NSIndexPath indexPathForRow:self.userSubscriptionGroups.count inSection:3];
+  [self.attributesTableView insertRowsAtIndexPaths:@[ addedIndexPath ] withRowAnimation:UITableViewRowAnimationAutomatic];
+  [self.attributesTableView scrollToRowAtIndexPath:addedIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
+
 // Set user attributes and/or change the current userId.  See Appboy.h for a discussion about changing the userId.
 - (IBAction)doneButtonTapped:(id)sender {
   [self dismissKeyboard];
@@ -399,6 +454,17 @@ static NSMutableArray *attributesValuesArray = nil;
       } else {
         [appboyInstance.user setCustomAttributeWithKey:attribute.attributeKey andStringValue:attribute.attributeValue];
       }
+    }
+  }
+  
+  for (UserSubscriptionGroup *subscriptionGroup in self.userSubscriptionGroups) {
+    if ([subscriptionGroup.groupId isEqualToString:@""]) {
+      continue;
+    }
+    if ([subscriptionGroup.status isEqualToString:@"s"]) {
+      [appboyInstance.user addToSubscriptionGroupWithGroupId:subscriptionGroup.groupId];
+    } else if ([subscriptionGroup.status isEqualToString:@"u"]) {
+      [appboyInstance.user removeFromSubscriptionGroupWithGroupId:subscriptionGroup.groupId];
     }
   }
 }
