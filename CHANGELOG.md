@@ -1,3 +1,9 @@
+## 4.3.4
+
+##### Fixed
+- Fixes an issue in which the pinned indicator for a Banner Content Card would not display in the default Content Cards UI.
+- Fixes an issue which prevented custom events and purchases with properties larger than 50 KB to be properly discarded.
+
 ## 4.3.3
 
 ##### Fixed

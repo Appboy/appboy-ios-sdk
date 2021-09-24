@@ -27,6 +27,7 @@
 
   // Views
   [self.rootView addSubview:self.bannerImageView];
+  [self.rootView bringSubviewToFront:self.pinImageView];
   [self.rootView bringSubviewToFront:self.unviewedLineView];
 
   // AutoLayout
