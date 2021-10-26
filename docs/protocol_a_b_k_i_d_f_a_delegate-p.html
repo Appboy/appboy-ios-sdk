@@ -109,8 +109,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The result of [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString].</p>
-<dl class="section return"><dt>Returns</dt><dd>The current IDFA for the user. </dd></dl>
+<p>Asks the delegate to return a valid IDFA for the current user.</p>
+<p>Use this delegate to pass the IDFA to Braze. Braze does not collect IDFA automatically.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current users's IDFA UUID. </dd></dl>
 
 </div>
 </div>
@@ -126,7 +127,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>With iOS 14, the delegate should first check ATTrackingManager on iOS 14 and then check ASIdentifierManager on earlier iOS versions. An example implementation is included with Stopwatch here: <a href="https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.m">https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.m</a></p>
+<p>Asks the delegate to return whether advertising tracking is enabled for the current user.</p>
+<p>Your delegate implementation should use ATTrackingManager on iOS 14+ and ASIdentifierManager on earlier iOS versions.</p>
+<p>An example implementation is available here: <a href="https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.m">https://github.com/Appboy/appboy-ios-sdk/blob/master/Example/Stopwatch/Sources/Utils/IDFADelegate.m</a></p>
 <dl class="section return"><dt>Returns</dt><dd>YES if advertising tracking is enabled for iOS 14 and earlier or if AppTrackingTransparency (ATT) is authorized with iOS 14+, NO otherwise </dd></dl>
 
 </div>
@@ -134,7 +137,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 24 2021 14:26:57 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 26 2021 16:10:55 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
