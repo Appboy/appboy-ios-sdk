@@ -105,6 +105,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   [[Appboy sharedInstance].inAppMessageController.inAppMessageUIController setInAppMessageUIDelegate:self];
 
   [self setUpRemoteNotifications];
+  [[Appboy sharedInstance] addSdkMetadata:@[ABKSdkMetadataCocoaPods]];
   self.stopwatchEnableDarkTheme = YES;
   self.showSilentPushAlerts = NO;
 

@@ -1,4 +1,28 @@
+## 4.4.0
+
+##### Breaking
+- Adds XCFramework support to Carthage. This allows projects integrated via Carthage to support Apple Silicon simulators and Mac Catalyst.
+  - When migrating from the original `.framework` to the new `.xcframework`, follow [the official Carthage migration guide](https://github.com/Carthage/Carthage#migrating-a-project-from-framework-bundles-to-xcframeworks).
+  - For those using the Full integration, use the following lines in your `Cartfile`. Note that it references the file `appboy_ios_sdk.json`:
+    ```
+    binary "https://raw.githubusercontent.com/Appboy/appboy-ios-sdk/master/appboy_ios_sdk.json"
+    github "SDWebImage/SDWebImage"
+    ```
+    - To continue using the original Full `.framework` file, include the `Cartfile` lines above but reference `appboy_ios_sdk_full.json`. Then, run `carthage update`.
+  - For those using the Thin integration, use the same `Cartfile` above but exclude the line with `SDWebImage`.
+  - The Core integration does not support XCFrameworks, and you can use the original `.framework` files as before.
+
+##### Added
+- Adds a new attachment to the release called `Appboy_iOS_SDK.xcframework.zip`.
+  - This artifact has the all-in-one XCFramework containing the full SDK code including all of the assets.
+  - When importing this code manually, drag-and-drop the XCFramework into your project and select `Embed & Sign`. Then, add `-ObjC` under `Build Settings > Other Linker Flags` in your app's target.
+- Adds localization support for the close button's accessibility label in modal and full in-app messages.
+- Adds the ability to set the SDK's log level at runtime by setting `ABKLogLevelKey` to an integer in `appboyOptions`. Descriptions of the available log levels can be found [here](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/initial_sdk_setup/other_sdk_customizations/#description-of-log-levels).
+- Adds `Appboy.addSdkMetadata:` to allow self reporting of SDK Metadata fields via the `ABKSdkMetadata` enum.
+
 ## 4.3.4
+
+This release requires Xcode 13.
 
 ##### Fixed
 - Fixes an issue in which the pinned indicator for a Banner Content Card would not display in the default Content Cards UI.
