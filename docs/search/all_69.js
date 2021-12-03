@@ -28,7 +28,7 @@ var searchData=
   ['inappmessageuicontroller',['inAppMessageUIController',['../interface_a_b_k_in_app_message_controller.html#af89e21829e313a8111dc337dd8b25755',1,'ABKInAppMessageController']]],
   ['inappmessageuidelegate',['inAppMessageUIDelegate',['../interface_a_b_k_in_app_message_window_controller.html#a822168408f0c13053671df9d61f91af4',1,'ABKInAppMessageWindowController']]],
   ['inappmessageviewcontroller',['inAppMessageViewController',['../interface_a_b_k_in_app_message_window_controller.html#a8670a1fd17ac4dbb67dece39bdf13e73',1,'ABKInAppMessageWindowController']]],
-  ['inappmessageviewcontrollerwithinappmessage_3a',['inAppMessageViewControllerWithInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_delegate-p.html#aff6974ec6332db363abe719ef0e9e679',1,'ABKInAppMessageUIDelegate-p']]],
+  ['inappmessageviewcontrollerwithinappmessage_3a',['inAppMessageViewControllerWithInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_delegate-p.html#a46c41f47b83a5c0fb9df67a6996a6842',1,'ABKInAppMessageUIDelegate-p']]],
   ['inappmessagewindow',['inAppMessageWindow',['../interface_a_b_k_in_app_message_window_controller.html#a79f63cd69e9160b2b90fb6e04b4417cd',1,'ABKInAppMessageWindowController']]],
   ['inappmessagewindowcontroller',['inAppMessageWindowController',['../interface_a_b_k_in_app_message_u_i_controller.html#a85805a1397179dd2045f71f290dfff34',1,'ABKInAppMessageUIController']]],
   ['incrementcustomuserattribute_3a',['incrementCustomUserAttribute:',['../interface_a_b_k_user.html#a8f9fa4894dd236dedd48e610d43ef316',1,'ABKUser']]],

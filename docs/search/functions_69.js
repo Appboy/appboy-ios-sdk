@@ -4,7 +4,7 @@ var searchData=
   ['inappmessageclickedwithactiontype_3aurl_3aopenurlinwebview_3a',['inAppMessageClickedWithActionType:URL:openURLInWebView:',['../interface_a_b_k_in_app_message_window_controller.html#ae524aa39798873eef03734c351961ced',1,'ABKInAppMessageWindowController']]],
   ['inappmessagecurrentlyvisible',['inAppMessageCurrentlyVisible',['../protocol_a_b_k_in_app_message_u_i_controlling-p.html#a2f066d150517f34f161588169dd3f0ed',1,'ABKInAppMessageUIControlling-p']]],
   ['inappmessagesremainingonstack',['inAppMessagesRemainingOnStack',['../interface_a_b_k_in_app_message_controller.html#a5832131be107c369436a58546d1a2810',1,'ABKInAppMessageController']]],
-  ['inappmessageviewcontrollerwithinappmessage_3a',['inAppMessageViewControllerWithInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_delegate-p.html#aff6974ec6332db363abe719ef0e9e679',1,'ABKInAppMessageUIDelegate-p']]],
+  ['inappmessageviewcontrollerwithinappmessage_3a',['inAppMessageViewControllerWithInAppMessage:',['../protocol_a_b_k_in_app_message_u_i_delegate-p.html#a46c41f47b83a5c0fb9df67a6996a6842',1,'ABKInAppMessageUIDelegate-p']]],
   ['incrementcustomuserattribute_3a',['incrementCustomUserAttribute:',['../interface_a_b_k_user.html#a8f9fa4894dd236dedd48e610d43ef316',1,'ABKUser']]],
   ['incrementcustomuserattribute_3aby_3a',['incrementCustomUserAttribute:by:',['../interface_a_b_k_user.html#a3311dadde4e172539dce54d82a6d9447',1,'ABKUser']]],
   ['initwithfacebookuserdictionary_3anumberoffriends_3alikes_3a',['initWithFacebookUserDictionary:numberOfFriends:likes:',['../interface_a_b_k_facebook_user.html#a15526bd07ad1b0a72da4583dda4fc0d0',1,'ABKFacebookUser']]],

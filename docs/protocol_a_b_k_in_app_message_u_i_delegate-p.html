@@ -95,8 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Instance Methods</h2></td></tr>
 <tr class="memitem:a1db3481c1466f747a66ba2de6d60a20d"><td class="memItemLeft" align="right" valign="top">(ABKInAppMessageDisplayChoice)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_delegate-p.html#a1db3481c1466f747a66ba2de6d60a20d">beforeInAppMessageDisplayed:withKeyboardIsUp:</a></td></tr>
 <tr class="separator:a1db3481c1466f747a66ba2de6d60a20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff6974ec6332db363abe719ef0e9e679"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_delegate-p.html#aff6974ec6332db363abe719ef0e9e679">inAppMessageViewControllerWithInAppMessage:</a></td></tr>
-<tr class="separator:aff6974ec6332db363abe719ef0e9e679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c41f47b83a5c0fb9df67a6996a6842"><td class="memItemLeft" align="right" valign="top">(nullable <br class="typebreak"/>
+<a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_delegate-p.html#a46c41f47b83a5c0fb9df67a6996a6842">inAppMessageViewControllerWithInAppMessage:</a></td></tr>
+<tr class="separator:a46c41f47b83a5c0fb9df67a6996a6842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac2612b59d5d6e4091ec5f373cfd059"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_delegate-p.html#a5ac2612b59d5d6e4091ec5f373cfd059">onInAppMessageDismissed:</a></td></tr>
 <tr class="separator:a5ac2612b59d5d6e4091ec5f373cfd059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4417ff9bdee4154c7da737aa6bfe347"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_u_i_delegate-p.html#af4417ff9bdee4154c7da737aa6bfe347">onInAppMessageClicked:</a></td></tr>
@@ -157,7 +158,7 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aff6974ec6332db363abe719ef0e9e679"></a>
+<a class="anchor" id="a46c41f47b83a5c0fb9df67a6996a6842"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -165,7 +166,7 @@ Instance Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (<a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *) inAppMessageViewControllerWithInAppMessage: </td>
+          <td class="memname">- (nullable <a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> *) inAppMessageViewControllerWithInAppMessage: </td>
           <td></td>
           <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)&#160;</td>
           <td class="paramname"><em>inAppMessage</em></td>
@@ -207,7 +208,7 @@ Instance Methods</h2></td></tr>
 </ul>
 </li>
 </ul>
-<p>NOTE: The returned view controller should be a <a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> or preferably, a subclass of <a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a>. The view of the returned view controller should be an instance of <a class="el" href="interface_a_b_k_in_app_message_view.html">ABKInAppMessageView</a> or its subclass. </p>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="interface_a_b_k_in_app_message_view_controller.html">ABKInAppMessageViewController</a> subclass for which the view is an <a class="el" href="interface_a_b_k_in_app_message_view.html">ABKInAppMessageView</a> instance or subclass. Returning nil will prevent the in-app message from displaying. </dd></dl>
 
 </div>
 </div>
@@ -375,7 +376,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 26 2021 16:10:55 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 3 2021 14:37:08 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

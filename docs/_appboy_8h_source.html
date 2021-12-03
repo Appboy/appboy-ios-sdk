@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#import &quot;ABKSdkMetadata.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef APPBOY_SDK_VERSION</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;4.4.0&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;4.4.1&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
@@ -267,79 +267,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;- (void)<a class="code" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a>;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;- (void)changeUser:(NSString *)userId;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;- (void)changeUser:(NSString *)userId sdkAuthSignature:(nullable NSString *)signature;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;- (void)setSdkAuthenticationSignature:(NSString *)signature;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;- (void)<a class="code" href="interface_appboy.html#a8846dbad57ac2c4ce369678ac92d9664">unsubscribeFromSdkAuthenticationErrors</a>;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;- (void)logCustomEvent:(NSString *)eventName;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;- (void)logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;- (void)<a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;- (void)<a class="code" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">logContentCardsDisplayed</a>;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;- (void)<a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;- (void)<a class="code" href="interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82">requestContentCardsRefresh</a>;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;- (void)requestGeofencesWithLongitude:(<span class="keywordtype">double</span>)longitude latitude:(<span class="keywordtype">double</span>)latitude;</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;- (NSString *)<a class="code" href="interface_appboy.html#a9abe8a17453b0bac918a51d359f0c27e">getDeviceId</a>;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;- (void)changeUser:(NSString *)userId;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;- (void)changeUser:(NSString *)userId sdkAuthSignature:(nullable NSString *)signature;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;- (void)setSdkAuthenticationSignature:(NSString *)signature;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;- (void)<a class="code" href="interface_appboy.html#a8846dbad57ac2c4ce369678ac92d9664">unsubscribeFromSdkAuthenticationErrors</a>;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;- (void)logCustomEvent:(NSString *)eventName;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;- (void)logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;- (void)<a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;- (void)<a class="code" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">logContentCardsDisplayed</a>;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;- (void)<a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;- (void)<a class="code" href="interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82">requestContentCardsRefresh</a>;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;- (void)requestGeofencesWithLongitude:(<span class="keywordtype">double</span>)longitude latitude:(<span class="keywordtype">double</span>)latitude;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;- (NSString *)<a class="code" href="interface_appboy.html#a9abe8a17453b0bac918a51d359f0c27e">getDeviceId</a>;</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;- (void)registerDeviceToken:(NSData *)deviceToken;</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification NS_DEPRECATED_IOS(3_0, 10_0, &quot;`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.&quot;);</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;- (void)registerApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;didReceiveRemoteNotification:(NSDictionary *)notification</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;     fetchCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(UIBackgroundFetchResult))completionHandler;</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;- (void)getActionWithIdentifier:(NSString *)identifier</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;          forRemoteNotification:(NSDictionary *)userInfo</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;              completionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_DEPRECATED_IOS(8_0, 10_0,&quot;`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.&quot;);</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;- (void)userNotificationCenter:(UNUserNotificationCenter *)center</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;didReceiveNotificationResponse:(UNNotificationResponse *)response</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;         withCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_AVAILABLE_IOS(10_0);</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;- (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;- (void)addSdkMetadata:(NSArray&lt;ABKSdkMetadata&gt; *)metadata;</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="comment"> * Data processing configuration methods.</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;+ (void)<a class="code" href="interface_appboy.html#ac8d580f60ec0608cd91240a8a3aa23a3">wipeDataAndDisableForAppRun</a>;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a8d3b78a98420713d8590ed63c9172733">disableSDK</a>;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b">requestEnableSDKOnNextAppRun</a>;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;- (void)registerDeviceToken:(NSData *)deviceToken;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification NS_DEPRECATED_IOS(3_0, 10_0, &quot;`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.&quot;);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;- (void)registerApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;didReceiveRemoteNotification:(NSDictionary *)notification</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;     fetchCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(UIBackgroundFetchResult))completionHandler;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;- (void)getActionWithIdentifier:(NSString *)identifier</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;          forRemoteNotification:(NSDictionary *)userInfo</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;              completionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_DEPRECATED_IOS(8_0, 10_0,&quot;`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.&quot;);</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;- (void)userNotificationCenter:(UNUserNotificationCenter *)center</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;didReceiveNotificationResponse:(UNNotificationResponse *)response</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;         withCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_AVAILABLE_IOS(10_0);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;- (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;- (void)addSdkMetadata:(NSArray&lt;ABKSdkMetadata&gt; *)metadata;</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="comment"> * Data processing configuration methods.</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;+ (void)<a class="code" href="interface_appboy.html#ac8d580f60ec0608cd91240a8a3aa23a3">wipeDataAndDisableForAppRun</a>;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a8d3b78a98420713d8590ed63c9172733">disableSDK</a>;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b">requestEnableSDKOnNextAppRun</a>;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 26 2021 16:10:55 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 3 2021 14:37:08 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

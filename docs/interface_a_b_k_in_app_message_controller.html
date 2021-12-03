@@ -129,14 +129,14 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This method allows you to request display of an in-app message. It adds the in-app message object to the top of the in-app message stack and tries to display it immediately.</p>
+<p>If you add an <a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> instance that you received through a Braze delegate method - i.e. one that is associated with a campaign or Canvas, then impression and click analytics will work automatically. If you add an <a class="el" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> instance that you instantiated yourself programmatically (uncommon), then analytics will not be available.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newInAppMessage</td><td>A new in-app message that will be added into the top of the stack of in-app messages that haven't been displayed yet.</td></tr>
+    <tr><td class="paramname">newInAppMessage</td><td>the in-app message to add. </td></tr>
   </table>
   </dd>
 </dl>
-<p>This method allows you to display a custom in-app message. It adds the in-app message object to the top of the in-app message stack and tries to display immediately.</p>
-<p>Note: Clicks and impressions of in-app messages added by this method will not be collected by Braze and will not be reflected on the dashboard. </p>
 
 </div>
 </div>
@@ -267,7 +267,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 26 2021 16:10:55 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 3 2021 14:37:08 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
