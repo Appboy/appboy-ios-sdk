@@ -87,7 +87,7 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
   self.emptyFeedLabel = [[UILabel alloc] init];
   self.emptyFeedLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleBody weight:UIFontWeightRegular];
   self.emptyFeedLabel.textAlignment = NSTextAlignmentCenter;
-  self.emptyFeedLabel.numberOfLines = 2;
+  self.emptyFeedLabel.numberOfLines = 0;
   self.emptyFeedLabel.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
@@ -98,7 +98,13 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 
   NSLayoutConstraint *centerXConstraint = [self.emptyFeedLabel.centerXAnchor constraintEqualToAnchor:self.emptyFeedView.centerXAnchor];
   NSLayoutConstraint *centerYConstraint = [self.emptyFeedLabel.centerYAnchor constraintEqualToAnchor:self.emptyFeedView.centerYAnchor];
-  [NSLayoutConstraint activateConstraints:@[centerXConstraint, centerYConstraint]];
+  NSLayoutConstraint *leftConstraint = [self.emptyFeedLabel.leftAnchor constraintEqualToAnchor:self.emptyFeedView.leftAnchor];
+  NSLayoutConstraint *rightConstraint = [self.emptyFeedLabel.rightAnchor constraintEqualToAnchor:self.emptyFeedView.rightAnchor];
+  NSLayoutConstraint *topConstraint = [self.emptyFeedLabel.topAnchor constraintEqualToAnchor:self.emptyFeedView.topAnchor];
+  NSLayoutConstraint *bottomConstraint = [self.emptyFeedLabel.bottomAnchor constraintEqualToAnchor:self.emptyFeedView.bottomAnchor];
+  [NSLayoutConstraint activateConstraints:@[centerXConstraint, centerYConstraint,
+                                            leftConstraint, rightConstraint,
+                                            topConstraint, bottomConstraint]];
 }
 
 - (void)dealloc {

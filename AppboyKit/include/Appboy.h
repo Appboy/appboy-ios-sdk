@@ -15,7 +15,7 @@
 #import "ABKSdkMetadata.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"4.4.0"
+#define APPBOY_SDK_VERSION @"4.4.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -389,7 +389,8 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
 * @param userId The new user's ID (from the host application).
 *
 * @discussion
-* This method changes the user's ID.
+* This method changes the user's ID. These user IDs should be private and not easily obtained (e.g. not a plain
+* email address or username).
 *
 * When you first start using Braze on a device, the user is considered "anonymous". You can use this method to
 * optionally identify a user with a unique ID, which enables the following:

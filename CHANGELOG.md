@@ -1,3 +1,17 @@
+## 4.4.1
+
+##### Fixed
+- Fixes an issue in which `input` elements with `type="date"` in HTML in-app messages do not respond to some user interactions on iOS 14 and iOS 15.
+- Fixes `ABKSdkMetadata` availibility when using the dynamic variant of the SDK.
+- Fixes an issue in which the default content cards UI's empty feed label does not wrap properly when the device is using Larger Accessibility Sizes for its text size.
+
+##### Changed
+- Changed `ABKInAppMessageUIDelegate.inAppMessageViewControllerWithInAppMessage:` to accept a `nil` return value.
+
+##### Added
+- Adds support for the `playsinline` attribute on HTML `<video>` elements within webpages that are opened in the app by Braze.
+- Adds XCFramework support for the Core integration via Carthage. Please follow the [Carthage migration guide](https://github.com/Carthage/Carthage#migrating-a-project-from-framework-bundles-to-xcframeworks) when transitioning to the new artifact.
+
 ## 4.4.0
 
 ##### Breaking
