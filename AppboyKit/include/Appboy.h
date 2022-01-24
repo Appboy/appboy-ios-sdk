@@ -15,7 +15,7 @@
 #import "ABKSdkMetadata.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"4.4.1"
+#define APPBOY_SDK_VERSION @"4.4.2"
 #endif
 
 #if !TARGET_OS_TV
@@ -154,6 +154,8 @@ extern NSString *const ABKDeviceAllowlistKey;
  */
 extern NSString *const ABKDeviceWhitelistKey __deprecated_msg("ABKDeviceWhitelistKey is deprecated. Please use ABKDeviceAllowlistKey instead.");
 
+extern NSString *const ABKEphemeralEventsKey;
+
 /*!
  * This key can be set to a string value representing the app group name for the Push Story Notification
  * Content extension. This is required for the SDK to fetch data from and handle user interactions
@@ -279,8 +281,7 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
  * @param apiKey The app's API key
  * @param application The current app
  * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
- * @param appboyOptions An optional NSDictionary with startup configuration values for Braze. This currently supports
- * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
+ * @param appboyOptions An optional NSDictionary with startup configuration values for Braze. See below
  * for more information.
  *
  * @discussion Starts up Braze and tells it that your app is done launching. You should call this

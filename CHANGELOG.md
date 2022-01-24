@@ -1,8 +1,20 @@
+## 4.4.2
+
+##### Fixed
+- Fixes a bug for HTML in-app messages using the _HTML Upload with Preview_ option to improve the reliability of in-app message display.
+- Fixes a bug preventing integration via Swift Package Manager in specific contexts.
+- Fixes an issue in the default Content Cards UI where the empty feed label was truncated if it was too large for the screen, for example due to accessibility or localization.
+- Fixes an issue where Slideup in-app messages would be automatically dismissed after multiple interaction with the app's main window.
+
+##### Changed
+- If `changeUser:sdkAuthSignature:` is called with the current user's ID, but with a new and valid SDK Authentication signature, the new signature will be used.
+- Improves push tracking accuracy for apps making use of `UISceneDelegate` (UIKit) or `Scene` (SwiftUI).
+
 ## 4.4.1
 
 ##### Fixed
 - Fixes an issue in which `input` elements with `type="date"` in HTML in-app messages do not respond to some user interactions on iOS 14 and iOS 15.
-- Fixes `ABKSdkMetadata` availibility when using the dynamic variant of the SDK.
+- Fixes `ABKSdkMetadata` availability when using the dynamic variant of the SDK.
 - Fixes an issue in which the default content cards UI's empty feed label does not wrap properly when the device is using Larger Accessibility Sizes for its text size.
 
 ##### Changed

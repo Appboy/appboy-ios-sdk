@@ -5,7 +5,6 @@ target :Stopwatch do
    pod 'Appboy-iOS-SDK'
   pod 'KKColorListPicker', :git => 'https://github.com/leoru/KKColorListPicker.git', :inhibit_warnings => true
   pod 'Branch'
-  pod 'BuddyBuildSDK'
 end
 
 target :tvOS_Stopwatch do

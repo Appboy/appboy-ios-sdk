@@ -86,6 +86,8 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
 - (void)setUpEmptyFeedLabel {
   self.emptyFeedLabel = [[UILabel alloc] init];
   self.emptyFeedLabel.font = [ABKUIUtils preferredFontForTextStyle:UIFontTextStyleBody weight:UIFontWeightRegular];
+  self.emptyFeedLabel.adjustsFontSizeToFitWidth = YES;
+  self.emptyFeedLabel.adjustsFontForContentSizeCategory = YES;
   self.emptyFeedLabel.textAlignment = NSTextAlignmentCenter;
   self.emptyFeedLabel.numberOfLines = 0;
   self.emptyFeedLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -95,15 +97,16 @@ static CGFloat const ABKContentCardsCellEstimatedHeight = 400.0f;
   self.emptyFeedView = [[UIView alloc] init];
   self.emptyFeedView.backgroundColor = [UIColor clearColor];
   [self.emptyFeedView addSubview:self.emptyFeedLabel];
+  self.edgesForExtendedLayout = UIRectEdgeNone;
 
   NSLayoutConstraint *centerXConstraint = [self.emptyFeedLabel.centerXAnchor constraintEqualToAnchor:self.emptyFeedView.centerXAnchor];
   NSLayoutConstraint *centerYConstraint = [self.emptyFeedLabel.centerYAnchor constraintEqualToAnchor:self.emptyFeedView.centerYAnchor];
-  NSLayoutConstraint *leftConstraint = [self.emptyFeedLabel.leftAnchor constraintEqualToAnchor:self.emptyFeedView.leftAnchor];
-  NSLayoutConstraint *rightConstraint = [self.emptyFeedLabel.rightAnchor constraintEqualToAnchor:self.emptyFeedView.rightAnchor];
-  NSLayoutConstraint *topConstraint = [self.emptyFeedLabel.topAnchor constraintEqualToAnchor:self.emptyFeedView.topAnchor];
-  NSLayoutConstraint *bottomConstraint = [self.emptyFeedLabel.bottomAnchor constraintEqualToAnchor:self.emptyFeedView.bottomAnchor];
+  NSLayoutConstraint *leadingConstraint = [self.emptyFeedLabel.leadingAnchor constraintEqualToAnchor:self.emptyFeedView.layoutMarginsGuide.leadingAnchor];
+  NSLayoutConstraint *trailingConstraint = [self.emptyFeedLabel.trailingAnchor constraintEqualToAnchor:self.emptyFeedView.layoutMarginsGuide.trailingAnchor];
+  NSLayoutConstraint *topConstraint = [self.emptyFeedLabel.topAnchor constraintEqualToAnchor:self.emptyFeedView.layoutMarginsGuide.topAnchor];
+  NSLayoutConstraint *bottomConstraint = [self.emptyFeedLabel.bottomAnchor constraintEqualToAnchor:self.emptyFeedView.layoutMarginsGuide.bottomAnchor];
   [NSLayoutConstraint activateConstraints:@[centerXConstraint, centerYConstraint,
-                                            leftConstraint, rightConstraint,
+                                            leadingConstraint, trailingConstraint,
                                             topConstraint, bottomConstraint]];
 }
 

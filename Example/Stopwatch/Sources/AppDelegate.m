@@ -1,5 +1,4 @@
 #import <AppboyKit.h>
-#import <BuddyBuildSDK/BuddyBuildSDK.h>
 #import <CoreLocation/CoreLocation.h>
 
 #import "AppDelegate.h"
@@ -24,13 +23,9 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   StopwatchDebugMsg(@"Application launched with options: %@", launchOptions);
 
-  [BuddyBuildSDK setup];
-
   NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-
   NSString *overrideApiKey = [preferences stringForKey:OverrideApiKeyStorageKey];
   NSString *overrideEndpoint = [preferences stringForKey:OverrideEndpointStorageKey];
-
   NSString *apiKeyToUse = (overrideApiKey != nil && overrideApiKey.length != 0) ? overrideApiKey : AppboyApiKey;
 
   NSMutableDictionary *appboyOptions = [NSMutableDictionary dictionary];
