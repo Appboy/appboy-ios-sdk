@@ -1,0 +1,110 @@
+name: 🐞 Bug report
+description: File a Bug Report for unexpected or incorrect SDK Behavior
+title: '[Bug]: '
+labels: ["bug","triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please consider contacting support@braze.com for faster integration troubleshooting and to avoid leaking private information to our public Github issues.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      multiple: false
+      options:
+        - iOS
+        - tvOS
+        - Mac Catalyst
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: platform_version
+    attributes:
+      label: Platform Version
+      placeholder: ex. iOS 15.1
+    validations:
+      required: true
+  - type: input
+    id: sdk_version
+    attributes:
+      label: Braze SDK Version
+      placeholder: ex. 4.3.0
+    validations:
+      required: true
+  - type: input
+    id: xcode_version
+    attributes:
+      label: Xcode Version
+      placeholder: ex. Xcode 10.1
+    validations:
+      required: true
+  - type: dropdown
+    id: integration_method
+    attributes:
+      label: Integration Method
+      multiple: false
+      options:
+        - Swift Package Manager
+        - Cocoapods
+        - Carthage
+        - Manually
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: processor
+    attributes:
+      label: Computer Processor
+      multiple: false
+      options:
+        - Intel
+        - Apple (M1)
+    validations:
+      required: true
+  - type: input
+    id: repro_rate
+    attributes:
+      label: Repro Rate
+      description: How often can you reproduce this bug?
+      placeholder: ex. 100% of the time
+    validations:
+      required: true
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Steps To Reproduce
+      description: Please provide a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example)
+      value: |
+        Example:
+          1. Add `pod 'Appboy-iOS-SDK'` to the Podspec file.
+          2. Add `[Appboy startWithApiKey:inApplication:withLaunchOptions:];` method in `application:didFinishLaunchingWithOptions:` method in `AppDelegate.m`.
+          3. Run the app.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What was supposed to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Incorrect Behavior
+      description: What incorrect behavior happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: verbose_logs
+    attributes:
+      label: Verbose Logs
+      description: Please copy and paste verbose log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: textarea
+    id: other_info
+    attributes:
+      label: Additional Information
+      description: Anything else you'd like to share?
