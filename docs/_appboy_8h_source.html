@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#import &quot;ABKSdkMetadata.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef APPBOY_SDK_VERSION</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;4.4.1&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define APPBOY_SDK_VERSION @&quot;4.4.2&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
@@ -152,194 +152,196 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> ABKDeviceWhitelistKey __deprecated_msg(<span class="stringliteral">&quot;ABKDeviceWhitelistKey is deprecated. Please use ABKDeviceAllowlistKey instead.&quot;</span>);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> ABKPushStoryAppGroupKey;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> ABKLogLevelKey;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> * Enums</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  ABKAutomaticRequestProcessing,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  ABKManualRequestProcessing,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  ABKAutomaticRequestProcessingExceptForDataFlush __deprecated_enum_msg(<span class="stringliteral">&quot;ABKAutomaticRequestProcessingExceptForDataFlush is deprecated. Use ManualRequestProcessing.&quot;</span>) = ABKManualRequestProcessing</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;};</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger , ABKSDKFlavor) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  UNITY = 1,</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  REACT,</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  CORDOVA,</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  XAMARIN,</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  FLUTTER,</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  SEGMENT,</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  MPARTICLE,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  TEALIUM</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;};</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="keyword">typedef</span> NS_OPTIONS(NSUInteger, ABKDeviceOptions) {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  ABKDeviceOptionNone = 0,</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  ABKDeviceOptionResolution = (1 &lt;&lt; 0),</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  ABKDeviceOptionCarrier = (1 &lt;&lt; 1),</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  ABKDeviceOptionLocale = (1 &lt;&lt; 2),</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  ABKDeviceOptionModel = (1 &lt;&lt; 3),</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  ABKDeviceOptionOSVersion = (1 &lt;&lt; 4),</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="comment">// Note: The ABKDeviceOptionIDFV allowlist key currently has no effect.</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// IDFV is read regardless of allowlist settings due to its</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="comment">// role as the primary device identifier within the Braze system.</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  ABKDeviceOptionIDFV = (1 &lt;&lt; 5),</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  ABKDeviceOptionIDFA = (1 &lt;&lt; 6),</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  ABKDeviceOptionPushEnabled = (1 &lt;&lt; 7),</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  ABKDeviceOptionTimezone = (1 &lt;&lt; 8),</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  ABKDeviceOptionPushAuthStatus = (1 &lt;&lt; 9),</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  ABKDeviceOptionAdTrackingEnabled = (1 &lt;&lt; 10),</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  ABKDeviceOptionPushDisplayOptions = (1 &lt;&lt; 11),</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  ABKDeviceOptionAll = ~ABKDeviceOptionNone</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;};</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKChannel) {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  ABKPushNotificationChannel,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  ABKInAppMessageChannel,</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  ABKNewsFeedChannel,</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  ABKContentCardChannel,</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  ABKUnknownChannel __deprecated_enum_msg(<span class="stringliteral">&quot;ABKUnknownChannel will be removed in a future update.&quot;</span>)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;};</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment"> * Braze Public API: Appboy</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno"><a class="code" href="interface_appboy.html">  248</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_appboy.html">Appboy</a> : NSObject</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"> * Initialization</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;+ (nullable <a class="code" href="interface_appboy.html">Appboy</a> *)<a class="code" href="interface_appboy.html#aa62135eada7135024e1e042325f426fa">sharedInstance</a>;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;+ (nonnull <a class="code" href="interface_appboy.html">Appboy</a> *)<a class="code" href="interface_appboy.html#aa5a1fccaae11905e6dc2d3fab26879ed">unsafeInstance</a>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;+ (void)startWithApiKey:(NSString *)apiKey</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;          inApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      withLaunchOptions:(nullable NSDictionary *)launchOptions;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;+ (void)startWithApiKey:(NSString *)apiKey</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;          inApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      withLaunchOptions:(nullable NSDictionary *)launchOptions</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      withAppboyOptions:(nullable NSDictionary *)appboyOptions;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment"> * Properties</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">  304</a></span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_user.html">ABKUser</a> *<a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">user</a>;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_feed_controller.html">ABKFeedController</a> *feedController;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_content_cards_controller.html">ABKContentCardsController</a> *contentCardsController;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
-<div class="line"><a name="l00322"></a><span class="lineno"><a class="code" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">  322</a></span>&#160;<span class="keyword">@property</span> ABKRequestProcessingPolicy <a class="code" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">requestProcessingPolicy</a>;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00327"></a><span class="lineno"><a class="code" href="interface_appboy.html#abf9f0355099652da6068eaa40dec669d">  327</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, nullable) id&lt;ABKIDFADelegate&gt; <a class="code" href="interface_appboy.html#abf9f0355099652da6068eaa40dec669d">idfaDelegate</a>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno"><a class="code" href="interface_appboy.html#aa076a9921e5d7edae8a63a6b9d56ec57">  332</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, nullable) id&lt;ABKSdkAuthenticationDelegate&gt; <a class="code" href="interface_appboy.html#aa076a9921e5d7edae8a63a6b9d56ec57">sdkAuthenticationDelegate</a>;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00339"></a><span class="lineno"><a class="code" href="interface_appboy.html#aa3225751b163e9dca3efe040eed3d2c3">  339</a></span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a> *<a class="code" href="interface_appboy.html#aa3225751b163e9dca3efe040eed3d2c3">inAppMessageController</a>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
-<div class="line"><a name="l00345"></a><span class="lineno"><a class="code" href="interface_appboy.html#a942e878042066fc6c3762b98c6e7569a">  345</a></span>&#160;<span class="keyword">@property</span> (nonatomic, readonly) <a class="code" href="interface_a_b_k_location_manager.html">ABKLocationManager</a> *<a class="code" href="interface_appboy.html#a942e878042066fc6c3762b98c6e7569a">locationManager</a>;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
-<div class="line"><a name="l00350"></a><span class="lineno"><a class="code" href="interface_appboy.html#aba673cda72bad3e386dad6a24236d104">  350</a></span>&#160;<span class="keyword">@property</span> (nonatomic, weak, nullable) id&lt;ABKURLDelegate&gt; <a class="code" href="interface_appboy.html#aba673cda72bad3e386dad6a24236d104">appboyUrlDelegate</a>;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
-<div class="line"><a name="l00355"></a><span class="lineno"><a class="code" href="interface_appboy.html#ae9735c31fa9fe9121213326ca367e0ac">  355</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, nullable) id&lt;ABKImageDelegate&gt; <a class="code" href="interface_appboy.html#ae9735c31fa9fe9121213326ca367e0ac">imageDelegate</a>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
-<div class="line"><a name="l00360"></a><span class="lineno"><a class="code" href="interface_appboy.html#a8f1250e12b60aeb65e50011205acb22d">  360</a></span>&#160;<span class="keyword">@property</span> (nonatomic) ABKSDKFlavor <a class="code" href="interface_appboy.html#a8f1250e12b60aeb65e50011205acb22d">sdkFlavor</a>;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment"> * Methods</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;- (void)<a class="code" href="interface_appboy.html#ace452b4561512c9a9661fa22789e2d94">requestImmediateDataFlush</a>;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;- (void)flushDataAndProcessRequestQueue __deprecated_msg(&quot;Please use `<a class="code" href="interface_appboy.html#ace452b4561512c9a9661fa22789e2d94">requestImmediateDataFlush</a>` instead.&quot;);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;- (void)<a class="code" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a>;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;- (void)changeUser:(NSString *)userId;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;- (void)changeUser:(NSString *)userId sdkAuthSignature:(nullable NSString *)signature;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;- (void)setSdkAuthenticationSignature:(NSString *)signature;</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;- (void)<a class="code" href="interface_appboy.html#a8846dbad57ac2c4ce369678ac92d9664">unsubscribeFromSdkAuthenticationErrors</a>;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;- (void)logCustomEvent:(NSString *)eventName;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;- (void)logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;- (void)<a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;- (void)<a class="code" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">logContentCardsDisplayed</a>;</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;- (void)<a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;- (void)<a class="code" href="interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82">requestContentCardsRefresh</a>;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;- (void)requestGeofencesWithLongitude:(<span class="keywordtype">double</span>)longitude latitude:(<span class="keywordtype">double</span>)latitude;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;- (NSString *)<a class="code" href="interface_appboy.html#a9abe8a17453b0bac918a51d359f0c27e">getDeviceId</a>;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> ABKEphemeralEventsKey;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> ABKPushStoryAppGroupKey;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">extern</span> NSString *<span class="keyword">const</span> ABKLogLevelKey;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"> * Enums</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  ABKAutomaticRequestProcessing,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  ABKManualRequestProcessing,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  ABKAutomaticRequestProcessingExceptForDataFlush __deprecated_enum_msg(<span class="stringliteral">&quot;ABKAutomaticRequestProcessingExceptForDataFlush is deprecated. Use ManualRequestProcessing.&quot;</span>) = ABKManualRequestProcessing</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;};</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger , ABKSDKFlavor) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  UNITY = 1,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  REACT,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  CORDOVA,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  XAMARIN,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  FLUTTER,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  SEGMENT,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  MPARTICLE,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  TEALIUM</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;};</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keyword">typedef</span> NS_OPTIONS(NSUInteger, ABKDeviceOptions) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  ABKDeviceOptionNone = 0,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  ABKDeviceOptionResolution = (1 &lt;&lt; 0),</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  ABKDeviceOptionCarrier = (1 &lt;&lt; 1),</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  ABKDeviceOptionLocale = (1 &lt;&lt; 2),</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  ABKDeviceOptionModel = (1 &lt;&lt; 3),</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  ABKDeviceOptionOSVersion = (1 &lt;&lt; 4),</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="comment">// Note: The ABKDeviceOptionIDFV allowlist key currently has no effect.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// IDFV is read regardless of allowlist settings due to its</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="comment">// role as the primary device identifier within the Braze system.</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  ABKDeviceOptionIDFV = (1 &lt;&lt; 5),</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  ABKDeviceOptionIDFA = (1 &lt;&lt; 6),</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  ABKDeviceOptionPushEnabled = (1 &lt;&lt; 7),</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  ABKDeviceOptionTimezone = (1 &lt;&lt; 8),</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  ABKDeviceOptionPushAuthStatus = (1 &lt;&lt; 9),</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  ABKDeviceOptionAdTrackingEnabled = (1 &lt;&lt; 10),</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  ABKDeviceOptionPushDisplayOptions = (1 &lt;&lt; 11),</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  ABKDeviceOptionAll = ~ABKDeviceOptionNone</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;};</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKChannel) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  ABKPushNotificationChannel,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  ABKInAppMessageChannel,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  ABKNewsFeedChannel,</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  ABKContentCardChannel,</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  ABKUnknownChannel __deprecated_enum_msg(<span class="stringliteral">&quot;ABKUnknownChannel will be removed in a future update.&quot;</span>)</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;};</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment"> * Braze Public API: Appboy</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="code" href="interface_appboy.html">  250</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_appboy.html">Appboy</a> : NSObject</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"> * Initialization</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;+ (nullable <a class="code" href="interface_appboy.html">Appboy</a> *)<a class="code" href="interface_appboy.html#aa62135eada7135024e1e042325f426fa">sharedInstance</a>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;+ (nonnull <a class="code" href="interface_appboy.html">Appboy</a> *)<a class="code" href="interface_appboy.html#aa5a1fccaae11905e6dc2d3fab26879ed">unsafeInstance</a>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;+ (void)startWithApiKey:(NSString *)apiKey</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;          inApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      withLaunchOptions:(nullable NSDictionary *)launchOptions;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;+ (void)startWithApiKey:(NSString *)apiKey</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;          inApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      withLaunchOptions:(nullable NSDictionary *)launchOptions</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      withAppboyOptions:(nullable NSDictionary *)appboyOptions;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment"> * Properties</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">  305</a></span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_user.html">ABKUser</a> *<a class="code" href="interface_appboy.html#a7cf722b9aba835565b96e5cf1bdd67b1">user</a>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_feed_controller.html">ABKFeedController</a> *feedController;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_content_cards_controller.html">ABKContentCardsController</a> *contentCardsController;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="code" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">  323</a></span>&#160;<span class="keyword">@property</span> ABKRequestProcessingPolicy <a class="code" href="interface_appboy.html#a81cdd59419d76738927c123f1d06fc1a">requestProcessingPolicy</a>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="code" href="interface_appboy.html#abf9f0355099652da6068eaa40dec669d">  328</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, nullable) id&lt;ABKIDFADelegate&gt; <a class="code" href="interface_appboy.html#abf9f0355099652da6068eaa40dec669d">idfaDelegate</a>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="code" href="interface_appboy.html#aa076a9921e5d7edae8a63a6b9d56ec57">  333</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, nullable) id&lt;ABKSdkAuthenticationDelegate&gt; <a class="code" href="interface_appboy.html#aa076a9921e5d7edae8a63a6b9d56ec57">sdkAuthenticationDelegate</a>;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="code" href="interface_appboy.html#aa3225751b163e9dca3efe040eed3d2c3">  340</a></span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="interface_a_b_k_in_app_message_controller.html">ABKInAppMessageController</a> *<a class="code" href="interface_appboy.html#aa3225751b163e9dca3efe040eed3d2c3">inAppMessageController</a>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00346"></a><span class="lineno"><a class="code" href="interface_appboy.html#a942e878042066fc6c3762b98c6e7569a">  346</a></span>&#160;<span class="keyword">@property</span> (nonatomic, readonly) <a class="code" href="interface_a_b_k_location_manager.html">ABKLocationManager</a> *<a class="code" href="interface_appboy.html#a942e878042066fc6c3762b98c6e7569a">locationManager</a>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div>
+<div class="line"><a name="l00351"></a><span class="lineno"><a class="code" href="interface_appboy.html#aba673cda72bad3e386dad6a24236d104">  351</a></span>&#160;<span class="keyword">@property</span> (nonatomic, weak, nullable) id&lt;ABKURLDelegate&gt; <a class="code" href="interface_appboy.html#aba673cda72bad3e386dad6a24236d104">appboyUrlDelegate</a>;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="code" href="interface_appboy.html#ae9735c31fa9fe9121213326ca367e0ac">  356</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, nullable) id&lt;ABKImageDelegate&gt; <a class="code" href="interface_appboy.html#ae9735c31fa9fe9121213326ca367e0ac">imageDelegate</a>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="code" href="interface_appboy.html#a8f1250e12b60aeb65e50011205acb22d">  361</a></span>&#160;<span class="keyword">@property</span> (nonatomic) ABKSDKFlavor <a class="code" href="interface_appboy.html#a8f1250e12b60aeb65e50011205acb22d">sdkFlavor</a>;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment"> * Methods</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;- (void)<a class="code" href="interface_appboy.html#ace452b4561512c9a9661fa22789e2d94">requestImmediateDataFlush</a>;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;- (void)flushDataAndProcessRequestQueue __deprecated_msg(&quot;Please use `<a class="code" href="interface_appboy.html#ace452b4561512c9a9661fa22789e2d94">requestImmediateDataFlush</a>` instead.&quot;);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;- (void)<a class="code" href="interface_appboy.html#a26dfb2739d4f78b8a98e69b340ecdaf8">shutdownServerCommunication</a>;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;- (void)changeUser:(NSString *)userId;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;- (void)changeUser:(NSString *)userId sdkAuthSignature:(nullable NSString *)signature;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;- (void)setSdkAuthenticationSignature:(NSString *)signature;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;- (void)<a class="code" href="interface_appboy.html#a8846dbad57ac2c4ce369678ac92d9664">unsubscribeFromSdkAuthenticationErrors</a>;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;- (void)logCustomEvent:(NSString *)eventName;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;- (void)logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;- (void)<a class="code" href="interface_appboy.html#a90f5b55cdf6b2f18511f23f4bd3ce8f2">logFeedDisplayed</a>;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;- (void)<a class="code" href="interface_appboy.html#aebe28cb65d1d31a2211c0bc528c4ccb5">logContentCardsDisplayed</a>;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;- (void)<a class="code" href="interface_appboy.html#a680549ab7dba8c5971fd9a7fd938b452">requestFeedRefresh</a>;</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;- (void)<a class="code" href="interface_appboy.html#a89a3450fc8d971a16a977d8c5f47dd82">requestContentCardsRefresh</a>;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;- (void)requestGeofencesWithLongitude:(<span class="keywordtype">double</span>)longitude latitude:(<span class="keywordtype">double</span>)latitude;</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;- (NSString *)<a class="code" href="interface_appboy.html#a9abe8a17453b0bac918a51d359f0c27e">getDeviceId</a>;</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;- (void)registerDeviceToken:(NSData *)deviceToken;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification NS_DEPRECATED_IOS(3_0, 10_0, &quot;`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.&quot;);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;- (void)registerApplication:(UIApplication *)application</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;didReceiveRemoteNotification:(NSDictionary *)notification</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;     fetchCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(UIBackgroundFetchResult))completionHandler;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;- (void)getActionWithIdentifier:(NSString *)identifier</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;          forRemoteNotification:(NSDictionary *)userInfo</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;              completionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_DEPRECATED_IOS(8_0, 10_0,&quot;`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.&quot;);</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;- (void)userNotificationCenter:(UNUserNotificationCenter *)center</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;didReceiveNotificationResponse:(UNNotificationResponse *)response</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;         withCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_AVAILABLE_IOS(10_0);</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;- (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;- (void)addSdkMetadata:(NSArray&lt;ABKSdkMetadata&gt; *)metadata;</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="comment"> * Data processing configuration methods.</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;+ (void)<a class="code" href="interface_appboy.html#ac8d580f60ec0608cd91240a8a3aa23a3">wipeDataAndDisableForAppRun</a>;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a8d3b78a98420713d8590ed63c9172733">disableSDK</a>;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b">requestEnableSDKOnNextAppRun</a>;</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="preprocessor">#if !TARGET_OS_TV</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;- (void)registerDeviceToken:(NSData *)deviceToken;</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification NS_DEPRECATED_IOS(3_0, 10_0, &quot;`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.&quot;);</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;- (void)registerApplication:(UIApplication *)application</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;didReceiveRemoteNotification:(NSDictionary *)notification</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;     fetchCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(UIBackgroundFetchResult))completionHandler;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;- (void)getActionWithIdentifier:(NSString *)identifier</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;          forRemoteNotification:(NSDictionary *)userInfo</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;              completionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_DEPRECATED_IOS(8_0, 10_0,&quot;`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.&quot;);</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;- (void)userNotificationCenter:(UNUserNotificationCenter *)center</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;didReceiveNotificationResponse:(UNNotificationResponse *)response</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;         withCompletionHandler:(nullable <span class="keywordtype">void</span> (^)(<span class="keywordtype">void</span>))completionHandler NS_AVAILABLE_IOS(10_0);</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;- (void)pushAuthorizationFromUserNotificationCenter:(BOOL)pushAuthGranted;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;- (void)addSdkMetadata:(NSArray&lt;ABKSdkMetadata&gt; *)metadata;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="comment">/* ------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;<span class="comment"> * Data processing configuration methods.</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;+ (void)<a class="code" href="interface_appboy.html#ac8d580f60ec0608cd91240a8a3aa23a3">wipeDataAndDisableForAppRun</a>;</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a8d3b78a98420713d8590ed63c9172733">disableSDK</a>;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;+ (void)<a class="code" href="interface_appboy.html#a781078a40a3db0de64ac82dcae3b595b">requestEnableSDKOnNextAppRun</a>;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 3 2021 14:37:08 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 24 2022 15:36:27 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
