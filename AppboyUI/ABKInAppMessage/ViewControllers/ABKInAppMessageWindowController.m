@@ -23,6 +23,8 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
 
 @property (nonatomic, assign) NSInteger keyWindowRetryCount;
 
+@property (nonatomic, assign) BOOL isRemovingWindow;
+
 @end
 
 @implementation ABKInAppMessageWindowController
@@ -41,6 +43,7 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
     _inAppMessageIsTapped = NO;
     _clickedButtonId = -1;
     _keyWindowRetryCount = 0;
+    _isRemovingWindow = NO;
   }
   return self;
 }
@@ -281,6 +284,10 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
                                            selector:@selector(resetKeyWindowRetryCount)
                                              object:nil];
 
+  // Skip if this in-app message is already removing the window
+  if (self.isRemovingWindow) {
+    return;
+  }
   // Skip for any in-app message window
   if ([window isKindOfClass:[ABKInAppMessageWindow class]]) {
     return;
@@ -376,10 +383,18 @@ static NSInteger const KeyWindowRetryMaxCount = 10;
 }
 
 - (void)hideInAppMessageWindow {
+  if (self.isRemovingWindow) {
+    return;
+  }
+  self.isRemovingWindow = YES;
+
   [self.slideAwayTimer invalidate];
   self.slideAwayTimer = nil;
 
   self.inAppMessageWindow.rootViewController = nil;
+  if (@available(iOS 13.0, *)) {
+    self.inAppMessageWindow.windowScene = nil;
+  }
   self.inAppMessageWindow = nil;
   [[NSNotificationCenter defaultCenter] postNotificationName:ABKNotificationInAppMessageWindowDismissed
                                                       object:self

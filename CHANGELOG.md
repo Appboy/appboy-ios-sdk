@@ -1,3 +1,14 @@
+## 4.4.3
+
+##### Fixed
+- Fixes an issue introduced in `4.4.0` which prevented custom events or purchases with an empty dictionary of properties from being logged.
+- Improves handling of `ABKInAppMessageWindow`'s dismissal to promptly remove it from the view hierarchy.
+- Fixes the position of the pinned indicator for _Captioned Image_ Content Cards when using the default UI.
+- Fixes an issue introduced in `4.3.2` and limited to users of `Appboy-tvOS-SDK`, which prevented custom events with properties or purchases with properties from being logged.
+
+##### Added
+- Adds a `padding` property to `ABKCaptionedImageContentCardCell` to support modifying the default value. 
+
 ## 4.4.2
 
 ##### Fixed

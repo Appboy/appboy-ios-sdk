@@ -1,7 +1,7 @@
 name: 🐞 Bug report
 description: File a Bug Report for unexpected or incorrect SDK Behavior
 title: '[Bug]: '
-labels: ["bug","triage"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
@@ -37,7 +37,7 @@ body:
     id: xcode_version
     attributes:
       label: Xcode Version
-      placeholder: ex. Xcode 13.2
+      placeholder: ex. Xcode 10.1
     validations:
       required: true
   - type: dropdown

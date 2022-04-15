@@ -8,6 +8,12 @@ target 'HelloSwift' do
   platform :ios, '9.0'
   pod 'Appboy-iOS-SDK'
   # pod 'Appboy-iOS-SDK', :path => './../../Appboy-iOS-SDK/'
+
+  target 'HelloSwiftTests' do
+    inherit! :search_paths
+    pod 'OCMock'
+  end
+  
 end
 
 target 'HelloSwiftNotificationContentExtension' do
