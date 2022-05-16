@@ -1,6 +1,6 @@
-> ⚠ **New Swift SDK** - Sign Up for Early Access to our upcoming Swift SDK: [Click Here](https://docs.google.com/forms/d/e/1FAIpQLSf2APjcdeUp3fTg3FyZklMhbwdTOvrxfp-G_3xQWxca4ICeUg/viewform).
+### ⚠ The new [Braze Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available!
 
-<br>
+</br>
 
 <img src="https://github.com/Appboy/appboy-ios-sdk/blob/master/braze-logo.png" width="300" title="Braze Logo" />
 
