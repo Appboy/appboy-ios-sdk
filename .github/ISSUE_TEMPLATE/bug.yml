@@ -7,6 +7,8 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report! Please consider contacting support@braze.com for faster integration troubleshooting and to avoid leaking private information to our public Github issues.
+        
+        Consider upgrading to the new [Braze Swift SDK](https://github.com/braze-inc/braze-swift-sdk), the bug might not exist in this new SDK.
   - type: dropdown
     id: platform
     attributes:
