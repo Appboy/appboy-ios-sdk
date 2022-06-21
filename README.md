@@ -2,7 +2,7 @@
 
 </br>
 
-<img src="https://github.com/Appboy/appboy-ios-sdk/blob/master/braze-logo.png" width="300" title="Braze Logo" />
+<img src="braze-logo.png" width="300" title="Braze Logo" />
 
 # iOS SDK
 

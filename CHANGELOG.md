@@ -1,3 +1,9 @@
+## 4.4.4
+
+##### Fixed
+- Calling `appboyBridge.closeMessage()` or `brazeBridge.closeMessage()` from an HTML in-app message now correctly triggers `ABKInAppMessageUIDelegate.onInAppMessageDismissed:` when implemented.
+- Fixes an issue in `4.4.3` where the tvOS SDK incorrectly referenced an older SDK version.
+
 ## 4.4.3
 
 ##### Fixed

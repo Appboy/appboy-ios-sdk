@@ -8,8 +8,8 @@
  * A collection of test cases to verify a successful implementation of push
  * notifications using Braze.
 
- * In a unit testing target, as long as the `AppboyPushTests` module is included,
- * the target will run all of this class's unit tests. No added code is required.
+ * In a unit testing target, as long as this file is included,
+ * the target will run all of this class's unit tests. No additional code is required.
  *
  * @seealso https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/push_notifications/integration/
  */
