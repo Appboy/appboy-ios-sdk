@@ -95,10 +95,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Instance Methods</h2></td></tr>
 <tr class="memitem:a81e435e43bf6b77e778d88916f51d8b6"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_web_view_bridge_delegate-p.html#a81e435e43bf6b77e778d88916f51d8b6">webViewBridge:receivedClickAction:</a></td></tr>
 <tr class="separator:a81e435e43bf6b77e778d88916f51d8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260ee13f2325c344194f9133c10d7919"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_web_view_bridge_delegate-p.html#a260ee13f2325c344194f9133c10d7919">closeMessageWithWebViewBridge:</a></td></tr>
+<tr class="separator:a260ee13f2325c344194f9133c10d7919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Methods for managing bridge related actions </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a260ee13f2325c344194f9133c10d7919"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) closeMessageWithWebViewBridge: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_a_b_k_in_app_message_web_view_bridge.html">ABKInAppMessageWebViewBridge</a> *)&#160;</td>
+          <td class="paramname"><em>webViewBridge</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tells the delegate that a close message action was received </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">webViewBridge</td><td>The bridge informing the delegate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a81e435e43bf6b77e778d88916f51d8b6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -122,7 +147,7 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Tells the delegate the bridge has received a click action to execute </p>
+<p>Tells the delegate that the bridge has received a click action to execute </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">webViewBridge</td><td>The bridge informing the delegate </td></tr>
@@ -136,7 +161,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 15 2022 14:18:45 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 21 2022 15:22:23 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

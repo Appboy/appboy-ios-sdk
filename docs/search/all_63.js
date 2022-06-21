@@ -14,6 +14,7 @@ var searchData=
   ['clickedbuttonid',['clickedButtonId',['../interface_a_b_k_in_app_message_window_controller.html#a8533e6b1e6f4012ca4c588a057500394',1,'ABKInAppMessageWindowController']]],
   ['clickedhtmlbuttonid',['clickedHTMLButtonId',['../interface_a_b_k_in_app_message_window_controller.html#af4051eb95e0aa225a376c10383002ff4',1,'ABKInAppMessageWindowController']]],
   ['closebuttoncolor',['closeButtonColor',['../interface_a_b_k_in_app_message_immersive.html#a03008a80cfec882472d347b8e82d527a',1,'ABKInAppMessageImmersive']]],
+  ['closemessagewithwebviewbridge_3a',['closeMessageWithWebViewBridge:',['../protocol_a_b_k_in_app_message_web_view_bridge_delegate-p.html#a260ee13f2325c344194f9133c10d7919',1,'ABKInAppMessageWebViewBridgeDelegate-p']]],
   ['code',['code',['../interface_a_b_k_sdk_authentication_error.html#aeaffb7e67aadcc94a7772681101b9c6a',1,'ABKSdkAuthenticationError']]],
   ['contentcardcount',['contentCardCount',['../interface_a_b_k_content_cards_controller.html#a245919366ee020cf6db87de187240bd8',1,'ABKContentCardsController']]],
   ['contentcards',['contentCards',['../interface_a_b_k_content_cards_controller.html#ad3a42eca8dd891df774d2e751fb33bb6',1,'ABKContentCardsController']]],
