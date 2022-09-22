@@ -305,6 +305,12 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   return ABKDisplayInAppMessageNow;
 }
 
+- (void)noMatchingTriggerForEvent:(ABKTriggerEventType)eventType
+                             name:(nullable NSString *)name {
+  StopwatchDebugMsg(@"ABKInAppMessageControllerDelegate method called for eventType: %ld, and name: %@",
+                    (long)eventType, name);
+}
+
 #pragma mark - ABKInAppMessageUIDelegate
 
 /*- (WKWebViewConfiguration *)setCustomWKWebViewConfiguration {

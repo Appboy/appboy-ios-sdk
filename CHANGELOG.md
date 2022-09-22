@@ -1,3 +1,12 @@
+## 4.5.1
+
+##### Fixed
+- Improves eligibility checks around the minimum trigger timeout for in-app messages by now checking at _trigger time_ in addition to _display time_.
+- Fixes an issue where purchases would not trigger certain templated in-app messages.
+
+##### Added
+- Adds the delegate method `noMatchingTriggerForEvent:name:` to `ABKInAppMessageControllerDelegate`, which is called if no Braze in-app message was triggered for a given event.
+
 ## 4.5.0
 
 ##### Added
