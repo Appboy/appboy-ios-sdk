@@ -97,10 +97,13 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a829bd5ba5ca7ce9ec671bf112c030b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e8cc58099bb0798b38af02c7049a789"><td class="memItemLeft" align="right" valign="top">(ABKInAppMessageDisplayChoice)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html#a0e8cc58099bb0798b38af02c7049a789">beforeControlMessageImpressionLogged:</a></td></tr>
 <tr class="separator:a0e8cc58099bb0798b38af02c7049a789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d57b13c51545d487227945a37d4ab8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html#ab4d57b13c51545d487227945a37d4ab8">noMatchingTriggerForEvent:name:</a></td></tr>
+<tr class="separator:ab4d57b13c51545d487227945a37d4ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The in-app message delegate allows you to control the display of the Braze in-app message. For more detailed information on in-app message behavior, including when and how the delegate is used, see the documentation for the ABKInAppMessageDisplayChoice enum above for more detailed information.</p>
-<p>This delegate is for those who are using the Core subspec and not integrating the In-App Message subspec. If you are using the In-App Message subspec, please use <a class="el" href="protocol_a_b_k_in_app_message_u_i_delegate-p.html">ABKInAppMessageUIDelegate</a>. </p>
+<p>This delegate is for those who are using the Core subspec and not integrating the In-App Message subspec. If you are using the In-App Message subspec, please use <a class="el" href="protocol_a_b_k_in_app_message_u_i_delegate-p.html">ABKInAppMessageUIDelegate</a>.</p>
+<p>Braze Public API: <a class="el" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> </p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a class="anchor" id="a0e8cc58099bb0798b38af02c7049a789"></a>
 <div class="memitem">
@@ -168,10 +171,52 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab4d57b13c51545d487227945a37d4ab8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) noMatchingTriggerForEvent: </td>
+          <td></td>
+          <td class="paramtype">(ABKTriggerEventType)&#160;</td>
+          <td class="paramname"><em>eventType</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">name:</td>
+          <td></td>
+          <td class="paramtype">(nullable NSString *)&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Executed when no trigger matches the Braze event.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventType</td><td>The type of event that failed to match the user's triggers. </td></tr>
+    <tr><td class="paramname">name</td><td>The event name of a custom event, the product identifier for a purchase event, or <code>nil</code> for a session start event. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 3 2022 14:45:49 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 22 2022 13:51:08 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
