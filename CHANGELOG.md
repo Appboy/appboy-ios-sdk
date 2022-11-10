@@ -1,3 +1,5 @@
+#### ⚠️ The New Braze [Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available! 
+
 ## 4.5.1
 
 ##### Fixed
