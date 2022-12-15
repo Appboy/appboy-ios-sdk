@@ -15,7 +15,7 @@
 #import "ABKSdkMetadata.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"4.5.1"
+#define APPBOY_SDK_VERSION @"4.5.2"
 #endif
 
 #if !TARGET_OS_TV
@@ -331,6 +331,11 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
  * A class conforming to ABKSdkAuthenticationDelegate can be set to handle SDK Authentication errors.
  */
 @property (nonatomic, strong, nullable) id<ABKSdkAuthenticationDelegate> sdkAuthenticationDelegate;
+
+/*!
+ * A custom `NSURLSessionConfiguration` for configuring network session parameters.
+ */
+@property (nonatomic, readonly) NSURLSessionConfiguration *urlSessionConfiguration;
 
 #if !TARGET_OS_TV
 /*!

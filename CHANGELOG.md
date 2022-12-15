@@ -1,5 +1,11 @@
 #### ⚠️ The New Braze [Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available! 
 
+## 4.5.2
+
+##### Fixed
+- Improves reliability when validating trigger properties.
+- Improves the `NSURLSessionConfiguration` disk and memory cache capacities for file downloads. This change enables larger file downloads to be cached if needed.
+
 ## 4.5.1
 
 ##### Fixed
