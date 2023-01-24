@@ -1,5 +1,11 @@
 #### ⚠️ The New Braze [Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available! 
 
+## 4.5.3
+
+##### Fixed
+- Fixes a crash that occurs when receiving custom event properties of numeric types under certain conditions.
+- Fixes UI responsiveness warnings when requesting location authorization status.
+
 ## 4.5.2
 
 ##### Fixed
