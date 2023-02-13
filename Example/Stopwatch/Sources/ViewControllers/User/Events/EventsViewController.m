@@ -471,6 +471,12 @@ static NSString *const ChangeUser = @"Set User ID";
         self.valuesDictionary[value] = jsonObject;
       }
       break;
+    case 5:
+      if (![self checkIfFieldIsEmpty:value]) {
+        return NO;
+      }
+      self.valuesDictionary[value] = @([self.valuesDictionary[value] boolValue]);
+      break;
   }
   return YES;
 }

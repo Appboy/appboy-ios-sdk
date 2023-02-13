@@ -1,5 +1,11 @@
 #### ⚠️ The New Braze [Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available! 
 
+## 4.5.4
+
+##### Fixed
+- Improves reliability of custom event property type validation.
+- Fixes an issue where the status bar would not restore to its original state after a full in-app message was dismissed.
+
 ## 4.5.3
 
 ##### Fixed
