@@ -7,12 +7,16 @@
 - Fixes an issue where the status bar would not restore to its original state after a full in-app message was dismissed.
 
 ## 4.5.3
+##### ⚠️ Known Issues
+- This release contains a known issue that may result in app crashes when triggering In-App messages with booleans filters. If you are using boolean filters to target users for In-App messages, do not upgrade to this version.
 
 ##### Fixed
 - Fixes a crash that occurs when receiving custom event properties of numeric types under certain conditions.
 - Fixes UI responsiveness warnings when requesting location authorization status.
 
 ## 4.5.2
+##### ⚠️ Known Issues
+- This release contains a known issue that may result in app crashes when triggering In-App messages with booleans and numeric filters. If you are using boolean or numeric filters to target users for In-App messages, do not upgrade to this version.
 
 ##### Fixed
 - Improves reliability when validating trigger properties.
