@@ -8,17 +8,11 @@
 
 ## 4.5.3
 
-##### ⚠️ Known Issues
-- This release contains a known issue that may result in crashes when triggering In-App Messages with custom events or purchases which contain boolean event properties. Do not use this version and upgrade to v4.5.4 or above.
-
 ##### Fixed
 - Fixes a crash that occurs when receiving custom event properties of numeric types under certain conditions.
 - Fixes UI responsiveness warnings when requesting location authorization status.
 
 ## 4.5.2
-
-##### ⚠️ Known Issues
-- This release contains a known issue that may result in crashes when triggering In-App Messages with custom events or purchases which contain boolean or numeric event properties. Do not use this version and upgrade to v4.5.4 or above.
 
 ##### Fixed
 - Improves reliability when validating trigger properties.
