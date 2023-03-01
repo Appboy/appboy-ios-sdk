@@ -25,7 +25,8 @@ Successful marketing automation is essential to the future of your mobile app. B
 
 ## Version Support
 
-The iOS SDK supports iOS 9.0+.
+- The iOS SDK supports iOS `9.0`+.
+- This SDK is built using Xcode `13.x`.
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) as a prebuilt framework.  Building from source currently not supported, see [#85](https://github.com/Appboy/appboy-ios-sdk/issues/85). 
 
