@@ -14,7 +14,7 @@ let package = Package(
     .library(name: "AppboyPushStory", targets: ["AppboyPushStory"])
   ],
   dependencies: [
-    .package(name: "SDWebImage", url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.8.2")
+    .package(name: "SDWebImage", url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.16.0")
   ],
   targets: [
     .binaryTarget(
