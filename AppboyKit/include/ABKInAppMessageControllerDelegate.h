@@ -7,6 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
  *   ABKDisplayInAppMessageNow - The in-app message will be displayed immediately.
  *   ABKDisplayInAppMessageLater - The in-app message will be not be displayed and will be placed back onto the top of the stack.
  *   ABKDiscardInAppMessage - The in-app message will be discarded and will not be displayed.
+ *   ABKReenqueueInAppMessage - The in-app message will not be displayed and all trigger times and re-eligibility will rollback as if the trigger never occurred.
  *
  * The following conditions can cause a in-app message to be offered to the delegate defined by the delegate property on
  * [Appboy sharedInstance].inAppMessageController:
@@ -20,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {
   ABKDisplayInAppMessageNow,
   ABKDisplayInAppMessageLater,
-  ABKDiscardInAppMessage
+  ABKDiscardInAppMessage,
+  ABKReenqueueInAppMessage,
 };
 
 typedef NS_ENUM(NSInteger, ABKTriggerEventType) {
@@ -64,7 +66,7 @@ typedef NS_ENUM(NSInteger, ABKTriggerEventType) {
  * For details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice above.
  * Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.
  *
- * This delegate method defines the timing of when the control in-app message impression event should be logged: now, later, or discarded.
+ * This delegate method defines the timing of when the control in-app message impression event should be logged: now, later, discarded, or re-enqueued.
  * Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.
  *
  * If there are situations where you would not want the control in-app message impression to be logged, you can use this delegate to delay

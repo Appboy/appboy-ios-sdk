@@ -15,7 +15,7 @@
 #import "ABKSdkMetadata.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"4.5.4"
+#define APPBOY_SDK_VERSION @"4.6.0"
 #endif
 
 #if !TARGET_OS_TV

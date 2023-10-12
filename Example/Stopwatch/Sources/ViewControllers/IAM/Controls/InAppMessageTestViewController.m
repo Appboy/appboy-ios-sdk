@@ -106,7 +106,7 @@
         
       case 2:
         return ABKDiscardInAppMessage;
-        
+
       default:
         return ABKDisplayInAppMessageNow;
     }

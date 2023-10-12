@@ -1,5 +1,27 @@
 #### ⚠️ The New Braze [Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available! 
 
+## 4.6.0
+
+This release requires Xcode `14.x`.
+
+#### Breaking
+- Drops support for iOS 9 and iOS 10.
+- Removes support for the outdated `.framework` assets when importing via Carthage in favor of the modern `.xcframework` assets.
+  - Use the command `carthage update --use-xcframeworks` to import the appropriate Braze asset.
+  - Removes support for `appboy_ios_sdk_full.json` in favor of using `appboy_ios_sdk.json` by including these lines in your `Cartfile`:
+    ```
+    binary "https://raw.githubusercontent.com/Appboy/appboy-ios-sdk/master/appboy_ios_sdk.json"
+    github "SDWebImage/SDWebImage"
+    ```
+
+##### Fixed
+- Improves resilience when triggering in-app messages with date property filters.
+
+##### Added
+- Adds a new option `ABKReenqueueInAppMessage` to enum `ABKInAppMessageDisplayChoice`.
+  - Return this option in `beforeInAppMessageDisplayed:` of an `ABKInAppMessageControllerDelegate` to ensure that an in-app message is not displayed and becomes eligible to trigger again.
+  - This option will reset any trigger times and re-eligibility rules as if it was never triggered. It will not add the message to the in-app message stack.
+
 ## 4.5.4
 
 ##### Fixed
