@@ -133,7 +133,7 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ABKInAppMessageDisplayChoice The control in-app message impression logging choice. For details refer to the documentation regarding the ENUM ABKInAppMessageDisplayChoice above. Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.</dd></dl>
-<p>This delegate method defines the timing of when the control in-app message impression event should be logged: now, later, or discarded. Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.</p>
+<p>This delegate method defines the timing of when the control in-app message impression event should be logged: now, later, discarded, or re-enqueued. Logging a control message impression is an equivalent of displaying the message, except that no actual display occurs.</p>
 <p>If there are situations where you would not want the control in-app message impression to be logged, you can use this delegate to delay or discard it. </p>
 
 </div>
@@ -216,7 +216,7 @@ Instance Methods</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 13 2023 15:13:30 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 12 2023 18:03:53 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -85,36 +85,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#import &quot;ABKInAppMessage.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;NS_ASSUME_NONNULL_BEGIN</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ABKDisplayInAppMessageNow,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ABKDisplayInAppMessageLater,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ABKDiscardInAppMessage</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKTriggerEventType) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  ABKTriggerEventTypeSessionStart,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  ABKTriggerEventTypeCustomEvent,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  ABKTriggerEventTypePurchase,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ABKTriggerEventTypeOther</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">   45</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> &lt;NSObject&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKInAppMessageDisplayChoice) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ABKDisplayInAppMessageNow,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ABKDisplayInAppMessageLater,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  ABKDiscardInAppMessage,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ABKReenqueueInAppMessage,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">typedef</span> NS_ENUM(NSInteger, ABKTriggerEventType) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  ABKTriggerEventTypeSessionStart,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ABKTriggerEventTypeCustomEvent,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ABKTriggerEventTypePurchase,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  ABKTriggerEventTypeOther</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">   47</a></span>&#160;<span class="keyword">@protocol </span><a class="code" href="protocol_a_b_k_in_app_message_controller_delegate-p.html">ABKInAppMessageControllerDelegate</a> &lt;NSObject&gt;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;- (ABKInAppMessageDisplayChoice)beforeControlMessageImpressionLogged:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;- (void)noMatchingTriggerForEvent:(ABKTriggerEventType)eventType</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                             name:(nullable NSString *)name;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;NS_ASSUME_NONNULL_END</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">@optional</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;- (ABKInAppMessageDisplayChoice)beforeControlMessageImpressionLogged:(<a class="code" href="interface_a_b_k_in_app_message.html">ABKInAppMessage</a> *)inAppMessage;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;- (void)noMatchingTriggerForEvent:(ABKTriggerEventType)eventType</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                             name:(nullable NSString *)name;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;NS_ASSUME_NONNULL_END</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 13 2023 15:13:30 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 12 2023 18:03:53 for Braze iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
