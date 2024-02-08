@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name         = "Appboy-tvOS-SDK"
-  s.version      = "4.6.0"
+  s.version      = "4.7.0"
   s.summary      = "This is the Braze tvOS SDK for Mobile Marketing Automation"
   s.homepage     = "http://www.braze.com"
   s.license      = { :type => 'Commercial', :text => 'Please refer to https://github.com/Appboy/appboy-ios-sdk/blob/master/LICENSE'}
   s.author       = { "Appboy" => "http://www.braze.com" }
   s.source       = { :git => 'https://github.com/Appboy/appboy-ios-sdk.git', :tag => s.version.to_s}
   s.platform = :tvos
-  s.tvos.deployment_target = 9.0
+  s.tvos.deployment_target = 11.0
   s.requires_arc = true
   s.documentation_url = 'https://www.braze.com/docs'
   s.tvos.frameworks = 'SystemConfiguration'

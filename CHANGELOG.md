@@ -1,4 +1,17 @@
-#### ⚠️ The New Braze [Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available! 
+#### ⚠️ The New Braze [Swift SDK](https://github.com/braze-inc/braze-swift-sdk) is now available!
+
+## 4.7.0
+
+#### Breaking
+- Updates the minimum required version of SDWebImage from 5.8.2 to [5.18.7](https://github.com/SDWebImage/SDWebImage/releases/tag/5.18.7).
+  - This version includes the privacy manifest for SDWebImage, which appears on the [privacy-impacting SDKs list](https://developer.apple.com/support/third-party-SDK-requirements/).
+
+#### Added
+- Adds the privacy manifest to describe data usage collected by Braze. For more details, refer to the [Apple documentation on privacy manifests](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files).
+- Adds code signatures to all XCFrameworks in the Braze iOS SDK, signed by `Braze, Inc.`.
+
+##### Fixed
+- Fixes an issue in Full or Modal in-app messages where the header text would be duplicated in place of the body text under certain conditions.
 
 ## 4.6.0
 
@@ -69,7 +82,7 @@ This release requires Xcode `14.x`.
 - Fixes an issue introduced in `4.3.2` and limited to users of `Appboy-tvOS-SDK`, which prevented custom events with properties or purchases with properties from being logged.
 
 ##### Added
-- Adds a `padding` property to `ABKCaptionedImageContentCardCell` to support modifying the default value. 
+- Adds a `padding` property to `ABKCaptionedImageContentCardCell` to support modifying the default value.
 
 ## 4.4.2
 
@@ -159,7 +172,7 @@ This release requires Xcode 13.
 - Deprecates `ABKInAppMessageController`'s method `displayNextInAppMessageWithDelegate:` in favor of `displayNextInAppMessage`.
 
 ##### Added
-- Custom events and purchases now support nested properties. 
+- Custom events and purchases now support nested properties.
   - In addition to integers, floats, booleans, dates, or strings, a JSON object can be provided containing dictionaries of arrays or nested dictionaries. All properties combined can be up to 50 KB in total length.
 
 ## 4.3.0

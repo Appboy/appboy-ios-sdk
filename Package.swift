@@ -14,13 +14,13 @@ let package = Package(
     .library(name: "AppboyPushStory", targets: ["AppboyPushStory"])
   ],
   dependencies: [
-    .package(name: "SDWebImage", url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.8.2")
+    .package(name: "SDWebImage", url: "https://github.com/SDWebImage/SDWebImage.git", from: "5.18.7")
   ],
   targets: [
     .binaryTarget(
       name: "AppboyKitLibrary",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.6.0/AppboyKitLibrary.xcframework.zip",
-      checksum: "c3664cdcd07a9f9d451e532578d2d1b86272d10a9328826823281dd1f286dbfe"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.7.0/AppboyKitLibrary.xcframework.zip",
+      checksum: "1b05630bf08affc7944f4cb206fab41dc176aa0ca6ff76fd81718f83691b04dc"
     ),
     .target(
       name: "AppboyKit",
@@ -53,8 +53,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "AppboyPushStoryFramework",
-      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.6.0/AppboyPushStoryFramework.xcframework.zip",
-      checksum: "7422dfcf60052110a0bac856901be698cb7e48336aad3fa0dcaaf3c52a1f6368"
+      url: "https://github.com/Appboy/appboy-ios-sdk/releases/download/4.7.0/AppboyPushStoryFramework.xcframework.zip",
+      checksum: "989ddc65ac05faf64df4ab0bb96bd8a34c69730c54e90487ab9eb9d89aed2b1c"
     ),
     .target(
       name: "AppboyPushStory",

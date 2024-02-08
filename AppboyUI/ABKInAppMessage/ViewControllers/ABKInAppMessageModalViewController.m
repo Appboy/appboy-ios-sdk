@@ -125,7 +125,7 @@ static const CGFloat MaxModalViewHeight = 720.0f;
       [attributedStringHeader addAttribute:NSParagraphStyleAttributeName
                                      value:headerStyle
                                      range:NSMakeRange(0, ((ABKInAppMessageImmersive *)self.inAppMessage).header.length)];
-      self.inAppMessageMessageLabel.attributedText = attributedStringHeader;
+      self.inAppMessageHeaderLabel.attributedText = attributedStringHeader;
     }
   }
 }

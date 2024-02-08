@@ -5,7 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'HelloSwift' do
-  platform :ios, '9.0'
+  platform :ios, '11.0'
   pod 'Appboy-iOS-SDK'
   # pod 'Appboy-iOS-SDK', :path => './../../Appboy-iOS-SDK/'
 
@@ -17,13 +17,13 @@ target 'HelloSwift' do
 end
 
 target 'HelloSwiftNotificationContentExtension' do
-  platform :ios, '10.0'
+  platform :ios, '11.0'
   pod 'Appboy-Push-Story'
   # pod 'Appboy-Push-Story', :path => './../../Appboy-Push-Story/'
 end
 
 target 'tvOS_HelloSwift' do
-  platform :tvos, '9.0'
+  platform :tvos, '11.0'
   pod 'Appboy-tvOS-SDK'
   # pod 'Appboy-tvOS-SDK', :path => './../../Appboy-tvOS-SDK/'
 end

@@ -15,7 +15,7 @@
 #import "ABKSdkMetadata.h"
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"4.6.0"
+#define APPBOY_SDK_VERSION @"4.7.0"
 #endif
 
 #if !TARGET_OS_TV
@@ -435,7 +435,7 @@ typedef NS_ENUM(NSInteger, ABKChannel) {
  * @param userId The new user's ID (from the host application)
  * @param signature The SDK Authentication signature for the user being identified.
  *
- * @discussion See documantation for `changeUser:` above 
+ * @discussion See documantation for `changeUser:` above
  */
 - (void)changeUser:(NSString *)userId sdkAuthSignature:(nullable NSString *)signature;
 

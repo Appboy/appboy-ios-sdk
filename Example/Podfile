@@ -1,31 +1,31 @@
 source 'https://cdn.cocoapods.org/'
 
 target :Stopwatch do
-  platform :ios, '9.0'
+  platform :ios, '11.0'
    pod 'Appboy-iOS-SDK'
   pod 'KKColorListPicker', :git => 'https://github.com/leoru/KKColorListPicker.git', :inhibit_warnings => true
   pod 'Branch'
 end
 
 target :tvOS_Stopwatch do
-  platform :tvos, '9.0'
+  platform :tvos, '11.0'
   pod 'Appboy-tvOS-SDK'
 end
 
 target :tvOS_TVML_Stopwatch do
-  platform :tvos, '9.0'
+  platform :tvos, '11.0'
   pod 'Appboy-tvOS-SDK'
 end
 
 target :StopwatchNotificationContentExtension do
-  platform :ios, '10.0'
+  platform :ios, '11.0'
    pod 'Appboy-Push-Story'
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
     end
   end
 end

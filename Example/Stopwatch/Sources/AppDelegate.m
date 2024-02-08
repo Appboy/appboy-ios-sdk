@@ -153,11 +153,6 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
   }
 }
 
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)(void))completionHandler {
-  StopwatchDebugMsg(@"Handling action with identifier: %@", identifier);
-  [[Appboy sharedInstance] getActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
-}
-
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   /*
    Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -190,41 +185,6 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 
 #pragma mark - Braze Push Registration
 
-// Pre-iOS 10 or if UserNotifications framework is not used
-- (void)setUpPushWithApplicationDelegates {
-  UIMutableUserNotificationAction *likeAction = [[UIMutableUserNotificationAction alloc] init];
-  likeAction.identifier = @"LIKE_IDENTIFIER";
-  likeAction.title = @"Like";
-  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
-  likeAction.activationMode = UIUserNotificationActivationModeForeground;
-  likeAction.destructive = NO;
-  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
-  likeAction.authenticationRequired = NO;
-
-  UIMutableUserNotificationAction *unlikeAction = [[UIMutableUserNotificationAction alloc] init];
-  unlikeAction.identifier = @"UNLIKE_IDENTIFIER";
-  unlikeAction.title = @"Unlike";
-  // Given seconds, not minutes, to run in the background acceptAction.activationMode = UIUserNotificationActivationModeBackground;
-  unlikeAction.activationMode = UIUserNotificationActivationModeBackground;
-  unlikeAction.destructive = NO;
-  // If YES requires passcode, but does not unlock the device acceptAction.authenticationRequired = NO;
-  unlikeAction.authenticationRequired = NO;
-
-  UIMutableUserNotificationCategory *likeCategory = [[UIMutableUserNotificationCategory alloc] init];
-  likeCategory.identifier = @"LIKE_CATEGORY";
-  [likeCategory setActions:@[likeAction, unlikeAction] forContext:UIUserNotificationActionContextDefault];
-
-  // Adding Braze default categories
-  #pragma clang diagnostic push
-  #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-  NSMutableSet *categories = [NSMutableSet setWithSet:[ABKPushUtils getAppboyUIUserNotificationCategorySet]];
-  #pragma clang diagnostic pop
-  [categories addObject:likeCategory];
-  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:categories];
-  [[UIApplication sharedApplication] registerForRemoteNotifications];
-  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-}
-
 - (void)setUpPushWithUserNotificationCenter {
   UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
   UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
@@ -255,11 +215,7 @@ static NSString *const AppboyApiKey = @"appboy-sample-ios";
 }
 
 - (void)setUpRemoteNotifications {
-  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
-    [self setUpPushWithUserNotificationCenter];
-  } else {
-    [self setUpPushWithApplicationDelegates];
-  }
+  [self setUpPushWithUserNotificationCenter];
 }
 
 # pragma mark - UNUserNotificationCenterDelegate
